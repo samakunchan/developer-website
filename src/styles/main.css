@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap');
+
+@import './abstracts/_variables.css';
+
+@import './base/_reset.css';
+@import './base/_typography.css';
+
+@import './layout/_container.css';
+
+@import './components/_button.css';
+@import './components/_input.css';
+@import './components/_header.css';
+
+@theme {
+  --color-primary: #25f4f4;
+  --color-background-light: #f5f8f8;
+  --color-background-dark: #102222;
+  --font-display: "Inter", sans-serif;
+  --radius-default: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+}
+
+@variant dark (&:where(.dark, .dark *));
