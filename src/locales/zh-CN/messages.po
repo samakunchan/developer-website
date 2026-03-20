@@ -13,28 +13,43 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Header.tsx:32
+#: src/components/Header.tsx:61
 msgid "Contact"
 msgstr "联系"
 
-#: src/routes/__root.tsx:95
+#: src/components/Header.tsx:60
+msgid "Contact me"
+msgstr "联系我"
+
 #: src/routes/__root.tsx:107
+#: src/routes/__root.tsx:113
 msgid "Default description of the website"
 msgstr "网站的默认描述"
 
-#: src/routes/__root.tsx:91
-#: src/routes/__root.tsx:103
+#: src/routes/__root.tsx:104
+#: src/routes/__root.tsx:110
 msgid "Developer Website"
 msgstr "开发者网站"
 
-#: src/components/Header.tsx:20
+#: src/components/Header.tsx:31
+#: src/components/Header.tsx:33
 msgid "Expertise"
 msgstr "专长"
 
-#: src/components/Header.tsx:26
+#: src/components/Header.tsx:14
+msgid "Freelance home page"
+msgstr "自由职业者主页"
+
+#: src/components/Header.tsx:22
+msgid "Main navigation"
+msgstr "主导航"
+
+#: src/components/Header.tsx:51
+#: src/components/Header.tsx:53
 msgid "Process"
 msgstr "流程"
 
-#: src/components/Header.tsx:23
+#: src/components/Header.tsx:41
+#: src/components/Header.tsx:43
 msgid "Projets"
 msgstr "项目"

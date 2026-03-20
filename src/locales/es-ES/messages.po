@@ -13,28 +13,43 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Header.tsx:32
+#: src/components/Header.tsx:61
 msgid "Contact"
 msgstr "Contacto"
 
-#: src/routes/__root.tsx:95
+#: src/components/Header.tsx:60
+msgid "Contact me"
+msgstr "Contáctame"
+
 #: src/routes/__root.tsx:107
+#: src/routes/__root.tsx:113
 msgid "Default description of the website"
 msgstr "Descripción predeterminada del sitio web"
 
-#: src/routes/__root.tsx:91
-#: src/routes/__root.tsx:103
+#: src/routes/__root.tsx:104
+#: src/routes/__root.tsx:110
 msgid "Developer Website"
 msgstr "Sitio Web del Desarrollador"
 
-#: src/components/Header.tsx:20
+#: src/components/Header.tsx:31
+#: src/components/Header.tsx:33
 msgid "Expertise"
 msgstr "Experiencia"
 
-#: src/components/Header.tsx:26
+#: src/components/Header.tsx:14
+msgid "Freelance home page"
+msgstr "Página de inicio de Freelance"
+
+#: src/components/Header.tsx:22
+msgid "Main navigation"
+msgstr "Navegación principal"
+
+#: src/components/Header.tsx:51
+#: src/components/Header.tsx:53
 msgid "Process"
 msgstr "Proceso"
 
-#: src/components/Header.tsx:23
+#: src/components/Header.tsx:41
+#: src/components/Header.tsx:43
 msgid "Projets"
 msgstr "Proyectos"
