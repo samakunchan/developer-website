@@ -13,6 +13,10 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/routes/index.tsx:16
+msgid "Available for new projects"
+msgstr "Disponible para nuevos proyectos"
+
 #: src/components/Header.tsx:61
 msgid "Contact"
 msgstr "Contacto"
@@ -20,6 +24,10 @@ msgstr "Contacto"
 #: src/components/Header.tsx:60
 msgid "Contact me"
 msgstr "Contáctame"
+
+#: src/routes/index.tsx:18
+msgid "Custom Software <0>Solutions</0> for Modern Businesses"
+msgstr "Soluciones de <0>Software</0> a Medida para Empresas Modernas"
 
 #: src/routes/__root.tsx:107
 #: src/routes/__root.tsx:113
@@ -36,13 +44,25 @@ msgstr "Sitio Web del Desarrollador"
 msgid "Expertise"
 msgstr "Experiencia"
 
+#: src/routes/index.tsx:22
+msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
+msgstr "Desarrollador Full-Stack freelance especializado en aplicaciones web y móviles de alto rendimiento con React, Angular y Flutter."
+
 #: src/components/Header.tsx:14
 msgid "Freelance home page"
 msgstr "Página de inicio de Freelance"
 
+#: src/routes/index.tsx:24
+msgid "Get a Quote"
+msgstr "Obtener un presupuesto"
+
 #: src/components/Header.tsx:22
 msgid "Main navigation"
 msgstr "Navegación principal"
+
+#: src/routes/index.tsx:26
+msgid "Modern workspace with laptop showing code"
+msgstr "Espacio de trabajo moderno con un portátil mostrando código"
 
 #: src/components/Header.tsx:51
 #: src/components/Header.tsx:53
@@ -53,3 +73,7 @@ msgstr "Proceso"
 #: src/components/Header.tsx:43
 msgid "Projets"
 msgstr "Proyectos"
+
+#: src/routes/index.tsx:23
+msgid "View Portfolio"
+msgstr "Ver Portafolio"
