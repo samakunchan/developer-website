@@ -3,6 +3,7 @@ import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
+import { Services, ServiceCard } from '../components/Services';
 import '../styles/main.css';
 
 export const Route = createFileRoute('/')({
@@ -26,6 +27,39 @@ function Index() {
         imageSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuA-DXrgtoZM3ej2WaApf3VNsO_ULaBI3bwr0BqHDSkABxpSX7q4jcYwWopO7xSJEtjykdr8w7hQ5XdpQ3ZCaMHca2trLcaerfikZT52KLJIeYU3mvrkl2zDW820gQpJbdsFVX4ffyFH5AoGsdnpBz4a2rxAcKpndZEuQOF6-c3cb5QDyN8UqQ1ISD7UBUnMy3XX1BOfa6xv_rAIepdbY6WHnawAIpL-VSGIXp84lw-xJXIt2pvVgsc33_BZ3GWNCIIXkbVww1EFlTI"
         imageAlt={t`Modern workspace with laptop showing code`}
       />
+      <Services
+        id={t`Expertise`}
+        subtitle={t`Expertise`}
+        title={<Trans>Core Services</Trans>}
+      >
+        <ServiceCard
+          icon="language"
+          title={t`Web Development`}
+          description={t`Building scalable, SEO-friendly web applications with modern tech stacks.`}
+          badges={['React', 'Next.js', 'Node.js']}
+        />
+        <ServiceCard
+          icon="smartphone"
+          title={t`Mobile App Development`}
+          description={t`Cross-platform and native mobile solutions for iOS and Android.`}
+          features={[
+            t`App Store Deployment`,
+            t`Push Notifications`,
+            t`Offline Capability`,
+          ]}
+        />
+        <ServiceCard
+          icon="handyman"
+          title={t`Maintenance & Support`}
+          description={t`Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring.`}
+          badges={['Optimization', 'Security']}
+          features={[
+            t`Security Patching`,
+            t`Cloud Infrastructure`,
+            t`Performance Audits`,
+          ]}
+        />
+      </Services>
     </>
   );
 }

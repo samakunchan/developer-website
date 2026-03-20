@@ -13,9 +13,21 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/routes/index.tsx:16
+#: src/routes/index.tsx:46
+msgid "App Store Deployment"
+msgstr "Déploiement sur l'App Store"
+
+#: src/routes/index.tsx:18
 msgid "Available for new projects"
 msgstr "Disponible pour de nouveaux projets"
+
+#: src/routes/index.tsx:25
+msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
+msgstr "Construction d'applications web évolutives et optimisées pour le SEO avec des piles technologiques modernes."
+
+#: src/routes/index.tsx:58
+msgid "Cloud Infrastructure"
+msgstr "Infrastructure Cloud"
 
 #: src/components/Header.tsx:61
 msgid "Contact"
@@ -25,7 +37,15 @@ msgstr "Contact"
 msgid "Contact me"
 msgstr "Me contacter"
 
-#: src/routes/index.tsx:18
+#: src/routes/index.tsx:33
+msgid "Core Services"
+msgstr "Services Principaux"
+
+#: src/routes/index.tsx:44
+msgid "Cross-platform and native mobile solutions for iOS and Android."
+msgstr "Solutions mobiles multiplateformes et natives pour iOS et Android."
+
+#: src/routes/index.tsx:20
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "Solutions de <0>Logiciels</0> Sur Mesure pour les Entreprises Modernes"
 
@@ -39,12 +59,18 @@ msgstr "Description par défaut du site web"
 msgid "Developer Website"
 msgstr "Site Web de Développeur"
 
+#: src/routes/index.tsx:54
+msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
+msgstr "Veiller à ce que votre logiciel reste rapide, sécurisé et à jour grâce à une surveillance 24/7."
+
 #: src/components/Header.tsx:31
 #: src/components/Header.tsx:33
+#: src/routes/index.tsx:31
+#: src/routes/index.tsx:32
 msgid "Expertise"
 msgstr "Expertise"
 
-#: src/routes/index.tsx:22
+#: src/routes/index.tsx:24
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "Développeur Full-Stack freelance spécialisé dans les applications web et mobiles performantes avec React, Angular et Flutter."
 
@@ -52,7 +78,7 @@ msgstr "Développeur Full-Stack freelance spécialisé dans les applications web
 msgid "Freelance home page"
 msgstr "Accueil Freelance"
 
-#: src/routes/index.tsx:24
+#: src/routes/index.tsx:26
 msgid "Get a Quote"
 msgstr "Obtenir un devis"
 
@@ -60,9 +86,25 @@ msgstr "Obtenir un devis"
 msgid "Main navigation"
 msgstr "Navigation principale"
 
-#: src/routes/index.tsx:26
+#: src/routes/index.tsx:53
+msgid "Maintenance & Support"
+msgstr "Maintenance & Support"
+
+#: src/routes/index.tsx:43
+msgid "Mobile App Development"
+msgstr "Développement d'App Mobiles"
+
+#: src/routes/index.tsx:28
 msgid "Modern workspace with laptop showing code"
 msgstr "Espace de travail moderne avec un ordinateur portable affichant du code"
+
+#: src/routes/index.tsx:48
+msgid "Offline Capability"
+msgstr "Capacité Hors Ligne"
+
+#: src/routes/index.tsx:59
+msgid "Performance Audits"
+msgstr "Audits de Performance"
 
 #: src/components/Header.tsx:51
 #: src/components/Header.tsx:53
@@ -74,6 +116,18 @@ msgstr "Processus"
 msgid "Projets"
 msgstr "Projets"
 
-#: src/routes/index.tsx:23
+#: src/routes/index.tsx:47
+msgid "Push Notifications"
+msgstr "Notifications Push"
+
+#: src/routes/index.tsx:57
+msgid "Security Patching"
+msgstr "Correctifs de Sécurité"
+
+#: src/routes/index.tsx:25
 msgid "View Portfolio"
 msgstr "Voir le Portfolio"
+
+#: src/routes/index.tsx:37
+msgid "Web Development"
+msgstr "Développement Web"
