@@ -13,9 +13,21 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/routes/index.tsx:16
+#: src/routes/index.tsx:46
+msgid "App Store Deployment"
+msgstr "النشر على متجر التطبيقات"
+
+#: src/routes/index.tsx:18
 msgid "Available for new projects"
 msgstr "متاح للمشاريع الجديدة"
+
+#: src/routes/index.tsx:25
+msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
+msgstr "بناء تطبيقات ويب قابلة للتطوير وصديقة لمحركات البحث باستخدام تقنيات حديثة."
+
+#: src/routes/index.tsx:58
+msgid "Cloud Infrastructure"
+msgstr "البنية التحتية السحابية"
 
 #: src/components/Header.tsx:61
 msgid "Contact"
@@ -25,7 +37,15 @@ msgstr "اتصل بنا"
 msgid "Contact me"
 msgstr "اتصل بي"
 
-#: src/routes/index.tsx:18
+#: src/routes/index.tsx:33
+msgid "Core Services"
+msgstr "الخدمات الأساسية"
+
+#: src/routes/index.tsx:44
+msgid "Cross-platform and native mobile solutions for iOS and Android."
+msgstr "حلول جوال متعددة المنصات وأصلية لنظامي iOS و Android."
+
+#: src/routes/index.tsx:20
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "حلول <0>برمجية</0> مخصصة للشركات الحديثة"
 
@@ -39,12 +59,18 @@ msgstr "الوصف الافتراضي للموقع"
 msgid "Developer Website"
 msgstr "موقع المطور"
 
+#: src/routes/index.tsx:54
+msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
+msgstr "ضمان بقاء برمجياتك سريعة وآمنة ومحدثة من خلال مراقبة على مدار الساعة."
+
 #: src/components/Header.tsx:31
 #: src/components/Header.tsx:33
+#: src/routes/index.tsx:31
+#: src/routes/index.tsx:32
 msgid "Expertise"
 msgstr "خبرة"
 
-#: src/routes/index.tsx:22
+#: src/routes/index.tsx:24
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "مطور Full-Stack مستقل متخصص في تطبيقات الويب والهواتف عالية الأداء باستخدام React و Angular و Flutter."
 
@@ -52,7 +78,7 @@ msgstr "مطور Full-Stack مستقل متخصص في تطبيقات الويب
 msgid "Freelance home page"
 msgstr "الصفحة الرئيسية للمستقل"
 
-#: src/routes/index.tsx:24
+#: src/routes/index.tsx:26
 msgid "Get a Quote"
 msgstr "احصل على عرض سعر"
 
@@ -60,9 +86,25 @@ msgstr "احصل على عرض سعر"
 msgid "Main navigation"
 msgstr "التنقل الرئيسي"
 
-#: src/routes/index.tsx:26
+#: src/routes/index.tsx:53
+msgid "Maintenance & Support"
+msgstr "الصيانة والدعم"
+
+#: src/routes/index.tsx:43
+msgid "Mobile App Development"
+msgstr "تطوير تطبيقات الجوال"
+
+#: src/routes/index.tsx:28
 msgid "Modern workspace with laptop showing code"
 msgstr "مساحة عمل حديثة مع كمبيوتر محمول يعرض الكود"
+
+#: src/routes/index.tsx:48
+msgid "Offline Capability"
+msgstr "العمل دون اتصال"
+
+#: src/routes/index.tsx:59
+msgid "Performance Audits"
+msgstr "تدقيق الأداء"
 
 #: src/components/Header.tsx:51
 #: src/components/Header.tsx:53
@@ -74,6 +116,18 @@ msgstr "عملية"
 msgid "Projets"
 msgstr "مشاريع"
 
-#: src/routes/index.tsx:23
+#: src/routes/index.tsx:47
+msgid "Push Notifications"
+msgstr "إشعارات الدفع"
+
+#: src/routes/index.tsx:57
+msgid "Security Patching"
+msgstr "ترقيع الثغرات الأمنية"
+
+#: src/routes/index.tsx:25
 msgid "View Portfolio"
 msgstr "عرض الأعمال"
+
+#: src/routes/index.tsx:37
+msgid "Web Development"
+msgstr "تطوير الويب"
