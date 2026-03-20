@@ -1,5 +1,22 @@
 # CHANGELOG developer-website
 
+## 🚀 0.4.0 - 20/03/2026
+
+### Added
+
+- **Component**: New `Hero` component with customizable layout (image position left/right).
+- **Accessibility**: ARIA labels and roles for the `Hero` component and status badge.
+- **Localization**: Added support and translations for Chinese (zh-CN), Arabic (ar-SA), and Spanish (es-ES).
+
+### Changed
+
+- **I18n**: Refactored `Hero` component strings to use LinguiJS `t` and `Trans` macros.
+- **Hero**: Enhanced `Hero` component with gradient glow effects and pulsing animations.
+
+### Fixed
+
+- No fixes
+
 ## 🚀 0.3.0 - 20/03/2026
 
 ### Added
