@@ -13,28 +13,43 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/Header.tsx:32
+#: src/components/Header.tsx:61
 msgid "Contact"
 msgstr "اتصل بنا"
 
-#: src/routes/__root.tsx:95
+#: src/components/Header.tsx:60
+msgid "Contact me"
+msgstr "اتصل بي"
+
 #: src/routes/__root.tsx:107
+#: src/routes/__root.tsx:113
 msgid "Default description of the website"
 msgstr "الوصف الافتراضي للموقع"
 
-#: src/routes/__root.tsx:91
-#: src/routes/__root.tsx:103
+#: src/routes/__root.tsx:104
+#: src/routes/__root.tsx:110
 msgid "Developer Website"
 msgstr "موقع المطور"
 
-#: src/components/Header.tsx:20
+#: src/components/Header.tsx:31
+#: src/components/Header.tsx:33
 msgid "Expertise"
 msgstr "خبرة"
 
-#: src/components/Header.tsx:26
+#: src/components/Header.tsx:14
+msgid "Freelance home page"
+msgstr "الصفحة الرئيسية للمستقل"
+
+#: src/components/Header.tsx:22
+msgid "Main navigation"
+msgstr "التنقل الرئيسي"
+
+#: src/components/Header.tsx:51
+#: src/components/Header.tsx:53
 msgid "Process"
 msgstr "عملية"
 
-#: src/components/Header.tsx:23
+#: src/components/Header.tsx:41
+#: src/components/Header.tsx:43
 msgid "Projets"
 msgstr "مشاريع"

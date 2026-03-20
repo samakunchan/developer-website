@@ -1,1 +1,1 @@
-/*eslint-disable*/module.exports={messages:JSON.parse("{\"1B9XX0\":[\"流程\"],\"PXKAnm\":[\"专长\"],\"gKG3yB\":[\"网站的默认描述\"],\"jfC/xh\":[\"联系\"],\"krwTJM\":[\"开发者网站\"],\"qj/mXe\":[\"项目\"]}")};
+/*eslint-disable*/module.exports={messages:JSON.parse("{\"1B9XX0\":[\"流程\"],\"8dDQQu\":[\"联系我\"],\"HRha/x\":[\"主导航\"],\"PXKAnm\":[\"专长\"],\"gKG3yB\":[\"网站的默认描述\"],\"jfC/xh\":[\"联系\"],\"jftTl2\":[\"自由职业者主页\"],\"krwTJM\":[\"开发者网站\"],\"qj/mXe\":[\"项目\"]}")};
