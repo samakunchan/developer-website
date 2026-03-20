@@ -6,6 +6,7 @@
 
 - **Localization**: Translation of website title and description using LinguiJS.
 - **Internationalization**: Implementation of `<Trans>` macros for navigation links.
+- **Localization**: Translation of website aria-label header using LinguiJS.
 
 ### Changed
 
