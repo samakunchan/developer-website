@@ -1,6 +1,22 @@
 # CHANGELOG developer-website
 
-## 🚀 0.4.0 - 20/03/2026
+## 🚀 0.5.0 - 20/03/2026
+
+### Added
+
+- **Component**: New `Services` component with responsive grid and premium glassmorphism design.
+- **Component**: Reusable `ServiceCard` component with support for icons, badges, and features list.
+- **Accessibility**: ARIA labels, semantic roles, and improved heading hierarchy (`h2`) for the `Services` component.
+- **Localization**: Full translations for the `Services` component in Spanish (es-ES), French (fr-FR), Arabic (ar-SA), and Chinese (zh-CN).
+
+### Changed
+
+- **SEO**: Updated `Services` title from `h3` to `h2` for better SEO structure.
+- **Styles**: Added `_services.css` for component-specific styling and integrated into core design system.
+
+### Fixed
+
+- No fixes
 
 ### Added
 
