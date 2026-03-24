@@ -29,9 +29,9 @@ export function CTA({
           <div className="cta__glow cta__glow--bottom" aria-hidden="true"></div>
 
           <div className="cta__content">
-            <h3 id="cta-title" className="cta__title">
+            <h2 id="cta-title" className="cta__title">
               {title}
-            </h3>
+            </h2>
             <p className="cta__description">{description}</p>
 
             <div className="cta__actions">
