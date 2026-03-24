@@ -17,19 +17,19 @@ msgstr ""
 msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
 msgstr "© {currentYear} DevPort Freelance Studio. Todos los derechos reservados."
 
-#: src/routes/index.tsx:48
+#: src/routes/index.tsx:49
 msgid "App Store Deployment"
 msgstr "Despliegue en la App Store"
 
-#: src/routes/index.tsx:20
+#: src/routes/index.tsx:21
 msgid "Available for new projects"
 msgstr "Disponible para nuevos proyectos"
 
-#: src/routes/index.tsx:40
+#: src/routes/index.tsx:41
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Construcción de aplicaciones web escalables y optimizadas para SEO con pilas tecnológicas modernas."
 
-#: src/routes/index.tsx:60
+#: src/routes/index.tsx:61
 msgid "Cloud Infrastructure"
 msgstr "Infraestructura en la nube"
 
@@ -41,48 +41,64 @@ msgstr "Contacto"
 msgid "Contact me"
 msgstr "Contáctame"
 
-#: src/routes/index.tsx:35
+#: src/routes/index.tsx:36
 msgid "Core Services"
 msgstr "Servicios Principales"
 
-#: src/routes/index.tsx:46
+#: src/routes/index.tsx:47
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "Soluciones móviles nativas y multiplataforma para iOS y Android."
 
-#: src/routes/index.tsx:22
+#: src/routes/index.tsx:23
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "Soluciones de <0>Software</0> a Medida para Empresas Modernas"
+
+#: src/routes/index.tsx:75
+msgid "Deep dive into your business goals, target audience, and technical requirements."
+msgstr "Inmersión profunda en tus objetivos de negocio, público objetivo y requisitos técnicos."
 
 #: src/routes/__root.tsx:107
 #: src/routes/__root.tsx:113
 msgid "Default description of the website"
 msgstr "Descripción predeterminada del sitio web"
 
+#: src/routes/index.tsx:95
+msgid "Deployment to production servers and ongoing performance monitoring."
+msgstr "Despliegue en servidores de producción y monitoreo continuo del rendimiento."
+
+#: src/routes/index.tsx:83
+msgid "Design & Development"
+msgstr "Diseño y Desarrollo"
+
 #: src/routes/__root.tsx:104
 #: src/routes/__root.tsx:110
 msgid "Developer Website"
 msgstr "Sitio Web del Desarrollador"
 
+#: src/routes/index.tsx:73
+msgid "Discovery & Strategy"
+msgstr "Descubrimiento y Estrategia"
+
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "Correo electrónico"
 
-#: src/routes/index.tsx:69
+#: src/routes/index.tsx:107
 msgid "Email Me"
 msgstr "Envíame un email"
 
-#: src/routes/index.tsx:56
+#: src/routes/index.tsx:57
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "Asegurar que su software se mantenga rápido, seguro y actualizado con monitoreo 24/7."
 
 #: src/components/Header.tsx:31
 #: src/components/Header.tsx:33
-#: src/routes/index.tsx:33
 #: src/routes/index.tsx:34
+#: src/routes/index.tsx:35
 msgid "Expertise"
 msgstr "Experiencia"
 
-#: src/routes/index.tsx:26
+#: src/routes/index.tsx:27
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "Desarrollador Full-Stack freelance especializado en aplicaciones web y móviles de alto rendimiento con React, Angular y Flutter."
 
@@ -90,7 +106,7 @@ msgstr "Desarrollador Full-Stack freelance especializado en aplicaciones web y m
 msgid "Freelance home page"
 msgstr "Página de inicio de Freelance"
 
-#: src/routes/index.tsx:28
+#: src/routes/index.tsx:29
 msgid "Get a Quote"
 msgstr "Obtener un presupuesto"
 
@@ -98,7 +114,19 @@ msgstr "Obtener un presupuesto"
 msgid "GitHub"
 msgstr "GitHub"
 
-#: src/routes/index.tsx:67
+#: src/routes/index.tsx:69
+msgid "How I Work"
+msgstr "Cómo trabajo"
+
+#: src/routes/index.tsx:85
+msgid "Iterative coding sessions with weekly updates and live staging environments."
+msgstr "Sesiones de codificación iterativas con actualizaciones semanales y entornos de prueba en vivo."
+
+#: src/routes/index.tsx:93
+msgid "Launch & Scaling"
+msgstr "Lanzamiento y Escalamiento"
+
+#: src/routes/index.tsx:105
 msgid "Let's discuss your project and see how we can build something amazing together."
 msgstr "Hablemos de tu proyecto y veamos cómo podemos construir algo increíble juntos."
 
@@ -106,28 +134,29 @@ msgstr "Hablemos de tu proyecto y veamos cómo podemos construir algo increíble
 msgid "Main navigation"
 msgstr "Navegación principal"
 
-#: src/routes/index.tsx:55
+#: src/routes/index.tsx:56
 msgid "Maintenance & Support"
 msgstr "Mantenimiento y Soporte"
 
-#: src/routes/index.tsx:45
+#: src/routes/index.tsx:46
 msgid "Mobile App Development"
 msgstr "Desarrollo de Aplicaciones Móviles"
 
-#: src/routes/index.tsx:30
+#: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
 msgstr "Espacio de trabajo moderno con un portátil mostrando código"
 
-#: src/routes/index.tsx:50
+#: src/routes/index.tsx:51
 msgid "Offline Capability"
 msgstr "Capacidad fuera de línea"
 
-#: src/routes/index.tsx:61
+#: src/routes/index.tsx:62
 msgid "Performance Audits"
 msgstr "Auditorías de rendimiento"
 
 #: src/components/Header.tsx:51
 #: src/components/Header.tsx:53
+#: src/routes/index.tsx:67
 msgid "Process"
 msgstr "Proceso"
 
@@ -136,19 +165,19 @@ msgstr "Proceso"
 msgid "Projets"
 msgstr "Proyectos"
 
-#: src/routes/index.tsx:49
+#: src/routes/index.tsx:50
 msgid "Push Notifications"
 msgstr "Notificaciones Push"
 
-#: src/routes/index.tsx:66
+#: src/routes/index.tsx:104
 msgid "Ready to bring your idea to life?"
 msgstr "¿Listo para dar vida a tu idea?"
 
-#: src/routes/index.tsx:68
+#: src/routes/index.tsx:106
 msgid "Schedule a Call"
 msgstr "Programar una llamada"
 
-#: src/routes/index.tsx:59
+#: src/routes/index.tsx:60
 msgid "Security Patching"
 msgstr "Parches de seguridad"
 
@@ -160,10 +189,14 @@ msgstr "Enlaces a redes sociales"
 msgid "Twitter / X"
 msgstr "Twitter / X"
 
-#: src/routes/index.tsx:27
+#: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "Ver Portafolio"
 
-#: src/routes/index.tsx:39
+#: src/routes/index.tsx:40
 msgid "Web Development"
 msgstr "Desarrollo Web"
+
+#: src/routes/index.tsx:68
+msgid "Workflow"
+msgstr "Flujo de trabajo"
