@@ -1,15 +1,19 @@
 import React from 'react';
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'outline';
+  fullWidth?: boolean;
 };
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ children, variant = 'primary', className = '', ...props }, ref) => {
+  (
+    { children, variant = 'primary', fullWidth, className = '', ...props },
+    ref,
+  ) => {
     return (
       <button
         ref={ref}
-        className={`btn btn--${variant} ${className}`}
+        className={`btn btn--${variant} ${fullWidth ? 'btn--full' : ''} ${className}`}
         {...props}
       >
         {children}

@@ -17,8 +17,8 @@ interface HeroProps {
     href?: string;
     onClick?: () => void;
   };
-  imageSrc: string;
-  imageAlt: string;
+  imageSrc?: string;
+  imageAlt?: string;
   imagePosition?: 'left' | 'right';
   ariaLabel?: string;
 }
@@ -33,9 +33,13 @@ export function Hero({
   imageAlt,
   imagePosition = 'right',
 }: HeroProps) {
+  const hasImage = !!imageSrc;
+
   return (
     <section
-      className={`hero${imagePosition === 'left' ? ' hero--image-left' : ''}`}
+      className={`hero${imagePosition === 'left' ? ' hero--image-left' : ''} ${
+        !hasImage ? 'hero--no-image' : ''
+      }`}
       aria-labelledby="hero-title"
     >
       <Container className="hero__container">
@@ -78,17 +82,19 @@ export function Hero({
           </div>
         </div>
 
-        <div className="hero__image-wrapper">
-          <div className="hero__image-glow"></div>
-          <div className="hero__image-container">
-            <ImageNetwork
-              src={imageSrc}
-              alt={imageAlt}
-              className="hero__image"
-              layout="fullWidth"
-            />
+        {hasImage && (
+          <div className="hero__image-wrapper">
+            <div className="hero__image-glow"></div>
+            <div className="hero__image-container">
+              <ImageNetwork
+                src={imageSrc}
+                alt={imageAlt || ''}
+                className="hero__image"
+                layout="fullWidth"
+              />
+            </div>
           </div>
-        </div>
+        )}
       </Container>
     </section>
   );
