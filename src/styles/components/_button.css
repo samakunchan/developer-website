@@ -38,3 +38,18 @@
 .btn--secondary:hover {
   background-color: var(--color-slate-700);
 }
+
+.btn--outline {
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1px solid rgba(37, 244, 244, 0.2);
+}
+
+.btn--outline:hover {
+  background-color: rgba(37, 244, 244, 0.05);
+  border-color: var(--color-primary);
+}
+
+.btn--full {
+  width: 100%;
+}
