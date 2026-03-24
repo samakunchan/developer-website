@@ -13,15 +13,30 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/routes/services.tsx:79
+#: src/routes/services.tsx:92
+#: src/routes/services.tsx:106
+msgid "/start"
+msgstr "/起"
+
 #: src/components/Footer.tsx:23
 msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
 msgstr "© {currentYear} DevPort 自由职业工作室。保留所有权利。"
+
+#: src/routes/services.tsx:82
+msgid "3 Pages"
+msgstr "3 页"
 
 #: src/components/Header.tsx:41
 msgid "About"
 msgstr "关于"
 
+#: src/routes/services.tsx:113
+msgid "API Development"
+msgstr "API 开发"
+
 #: src/routes/index.tsx:49
+#: src/routes/services.tsx:53
 msgid "App Store Deployment"
 msgstr "App Store 部署"
 
@@ -30,32 +45,74 @@ msgid "Available for new projects"
 msgstr "可承接新项目"
 
 #: src/routes/index.tsx:41
+#: src/routes/services.tsx:39
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "使用现代技术栈构建可扩展、SEO 友好的 Web 应用程序。"
 
+#: src/routes/services.tsx:80
+msgid "Choose Basic"
+msgstr "选择基础版"
+
+#: src/routes/services.tsx:107
+msgid "Choose Enterprise"
+msgstr "选择企业版"
+
+#: src/routes/services.tsx:93
+msgid "Choose Pro"
+msgstr "选择专业版"
+
+#: src/routes/services.tsx:27
+msgid "Choose the perfect service package tailored to your business needs. From simple portfolios to complex SaaS platforms."
+msgstr "选择适合您业务需求的完美服务方案。从简单的作品集到复杂的 SaaS 平台。"
+
 #: src/routes/index.tsx:61
+#: src/routes/services.tsx:65
 msgid "Cloud Infrastructure"
 msgstr "云基础设施"
+
+#: src/routes/services.tsx:85
+msgid "CMS Integration"
+msgstr "CMS 集成"
 
 #: src/components/Header.tsx:58
 msgid "Contact"
 msgstr "联系"
 
 #: src/components/Header.tsx:57
+#: src/routes/services.tsx:29
+#: src/routes/services.tsx:124
 msgid "Contact me"
 msgstr "联系我"
+
+#: src/routes/services.tsx:29
+#: src/routes/services.tsx:128
+#~ msgid "Contact Me"
+#~ msgstr ""
 
 #: src/routes/index.tsx:36
 msgid "Core Services"
 msgstr "核心服务"
 
 #: src/routes/index.tsx:47
+#: src/routes/services.tsx:50
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "适用于 iOS 和 Android 的跨平台和原生移动解决方案。"
+
+#: src/routes/services.tsx:96
+msgid "Custom Backend"
+msgstr "定制后端"
+
+#: src/routes/services.tsx:103
+msgid "Custom SaaS"
+msgstr "定制 SaaS"
 
 #: src/routes/index.tsx:23
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "面向现代企业的定制软件<0>解决方案</0>"
+
+#: src/routes/services.tsx:98
+msgid "Dashboard UI"
+msgstr "仪表板 UI"
 
 #: src/routes/index.tsx:75
 msgid "Deep dive into your business goals, target audience, and technical requirements."
@@ -79,6 +136,10 @@ msgstr "设计与开发"
 msgid "Developer Website"
 msgstr "开发者网站"
 
+#: src/routes/services.tsx:31
+#~ msgid "Developer working on a pricing table"
+#~ msgstr "正在开发定价表的开发人员"
+
 #: src/routes/index.tsx:73
 msgid "Discovery & Strategy"
 msgstr "探索与策略"
@@ -92,13 +153,19 @@ msgid "Email Me"
 msgstr "给我发邮件"
 
 #: src/routes/index.tsx:57
+#: src/routes/services.tsx:61
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "通过 24/7 监控确保您的软件保持快速、安全和最新状态。"
 
 #: src/routes/index.tsx:34
 #: src/routes/index.tsx:35
+#: src/routes/services.tsx:33
 msgid "Expertise"
 msgstr "专长"
+
+#: src/routes/services.tsx:23
+msgid "Flexible <0>Service</0> Plans for Your Success"
+msgstr "助您成功的<0>灵活计划</0>"
 
 #: src/routes/index.tsx:27
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
@@ -108,6 +175,10 @@ msgstr "自由职业全栈开发人员，专注于使用 React、Angular 和 Flu
 msgid "Freelance home page"
 msgstr "自由职业者主页"
 
+#: src/routes/services.tsx:90
+msgid "Full-featured apps with authentication and CMS."
+msgstr "包含身份验证和 CMS 的全功能应用。"
+
 #: src/routes/index.tsx:29
 msgid "Get a Quote"
 msgstr "获取报价"
@@ -116,9 +187,17 @@ msgstr "获取报价"
 msgid "GitHub"
 msgstr "GitHub"
 
+#: src/routes/services.tsx:114
+msgid "High-Load Optimization"
+msgstr "高负载优化"
+
 #: src/routes/index.tsx:69
 msgid "How I Work"
 msgstr "我的工作流程"
+
+#: src/routes/services.tsx:73
+msgid "Investment"
+msgstr "投资"
 
 #: src/routes/index.tsx:85
 msgid "Iterative coding sessions with weekly updates and live staging environments."
@@ -132,29 +211,68 @@ msgstr "发布与扩展"
 msgid "Let's discuss your project and see how we can build something amazing together."
 msgstr "让我们讨论您的项目，看看如何一起构建出令人惊叹的作品。"
 
+#: src/routes/services.tsx:122
+msgid "Let's discuss your requirements and find the best solution for your business."
+msgstr "让我们讨论您的需求，为您的业务寻找最佳解决方案。"
+
 #: src/components/Header.tsx:22
 msgid "Main navigation"
 msgstr "主导航"
 
 #: src/routes/index.tsx:56
+#: src/routes/services.tsx:60
 msgid "Maintenance & Support"
 msgstr "维护与支持"
 
 #: src/routes/index.tsx:46
+#: src/routes/services.tsx:49
 msgid "Mobile App Development"
 msgstr "移动应用开发"
+
+#: src/routes/services.tsx:83
+msgid "Mobile Responsive"
+msgstr "移动端响应式"
 
 #: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
 msgstr "显示代码的笔记本电脑的现代工作空间"
 
+#: src/components/Pricing.tsx:28
+msgid "Most Popular"
+msgstr "最受欢迎"
+
+#: src/routes/services.tsx:110
+msgid "Multi-platform (Web/Mobile)"
+msgstr "多平台 (Web/移动端)"
+
+#: src/routes/services.tsx:34
+msgid "My Specialized Services"
+msgstr "我的专业服务"
+
 #: src/routes/index.tsx:51
+#: src/routes/services.tsx:55
 msgid "Offline Capability"
 msgstr "离线功能"
+
+#: src/routes/services.tsx:78
+msgid "Perfect for personal brands and portfolios."
+msgstr "非常适合个人品牌和作品集。"
 
 #: src/routes/index.tsx:62
 msgid "Performance Audits"
 msgstr "性能审核"
+
+#: src/routes/services.tsx:43
+msgid "Performance Optimization"
+msgstr "性能优化"
+
+#: src/routes/services.tsx:74
+msgid "Pricing Packages"
+msgstr "定价方案"
+
+#: src/routes/services.tsx:115
+msgid "Priority Support"
+msgstr "优先支持"
 
 #: src/routes/index.tsx:67
 msgid "Process"
@@ -170,6 +288,7 @@ msgstr "项目"
 #~ msgstr "项目"
 
 #: src/routes/index.tsx:50
+#: src/routes/services.tsx:54
 msgid "Push Notifications"
 msgstr "推送通知"
 
@@ -177,13 +296,39 @@ msgstr "推送通知"
 msgid "Ready to bring your idea to life?"
 msgstr "准备好让您的想法成真了吗？"
 
+#: src/routes/services.tsx:121
+msgid "Ready to start your project?"
+msgstr "准备好开始您的项目了吗？"
+
+#: src/routes/services.tsx:66
+msgid "Regular Backups"
+msgstr "定期备份"
+
+#: src/routes/services.tsx:42
+msgid "Responsive Design"
+msgstr "响应式设计"
+
+#: src/routes/services.tsx:104
+msgid "Scalable enterprise-grade software solutions."
+msgstr "可扩展的企业级软件解决方案。"
+
 #: src/routes/index.tsx:106
+#: src/routes/services.tsx:123
 msgid "Schedule a Call"
 msgstr "预约通话"
 
 #: src/routes/index.tsx:60
+#: src/routes/services.tsx:64
 msgid "Security Patching"
 msgstr "安全补丁"
+
+#: src/routes/services.tsx:44
+msgid "SEO Best Practices"
+msgstr "SEO 最佳实践"
+
+#: src/routes/services.tsx:84
+msgid "SEO Optimization"
+msgstr "SEO 优化"
 
 #: src/components/Header.tsx:50
 msgid "Service&pricing"
@@ -193,15 +338,40 @@ msgstr "服务与定价"
 msgid "Social media links"
 msgstr "社交媒体链接"
 
+#: src/routes/services.tsx:21
+msgid "Solutions & Pricing"
+msgstr "解决方案与定价"
+
+#: src/routes/services.tsx:77
+msgid "Static Site"
+msgstr "静态网站"
+
+#: src/routes/services.tsx:99
+msgid "Stripe Integration"
+msgstr "Stripe 集成"
+
 #: src/components/Footer.tsx:48
 msgid "Twitter / X"
 msgstr "Twitter / X"
+
+#: src/routes/services.tsx:97
+msgid "User Authentication"
+msgstr "用户身份验证"
 
 #: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "查看作品集"
 
+#: src/routes/services.tsx:28
+msgid "View Pricing"
+msgstr "查看定价"
+
+#: src/routes/services.tsx:89
+msgid "Web Application"
+msgstr "Web 应用程序"
+
 #: src/routes/index.tsx:40
+#: src/routes/services.tsx:38
 msgid "Web Development"
 msgstr "Web 开发"
 
