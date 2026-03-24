@@ -4,6 +4,8 @@ import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { Services, ServiceCard } from '../components/Services';
+import { CTA } from '../components/CTA';
+import { Footer } from '../components/Footer';
 import '../styles/main.css';
 
 export const Route = createFileRoute('/')({
@@ -60,6 +62,13 @@ function Index() {
           ]}
         />
       </Services>
+      <CTA
+        title={<Trans>Ready to bring your idea to life?</Trans>}
+        description={t`Let's discuss your project and see how we can build something amazing together.`}
+        primaryButton={{ text: t`Schedule a Call` }}
+        secondaryButton={{ text: t`Email Me` }}
+      />
+      <Footer />
     </>
   );
 }
