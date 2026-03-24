@@ -1,5 +1,21 @@
 # CHANGELOG developer-website
 
+## 🚀 0.7.0 - 24/03/2026
+
+### Added
+
+- No addes.
+
+### Changed
+
+- **Navigation**: Updated Header menu items to "Projects", "About", and "Service&pricing" for a more professional look.
+- **Localization**: Updated translation catalogs for all supported locales (en-US, fr-FR, es-ES, zh-CN, ar-SA).
+- **Versioning**: Bumped project version to 0.7.0.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.6.0 - 24/03/2026
 
 ### Added
@@ -32,24 +48,14 @@
 - **Component**: Reusable `ServiceCard` component with support for icons, badges, and features list.
 - **Accessibility**: ARIA labels, semantic roles, and improved heading hierarchy (`h2`) for the `Services` component.
 - **Localization**: Full translations for the `Services` component in Spanish (es-ES), French (fr-FR), Arabic (ar-SA), and Chinese (zh-CN).
-
-### Changed
-
-- **SEO**: Updated `Services` title from `h3` to `h2` for better SEO structure.
-- **Styles**: Added `_services.css` for component-specific styling and integrated into core design system.
-
-### Fixed
-
-- No fixes
-
-### Added
-
 - **Component**: New `Hero` component with customizable layout (image position left/right).
 - **Accessibility**: ARIA labels and roles for the `Hero` component and status badge.
 - **Localization**: Added support and translations for Chinese (zh-CN), Arabic (ar-SA), and Spanish (es-ES).
 
 ### Changed
 
+- **SEO**: Updated `Services` title from `h3` to `h2` for better SEO structure.
+- **Styles**: Added `_services.css` for component-specific styling and integrated into core design system.
 - **I18n**: Refactored `Hero` component strings to use LinguiJS `t` and `Trans` macros.
 - **Hero**: Enhanced `Hero` component with gradient glow effects and pulsing animations.
 
