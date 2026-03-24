@@ -28,9 +28,8 @@ export const Header: React.FC = () => {
                 activeProps={{
                   className: 'header__nav-link--active',
                 }}
-                hash={t`Expertise`}
               >
-                <Trans>Expertise</Trans>
+                <Trans>Projects</Trans>
               </Link>
             </li>
             <li>
@@ -38,9 +37,8 @@ export const Header: React.FC = () => {
                 to="/"
                 className="header__nav-link"
                 activeProps={{ className: 'header__nav-link--active' }}
-                hash={t`Projets`}
               >
-                <Trans>Projets</Trans>
+                <Trans>About</Trans>
               </Link>
             </li>
             <li>
@@ -48,9 +46,8 @@ export const Header: React.FC = () => {
                 to="/"
                 className="header__nav-link"
                 activeProps={{ className: 'header__nav-link--active' }}
-                hash={t`Process`}
               >
-                <Trans>Process</Trans>
+                <Trans>Service&pricing</Trans>
               </Link>
             </li>
           </ul>

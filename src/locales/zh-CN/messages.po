@@ -17,6 +17,10 @@ msgstr ""
 msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
 msgstr "© {currentYear} DevPort 自由职业工作室。保留所有权利。"
 
+#: src/components/Header.tsx:41
+msgid "About"
+msgstr "关于"
+
 #: src/routes/index.tsx:49
 msgid "App Store Deployment"
 msgstr "App Store 部署"
@@ -33,11 +37,11 @@ msgstr "使用现代技术栈构建可扩展、SEO 友好的 Web 应用程序。
 msgid "Cloud Infrastructure"
 msgstr "云基础设施"
 
-#: src/components/Header.tsx:61
+#: src/components/Header.tsx:58
 msgid "Contact"
 msgstr "联系"
 
-#: src/components/Header.tsx:60
+#: src/components/Header.tsx:57
 msgid "Contact me"
 msgstr "联系我"
 
@@ -91,8 +95,6 @@ msgstr "给我发邮件"
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "通过 24/7 监控确保您的软件保持快速、安全和最新状态。"
 
-#: src/components/Header.tsx:31
-#: src/components/Header.tsx:33
 #: src/routes/index.tsx:34
 #: src/routes/index.tsx:35
 msgid "Expertise"
@@ -154,16 +156,18 @@ msgstr "离线功能"
 msgid "Performance Audits"
 msgstr "性能审核"
 
-#: src/components/Header.tsx:51
-#: src/components/Header.tsx:53
 #: src/routes/index.tsx:67
 msgid "Process"
 msgstr "流程"
 
+#: src/components/Header.tsx:32
+msgid "Projects"
+msgstr "项目"
+
 #: src/components/Header.tsx:41
 #: src/components/Header.tsx:43
-msgid "Projets"
-msgstr "项目"
+#~ msgid "Projets"
+#~ msgstr "项目"
 
 #: src/routes/index.tsx:50
 msgid "Push Notifications"
@@ -180,6 +184,10 @@ msgstr "预约通话"
 #: src/routes/index.tsx:60
 msgid "Security Patching"
 msgstr "安全补丁"
+
+#: src/components/Header.tsx:50
+msgid "Service&pricing"
+msgstr "服务与定价"
 
 #: src/components/Footer.tsx:28
 msgid "Social media links"
