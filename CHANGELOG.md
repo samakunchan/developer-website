@@ -1,5 +1,29 @@
 # CHANGELOG developer-website
 
+## 🚀 0.6.0 - 24/03/2026
+
+### Added
+
+- **Component**:
+  - New `Process` section component featuring a premium terminal mockup with syntax highlighting.
+  - New `CTA` (Call to Action) section with gradient glow effects and glassmorphism.
+  - New `Footer` component with brand logo, copyright, and social media links.
+- **Localization**: Added full translations for the new `Process`, `CTA`, and `Footer` sections in Arabic (ar-SA), Spanish (es-ES), French (fr-FR), and Chinese (zh-CN).
+- **Localization**: Updated translations for the `Maintenance & Support` section in `index.tsx`.
+
+### Changed
+
+- **Versioning**: Bumped project version to 0.6.0.
+- **I18n**: Ran `yarn extract` and `yarn compile` to update all message catalogs.
+- **Styles**:
+  - Added `_process.css` to the main design system.
+  - Added `_cta_.css` to the main design system.
+  - Added `_footer_.css` to the main design system.
+
+### Fixed
+
+- **I18n**: Resolved missing translations for workflow and service descriptions across all supported locales.
+
 ## 🚀 0.5.0 - 20/03/2026
 
 ### Added
