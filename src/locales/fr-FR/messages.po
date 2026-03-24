@@ -17,6 +17,10 @@ msgstr ""
 msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
 msgstr "© {currentYear} DevPort Freelance Studio. Tous droits réservés."
 
+#: src/components/Header.tsx:41
+msgid "About"
+msgstr "À propos"
+
 #: src/routes/index.tsx:49
 msgid "App Store Deployment"
 msgstr "Déploiement sur l'App Store"
@@ -33,11 +37,11 @@ msgstr "Construction d'applications web évolutives et optimisées pour le SEO a
 msgid "Cloud Infrastructure"
 msgstr "Infrastructure Cloud"
 
-#: src/components/Header.tsx:61
+#: src/components/Header.tsx:58
 msgid "Contact"
 msgstr "Contact"
 
-#: src/components/Header.tsx:60
+#: src/components/Header.tsx:57
 msgid "Contact me"
 msgstr "Me contacter"
 
@@ -91,8 +95,6 @@ msgstr "M'envoyer un e-mail"
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "Veiller à ce que votre logiciel reste rapide, sécurisé et à jour grâce à une surveillance 24/7."
 
-#: src/components/Header.tsx:31
-#: src/components/Header.tsx:33
 #: src/routes/index.tsx:34
 #: src/routes/index.tsx:35
 msgid "Expertise"
@@ -154,16 +156,18 @@ msgstr "Capacité Hors Ligne"
 msgid "Performance Audits"
 msgstr "Audits de Performance"
 
-#: src/components/Header.tsx:51
-#: src/components/Header.tsx:53
 #: src/routes/index.tsx:67
 msgid "Process"
 msgstr "Processus"
 
+#: src/components/Header.tsx:32
+msgid "Projects"
+msgstr "Projets"
+
 #: src/components/Header.tsx:41
 #: src/components/Header.tsx:43
-msgid "Projets"
-msgstr "Projets"
+#~ msgid "Projets"
+#~ msgstr "Projets"
 
 #: src/routes/index.tsx:50
 msgid "Push Notifications"
@@ -180,6 +184,10 @@ msgstr "Planifier un appel"
 #: src/routes/index.tsx:60
 msgid "Security Patching"
 msgstr "Correctifs de Sécurité"
+
+#: src/components/Header.tsx:50
+msgid "Service&pricing"
+msgstr "Services & Tarifs"
 
 #: src/components/Footer.tsx:28
 msgid "Social media links"
