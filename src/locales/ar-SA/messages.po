@@ -13,19 +13,23 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/routes/index.tsx:46
+#: src/components/Footer.tsx:23
+msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
+msgstr "© {currentYear} استوديو DevPort المستقل. جميع الحقوق محفوظة."
+
+#: src/routes/index.tsx:48
 msgid "App Store Deployment"
 msgstr "النشر على متجر التطبيقات"
 
-#: src/routes/index.tsx:18
+#: src/routes/index.tsx:20
 msgid "Available for new projects"
 msgstr "متاح للمشاريع الجديدة"
 
-#: src/routes/index.tsx:25
+#: src/routes/index.tsx:40
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "بناء تطبيقات ويب قابلة للتطوير وصديقة لمحركات البحث باستخدام تقنيات حديثة."
 
-#: src/routes/index.tsx:58
+#: src/routes/index.tsx:60
 msgid "Cloud Infrastructure"
 msgstr "البنية التحتية السحابية"
 
@@ -37,15 +41,15 @@ msgstr "اتصل بنا"
 msgid "Contact me"
 msgstr "اتصل بي"
 
-#: src/routes/index.tsx:33
+#: src/routes/index.tsx:35
 msgid "Core Services"
 msgstr "الخدمات الأساسية"
 
-#: src/routes/index.tsx:44
+#: src/routes/index.tsx:46
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "حلول جوال متعددة المنصات وأصلية لنظامي iOS و Android."
 
-#: src/routes/index.tsx:20
+#: src/routes/index.tsx:22
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "حلول <0>برمجية</0> مخصصة للشركات الحديثة"
 
@@ -59,18 +63,26 @@ msgstr "الوصف الافتراضي للموقع"
 msgid "Developer Website"
 msgstr "موقع المطور"
 
-#: src/routes/index.tsx:54
+#: src/components/Footer.tsx:32
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: src/routes/index.tsx:69
+msgid "Email Me"
+msgstr "أرسل لي بريدًا إلكترونيًا"
+
+#: src/routes/index.tsx:56
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "ضمان بقاء برمجياتك سريعة وآمنة ومحدثة من خلال مراقبة على مدار الساعة."
 
 #: src/components/Header.tsx:31
 #: src/components/Header.tsx:33
-#: src/routes/index.tsx:31
-#: src/routes/index.tsx:32
+#: src/routes/index.tsx:33
+#: src/routes/index.tsx:34
 msgid "Expertise"
 msgstr "خبرة"
 
-#: src/routes/index.tsx:24
+#: src/routes/index.tsx:26
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "مطور Full-Stack مستقل متخصص في تطبيقات الويب والهواتف عالية الأداء باستخدام React و Angular و Flutter."
 
@@ -78,31 +90,39 @@ msgstr "مطور Full-Stack مستقل متخصص في تطبيقات الويب
 msgid "Freelance home page"
 msgstr "الصفحة الرئيسية للمستقل"
 
-#: src/routes/index.tsx:26
+#: src/routes/index.tsx:28
 msgid "Get a Quote"
 msgstr "احصل على عرض سعر"
+
+#: src/components/Footer.tsx:41
+msgid "GitHub"
+msgstr "GitHub"
+
+#: src/routes/index.tsx:67
+msgid "Let's discuss your project and see how we can build something amazing together."
+msgstr "لنناقش مشروعك ونرى كيف يمكننا بناء شيء مذهل معًا."
 
 #: src/components/Header.tsx:22
 msgid "Main navigation"
 msgstr "التنقل الرئيسي"
 
-#: src/routes/index.tsx:53
+#: src/routes/index.tsx:55
 msgid "Maintenance & Support"
 msgstr "الصيانة والدعم"
 
-#: src/routes/index.tsx:43
+#: src/routes/index.tsx:45
 msgid "Mobile App Development"
 msgstr "تطوير تطبيقات الجوال"
 
-#: src/routes/index.tsx:28
+#: src/routes/index.tsx:30
 msgid "Modern workspace with laptop showing code"
 msgstr "مساحة عمل حديثة مع كمبيوتر محمول يعرض الكود"
 
-#: src/routes/index.tsx:48
+#: src/routes/index.tsx:50
 msgid "Offline Capability"
 msgstr "العمل دون اتصال"
 
-#: src/routes/index.tsx:59
+#: src/routes/index.tsx:61
 msgid "Performance Audits"
 msgstr "تدقيق الأداء"
 
@@ -116,18 +136,34 @@ msgstr "عملية"
 msgid "Projets"
 msgstr "مشاريع"
 
-#: src/routes/index.tsx:47
+#: src/routes/index.tsx:49
 msgid "Push Notifications"
 msgstr "إشعارات الدفع"
 
-#: src/routes/index.tsx:57
+#: src/routes/index.tsx:66
+msgid "Ready to bring your idea to life?"
+msgstr "هل أنت مستعد لتجسيد فكرتك على أرض الواقع؟"
+
+#: src/routes/index.tsx:68
+msgid "Schedule a Call"
+msgstr "جدولة مكالمة"
+
+#: src/routes/index.tsx:59
 msgid "Security Patching"
 msgstr "ترقيع الثغرات الأمنية"
 
-#: src/routes/index.tsx:25
+#: src/components/Footer.tsx:28
+msgid "Social media links"
+msgstr "روابط وسائل التواصل الاجتماعي"
+
+#: src/components/Footer.tsx:48
+msgid "Twitter / X"
+msgstr "تويتر / X"
+
+#: src/routes/index.tsx:27
 msgid "View Portfolio"
 msgstr "عرض الأعمال"
 
-#: src/routes/index.tsx:37
+#: src/routes/index.tsx:39
 msgid "Web Development"
 msgstr "تطوير الويب"
