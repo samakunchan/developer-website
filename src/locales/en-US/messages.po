@@ -17,19 +17,19 @@ msgstr ""
 msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
 msgstr "© {currentYear} DevPort Freelance Studio. All rights reserved."
 
-#: src/routes/index.tsx:48
+#: src/routes/index.tsx:49
 msgid "App Store Deployment"
 msgstr "App Store Deployment"
 
-#: src/routes/index.tsx:20
+#: src/routes/index.tsx:21
 msgid "Available for new projects"
 msgstr "Available for new projects"
 
-#: src/routes/index.tsx:40
+#: src/routes/index.tsx:41
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Building scalable, SEO-friendly web applications with modern tech stacks."
 
-#: src/routes/index.tsx:60
+#: src/routes/index.tsx:61
 msgid "Cloud Infrastructure"
 msgstr "Cloud Infrastructure"
 
@@ -41,48 +41,64 @@ msgstr "Contact"
 msgid "Contact me"
 msgstr "Contact me"
 
-#: src/routes/index.tsx:35
+#: src/routes/index.tsx:36
 msgid "Core Services"
 msgstr "Core Services"
 
-#: src/routes/index.tsx:46
+#: src/routes/index.tsx:47
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "Cross-platform and native mobile solutions for iOS and Android."
 
-#: src/routes/index.tsx:22
+#: src/routes/index.tsx:23
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "Custom Software <0>Solutions</0> for Modern Businesses"
+
+#: src/routes/index.tsx:75
+msgid "Deep dive into your business goals, target audience, and technical requirements."
+msgstr "Deep dive into your business goals, target audience, and technical requirements."
 
 #: src/routes/__root.tsx:107
 #: src/routes/__root.tsx:113
 msgid "Default description of the website"
 msgstr "Default description of the website"
 
+#: src/routes/index.tsx:95
+msgid "Deployment to production servers and ongoing performance monitoring."
+msgstr "Deployment to production servers and ongoing performance monitoring."
+
+#: src/routes/index.tsx:83
+msgid "Design & Development"
+msgstr "Design & Development"
+
 #: src/routes/__root.tsx:104
 #: src/routes/__root.tsx:110
 msgid "Developer Website"
 msgstr "Developer Website"
 
+#: src/routes/index.tsx:73
+msgid "Discovery & Strategy"
+msgstr "Discovery & Strategy"
+
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "Email"
 
-#: src/routes/index.tsx:69
+#: src/routes/index.tsx:107
 msgid "Email Me"
 msgstr "Email Me"
 
-#: src/routes/index.tsx:56
+#: src/routes/index.tsx:57
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 
 #: src/components/Header.tsx:31
 #: src/components/Header.tsx:33
-#: src/routes/index.tsx:33
 #: src/routes/index.tsx:34
+#: src/routes/index.tsx:35
 msgid "Expertise"
 msgstr "Expertise"
 
-#: src/routes/index.tsx:26
+#: src/routes/index.tsx:27
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 
@@ -90,7 +106,7 @@ msgstr "Freelance Full-Stack Developer specializing in high-performance web and 
 msgid "Freelance home page"
 msgstr "Freelance home page"
 
-#: src/routes/index.tsx:28
+#: src/routes/index.tsx:29
 msgid "Get a Quote"
 msgstr "Get a Quote"
 
@@ -98,7 +114,19 @@ msgstr "Get a Quote"
 msgid "GitHub"
 msgstr "GitHub"
 
-#: src/routes/index.tsx:67
+#: src/routes/index.tsx:69
+msgid "How I Work"
+msgstr "How I Work"
+
+#: src/routes/index.tsx:85
+msgid "Iterative coding sessions with weekly updates and live staging environments."
+msgstr "Iterative coding sessions with weekly updates and live staging environments."
+
+#: src/routes/index.tsx:93
+msgid "Launch & Scaling"
+msgstr "Launch & Scaling"
+
+#: src/routes/index.tsx:105
 msgid "Let's discuss your project and see how we can build something amazing together."
 msgstr "Let's discuss your project and see how we can build something amazing together."
 
@@ -106,28 +134,29 @@ msgstr "Let's discuss your project and see how we can build something amazing to
 msgid "Main navigation"
 msgstr "Main navigation"
 
-#: src/routes/index.tsx:55
+#: src/routes/index.tsx:56
 msgid "Maintenance & Support"
 msgstr "Maintenance & Support"
 
-#: src/routes/index.tsx:45
+#: src/routes/index.tsx:46
 msgid "Mobile App Development"
 msgstr "Mobile App Development"
 
-#: src/routes/index.tsx:30
+#: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
 msgstr "Modern workspace with laptop showing code"
 
-#: src/routes/index.tsx:50
+#: src/routes/index.tsx:51
 msgid "Offline Capability"
 msgstr "Offline Capability"
 
-#: src/routes/index.tsx:61
+#: src/routes/index.tsx:62
 msgid "Performance Audits"
 msgstr "Performance Audits"
 
 #: src/components/Header.tsx:51
 #: src/components/Header.tsx:53
+#: src/routes/index.tsx:67
 msgid "Process"
 msgstr "Process"
 
@@ -136,19 +165,19 @@ msgstr "Process"
 msgid "Projets"
 msgstr "Projets"
 
-#: src/routes/index.tsx:49
+#: src/routes/index.tsx:50
 msgid "Push Notifications"
 msgstr "Push Notifications"
 
-#: src/routes/index.tsx:66
+#: src/routes/index.tsx:104
 msgid "Ready to bring your idea to life?"
 msgstr "Ready to bring your idea to life?"
 
-#: src/routes/index.tsx:68
+#: src/routes/index.tsx:106
 msgid "Schedule a Call"
 msgstr "Schedule a Call"
 
-#: src/routes/index.tsx:59
+#: src/routes/index.tsx:60
 msgid "Security Patching"
 msgstr "Security Patching"
 
@@ -160,10 +189,14 @@ msgstr "Social media links"
 msgid "Twitter / X"
 msgstr "Twitter / X"
 
-#: src/routes/index.tsx:27
+#: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "View Portfolio"
 
-#: src/routes/index.tsx:39
+#: src/routes/index.tsx:40
 msgid "Web Development"
 msgstr "Web Development"
+
+#: src/routes/index.tsx:68
+msgid "Workflow"
+msgstr "Workflow"

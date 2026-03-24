@@ -17,19 +17,19 @@ msgstr ""
 msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
 msgstr "© {currentYear} DevPort 自由职业工作室。保留所有权利。"
 
-#: src/routes/index.tsx:48
+#: src/routes/index.tsx:49
 msgid "App Store Deployment"
 msgstr "App Store 部署"
 
-#: src/routes/index.tsx:20
+#: src/routes/index.tsx:21
 msgid "Available for new projects"
 msgstr "可承接新项目"
 
-#: src/routes/index.tsx:40
+#: src/routes/index.tsx:41
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "使用现代技术栈构建可扩展、SEO 友好的 Web 应用程序。"
 
-#: src/routes/index.tsx:60
+#: src/routes/index.tsx:61
 msgid "Cloud Infrastructure"
 msgstr "云基础设施"
 
@@ -41,48 +41,64 @@ msgstr "联系"
 msgid "Contact me"
 msgstr "联系我"
 
-#: src/routes/index.tsx:35
+#: src/routes/index.tsx:36
 msgid "Core Services"
 msgstr "核心服务"
 
-#: src/routes/index.tsx:46
+#: src/routes/index.tsx:47
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "适用于 iOS 和 Android 的跨平台和原生移动解决方案。"
 
-#: src/routes/index.tsx:22
+#: src/routes/index.tsx:23
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "面向现代企业的定制软件<0>解决方案</0>"
+
+#: src/routes/index.tsx:75
+msgid "Deep dive into your business goals, target audience, and technical requirements."
+msgstr "深入了解您的业务目标、目标受众和技术要求。"
 
 #: src/routes/__root.tsx:107
 #: src/routes/__root.tsx:113
 msgid "Default description of the website"
 msgstr "网站的默认描述"
 
+#: src/routes/index.tsx:95
+msgid "Deployment to production servers and ongoing performance monitoring."
+msgstr "部署到生产服务器并进行持续的性能监控。"
+
+#: src/routes/index.tsx:83
+msgid "Design & Development"
+msgstr "设计与开发"
+
 #: src/routes/__root.tsx:104
 #: src/routes/__root.tsx:110
 msgid "Developer Website"
 msgstr "开发者网站"
 
+#: src/routes/index.tsx:73
+msgid "Discovery & Strategy"
+msgstr "探索与策略"
+
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "电子邮件"
 
-#: src/routes/index.tsx:69
+#: src/routes/index.tsx:107
 msgid "Email Me"
 msgstr "给我发邮件"
 
-#: src/routes/index.tsx:56
+#: src/routes/index.tsx:57
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "通过 24/7 监控确保您的软件保持快速、安全和最新状态。"
 
 #: src/components/Header.tsx:31
 #: src/components/Header.tsx:33
-#: src/routes/index.tsx:33
 #: src/routes/index.tsx:34
+#: src/routes/index.tsx:35
 msgid "Expertise"
 msgstr "专长"
 
-#: src/routes/index.tsx:26
+#: src/routes/index.tsx:27
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "自由职业全栈开发人员，专注于使用 React、Angular 和 Flutter 开发高性能的 Web 和移动应用程序。"
 
@@ -90,7 +106,7 @@ msgstr "自由职业全栈开发人员，专注于使用 React、Angular 和 Flu
 msgid "Freelance home page"
 msgstr "自由职业者主页"
 
-#: src/routes/index.tsx:28
+#: src/routes/index.tsx:29
 msgid "Get a Quote"
 msgstr "获取报价"
 
@@ -98,7 +114,19 @@ msgstr "获取报价"
 msgid "GitHub"
 msgstr "GitHub"
 
-#: src/routes/index.tsx:67
+#: src/routes/index.tsx:69
+msgid "How I Work"
+msgstr "我的工作流程"
+
+#: src/routes/index.tsx:85
+msgid "Iterative coding sessions with weekly updates and live staging environments."
+msgstr "带有每周更新和实时暂存环境的迭代编码会话。"
+
+#: src/routes/index.tsx:93
+msgid "Launch & Scaling"
+msgstr "发布与扩展"
+
+#: src/routes/index.tsx:105
 msgid "Let's discuss your project and see how we can build something amazing together."
 msgstr "让我们讨论您的项目，看看如何一起构建出令人惊叹的作品。"
 
@@ -106,28 +134,29 @@ msgstr "让我们讨论您的项目，看看如何一起构建出令人惊叹的
 msgid "Main navigation"
 msgstr "主导航"
 
-#: src/routes/index.tsx:55
+#: src/routes/index.tsx:56
 msgid "Maintenance & Support"
 msgstr "维护与支持"
 
-#: src/routes/index.tsx:45
+#: src/routes/index.tsx:46
 msgid "Mobile App Development"
 msgstr "移动应用开发"
 
-#: src/routes/index.tsx:30
+#: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
 msgstr "显示代码的笔记本电脑的现代工作空间"
 
-#: src/routes/index.tsx:50
+#: src/routes/index.tsx:51
 msgid "Offline Capability"
 msgstr "离线功能"
 
-#: src/routes/index.tsx:61
+#: src/routes/index.tsx:62
 msgid "Performance Audits"
 msgstr "性能审核"
 
 #: src/components/Header.tsx:51
 #: src/components/Header.tsx:53
+#: src/routes/index.tsx:67
 msgid "Process"
 msgstr "流程"
 
@@ -136,19 +165,19 @@ msgstr "流程"
 msgid "Projets"
 msgstr "项目"
 
-#: src/routes/index.tsx:49
+#: src/routes/index.tsx:50
 msgid "Push Notifications"
 msgstr "推送通知"
 
-#: src/routes/index.tsx:66
+#: src/routes/index.tsx:104
 msgid "Ready to bring your idea to life?"
 msgstr "准备好让您的想法成真了吗？"
 
-#: src/routes/index.tsx:68
+#: src/routes/index.tsx:106
 msgid "Schedule a Call"
 msgstr "预约通话"
 
-#: src/routes/index.tsx:59
+#: src/routes/index.tsx:60
 msgid "Security Patching"
 msgstr "安全补丁"
 
@@ -160,10 +189,14 @@ msgstr "社交媒体链接"
 msgid "Twitter / X"
 msgstr "Twitter / X"
 
-#: src/routes/index.tsx:27
+#: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "查看作品集"
 
-#: src/routes/index.tsx:39
+#: src/routes/index.tsx:40
 msgid "Web Development"
 msgstr "Web 开发"
+
+#: src/routes/index.tsx:68
+msgid "Workflow"
+msgstr "工作流"

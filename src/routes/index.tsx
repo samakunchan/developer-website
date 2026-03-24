@@ -4,6 +4,7 @@ import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
 import { Hero } from '../components/Hero';
 import { Services, ServiceCard } from '../components/Services';
+import { Process } from '../components/Process';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 import '../styles/main.css';
@@ -62,6 +63,43 @@ function Index() {
           ]}
         />
       </Services>
+      <Process
+        id={t`Process`}
+        subtitle={t`Workflow`}
+        title={<Trans>How I Work</Trans>}
+        steps={[
+          {
+            number: 1,
+            title: <Trans>Discovery & Strategy</Trans>,
+            description: (
+              <Trans>
+                Deep dive into your business goals, target audience, and
+                technical requirements.
+              </Trans>
+            ),
+          },
+          {
+            number: 2,
+            title: <Trans>Design & Development</Trans>,
+            description: (
+              <Trans>
+                Iterative coding sessions with weekly updates and live staging
+                environments.
+              </Trans>
+            ),
+          },
+          {
+            number: 3,
+            title: <Trans>Launch & Scaling</Trans>,
+            description: (
+              <Trans>
+                Deployment to production servers and ongoing performance
+                monitoring.
+              </Trans>
+            ),
+          },
+        ]}
+      />
       <CTA
         title={<Trans>Ready to bring your idea to life?</Trans>}
         description={t`Let's discuss your project and see how we can build something amazing together.`}
