@@ -31,6 +31,14 @@ msgstr "٣ صفحات"
 msgid "About"
 msgstr "حول"
 
+#: src/components/About.tsx:33
+msgid "About Me"
+msgstr "عني"
+
+#: src/components/About.tsx:16
+msgid "Angular"
+msgstr "Angular"
+
 #: src/routes/services.tsx:113
 msgid "API Development"
 msgstr "تطوير واجهة برمجة التطبيقات (API)"
@@ -39,6 +47,10 @@ msgstr "تطوير واجهة برمجة التطبيقات (API)"
 #: src/routes/services.tsx:53
 msgid "App Store Deployment"
 msgstr "النشر على متجر التطبيقات"
+
+#: src/components/About.tsx:23
+msgid "Apple store"
+msgstr "Apple Store"
 
 #: src/routes/index.tsx:21
 msgid "Available for new projects"
@@ -74,6 +86,10 @@ msgstr "البنية التحتية السحابية"
 msgid "CMS Integration"
 msgstr "تكامل نظام إدارة المحتوى (CMS)"
 
+#: src/components/About.tsx:85
+msgid "Connect with me"
+msgstr "تواصل معي"
+
 #: src/components/Header.tsx:58
 msgid "Contact"
 msgstr "اتصل بنا"
@@ -92,6 +108,10 @@ msgstr "اتصل بي"
 #: src/routes/index.tsx:36
 msgid "Core Services"
 msgstr "الخدمات الأساسية"
+
+#: src/components/About.tsx:36
+msgid "Crafting digital experiences with precision."
+msgstr "صياغة تجارب رقمية بدقة."
 
 #: src/routes/index.tsx:47
 #: src/routes/services.tsx:50
@@ -145,6 +165,7 @@ msgstr "موقع المطور"
 msgid "Discovery & Strategy"
 msgstr "الاكتشاف والاستراتيجية"
 
+#: src/components/About.tsx:115
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "البريد الإلكتروني"
@@ -168,6 +189,10 @@ msgstr "خبرة"
 msgid "Flexible <0>Service</0> Plans for Your Success"
 msgstr "<0>خطط خدمات مرنة</0> لنجاحك"
 
+#: src/components/About.tsx:19
+msgid "Flutter"
+msgstr "Flutter"
+
 #: src/routes/index.tsx:27
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "مطور Full-Stack مستقل متخصص في تطبيقات الويب والهواتف عالية الأداء باستخدام React و Angular و Flutter."
@@ -184,9 +209,14 @@ msgstr "تطبيقات كاملة الميزات مع المصادقة ونظا�
 msgid "Get a Quote"
 msgstr "احصل على عرض سعر"
 
+#: src/components/About.tsx:91
 #: src/components/Footer.tsx:41
 msgid "GitHub"
 msgstr "GitHub"
+
+#: src/components/About.tsx:22
+msgid "Google store"
+msgstr "Google Store"
 
 #: src/routes/services.tsx:114
 msgid "High-Load Optimization"
@@ -196,6 +226,18 @@ msgstr "تحسين الأحمال العالية"
 msgid "How I Work"
 msgstr "كيف أعمل"
 
+#: src/components/About.tsx:57
+msgid "I'm a developer based in France with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+msgstr "أنا مطور مقيم في فرنسا ولدي أكثر من 8 سنوات من الخبرة في بناء تطبيقات ويب قابلة للتطوير. أنا متخصص في تحويل المشكلات المعقدة إلى تصميمات بسيطة وجميلة وبديهية. تركيزي ينصب على الكود النظيف والأداء وسهولة الوصول."
+
+#: src/components/About.tsx:48
+#~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+#~ msgstr ""
+
+#: src/components/About.tsx:129
+msgid "Illustration of a developer working at a desk with UI elements"
+msgstr "رسم توضيحي لمطور يعمل على مكتب مع عناصر واجهة المستخدم"
+
 #: src/routes/services.tsx:73
 msgid "Investment"
 msgstr "الاستثمار"
@@ -203,6 +245,10 @@ msgstr "الاستثمار"
 #: src/routes/index.tsx:85
 msgid "Iterative coding sessions with weekly updates and live staging environments."
 msgstr "جلسات برمجة تكرارية مع تحديثات أسبوعية وبيئات عرض مباشرة."
+
+#: src/components/About.tsx:14
+msgid "JavaScript"
+msgstr "JavaScript"
 
 #: src/routes/index.tsx:93
 msgid "Launch & Scaling"
@@ -215,6 +261,10 @@ msgstr "لنناقش مشروعك ونرى كيف يمكننا بناء شيء �
 #: src/routes/services.tsx:122
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "لنناقش متطلباتك ونجد أفضل حل لعملك."
+
+#: src/components/About.tsx:103
+msgid "LinkedIn"
+msgstr "LinkedIn"
 
 #: src/components/Header.tsx:22
 msgid "Main navigation"
@@ -238,6 +288,10 @@ msgstr "متوافق مع الجوال"
 msgid "Modern workspace with laptop showing code"
 msgstr "مساحة عمل حديثة مع كمبيوتر محمول يعرض الكود"
 
+#: src/components/About.tsx:20
+msgid "Moderne CSS"
+msgstr "CSS حديث"
+
 #: src/components/Pricing.tsx:28
 msgid "Most Popular"
 msgstr "الأكثر رواجاً"
@@ -249,6 +303,10 @@ msgstr "متعدد المنصات (ويب/جوال)"
 #: src/routes/services.tsx:34
 msgid "My Specialized Services"
 msgstr "خدماتي المتخصصة"
+
+#: src/components/About.tsx:17
+msgid "Node.js"
+msgstr "Node.js"
 
 #: src/routes/index.tsx:51
 #: src/routes/services.tsx:55
@@ -266,6 +324,10 @@ msgstr "تدقيق الأداء"
 #: src/routes/services.tsx:43
 msgid "Performance Optimization"
 msgstr "تحسين الأداء"
+
+#: src/components/About.tsx:21
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
 
 #: src/routes/services.tsx:74
 msgid "Pricing Packages"
@@ -293,6 +355,10 @@ msgstr "مشاريع"
 msgid "Push Notifications"
 msgstr "إشعارات الدفع"
 
+#: src/components/About.tsx:15
+msgid "React / Next.js"
+msgstr "React / Next.js"
+
 #: src/routes/index.tsx:104
 msgid "Ready to bring your idea to life?"
 msgstr "هل أنت مستعد لتجسيد فكرتك على أرض الواقع؟"
@@ -309,6 +375,10 @@ msgstr "نسخ احتياطي منتظم"
 msgid "Responsive Design"
 msgstr "تصميم متجاوب"
 
+#: src/components/About.tsx:18
+msgid "REST API"
+msgstr "REST API"
+
 #: src/routes/services.tsx:104
 msgid "Scalable enterprise-grade software solutions."
 msgstr "حلول برمجية قابلة للتطوير للمؤسسات."
@@ -322,6 +392,10 @@ msgstr "جدولة مكالمة"
 #: src/routes/services.tsx:64
 msgid "Security Patching"
 msgstr "ترقيع الثغرات الأمنية"
+
+#: src/components/About.tsx:51
+msgid "Senior Full-Stack Developer"
+msgstr "مطور Full-Stack أول"
 
 #: src/routes/services.tsx:44
 msgid "SEO Best Practices"
@@ -350,6 +424,10 @@ msgstr "موقع ثابت"
 #: src/routes/services.tsx:99
 msgid "Stripe Integration"
 msgstr "تكامل Stripe"
+
+#: src/components/About.tsx:69
+msgid "Technical Proficiency"
+msgstr "الكفاءة التقنية"
 
 #: src/components/Footer.tsx:48
 msgid "Twitter / X"
