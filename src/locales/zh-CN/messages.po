@@ -31,6 +31,14 @@ msgstr "3 页"
 msgid "About"
 msgstr "关于"
 
+#: src/components/About.tsx:33
+msgid "About Me"
+msgstr "关于我"
+
+#: src/components/About.tsx:16
+msgid "Angular"
+msgstr "Angular"
+
 #: src/routes/services.tsx:113
 msgid "API Development"
 msgstr "API 开发"
@@ -39,6 +47,10 @@ msgstr "API 开发"
 #: src/routes/services.tsx:53
 msgid "App Store Deployment"
 msgstr "App Store 部署"
+
+#: src/components/About.tsx:23
+msgid "Apple store"
+msgstr "Apple Store"
 
 #: src/routes/index.tsx:21
 msgid "Available for new projects"
@@ -74,6 +86,10 @@ msgstr "云基础设施"
 msgid "CMS Integration"
 msgstr "CMS 集成"
 
+#: src/components/About.tsx:85
+msgid "Connect with me"
+msgstr "与我联系"
+
 #: src/components/Header.tsx:58
 msgid "Contact"
 msgstr "联系"
@@ -92,6 +108,10 @@ msgstr "联系我"
 #: src/routes/index.tsx:36
 msgid "Core Services"
 msgstr "核心服务"
+
+#: src/components/About.tsx:36
+msgid "Crafting digital experiences with precision."
+msgstr "精准打造数字体验。"
 
 #: src/routes/index.tsx:47
 #: src/routes/services.tsx:50
@@ -144,6 +164,7 @@ msgstr "开发者网站"
 msgid "Discovery & Strategy"
 msgstr "探索与策略"
 
+#: src/components/About.tsx:115
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "电子邮件"
@@ -167,6 +188,10 @@ msgstr "专长"
 msgid "Flexible <0>Service</0> Plans for Your Success"
 msgstr "助您成功的<0>灵活计划</0>"
 
+#: src/components/About.tsx:19
+msgid "Flutter"
+msgstr "Flutter"
+
 #: src/routes/index.tsx:27
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "自由职业全栈开发人员，专注于使用 React、Angular 和 Flutter 开发高性能的 Web 和移动应用程序。"
@@ -183,9 +208,14 @@ msgstr "包含身份验证和 CMS 的全功能应用。"
 msgid "Get a Quote"
 msgstr "获取报价"
 
+#: src/components/About.tsx:91
 #: src/components/Footer.tsx:41
 msgid "GitHub"
 msgstr "GitHub"
+
+#: src/components/About.tsx:22
+msgid "Google store"
+msgstr "Google Store"
 
 #: src/routes/services.tsx:114
 msgid "High-Load Optimization"
@@ -195,6 +225,18 @@ msgstr "高负载优化"
 msgid "How I Work"
 msgstr "我的工作流程"
 
+#: src/components/About.tsx:57
+msgid "I'm a developer based in France with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+msgstr "我是一名定居法国的开发者，拥有 8 年以上构建可扩展 Web 应用程序的经验。我擅长将复杂的问题转化为简单、美观且直观的设计。我关注代码质量、性能和可访问性。"
+
+#: src/components/About.tsx:48
+#~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+#~ msgstr ""
+
+#: src/components/About.tsx:129
+msgid "Illustration of a developer working at a desk with UI elements"
+msgstr "一名开发者在摆放有 UI 元素的办公桌前工作的插图"
+
 #: src/routes/services.tsx:73
 msgid "Investment"
 msgstr "投资"
@@ -202,6 +244,10 @@ msgstr "投资"
 #: src/routes/index.tsx:85
 msgid "Iterative coding sessions with weekly updates and live staging environments."
 msgstr "带有每周更新和实时暂存环境的迭代编码会话。"
+
+#: src/components/About.tsx:14
+msgid "JavaScript"
+msgstr "JavaScript"
 
 #: src/routes/index.tsx:93
 msgid "Launch & Scaling"
@@ -214,6 +260,10 @@ msgstr "让我们讨论您的项目，看看如何一起构建出令人惊叹的
 #: src/routes/services.tsx:122
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "让我们讨论您的需求，为您的业务寻找最佳解决方案。"
+
+#: src/components/About.tsx:103
+msgid "LinkedIn"
+msgstr "LinkedIn"
 
 #: src/components/Header.tsx:22
 msgid "Main navigation"
@@ -237,6 +287,10 @@ msgstr "移动端响应式"
 msgid "Modern workspace with laptop showing code"
 msgstr "显示代码的笔记本电脑的现代工作空间"
 
+#: src/components/About.tsx:20
+msgid "Moderne CSS"
+msgstr "现代 CSS"
+
 #: src/components/Pricing.tsx:28
 msgid "Most Popular"
 msgstr "最受欢迎"
@@ -248,6 +302,10 @@ msgstr "多平台 (Web/移动端)"
 #: src/routes/services.tsx:34
 msgid "My Specialized Services"
 msgstr "我的专业服务"
+
+#: src/components/About.tsx:17
+msgid "Node.js"
+msgstr "Node.js"
 
 #: src/routes/index.tsx:51
 #: src/routes/services.tsx:55
@@ -265,6 +323,10 @@ msgstr "性能审核"
 #: src/routes/services.tsx:43
 msgid "Performance Optimization"
 msgstr "性能优化"
+
+#: src/components/About.tsx:21
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
 
 #: src/routes/services.tsx:74
 msgid "Pricing Packages"
@@ -292,6 +354,10 @@ msgstr "项目"
 msgid "Push Notifications"
 msgstr "推送通知"
 
+#: src/components/About.tsx:15
+msgid "React / Next.js"
+msgstr "React / Next.js"
+
 #: src/routes/index.tsx:104
 msgid "Ready to bring your idea to life?"
 msgstr "准备好让您的想法成真了吗？"
@@ -308,6 +374,10 @@ msgstr "定期备份"
 msgid "Responsive Design"
 msgstr "响应式设计"
 
+#: src/components/About.tsx:18
+msgid "REST API"
+msgstr "REST API"
+
 #: src/routes/services.tsx:104
 msgid "Scalable enterprise-grade software solutions."
 msgstr "可扩展的企业级软件解决方案。"
@@ -321,6 +391,10 @@ msgstr "预约通话"
 #: src/routes/services.tsx:64
 msgid "Security Patching"
 msgstr "安全补丁"
+
+#: src/components/About.tsx:51
+msgid "Senior Full-Stack Developer"
+msgstr "高级全栈开发人员"
 
 #: src/routes/services.tsx:44
 msgid "SEO Best Practices"
@@ -349,6 +423,10 @@ msgstr "静态网站"
 #: src/routes/services.tsx:99
 msgid "Stripe Integration"
 msgstr "Stripe 集成"
+
+#: src/components/About.tsx:69
+msgid "Technical Proficiency"
+msgstr "技术能力"
 
 #: src/components/Footer.tsx:48
 msgid "Twitter / X"
