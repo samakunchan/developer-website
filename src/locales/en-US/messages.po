@@ -13,49 +13,126 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
+#: src/routes/services.tsx:79
+#: src/routes/services.tsx:92
+#: src/routes/services.tsx:106
+msgid "/start"
+msgstr "/start"
+
 #: src/components/Footer.tsx:23
 msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
 msgstr "© {currentYear} DevPort Freelance Studio. All rights reserved."
+
+#: src/routes/services.tsx:82
+msgid "3 Pages"
+msgstr "3 Pages"
 
 #: src/components/Header.tsx:41
 msgid "About"
 msgstr "About"
 
+#: src/components/About.tsx:33
+msgid "About Me"
+msgstr "About Me"
+
+#: src/components/About.tsx:16
+msgid "Angular"
+msgstr "Angular"
+
+#: src/routes/services.tsx:113
+msgid "API Development"
+msgstr "API Development"
+
 #: src/routes/index.tsx:49
+#: src/routes/services.tsx:53
 msgid "App Store Deployment"
 msgstr "App Store Deployment"
+
+#: src/components/About.tsx:23
+msgid "Apple store"
+msgstr "Apple store"
 
 #: src/routes/index.tsx:21
 msgid "Available for new projects"
 msgstr "Available for new projects"
 
 #: src/routes/index.tsx:41
+#: src/routes/services.tsx:39
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Building scalable, SEO-friendly web applications with modern tech stacks."
 
+#: src/routes/services.tsx:80
+msgid "Choose Basic"
+msgstr "Choose Basic"
+
+#: src/routes/services.tsx:107
+msgid "Choose Enterprise"
+msgstr "Choose Enterprise"
+
+#: src/routes/services.tsx:93
+msgid "Choose Pro"
+msgstr "Choose Pro"
+
+#: src/routes/services.tsx:27
+msgid "Choose the perfect service package tailored to your business needs. From simple portfolios to complex SaaS platforms."
+msgstr "Choose the perfect service package tailored to your business needs. From simple portfolios to complex SaaS platforms."
+
 #: src/routes/index.tsx:61
+#: src/routes/services.tsx:65
 msgid "Cloud Infrastructure"
 msgstr "Cloud Infrastructure"
+
+#: src/routes/services.tsx:85
+msgid "CMS Integration"
+msgstr "CMS Integration"
+
+#: src/components/About.tsx:85
+msgid "Connect with me"
+msgstr "Connect with me"
 
 #: src/components/Header.tsx:58
 msgid "Contact"
 msgstr "Contact"
 
 #: src/components/Header.tsx:57
+#: src/routes/services.tsx:29
+#: src/routes/services.tsx:124
 msgid "Contact me"
 msgstr "Contact me"
+
+#: src/routes/services.tsx:29
+#: src/routes/services.tsx:128
+#~ msgid "Contact Me"
+#~ msgstr "Contact Me"
 
 #: src/routes/index.tsx:36
 msgid "Core Services"
 msgstr "Core Services"
 
+#: src/components/About.tsx:36
+msgid "Crafting digital experiences with precision."
+msgstr "Crafting digital experiences with precision."
+
 #: src/routes/index.tsx:47
+#: src/routes/services.tsx:50
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "Cross-platform and native mobile solutions for iOS and Android."
+
+#: src/routes/services.tsx:96
+msgid "Custom Backend"
+msgstr "Custom Backend"
+
+#: src/routes/services.tsx:103
+msgid "Custom SaaS"
+msgstr "Custom SaaS"
 
 #: src/routes/index.tsx:23
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "Custom Software <0>Solutions</0> for Modern Businesses"
+
+#: src/routes/services.tsx:98
+msgid "Dashboard UI"
+msgstr "Dashboard UI"
 
 #: src/routes/index.tsx:75
 msgid "Deep dive into your business goals, target audience, and technical requirements."
@@ -79,10 +156,15 @@ msgstr "Design & Development"
 msgid "Developer Website"
 msgstr "Developer Website"
 
+#: src/routes/services.tsx:31
+#~ msgid "Developer working on a pricing table"
+#~ msgstr "Developer working on a pricing table"
+
 #: src/routes/index.tsx:73
 msgid "Discovery & Strategy"
 msgstr "Discovery & Strategy"
 
+#: src/components/About.tsx:115
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "Email"
@@ -92,13 +174,23 @@ msgid "Email Me"
 msgstr "Email Me"
 
 #: src/routes/index.tsx:57
+#: src/routes/services.tsx:61
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 
 #: src/routes/index.tsx:34
 #: src/routes/index.tsx:35
+#: src/routes/services.tsx:33
 msgid "Expertise"
 msgstr "Expertise"
+
+#: src/routes/services.tsx:23
+msgid "Flexible <0>Service</0> Plans for Your Success"
+msgstr "Flexible <0>Service</0> Plans for Your Success"
+
+#: src/components/About.tsx:19
+msgid "Flutter"
+msgstr "Flutter"
 
 #: src/routes/index.tsx:27
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
@@ -108,21 +200,54 @@ msgstr "Freelance Full-Stack Developer specializing in high-performance web and 
 msgid "Freelance home page"
 msgstr "Freelance home page"
 
+#: src/routes/services.tsx:90
+msgid "Full-featured apps with authentication and CMS."
+msgstr "Full-featured apps with authentication and CMS."
+
 #: src/routes/index.tsx:29
 msgid "Get a Quote"
 msgstr "Get a Quote"
 
+#: src/components/About.tsx:91
 #: src/components/Footer.tsx:41
 msgid "GitHub"
 msgstr "GitHub"
+
+#: src/components/About.tsx:22
+msgid "Google store"
+msgstr "Google store"
+
+#: src/routes/services.tsx:114
+msgid "High-Load Optimization"
+msgstr "High-Load Optimization"
 
 #: src/routes/index.tsx:69
 msgid "How I Work"
 msgstr "How I Work"
 
+#: src/components/About.tsx:57
+msgid "I'm a developer based in France with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+msgstr "I'm a developer based in France with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+
+#: src/components/About.tsx:48
+#~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+#~ msgstr "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+
+#: src/components/About.tsx:129
+msgid "Illustration of a developer working at a desk with UI elements"
+msgstr "Illustration of a developer working at a desk with UI elements"
+
+#: src/routes/services.tsx:73
+msgid "Investment"
+msgstr "Investment"
+
 #: src/routes/index.tsx:85
 msgid "Iterative coding sessions with weekly updates and live staging environments."
 msgstr "Iterative coding sessions with weekly updates and live staging environments."
+
+#: src/components/About.tsx:14
+msgid "JavaScript"
+msgstr "JavaScript"
 
 #: src/routes/index.tsx:93
 msgid "Launch & Scaling"
@@ -132,29 +257,84 @@ msgstr "Launch & Scaling"
 msgid "Let's discuss your project and see how we can build something amazing together."
 msgstr "Let's discuss your project and see how we can build something amazing together."
 
+#: src/routes/services.tsx:122
+msgid "Let's discuss your requirements and find the best solution for your business."
+msgstr "Let's discuss your requirements and find the best solution for your business."
+
+#: src/components/About.tsx:103
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
 #: src/components/Header.tsx:22
 msgid "Main navigation"
 msgstr "Main navigation"
 
 #: src/routes/index.tsx:56
+#: src/routes/services.tsx:60
 msgid "Maintenance & Support"
 msgstr "Maintenance & Support"
 
 #: src/routes/index.tsx:46
+#: src/routes/services.tsx:49
 msgid "Mobile App Development"
 msgstr "Mobile App Development"
+
+#: src/routes/services.tsx:83
+msgid "Mobile Responsive"
+msgstr "Mobile Responsive"
 
 #: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
 msgstr "Modern workspace with laptop showing code"
 
+#: src/components/About.tsx:20
+msgid "Moderne CSS"
+msgstr "Moderne CSS"
+
+#: src/components/Pricing.tsx:28
+msgid "Most Popular"
+msgstr "Most Popular"
+
+#: src/routes/services.tsx:110
+msgid "Multi-platform (Web/Mobile)"
+msgstr "Multi-platform (Web/Mobile)"
+
+#: src/routes/services.tsx:34
+msgid "My Specialized Services"
+msgstr "My Specialized Services"
+
+#: src/components/About.tsx:17
+msgid "Node.js"
+msgstr "Node.js"
+
 #: src/routes/index.tsx:51
+#: src/routes/services.tsx:55
 msgid "Offline Capability"
 msgstr "Offline Capability"
+
+#: src/routes/services.tsx:78
+msgid "Perfect for personal brands and portfolios."
+msgstr "Perfect for personal brands and portfolios."
 
 #: src/routes/index.tsx:62
 msgid "Performance Audits"
 msgstr "Performance Audits"
+
+#: src/routes/services.tsx:43
+msgid "Performance Optimization"
+msgstr "Performance Optimization"
+
+#: src/components/About.tsx:21
+msgid "PostgreSQL"
+msgstr "PostgreSQL"
+
+#: src/routes/services.tsx:74
+msgid "Pricing Packages"
+msgstr "Pricing Packages"
+
+#: src/routes/services.tsx:115
+msgid "Priority Support"
+msgstr "Priority Support"
 
 #: src/routes/index.tsx:67
 msgid "Process"
@@ -170,20 +350,59 @@ msgstr "Projects"
 #~ msgstr "Projets"
 
 #: src/routes/index.tsx:50
+#: src/routes/services.tsx:54
 msgid "Push Notifications"
 msgstr "Push Notifications"
+
+#: src/components/About.tsx:15
+msgid "React / Next.js"
+msgstr "React / Next.js"
 
 #: src/routes/index.tsx:104
 msgid "Ready to bring your idea to life?"
 msgstr "Ready to bring your idea to life?"
 
+#: src/routes/services.tsx:121
+msgid "Ready to start your project?"
+msgstr "Ready to start your project?"
+
+#: src/routes/services.tsx:66
+msgid "Regular Backups"
+msgstr "Regular Backups"
+
+#: src/routes/services.tsx:42
+msgid "Responsive Design"
+msgstr "Responsive Design"
+
+#: src/components/About.tsx:18
+msgid "REST API"
+msgstr "REST API"
+
+#: src/routes/services.tsx:104
+msgid "Scalable enterprise-grade software solutions."
+msgstr "Scalable enterprise-grade software solutions."
+
 #: src/routes/index.tsx:106
+#: src/routes/services.tsx:123
 msgid "Schedule a Call"
 msgstr "Schedule a Call"
 
 #: src/routes/index.tsx:60
+#: src/routes/services.tsx:64
 msgid "Security Patching"
 msgstr "Security Patching"
+
+#: src/components/About.tsx:51
+msgid "Senior Full-Stack Developer"
+msgstr "Senior Full-Stack Developer"
+
+#: src/routes/services.tsx:44
+msgid "SEO Best Practices"
+msgstr "SEO Best Practices"
+
+#: src/routes/services.tsx:84
+msgid "SEO Optimization"
+msgstr "SEO Optimization"
 
 #: src/components/Header.tsx:50
 msgid "Service&pricing"
@@ -193,15 +412,44 @@ msgstr "Service&pricing"
 msgid "Social media links"
 msgstr "Social media links"
 
+#: src/routes/services.tsx:21
+msgid "Solutions & Pricing"
+msgstr "Solutions & Pricing"
+
+#: src/routes/services.tsx:77
+msgid "Static Site"
+msgstr "Static Site"
+
+#: src/routes/services.tsx:99
+msgid "Stripe Integration"
+msgstr "Stripe Integration"
+
+#: src/components/About.tsx:69
+msgid "Technical Proficiency"
+msgstr "Technical Proficiency"
+
 #: src/components/Footer.tsx:48
 msgid "Twitter / X"
 msgstr "Twitter / X"
+
+#: src/routes/services.tsx:97
+msgid "User Authentication"
+msgstr "User Authentication"
 
 #: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "View Portfolio"
 
+#: src/routes/services.tsx:28
+msgid "View Pricing"
+msgstr "View Pricing"
+
+#: src/routes/services.tsx:89
+msgid "Web Application"
+msgstr "Web Application"
+
 #: src/routes/index.tsx:40
+#: src/routes/services.tsx:38
 msgid "Web Development"
 msgstr "Web Development"
 
