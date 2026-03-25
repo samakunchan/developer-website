@@ -1,5 +1,25 @@
 # CHANGELOG developer-website
 
+## 🚀 0.9.0 - 25/03/2026
+
+### Added
+
+- **Route**: New `/about` route for the developer profile and technical expertise.
+- **Component**:
+  - `About` component featuring structured "About Me", "Technical Proficiency", and "Connect with me" sections.
+  - Premium developer illustration with background fading and glow effects for a high-end visual experience.
+- **Localization**: Full translation of the About page for all 5 supported locales (en-US, fr-FR, es-ES, zh-CN, ar-SA).
+
+### Changed
+
+- **Navigation**: Updated Header menu to include a direct link to the About page.
+- **Versioning**: Bumped project version to 0.9.0.
+- **I18n**: Compiled all message catalogs (fr-FR, es-ES, zh-CN, ar-SA) with the latest About page content.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.8.0 - 24/03/2026
 
 ### Added
