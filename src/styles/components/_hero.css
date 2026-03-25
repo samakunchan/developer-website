@@ -41,6 +41,21 @@
   gap: 2rem;
 }
 
+.hero--no-image .hero__container {
+  grid-template-columns: 1fr;
+  text-align: center;
+}
+
+.hero--no-image .hero__content {
+  align-items: center;
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.hero--no-image .hero__actions {
+  justify-content: center;
+}
+
 .hero__badge {
   display: inline-flex;
   align-items: center;

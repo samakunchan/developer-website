@@ -1,5 +1,48 @@
 # CHANGELOG developer-website
 
+## 🚀 0.9.0 - 25/03/2026
+
+### Added
+
+- **Route**: New `/about` route for the developer profile and technical expertise.
+- **Component**:
+  - `About` component featuring structured "About Me", "Technical Proficiency", and "Connect with me" sections.
+  - Premium developer illustration with background fading and glow effects for a high-end visual experience.
+- **Localization**: Full translation of the About page for all 5 supported locales (en-US, fr-FR, es-ES, zh-CN, ar-SA).
+
+### Changed
+
+- **Navigation**: Updated Header menu to include a direct link to the About page.
+- **Versioning**: Bumped project version to 0.9.0.
+- **I18n**: Compiled all message catalogs (fr-FR, es-ES, zh-CN, ar-SA) with the latest About page content.
+
+### Fixed
+
+- No fixes.
+
+## 🚀 0.8.0 - 24/03/2026
+
+### Added
+
+- **Route**: New `/services` route providing detailed information about specialized services and pricing.
+- **Component**:
+  - `Pricing` component with 3-tier support (Basic, Pro, Enterprise), featuring glassmorphism and modern CTAs.
+  - `Services` grid section within the services page for categorical expertise display.
+- **Localization**: Full translation of the Service & Pricing page for all 5 supported locales (en-US, fr-FR, es-ES, zh-CN, ar-SA).
+
+### Changed
+
+- **Component**:
+  - Refactored `Hero` component to support optional images and center-aligned layouts for text-only pages.
+  - Standardized "Contact me" CTA strings across all components for unified translation management.
+- **Localization**: Improved structural phrasing for "Flexible Plans" in all languages (e.g., `<0>Planes Flexibles</0>`, `<0>Plans Flexibles</0>`) to ensure consistent premium styling.
+- **Styles**: Integrated `_pricing.css` into the core design system.
+- **Versioning**: Bumped project version to 0.8.0.
+
+### Fixed
+
+- **I18n**: Resolved a localized string rendering issue on the Services page that caused some translations to be ignored.
+
 ## 🚀 0.7.0 - 24/03/2026
 
 ### Added

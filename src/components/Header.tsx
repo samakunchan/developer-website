@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="/about"
                 className="header__nav-link"
                 activeProps={{ className: 'header__nav-link--active' }}
               >
@@ -43,7 +43,7 @@ export const Header: React.FC = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="/services"
                 className="header__nav-link"
                 activeProps={{ className: 'header__nav-link--active' }}
               >
