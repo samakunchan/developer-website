@@ -27,6 +27,10 @@ msgstr "© {currentYear} DevPort 自由职业工作室。保留所有权利。"
 msgid "3 Pages"
 msgstr "3 页"
 
+#: src/routes/projects.tsx:26
+msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
+msgstr ""
+
 #: src/components/Header.tsx:41
 msgid "About"
 msgstr "关于"
@@ -35,9 +39,21 @@ msgstr "关于"
 msgid "About Me"
 msgstr "关于我"
 
+#: src/routes/projects.tsx:69
+msgid "Abstract data visualization with neon lines"
+msgstr ""
+
+#: src/components/Projects.tsx:80
+msgid "All Projects"
+msgstr ""
+
 #: src/components/About.tsx:16
 msgid "Angular"
 msgstr "Angular"
+
+#: src/routes/projects.tsx:54
+msgid "Apex E-Commerce"
+msgstr ""
 
 #: src/routes/services.tsx:113
 msgid "API Development"
@@ -60,6 +76,10 @@ msgstr "可承接新项目"
 #: src/routes/services.tsx:39
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "使用现代技术栈构建可扩展、SEO 友好的 Web 应用程序。"
+
+#: src/routes/projects.tsx:88
+msgid "Building the <0>future</0> through clean code."
+msgstr "通过干净的代码构建<0>未来</0>。"
 
 #: src/routes/services.tsx:80
 msgid "Choose Basic"
@@ -118,6 +138,14 @@ msgstr "精准打造数字体验。"
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "适用于 iOS 和 Android 的跨平台和原生移动解决方案。"
 
+#: src/routes/projects.tsx:42
+msgid "Cross-platform fitness application featuring custom workout builders and wearable device integration using React Native."
+msgstr ""
+
+#: src/routes/projects.tsx:70
+msgid "CryptoPulse API"
+msgstr ""
+
 #: src/routes/services.tsx:96
 msgid "Custom Backend"
 msgstr "定制后端"
@@ -164,10 +192,18 @@ msgstr "开发者网站"
 msgid "Discovery & Strategy"
 msgstr "探索与策略"
 
+#: src/routes/projects.tsx:53
+msgid "E-commerce website with product grid view"
+msgstr ""
+
 #: src/components/About.tsx:115
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "电子邮件"
+
+#: src/routes/projects.tsx:106
+msgid "Email me"
+msgstr "给我发邮件"
 
 #: src/routes/index.tsx:107
 msgid "Email Me"
@@ -183,6 +219,10 @@ msgstr "通过 24/7 监控确保您的软件保持快速、安全和最新状态
 #: src/routes/services.tsx:33
 msgid "Expertise"
 msgstr "专长"
+
+#: src/routes/projects.tsx:38
+msgid "FitFlow Mobile"
+msgstr ""
 
 #: src/routes/services.tsx:23
 msgid "Flexible <0>Service</0> Plans for Your Success"
@@ -217,9 +257,17 @@ msgstr "GitHub"
 msgid "Google store"
 msgstr "Google Store"
 
+#: src/routes/projects.tsx:103
+msgid "Have a project in mind?"
+msgstr "有项目想法吗？"
+
 #: src/routes/services.tsx:114
 msgid "High-Load Optimization"
 msgstr "高负载优化"
+
+#: src/routes/projects.tsx:58
+msgid "High-performance headless commerce solution with Stripe integration and custom inventory management."
+msgstr ""
 
 #: src/routes/index.tsx:69
 msgid "How I Work"
@@ -232,6 +280,14 @@ msgstr "我是一名定居法国的开发者，拥有 8 年以上构建可扩展
 #: src/components/About.tsx:48
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr ""
+
+#: src/routes/projects.tsx:92
+msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
+msgstr "我是一名自由职业开发者，专注于使用现代技术构建高性能的 Web 和移动应用程序。"
+
+#: src/routes/projects.tsx:104
+msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
+msgstr "我目前可以接受自由职业工作，并欢迎新的机会。让我们一起构建一些精彩的东西。"
 
 #: src/components/About.tsx:129
 msgid "Illustration of a developer working at a desk with UI elements"
@@ -261,6 +317,10 @@ msgstr "让我们讨论您的项目，看看如何一起构建出令人惊叹的
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "让我们讨论您的需求，为您的业务寻找最佳解决方案。"
 
+#: src/routes/projects.tsx:93
+msgid "Let's talk"
+msgstr "让我们聊聊"
+
 #: src/components/About.tsx:103
 msgid "LinkedIn"
 msgstr "LinkedIn"
@@ -274,6 +334,10 @@ msgstr "主导航"
 msgid "Maintenance & Support"
 msgstr "维护与支持"
 
+#: src/routes/projects.tsx:40
+msgid "Mobile"
+msgstr ""
+
 #: src/routes/index.tsx:46
 #: src/routes/services.tsx:49
 msgid "Mobile App Development"
@@ -282,6 +346,14 @@ msgstr "移动应用开发"
 #: src/routes/services.tsx:83
 msgid "Mobile Responsive"
 msgstr "移动端响应式"
+
+#: src/components/Projects.tsx:82
+msgid "Mobile UI"
+msgstr ""
+
+#: src/routes/projects.tsx:21
+msgid "Modern minimalist dashboard interface design"
+msgstr ""
 
 #: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
@@ -299,6 +371,10 @@ msgstr "最受欢迎"
 msgid "Multi-platform (Web/Mobile)"
 msgstr "多平台 (Web/移动端)"
 
+#: src/routes/projects.tsx:99
+msgid "My Recent Work"
+msgstr "我最近的作品"
+
 #: src/routes/services.tsx:34
 msgid "My Specialized Services"
 msgstr "我的专业服务"
@@ -307,10 +383,18 @@ msgstr "我的专业服务"
 msgid "Node.js"
 msgstr "Node.js"
 
+#: src/routes/projects.tsx:22
+msgid "Nova Analytics Platform"
+msgstr ""
+
 #: src/routes/index.tsx:51
 #: src/routes/services.tsx:55
 msgid "Offline Capability"
 msgstr "离线功能"
+
+#: src/components/Projects.tsx:83
+msgid "Open Source"
+msgstr ""
 
 #: src/routes/services.tsx:78
 msgid "Perfect for personal brands and portfolios."
@@ -323,6 +407,10 @@ msgstr "性能审核"
 #: src/routes/services.tsx:43
 msgid "Performance Optimization"
 msgstr "性能优化"
+
+#: src/routes/projects.tsx:98
+msgid "Portfolio"
+msgstr "作品集"
 
 #: src/components/About.tsx:21
 msgid "PostgreSQL"
@@ -378,9 +466,17 @@ msgstr "响应式设计"
 msgid "REST API"
 msgstr "REST API"
 
+#: src/routes/projects.tsx:74
+msgid "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
+msgstr ""
+
 #: src/routes/services.tsx:104
 msgid "Scalable enterprise-grade software solutions."
 msgstr "可扩展的企业级软件解决方案。"
+
+#: src/routes/projects.tsx:105
+msgid "Schedule a call"
+msgstr "预约通话"
 
 #: src/routes/index.tsx:106
 #: src/routes/services.tsx:123
@@ -407,6 +503,10 @@ msgstr "SEO 优化"
 #: src/components/Header.tsx:50
 msgid "Service&pricing"
 msgstr "服务与定价"
+
+#: src/routes/projects.tsx:37
+msgid "Sleek mobile app interface on a smartphone"
+msgstr ""
 
 #: src/components/Footer.tsx:28
 msgid "Social media links"
@@ -436,6 +536,14 @@ msgstr "Twitter / X"
 msgid "User Authentication"
 msgstr "用户身份验证"
 
+#: src/routes/projects.tsx:94
+msgid "View CV"
+msgstr "查看简历"
+
+#: src/components/Projects.tsx:49
+msgid "View Details"
+msgstr ""
+
 #: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "查看作品集"
@@ -444,9 +552,19 @@ msgstr "查看作品集"
 msgid "View Pricing"
 msgstr "查看定价"
 
+#: src/routes/projects.tsx:24
+#: src/routes/projects.tsx:56
+#: src/routes/projects.tsx:72
+msgid "Web"
+msgstr ""
+
 #: src/routes/services.tsx:89
 msgid "Web Application"
 msgstr "Web 应用程序"
+
+#: src/components/Projects.tsx:81
+msgid "Web Apps"
+msgstr ""
 
 #: src/routes/index.tsx:40
 #: src/routes/services.tsx:38

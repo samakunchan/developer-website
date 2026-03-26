@@ -27,6 +27,10 @@ msgstr "© {currentYear} DevPort Freelance Studio. Tous droits réservés."
 msgid "3 Pages"
 msgstr "3 Pages"
 
+#: src/routes/projects.tsx:26
+msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
+msgstr ""
+
 #: src/components/Header.tsx:41
 msgid "About"
 msgstr "À propos"
@@ -35,9 +39,21 @@ msgstr "À propos"
 msgid "About Me"
 msgstr "À propos de moi"
 
+#: src/routes/projects.tsx:69
+msgid "Abstract data visualization with neon lines"
+msgstr ""
+
+#: src/components/Projects.tsx:80
+msgid "All Projects"
+msgstr ""
+
 #: src/components/About.tsx:16
 msgid "Angular"
 msgstr "Angular"
+
+#: src/routes/projects.tsx:54
+msgid "Apex E-Commerce"
+msgstr ""
 
 #: src/routes/services.tsx:113
 msgid "API Development"
@@ -60,6 +76,10 @@ msgstr "Disponible pour de nouveaux projets"
 #: src/routes/services.tsx:39
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Construction d'applications web évolutives et optimisées pour le SEO avec des piles technologiques modernes."
+
+#: src/routes/projects.tsx:88
+msgid "Building the <0>future</0> through clean code."
+msgstr "Construire le <0>futur</0> grâce à un code propre."
 
 #: src/routes/services.tsx:80
 msgid "Choose Basic"
@@ -105,7 +125,7 @@ msgstr "Me contacter"
 #~ msgid "Contact Me"
 #~ msgstr ""
 
-#: src/routes/index.tsx:34
+#: src/routes/index.tsx:36
 msgid "Core Services"
 msgstr "Services Principaux"
 
@@ -117,6 +137,14 @@ msgstr "Créer des expériences numériques avec précision."
 #: src/routes/services.tsx:50
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "Solutions mobiles multiplateformes et natives pour iOS et Android."
+
+#: src/routes/projects.tsx:42
+msgid "Cross-platform fitness application featuring custom workout builders and wearable device integration using React Native."
+msgstr ""
+
+#: src/routes/projects.tsx:70
+msgid "CryptoPulse API"
+msgstr ""
 
 #: src/routes/services.tsx:96
 msgid "Custom Backend"
@@ -164,10 +192,18 @@ msgstr "Site Web de Développeur"
 msgid "Discovery & Strategy"
 msgstr "Découverte & Stratégie"
 
+#: src/routes/projects.tsx:53
+msgid "E-commerce website with product grid view"
+msgstr ""
+
 #: src/components/About.tsx:115
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "E-mail"
+
+#: src/routes/projects.tsx:106
+msgid "Email me"
+msgstr "M'envoyer un e-mail"
 
 #: src/routes/index.tsx:107
 msgid "Email Me"
@@ -183,6 +219,10 @@ msgstr "Veiller à ce que votre logiciel reste rapide, sécurisé et à jour gr�
 #: src/routes/services.tsx:33
 msgid "Expertise"
 msgstr "Expertise"
+
+#: src/routes/projects.tsx:38
+msgid "FitFlow Mobile"
+msgstr ""
 
 #: src/routes/services.tsx:23
 msgid "Flexible <0>Service</0> Plans for Your Success"
@@ -217,9 +257,17 @@ msgstr "GitHub"
 msgid "Google store"
 msgstr "Google Store"
 
+#: src/routes/projects.tsx:103
+msgid "Have a project in mind?"
+msgstr "Vous avez un projet en tête ?"
+
 #: src/routes/services.tsx:114
 msgid "High-Load Optimization"
 msgstr "Optimisation Haute Performance"
+
+#: src/routes/projects.tsx:58
+msgid "High-performance headless commerce solution with Stripe integration and custom inventory management."
+msgstr ""
 
 #: src/routes/index.tsx:69
 msgid "How I Work"
@@ -232,6 +280,14 @@ msgstr "Je suis un développeur basé en France avec plus de 8 ans d'expérience
 #: src/components/About.tsx:48
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr ""
+
+#: src/routes/projects.tsx:92
+msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
+msgstr "Je suis un développeur freelance spécialisé dans la création d'applications web et mobiles de haute performance avec des technologies modernes."
+
+#: src/routes/projects.tsx:104
+msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
+msgstr "Je suis actuellement disponible pour du travail en freelance et ouvert à de nouvelles opportunités. Construisons quelque chose d'incroyable ensemble."
 
 #: src/components/About.tsx:129
 msgid "Illustration of a developer working at a desk with UI elements"
@@ -261,6 +317,10 @@ msgstr "Discutons de votre projet et voyons comment nous pouvons construire quel
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "Discutons de vos besoins et trouvons la meilleure solution pour votre entreprise."
 
+#: src/routes/projects.tsx:93
+msgid "Let's talk"
+msgstr "Discutons"
+
 #: src/components/About.tsx:103
 msgid "LinkedIn"
 msgstr "LinkedIn"
@@ -274,6 +334,10 @@ msgstr "Navigation principale"
 msgid "Maintenance & Support"
 msgstr "Maintenance & Support"
 
+#: src/routes/projects.tsx:40
+msgid "Mobile"
+msgstr ""
+
 #: src/routes/index.tsx:46
 #: src/routes/services.tsx:49
 msgid "Mobile App Development"
@@ -282,6 +346,14 @@ msgstr "Développement d'App Mobiles"
 #: src/routes/services.tsx:83
 msgid "Mobile Responsive"
 msgstr "Optimisé Mobile"
+
+#: src/components/Projects.tsx:82
+msgid "Mobile UI"
+msgstr ""
+
+#: src/routes/projects.tsx:21
+msgid "Modern minimalist dashboard interface design"
+msgstr ""
 
 #: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
@@ -299,6 +371,10 @@ msgstr "Le Plus Populaire"
 msgid "Multi-platform (Web/Mobile)"
 msgstr "Multiplateforme (Web/Mobile)"
 
+#: src/routes/projects.tsx:99
+msgid "My Recent Work"
+msgstr "Mes travaux récents"
+
 #: src/routes/services.tsx:34
 msgid "My Specialized Services"
 msgstr "Mes Services Spécialisés"
@@ -307,10 +383,18 @@ msgstr "Mes Services Spécialisés"
 msgid "Node.js"
 msgstr "Node.js"
 
+#: src/routes/projects.tsx:22
+msgid "Nova Analytics Platform"
+msgstr ""
+
 #: src/routes/index.tsx:51
 #: src/routes/services.tsx:55
 msgid "Offline Capability"
 msgstr "Capacité Hors Ligne"
+
+#: src/components/Projects.tsx:83
+msgid "Open Source"
+msgstr ""
 
 #: src/routes/services.tsx:78
 msgid "Perfect for personal brands and portfolios."
@@ -323,6 +407,10 @@ msgstr "Audits de Performance"
 #: src/routes/services.tsx:43
 msgid "Performance Optimization"
 msgstr "Optimisation des Performances"
+
+#: src/routes/projects.tsx:98
+msgid "Portfolio"
+msgstr "Portfolio"
 
 #: src/components/About.tsx:21
 msgid "PostgreSQL"
@@ -378,9 +466,17 @@ msgstr "Design Responsive"
 msgid "REST API"
 msgstr "API REST"
 
+#: src/routes/projects.tsx:74
+msgid "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
+msgstr ""
+
 #: src/routes/services.tsx:104
 msgid "Scalable enterprise-grade software solutions."
 msgstr "Solutions logicielles évolutives de qualité entreprise."
+
+#: src/routes/projects.tsx:105
+msgid "Schedule a call"
+msgstr "Planifier un appel"
 
 #: src/routes/index.tsx:106
 #: src/routes/services.tsx:123
@@ -407,6 +503,10 @@ msgstr "Optimisation SEO"
 #: src/components/Header.tsx:50
 msgid "Service&pricing"
 msgstr "Services & Tarifs"
+
+#: src/routes/projects.tsx:37
+msgid "Sleek mobile app interface on a smartphone"
+msgstr ""
 
 #: src/components/Footer.tsx:28
 msgid "Social media links"
@@ -436,6 +536,14 @@ msgstr "Twitter / X"
 msgid "User Authentication"
 msgstr "Authentification Utilisateur"
 
+#: src/routes/projects.tsx:94
+msgid "View CV"
+msgstr "Voir mon CV"
+
+#: src/components/Projects.tsx:49
+msgid "View Details"
+msgstr ""
+
 #: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "Voir le Portfolio"
@@ -444,9 +552,19 @@ msgstr "Voir le Portfolio"
 msgid "View Pricing"
 msgstr "Voir les Tarifs"
 
+#: src/routes/projects.tsx:24
+#: src/routes/projects.tsx:56
+#: src/routes/projects.tsx:72
+msgid "Web"
+msgstr ""
+
 #: src/routes/services.tsx:89
 msgid "Web Application"
 msgstr "Application Web"
+
+#: src/components/Projects.tsx:81
+msgid "Web Apps"
+msgstr ""
 
 #: src/routes/index.tsx:40
 #: src/routes/services.tsx:38
