@@ -27,6 +27,10 @@ msgstr "© {currentYear} DevPort Freelance Studio. All rights reserved."
 msgid "3 Pages"
 msgstr "3 Pages"
 
+#: src/routes/projects.tsx:26
+msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
+msgstr "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
+
 #: src/components/Header.tsx:41
 msgid "About"
 msgstr "About"
@@ -35,9 +39,21 @@ msgstr "About"
 msgid "About Me"
 msgstr "About Me"
 
+#: src/routes/projects.tsx:69
+msgid "Abstract data visualization with neon lines"
+msgstr "Abstract data visualization with neon lines"
+
+#: src/components/Projects.tsx:80
+msgid "All Projects"
+msgstr "All Projects"
+
 #: src/components/About.tsx:16
 msgid "Angular"
 msgstr "Angular"
+
+#: src/routes/projects.tsx:54
+msgid "Apex E-Commerce"
+msgstr "Apex E-Commerce"
 
 #: src/routes/services.tsx:113
 msgid "API Development"
@@ -60,6 +76,10 @@ msgstr "Available for new projects"
 #: src/routes/services.tsx:39
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Building scalable, SEO-friendly web applications with modern tech stacks."
+
+#: src/routes/projects.tsx:88
+msgid "Building the <0>future</0> through clean code."
+msgstr "Building the <0>future</0> through clean code."
 
 #: src/routes/services.tsx:80
 msgid "Choose Basic"
@@ -118,6 +138,14 @@ msgstr "Crafting digital experiences with precision."
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "Cross-platform and native mobile solutions for iOS and Android."
 
+#: src/routes/projects.tsx:42
+msgid "Cross-platform fitness application featuring custom workout builders and wearable device integration using React Native."
+msgstr "Cross-platform fitness application featuring custom workout builders and wearable device integration using React Native."
+
+#: src/routes/projects.tsx:70
+msgid "CryptoPulse API"
+msgstr "CryptoPulse API"
+
 #: src/routes/services.tsx:96
 msgid "Custom Backend"
 msgstr "Custom Backend"
@@ -164,10 +192,18 @@ msgstr "Developer Website"
 msgid "Discovery & Strategy"
 msgstr "Discovery & Strategy"
 
+#: src/routes/projects.tsx:53
+msgid "E-commerce website with product grid view"
+msgstr "E-commerce website with product grid view"
+
 #: src/components/About.tsx:115
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "Email"
+
+#: src/routes/projects.tsx:106
+msgid "Email me"
+msgstr "Email me"
 
 #: src/routes/index.tsx:107
 msgid "Email Me"
@@ -183,6 +219,10 @@ msgstr "Ensuring your software stays fast, secure, and up-to-date with 24/7 moni
 #: src/routes/services.tsx:33
 msgid "Expertise"
 msgstr "Expertise"
+
+#: src/routes/projects.tsx:38
+msgid "FitFlow Mobile"
+msgstr "FitFlow Mobile"
 
 #: src/routes/services.tsx:23
 msgid "Flexible <0>Service</0> Plans for Your Success"
@@ -217,9 +257,17 @@ msgstr "GitHub"
 msgid "Google store"
 msgstr "Google store"
 
+#: src/routes/projects.tsx:103
+msgid "Have a project in mind?"
+msgstr "Have a project in mind?"
+
 #: src/routes/services.tsx:114
 msgid "High-Load Optimization"
 msgstr "High-Load Optimization"
+
+#: src/routes/projects.tsx:58
+msgid "High-performance headless commerce solution with Stripe integration and custom inventory management."
+msgstr "High-performance headless commerce solution with Stripe integration and custom inventory management."
 
 #: src/routes/index.tsx:69
 msgid "How I Work"
@@ -232,6 +280,14 @@ msgstr "I'm a developer based in France with over 8 years of experience building
 #: src/components/About.tsx:48
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
+
+#: src/routes/projects.tsx:92
+msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
+msgstr "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
+
+#: src/routes/projects.tsx:104
+msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
+msgstr "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 
 #: src/components/About.tsx:129
 msgid "Illustration of a developer working at a desk with UI elements"
@@ -261,6 +317,10 @@ msgstr "Let's discuss your project and see how we can build something amazing to
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "Let's discuss your requirements and find the best solution for your business."
 
+#: src/routes/projects.tsx:93
+msgid "Let's talk"
+msgstr "Let's talk"
+
 #: src/components/About.tsx:103
 msgid "LinkedIn"
 msgstr "LinkedIn"
@@ -274,6 +334,10 @@ msgstr "Main navigation"
 msgid "Maintenance & Support"
 msgstr "Maintenance & Support"
 
+#: src/routes/projects.tsx:40
+msgid "Mobile"
+msgstr "Mobile"
+
 #: src/routes/index.tsx:46
 #: src/routes/services.tsx:49
 msgid "Mobile App Development"
@@ -282,6 +346,14 @@ msgstr "Mobile App Development"
 #: src/routes/services.tsx:83
 msgid "Mobile Responsive"
 msgstr "Mobile Responsive"
+
+#: src/components/Projects.tsx:82
+msgid "Mobile UI"
+msgstr "Mobile UI"
+
+#: src/routes/projects.tsx:21
+msgid "Modern minimalist dashboard interface design"
+msgstr "Modern minimalist dashboard interface design"
 
 #: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
@@ -299,6 +371,10 @@ msgstr "Most Popular"
 msgid "Multi-platform (Web/Mobile)"
 msgstr "Multi-platform (Web/Mobile)"
 
+#: src/routes/projects.tsx:99
+msgid "My Recent Work"
+msgstr "My Recent Work"
+
 #: src/routes/services.tsx:34
 msgid "My Specialized Services"
 msgstr "My Specialized Services"
@@ -307,10 +383,18 @@ msgstr "My Specialized Services"
 msgid "Node.js"
 msgstr "Node.js"
 
+#: src/routes/projects.tsx:22
+msgid "Nova Analytics Platform"
+msgstr "Nova Analytics Platform"
+
 #: src/routes/index.tsx:51
 #: src/routes/services.tsx:55
 msgid "Offline Capability"
 msgstr "Offline Capability"
+
+#: src/components/Projects.tsx:83
+msgid "Open Source"
+msgstr "Open Source"
 
 #: src/routes/services.tsx:78
 msgid "Perfect for personal brands and portfolios."
@@ -323,6 +407,10 @@ msgstr "Performance Audits"
 #: src/routes/services.tsx:43
 msgid "Performance Optimization"
 msgstr "Performance Optimization"
+
+#: src/routes/projects.tsx:98
+msgid "Portfolio"
+msgstr "Portfolio"
 
 #: src/components/About.tsx:21
 msgid "PostgreSQL"
@@ -378,9 +466,17 @@ msgstr "Responsive Design"
 msgid "REST API"
 msgstr "REST API"
 
+#: src/routes/projects.tsx:74
+msgid "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
+msgstr "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
+
 #: src/routes/services.tsx:104
 msgid "Scalable enterprise-grade software solutions."
 msgstr "Scalable enterprise-grade software solutions."
+
+#: src/routes/projects.tsx:105
+msgid "Schedule a call"
+msgstr "Schedule a call"
 
 #: src/routes/index.tsx:106
 #: src/routes/services.tsx:123
@@ -407,6 +503,10 @@ msgstr "SEO Optimization"
 #: src/components/Header.tsx:50
 msgid "Service&pricing"
 msgstr "Service&pricing"
+
+#: src/routes/projects.tsx:37
+msgid "Sleek mobile app interface on a smartphone"
+msgstr "Sleek mobile app interface on a smartphone"
 
 #: src/components/Footer.tsx:28
 msgid "Social media links"
@@ -436,6 +536,14 @@ msgstr "Twitter / X"
 msgid "User Authentication"
 msgstr "User Authentication"
 
+#: src/routes/projects.tsx:94
+msgid "View CV"
+msgstr "View CV"
+
+#: src/components/Projects.tsx:49
+msgid "View Details"
+msgstr "View Details"
+
 #: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "View Portfolio"
@@ -444,9 +552,19 @@ msgstr "View Portfolio"
 msgid "View Pricing"
 msgstr "View Pricing"
 
+#: src/routes/projects.tsx:24
+#: src/routes/projects.tsx:56
+#: src/routes/projects.tsx:72
+msgid "Web"
+msgstr "Web"
+
 #: src/routes/services.tsx:89
 msgid "Web Application"
 msgstr "Web Application"
+
+#: src/components/Projects.tsx:81
+msgid "Web Apps"
+msgstr "Web Apps"
 
 #: src/routes/index.tsx:40
 #: src/routes/services.tsx:38
