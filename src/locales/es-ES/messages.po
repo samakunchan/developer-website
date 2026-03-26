@@ -27,6 +27,10 @@ msgstr "© {currentYear} DevPort Freelance Studio. Todos los derechos reservados
 msgid "3 Pages"
 msgstr "3 Páginas"
 
+#: src/routes/projects.tsx:26
+msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
+msgstr ""
+
 #: src/components/Header.tsx:41
 msgid "About"
 msgstr "Sobre mí"
@@ -35,9 +39,21 @@ msgstr "Sobre mí"
 msgid "About Me"
 msgstr "Sobre mí"
 
+#: src/routes/projects.tsx:69
+msgid "Abstract data visualization with neon lines"
+msgstr ""
+
+#: src/components/Projects.tsx:80
+msgid "All Projects"
+msgstr ""
+
 #: src/components/About.tsx:16
 msgid "Angular"
 msgstr "Angular"
+
+#: src/routes/projects.tsx:54
+msgid "Apex E-Commerce"
+msgstr ""
 
 #: src/routes/services.tsx:113
 msgid "API Development"
@@ -60,6 +76,10 @@ msgstr "Disponible para nuevos proyectos"
 #: src/routes/services.tsx:39
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Construcción de aplicaciones web escalables y optimizadas para SEO con pilas tecnológicas modernas."
+
+#: src/routes/projects.tsx:88
+msgid "Building the <0>future</0> through clean code."
+msgstr "Construyendo el <0>futuro</0> a través de un código limpio."
 
 #: src/routes/services.tsx:80
 msgid "Choose Basic"
@@ -118,6 +138,14 @@ msgstr "Creando experiencias digitales con precisión."
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "Soluciones móviles nativas y multiplataforma para iOS y Android."
 
+#: src/routes/projects.tsx:42
+msgid "Cross-platform fitness application featuring custom workout builders and wearable device integration using React Native."
+msgstr ""
+
+#: src/routes/projects.tsx:70
+msgid "CryptoPulse API"
+msgstr ""
+
 #: src/routes/services.tsx:96
 msgid "Custom Backend"
 msgstr "Backend a Medida"
@@ -164,10 +192,18 @@ msgstr "Sitio Web del Desarrollador"
 msgid "Discovery & Strategy"
 msgstr "Descubrimiento y Estrategia"
 
+#: src/routes/projects.tsx:53
+msgid "E-commerce website with product grid view"
+msgstr ""
+
 #: src/components/About.tsx:115
 #: src/components/Footer.tsx:32
 msgid "Email"
 msgstr "Correo electrónico"
+
+#: src/routes/projects.tsx:106
+msgid "Email me"
+msgstr "Envíame un correo"
 
 #: src/routes/index.tsx:107
 msgid "Email Me"
@@ -183,6 +219,10 @@ msgstr "Asegurar que su software se mantenga rápido, seguro y actualizado con m
 #: src/routes/services.tsx:33
 msgid "Expertise"
 msgstr "Experiencia"
+
+#: src/routes/projects.tsx:38
+msgid "FitFlow Mobile"
+msgstr ""
 
 #: src/routes/services.tsx:23
 msgid "Flexible <0>Service</0> Plans for Your Success"
@@ -217,9 +257,17 @@ msgstr "GitHub"
 msgid "Google store"
 msgstr "Google Store"
 
+#: src/routes/projects.tsx:103
+msgid "Have a project in mind?"
+msgstr "¿Tienes un proyecto en mente?"
+
 #: src/routes/services.tsx:114
 msgid "High-Load Optimization"
 msgstr "Optimización de Alta Carga"
+
+#: src/routes/projects.tsx:58
+msgid "High-performance headless commerce solution with Stripe integration and custom inventory management."
+msgstr ""
 
 #: src/routes/index.tsx:69
 msgid "How I Work"
@@ -232,6 +280,14 @@ msgstr "Soy un desarrollador con sede en Francia con más de 8 años de experien
 #: src/components/About.tsx:48
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr ""
+
+#: src/routes/projects.tsx:92
+msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
+msgstr "Soy un desarrollador freelance especializado en la creación de aplicaciones web y móviles de alto rendimiento con tecnologías modernas."
+
+#: src/routes/projects.tsx:104
+msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
+msgstr "Actualmente estoy disponible para trabajo freelance y abierto a nuevas oportunidades. Construyamos algo increíble juntos."
 
 #: src/components/About.tsx:129
 msgid "Illustration of a developer working at a desk with UI elements"
@@ -261,6 +317,10 @@ msgstr "Hablemos de tu proyecto y veamos cómo podemos construir algo increíble
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "Hablemos de tus requisitos y encontremos la mejor solución para tu negocio."
 
+#: src/routes/projects.tsx:93
+msgid "Let's talk"
+msgstr "Hablemos"
+
 #: src/components/About.tsx:103
 msgid "LinkedIn"
 msgstr "LinkedIn"
@@ -274,6 +334,10 @@ msgstr "Navegación principal"
 msgid "Maintenance & Support"
 msgstr "Mantenimiento y Soporte"
 
+#: src/routes/projects.tsx:40
+msgid "Mobile"
+msgstr ""
+
 #: src/routes/index.tsx:46
 #: src/routes/services.tsx:49
 msgid "Mobile App Development"
@@ -282,6 +346,14 @@ msgstr "Desarrollo de Aplicaciones Móviles"
 #: src/routes/services.tsx:83
 msgid "Mobile Responsive"
 msgstr "Responsivo para Móviles"
+
+#: src/components/Projects.tsx:82
+msgid "Mobile UI"
+msgstr ""
+
+#: src/routes/projects.tsx:21
+msgid "Modern minimalist dashboard interface design"
+msgstr ""
 
 #: src/routes/index.tsx:31
 msgid "Modern workspace with laptop showing code"
@@ -299,6 +371,10 @@ msgstr "El Más Popular"
 msgid "Multi-platform (Web/Mobile)"
 msgstr "Multiplataforma (Web/Móvil)"
 
+#: src/routes/projects.tsx:99
+msgid "My Recent Work"
+msgstr "Mi trabajo reciente"
+
 #: src/routes/services.tsx:34
 msgid "My Specialized Services"
 msgstr "Mis Servicios Especializados"
@@ -307,10 +383,18 @@ msgstr "Mis Servicios Especializados"
 msgid "Node.js"
 msgstr "Node.js"
 
+#: src/routes/projects.tsx:22
+msgid "Nova Analytics Platform"
+msgstr ""
+
 #: src/routes/index.tsx:51
 #: src/routes/services.tsx:55
 msgid "Offline Capability"
 msgstr "Capacidad fuera de línea"
+
+#: src/components/Projects.tsx:83
+msgid "Open Source"
+msgstr ""
 
 #: src/routes/services.tsx:78
 msgid "Perfect for personal brands and portfolios."
@@ -323,6 +407,10 @@ msgstr "Auditorías de rendimiento"
 #: src/routes/services.tsx:43
 msgid "Performance Optimization"
 msgstr "Optimización de Rendimiento"
+
+#: src/routes/projects.tsx:98
+msgid "Portfolio"
+msgstr "Portafolio"
 
 #: src/components/About.tsx:21
 msgid "PostgreSQL"
@@ -378,9 +466,17 @@ msgstr "Diseño Responsivo"
 msgid "REST API"
 msgstr "API REST"
 
+#: src/routes/projects.tsx:74
+msgid "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
+msgstr ""
+
 #: src/routes/services.tsx:104
 msgid "Scalable enterprise-grade software solutions."
 msgstr "Soluciones de software de grado empresarial escalables."
+
+#: src/routes/projects.tsx:105
+msgid "Schedule a call"
+msgstr "Programar una llamada"
 
 #: src/routes/index.tsx:106
 #: src/routes/services.tsx:123
@@ -407,6 +503,10 @@ msgstr "Optimización SEO"
 #: src/components/Header.tsx:50
 msgid "Service&pricing"
 msgstr "Servicios y Precios"
+
+#: src/routes/projects.tsx:37
+msgid "Sleek mobile app interface on a smartphone"
+msgstr ""
 
 #: src/components/Footer.tsx:28
 msgid "Social media links"
@@ -436,6 +536,14 @@ msgstr "Twitter / X"
 msgid "User Authentication"
 msgstr "Autenticación de Usuarios"
 
+#: src/routes/projects.tsx:94
+msgid "View CV"
+msgstr "Ver CV"
+
+#: src/components/Projects.tsx:49
+msgid "View Details"
+msgstr ""
+
 #: src/routes/index.tsx:28
 msgid "View Portfolio"
 msgstr "Ver Portafolio"
@@ -444,9 +552,19 @@ msgstr "Ver Portafolio"
 msgid "View Pricing"
 msgstr "Ver Precios"
 
+#: src/routes/projects.tsx:24
+#: src/routes/projects.tsx:56
+#: src/routes/projects.tsx:72
+msgid "Web"
+msgstr ""
+
 #: src/routes/services.tsx:89
 msgid "Web Application"
 msgstr "Aplicación Web"
+
+#: src/components/Projects.tsx:81
+msgid "Web Apps"
+msgstr ""
 
 #: src/routes/index.tsx:40
 #: src/routes/services.tsx:38

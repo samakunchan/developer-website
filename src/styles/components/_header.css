@@ -72,6 +72,8 @@
   transition: color var(--transition-speed) ease;
 }
 
-.header__nav-link:hover {
+.header__nav-link:hover,
+.header__nav-link--active {
   color: var(--color-primary);
+  font-weight: 700;
 }

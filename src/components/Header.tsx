@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
           <ul className="header__nav-list">
             <li>
               <Link
-                to="/"
+                to="/projects"
                 className="header__nav-link"
                 activeProps={{
                   className: 'header__nav-link--active',

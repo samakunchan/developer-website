@@ -1,5 +1,26 @@
 # CHANGELOG developer-website
 
+## 🚀 0.10.0 - 26/03/2026
+
+### Added
+
+- **route**: New `/projects` route for the projects page.
+- **Component**:
+  - `Projects` component with responsive grid and premium glassmorphism design.
+  - `ProjectCard` component with support for icons, badges, and features list.
+- **Localization**: Full internationalization for the Projects page UI (Hero, Header, and CTA sections).
+- **Localization**: Added missing translations for French (fr-FR), Spanish (es-ES), Chinese (zh-CN), and Arabic (ar-SA).
+
+### Changed
+
+- **Navigation**: Updated Header menu items to "Projects", "About", and "Service&pricing" for a more professional look.
+- **Versioning**: Bumped project version to 0.10.0.
+- **I18n**: Compiled all message catalogs with the latest Projects page content using LinguiJS.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.9.0 - 25/03/2026
 
 ### Added
