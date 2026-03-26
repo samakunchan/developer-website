@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
@@ -14,6 +14,8 @@ export const Route = createFileRoute('/services')({
 });
 
 function ServicesPricingPage() {
+  const navigate = useNavigate();
+
   return (
     <>
       <Header />
@@ -25,7 +27,10 @@ function ServicesPricingPage() {
           </Trans>
         }
         description={t`Choose the perfect service package tailored to your business needs. From simple portfolios to complex SaaS platforms.`}
-        primaryButton={{ text: t`View Pricing` }}
+        primaryButton={{
+          text: t`View Pricing`,
+          onClick: () => navigate({ to: '/services', hash: 'pricing' }),
+        }}
         secondaryButton={{ text: t`Contact me` }}
       />
       <Services
