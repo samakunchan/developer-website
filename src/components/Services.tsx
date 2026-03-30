@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from './Container';
+import { useInView } from 'react-intersection-observer';
 
 interface ServiceCardProps {
   icon: string;
@@ -65,6 +66,10 @@ interface ServicesProps {
 }
 
 export function Services({ subtitle, title, children, id }: ServicesProps) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.2,
+  });
   return (
     <section className="services" id={id} aria-labelledby="services-title">
       <Container className="services__container">
@@ -78,7 +83,12 @@ export function Services({ subtitle, title, children, id }: ServicesProps) {
             )}
           </div>
         )}
-        <div className="services__grid">{children}</div>
+        <div
+          className={`services__grid ${inView ? 'is-visible' : ''}`}
+          ref={ref}
+        >
+          {children}
+        </div>
       </Container>
     </section>
   );

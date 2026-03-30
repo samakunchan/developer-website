@@ -12,6 +12,7 @@ export const Header: React.FC = () => {
           to="/"
           className="header__logo-container"
           aria-label={t`Freelance home page`}
+          viewTransition
         >
           <span className="material-symbols-outlined header__logo-icon">
             terminal
@@ -28,6 +29,7 @@ export const Header: React.FC = () => {
                 activeProps={{
                   className: 'header__nav-link--active',
                 }}
+                viewTransition
               >
                 <Trans>Projects</Trans>
               </Link>
@@ -37,6 +39,7 @@ export const Header: React.FC = () => {
                 to="/about"
                 className="header__nav-link"
                 activeProps={{ className: 'header__nav-link--active' }}
+                viewTransition
               >
                 <Trans>About</Trans>
               </Link>
@@ -46,6 +49,7 @@ export const Header: React.FC = () => {
                 to="/services"
                 className="header__nav-link"
                 activeProps={{ className: 'header__nav-link--active' }}
+                viewTransition
               >
                 <Trans>Service&pricing</Trans>
               </Link>

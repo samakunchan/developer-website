@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from './Container';
 import { Button } from './Button';
 import { ImageNetwork } from './ImageNetwork';
+import { useInView } from 'react-intersection-observer';
 
 interface HeroProps {
   badgeText?: string;
@@ -35,11 +36,17 @@ export function Hero({
 }: HeroProps) {
   const hasImage = !!imageSrc;
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
     <section
+      ref={ref}
       className={`hero${imagePosition === 'left' ? ' hero--image-left' : ''} ${
         !hasImage ? 'hero--no-image' : ''
-      }`}
+      } hero-animation-section ${inView ? 'is-visible' : ''}`}
       aria-labelledby="hero-title"
     >
       <Container className="hero__container">

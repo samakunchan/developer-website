@@ -1,5 +1,5 @@
 .about {
-  padding: 4rem 1.5rem;
+  padding: calc(var(--spacing-lg) + 2rem) 1.5rem;
 }
 
 .about__grid {
@@ -195,4 +195,5 @@
 .about__social-icon {
   width: 1.5rem;
   height: 1.5rem;
+  fill: currentColor;
 }
