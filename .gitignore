@@ -1,0 +1,14 @@
+.env
+node_modules
+.turbo
+.next
+dist
+.DS_Store
+.vscode
+.idea
+.agent
+.agent/*
+yarn.lock
+yarn-error.log
+.agent.md
+todo.md

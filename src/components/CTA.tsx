@@ -2,6 +2,8 @@ import React from 'react';
 import { Container } from './Container';
 import { Button } from './Button';
 
+import { useInView } from 'react-intersection-observer';
+
 interface CTAProps {
   title: React.ReactNode;
   description: React.ReactNode;
@@ -21,8 +23,17 @@ export function CTA({
   primaryButton,
   secondaryButton,
 }: CTAProps) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="cta" aria-labelledby="cta-title">
+    <section
+      ref={ref}
+      className={`cta cta-animation-section ${inView ? 'is-visible' : ''}`}
+      aria-labelledby="cta-title"
+    >
       <Container>
         <div className="cta__wrapper">
           <div className="cta__glow cta__glow--top" aria-hidden="true"></div>

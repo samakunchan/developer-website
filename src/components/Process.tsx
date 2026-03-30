@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container } from './Container';
+import { useInView } from 'react-intersection-observer';
 
 interface Step {
   number: number;
@@ -15,8 +16,18 @@ interface ProcessProps {
 }
 
 export function Process({ subtitle, title, steps, id }: ProcessProps) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="process" id={id} aria-labelledby="process-title">
+    <section
+      ref={ref}
+      className={`process process-animation-section ${inView ? 'is-visible' : ''}`}
+      id={id}
+      aria-labelledby="process-title"
+    >
       <Container className="process__container">
         <div className="process__grid">
           <div className="process__content">
