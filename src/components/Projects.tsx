@@ -88,7 +88,7 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
     { id: 'open-source', label: t`Open Source` },
   ];
 
-  const filteredProjects =
+  const filteredProjects: Project[] =
     activeFilter === 'all'
       ? projects
       : projects.filter((p: Project) => p.category === activeFilter);

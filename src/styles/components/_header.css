@@ -4,7 +4,11 @@
   opacity: 0.98;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  padding: 1rem 5rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .header__inner {

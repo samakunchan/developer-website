@@ -1,5 +1,26 @@
 # CHANGELOG developer-website
 
+## 🚀 0.11.0 - 30/03/2026
+
+### Added
+
+- **Animations**: Integrated `react-intersection-observer` to enable premium scroll-triggered entrance animations across key sections.
+- **Component**:
+  - `Hero`: Added smooth fade-in and slide-up animations when entering the viewport.
+  - `CTA`: Implemented intersection-based visibility for call-to-action sections.
+  - `Process`: Integrated scroll-triggered animations for the terminal mockup and workflow steps.
+- **Dependencies**: Added `react-intersection-observer` to the project's core dependencies.
+
+### Changed
+
+- **Versioning**: Bumped project version to 0.11.0.
+- **Git**: Updated `.gitignore` to better handle environment and build-specific files like `.tanstack`.
+
+### Fixed
+
+- **Styles**: Fixed social icon color inheritance in the `About` component (GitHub, LinkedIn, and Upwork icons now correctly use `fill-current` and hover states).
+- **Types**: Resolved minor TypeScript type inconsistencies in component props.
+
 ## 🚀 0.10.0 - 26/03/2026
 
 ### Added
