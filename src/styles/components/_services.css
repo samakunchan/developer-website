@@ -1,6 +1,6 @@
 .services {
   padding: var(--spacing-lg) 0;
-  background-color: rgba(15, 23, 42, 0.3);
+  background-color: var(--section-contrast-color);
 }
 
 .services__container {

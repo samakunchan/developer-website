@@ -50,3 +50,7 @@ input, button, textarea, select {
     scroll-behavior: auto !important;
   }
 }
+
+.fill-current {
+  fill: currentColor;
+}

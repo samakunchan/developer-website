@@ -3,6 +3,7 @@
 
 @import './abstracts/_variables.css';
 
+@import './base/_animations.css';
 @import './base/_reset.css';
 @import './base/_typography.css';
 
