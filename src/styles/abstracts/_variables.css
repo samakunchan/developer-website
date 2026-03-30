@@ -9,10 +9,11 @@
   --color-slate-800: #1e293b;
   --color-glass-bg: rgba(37, 244, 244, 0.05);
   --color-glass-border: rgba(37, 244, 244, 0.1);
+  --section-contrast-color: rgba(15, 23, 42, 0.5);
   --font-family-base: 'Inter', sans-serif;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 2rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
   --border-radius: 0.25rem;
   --border-radius-lg: 0.5rem;
   --border-radius-xl: 0.75rem;
