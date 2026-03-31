@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer';
 interface HeroProps {
   badgeText?: string;
   title: React.ReactNode;
-  description: string;
+  description: React.ReactNode;
   primaryButton?: {
     text: string;
     href?: string;

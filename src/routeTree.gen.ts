@@ -13,6 +13,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjectsSlugRouteImport } from './routes/projects_.$slug'
 import { Route as ApiOptimizeImageRouteImport } from './routes/api.optimize-image'
 
 const ServicesRoute = ServicesRouteImport.update({
@@ -35,6 +36,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
+  id: '/projects_/$slug',
+  path: '/projects/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiOptimizeImageRoute = ApiOptimizeImageRouteImport.update({
   id: '/api/optimize-image',
   path: '/api/optimize-image',
@@ -47,6 +53,7 @@ export interface FileRoutesByFullPath {
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/api/optimize-image': typeof ApiOptimizeImageRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByTo {
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/api/optimize-image': typeof ApiOptimizeImageRoute
+  '/projects/$slug': typeof ProjectsSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -62,12 +70,25 @@ export interface FileRoutesById {
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
   '/api/optimize-image': typeof ApiOptimizeImageRoute
+  '/projects_/$slug': typeof ProjectsSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/projects' | '/services' | '/api/optimize-image'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/projects'
+    | '/services'
+    | '/api/optimize-image'
+    | '/projects/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/projects' | '/services' | '/api/optimize-image'
+  to:
+    | '/'
+    | '/about'
+    | '/projects'
+    | '/services'
+    | '/api/optimize-image'
+    | '/projects/$slug'
   id:
     | '__root__'
     | '/'
@@ -75,6 +96,7 @@ export interface FileRouteTypes {
     | '/projects'
     | '/services'
     | '/api/optimize-image'
+    | '/projects_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -83,6 +105,7 @@ export interface RootRouteChildren {
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
   ApiOptimizeImageRoute: typeof ApiOptimizeImageRoute
+  ProjectsSlugRoute: typeof ProjectsSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -115,6 +138,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects_/$slug': {
+      id: '/projects_/$slug'
+      path: '/projects/$slug'
+      fullPath: '/projects/$slug'
+      preLoaderRoute: typeof ProjectsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/optimize-image': {
       id: '/api/optimize-image'
       path: '/api/optimize-image'
@@ -131,6 +161,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
   ApiOptimizeImageRoute: ApiOptimizeImageRoute,
+  ProjectsSlugRoute: ProjectsSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
