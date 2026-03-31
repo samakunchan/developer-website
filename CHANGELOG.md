@@ -1,5 +1,28 @@
 # CHANGELOG developer-website
 
+## 🚀 0.13.0 - 31/03/2026
+
+### Added
+
+- **Data Architecture & Modularity**:
+  - Established a centralized data layer in `src/core/data` and `src/core/types` to decouple content from UI logic.
+  - Defined comprehensive TypeScript interfaces for `Service`, `PricingTier`, `Project`, and `About` data.
+- **Components Refactoring**:
+  - **Services & Pricing**: Refactored to dynamically render content via `.map()` loops from `servicesData.tsx` and `pricingData.tsx`.
+  - **About Page**: Successfully externalized skills and social links into `aboutData.tsx`, streamlining the `About.tsx` component.
+  - **Projects Page**:
+    - Extracted `ProjectCard` into its own reusable component file.
+    - Centralized project category filtering logic in `projectsData.tsx`.
+
+### Changed
+
+- **Code Maintainability**: Significantly reduced component file size and complexity by externalizing static data and sub-components.
+- **Versioning**: Bumped project version to 0.13.0.
+
+### Fixed
+
+- **Linting**: Addressed numerous formatting and unused import warnings across the codebase during refactoring.
+
 ## 🚀 0.12.0 - 31/03/2026
 
 ### Added

@@ -1,4 +1,8 @@
-import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import {
+  createFileRoute,
+  useNavigate,
+  UseNavigateResult,
+} from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
@@ -7,14 +11,14 @@ import { Projects } from '../components/Projects';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 import '../styles/main.css';
-import { projects } from '../data/projects';
+import { projects } from '../core/data/projectsData';
 
 export const Route = createFileRoute('/projects')({
   component: ProjectsPage,
 });
 
 function ProjectsPage() {
-  const navigate = useNavigate();
+  const navigate: UseNavigateResult<string> = useNavigate();
 
   return (
     <>
