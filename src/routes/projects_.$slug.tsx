@@ -1,18 +1,20 @@
 import { createFileRoute, Link } from '@tanstack/react-router';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { projects } from '../data/projects';
 import { Trans } from '@lingui/react/macro';
 import '../styles/main.css';
-import { Project } from '../types/project';
+import { Project } from '../core/types/project';
+import { projects } from '../core/data/projectsData';
 
 export const Route = createFileRoute('/projects_/$slug')({
   component: ProjectDetailsPage,
 });
 
 function ProjectDetailsPage() {
-  const { slug } = Route.useParams();
-  const project = projects.find((p: Project) => p.slug === slug);
+  const { slug }: { slug: string } = Route.useParams();
+  const project: Project | undefined = projects.find(
+    (project: Project) => project.slug === slug,
+  );
 
   if (!project) {
     return (

@@ -1,4 +1,5 @@
-import { Project } from '../types/project';
+import { Project, ProjectFilter } from '../types/project';
+import { t } from '@lingui/core/macro';
 
 export const projects: Project[] = [
   {
@@ -172,4 +173,11 @@ export const projects: Project[] = [
       },
     ],
   },
+];
+
+export const projectsFilters: ProjectFilter[] = [
+  { id: 'all', label: t`All Projects` },
+  { id: 'web', label: t`Web Apps` },
+  { id: 'mobile', label: t`Mobile UI` },
+  { id: 'open-source', label: t`Open Source` },
 ];

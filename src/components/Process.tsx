@@ -38,7 +38,7 @@ export function Process({ subtitle, title, steps, id }: ProcessProps) {
               </h2>
             )}
             <div className="process__steps">
-              {steps.map((step) => (
+              {steps.map((step: Step) => (
                 <div key={step.number} className="process__step">
                   <div className="process__step-number">{step.number}</div>
                   <div className="process__step-content">
@@ -52,6 +52,7 @@ export function Process({ subtitle, title, steps, id }: ProcessProps) {
             </div>
           </div>
 
+          {/* Terminal */}
           <div className="process__terminal-wrapper">
             <div className="process__terminal">
               <div className="process__terminal-header">
