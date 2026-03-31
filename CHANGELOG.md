@@ -1,5 +1,28 @@
 # CHANGELOG developer-website
 
+## 🚀 0.12.0 - 31/03/2026
+
+### Added
+
+- **Project Detail**: Implemented a modern, split-screen layout for project pages.
+  - Sticky visual anchor for project images with a pulsing system status badge.
+  - Scrollable narrative column featuring technical architecture and functional requirements.
+  - Bento-style feature grid with unique icon mapping for each requirement.
+- **Data Architecture**:
+  - Expanded `Project` interface with `caseStudyNumber`, `techStack`, and detailed `features` metadata.
+  - Centralized and enriched project data in `src/data/projects.ts` with comprehensive technical and functional details.
+- **Styling**: Created `_project_detail.css` with premium design tokens and integrated it into the core design system for deep project insights.
+
+### Changed
+
+- **Data Management**: Refactored project lists to use English-only content for static metadata while maintaining full UI internationalization.
+- **Routing**: Optimized dynamic routing for project case studies using TanStack Router for a more robust experience.
+- **Versioning**: Bumped project version to 0.12.0.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.11.0 - 30/03/2026
 
 ### Added
