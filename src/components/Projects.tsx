@@ -1,71 +1,8 @@
 import React, { useState } from 'react';
 import { Container } from './Container';
-import { Trans } from '@lingui/react/macro';
-import { t } from '@lingui/core/macro';
-import { Link } from '@tanstack/react-router';
-import { Project } from '../types/project';
-
-interface ProjectCardProps {
-  slug: string;
-  imageSrc: string;
-  imageAlt: string;
-  title: React.ReactNode;
-  category: string;
-  categoryLabel: React.ReactNode;
-  description: React.ReactNode;
-  techIcons?: string[];
-}
-
-export function ProjectCard({
-  slug,
-  imageSrc,
-  imageAlt,
-  title,
-  categoryLabel,
-  description,
-  techIcons,
-}: ProjectCardProps) {
-  return (
-    <div className="project-card">
-      <div className="project-card__image-wrapper">
-        <img src={imageSrc} alt={imageAlt} className="project-card__image" />
-      </div>
-      <div className="project-card__content">
-        <div className="project-card__header">
-          <Link
-            to="/projects/$slug"
-            params={{ slug }}
-            className="project-card__link"
-          >
-            <h3 className="project-card__title">{title}</h3>
-          </Link>
-          <span className="project-card__category">{categoryLabel}</span>
-        </div>
-        <p className="project-card__description">{description}</p>
-        <div className="project-card__footer">
-          <div className="project-card__tech">
-            {techIcons?.map((icon, index) => (
-              <span
-                key={index}
-                className="material-symbols-outlined project-card__tech-icon"
-              >
-                {icon}
-              </span>
-            ))}
-          </div>
-          <Link
-            to="/projects/$slug"
-            params={{ slug }}
-            className="project-card__link"
-          >
-            <Trans>View Details</Trans>
-            <span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
-        </div>
-      </div>
-    </div>
-  );
-}
+import { Project, ProjectFilter } from '../core/types/project';
+import { ProjectCard } from './ProjectCard';
+import { projectsFilters } from '../core/data/projectsData';
 
 interface ProjectsProps {
   id?: string;
@@ -74,20 +11,8 @@ interface ProjectsProps {
   projects: Project[];
 }
 
-interface FilterProps {
-  id: string;
-  label: string;
-}
-
 export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
   const [activeFilter, setActiveFilter] = useState<string>('all');
-
-  const filters: FilterProps[] = [
-    { id: 'all', label: t`All Projects` },
-    { id: 'web', label: t`Web Apps` },
-    { id: 'mobile', label: t`Mobile UI` },
-    { id: 'open-source', label: t`Open Source` },
-  ];
 
   const filteredProjects: Project[] =
     activeFilter === 'all'
@@ -105,7 +30,7 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
         )}
 
         <div className="projects__filters">
-          {filters.map((filter: FilterProps) => (
+          {projectsFilters.map((filter: ProjectFilter) => (
             <button
               key={filter.id}
               className={`projects__filter-btn ${
@@ -126,7 +51,6 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
               imageSrc={project.imageSrc}
               imageAlt={project.imageAlt}
               title={project.title}
-              category={project.category}
               categoryLabel={project.categoryLabel}
               description={project.description}
               techIcons={project.techIcons}
