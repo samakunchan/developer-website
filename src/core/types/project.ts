@@ -14,3 +14,7 @@ export interface Project {
   techStack?: Array<{ name: string; icon: string }>;
   features?: Array<{ icon: string; title: string; description: string }>;
 }
+export interface ProjectFilter {
+  id: string;
+  label: string;
+}

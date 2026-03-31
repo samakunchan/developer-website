@@ -1,4 +1,8 @@
-import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import {
+  createFileRoute,
+  useNavigate,
+  UseNavigateResult,
+} from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
@@ -7,14 +11,18 @@ import { Services, ServiceCard } from '../components/Services';
 import { Pricing, PricingTier } from '../components/Pricing';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
+import { specializedServices } from '../core/data/servicesData';
+import { pricingTiers } from '../core/data/pricingData';
 import '../styles/main.css';
+import { ServiceData } from '../core/types/service';
+import { PricingTierData } from '../core/types/pricing';
 
 export const Route = createFileRoute('/services')({
   component: ServicesPricingPage,
 });
 
 function ServicesPricingPage() {
-  const navigate = useNavigate();
+  const navigate: UseNavigateResult<string> = useNavigate();
 
   return (
     <>
@@ -38,39 +46,9 @@ function ServicesPricingPage() {
         subtitle={t`Expertise`}
         title={<Trans>My Specialized Services</Trans>}
       >
-        <ServiceCard
-          icon="language"
-          title={t`Web Development`}
-          description={t`Building scalable, SEO-friendly web applications with modern tech stacks.`}
-          badges={['React', 'Next.js', 'Node.js']}
-          features={[
-            t`Responsive Design`,
-            t`Performance Optimization`,
-            t`SEO Best Practices`,
-          ]}
-        />
-        <ServiceCard
-          icon="smartphone"
-          title={t`Mobile App Development`}
-          description={t`Cross-platform and native mobile solutions for iOS and Android.`}
-          badges={['Flutter', 'React Native']}
-          features={[
-            t`App Store Deployment`,
-            t`Push Notifications`,
-            t`Offline Capability`,
-          ]}
-        />
-        <ServiceCard
-          icon="handyman"
-          title={t`Maintenance & Support`}
-          description={t`Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring.`}
-          badges={['Cloud', 'Security']}
-          features={[
-            t`Security Patching`,
-            t`Cloud Infrastructure`,
-            t`Regular Backups`,
-          ]}
-        />
+        {specializedServices.map((service: ServiceData, index: number) => (
+          <ServiceCard key={index} {...service} />
+        ))}
       </Services>
 
       <Pricing
@@ -78,48 +56,9 @@ function ServicesPricingPage() {
         subtitle={t`Investment`}
         title={<Trans>Pricing Packages</Trans>}
       >
-        <PricingTier
-          name={<Trans>Static Site</Trans>}
-          description={t`Perfect for personal brands and portfolios.`}
-          priceSuffix={<Trans>/start</Trans>}
-          buttonText={<Trans>Choose Basic</Trans>}
-          features={[
-            { text: <Trans>3 Pages</Trans>, included: true },
-            { text: <Trans>Mobile Responsive</Trans>, included: true },
-            { text: <Trans>SEO Optimization</Trans>, included: true },
-            { text: <Trans>CMS Integration</Trans>, included: false },
-          ]}
-        />
-        <PricingTier
-          name={<Trans>Web Application</Trans>}
-          description={t`Full-featured apps with authentication and CMS.`}
-          price="$4,999"
-          priceSuffix={<Trans>/start</Trans>}
-          buttonText={<Trans>Choose Pro</Trans>}
-          isPopular
-          features={[
-            { text: <Trans>Custom Backend</Trans>, included: true },
-            { text: <Trans>User Authentication</Trans>, included: true },
-            { text: <Trans>Dashboard UI</Trans>, included: true },
-            { text: <Trans>Stripe Integration</Trans>, included: true },
-          ]}
-        />
-        <PricingTier
-          name={<Trans>Custom SaaS</Trans>}
-          description={t`Scalable enterprise-grade software solutions.`}
-          price="$9,999"
-          priceSuffix={<Trans>/start</Trans>}
-          buttonText={<Trans>Choose Enterprise</Trans>}
-          features={[
-            {
-              text: <Trans>Multi-platform (Web/Mobile)</Trans>,
-              included: true,
-            },
-            { text: <Trans>API Development</Trans>, included: true },
-            { text: <Trans>High-Load Optimization</Trans>, included: true },
-            { text: <Trans>Priority Support</Trans>, included: true },
-          ]}
-        />
+        {pricingTiers.map((tier: PricingTierData, index: number) => (
+          <PricingTier key={index} {...tier} />
+        ))}
       </Pricing>
 
       <CTA
