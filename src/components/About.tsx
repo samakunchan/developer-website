@@ -11,16 +11,16 @@ type SkillProps = {
 
 export const About: React.FC = () => {
   const skills: SkillProps[] = [
-    { name: t`JavaScript`, icon: 'javascript' },
-    { name: t`React / Next.js`, icon: 'data_object' },
-    { name: t`Angular`, icon: 'data_object' },
-    { name: t`Node.js`, icon: 'storage' },
-    { name: t`REST API`, icon: 'Api' },
-    { name: t`Flutter`, icon: 'Flutter' },
-    { name: t`Moderne CSS`, icon: 'palette' },
-    { name: t`PostgreSQL`, icon: 'database' },
-    { name: t`Google store`, icon: 'Android' },
-    { name: t`Apple store`, icon: 'iOS' },
+    { name: `JavaScript`, icon: 'javascript' },
+    { name: `React / Next.js`, icon: 'data_object' },
+    { name: `Angular`, icon: 'data_object' },
+    { name: `Node.js`, icon: 'storage' },
+    { name: `REST API`, icon: 'Api' },
+    { name: `Flutter`, icon: 'Flutter' },
+    { name: `Moderne CSS`, icon: 'palette' },
+    { name: `PostgreSQL`, icon: 'database' },
+    { name: `Google store`, icon: 'Android' },
+    { name: `Apple store`, icon: 'iOS' },
   ];
 
   return (
