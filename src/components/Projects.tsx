@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { Container } from './Container';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
+import { Link } from '@tanstack/react-router';
+import { Project } from '../types/project';
 
 interface ProjectCardProps {
+  slug: string;
   imageSrc: string;
   imageAlt: string;
   title: React.ReactNode;
@@ -11,17 +14,16 @@ interface ProjectCardProps {
   categoryLabel: React.ReactNode;
   description: React.ReactNode;
   techIcons?: string[];
-  detailsUrl?: string;
 }
 
 export function ProjectCard({
+  slug,
   imageSrc,
   imageAlt,
   title,
   categoryLabel,
   description,
   techIcons,
-  detailsUrl = '#',
 }: ProjectCardProps) {
   return (
     <div className="project-card">
@@ -30,7 +32,13 @@ export function ProjectCard({
       </div>
       <div className="project-card__content">
         <div className="project-card__header">
-          <h3 className="project-card__title">{title}</h3>
+          <Link
+            to="/projects/$slug"
+            params={{ slug }}
+            className="project-card__link"
+          >
+            <h3 className="project-card__title">{title}</h3>
+          </Link>
           <span className="project-card__category">{categoryLabel}</span>
         </div>
         <p className="project-card__description">{description}</p>
@@ -45,25 +53,18 @@ export function ProjectCard({
               </span>
             ))}
           </div>
-          <a href={detailsUrl} className="project-card__link">
+          <Link
+            to="/projects/$slug"
+            params={{ slug }}
+            className="project-card__link"
+          >
             <Trans>View Details</Trans>
             <span className="material-symbols-outlined">arrow_forward</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>
   );
-}
-
-interface Project {
-  id: string;
-  imageSrc: string;
-  imageAlt: string;
-  title: React.ReactNode;
-  category: 'web' | 'mobile' | 'open-source';
-  categoryLabel: React.ReactNode;
-  description: React.ReactNode;
-  techIcons: string[];
 }
 
 interface ProjectsProps {
@@ -104,7 +105,7 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
         )}
 
         <div className="projects__filters">
-          {filters.map((filter) => (
+          {filters.map((filter: FilterProps) => (
             <button
               key={filter.id}
               className={`projects__filter-btn ${
@@ -121,6 +122,7 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
           {filteredProjects.map((project: Project) => (
             <ProjectCard
               key={project.id}
+              slug={project.slug}
               imageSrc={project.imageSrc}
               imageAlt={project.imageAlt}
               title={project.title}
