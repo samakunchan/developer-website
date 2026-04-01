@@ -150,7 +150,7 @@
 }
 
 .process__terminal-line-number {
-  color: var(--color-slate-700);
+  color: var(--color-terminal-number);
   user-select: none;
   width: 1.5rem;
   text-align: right;

@@ -26,9 +26,9 @@ export function ServiceCard({
         <span className="material-symbols-outlined">{icon}</span>
       </div>
       <div className="service-card__content">
-        <h4 className="service-card__title" id={'service-card-title-' + icon}>
+        <h3 className="service-card__title" id={'service-card-title-' + icon}>
           {title}
-        </h4>
+        </h3>
         <p className="service-card__description">{description}</p>
 
         {badges && badges.length > 0 && (
