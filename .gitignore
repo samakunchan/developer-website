@@ -1,8 +1,10 @@
 .env
+docker.env
 node_modules
 .turbo
 .next
 dist
+.output
 .DS_Store
 .vscode
 .idea
