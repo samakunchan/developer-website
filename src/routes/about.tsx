@@ -12,7 +12,9 @@ function AboutPage() {
   return (
     <>
       <Header />
-      <About />
+      <main role="main">
+        <About />
+      </main>
       <Footer />
     </>
   );
