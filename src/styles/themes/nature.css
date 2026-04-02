@@ -1,0 +1,145 @@
+.nature { 
+  --color-primary: #006d36;
+  --color-secondary: #f8f8f8;
+  --color-background: #f0fdf4;
+  --color-text: #131e19;
+  --color-glass-bg: rgba(0, 109, 54, 0.05);
+  --color-glass-border: rgba(0, 109, 54, 0.1);
+  --color-primary-hover: #005e2d;
+  --color-primary-shadow: rgba(0, 109, 54, 0.2);
+  --color-primary-shadow-hover: rgba(0, 109, 54, 0.3);
+
+  /* Header */
+  --color-header-bg: var(--color-secondary);
+  --color-header-border: var(--color-primary);
+
+  /* Hero */
+  --color-hero-badge-bg: rgba(0, 109, 54, 0.1);
+  --color-hero-badge-border: rgba(0, 109, 54, 0.2);
+  --color-hero-glow-start: rgba(0, 109, 54, 0.5);
+  --color-hero-glow-end: rgba(74, 222, 128, 0.5);
+  --color-hero-description: var(--color-text);
+  --color-hero-image-border: var(--color-primary);
+  --color-hero-image-background: var(--color-secondary);
+
+  /* Buttons */
+  --color-primary-btn: linear-gradient(135deg, #006d36 0%, #4ade80 100%);
+  --color-primary-btn-text: var(--color-white);
+  --color-secondary-btn: var(--color-white);
+  --color-secondary-btn-text: var(--color-primary);
+  --color-secondary-btn-border: var(--color-primary);
+  --color-secondary-btn-hover: var(--color-background);
+
+  /* Components - Services */
+  --color-services-section-bg: rgba(0, 109, 54, 0.2);
+  --color-services-title: var(--color-primary);
+  --color-services-subtitle: var(--color-primary);
+  --color-services-card-bg: var(--color-secondary);
+  --color-services-card-border: var(--color-secondary);
+  --color-services-card-hover-border: var(--color-primary-hover);
+  --color-services-icon: var(--color-secondary);
+  --color-services-icon-bg: var(--color-primary);
+  --color-services-description: var(--color-text);
+  --color-services-badge-bg: rgba(0, 109, 54, 0.1);
+  --color-services-badge-border: rgba(0, 109, 54, 0.2);
+  --color-services-feature-text: var(--color-text);
+
+  /* CTA */
+  --color-cta-bg: linear-gradient(135deg, rgba(0, 109, 54, 0.15) 0%, rgba(0, 109, 54, 0.05) 100%);
+  --color-cta-border: rgba(0, 109, 54, 0.2);
+  --color-cta-glow: rgba(0, 109, 54, 0.1);
+  --color-cta-description: var(--color-text);
+
+  /* Input/Form */
+  --color-input-bg: rgba(0, 109, 54, 0.05);
+  --color-input-border: rgba(0, 109, 54, 0.1);
+  --color-input-focus-shadow: 0 0 0 4px rgba(0, 109, 54, 0.1);
+
+  /* Projects */
+  --section-contrast-color: var(--color-secondary);
+  --color-projects-filter-button-active: var(--color-secondary);
+  --color-projects-filter-bg: rgba(0, 109, 54, 0.05);
+  --color-projects-filter-border: rgba(0, 109, 54, 0.1);
+  --color-projects-filter-text: var(--color-primary);
+  --color-projects-filter-text-hover: var(--color-primary-hover);
+  --color-project-card-bg: var(--color-white);
+  --color-project-card-border: rgba(0, 109, 54, 0.1);
+  --color-project-card-border-hover: rgba(0, 109, 54, 0.5);
+  --color-project-badge-bg: rgba(0, 109, 54, 0.1);
+  --color-project-description: var(--color-text);
+  --color-project-meta-text: var(--color-text);
+  --color-project-tag-bg: rgba(0, 109, 54, 0.05);
+  --color-project-tag-border: rgba(0, 109, 54, 0.1);
+  --color-project-tag-text: var(--color-primary);
+
+  /* Pricing */
+  --color-pricing-section-bg: var(--color-background);
+  --color-pricing-card-bg: var(--color-white);
+  --color-pricing-card-border: rgba(0, 109, 54, 0.1);
+  --color-pricing-card-description: var(--color-text);
+  --color-pricing-popular-bg: linear-gradient(135deg, #006d36 0%, #4ade80 100%);
+  --color-pricing-check-bg: rgba(0, 109, 54, 0.1);
+  --color-pricing-popular-shadow: 0 20px 50px -12px rgba(0, 109, 54, 0.2);
+  --color-pricing-feature-text: var(--color-text);
+  --color-pricing-price-muted: var(--color-text);
+
+  /* Process */
+  --color-process-node-bg: rgba(0, 109, 54, 0.2);
+  --color-process-line: rgba(0, 109, 54, 0.1);
+  --color-process-step-text: var(--color-text);
+  --color-terminal-bg: rgba(19, 30, 25, 0.5);
+  --color-terminal-border: rgba(0, 109, 54, 0.2);
+  --color-terminal-header-border: rgba(0, 109, 54, 0.1);
+  --color-terminal-body-border: none;
+  --color-terminal-tab-inactive-bg: rgba(0, 109, 54, 0.1);
+  --color-terminal-text: #2670c1;
+  --color-terminal-keyword: #128658;
+  --color-terminal-function: #3200ff;
+  --color-terminal-property: #141080;;
+  --color-terminal-string: #a31515;
+  --color-terminal-bg: var(--color-secondary);
+
+  /* Terminal Lights */
+  --color-terminal-light-red: #ef4444;
+  --color-terminal-light-yellow: #fbbf24;
+  --color-terminal-light-green: #22c55e;
+  --color-terminal-wrapper-bg: var(--color-services-section-bg);
+  --color-terminal-number: #6e7681;
+
+  /* About */
+  --color-about-badge-bg: var(--color-secondary);
+  --color-about-job-text: var(--color-text);
+  --color-about-image-shadow: 0 4px 12px rgba(0, 109, 54, 0.2);
+  --color-about-social-bg: rgba(0, 109, 54, 0.1);
+  --color-about-social-hover-text: var(--color-white);
+  --color-about-text-muted: var(--color-text);
+  --color-about-skill-bg: rgba(0, 109, 54, 0.05);
+  --color-about-badge-border-bg: var(--color-glass-border);
+
+  /* Footer */
+  --color-footer-bg: var(--color-white);
+  --color-footer-border: rgba(0, 109, 54, 0.1);
+  --color-footer-social-link: var(--color-primary);
+  --color-footer-copyright: var(--color-text);
+
+  /* Project Detail */
+  --color-pd-header-bg: #f0fdf4;
+  --color-pd-border: rgba(0, 109, 54, 0.1);
+  --color-pd-card-bg: rgba(255, 255, 255, 0.9);
+  --color-pd-badge-bg: rgba(0, 109, 54, 0.1);
+  --color-pd-badge-border: rgba(0, 109, 54, 0.3);
+  --color-pd-gradient-start: rgba(0, 109, 54, 0.1);
+  --color-pd-btn-hover: #005e2d;
+  --color-pd-text-muted: var(--color-text);
+  --color-pd-section-title: var(--color-primary);
+  --color-pd-divider: rgba(0, 109, 54, 0.1);
+  --color-pd-tag-bg: rgba(0, 109, 54, 0.05);
+  --color-pd-tag-text: var(--color-primary);
+  --color-pd-tech-name: var(--color-text);
+  --color-pd-right-bg: var(--color-secondary);
+  --color-pd-left-bg: var(--color-secondary);
+  --color-project-card-detail-bg: var(--color-primary);
+  --color-pd-icon-card-bg: var(--color-secondary);
+  --color-pd-title-card-bg: var(--color-secondary);
+  --color-pd-desc-card-bg: var(--color-secondary);
+}

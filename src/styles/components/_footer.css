@@ -1,6 +1,6 @@
 .footer {
-  border-top: 1px solid var(--color-slate-800);
-  background-color: var(--color-background-dark);
+  border-top: 1px solid var(--color-footer-border);
+  background-color: var(--color-footer-bg);
   padding: 3rem 0;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .footer__copyright {
-  color: var(--color-slate-400);
+  color: var(--color-footer-copyright);
   font-size: 0.875rem;
   text-align: center;
 }
@@ -50,7 +50,7 @@
 }
 
 .footer__social-link {
-  color: var(--color-slate-400);
+  color: var(--color-footer-social-link);
   transition: color var(--transition-speed);
   display: flex;
   align-items: center;

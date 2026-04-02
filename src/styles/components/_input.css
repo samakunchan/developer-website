@@ -1,11 +1,11 @@
 .input {
   width: 100%;
   padding: 0.75rem 1rem;
-  border: 1px solid rgba(37, 244, 244, 0.1);
+  border: 1px solid var(--color-input-border);
   border-radius: 0.75rem; /* rounded-xl */
   font-family: inherit;
   font-size: 1rem;
-  background-color: rgba(37, 244, 244, 0.05);
+  background-color: var(--color-input-bg);
   color: var(--color-text);
   transition: all 0.3s ease;
 }
@@ -13,13 +13,13 @@
 .input:focus {
   outline: none;
   border-color: var(--color-primary);
-  box-shadow: 0 0 0 4px rgba(37, 244, 244, 0.1);
-  background-color: rgba(37, 244, 244, 0.08);
+  box-shadow: var(--color-input-focus-shadow);
+  background-color: var(--color-input-bg);
 }
 
 .input:disabled {
-  background-color: rgba(0, 0, 0, 0.1);
-  color: rgba(255, 255, 255, 0.3);
+  background-color: var(--color-input-disabled-bg);
+  color: var(--color-input-disabled-text);
   cursor: not-allowed;
   border-color: transparent;
 }

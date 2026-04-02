@@ -20,3 +20,6 @@
 @import './components/_about.css';
 @import './components/_projects.css';
 @import './components/_project_detail.css';
+
+@import './themes/dark.css';
+@import './themes/nature.css';
