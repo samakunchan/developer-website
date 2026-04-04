@@ -1,5 +1,38 @@
 # CHANGELOG developer-website
 
+## 🚀 0.15.0 - 04/04/2026
+
+### Added
+
+- **Styling Architecture**: Comprehensive refactoring from hardcoded colors to semantic design tokens in `src/styles/abstracts/_variables.css`.
+- **Theme Support**: Implemented deep support for **Default (Teal)**, **Dark**, and **Nature** themes using functional CSS variables.
+
+### Changed
+
+- **Component Refactoring**: Updated all major UI components to consume semantic tokens:
+  - `Hero`, `Services`, `Pricing`, `Projects`, `About`, `Process`, `CTA`, `Footer`, `Project Detail`, `Input`, and `Button`.
+- **Design System**: Centralized all brand colors, background states, and UI interactions into a cohesive variable-driven system for enhanced maintainability.
+
+### Fixed
+
+- No fixes.
+
+## 🚀 0.14.0 - 01/04/2026
+
+### Added
+
+- **Deployment**: Updated `Dockerfile` to support Nitro build and runtime stages.
+- **Server**: Configured production runner stage to execute the application using `node .output/server/index.mjs`.
+
+### Changed
+
+- **Build Pipeline**: Optimized Docker multi-stage build process for smaller production images.
+- **Versioning**: Bumped project version to 0.14.0.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.13.0 - 31/03/2026
 
 ### Added
