@@ -18,7 +18,7 @@ export const pricingTiers: PricingTierData[] = [
   {
     name: <Trans>Web Application</Trans>,
     description: t`Full-featured apps with authentication and CMS.`,
-    price: '$4,999',
+    // price: '$4,999',
     priceSuffix: <Trans>/start</Trans>,
     buttonText: <Trans>Choose Pro</Trans>,
     isPopular: true,
@@ -32,7 +32,7 @@ export const pricingTiers: PricingTierData[] = [
   {
     name: <Trans>Custom SaaS</Trans>,
     description: t`Scalable enterprise-grade software solutions.`,
-    price: '$9,999',
+    // price: '$9,999',
     priceSuffix: <Trans>/start</Trans>,
     buttonText: <Trans>Choose Enterprise</Trans>,
     features: [

@@ -26,9 +26,9 @@
   height: 2.5rem;
   padding: 0 1.5rem;
   border-radius: var(--border-radius-full);
-  background: var(--color-slate-800);
-  border: 1px solid var(--color-slate-700);
-  color: var(--color-slate-300);
+  background: var(--color-projects-filter-bg);
+  border: 1px solid var(--color-projects-filter-border);
+  color: var(--color-projects-filter-text);
   font-size: 0.875rem;
   font-weight: 500;
   white-space: nowrap;
@@ -37,14 +37,14 @@
 }
 
 .projects__filter-btn:hover {
-  background: var(--color-slate-700);
-  color: var(--color-white);
+  background: var(--color-projects-filter-border);
+  color: var(--color-projects-filter-text-hover);
 }
 
 .projects__filter-btn--active {
   background: var(--color-primary);
   border-color: var(--color-primary);
-  color: var(--color-background-dark);
+  color: var(--color-projects-filter-button-active);
   font-weight: 700;
 }
 
@@ -64,8 +64,8 @@
 .project-card {
   display: flex;
   flex-direction: column;
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid var(--color-slate-800);
+  background: var(--color-project-card-bg);
+  border: 1px solid var(--color-project-card-border);
   border-radius: var(--border-radius-xl);
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,9 +73,9 @@
 }
 
 .project-card:hover {
-  border-color: rgba(37, 244, 244, 0.5);
+  border-color: var(--color-project-card-border-hover);
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--color-shadow-deep);
 }
 
 .project-card__image-wrapper {
@@ -113,7 +113,7 @@
 .project-card__title {
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-services-title);
   transition: color 0.3s ease;
   margin: 0;
 }
@@ -128,13 +128,13 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.25rem 0.5rem;
-  background: rgba(37, 244, 244, 0.1);
+  background: var(--color-project-badge-bg);
   color: var(--color-primary);
   border-radius: var(--border-radius);
 }
 
 .project-card__description {
-  color: var(--color-slate-400);
+  color: var(--color-project-description);
   font-size: 0.875rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -155,7 +155,7 @@
 
 .project-card__tech-icon {
   font-size: 1.125rem;
-  color: var(--color-slate-500);
+  color: var(--color-project-meta-text);
 }
 
 .project-card__link {

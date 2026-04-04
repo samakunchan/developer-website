@@ -1,0 +1,28 @@
+services:
+  postgresdb:
+    image: postgres:16-alpine
+    container_name: developer-website-db
+    restart: always
+    env_file:
+      - docker.env
+    environment:
+      # hot reload enabled
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_dev_website_data:/var/lib/postgresql/data
+
+  website:
+    build: .
+    container_name: developer-website-app
+    restart: always
+    env_file:
+      - docker.env
+    ports:
+      - "${APP_PORT:-3000}:3000"
+    depends_on:
+      - postgresdb
+
+volumes:
+  postgres_dev_website_data:

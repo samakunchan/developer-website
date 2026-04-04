@@ -20,7 +20,10 @@ function ProjectDetailsPage() {
     return (
       <div className="project-detail">
         <Header />
-        <main className="project-detail__main flex items-center justify-center p-8">
+        <main
+          className="project-detail__main flex items-center justify-center p-8"
+          role="main"
+        >
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4 text-white">
               <Trans>Project Not Found</Trans>
