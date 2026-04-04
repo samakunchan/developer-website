@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { nitro } from 'nitro/vite';
 import tsConfigPaths from 'vite-tsconfig-paths';
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import viteReact from '@vitejs/plugin-react-swc';
@@ -12,6 +13,7 @@ export default defineConfig({
   plugins: [
     tsConfigPaths(),
     tanstackStart(),
+    nitro(),
     // react's vite plugin must come after start's vite plugin
     viteReact({ plugins: [['@lingui/swc-plugin', {}]] }),
     lingui(),

@@ -64,8 +64,8 @@
   gap: 0.5rem;
   padding: 0.25rem 0.75rem;
   border-radius: var(--border-radius-full);
-  background: rgba(37, 244, 244, 0.1);
-  border: 1px solid rgba(37, 244, 244, 0.2);
+  background: var(--color-hero-badge-bg);
+  border: 1px solid var(--color-hero-badge-border);
   color: var(--color-primary);
   width: fit-content;
   font-size: 0.75rem;
@@ -126,7 +126,7 @@
 
 .hero__description {
   font-size: 1.125rem;
-  color: var(--color-slate-400);
+  color: var(--color-hero-description);
   max-width: 36rem;
   margin-bottom: 0;
 }
@@ -143,8 +143,7 @@
 
 .hero__image-glow {
   position: absolute;
-  inset: -0.25rem;
-  background: linear-gradient(to right, rgba(37, 244, 244, 0.5), rgba(147, 51, 234, 0.5));
+  background: linear-gradient(to right, var(--color-hero-glow-start), var(--color-hero-glow-end));
   border-radius: var(--border-radius-xl);
   filter: blur(8px);
   opacity: 0.25;
@@ -159,10 +158,10 @@
   position: relative;
   aspect-ratio: 16 / 9;
   width: 100%;
-  background-color: var(--color-slate-800);
+  background-color: var(--color-hero-image-background);
   border-radius: var(--border-radius-xl);
   overflow: hidden;
-  border: 1px solid var(--color-slate-700);
+  border: 1px solid var(--color-hero-image-border);
 }
 
 @media (min-width: 1024px) {

@@ -1,6 +1,6 @@
 .services {
   padding: var(--spacing-lg) 0;
-  background-color: var(--section-contrast-color);
+  background-color: var(--color-services-section-bg);
 }
 
 .services__container {
@@ -15,7 +15,7 @@
 }
 
 .services__subtitle {
-  color: var(--color-primary);
+  color: var(--color-services-subtitle);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -27,7 +27,7 @@
 .services__title {
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-services-title);
   margin: 0;
 }
 
@@ -55,17 +55,17 @@
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
-  background: rgba(37, 244, 244, 0.05);
-  border: 1px solid rgba(37, 244, 244, 0.1);
+  background: var(--color-services-card-bg);
+  border: 1px solid var(--color-services-card-border);
   border-radius: var(--border-radius-xl);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   height: 100%;
 }
 
 .service-card:hover {
-  border-color: rgba(37, 244, 244, 0.4);
+  border-color: var(--color-services-card-hover-border);
   transform: translateY(-4px);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--color-shadow-deep);
 }
 
 .service-card__icon-wrapper {
@@ -74,10 +74,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(37, 244, 244, 0.1);
-  color: var(--color-primary);
+  background: var(--color-services-icon);
+  color: var(--color-services-icon-bg);
   border-radius: var(--border-radius-lg);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  font-size: 2rem;
+  border: 1px solid var(--color-services-card-border);
 }
 
 .service-card:hover .service-card__icon-wrapper {
@@ -89,13 +91,14 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0.5rem 0;
+  color: var(--color-services-title);
 }
 
 .service-card__description {
-  color: var(--color-slate-400);
+  color: var(--color-services-description);
   font-size: 0.9rem;
   line-height: 2;
-  margin: 0;
+  margin: .5rem 0;
 }
 
 /* Badges */
@@ -108,9 +111,9 @@
 
 .service-card__badge {
   padding: 0.3rem 0.7rem;
-  background: var(--color-slate-800);
+  background: var(--color-services-badge-bg);
   border-radius: var(--border-radius);
-  border: 1px solid var(--color-slate-700);
+  border: 1px solid var(--color-services-badge-border);
   font-size: 0.75rem;
   color: var(--color-primary);
 }
@@ -130,7 +133,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.75rem;
-  color: var(--color-slate-400);
+  color: var(--color-services-feature-text);
 }
 
 .service-card__feature .material-symbols-outlined {

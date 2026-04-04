@@ -6,7 +6,7 @@ import { t } from '@lingui/core/macro';
 
 export const Header: React.FC = () => {
   return (
-    <header className="header">
+    <header className="header" role="banner">
       <div className="header__inner">
         <Link
           to="/"
@@ -20,7 +20,11 @@ export const Header: React.FC = () => {
           <span className="header__logo-text">Freelance Dev</span>
         </Link>
 
-        <nav aria-label={t`Main navigation`} className="header__nav">
+        <nav
+          aria-label={t`Main navigation`}
+          className="header__nav"
+          role="navigation"
+        >
           <ul className="header__nav-list">
             <li>
               <Link

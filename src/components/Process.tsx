@@ -42,7 +42,7 @@ export function Process({ subtitle, title, steps, id }: ProcessProps) {
                 <div key={step.number} className="process__step">
                   <div className="process__step-number">{step.number}</div>
                   <div className="process__step-content">
-                    <h5 className="process__step-title">{step.title}</h5>
+                    <h3 className="process__step-title">{step.title}</h3>
                     <p className="process__step-description">
                       {step.description}
                     </p>

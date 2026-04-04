@@ -1,6 +1,6 @@
 .pricing {
   padding: var(--spacing-lg) 0;
-  background-color: var(--color-background-dark);
+  background-color: var(--color-pricing-section-bg);
 }
 
 .pricing__container {
@@ -27,7 +27,7 @@
 .pricing__title {
   font-size: 2.25rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-services-title);
   margin: 0;
 }
 
@@ -49,19 +49,19 @@
   display: flex;
   flex-direction: column;
   padding: 2rem;
-  background: var(--color-background-dark);
-  border: 1px solid var(--color-slate-800);
+  background: var(--color-pricing-card-bg);
+  border: 1px solid var(--color-pricing-card-border);
   border-radius: var(--border-radius-xl);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .pricing-card--popular {
-  background: var(--color-slate-800);
+  background: var(--color-pricing-popular-bg);
   border: 2px solid var(--color-primary);
   transform: scale(1.05);
   z-index: 10;
-  box-shadow: 0 20px 50px -12px rgba(37, 244, 244, 0.2);
+  box-shadow: var(--color-pricing-popular-shadow);
 }
 
 .pricing-card__badge {
@@ -78,6 +78,18 @@
   text-transform: uppercase;
 }
 
+.pricing-card--popular .pricing-card__badge,
+.pricing-card--popular .pricing-card__name,
+.pricing-card--popular .pricing-card__description,
+.pricing-card--popular .pricing-card__price,
+.pricing-card--popular .pricing-card__feature {
+  color: var(--color-white);
+}
+
+.pricing-card--popular .pricing-card__badge h4 {
+  color: var(--color-white);
+}
+
 .pricing-card__name {
   font-size: 1.25rem;
   font-weight: 700;
@@ -85,7 +97,7 @@
 }
 
 .pricing-card__description {
-  color: var(--color-slate-400);
+  color: var(--color-pricing-card-description);
   font-size: 0.875rem;
   margin-bottom: 1.5rem;
 }
@@ -94,12 +106,12 @@
   font-size: 2.5rem;
   font-weight: 900;
   margin-bottom: 2rem;
-  color: var(--color-white);
+  color: var(--color-services-title);
 }
 
 .pricing-card__price span {
   font-size: 1.125rem;
-  color: var(--color-slate-500);
+  color: var(--color-pricing-price-muted);
   font-weight: 400;
 }
 
@@ -126,7 +138,7 @@
 }
 
 .pricing-card__feature--disabled {
-  color: var(--color-slate-500);
+  color: var(--color-pricing-price-muted);
 }
 
 .pricing-card__feature .material-symbols-outlined {
@@ -135,5 +147,5 @@
 }
 
 .pricing-card__feature--disabled .material-symbols-outlined {
-  color: var(--color-slate-500);
+  color: var(--color-pricing-price-muted);
 }

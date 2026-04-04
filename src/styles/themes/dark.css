@@ -1,0 +1,61 @@
+.dark {
+  --color-secondary: #ffffff;
+  --color-background: #102222;
+  --color-text: #f1f5f9;
+
+  /* Header */
+  --color-header-bg: var(--color-background);
+  --color-header-border: var(--color-glass-border);
+
+  /* Hero */
+  --color-hero-image-border: var(--color-slate-800);
+  --color-hero-image-background: var(--border-radius-xl);
+
+  /* Buttons */
+  --color-primary-btn: var(--color-primary);
+  --color-primary-btn-text: var(--color-background-dark);
+  --color-secondary-btn: var(--color-slate-800);
+  --color-secondary-btn-text: var(--color-white);
+  --color-secondary-btn-border: var(--color-slate-700);
+
+  /* Components - Services */
+  --color-services-section-bg: var(--section-contrast-color);
+  --color-services-title: var(--color-white);
+  --color-services-subtitle: var(--color-white);
+  --color-services-card-bg: rgba(37, 244, 244, 0.05);
+  --color-services-card-border: rgba(37, 244, 244, 0.1);
+  --color-services-card-hover-border: rgba(37, 244, 244, 0.4);
+  --color-services-icon-bg: var(--color-primary);
+  --color-services-description: var(--color-slate-400);
+  --color-services-badge-bg: var(--color-slate-800);
+  --color-services-badge-border: var(--color-slate-700);
+  --color-services-feature-text: var(--color-slate-400);  
+
+  /* Projects */
+  --color-projects-filter-bg: var(--color-slate-800);
+  --color-projects-filter-border: var(--color-slate-700);
+  --color-projects-filter-text: var(--color-slate-300);
+  --color-projects-filter-text-hover: var(--color-white);
+  --color-project-card-bg: rgba(15, 23, 42, 0.6);
+
+  /* Pricing */
+  --color-pricing-card-bg: var(--color-background-dark);
+  --color-pricing-popular-bg: var(--color-slate-800);
+  --color-pricing-check-bg: var(--color-slate-800);
+
+  /* About */
+  --color-about-social-bg: var(--color-slate-800);
+
+  /* Project Detail */
+  --color-pd-border: var(--color-slate-800);
+  --color-pd-section-title: var(--color-slate-700);
+  --color-pd-tag-bg: var(--color-slate-800);
+  --color-pd-tag-text: var(--color-slate-300);
+  --color-pd-section-title: var(--color-secondary);
+
+  /* Footer */
+  --color-footer-bg: var(--color-background-dark);
+  --color-footer-border: var(--color-slate-800);
+  --color-footer-social-link: var(--color-slate-400);
+  --color-footer-copyright: var(--color-slate-400);
+}

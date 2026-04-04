@@ -6,7 +6,11 @@ export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer" aria-labelledby="footer-brand">
+    <footer
+      className="footer"
+      aria-labelledby="footer-brand"
+      role="contentinfo"
+    >
       <Container>
         <div className="footer__wrapper">
           <div className="footer__brand" id="footer-brand">
