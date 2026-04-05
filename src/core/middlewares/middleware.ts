@@ -2,17 +2,19 @@ import { createMiddleware } from '@tanstack/react-start';
 
 export const localeTzMiddleware = createMiddleware().server(
   async ({ next, request }) => {
-    const cookieHeader = request.headers.get('cookie');
+    // Detect locale from Accept-Language header
+    const acceptLanguage = request.headers.get('accept-language');
     let locale = 'en-US';
-    let timeZone = 'UTC';
 
-    if (cookieHeader) {
-      const cookies = Object.fromEntries(
-        cookieHeader.split('; ').map((c) => c.split('=')),
-      );
-      if (cookies.locale) locale = cookies.locale;
-      if (cookies.tz) timeZone = cookies.tz;
+    if (acceptLanguage) {
+      // Basic extraction of the first locale entry
+      const match = acceptLanguage.split(',')[0].split(';')[0].trim();
+      if (match) locale = match;
     }
+
+    // Since browsers don't send a standard timezone header, 
+    // we default to UTC or allow a custom header if provided.
+    const timeZone = request.headers.get('x-timezone') || 'UTC';
 
     return next({
       context: {
