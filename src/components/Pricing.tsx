@@ -42,22 +42,14 @@ const PricingTier: React.FC<PricingTierProps> = ({
         {features.map((feature, index) => (
           <li
             key={index}
-            className={`pricing-card__feature ${
-              !feature.included ? 'pricing-card__feature--disabled' : ''
-            }`}
+            className={`pricing-card__feature ${!feature.included ? 'pricing-card__feature--disabled' : ''}`}
           >
-            <span className="material-symbols-outlined">
-              {feature.included ? 'check_circle' : 'cancel'}
-            </span>
+            <span className="material-symbols-outlined">{feature.included ? 'check_circle' : 'cancel'}</span>
             {feature.text}
           </li>
         ))}
       </ul>
-      <Button
-        variant={isPopular ? 'primary' : 'outline'}
-        fullWidth
-        className="pricing-card__button"
-      >
+      <Button variant={isPopular ? 'primary' : 'outline'} fullWidth className="pricing-card__button">
         {buttonText}
       </Button>
     </div>
@@ -71,12 +63,7 @@ interface PricingProps {
   children: React.ReactNode;
 }
 
-export const Pricing: React.FC<PricingProps> = ({
-  id,
-  subtitle,
-  title,
-  children,
-}) => {
+export const Pricing: React.FC<PricingProps> = ({ id, subtitle, title, children }) => {
   return (
     <section id={id} className="pricing">
       <div className="container pricing__container">

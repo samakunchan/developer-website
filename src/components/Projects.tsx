@@ -15,9 +15,7 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const filteredProjects: Project[] =
-    activeFilter === 'all'
-      ? projects
-      : projects.filter((p: Project) => p.category === activeFilter);
+    activeFilter === 'all' ? projects : projects.filter((p: Project) => p.category === activeFilter);
 
   return (
     <section className="projects" id={id}>
@@ -33,9 +31,7 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
           {projectsFilters.map((filter: ProjectFilter) => (
             <button
               key={filter.id}
-              className={`projects__filter-btn ${
-                activeFilter === filter.id ? 'projects__filter-btn--active' : ''
-              }`}
+              className={`projects__filter-btn ${activeFilter === filter.id ? 'projects__filter-btn--active' : ''}`}
               onClick={() => setActiveFilter(filter.id)}
             >
               {filter.label}

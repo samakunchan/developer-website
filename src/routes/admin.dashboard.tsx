@@ -1,23 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
-import {
-  getServerTime,
-  TimeServerOutput,
-} from '../core/server-functions/time-server';
+import { getServerTime, TimeServerOutput } from '../core/server-functions/time-server';
 import { getBrowserTimeZone, getGuessTimeZone } from '../core/utils/timezone';
 import { Container } from '../components/Container';
-import {
-  checkDatabaseStatus,
-  DbStatus,
-} from '../core/server-functions/db-health-check';
+import { checkDatabaseStatus, DbStatus } from '../core/server-functions/db-health-check';
 
 export const Route = createFileRoute('/admin/dashboard')({
   component: RouteComponent,
-  loader: async ({
-    context,
-  }): Promise<TimeServerOutput & { dbStatus: DbStatus; locale: string }> => {
+  loader: async ({ context }): Promise<TimeServerOutput & { dbStatus: DbStatus; locale: string }> => {
     const detectedTz: string = getBrowserTimeZone();
-    const timeZone: string =
-      detectedTz !== 'UTC' ? detectedTz : getGuessTimeZone(context.locale);
+    const timeZone: string = detectedTz !== 'UTC' ? detectedTz : getGuessTimeZone(context.locale);
 
     const dbStatus: DbStatus = await checkDatabaseStatus();
     const time: TimeServerOutput = await getServerTime({
@@ -41,9 +32,7 @@ function RouteComponent() {
     timeZone: 'UTC',
   });
 
-  const dbTime: string | null = dbStatus.details?.now
-    ? formatter.format(new Date(dbStatus.details.now))
-    : null;
+  const dbTime: string | null = dbStatus.details?.now ? formatter.format(new Date(dbStatus.details.now)) : null;
 
   return (
     <>
@@ -65,8 +54,7 @@ function RouteComponent() {
                   width: '12px',
                   height: '12px',
                   borderRadius: '50%',
-                  backgroundColor:
-                    dbStatus.status === 'online' ? '#48bb78' : '#f56565',
+                  backgroundColor: dbStatus.status === 'online' ? '#48bb78' : '#f56565',
                 }}
               />
               <strong
@@ -78,11 +66,7 @@ function RouteComponent() {
               </strong>
             </div>
 
-            {dbStatus.error && (
-              <p style={{ color: '#c53030', marginTop: '0.5rem' }}>
-                Error: {dbStatus.error}
-              </p>
-            )}
+            {dbStatus.error && <p style={{ color: '#c53030', marginTop: '0.5rem' }}>Error: {dbStatus.error}</p>}
 
             {dbStatus.details && (
               <pre

@@ -1,8 +1,4 @@
-import {
-  createFileRoute,
-  useNavigate,
-  UseNavigateResult,
-} from '@tanstack/react-router';
+import { createFileRoute, useNavigate, UseNavigateResult } from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';

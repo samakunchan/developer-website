@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "format": "prettier --write .",
     "genroutes": "npx tsr generate",
     "start": "node .output/server/index.mjs",
     "lint": "eslint .",

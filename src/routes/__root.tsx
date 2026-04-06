@@ -1,11 +1,6 @@
 import type { ReactNode } from 'react';
 import { Suspense } from 'react';
-import {
-  Outlet,
-  createRootRoute,
-  HeadContent,
-  Scripts,
-} from '@tanstack/react-router';
+import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import { i18n } from '@lingui/core';
 import { t } from '@lingui/core/macro';
@@ -18,35 +13,25 @@ interface RootLoaderData {
   locale: string;
   isI18nReady: boolean;
 }
-const supportedLocales: string[] = [
-  'en-US',
-  'fr-FR',
-  'es-ES',
-  'zh-CN',
-  'ar-SA',
-];
+const supportedLocales: string[] = ['en-US', 'fr-FR', 'es-ES', 'zh-CN', 'ar-SA'];
 
-const fetchServerLocale = createServerFn({ method: 'GET' }).handler(
-  async () => {
-    try {
-      const { getRequestHeader } = await import('@tanstack/react-start/server');
+const fetchServerLocale = createServerFn({ method: 'GET' }).handler(async () => {
+  try {
+    const { getRequestHeader } = await import('@tanstack/react-start/server');
 
-      const acceptLang = getRequestHeader('accept-language');
-      if (acceptLang) {
-        const parsed = acceptLang.split(',')[0].split(';')[0].trim();
-        if (supportedLocales.includes(parsed)) return parsed;
-        const base = parsed.split('-')[0];
-        const matchLocale = supportedLocales.find((l) =>
-          l.startsWith(base + '-'),
-        );
-        if (matchLocale) return matchLocale;
-      }
-    } catch {
-      // getRequestHeader might not be available or imported
+    const acceptLang = getRequestHeader('accept-language');
+    if (acceptLang) {
+      const parsed = acceptLang.split(',')[0].split(';')[0].trim();
+      if (supportedLocales.includes(parsed)) return parsed;
+      const base = parsed.split('-')[0];
+      const matchLocale = supportedLocales.find((l) => l.startsWith(base + '-'));
+      if (matchLocale) return matchLocale;
     }
-    return 'en-US';
-  },
-);
+  } catch {
+    // getRequestHeader might not be available or imported
+  }
+  return 'en-US';
+});
 
 async function getInitialLocale() {
   if (typeof document !== 'undefined') {
@@ -54,9 +39,7 @@ async function getInitialLocale() {
     const navigatorLocale = navigator.language;
     if (supportedLocales.includes(navigatorLocale)) return navigatorLocale;
     const browserBase = navigatorLocale.split('-')[0];
-    const matchLocale = supportedLocales.find((l) =>
-      l.startsWith(browserBase + '-'),
-    );
+    const matchLocale = supportedLocales.find((l) => l.startsWith(browserBase + '-'));
     return matchLocale || 'en-US';
   }
 
@@ -96,8 +79,7 @@ export const Route = createRootRoute({
         { charSet: 'utf-8' },
         {
           name: 'viewport',
-          content:
-            'width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5',
+          content: 'width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5',
         },
         { title: t`Developer Website` },
         {

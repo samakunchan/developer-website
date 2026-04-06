@@ -1,12 +1,24 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
   margin: 0;
 }
 
-ul, ol {
+ul,
+ol {
   padding: 0;
   list-style: none;
   margin: 0;
@@ -29,12 +41,16 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-img, picture {
+img,
+picture {
   max-width: 100%;
   display: block;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -42,8 +58,10 @@ input, button, textarea, select {
   html:focus-within {
     scroll-behavior: auto;
   }
-  
-  *, *::before, *::after {
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

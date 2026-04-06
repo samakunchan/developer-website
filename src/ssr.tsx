@@ -1,7 +1,4 @@
-import {
-  createStartHandler,
-  defaultRenderHandler,
-} from '@tanstack/react-start/server';
+import { createStartHandler, defaultRenderHandler } from '@tanstack/react-start/server';
 import { i18n } from '@lingui/core';
 
 export default createStartHandler({
@@ -10,9 +7,7 @@ export default createStartHandler({
     // 1. Recover the locale matched by the router
     // This locale is resolved in __root.tsx's beforeLoad and stored in context
     // dire a antigravity de savoir comment utiliser ce code pour voir si ça marhce
-    const locale =
-      (ctx.router.state.matches[0]?.context as { locale?: string })?.locale ||
-      'en-US';
+    const locale = (ctx.router.state.matches[0]?.context as { locale?: string })?.locale || 'en-US';
     console.log('SERVER LOCAL', locale);
 
     try {

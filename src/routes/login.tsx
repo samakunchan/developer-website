@@ -1,13 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import {
-  Container,
-  Box,
-  Typography,
-  TextField,
-  Button,
-  Paper,
-  Divider,
-} from '@mui/material';
+import { Container, Box, Typography, TextField, Button, Paper, Divider } from '@mui/material';
 
 export const Route = createFileRoute('/login')({
   component: LoginPage,
@@ -50,11 +42,7 @@ function LoginPage() {
             Sign In
           </Typography>
 
-          <Box
-            component="form"
-            onSubmit={handleSubmit}
-            sx={{ mt: 2, width: '100%' }}
-          >
+          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2, width: '100%' }}>
             <TextField
               margin="normal"
               fullWidth
@@ -75,23 +63,13 @@ function LoginPage() {
               autoComplete="current-password"
             />
 
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2, py: 1.5 }}
-            >
+            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2, py: 1.5 }}>
               Sign In
             </Button>
 
             <Divider sx={{ my: 2 }}>OR</Divider>
 
-            <Button
-              fullWidth
-              variant="outlined"
-              onClick={handleGitHubLogin}
-              sx={{ py: 1.5 }}
-            >
+            <Button fullWidth variant="outlined" onClick={handleGitHubLogin} sx={{ py: 1.5 }}>
               Sign In with GitHub
             </Button>
           </Box>

@@ -28,11 +28,7 @@ export function ProjectCard({
       </div>
       <div className="project-card__content">
         <div className="project-card__header">
-          <Link
-            to="/projects/$slug"
-            params={{ slug }}
-            className="project-card__link"
-          >
+          <Link to="/projects/$slug" params={{ slug }} className="project-card__link">
             <h3 className="project-card__title">{title}</h3>
           </Link>
           <span className="project-card__category">{categoryLabel}</span>
@@ -41,19 +37,12 @@ export function ProjectCard({
         <div className="project-card__footer">
           <div className="project-card__tech">
             {techIcons?.map((icon, index) => (
-              <span
-                key={index}
-                className="material-symbols-outlined project-card__tech-icon"
-              >
+              <span key={index} className="material-symbols-outlined project-card__tech-icon">
                 {icon}
               </span>
             ))}
           </div>
-          <Link
-            to="/projects/$slug"
-            params={{ slug }}
-            className="project-card__link"
-          >
+          <Link to="/projects/$slug" params={{ slug }} className="project-card__link">
             <Trans>View Details</Trans>
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>

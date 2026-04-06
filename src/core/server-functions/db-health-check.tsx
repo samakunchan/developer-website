@@ -12,9 +12,7 @@ export const checkDatabaseStatus = createServerFn({
 }).handler(async (): Promise<DbStatus> => {
   try {
     // Specify the expected rows from DB (satisfies the non-nullable {} constraint)
-    const result = await db.$queryRaw<
-      Array<Record<string, string>>
-    >`SELECT now() as now, version() as version`;
+    const result = await db.$queryRaw<Array<Record<string, string>>>`SELECT now() as now, version() as version`;
 
     return {
       status: 'online' as const,

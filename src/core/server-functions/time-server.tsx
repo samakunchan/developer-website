@@ -20,14 +20,11 @@ export const getServerTime = createServerFn()
     const effectiveTimeZone: string = data?.timeZone || context.timeZone;
 
     // Format the date using Intl with the locale and effective timezone
-    const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(
-      context.locale,
-      {
-        dateStyle: 'full',
-        timeStyle: 'long',
-        timeZone: effectiveTimeZone,
-      },
-    );
+    const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(context.locale, {
+      dateStyle: 'full',
+      timeStyle: 'long',
+      timeZone: effectiveTimeZone,
+    });
 
     return {
       formatted: formatter.format(date),

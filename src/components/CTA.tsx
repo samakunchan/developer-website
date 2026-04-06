@@ -17,12 +17,7 @@ interface CTAProps {
   };
 }
 
-export function CTA({
-  title,
-  description,
-  primaryButton,
-  secondaryButton,
-}: CTAProps) {
+export function CTA({ title, description, primaryButton, secondaryButton }: CTAProps) {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -47,20 +42,12 @@ export function CTA({
 
             <div className="cta__actions">
               {primaryButton && (
-                <Button
-                  variant="primary"
-                  onClick={primaryButton.onClick}
-                  className="cta__btn"
-                >
+                <Button variant="primary" onClick={primaryButton.onClick} className="cta__btn">
                   {primaryButton.text}
                 </Button>
               )}
               {secondaryButton && (
-                <Button
-                  variant="secondary"
-                  onClick={secondaryButton.onClick}
-                  className="cta__btn"
-                >
+                <Button variant="secondary" onClick={secondaryButton.onClick} className="cta__btn">
                   {secondaryButton.text}
                 </Button>
               )}

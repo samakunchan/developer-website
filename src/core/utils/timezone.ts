@@ -26,9 +26,7 @@ export function getGuessTimeZone(locale: string): string {
 
   // Try language-only match (e.g. en)
   const language = locale.split('-')[0];
-  const langMatch = Object.keys(localeToTimeZoneMap).find((key) =>
-    key.startsWith(language),
-  );
+  const langMatch = Object.keys(localeToTimeZoneMap).find((key) => key.startsWith(language));
 
   return langMatch ? localeToTimeZoneMap[langMatch] : 'UTC';
 }
