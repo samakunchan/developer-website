@@ -18,17 +18,18 @@ interface RootLoaderData {
   locale: string;
   isI18nReady: boolean;
 }
-const supportedLocales = ['en-US', 'fr-FR', 'es-ES', 'zh-CN', 'ar-SA'];
+const supportedLocales: string[] = [
+  'en-US',
+  'fr-FR',
+  'es-ES',
+  'zh-CN',
+  'ar-SA',
+];
 
 const fetchServerLocale = createServerFn({ method: 'GET' }).handler(
   async () => {
     try {
-      const { getRequestHeader, getCookie } =
-        await import('@tanstack/react-start/server');
-      const cookieLocale = getCookie('locale');
-      if (cookieLocale && supportedLocales.includes(cookieLocale)) {
-        return cookieLocale;
-      }
+      const { getRequestHeader } = await import('@tanstack/react-start/server');
 
       const acceptLang = getRequestHeader('accept-language');
       if (acceptLang) {
@@ -50,9 +51,6 @@ const fetchServerLocale = createServerFn({ method: 'GET' }).handler(
 async function getInitialLocale() {
   if (typeof document !== 'undefined') {
     // Client-side detection
-    const match = document.cookie.match(/(?:^|; )locale=([^;]*)/);
-    if (match && supportedLocales.includes(match[1])) return match[1];
-
     const navigatorLocale = navigator.language;
     if (supportedLocales.includes(navigatorLocale)) return navigatorLocale;
     const browserBase = navigatorLocale.split('-')[0];
