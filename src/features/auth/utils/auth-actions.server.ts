@@ -5,8 +5,17 @@ import { db } from '../../../core/database/db.server';
 import { SessionType, SignInInput } from './schemas';
 
 const SESSION_COOKIE_NAME = 'auth_session';
+const MAX_FAILED_ATTEMPTS = 5;
+const LOCKOUT_DURATION_MINUTES = 15;
+
+if (!process.env.SESSION_SECRET) {
+  if (process.env.NODE_ENV === 'production') {
+    throw new Error('SESSION_SECRET environment variable is mandatory in production');
+  }
+}
+
 const JWT_SECRET = new TextEncoder().encode(
-  process.env.SESSION_SECRET || 'a-very-long-and-secure-secret-key-that-is-at-least-32-characters-long',
+  process.env.SESSION_SECRET || 'a-very-long-and-secure-secret-key-for-development-only',
 );
 
 /**
@@ -73,23 +82,53 @@ export async function getSessionInternal(): Promise<SessionType | null> {
  * Handles the sign-in logic on the server.
  */
 export async function signInInternal(data: SignInInput): Promise<{ success: boolean }> {
-  console.log('On est dans signInInternal');
   const user = await db.user.findUnique({
     where: { email: data.email },
   });
 
-  console.log('On a trouvé l‘utilisateur', user);
   if (!user || !user.password) {
     throw new Error('Invalid email or password');
   }
 
-  console.log('On a trouvé le mot de passe');
+  // Check for lockout
+  if (user.lockoutUntil && user.lockoutUntil > new Date()) {
+    const diff: number = Math.ceil((user.lockoutUntil.getTime() - Date.now()) / (1000 * 60));
+    throw new Error(`Account is temporarily locked. Try again in ${diff} minutes.`);
+  }
+
   const isPasswordValid = await bcrypt.compare(data.password, user.password);
+
   if (!isPasswordValid) {
+    const newFailedAttempts: number = user.failedLoginAttempts + 1;
+    const isLockingOut: boolean = newFailedAttempts >= MAX_FAILED_ATTEMPTS;
+    console.log(newFailedAttempts, MAX_FAILED_ATTEMPTS, newFailedAttempts >= MAX_FAILED_ATTEMPTS);
+
+    await db.user.update({
+      where: { id: user.id },
+      data: {
+        failedLoginAttempts: newFailedAttempts,
+        lockoutUntil: isLockingOut ? new Date(Date.now() + LOCKOUT_DURATION_MINUTES * 60 * 1000) : null,
+      },
+    });
+
+    if (isLockingOut) {
+      throw new Error(`Too many failed attempts. Account locked for ${LOCKOUT_DURATION_MINUTES} minutes.`);
+    }
+
     throw new Error('Invalid email or password');
   }
 
-  console.log('On a trouvé le mot de passe');
+  // Success: Clear attempts
+  if (user.failedLoginAttempts > 0 || user.lockoutUntil) {
+    await db.user.update({
+      where: { id: user.id },
+      data: {
+        failedLoginAttempts: 0,
+        lockoutUntil: null,
+      },
+    });
+  }
+
   const token: string = await createSession({
     id: user.id,
     email: user.email,
@@ -97,7 +136,6 @@ export async function signInInternal(data: SignInInput): Promise<{ success: bool
     name: user.name,
   });
 
-  console.log('On a créé le token', token);
   setCookie(SESSION_COOKIE_NAME, token, {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',
@@ -106,7 +144,6 @@ export async function signInInternal(data: SignInInput): Promise<{ success: bool
     maxAge: 60 * 60 * 24, // 24 hours
   });
 
-  console.log('On a mis le cookie');
   return { success: true };
 }
 

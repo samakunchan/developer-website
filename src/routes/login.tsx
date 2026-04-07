@@ -3,6 +3,7 @@ import { useServerFn } from '@tanstack/react-start';
 import { Login } from '../features/auth/components/Login';
 import { signInAction } from '../features/auth/utils/auth-actions.functions';
 import { z } from 'zod';
+import { isSafeRedirect } from '../core/utils/url';
 
 export const Route = createFileRoute('/login')({
   validateSearch: z.object({
@@ -12,6 +13,7 @@ export const Route = createFileRoute('/login')({
 });
 
 function LoginPage() {
+  const { redirectTo } = Route.useSearch();
   const signIn = useServerFn(signInAction);
   const navigate = useNavigate();
 
@@ -26,7 +28,8 @@ function LoginPage() {
 
       if (result?.success) {
         // After successful signin, redirect to the dashboard or the requested page
-        navigate({ to: '/admin/dashboard' });
+        const target = isSafeRedirect(redirectTo) ? redirectTo : '/admin/dashboard';
+        navigate({ to: target });
       }
     } catch (error) {
       console.error('Login failed:', error);

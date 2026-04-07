@@ -16,7 +16,6 @@ export const getSession = createServerFn({ method: 'GET' }).handler(async () => 
 export const signInAction = createServerFn({ method: 'POST' })
   .inputValidator(zodValidator(signInSchema))
   .handler(async ({ data }) => {
-    console.log('On est dans signInAction');
     return await signInInternal(data);
   });
 
