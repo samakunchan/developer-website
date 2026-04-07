@@ -1,0 +1,126 @@
+.error-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--color-background-dark);
+  padding: var(--spacing-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.error-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  background: var(--color-glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: var(--border-radius-xl);
+  padding: var(--spacing-lg);
+  text-align: center;
+  z-index: 10;
+  box-shadow: var(--color-shadow-deep);
+  animation: fadeInDown 0.8s ease-out forwards;
+}
+
+.error-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--color-primary) 0%, transparent 70%);
+  opacity: 0.15;
+  filter: blur(50px);
+  z-index: -1;
+  pointer-events: none;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.error-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.error-code {
+  font-size: clamp(6rem, 15vw, 10rem);
+  font-weight: 900;
+  line-height: 1;
+  margin: 0;
+  background: linear-gradient(135deg, var(--color-primary) 0%, #9333ea 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px rgba(37, 244, 244, 0.3));
+}
+
+.error-divider {
+  width: 80px;
+  height: 4px;
+  background: var(--color-primary);
+  border-radius: var(--border-radius-full);
+  margin: var(--spacing-sm) 0;
+}
+
+.error-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.error-description {
+  color: var(--color-slate-400);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: var(--spacing-md);
+}
+
+.error-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+.error-button {
+  min-width: 200px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.25;
+  }
+}
+
+@media (max-width: 640px) {
+  .error-container {
+    padding: var(--spacing-md);
+  }
+  .error-title {
+    font-size: 1.5rem;
+  }
+}

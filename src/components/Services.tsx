@@ -10,18 +10,9 @@ interface ServiceCardProps {
   features?: string[];
 }
 
-export function ServiceCard({
-  icon,
-  title,
-  description,
-  badges,
-  features,
-}: ServiceCardProps) {
+export function ServiceCard({ icon, title, description, badges, features }: ServiceCardProps) {
   return (
-    <div
-      className="service-card"
-      aria-labelledby={'service-card-title-' + icon}
-    >
+    <div className="service-card" aria-labelledby={'service-card-title-' + icon}>
       <div className="service-card__icon-wrapper">
         <span className="material-symbols-outlined">{icon}</span>
       </div>
@@ -83,10 +74,7 @@ export function Services({ subtitle, title, children, id }: ServicesProps) {
             )}
           </div>
         )}
-        <div
-          className={`services__grid ${inView ? 'is-visible' : ''}`}
-          ref={ref}
-        >
+        <div className={`services__grid ${inView ? 'is-visible' : ''}`} ref={ref}>
           {children}
         </div>
       </Container>

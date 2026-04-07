@@ -58,10 +58,7 @@ export const Route = createFileRoute('/api/optimize-image')({
           });
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (error) {
-          return new Response(
-            'Internal Server Error validating Image content',
-            { status: 500 },
-          );
+          return new Response('Internal Server Error validating Image content', { status: 500 });
         }
       },
     },

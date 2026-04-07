@@ -50,10 +50,6 @@ export const socialLinks: SocialLink[] = [
     name: 'Email',
     href: '#',
     ariaLabel: t`Email`,
-    icon: (
-      <span className="material-symbols-outlined about__social-icon">
-        alternate_email
-      </span>
-    ),
+    icon: <span className="material-symbols-outlined about__social-icon">alternate_email</span>,
   },
 ];

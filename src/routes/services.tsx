@@ -1,8 +1,4 @@
-import {
-  createFileRoute,
-  useNavigate,
-  UseNavigateResult,
-} from '@tanstack/react-router';
+import { createFileRoute, useNavigate, UseNavigateResult } from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
@@ -18,15 +14,21 @@ import { ServiceData } from '../core/types/service';
 import { PricingTierData } from '../core/types/pricing';
 
 export const Route = createFileRoute('/services')({
+  loader: async ({ context }) => {
+    return {
+      isConnected: context.session?.user.role === 'admin',
+    };
+  },
   component: ServicesPricingPage,
 });
 
 function ServicesPricingPage() {
   const navigate: UseNavigateResult<string> = useNavigate();
+  const { isConnected } = Route.useLoaderData();
 
   return (
     <>
-      <Header />
+      <Header isConnected={isConnected} />
       <main role="main">
         <Hero
           badgeText={t`Solutions & Pricing`}
@@ -42,21 +44,13 @@ function ServicesPricingPage() {
           }}
           secondaryButton={{ text: t`Contact me` }}
         />
-        <Services
-          id="services-detail"
-          subtitle={t`Expertise`}
-          title={<Trans>My Specialized Services</Trans>}
-        >
+        <Services id="services-detail" subtitle={t`Expertise`} title={<Trans>My Specialized Services</Trans>}>
           {specializedServices.map((service: ServiceData, index: number) => (
             <ServiceCard key={index} {...service} />
           ))}
         </Services>
 
-        <Pricing
-          id="pricing"
-          subtitle={t`Investment`}
-          title={<Trans>Pricing Packages</Trans>}
-        >
+        <Pricing id="pricing" subtitle={t`Investment`} title={<Trans>Pricing Packages</Trans>}>
           {pricingTiers.map((tier: PricingTierData, index: number) => (
             <PricingTier key={index} {...tier} />
           ))}

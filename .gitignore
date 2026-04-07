@@ -14,3 +14,6 @@ yarn.lock
 yarn-error.log
 .agent.md
 todo.md
+src/generated/*
+prisma/migrations/*
+prisma/migration_lock.toml

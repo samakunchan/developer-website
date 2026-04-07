@@ -43,9 +43,7 @@ export function Process({ subtitle, title, steps, id }: ProcessProps) {
                   <div className="process__step-number">{step.number}</div>
                   <div className="process__step-content">
                     <h3 className="process__step-title">{step.title}</h3>
-                    <p className="process__step-description">
-                      {step.description}
-                    </p>
+                    <p className="process__step-description">{step.description}</p>
                   </div>
                 </div>
               ))}
@@ -67,29 +65,25 @@ export function Process({ subtitle, title, steps, id }: ProcessProps) {
                 <div className="process__terminal-line">
                   <span className="process__terminal-line-number">01</span>
                   <pre className="process__terminal-code">
-                    <span className="keyword">const</span>{' '}
-                    <span className="property">project</span> = {'{'}
+                    <span className="keyword">const</span> <span className="property">project</span> = {'{'}
                   </pre>
                 </div>
                 <div className="process__terminal-line">
                   <span className="process__terminal-line-number">02</span>
                   <pre className="process__terminal-code">
-                    <span className="indent"></span>name:{' '}
-                    <span className="string">"Your Vision"</span>,
+                    <span className="indent"></span>name: <span className="string">"Your Vision"</span>,
                   </pre>
                 </div>
                 <div className="process__terminal-line">
                   <span className="process__terminal-line-number">03</span>
                   <pre className="process__terminal-code">
-                    <span className="indent"></span>status:{' '}
-                    <span className="string">"Optimized"</span>,
+                    <span className="indent"></span>status: <span className="string">"Optimized"</span>,
                   </pre>
                 </div>
                 <div className="process__terminal-line">
                   <span className="process__terminal-line-number">04</span>
                   <pre className="process__terminal-code">
-                    <span className="indent"></span>performance:{' '}
-                    <span className="keyword">100</span>
+                    <span className="indent"></span>performance: <span className="keyword">100</span>
                   </pre>
                 </div>
                 <div className="process__terminal-line">

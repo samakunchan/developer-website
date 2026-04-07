@@ -30,14 +30,12 @@ export const projects: Project[] = [
       {
         icon: 'query_stats',
         title: 'Custom D3 Rig',
-        description:
-          'Bespoke SVG coordinate systems for non-standard data mapping.',
+        description: 'Bespoke SVG coordinate systems for non-standard data mapping.',
       },
       {
         icon: 'security',
         title: 'RBAC Control',
-        description:
-          'Granular Row-Level Security for enterprise-grade privacy.',
+        description: 'Granular Row-Level Security for enterprise-grade privacy.',
       },
       {
         icon: 'view_quilt',
@@ -97,8 +95,7 @@ export const projects: Project[] = [
     title: 'Apex E-Commerce',
     category: 'web' as const,
     categoryLabel: 'Web',
-    description:
-      'High-performance headless commerce solution with Stripe integration and custom inventory management.',
+    description: 'High-performance headless commerce solution with Stripe integration and custom inventory management.',
     caseStudyNumber: '03',
     techIcons: ['shopping_bag', 'payments'],
     techStack: [
@@ -163,8 +160,7 @@ export const projects: Project[] = [
       {
         icon: 'api',
         title: 'Dynamic Webhooks',
-        description:
-          'Custom alert triggers for market price volatility events.',
+        description: 'Custom alert triggers for market price volatility events.',
       },
       {
         icon: 'history',

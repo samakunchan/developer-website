@@ -7,23 +7,24 @@ import { Project } from '../core/types/project';
 import { projects } from '../core/data/projectsData';
 
 export const Route = createFileRoute('/projects_/$slug')({
+  loader: async ({ context }) => {
+    return {
+      isConnected: context.session?.user.role === 'admin',
+    };
+  },
   component: ProjectDetailsPage,
 });
 
 function ProjectDetailsPage() {
   const { slug }: { slug: string } = Route.useParams();
-  const project: Project | undefined = projects.find(
-    (project: Project) => project.slug === slug,
-  );
+  const { isConnected } = Route.useLoaderData();
+  const project: Project | undefined = projects.find((project: Project) => project.slug === slug);
 
   if (!project) {
     return (
       <div className="project-detail">
-        <Header />
-        <main
-          className="project-detail__main flex items-center justify-center p-8"
-          role="main"
-        >
+        <Header isConnected={isConnected} />
+        <main className="project-detail__main flex items-center justify-center p-8" role="main">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4 text-white">
               <Trans>Project Not Found</Trans>
@@ -43,17 +44,13 @@ function ProjectDetailsPage() {
 
   return (
     <div className="project-detail">
-      <Header />
+      <Header isConnected={isConnected} />
 
       <main className="project-detail__main">
         {/* Left Side: Visual Anchor (Sticky) */}
         <section className="project-detail__visual">
           <div className="project-detail__gradient"></div>
-          <img
-            src={project.imageSrc}
-            alt={project.imageAlt}
-            className="project-detail__image"
-          />
+          <img src={project.imageSrc} alt={project.imageAlt} className="project-detail__image" />
 
           {/* Status Label */}
           <div className="project-detail__status-badge">
@@ -76,9 +73,7 @@ function ProjectDetailsPage() {
           {/* Title & Category Badge */}
           <div className="project-detail__header">
             <h1 className="project-detail__title">{project.title}</h1>
-            <span className="project-detail__category">
-              {project.categoryLabel?.toString().toUpperCase()}
-            </span>
+            <span className="project-detail__category">{project.categoryLabel?.toString().toUpperCase()}</span>
           </div>
 
           {/* Description */}
@@ -95,12 +90,8 @@ function ProjectDetailsPage() {
               <div className="project-detail__tech-grid">
                 {project.techStack.map((tech, index) => (
                   <div key={index} className="project-detail__tech-item">
-                    <span className="material-symbols-outlined project-detail__tech-icon">
-                      {tech.icon}
-                    </span>
-                    <span className="project-detail__tech-name">
-                      {tech.name}
-                    </span>
+                    <span className="material-symbols-outlined project-detail__tech-icon">{tech.icon}</span>
+                    <span className="project-detail__tech-name">{tech.name}</span>
                   </div>
                 ))}
               </div>
@@ -116,15 +107,9 @@ function ProjectDetailsPage() {
               <div className="project-detail__features-grid">
                 {project.features.map((feature, index) => (
                   <div key={index} className="project-detail__feature-card">
-                    <span className="material-symbols-outlined project-detail__feature-icon">
-                      {feature.icon}
-                    </span>
-                    <h4 className="project-detail__feature-title">
-                      {feature.title}
-                    </h4>
-                    <p className="project-detail__feature-desc">
-                      {feature.description}
-                    </p>
+                    <span className="material-symbols-outlined project-detail__feature-icon">{feature.icon}</span>
+                    <h4 className="project-detail__feature-title">{feature.title}</h4>
+                    <p className="project-detail__feature-desc">{feature.description}</p>
                   </div>
                 ))}
               </div>

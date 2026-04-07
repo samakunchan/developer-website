@@ -11,10 +11,12 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects_.$slug'
 import { Route as ApiOptimizeImageRouteImport } from './routes/api.optimize-image'
+import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -24,6 +26,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -46,20 +53,29 @@ const ApiOptimizeImageRoute = ApiOptimizeImageRouteImport.update({
   path: '/api/optimize-image',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminDashboardRoute = AdminDashboardRouteImport.update({
+  id: '/admin/dashboard',
+  path: '/admin/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
 }
@@ -67,8 +83,10 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/admin/dashboard': typeof AdminDashboardRoute
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects_/$slug': typeof ProjectsSlugRoute
 }
@@ -77,24 +95,30 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/login'
     | '/projects'
     | '/services'
+    | '/admin/dashboard'
     | '/api/optimize-image'
     | '/projects/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/login'
     | '/projects'
     | '/services'
+    | '/admin/dashboard'
     | '/api/optimize-image'
     | '/projects/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/login'
     | '/projects'
     | '/services'
+    | '/admin/dashboard'
     | '/api/optimize-image'
     | '/projects_/$slug'
   fileRoutesById: FileRoutesById
@@ -102,8 +126,10 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  LoginRoute: typeof LoginRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
   ApiOptimizeImageRoute: typeof ApiOptimizeImageRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
 }
@@ -122,6 +148,13 @@ declare module '@tanstack/react-router' {
       path: '/projects'
       fullPath: '/projects'
       preLoaderRoute: typeof ProjectsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -152,14 +185,23 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOptimizeImageRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/dashboard': {
+      id: '/admin/dashboard'
+      path: '/admin/dashboard'
+      fullPath: '/admin/dashboard'
+      preLoaderRoute: typeof AdminDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  LoginRoute: LoginRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
   ApiOptimizeImageRoute: ApiOptimizeImageRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
 }

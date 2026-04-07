@@ -9,10 +9,7 @@ export interface PictureAsset {
   };
 }
 
-interface ImageStaticProps extends Omit<
-  React.ImgHTMLAttributes<HTMLImageElement>,
-  'src'
-> {
+interface ImageStaticProps extends Omit<React.ImgHTMLAttributes<HTMLImageElement>, 'src'> {
   src: PictureAsset;
   alt: string;
   sizes?: string;
@@ -31,12 +28,7 @@ export function ImageStatic({
   return (
     <picture>
       {Object.entries(imageAsset.sources).map(([format, srcSet]) => (
-        <source
-          key={format}
-          type={`image/${format}`}
-          srcSet={srcSet}
-          sizes={sizes}
-        />
+        <source key={format} type={`image/${format}`} srcSet={srcSet} sizes={sizes} />
       ))}
       <img
         src={imageAsset.img.src}

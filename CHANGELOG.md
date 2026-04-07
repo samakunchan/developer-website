@@ -1,5 +1,25 @@
 # CHANGELOG developer-website
 
+## 🚀 0.16.0 - 07/04/2026
+
+### Added
+
+- **Authentication System**: Implemented a custom manual authentication system using **HTTP-Only Cookies** and **JWT (jose)**.
+- **Security Hardening**:
+  - **Brute-Force Protection**: Added account lockout logic (5 failed attempts = 15-minute lockout) with database persistence.
+  - **Open Redirect Protection**: Implemented URL validation to prevent malicious redirects after login.
+  - **Environment Security**: Enforced strict `SESSION_SECRET` presence in production environments.
+- **Session Management**: Integrated global hydration of session state into the TanStack Router context.
+
+### Changed
+
+- **UI Integration**: Updated `Header` and `login` components to dynamically reflect authentication state and handle secure redirects.
+- **Database Schema**: Expanded `User` model in `schema.prisma` with `failedLoginAttempts` and `lockoutUntil` fields.
+
+### Fixed
+
+- **Type Safety**: Resolved Prisma type inconsistencies following the schema migration.
+
 ## 🚀 0.15.0 - 04/04/2026
 
 ### Added

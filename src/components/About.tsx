@@ -39,11 +39,9 @@ export const About: React.FC = () => {
 
               <p className="about__description">
                 <Trans>
-                  I'm a developer based in France with over 8 years of
-                  experience building scalable web applications. I specialize in
-                  turning complex problems into simple, beautiful, and intuitive
-                  designs. My focus is on clean code, performance, and
-                  accessibility.
+                  I'm a developer based in France with over 8 years of experience building scalable web applications. I
+                  specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on
+                  clean code, performance, and accessibility.
                 </Trans>
               </p>
             </div>
@@ -55,9 +53,7 @@ export const About: React.FC = () => {
               <div className="about__skills-grid">
                 {skillsData.map((skill: Skill) => (
                   <div key={skill.name} className="about__skill-card">
-                    <span className="material-symbols-outlined about__skill-icon">
-                      {skill.icon}
-                    </span>
+                    <span className="material-symbols-outlined about__skill-icon">{skill.icon}</span>
                     <span className="about__skill-name">{skill.name}</span>
                   </div>
                 ))}
@@ -70,12 +66,7 @@ export const About: React.FC = () => {
               </h3>
               <div className="about__socials">
                 {socialLinks.map((link: SocialLink) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="about__social-link"
-                    aria-label={link.ariaLabel}
-                  >
+                  <a key={link.name} href={link.href} className="about__social-link" aria-label={link.ariaLabel}>
                     {link.icon}
                   </a>
                 ))}
