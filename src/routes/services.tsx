@@ -14,15 +14,21 @@ import { ServiceData } from '../core/types/service';
 import { PricingTierData } from '../core/types/pricing';
 
 export const Route = createFileRoute('/services')({
+  loader: async ({ context }) => {
+    return {
+      isConnected: context.session?.user.role === 'admin',
+    };
+  },
   component: ServicesPricingPage,
 });
 
 function ServicesPricingPage() {
   const navigate: UseNavigateResult<string> = useNavigate();
+  const { isConnected } = Route.useLoaderData();
 
   return (
     <>
-      <Header />
+      <Header isConnected={isConnected} />
       <main role="main">
         <Hero
           badgeText={t`Solutions & Pricing`}

@@ -10,15 +10,21 @@ import '../styles/main.css';
 import { projects } from '../core/data/projectsData';
 
 export const Route = createFileRoute('/projects')({
+  loader: async ({ context }) => {
+    return {
+      isConnected: context.session?.user.role === 'admin',
+    };
+  },
   component: ProjectsPage,
 });
 
 function ProjectsPage() {
   const navigate: UseNavigateResult<string> = useNavigate();
+  const { isConnected } = Route.useLoaderData();
 
   return (
     <>
-      <Header />
+      <Header isConnected={isConnected} />
       <main role="main">
         <Hero
           title={

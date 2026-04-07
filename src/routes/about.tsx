@@ -5,13 +5,19 @@ import { Footer } from '../components/Footer';
 import '../styles/main.css';
 
 export const Route = createFileRoute('/about')({
+  loader: async ({ context }) => {
+    return {
+      isConnected: context.session?.user.role === 'admin',
+    };
+  },
   component: AboutPage,
 });
 
 function AboutPage() {
+  const { isConnected } = Route.useLoaderData();
   return (
     <>
-      <Header />
+      <Header isConnected={isConnected} />
       <main role="main">
         <About />
       </main>

@@ -1,80 +1,42 @@
-import { createFileRoute } from '@tanstack/react-router';
-import { Container, Box, Typography, TextField, Button, Paper, Divider } from '@mui/material';
+import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { useServerFn } from '@tanstack/react-start';
+import { Login } from '../features/auth/components/Login';
+import { signInAction } from '../features/auth/utils/auth-actions.functions';
+import { z } from 'zod';
 
 export const Route = createFileRoute('/login')({
+  validateSearch: z.object({
+    redirectTo: z.string().optional(),
+  }),
   component: LoginPage,
 });
 
 function LoginPage() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log('Login attempt (Static UI)');
-    alert('This is a static login page. Authentication has been removed.');
-  };
+  const signIn = useServerFn(signInAction);
+  const navigate = useNavigate();
 
-  const handleGitHubLogin = () => {
-    console.log('GitHub login attempt (Static UI)');
-    alert('GitHub authentication is currently disabled.');
+  const handleSubmit = async (event: React.SubmitEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData: FormData = new FormData(event.currentTarget);
+    const email: string = formData.get('email') as string;
+    const password: string = formData.get('password') as string;
+
+    try {
+      const result: { success: boolean } = await signIn({ data: { email, password } });
+
+      if (result?.success) {
+        // After successful signin, redirect to the dashboard or the requested page
+        navigate({ to: '/admin/dashboard' });
+      }
+    } catch (error) {
+      console.error('Login failed:', error);
+      alert('Login failed. Please check your credentials.');
+    }
   };
 
   return (
-    <Container maxWidth="sm">
-      <Box
-        sx={{
-          minHeight: '100vh',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center',
-          py: 4,
-        }}
-      >
-        <Paper
-          elevation={3}
-          sx={{
-            p: 4,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            borderRadius: 2,
-          }}
-        >
-          <Typography component="h1" variant="h4" gutterBottom>
-            Sign In
-          </Typography>
-
-          <Box component="form" onSubmit={handleSubmit} sx={{ mt: 2, width: '100%' }}>
-            <TextField
-              margin="normal"
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-
-            <TextField
-              margin="normal"
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-
-            <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2, py: 1.5 }}>
-              Sign In
-            </Button>
-
-            <Divider sx={{ my: 2 }}>OR</Divider>
-
-            <Button fullWidth variant="outlined" onClick={handleGitHubLogin} sx={{ py: 1.5 }}>
-              Sign In with GitHub
-            </Button>
-          </Box>
-        </Paper>
-      </Box>
-    </Container>
+    <>
+      <Login handleSubmit={handleSubmit} />
+    </>
   );
 }

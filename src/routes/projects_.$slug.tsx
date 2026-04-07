@@ -7,17 +7,23 @@ import { Project } from '../core/types/project';
 import { projects } from '../core/data/projectsData';
 
 export const Route = createFileRoute('/projects_/$slug')({
+  loader: async ({ context }) => {
+    return {
+      isConnected: context.session?.user.role === 'admin',
+    };
+  },
   component: ProjectDetailsPage,
 });
 
 function ProjectDetailsPage() {
   const { slug }: { slug: string } = Route.useParams();
+  const { isConnected } = Route.useLoaderData();
   const project: Project | undefined = projects.find((project: Project) => project.slug === slug);
 
   if (!project) {
     return (
       <div className="project-detail">
-        <Header />
+        <Header isConnected={isConnected} />
         <main className="project-detail__main flex items-center justify-center p-8" role="main">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4 text-white">
@@ -38,7 +44,7 @@ function ProjectDetailsPage() {
 
   return (
     <div className="project-detail">
-      <Header />
+      <Header isConnected={isConnected} />
 
       <main className="project-detail__main">
         {/* Left Side: Visual Anchor (Sticky) */}

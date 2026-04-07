@@ -8,10 +8,15 @@ import { I18nProvider } from '@lingui/react';
 import '../styles/main.css';
 
 import { createServerFn } from '@tanstack/react-start';
+import { ErrorComponent, ErrorType } from '../components/ErrorComponent';
+
+import { SessionType } from '../features/auth/utils/schemas';
+import { getSession } from '../features/auth/utils/auth-actions.functions';
 
 interface RootLoaderData {
   locale: string;
   isI18nReady: boolean;
+  session: SessionType | null;
 }
 const supportedLocales: string[] = ['en-US', 'fr-FR', 'es-ES', 'zh-CN', 'ar-SA'];
 
@@ -19,12 +24,12 @@ const fetchServerLocale = createServerFn({ method: 'GET' }).handler(async () => 
   try {
     const { getRequestHeader } = await import('@tanstack/react-start/server');
 
-    const acceptLang = getRequestHeader('accept-language');
+    const acceptLang: string | undefined = getRequestHeader('accept-language');
     if (acceptLang) {
-      const parsed = acceptLang.split(',')[0].split(';')[0].trim();
+      const parsed: string = acceptLang.split(',')[0].split(';')[0].trim();
       if (supportedLocales.includes(parsed)) return parsed;
-      const base = parsed.split('-')[0];
-      const matchLocale = supportedLocales.find((l) => l.startsWith(base + '-'));
+      const base: string = parsed.split('-')[0];
+      const matchLocale: string | undefined = supportedLocales.find((l) => l.startsWith(base + '-'));
       if (matchLocale) return matchLocale;
     }
   } catch {
@@ -36,10 +41,10 @@ const fetchServerLocale = createServerFn({ method: 'GET' }).handler(async () => 
 async function getInitialLocale() {
   if (typeof document !== 'undefined') {
     // Client-side detection
-    const navigatorLocale = navigator.language;
+    const navigatorLocale: string = navigator.language;
     if (supportedLocales.includes(navigatorLocale)) return navigatorLocale;
-    const browserBase = navigatorLocale.split('-')[0];
-    const matchLocale = supportedLocales.find((l) => l.startsWith(browserBase + '-'));
+    const browserBase: string = navigatorLocale.split('-')[0];
+    const matchLocale: string | undefined = supportedLocales.find((l) => l.startsWith(browserBase + '-'));
     return matchLocale || 'en-US';
   }
 
@@ -48,17 +53,19 @@ async function getInitialLocale() {
 }
 
 export const Route = createRootRoute({
-  notFoundComponent: () => <div>Not Found</div>,
+  notFoundComponent: () => <ErrorComponent type={ErrorType.NotFound} />,
   beforeLoad: async (): Promise<RootLoaderData> => {
-    const locale = await getInitialLocale();
+    const locale: string = await getInitialLocale();
+    const session: SessionType | null = await getSession();
+
     try {
       const { messages } = await import(`../locales/${locale}/messages.po`);
       i18n.load(locale, messages);
       i18n.activate(locale);
-      return { locale, isI18nReady: true };
+      return { locale, isI18nReady: true, session };
     } catch (e) {
       console.error('Failed to load locale in beforeLoad', e);
-      return { locale, isI18nReady: false };
+      return { locale, isI18nReady: false, session };
     }
   },
   loader: async ({ context }) => context,

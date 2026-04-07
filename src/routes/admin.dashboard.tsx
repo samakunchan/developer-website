@@ -1,12 +1,27 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, redirect } from '@tanstack/react-router';
 import { getServerTime, TimeServerOutput } from '../core/server-functions/time-server';
 import { getBrowserTimeZone, getGuessTimeZone } from '../core/utils/timezone';
-import { Container } from '../components/Container';
 import { checkDatabaseStatus, DbStatus } from '../core/server-functions/db-health-check';
+import { AdminDashboard } from '../components/AdminDashboard';
+import { Header } from '../components/Header';
+import { ErrorComponent, ErrorType } from '../components/ErrorComponent';
 
 export const Route = createFileRoute('/admin/dashboard')({
+  beforeLoad: async ({ context }) => {
+    console.log('On est dans beforeLoad', context);
+    if (!context.session || context.session.user.role !== 'admin') {
+      throw redirect({
+        to: '/login',
+        search: {
+          redirectTo: '/admin/dashboard',
+        },
+      });
+    }
+  },
   component: RouteComponent,
-  loader: async ({ context }): Promise<TimeServerOutput & { dbStatus: DbStatus; locale: string }> => {
+  loader: async ({
+    context,
+  }): Promise<TimeServerOutput & { dbStatus: DbStatus; locale: string; isConnected: boolean }> => {
     const detectedTz: string = getBrowserTimeZone();
     const timeZone: string = detectedTz !== 'UTC' ? detectedTz : getGuessTimeZone(context.locale);
 
@@ -18,72 +33,26 @@ export const Route = createFileRoute('/admin/dashboard')({
     return {
       ...time,
       dbStatus,
-      locale: context.locale, // Provide locale to component for client-side formatting
+      locale: context.locale, // Provide locale to component for client-side formatting,
+      isConnected: context.session?.user.role === 'admin',
     };
   },
 });
 
 function RouteComponent() {
-  const { formatted, timeZone, dbStatus, locale } = Route.useLoaderData();
-
-  const formatter: Intl.DateTimeFormat = new Intl.DateTimeFormat(locale, {
-    dateStyle: 'full',
-    timeStyle: 'long',
-    timeZone: 'UTC',
-  });
-
-  const dbTime: string | null = dbStatus.details?.now ? formatter.format(new Date(dbStatus.details.now)) : null;
+  const { formatted, timeZone, dbStatus, locale, isConnected } = Route.useLoaderData();
 
   return (
     <>
-      <main role="main">
-        <Container>
-          <h1>Hello "/admin/dashboard"!</h1>
-          <div>
-            <p>Date locale: {formatted}</p>
-            {dbTime && <p>DB status date: {dbTime}</p>}
-
-            <small>Timezone: {timeZone}</small>
-          </div>
-
-          <section>
-            <h2>Database Status</h2>
-            <div>
-              <div
-                style={{
-                  width: '12px',
-                  height: '12px',
-                  borderRadius: '50%',
-                  backgroundColor: dbStatus.status === 'online' ? '#48bb78' : '#f56565',
-                }}
-              />
-              <strong
-                style={{
-                  color: dbStatus.status === 'online' ? '#2f855a' : '#c53030',
-                }}
-              >
-                {dbStatus.status.toUpperCase()}
-              </strong>
-            </div>
-
-            {dbStatus.error && <p style={{ color: '#c53030', marginTop: '0.5rem' }}>Error: {dbStatus.error}</p>}
-
-            {dbStatus.details && (
-              <pre
-                style={{
-                  marginTop: '1rem',
-                  fontSize: '0.875rem',
-                  backgroundColor: 'rgba(0,0,0,0.05)',
-                  padding: '0.5rem',
-                  borderRadius: '4px',
-                }}
-              >
-                {JSON.stringify(dbStatus.details, null, 2)}
-              </pre>
-            )}
-          </section>
-        </Container>
-      </main>
+      {isConnected && (
+        <>
+          <Header isConnected={isConnected} />
+          <main role="main">
+            <AdminDashboard formatted={formatted} timeZone={timeZone} dbStatus={dbStatus} locale={locale} />
+          </main>
+        </>
+      )}
+      {!isConnected && <ErrorComponent type={ErrorType.UnAuthorize} />}
     </>
   );
 }

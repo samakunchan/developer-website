@@ -10,13 +10,20 @@ import { Footer } from '../components/Footer';
 import '../styles/main.css';
 
 export const Route = createFileRoute('/')({
+  loader: async ({ context }) => {
+    return {
+      isConnected: context.session?.user.role === 'admin',
+    };
+  },
   component: Index,
 });
 
 function Index() {
+  const { isConnected } = Route.useLoaderData();
+
   return (
     <>
-      <Header />
+      <Header isConnected={isConnected} />
       <main role="main">
         <Hero
           badgeText={t`Available for new projects`}
