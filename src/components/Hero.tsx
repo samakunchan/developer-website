@@ -69,20 +69,12 @@ export function Hero({
 
           <div className="hero__actions">
             {primaryButton && (
-              <Button
-                variant="primary"
-                onClick={primaryButton.onClick}
-                className="hero__btn"
-              >
+              <Button variant="primary" onClick={primaryButton.onClick} className="hero__btn">
                 {primaryButton.text}
               </Button>
             )}
             {secondaryButton && (
-              <Button
-                variant="secondary"
-                onClick={secondaryButton.onClick}
-                className="hero__btn"
-              >
+              <Button variant="secondary" onClick={secondaryButton.onClick} className="hero__btn">
                 {secondaryButton.text}
               </Button>
             )}
@@ -93,12 +85,7 @@ export function Hero({
           <div className="hero__image-wrapper">
             <div className="hero__image-glow"></div>
             <div className="hero__image-container">
-              <ImageNetwork
-                src={imageSrc}
-                alt={imageAlt || ''}
-                className="hero__image"
-                layout="fullWidth"
-              />
+              <ImageNetwork src={imageSrc} alt={imageAlt || ''} className="hero__image" layout="fullWidth" />
             </div>
           </div>
         )}

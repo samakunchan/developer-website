@@ -10,13 +10,20 @@ import { Footer } from '../components/Footer';
 import '../styles/main.css';
 
 export const Route = createFileRoute('/')({
+  loader: async ({ context }) => {
+    return {
+      isConnected: context.session?.user.role === 'admin',
+    };
+  },
   component: Index,
 });
 
 function Index() {
+  const { isConnected } = Route.useLoaderData();
+
   return (
     <>
-      <Header />
+      <Header isConnected={isConnected} />
       <main role="main">
         <Hero
           badgeText={t`Available for new projects`}
@@ -31,11 +38,7 @@ function Index() {
           imageSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuA-DXrgtoZM3ej2WaApf3VNsO_ULaBI3bwr0BqHDSkABxpSX7q4jcYwWopO7xSJEtjykdr8w7hQ5XdpQ3ZCaMHca2trLcaerfikZT52KLJIeYU3mvrkl2zDW820gQpJbdsFVX4ffyFH5AoGsdnpBz4a2rxAcKpndZEuQOF6-c3cb5QDyN8UqQ1ISD7UBUnMy3XX1BOfa6xv_rAIepdbY6WHnawAIpL-VSGIXp84lw-xJXIt2pvVgsc33_BZ3GWNCIIXkbVww1EFlTI"
           imageAlt={t`Modern workspace with laptop showing code`}
         />
-        <Services
-          id={t`Expertise`}
-          subtitle={t`Expertise`}
-          title={<Trans>Core Services</Trans>}
-        >
+        <Services id={t`Expertise`} subtitle={t`Expertise`} title={<Trans>Core Services</Trans>}>
           <ServiceCard
             icon="language"
             title={t`Web Development`}
@@ -46,22 +49,14 @@ function Index() {
             icon="smartphone"
             title={t`Mobile App Development`}
             description={t`Cross-platform and native mobile solutions for iOS and Android.`}
-            features={[
-              t`App Store Deployment`,
-              t`Push Notifications`,
-              t`Offline Capability`,
-            ]}
+            features={[t`App Store Deployment`, t`Push Notifications`, t`Offline Capability`]}
           />
           <ServiceCard
             icon="handyman"
             title={t`Maintenance & Support`}
             description={t`Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring.`}
             badges={['Optimization', 'Security']}
-            features={[
-              t`Security Patching`,
-              t`Cloud Infrastructure`,
-              t`Performance Audits`,
-            ]}
+            features={[t`Security Patching`, t`Cloud Infrastructure`, t`Performance Audits`]}
           />
         </Services>
         <Process
@@ -73,31 +68,18 @@ function Index() {
               number: 1,
               title: <Trans>Discovery & Strategy</Trans>,
               description: (
-                <Trans>
-                  Deep dive into your business goals, target audience, and
-                  technical requirements.
-                </Trans>
+                <Trans>Deep dive into your business goals, target audience, and technical requirements.</Trans>
               ),
             },
             {
               number: 2,
               title: <Trans>Design & Development</Trans>,
-              description: (
-                <Trans>
-                  Iterative coding sessions with weekly updates and live staging
-                  environments.
-                </Trans>
-              ),
+              description: <Trans>Iterative coding sessions with weekly updates and live staging environments.</Trans>,
             },
             {
               number: 3,
               title: <Trans>Launch & Scaling</Trans>,
-              description: (
-                <Trans>
-                  Deployment to production servers and ongoing performance
-                  monitoring.
-                </Trans>
-              ),
+              description: <Trans>Deployment to production servers and ongoing performance monitoring.</Trans>,
             },
           ]}
         />

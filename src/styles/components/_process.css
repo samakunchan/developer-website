@@ -86,11 +86,11 @@
 
 /* Terminal Mockup */
 .process__terminal {
-    background: var(--color-terminal-bg);
-    border-radius: var(--border-radius-lg);
-    border: var(--color-terminal-body-border);
-    overflow: hidden;
-    box-shadow: 0 25px 50px -12px #00000080;
+  background: var(--color-terminal-bg);
+  border-radius: var(--border-radius-lg);
+  border: var(--color-terminal-body-border);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px #00000080;
 }
 
 .process__terminal-wrapper {

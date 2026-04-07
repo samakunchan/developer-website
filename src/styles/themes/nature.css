@@ -1,4 +1,4 @@
-.nature { 
+.nature {
   --color-primary: #006d36;
   --color-secondary: #f8f8f8;
   --color-background: #f0fdf4;
@@ -95,7 +95,7 @@
   --color-terminal-text: #2670c1;
   --color-terminal-keyword: #128658;
   --color-terminal-function: #3200ff;
-  --color-terminal-property: #141080;;
+  --color-terminal-property: #141080;
   --color-terminal-string: #a31515;
   --color-terminal-bg: var(--color-secondary);
 

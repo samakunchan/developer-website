@@ -1,9 +1,6 @@
 import type { Operations } from 'unpic';
 
-export function myCustomApiTransformer(
-  url: string | URL,
-  operations: Operations,
-): string {
+export function myCustomApiTransformer(url: string | URL, operations: Operations): string {
   const params = new URLSearchParams({
     // Original image URL
     url: url.toString(),
