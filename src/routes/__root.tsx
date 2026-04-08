@@ -123,7 +123,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   const { locale }: { locale: string } = Route.useRouteContext();
 
   return (
-    <html lang={locale} className="dark">
+    <html lang={locale} className="nature">
       <head>
         <HeadContent />
       </head>

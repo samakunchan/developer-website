@@ -3,7 +3,8 @@ import { getServerTime, TimeServerOutput } from '../core/server-functions/time-s
 import { getBrowserTimeZone, getGuessTimeZone } from '../core/utils/timezone';
 import { checkDatabaseStatus, DbStatus } from '../core/server-functions/db-health-check';
 import { AdminDashboard } from '../components/AdminDashboard';
-import { Header } from '../components/Header';
+import { AdminSidebar } from '../components/AdminSidebar';
+import { AdminToolbar } from '../components/AdminToolbar';
 import { ErrorComponent, ErrorType } from '../components/ErrorComponent';
 
 export const Route = createFileRoute('/admin/dashboard')({
@@ -45,12 +46,15 @@ function RouteComponent() {
   return (
     <>
       {isConnected && (
-        <>
-          <Header isConnected={isConnected} />
-          <main role="main">
-            <AdminDashboard formatted={formatted} timeZone={timeZone} dbStatus={dbStatus} locale={locale} />
-          </main>
-        </>
+        <div className="admin-layout">
+          <AdminSidebar />
+          <div className="admin-layout__main">
+            <AdminToolbar />
+            <main className="admin-layout__content" role="main">
+              <AdminDashboard formatted={formatted} timeZone={timeZone} dbStatus={dbStatus} locale={locale} />
+            </main>
+          </div>
+        </div>
       )}
       {!isConnected && <ErrorComponent type={ErrorType.UnAuthorize} />}
     </>
