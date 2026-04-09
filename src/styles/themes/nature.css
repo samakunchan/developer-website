@@ -51,8 +51,8 @@
   --color-cta-description: var(--color-text);
 
   /* Input/Form */
-  --color-input-bg: rgba(0, 109, 54, 0.05);
-  --color-input-border: rgba(0, 109, 54, 0.1);
+  --color-input-bg: var(--color-white);
+  --color-input-border: var(--color-primary);
   --color-input-focus-shadow: 0 0 0 4px rgba(0, 109, 54, 0.1);
 
   /* Projects */

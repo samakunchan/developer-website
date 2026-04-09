@@ -1,16 +1,16 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
 import { RichTextEditor } from '../features/rich-text/components/RichTextEditor';
-import { getPrivacyPolicy, savePrivacyPolicy } from '../features/rich-text/utils/rich-text-actions.functions';
+import { getLegalMentions, saveLegalMentions } from '../features/rich-text/utils/rich-text-actions.functions';
 
-export const Route = createFileRoute('/admin/settings/privacy')({
-  loader: async () => await getPrivacyPolicy(),
-  component: PrivacyComponent,
+export const Route = createFileRoute('/admin/settings/legal-mentions')({
+  loader: async () => await getLegalMentions(),
+  component: LegalMentionsComponent,
 });
 
-function PrivacyComponent() {
+function LegalMentionsComponent() {
   const data = Route.useLoaderData();
-  const save = useServerFn(savePrivacyPolicy);
+  const save = useServerFn(saveLegalMentions);
   const router = useRouter();
 
   const handleSave = async (title: string, content: any) => {
@@ -21,13 +21,13 @@ function PrivacyComponent() {
   return (
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
-        <h1>Privacy Policy</h1>
+        <h1>Legal Mentions</h1>
         <p style={{ marginBottom: '2rem', color: 'var(--color-slate-400)' }}>
-          Manage your website's privacy policy and data collection disclosures.
+          Manage your website's legal information and data protection notice.
         </p>
 
         <RichTextEditor
-          title={data?.title || 'Privacy Policy'}
+          title={data?.title || 'Legal Mentions'}
           initialContent={data?.content as string}
           onSave={handleSave}
         />

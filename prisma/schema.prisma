@@ -33,6 +33,51 @@ model Settings {
   @@map("settings")
 }
 
+// For Lexical package
+model LegalMentions {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("legal_mentions")
+}
+
+// For Lexical package
+model CGU {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("cgu")
+}
+
+// For Lexical package
+model PrivacyPolicy {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("privacy_policy")
+}
+
+// For Lexical package
+model CookiePolicy {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("cookie_policy")
+}
+
+
 enum Role {
   admin
   developer
