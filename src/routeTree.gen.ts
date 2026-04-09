@@ -24,8 +24,10 @@ import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminAnalyticsRouteImport } from './routes/admin.analytics'
 import { Route as AdminSettingsIndexRouteImport } from './routes/admin.settings.index'
 import { Route as AdminSettingsThemesRouteImport } from './routes/admin.settings.themes'
-import { Route as AdminSettingsRgpdRouteImport } from './routes/admin.settings.rgpd'
 import { Route as AdminSettingsPrivacyRouteImport } from './routes/admin.settings.privacy'
+import { Route as AdminSettingsLegalMentionsRouteImport } from './routes/admin.settings.legal-mentions'
+import { Route as AdminSettingsCookiePolicyRouteImport } from './routes/admin.settings.cookie-policy'
+import { Route as AdminSettingsCguRouteImport } from './routes/admin.settings.cgu'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -102,14 +104,26 @@ const AdminSettingsThemesRoute = AdminSettingsThemesRouteImport.update({
   path: '/themes',
   getParentRoute: () => AdminSettingsRoute,
 } as any)
-const AdminSettingsRgpdRoute = AdminSettingsRgpdRouteImport.update({
-  id: '/rgpd',
-  path: '/rgpd',
-  getParentRoute: () => AdminSettingsRoute,
-} as any)
 const AdminSettingsPrivacyRoute = AdminSettingsPrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => AdminSettingsRoute,
+} as any)
+const AdminSettingsLegalMentionsRoute =
+  AdminSettingsLegalMentionsRouteImport.update({
+    id: '/legal-mentions',
+    path: '/legal-mentions',
+    getParentRoute: () => AdminSettingsRoute,
+  } as any)
+const AdminSettingsCookiePolicyRoute =
+  AdminSettingsCookiePolicyRouteImport.update({
+    id: '/cookie-policy',
+    path: '/cookie-policy',
+    getParentRoute: () => AdminSettingsRoute,
+  } as any)
+const AdminSettingsCguRoute = AdminSettingsCguRouteImport.update({
+  id: '/cgu',
+  path: '/cgu',
   getParentRoute: () => AdminSettingsRoute,
 } as any)
 
@@ -127,8 +141,10 @@ export interface FileRoutesByFullPath {
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/admin/settings/cgu': typeof AdminSettingsCguRoute
+  '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
+  '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
   '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
-  '/admin/settings/rgpd': typeof AdminSettingsRgpdRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
   '/admin/settings/': typeof AdminSettingsIndexRoute
 }
@@ -145,8 +161,10 @@ export interface FileRoutesByTo {
   '/admin/projects': typeof AdminProjectsRoute
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/admin/settings/cgu': typeof AdminSettingsCguRoute
+  '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
+  '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
   '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
-  '/admin/settings/rgpd': typeof AdminSettingsRgpdRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
   '/admin/settings': typeof AdminSettingsIndexRoute
 }
@@ -165,8 +183,10 @@ export interface FileRoutesById {
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects_/$slug': typeof ProjectsSlugRoute
+  '/admin/settings/cgu': typeof AdminSettingsCguRoute
+  '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
+  '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
   '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
-  '/admin/settings/rgpd': typeof AdminSettingsRgpdRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
   '/admin/settings/': typeof AdminSettingsIndexRoute
 }
@@ -186,8 +206,10 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/api/optimize-image'
     | '/projects/$slug'
+    | '/admin/settings/cgu'
+    | '/admin/settings/cookie-policy'
+    | '/admin/settings/legal-mentions'
     | '/admin/settings/privacy'
-    | '/admin/settings/rgpd'
     | '/admin/settings/themes'
     | '/admin/settings/'
   fileRoutesByTo: FileRoutesByTo
@@ -204,8 +226,10 @@ export interface FileRouteTypes {
     | '/admin/projects'
     | '/api/optimize-image'
     | '/projects/$slug'
+    | '/admin/settings/cgu'
+    | '/admin/settings/cookie-policy'
+    | '/admin/settings/legal-mentions'
     | '/admin/settings/privacy'
-    | '/admin/settings/rgpd'
     | '/admin/settings/themes'
     | '/admin/settings'
   id:
@@ -223,8 +247,10 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/api/optimize-image'
     | '/projects_/$slug'
+    | '/admin/settings/cgu'
+    | '/admin/settings/cookie-policy'
+    | '/admin/settings/legal-mentions'
     | '/admin/settings/privacy'
-    | '/admin/settings/rgpd'
     | '/admin/settings/themes'
     | '/admin/settings/'
   fileRoutesById: FileRoutesById
@@ -347,13 +373,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSettingsThemesRouteImport
       parentRoute: typeof AdminSettingsRoute
     }
-    '/admin/settings/rgpd': {
-      id: '/admin/settings/rgpd'
-      path: '/rgpd'
-      fullPath: '/admin/settings/rgpd'
-      preLoaderRoute: typeof AdminSettingsRgpdRouteImport
-      parentRoute: typeof AdminSettingsRoute
-    }
     '/admin/settings/privacy': {
       id: '/admin/settings/privacy'
       path: '/privacy'
@@ -361,19 +380,44 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSettingsPrivacyRouteImport
       parentRoute: typeof AdminSettingsRoute
     }
+    '/admin/settings/legal-mentions': {
+      id: '/admin/settings/legal-mentions'
+      path: '/legal-mentions'
+      fullPath: '/admin/settings/legal-mentions'
+      preLoaderRoute: typeof AdminSettingsLegalMentionsRouteImport
+      parentRoute: typeof AdminSettingsRoute
+    }
+    '/admin/settings/cookie-policy': {
+      id: '/admin/settings/cookie-policy'
+      path: '/cookie-policy'
+      fullPath: '/admin/settings/cookie-policy'
+      preLoaderRoute: typeof AdminSettingsCookiePolicyRouteImport
+      parentRoute: typeof AdminSettingsRoute
+    }
+    '/admin/settings/cgu': {
+      id: '/admin/settings/cgu'
+      path: '/cgu'
+      fullPath: '/admin/settings/cgu'
+      preLoaderRoute: typeof AdminSettingsCguRouteImport
+      parentRoute: typeof AdminSettingsRoute
+    }
   }
 }
 
 interface AdminSettingsRouteChildren {
+  AdminSettingsCguRoute: typeof AdminSettingsCguRoute
+  AdminSettingsCookiePolicyRoute: typeof AdminSettingsCookiePolicyRoute
+  AdminSettingsLegalMentionsRoute: typeof AdminSettingsLegalMentionsRoute
   AdminSettingsPrivacyRoute: typeof AdminSettingsPrivacyRoute
-  AdminSettingsRgpdRoute: typeof AdminSettingsRgpdRoute
   AdminSettingsThemesRoute: typeof AdminSettingsThemesRoute
   AdminSettingsIndexRoute: typeof AdminSettingsIndexRoute
 }
 
 const AdminSettingsRouteChildren: AdminSettingsRouteChildren = {
+  AdminSettingsCguRoute: AdminSettingsCguRoute,
+  AdminSettingsCookiePolicyRoute: AdminSettingsCookiePolicyRoute,
+  AdminSettingsLegalMentionsRoute: AdminSettingsLegalMentionsRoute,
   AdminSettingsPrivacyRoute: AdminSettingsPrivacyRoute,
-  AdminSettingsRgpdRoute: AdminSettingsRgpdRoute,
   AdminSettingsThemesRoute: AdminSettingsThemesRoute,
   AdminSettingsIndexRoute: AdminSettingsIndexRoute,
 }

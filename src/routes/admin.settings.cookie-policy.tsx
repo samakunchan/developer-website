@@ -1,16 +1,16 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
 import { RichTextEditor } from '../features/rich-text/components/RichTextEditor';
-import { getPrivacyPolicy, savePrivacyPolicy } from '../features/rich-text/utils/rich-text-actions.functions';
+import { getCookiePolicy, saveCookiePolicy } from '../features/rich-text/utils/rich-text-actions.functions';
 
-export const Route = createFileRoute('/admin/settings/privacy')({
-  loader: async () => await getPrivacyPolicy(),
-  component: PrivacyComponent,
+export const Route = createFileRoute('/admin/settings/cookie-policy')({
+  loader: async () => await getCookiePolicy(),
+  component: CookiePolicyComponent,
 });
 
-function PrivacyComponent() {
+function CookiePolicyComponent() {
   const data = Route.useLoaderData();
-  const save = useServerFn(savePrivacyPolicy);
+  const save = useServerFn(saveCookiePolicy);
   const router = useRouter();
 
   const handleSave = async (title: string, content: any) => {
@@ -21,13 +21,13 @@ function PrivacyComponent() {
   return (
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
-        <h1>Privacy Policy</h1>
+        <h1>Cookie Policy</h1>
         <p style={{ marginBottom: '2rem', color: 'var(--color-slate-400)' }}>
-          Manage your website's privacy policy and data collection disclosures.
+          Manage your website's cookie usage and tracking policies.
         </p>
 
         <RichTextEditor
-          title={data?.title || 'Privacy Policy'}
+          title={data?.title || 'Cookie Policy'}
           initialContent={data?.content as string}
           onSave={handleSave}
         />

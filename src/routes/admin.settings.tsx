@@ -8,8 +8,10 @@ export const Route = createFileRoute('/admin/settings')({
 function SettingsComponent() {
   const settingsLinks = [
     { label: 'Themes', to: '/admin/settings/themes' },
-    { label: 'RGPD', to: '/admin/settings/rgpd' },
+    { label: 'Legal Mentions', to: '/admin/settings/legal-mentions' },
+    { label: 'CGU', to: '/admin/settings/cgu' },
     { label: 'Privacy Policy', to: '/admin/settings/privacy' },
+    { label: 'Cookie Policy', to: '/admin/settings/cookie-policy' },
   ];
 
   return (
