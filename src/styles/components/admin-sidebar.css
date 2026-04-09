@@ -1,0 +1,126 @@
+.admin-sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 260px;
+  background-color: var(--color-white);
+  border-right: 1px solid var(--color-glass-border);
+  position: sticky;
+  top: 0;
+  padding: 2rem 0;
+  flex-shrink: 0;
+  z-index: 100;
+}
+
+.admin-sidebar__header {
+  padding: 0 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.admin-sidebar__logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.admin-sidebar__logo-icon {
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.admin-sidebar__logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.admin-sidebar__version {
+  font-size: 0.625rem;
+  color: var(--color-slate-400);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 1rem 3rem;
+}
+
+.admin-sidebar__nav {
+  flex: 1;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.admin-sidebar__nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius-lg);
+  color: var(--color-slate-700);
+  text-decoration: none;
+  transition: all var(--transition-speed);
+  font-weight: 500;
+}
+
+.admin-sidebar__nav-link .material-symbols-outlined {
+  font-size: 1.25rem;
+}
+
+.admin-sidebar__nav-link:hover {
+  background: var(--color-glass-bg);
+  color: var(--color-primary);
+}
+
+.admin-sidebar__nav-link.admin-sidebar__nav-link--active {
+  background: var(--color-glass-bg);
+  color: var(--color-primary);
+  font-weight: 700;
+  border-right: 2px solid var(--color-primary);
+}
+
+.admin-sidebar__footer {
+  padding: 0 1.5rem;
+  margin-top: auto;
+}
+
+.admin-sidebar__cta {
+  width: 100%;
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-weight: 700;
+  padding: 0.875rem;
+  border-radius: var(--border-radius-lg);
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    background-color 0.2s;
+}
+
+.admin-sidebar__cta:hover {
+  transform: scale(1.02);
+  background-color: var(--color-primary-hover);
+}
+
+/* Dark mode support */
+.dark .admin-sidebar {
+  background-color: var(--color-background-dark);
+  border-right-color: var(--color-slate-800);
+}
+
+.admin-sidebar__logo-text {
+  color: var(--color-text);
+}
+
+.admin-sidebar__nav-link {
+  color: var(--color-slate-400);
+}
+
+.admin-sidebar__nav-link:hover {
+  background-color: rgba(37, 244, 244, 0.1);
+  color: var(--color-primary);
+}

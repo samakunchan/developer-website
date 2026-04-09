@@ -1,8 +1,4 @@
-import { useNavigate } from '@tanstack/react-router';
-import { useServerFn } from '@tanstack/react-start';
-import { DbStatus } from '../core/server-functions/db-health-check';
-import { signOutAction } from '../features/auth/utils/auth-actions.functions';
-import { Button } from './Button';
+import { DbStatus } from '../features/database/utils/schemas';
 import { Container } from './Container';
 
 export function AdminDashboard({
@@ -24,32 +20,12 @@ export function AdminDashboard({
 
   const dbTime: string | null = dbStatus.details?.now ? formatter.format(new Date(dbStatus.details.now)) : null;
 
-  const signOut = useServerFn(signOutAction);
-  const navigate = useNavigate();
-
-  const handleLogout = async (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault();
-
-    try {
-      const result: { success: boolean } = await signOut();
-
-      if (result?.success) {
-        // After successful signin, redirect to the dashboard or the requested page
-        navigate({ to: '/' });
-      }
-    } catch (error) {
-      console.error('Logout failed:', error);
-      alert('Logout failed. Please try again.');
-    }
-  };
   return (
     <>
       <section className="about">
         <Container>
           <h1>Hello "/admin/dashboard"!</h1>
-          <div>
-            <Button onClick={handleLogout}>Logout</Button>
-          </div>
+
           <div>
             <p>Date locale: {formatted}</p>
             {dbTime && <p>DB status date: {dbTime}</p>}

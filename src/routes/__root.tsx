@@ -7,38 +7,22 @@ import { t } from '@lingui/core/macro';
 import { I18nProvider } from '@lingui/react';
 import '../styles/main.css';
 
-import { createServerFn } from '@tanstack/react-start';
 import { ErrorComponent, ErrorType } from '../components/ErrorComponent';
 
 import { SessionType } from '../features/auth/utils/schemas';
 import { getSession } from '../features/auth/utils/auth-actions.functions';
+import { getTheme } from '../features/theme/utils/theme-actions.functions';
+import { ThemeType } from '../features/theme/utils/theme.types';
+import { supportedLocales, fetchServerLocale } from '../features/l10n/utils/l10n.functions';
 
 interface RootLoaderData {
   locale: string;
   isI18nReady: boolean;
   session: SessionType | null;
+  theme: ThemeType;
 }
-const supportedLocales: string[] = ['en-US', 'fr-FR', 'es-ES', 'zh-CN', 'ar-SA'];
 
-const fetchServerLocale = createServerFn({ method: 'GET' }).handler(async () => {
-  try {
-    const { getRequestHeader } = await import('@tanstack/react-start/server');
-
-    const acceptLang: string | undefined = getRequestHeader('accept-language');
-    if (acceptLang) {
-      const parsed: string = acceptLang.split(',')[0].split(';')[0].trim();
-      if (supportedLocales.includes(parsed)) return parsed;
-      const base: string = parsed.split('-')[0];
-      const matchLocale: string | undefined = supportedLocales.find((l) => l.startsWith(base + '-'));
-      if (matchLocale) return matchLocale;
-    }
-  } catch {
-    // getRequestHeader might not be available or imported
-  }
-  return 'en-US';
-});
-
-async function getInitialLocale() {
+async function getInitialLocale(): Promise<string> {
   if (typeof document !== 'undefined') {
     // Client-side detection
     const navigatorLocale: string = navigator.language;
@@ -56,19 +40,23 @@ export const Route = createRootRoute({
   notFoundComponent: () => <ErrorComponent type={ErrorType.NotFound} />,
   beforeLoad: async (): Promise<RootLoaderData> => {
     const locale: string = await getInitialLocale();
+    const theme: ThemeType = await getTheme();
     const session: SessionType | null = await getSession();
 
     try {
       const { messages } = await import(`../locales/${locale}/messages.po`);
       i18n.load(locale, messages);
       i18n.activate(locale);
-      return { locale, isI18nReady: true, session };
+      return { locale, isI18nReady: true, session, theme };
     } catch (e) {
       console.error('Failed to load locale in beforeLoad', e);
-      return { locale, isI18nReady: false, session };
+      return { locale, isI18nReady: false, session, theme };
     }
   },
-  loader: async ({ context }) => context,
+  loader: async ({ context }) => {
+    console.log('loader context', context);
+    return context;
+  },
   component: RootComponent,
   head: (params) => {
     const loaderData = params.loaderData as RootLoaderData | undefined;
@@ -120,10 +108,10 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
-  const { locale }: { locale: string } = Route.useRouteContext();
+  const { locale, theme }: RootLoaderData = Route.useRouteContext();
 
   return (
-    <html lang={locale} className="dark">
+    <html lang={locale} className={theme}>
       <head>
         <HeadContent />
       </head>
