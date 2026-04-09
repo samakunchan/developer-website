@@ -1,5 +1,21 @@
 # CHANGELOG developer-website
 
+## 🚀 0.17.0 - 09/04/2026
+
+### Added
+
+- **Type Safety**: Introduced a dedicated `src/features/theme/utils/theme.types.ts` file to isolate shared types from server-only logic, enabling secure cross-environment type sharing.
+
+### Changed
+
+- **Architecture**: Refactored `theme-actions` and `times-actions` features to strictly adhere to TanStack Start's environment isolation patterns, decoupling RPC bridges from internal server implementations.
+
+### Fixed
+
+- **Import Protection**: Resolved `[import-protection]` warnings triggered in client-side bundles (notably in `__root.tsx`, `admin.settings.themes.tsx`, and `admin.dashboard.tsx`) by eliminating direct imports from restricted `*.server.ts` files.
+- **Bug Fix**: Corrected a misaligned database client relative import path in `auth-actions.server.ts`.
+- **Cleanup**: Removed redundant debug `console.log` statements from administrative layout files.
+
 ## 🚀 0.16.0 - 07/04/2026
 
 ### Added

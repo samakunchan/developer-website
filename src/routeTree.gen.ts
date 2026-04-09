@@ -12,11 +12,20 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsSlugRouteImport } from './routes/projects_.$slug'
 import { Route as ApiOptimizeImageRouteImport } from './routes/api.optimize-image'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
+import { Route as AdminProfilesRouteImport } from './routes/admin.profiles'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
+import { Route as AdminAnalyticsRouteImport } from './routes/admin.analytics'
+import { Route as AdminSettingsIndexRouteImport } from './routes/admin.settings.index'
+import { Route as AdminSettingsThemesRouteImport } from './routes/admin.settings.themes'
+import { Route as AdminSettingsRgpdRouteImport } from './routes/admin.settings.rgpd'
+import { Route as AdminSettingsPrivacyRouteImport } from './routes/admin.settings.privacy'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -31,6 +40,11 @@ const ProjectsRoute = ProjectsRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -53,83 +67,175 @@ const ApiOptimizeImageRoute = ApiOptimizeImageRouteImport.update({
   path: '/api/optimize-image',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminProjectsRoute = AdminProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminProfilesRoute = AdminProfilesRouteImport.update({
+  id: '/profiles',
+  path: '/profiles',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
-  id: '/admin/dashboard',
-  path: '/admin/dashboard',
-  getParentRoute: () => rootRouteImport,
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminAnalyticsRoute = AdminAnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSettingsIndexRoute = AdminSettingsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminSettingsRoute,
+} as any)
+const AdminSettingsThemesRoute = AdminSettingsThemesRouteImport.update({
+  id: '/themes',
+  path: '/themes',
+  getParentRoute: () => AdminSettingsRoute,
+} as any)
+const AdminSettingsRgpdRoute = AdminSettingsRgpdRouteImport.update({
+  id: '/rgpd',
+  path: '/rgpd',
+  getParentRoute: () => AdminSettingsRoute,
+} as any)
+const AdminSettingsPrivacyRoute = AdminSettingsPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => AdminSettingsRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/profiles': typeof AdminProfilesRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
+  '/admin/settings/rgpd': typeof AdminSettingsRgpdRoute
+  '/admin/settings/themes': typeof AdminSettingsThemesRoute
+  '/admin/settings/': typeof AdminSettingsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/profiles': typeof AdminProfilesRoute
+  '/admin/projects': typeof AdminProjectsRoute
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
+  '/admin/settings/rgpd': typeof AdminSettingsRgpdRoute
+  '/admin/settings/themes': typeof AdminSettingsThemesRoute
+  '/admin/settings': typeof AdminSettingsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRouteWithChildren
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
+  '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/profiles': typeof AdminProfilesRoute
+  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects_/$slug': typeof ProjectsSlugRoute
+  '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
+  '/admin/settings/rgpd': typeof AdminSettingsRgpdRoute
+  '/admin/settings/themes': typeof AdminSettingsThemesRoute
+  '/admin/settings/': typeof AdminSettingsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
     | '/login'
     | '/projects'
     | '/services'
+    | '/admin/analytics'
     | '/admin/dashboard'
+    | '/admin/profiles'
+    | '/admin/projects'
+    | '/admin/settings'
     | '/api/optimize-image'
     | '/projects/$slug'
+    | '/admin/settings/privacy'
+    | '/admin/settings/rgpd'
+    | '/admin/settings/themes'
+    | '/admin/settings/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/admin'
     | '/login'
     | '/projects'
     | '/services'
+    | '/admin/analytics'
     | '/admin/dashboard'
+    | '/admin/profiles'
+    | '/admin/projects'
     | '/api/optimize-image'
     | '/projects/$slug'
+    | '/admin/settings/privacy'
+    | '/admin/settings/rgpd'
+    | '/admin/settings/themes'
+    | '/admin/settings'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
     | '/login'
     | '/projects'
     | '/services'
+    | '/admin/analytics'
     | '/admin/dashboard'
+    | '/admin/profiles'
+    | '/admin/projects'
+    | '/admin/settings'
     | '/api/optimize-image'
     | '/projects_/$slug'
+    | '/admin/settings/privacy'
+    | '/admin/settings/rgpd'
+    | '/admin/settings/themes'
+    | '/admin/settings/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRouteWithChildren
   LoginRoute: typeof LoginRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
-  AdminDashboardRoute: typeof AdminDashboardRoute
   ApiOptimizeImageRoute: typeof ApiOptimizeImageRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
 }
@@ -155,6 +261,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -185,23 +298,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOptimizeImageRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/projects': {
+      id: '/admin/projects'
+      path: '/projects'
+      fullPath: '/admin/projects'
+      preLoaderRoute: typeof AdminProjectsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/profiles': {
+      id: '/admin/profiles'
+      path: '/profiles'
+      fullPath: '/admin/profiles'
+      preLoaderRoute: typeof AdminProfilesRouteImport
+      parentRoute: typeof AdminRoute
+    }
     '/admin/dashboard': {
       id: '/admin/dashboard'
-      path: '/admin/dashboard'
+      path: '/dashboard'
       fullPath: '/admin/dashboard'
       preLoaderRoute: typeof AdminDashboardRouteImport
-      parentRoute: typeof rootRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/analytics': {
+      id: '/admin/analytics'
+      path: '/analytics'
+      fullPath: '/admin/analytics'
+      preLoaderRoute: typeof AdminAnalyticsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/settings/': {
+      id: '/admin/settings/'
+      path: '/'
+      fullPath: '/admin/settings/'
+      preLoaderRoute: typeof AdminSettingsIndexRouteImport
+      parentRoute: typeof AdminSettingsRoute
+    }
+    '/admin/settings/themes': {
+      id: '/admin/settings/themes'
+      path: '/themes'
+      fullPath: '/admin/settings/themes'
+      preLoaderRoute: typeof AdminSettingsThemesRouteImport
+      parentRoute: typeof AdminSettingsRoute
+    }
+    '/admin/settings/rgpd': {
+      id: '/admin/settings/rgpd'
+      path: '/rgpd'
+      fullPath: '/admin/settings/rgpd'
+      preLoaderRoute: typeof AdminSettingsRgpdRouteImport
+      parentRoute: typeof AdminSettingsRoute
+    }
+    '/admin/settings/privacy': {
+      id: '/admin/settings/privacy'
+      path: '/privacy'
+      fullPath: '/admin/settings/privacy'
+      preLoaderRoute: typeof AdminSettingsPrivacyRouteImport
+      parentRoute: typeof AdminSettingsRoute
     }
   }
 }
 
+interface AdminSettingsRouteChildren {
+  AdminSettingsPrivacyRoute: typeof AdminSettingsPrivacyRoute
+  AdminSettingsRgpdRoute: typeof AdminSettingsRgpdRoute
+  AdminSettingsThemesRoute: typeof AdminSettingsThemesRoute
+  AdminSettingsIndexRoute: typeof AdminSettingsIndexRoute
+}
+
+const AdminSettingsRouteChildren: AdminSettingsRouteChildren = {
+  AdminSettingsPrivacyRoute: AdminSettingsPrivacyRoute,
+  AdminSettingsRgpdRoute: AdminSettingsRgpdRoute,
+  AdminSettingsThemesRoute: AdminSettingsThemesRoute,
+  AdminSettingsIndexRoute: AdminSettingsIndexRoute,
+}
+
+const AdminSettingsRouteWithChildren = AdminSettingsRoute._addFileChildren(
+  AdminSettingsRouteChildren,
+)
+
+interface AdminRouteChildren {
+  AdminAnalyticsRoute: typeof AdminAnalyticsRoute
+  AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminProfilesRoute: typeof AdminProfilesRoute
+  AdminProjectsRoute: typeof AdminProjectsRoute
+  AdminSettingsRoute: typeof AdminSettingsRouteWithChildren
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminAnalyticsRoute: AdminAnalyticsRoute,
+  AdminDashboardRoute: AdminDashboardRoute,
+  AdminProfilesRoute: AdminProfilesRoute,
+  AdminProjectsRoute: AdminProjectsRoute,
+  AdminSettingsRoute: AdminSettingsRouteWithChildren,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRouteWithChildren,
   LoginRoute: LoginRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,
-  AdminDashboardRoute: AdminDashboardRoute,
   ApiOptimizeImageRoute: ApiOptimizeImageRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
 }
