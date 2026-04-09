@@ -1,5 +1,27 @@
 # CHANGELOG developer-website
 
+## 🚀 0.18.0 - 09/04/2026
+
+### Added
+
+- **Rich-Text Editor**: Integrated the **Lexical** rich-text editor framework for managing complex legal documents.
+- **Admin Features**:
+  - Implemented new administration routes for **CGU** and **Cookie Policy** management.
+  - Added dedicated sidebar navigation links for all legal document types.
+- **Persistence Layer**: Established server functions for automated saving of Lexical editor states (JSON) into the Prisma database.
+
+### Changed
+
+- **Architecture**: Generalized the `legal` feature into a reusable `rich-text` feature directory to support future rich-text requirements.
+- **Refactoring**: Renamed `LegalEditor` to `RichTextEditor` and updated all internal component logic to be model-agnostic.
+- **UI/UX**: Refined the editor's design system integration by replacing ad-hoc styles with design tokens (input background, border variables).
+- **Component Styling**: Migrated the editor save button to the centralized `Button` component for visual consistency.
+
+### Fixed
+
+- **Assets**: Corrected relative image and font paths in `_fonts.css` to properly resolve assets from the `public` directory.
+- **Type Safety**: Replaced generic `any` types with the official Lexical `EditorState` class in the `RichTextEditor` component.
+
 ## 🚀 0.17.0 - 09/04/2026
 
 ### Added
