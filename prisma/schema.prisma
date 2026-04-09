@@ -24,10 +24,24 @@ model User {
   @@map("users")
 }
 
+model Settings {
+  id    Int     @id @default(autoincrement())
+  theme Theme   @default(nature)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+
+  @@map("settings")
+}
+
 enum Role {
   admin
   developer
   moderator
   guest
   user
+}
+
+enum Theme {
+  dark
+  nature
 }
