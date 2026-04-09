@@ -1,5 +1,4 @@
-
-import { db } from './src/core/database/db.server.js';
+import { db } from './src/features/database/client/db.server.js';
 
 async function test() {
   console.log('Connecting to DB...');
