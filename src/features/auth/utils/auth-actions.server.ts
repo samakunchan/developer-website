@@ -1,7 +1,7 @@
 import { setCookie, getCookie, deleteCookie } from '@tanstack/react-start/server';
 import bcrypt from 'bcryptjs';
 import * as jose from 'jose';
-import { db } from '../../../core/database/db.server';
+import { db } from '../../database/client/db.server';
 import { SessionType, SignInInput } from './schemas';
 
 const SESSION_COOKIE_NAME = 'auth_session';
@@ -101,7 +101,6 @@ export async function signInInternal(data: SignInInput): Promise<{ success: bool
   if (!isPasswordValid) {
     const newFailedAttempts: number = user.failedLoginAttempts + 1;
     const isLockingOut: boolean = newFailedAttempts >= MAX_FAILED_ATTEMPTS;
-    console.log(newFailedAttempts, MAX_FAILED_ATTEMPTS, newFailedAttempts >= MAX_FAILED_ATTEMPTS);
 
     await db.user.update({
       where: { id: user.id },
