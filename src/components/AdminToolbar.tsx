@@ -1,8 +1,10 @@
 import React from 'react';
 import { t } from '@lingui/core/macro';
+import { Button } from './Button';
+import { useNavigate, type UseNavigateResult } from '@tanstack/react-router';
 
 export const AdminToolbar: React.FC = () => {
-
+  const navigate: UseNavigateResult<string> = useNavigate();
   return (
     <header className="admin-toolbar">
       <div className="admin-toolbar__search">
@@ -15,6 +17,10 @@ export const AdminToolbar: React.FC = () => {
       </div>
 
       <div className="admin-toolbar__actions">
+        <Button name={t`Home`} onClick={() => navigate({ to: '/' })}>
+          <span className="material-symbols-outlined">home</span>
+        </Button>
+
         <div className="admin-toolbar__icons">
           <button className="admin-toolbar__icon-btn" aria-label={t`Notifications`}>
             <span className="material-symbols-outlined">notifications</span>

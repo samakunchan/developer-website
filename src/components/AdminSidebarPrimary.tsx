@@ -5,7 +5,7 @@ import { useServerFn } from '@tanstack/react-start';
 import { signOutAction } from '../features/auth/utils/auth-actions.functions';
 import { Button } from './Button';
 
-export const AdminSidebar: React.FC = () => {
+export const AdminSidebarPrimary: React.FC = () => {
   const signOut = useServerFn(signOutAction);
   const navigate = useNavigate();
 
@@ -27,7 +27,7 @@ export const AdminSidebar: React.FC = () => {
   return (
     <aside className="admin-sidebar">
       <div className="admin-sidebar__header">
-        <Link to="/" className="admin-sidebar__logo-container">
+        <Link to="/admin/dashboard" className="admin-sidebar__logo-container">
           <span className="material-symbols-outlined admin-sidebar__logo-icon">terminal</span>
           <h1 className="admin-sidebar__logo-text">DevSuite</h1>
         </Link>
@@ -39,26 +39,38 @@ export const AdminSidebar: React.FC = () => {
           to="/admin/dashboard"
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
+          activeOptions={{ exact: true }}
+        >
+          <span className="material-symbols-outlined">dashboard</span>
+          <span>
+            <Trans>Dashboard</Trans>
+          </span>
+        </Link>
+
+        <Link
+          to="/admin/profiles"
+          className="admin-sidebar__nav-link"
+          activeProps={{ className: 'admin-sidebar__nav-link--active' }}
         >
           <span className="material-symbols-outlined">account_circle</span>
           <span>
-            <Trans>Profile</Trans>
+            <Trans>Profiles</Trans>
           </span>
         </Link>
-        <a href="#" className="admin-sidebar__nav-link">
+
+        <Link
+          to="/admin/projects"
+          className="admin-sidebar__nav-link"
+          activeProps={{ className: 'admin-sidebar__nav-link--active' }}
+        >
           <span className="material-symbols-outlined">folder_special</span>
           <span>
-            <Trans>Portfolio</Trans>
+            <Trans>Projects</Trans>
           </span>
-        </a>
-        <a href="#" className="admin-sidebar__nav-link">
-          <span className="material-symbols-outlined">terminal</span>
-          <span>
-            <Trans>Services</Trans>
-          </span>
-        </a>
+        </Link>
+
         <Link
-          to="/admin/dashboard"
+          to="/admin/analytics"
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
         >
@@ -67,12 +79,17 @@ export const AdminSidebar: React.FC = () => {
             <Trans>Analytics</Trans>
           </span>
         </Link>
-        <a href="#" className="admin-sidebar__nav-link">
+
+        <Link
+          to="/admin/settings"
+          className="admin-sidebar__nav-link"
+          activeProps={{ className: 'admin-sidebar__nav-link--active' }}
+        >
           <span className="material-symbols-outlined">settings</span>
           <span>
             <Trans>Settings</Trans>
           </span>
-        </a>
+        </Link>
       </nav>
 
       <div className="admin-sidebar__footer">
