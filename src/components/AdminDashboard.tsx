@@ -1,4 +1,4 @@
-import { DbStatus } from '../core/server-functions/db-health-check';
+import { DbStatus } from '../features/database/utils/schemas';
 import { Container } from './Container';
 
 export function AdminDashboard({
