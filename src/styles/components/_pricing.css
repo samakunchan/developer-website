@@ -31,6 +31,8 @@
   margin: 0;
 }
 
+
+/* Pricing grids remain specialized for the section */
 .pricing__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -42,110 +44,4 @@
   .pricing__grid {
     grid-template-columns: repeat(3, 1fr);
   }
-}
-
-/* Pricing Card */
-.pricing-card {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  background: var(--color-pricing-card-bg);
-  border: 1px solid var(--color-pricing-card-border);
-  border-radius: var(--border-radius-xl);
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.pricing-card--popular {
-  background: var(--color-pricing-popular-bg);
-  border: 2px solid var(--color-primary);
-  transform: scale(1.05);
-  z-index: 10;
-  box-shadow: var(--color-pricing-popular-shadow);
-}
-
-.pricing-card__badge {
-  position: absolute;
-  top: -1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--color-primary);
-  color: var(--color-background-dark);
-  font-size: 0.75rem;
-  font-weight: 800;
-  padding: 0.25rem 1rem;
-  border-radius: var(--border-radius-full);
-  text-transform: uppercase;
-}
-
-.pricing-card--popular .pricing-card__badge,
-.pricing-card--popular .pricing-card__name,
-.pricing-card--popular .pricing-card__description,
-.pricing-card--popular .pricing-card__price,
-.pricing-card--popular .pricing-card__feature {
-  color: var(--color-white);
-}
-
-.pricing-card--popular .pricing-card__badge h4 {
-  color: var(--color-white);
-}
-
-.pricing-card__name {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-}
-
-.pricing-card__description {
-  color: var(--color-pricing-card-description);
-  font-size: 0.875rem;
-  margin-bottom: 1.5rem;
-}
-
-.pricing-card__price {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin-bottom: 2rem;
-  color: var(--color-services-title);
-}
-
-.pricing-card__price span {
-  font-size: 1.125rem;
-  color: var(--color-pricing-price-muted);
-  font-weight: 400;
-}
-
-.pricing-card__features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 2.5rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  flex: 1;
-}
-
-.pricing-card__feature {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.875rem;
-  color: var(--color-text);
-}
-
-.dark .pricing-card__feature {
-  color: var(--color-text);
-}
-
-.pricing-card__feature--disabled {
-  color: var(--color-pricing-price-muted);
-}
-
-.pricing-card__feature .material-symbols-outlined {
-  color: var(--color-primary);
-  font-size: 1.25rem;
-}
-
-.pricing-card__feature--disabled .material-symbols-outlined {
-  color: var(--color-pricing-price-muted);
 }

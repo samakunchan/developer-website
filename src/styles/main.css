@@ -7,8 +7,10 @@
 
 @import './layout/_container.css';
 @import './layout/admin-layout.css';
+@import './pages/admin-profiles.css';
 
 @import './components/_button.css';
+@import './components/card.css';
 @import './components/_input.css';
 @import './components/_header.css';
 @import './components/admin-sidebar.css';
