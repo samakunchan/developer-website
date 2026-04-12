@@ -43,10 +43,7 @@ const PricingTier: React.FC<PricingTierProps> = ({
         )}
         <ul className="card__list">
           {features.map((feature, index) => (
-            <li
-              key={index}
-              className={`card__list-item ${!feature.included ? 'card__list-item--disabled' : ''}`}
-            >
+            <li key={index} className={`card__list-item ${!feature.included ? 'card__list-item--disabled' : ''}`}>
               <span className="material-symbols-outlined">{feature.included ? 'check_circle' : 'cancel'}</span>
               {feature.text}
             </li>
