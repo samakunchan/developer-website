@@ -1,5 +1,23 @@
 # CHANGELOG developer-website
 
+## 🚀 0.19.0 - 12/04/2026
+
+### Added
+
+- **Profiles**: Added profiles feature (routes, components, actions, schemas).
+- **CSS Modularization**: Refactored the monolithic `admin-profiles.css` into a suite of modular component stylesheets (`_visual_identity.css`, `_social_links.css`, `_tech_stack.css`, `_profile_avatar_card.css`, and `_quick_settings_card.css`) for better separation of concerns.
+- **Layout System**: Introduced shared layout utilities (`_grid.css`) and reusable admin profile classes (`.admin-profiles__v-stack`, `.admin-profiles__empty-state`) to unify dashboard design patterns.
+
+### Changed
+
+- **Code Hardening**: Performed a global audit of profile form components to eliminate hardcoded inline styles, replacing them with semantic, design-token-based CSS classes.
+- **Refactoring**: Consolidated profile management logic and updated internal import paths to reflect the new feature-based structure.
+- **Efficiency**: Optimized the `admin-profiles.css` page stylesheet by removing unused legacy classes and duplicate CSS rules.
+
+### Fixed
+
+- **UI Consistency**: Standardized the visual presentation of "Empty State" dashboards and form action buttons across all administrative modules.
+
 ## 🚀 0.18.0 - 09/04/2026
 
 ### Added

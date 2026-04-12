@@ -83,6 +83,16 @@
   --color-pricing-feature-text: var(--color-text);
   --color-pricing-price-muted: var(--color-text);
 
+  /* Card */
+  --color-card-bg: var(--color-background);
+  --color-card-border: rgba(0, 109, 54, 0.1);
+  --color-card-description: var(--color-text);
+  --color-card-popular-bg: linear-gradient(135deg, #006d36 0%, #4ade80 100%);
+  --color-card-check-bg: rgba(0, 109, 54, 0.1);
+  --color-card-popular-shadow: 0 20px 50px -12px rgba(0, 109, 54, 0.2);
+  --color-card-feature-text: var(--color-text);
+  --color-card-price-muted: var(--color-text);
+
   /* Process */
   --color-process-node-bg: rgba(0, 109, 54, 0.2);
   --color-process-line: rgba(0, 109, 54, 0.1);
