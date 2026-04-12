@@ -1,4 +1,4 @@
-import { db } from '../../database/client/db.server';
+import { db } from '../../database';
 
 import { ThemeType } from './theme.types';
 

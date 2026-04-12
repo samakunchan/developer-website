@@ -1,7 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { RichTextEditor } from '../features/rich-text/components/RichTextEditor';
-import { getPrivacyPolicy, savePrivacyPolicy } from '../features/rich-text/utils/rich-text-actions.functions';
+import { RichTextEditor, getPrivacyPolicy, savePrivacyPolicy } from '../features/rich-text';
 
 export const Route = createFileRoute('/admin/settings/privacy')({
   loader: async () => await getPrivacyPolicy(),
@@ -13,7 +12,7 @@ function PrivacyComponent() {
   const save = useServerFn(savePrivacyPolicy);
   const router = useRouter();
 
-  const handleSave = async (title: string, content: any) => {
+  const handleSave = async (title: string, content: string) => {
     await save({ data: { title, content } });
     router.invalidate();
   };

@@ -2,7 +2,7 @@ import 'dotenv/config';
 import bcrypt from 'bcryptjs';
 import { z } from 'zod';
 import { Role } from '@prisma/client';
-import { db } from '../src/features/database/client/db.server';
+import { db } from '../src/features/database';
 
 // Zod schema for data verification as requested
 const UserSchema = z.object({

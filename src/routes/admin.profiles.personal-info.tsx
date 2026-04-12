@@ -1,6 +1,11 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
-import { getProfileAction, updatePersonalInfoAction, PersonalInfoForm, VisualIdentity } from '../features/profiles';
-import { PersonalInfoInput } from '../features/profiles/utils/schemas';
+import {
+  getProfileAction,
+  updatePersonalInfoAction,
+  PersonalInfoForm,
+  VisualIdentity,
+  PersonalInfoInput,
+} from '../features/profiles';
 
 export const Route = createFileRoute('/admin/profiles/personal-info')({
   loader: async () => {

@@ -1,7 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { setThemeAction } from '../features/theme/utils/theme-actions.functions';
-import { ThemeType } from '../features/theme/utils/theme.types';
+import { setThemeAction, ThemeType } from '../features/theme';
 
 export const Route = createFileRoute('/admin/settings/themes')({
   component: ThemesComponent,

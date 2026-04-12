@@ -1,4 +1,4 @@
-import { db } from '../client/db.server';
+import { db } from '../';
 import { DbStatus } from './schemas';
 
 /**

@@ -1,4 +1,4 @@
-import { db } from '../../database/client/db.server';
+import { db } from '../../database';
 import { getSessionInternal } from '../../auth/utils/auth-actions.server';
 import {
   personalInfoSchema,
