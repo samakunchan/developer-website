@@ -1,0 +1,46 @@
+/* Quick Settings Toggles */
+.settings-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-toggle__label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.settings-toggle__switch {
+  width: 2.5rem;
+  height: 1.25rem;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-full);
+  position: relative;
+  cursor: pointer;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+}
+
+.settings-toggle__handle {
+  position: absolute;
+  right: 0.25rem;
+  top: 0.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-full);
+}
+
+.settings-toggle--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.settings-toggle--disabled .settings-toggle__switch {
+  background-color: var(--color-slate-300);
+}
+
+.settings-toggle--disabled .settings-toggle__handle {
+  left: 0.25rem;
+  right: auto;
+}

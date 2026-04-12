@@ -40,7 +40,10 @@
 }
 
 .card--gradient {
-  background: var(--color-primary-gradient, linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%));
+  background: var(
+    --color-primary-gradient,
+    linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%)
+  );
   color: var(--color-white);
   border: none;
 }
