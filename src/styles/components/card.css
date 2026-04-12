@@ -1,0 +1,164 @@
+/* Universal Card Component */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--border-radius-xl);
+  transition: all 0.3s ease;
+  position: relative;
+  height: 100%;
+}
+
+.card--auto {
+  height: auto;
+}
+
+/* Modifiers */
+.card--primary {
+  background: var(--color-card-popular-bg);
+  border: 2px solid var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--color-card-popular-shadow);
+}
+
+.card--popular {
+  transform: scale(1.05);
+  z-index: 10;
+  box-shadow: var(--color-card-popular-shadow);
+}
+
+.card--glass {
+  background: var(--color-glass-bg);
+  border-color: var(--color-glass-border);
+}
+
+.card--light {
+  background: var(--color-services-card-bg);
+  border-color: var(--color-card-border);
+}
+
+.card--gradient {
+  background: var(
+    --color-primary-gradient,
+    linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 100%)
+  );
+  color: var(--color-white);
+  border: none;
+}
+
+/* Sub-elements */
+.card__badge {
+  position: absolute;
+  top: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: var(--color-background-dark);
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.25rem 1rem;
+  border-radius: var(--border-radius-full);
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 20;
+}
+
+.card--primary .card__badge {
+  color: var(--color-white);
+}
+
+.card__header {
+  margin-bottom: 1.5rem;
+}
+
+.card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card__subtitle {
+  font-size: 0.625rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.card--primary .card__subtitle,
+.card--gradient .card__subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card__description {
+  color: var(--color-text-muted, var(--color-text));
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.card--primary .card__description,
+.card--gradient .card__description {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card__body {
+  flex: 1;
+}
+
+.card__price {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 1.5rem 0;
+  color: inherit;
+}
+
+.card__price span {
+  font-size: 1.125rem;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+/* Lists and Details */
+.card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card__list-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: inherit;
+}
+
+.card__list-item--disabled {
+  opacity: 0.5;
+}
+
+.card__list-item .material-symbols-outlined {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+}
+
+.card--primary .card__list-item .material-symbols-outlined,
+.card--gradient .card__list-item .material-symbols-outlined {
+  color: var(--color-white);
+}
+
+/* Footer */
+.card__footer {
+  margin-top: 2rem;
+}

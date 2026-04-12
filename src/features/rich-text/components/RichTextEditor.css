@@ -113,7 +113,8 @@ input#document-title {
   margin-bottom: 1rem;
 }
 
-.lexical-editor-input ul, .lexical-editor-input ol {
+.lexical-editor-input ul,
+.lexical-editor-input ol {
   margin-left: 1.5rem;
   margin-bottom: 1rem;
 }

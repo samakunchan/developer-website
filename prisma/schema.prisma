@@ -7,72 +7,122 @@ datasource db {
 }
 
 model User {
-  id                 Int       @id @default(autoincrement())
-  name               String?
-  email              String    @unique
-  emailVerified      DateTime?
-  image              String?
-  password           String? // Optional because OAuth users don't have a password
-  role               Role      @default(user)
-  resetToken         String?   @unique
-  resetTokenExpiry   DateTime?
-  createdAt          DateTime  @default(now())
-  updatedAt          DateTime  @updatedAt
-  failedLoginAttempts Int       @default(0)
-  lockoutUntil       DateTime?
+  id                  Int        @id @default(autoincrement())
+  name                String?
+  email               String     @unique
+  emailVerified       DateTime?
+  image               String?
+  password            String?    // Optional because OAuth users don't have a password
+  role                Role       @default(user)
+  resetToken          String?    @unique
+  resetTokenExpiry    DateTime?
+  createdAt           DateTime   @default(now())
+  updatedAt           DateTime   @updatedAt
+  failedLoginAttempts Int        @default(0)
+  lockoutUntil        DateTime?
+
+  // Relations
+  personalInfo       PersonalInformation?
+  techStacks         TechStack[]
+  socialLinks        SocialLink[]
 
   @@map("users")
 }
 
+// User relations
+model PersonalInformation {
+  id                Int      @id @default(autoincrement())
+  professionalTitle String?
+  bio               String?
+  experience        Int?
+  focus             String?
+  languages         String?
+  coverImage        String?
+  userId            Int      @unique
+  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("personal_informations")
+}
+
+// User relations
+model TechStack {
+  id        Int           @id @default(autoincrement())
+  name      String
+  category  CategoryStack @default(frontend)
+  userId    Int
+  user      User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+
+  @@map("tech_stacks")
+}
+
+// User relations
+model SocialLink {
+  id        Int            @id @default(autoincrement())
+  name      String
+  url       String
+  icon      String
+  type      SocialLinkType @default(github)
+  userId    Int
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+
+  @@map("social_links")
+}
+
 model Settings {
-  id    Int     @id @default(autoincrement())
-  theme Theme   @default(nature)
-  createdAt DateTime  @default(now())
-  updatedAt DateTime  @updatedAt
+  id        Int             @id @default(autoincrement())
+  theme     Theme           @default(nature)
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
 
   @@map("settings")
 }
 
 // For Lexical package
 model LegalMentions {
-  id        Int      @id @default(autoincrement())
+  id        Int             @id @default(autoincrement())
   title     String
   content   Json
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
 
   @@map("legal_mentions")
 }
 
 // For Lexical package
 model CGU {
-  id        Int      @id @default(autoincrement())
+  id        Int             @id @default(autoincrement())
   title     String
   content   Json
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
 
   @@map("cgu")
 }
 
 // For Lexical package
 model PrivacyPolicy {
-  id        Int      @id @default(autoincrement())
+  id        Int             @id @default(autoincrement())
   title     String
   content   Json
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
 
   @@map("privacy_policy")
 }
 
 // For Lexical package
 model CookiePolicy {
-  id        Int      @id @default(autoincrement())
+  id        Int             @id @default(autoincrement())
   title     String
   content   Json
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @updatedAt
 
   @@map("cookie_policy")
 }
@@ -89,4 +139,21 @@ enum Role {
 enum Theme {
   dark
   nature
+}
+
+enum CategoryStack {
+  frontend
+  backend
+  devops
+  cloud
+  testing
+  mobile
+}
+
+enum SocialLinkType {
+  github
+  linkedin
+  upwork
+  malt
+  email
 }

@@ -48,7 +48,7 @@ export const AdminSidebarPrimary: React.FC = () => {
         </Link>
 
         <Link
-          to="/admin/profiles"
+          to="/admin/profiles/overview"
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
         >
@@ -81,7 +81,7 @@ export const AdminSidebarPrimary: React.FC = () => {
         </Link>
 
         <Link
-          to="/admin/settings"
+          to="/admin/settings/themes"
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
         >
