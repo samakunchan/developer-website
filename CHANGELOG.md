@@ -1,5 +1,26 @@
 # CHANGELOG developer-website
 
+## 🚀 0.20.0 - 13/04/2026
+
+### Added
+
+- **Profiles**: Added profiles image upload feature with specific path to "public/shared/me" and added "public/shared/seed" for default images.
+- **Feature Modularization**: Established centralized entry points (`index.ts`) for all major features (`auth`, `database`, `profiles`, `rich-text`, `theme`, `times`) to improve architectural boundaries.
+- **Environment Isolation**: Refactored the database feature to isolate `db.server.ts` into a dedicated server-only directory, improving security and preventing client-side leaks.
+
+### Changed
+
+- **Toolbar**: Updated the toolbar to display the new profile image.
+- **About Page**: Updated the about page to display the new profile image.
+- **Infrastructure**: Completed the migration to **Yarn** by removing legacy `package-lock.json`.
+- **Profiles Feature**: Significantly updated the profile management system, including refined schemas and enhanced server-side validation logic.
+- **Admin Dashboard**: Updated the administrative interface and profile overview routes to support the new feature-based architecture.
+
+### Fixed
+
+- **Developer Experience**: Resolved a package name collision with a code-pruning tool by explicitly using `@tanstack/router-cli` for route generation.
+- **Bug Fixes**: Corrected server-side import paths and resolved TanStack router hydration issues across multiple administrative routes.
+
 ## 🚀 0.19.0 - 12/04/2026
 
 ### Added
