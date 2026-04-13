@@ -1,11 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { getProfileAction } from '../features/profiles';
-import { BioCard } from '../features/profiles/components/overview/BioCard';
-import { TechStackBento } from '../features/profiles/components/overview/TechStackBento';
-import { PortfolioSummaryCard } from '../features/profiles/components/overview/PortfolioSummaryCard';
-import { ProfileAvatarCard } from '../features/profiles/components/overview/ProfileAvatarCard';
-import { PersonalDetailsCard } from '../features/profiles/components/overview/PersonalDetailsCard';
-import { SocialLinksCard } from '../features/profiles/components/overview/SocialLinksCard';
+import {
+  BioCard,
+  TechStackBento,
+  PortfolioSummaryCard,
+  ProfileAvatarCard,
+  PersonalDetailsCard,
+  SocialLinksCard,
+} from '../features/profiles';
 import { SocialLinkItem } from '../features/profiles/components/form/SocialLinksManager';
 
 export const Route = createFileRoute('/admin/profiles/overview')({
@@ -45,7 +47,7 @@ function ProfilesComponent() {
           <ProfileAvatarCard
             name={profile.name || 'Developer'}
             title={profile.personalInfo?.professionalTitle || 'Senior Developer'}
-            image={profile.image}
+            image={profile.image?.raw}
           />
 
           <PersonalDetailsCard

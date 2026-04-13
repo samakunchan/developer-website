@@ -1,7 +1,7 @@
 import { setCookie, getCookie, deleteCookie } from '@tanstack/react-start/server';
 import bcrypt from 'bcryptjs';
 import * as jose from 'jose';
-import { db } from '../../database/client/db.server';
+import { db } from '../../database';
 import { SessionType, SignInInput } from './schemas';
 
 const SESSION_COOKIE_NAME = 'auth_session';

@@ -9,11 +9,9 @@ import '../styles/main.css';
 
 import { ErrorComponent, ErrorType } from '../components/ErrorComponent';
 
-import { SessionType } from '../features/auth/utils/schemas';
-import { getSession } from '../features/auth/utils/auth-actions.functions';
-import { getTheme } from '../features/theme/utils/theme-actions.functions';
-import { ThemeType } from '../features/theme/utils/theme.types';
-import { supportedLocales, fetchServerLocale } from '../features/l10n/utils/l10n.functions';
+import { SessionType, getSession } from '../features/auth';
+import { getTheme, ThemeType } from '../features/theme';
+import { supportedLocales, fetchServerLocale } from '../features/l10n';
 
 interface RootLoaderData {
   locale: string;

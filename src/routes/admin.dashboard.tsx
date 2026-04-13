@@ -1,9 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { getServerTime } from '../features/times/utils/times-actions.functions';
-import { TimeServerOutput } from '../features/times/utils/schemas';
+import { getServerTime, TimeServerOutput } from '../features/times';
 import { getBrowserTimeZone, getGuessTimeZone } from '../core/utils/timezone';
-import { checkDatabaseStatus } from '../features/database/utils/db-actions.functions';
-import { DbStatus } from '../features/database/utils/schemas';
+import { checkDatabaseStatus, DbStatus } from '../features/database';
 import { AdminDashboard } from '../components/AdminDashboard';
 
 export const Route = createFileRoute('/admin/dashboard')({

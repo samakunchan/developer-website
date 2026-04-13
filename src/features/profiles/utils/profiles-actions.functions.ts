@@ -8,6 +8,7 @@ import {
   removeTechStackInternal,
   addSocialLinkInternal,
   removeSocialLinkInternal,
+  uploadAvatarInternal,
 } from './profiles-actions.server';
 import { z } from 'zod';
 
@@ -61,4 +62,13 @@ export const removeSocialLinkAction = createServerFn({ method: 'POST' })
   .inputValidator(zodValidator(z.object({ id: z.number() })))
   .handler(async ({ data }) => {
     return await removeSocialLinkInternal(data.id);
+  });
+
+/**
+ * Server function to upload a profile avatar.
+ */
+export const uploadAvatarAction = createServerFn({ method: 'POST' })
+  .inputValidator((d: unknown): FormData => d as FormData)
+  .handler(async ({ data }) => {
+    return await uploadAvatarInternal(data);
   });

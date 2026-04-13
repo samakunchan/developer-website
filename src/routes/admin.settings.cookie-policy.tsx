@@ -1,7 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { RichTextEditor } from '../features/rich-text/components/RichTextEditor';
-import { getCookiePolicy, saveCookiePolicy } from '../features/rich-text/utils/rich-text-actions.functions';
+import { RichTextEditor, getCookiePolicy, saveCookiePolicy } from '../features/rich-text';
 
 export const Route = createFileRoute('/admin/settings/cookie-policy')({
   loader: async () => await getCookiePolicy(),
@@ -13,7 +12,7 @@ function CookiePolicyComponent() {
   const save = useServerFn(saveCookiePolicy);
   const router = useRouter();
 
-  const handleSave = async (title: string, content: any) => {
+  const handleSave = async (title: string, content: string) => {
     await save({ data: { title, content } });
     router.invalidate();
   };

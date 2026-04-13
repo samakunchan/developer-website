@@ -7,9 +7,14 @@ export const personalInfoSchema = z.object({
   experience: z.number().int().nonnegative().optional().nullable(),
   focus: z.string().optional().nullable(),
   languages: z.string().optional().nullable(),
-  // email: z.email().optional().nullable(),
-  coverImage: z.url().optional().nullable(),
-  image: z.url().optional().nullable(),
+  // coverImage: z.url().optional().nullable(),
+  image: z
+    .object({
+      tiny: z.url(),
+      medium: z.url(),
+      raw: z.url(),
+    })
+    .optional(),
 });
 
 export const CategoryStackEnum = z.enum(['frontend', 'backend', 'devops', 'cloud', 'testing', 'mobile']);
@@ -38,7 +43,11 @@ export type SocialLinkType = z.infer<typeof SocialLinkTypeEnum>;
 export type ProfileType = {
   name: string | null;
   email: string;
-  image: string | null;
+  image: {
+    tiny: string;
+    medium: string;
+    raw: string;
+  } | null;
   personalInfo: {
     professionalTitle: string | null;
     bio: string | null;
