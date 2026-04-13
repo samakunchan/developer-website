@@ -47,7 +47,7 @@ function ProfilesComponent() {
           <ProfileAvatarCard
             name={profile.name || 'Developer'}
             title={profile.personalInfo?.professionalTitle || 'Senior Developer'}
-            image={profile.image}
+            image={profile.image?.raw}
           />
 
           <PersonalDetailsCard
