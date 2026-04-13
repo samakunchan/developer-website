@@ -6,7 +6,13 @@ import { skillsData, socialLinks } from '../core/data/aboutData';
 import { Skill, SocialLink } from '../core/types/about';
 import AboutIllustration from '../../assets/isometric-concept-design-for-dev.webp';
 
-export const About: React.FC = () => {
+interface AboutProps {
+  profileImage: string;
+  profileName: string;
+  profileJob: string;
+}
+
+export const About: React.FC<AboutProps> = ({ profileImage, profileName, profileJob }) => {
   return (
     <section className="about">
       <Container>
@@ -25,15 +31,12 @@ export const About: React.FC = () => {
                   className="about__avatar"
                   aria-hidden="true"
                   style={{
-                    backgroundImage:
-                      'url("https://lh3.googleusercontent.com/aida-public/AB6AXuBMEjIhSGiF8PN6rjg6h1yhBoFV_XcVnUahi7sSe_fbYdqjJ79V0z0DCchPPb9zEM28Tjr0WgEN6msbDC_v3R6J45F8gXf29SSg7I2bFw9voVxkhXDJ-EjL4xCHxkuyaiCvkvUxITbue1ymbGoidStNNxrdyO0bFJF6UAXmVyvAEKavXaQOo6IopebaBrlWSkxoFGVsa2FZtZjcUECit7kfjc4oNtSQDqGwU-0MikjrPfSK_biMi4t2VJ61eWRb9uhVWRixaImc_Io")',
+                    backgroundImage: `url(${profileImage})`,
                   }}
                 />
                 <div className="about__profile-info">
-                  <p className="about__name">Cédric BADJAH</p>
-                  <p className="about__job">
-                    <Trans>Senior Full-Stack Developer</Trans>
-                  </p>
+                  <p className="about__name">{profileName}</p>
+                  <p className="about__job">{profileJob || <Trans>Senior Full-Stack Developer</Trans>}</p>
                 </div>
               </div>
 

@@ -1,7 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { RichTextEditor } from '../features/rich-text/components/RichTextEditor';
-import { getLegalMentions, saveLegalMentions } from '../features/rich-text/utils/rich-text-actions.functions';
+import { RichTextEditor, getLegalMentions, saveLegalMentions } from '../features/rich-text';
 
 export const Route = createFileRoute('/admin/settings/legal-mentions')({
   loader: async () => await getLegalMentions(),
@@ -13,7 +12,7 @@ function LegalMentionsComponent() {
   const save = useServerFn(saveLegalMentions);
   const router = useRouter();
 
-  const handleSave = async (title: string, content: any) => {
+  const handleSave = async (title: string, content: string) => {
     await save({ data: { title, content } });
     router.invalidate();
   };

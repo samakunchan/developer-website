@@ -1,6 +1,11 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
-import { getProfileAction, updatePersonalInfoAction, PersonalInfoForm, VisualIdentity } from '../features/profiles';
-import { PersonalInfoInput } from '../features/profiles/utils/schemas';
+import {
+  getProfileAction,
+  updatePersonalInfoAction,
+  PersonalInfoForm,
+  VisualIdentity,
+  PersonalInfoInput,
+} from '../features/profiles';
 
 export const Route = createFileRoute('/admin/profiles/personal-info')({
   loader: async () => {
@@ -38,7 +43,7 @@ function ProfilesComponent() {
           {/* Left Column: Visual Identity & Tech Stack */}
 
           <div className="admin-profiles__left-col">
-            <VisualIdentity avatar={profile.image} coverImage={profile.personalInfo?.coverImage} />
+            <VisualIdentity avatar={profile.image?.raw} coverImage={profile.personalInfo?.coverImage} />
           </div>
           {/* Right Column: Form Details */}
           <div className="admin-profiles__right-col">
@@ -51,8 +56,11 @@ function ProfilesComponent() {
                 experience: profile.personalInfo?.experience || 0,
                 focus: profile.personalInfo?.focus || 'Web Performance',
                 languages: profile.personalInfo?.languages || '',
-                image: profile.image || '',
-                coverImage: profile.personalInfo?.coverImage || '',
+                image: profile.image ?? {
+                  raw: '',
+                  tiny: '',
+                  medium: '',
+                },
               }}
               onSubmit={handlePersonalInfoSubmit}
             />

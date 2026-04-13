@@ -17,3 +17,4 @@ todo.md
 src/generated/*
 prisma/migrations/*
 prisma/migration_lock.toml
+public/shared/*

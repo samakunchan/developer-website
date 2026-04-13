@@ -1,9 +1,8 @@
-import { createFileRoute, useNavigate } from '@tanstack/react-router';
-import { useServerFn } from '@tanstack/react-start';
-import { Login } from '../features/auth/components/Login';
-import { signInAction } from '../features/auth/utils/auth-actions.functions';
 import { z } from 'zod';
+import { useServerFn } from '@tanstack/react-start';
 import { isSafeRedirect } from '../core/utils/url';
+import { Login, signInAction } from '../features/auth';
+import { createFileRoute, useNavigate } from '@tanstack/react-router';
 
 export const Route = createFileRoute('/login')({
   validateSearch: z.object({

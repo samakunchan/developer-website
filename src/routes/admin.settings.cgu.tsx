@@ -1,7 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { RichTextEditor } from '../features/rich-text/components/RichTextEditor';
-import { getCGU, saveCGU } from '../features/rich-text/utils/rich-text-actions.functions';
+import { RichTextEditor, getCGU, saveCGU } from '../features/rich-text';
 
 export const Route = createFileRoute('/admin/settings/cgu')({
   loader: async () => await getCGU(),
