@@ -10,6 +10,14 @@ const UserSchema = z.object({
   password: z.string().min(8),
   name: z.string().optional(),
   role: z.enum(['admin', 'developer', 'moderator', 'guest', 'user']).default('user'),
+  // Ajout de la validation pour l'image de profil
+  image: z
+    .object({
+      tiny: z.url(),
+      medium: z.url(),
+      raw: z.url(),
+    })
+    .optional(),
 });
 
 async function main() {
@@ -42,6 +50,16 @@ async function main() {
       password: hashedPassword,
       name: validatedUser.name,
       role: validatedUser.role as Role, // Correctly cast to the Role enum from Prisma Client
+      image: {
+        create: {
+          tiny: '/public/shared/seed/avatar-1-1776090901828-tiny.webp',
+          medium: '/public/shared/seed/avatar-1-1776090901828-medium.webp',
+          raw: '/public/shared/seed/avatar-1-1776090901828-raw.webp',
+        },
+      },
+    },
+    include: {
+      image: true,
     },
   });
 
