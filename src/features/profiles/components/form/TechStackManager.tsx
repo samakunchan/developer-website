@@ -11,6 +11,8 @@ type TechStackManagerProps = {
   stacks: TechStackItem[];
   onAdd: (name: string, category: CategoryStackType) => void;
   onRemove: (id: number) => void;
+  isAdding?: boolean;
+  removingId?: number | null;
 };
 
 const CATEGORIES: { value: CategoryStackType; label: string; icon: string }[] = [
@@ -22,7 +24,13 @@ const CATEGORIES: { value: CategoryStackType; label: string; icon: string }[] = 
   { value: 'mobile', label: 'Mobile Development', icon: 'smartphone' },
 ];
 
-export const TechStackManager: React.FC<TechStackManagerProps> = ({ stacks, onAdd, onRemove }) => {
+export const TechStackManager: React.FC<TechStackManagerProps> = ({
+  stacks,
+  onAdd,
+  onRemove,
+  isAdding = false,
+  removingId = null,
+}) => {
   const [newName, setNewName] = useState('');
   const [newCategory, setNewCategory] = useState<CategoryStackType>('frontend');
 
@@ -73,8 +81,8 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({ stacks, onAd
             </select>
           </div>
           <div className="admin-profiles__form-grid-full admin-profiles__form-actions">
-            <button type="submit" className="btn btn--primary" disabled={!newName.trim()}>
-              Confirm Addition
+            <button type="submit" className="btn btn--primary" disabled={!newName.trim() || isAdding}>
+              {isAdding ? 'Adding...' : 'Confirm Addition'}
             </button>
           </div>
         </form>
@@ -96,10 +104,14 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({ stacks, onAd
                   {tech.name}
                   <span
                     className="material-symbols-outlined admin-profiles__stack-remove"
-                    onClick={() => onRemove(tech.id)}
+                    onClick={() => !removingId && onRemove(tech.id)}
                     title="Remove"
+                    style={{
+                      opacity: removingId === tech.id ? 0.5 : 1,
+                      cursor: removingId === tech.id ? 'not-allowed' : 'pointer',
+                    }}
                   >
-                    close
+                    {removingId === tech.id ? 'sync' : 'close'}
                   </span>
                 </span>
               ))}

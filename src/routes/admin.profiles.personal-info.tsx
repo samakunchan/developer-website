@@ -1,4 +1,5 @@
-import { createFileRoute, useRouter } from '@tanstack/react-router';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { createFileRoute } from '@tanstack/react-router';
 import {
   getProfileAction,
   updatePersonalInfoAction,
@@ -8,25 +9,48 @@ import {
 } from '../features/profiles';
 
 export const Route = createFileRoute('/admin/profiles/personal-info')({
-  loader: async () => {
-    return await getProfileAction();
-  },
   component: ProfilesComponent,
 });
 
 function ProfilesComponent() {
-  const profile = Route.useLoaderData();
-  const router = useRouter();
+  const queryClient = useQueryClient();
 
-  const handlePersonalInfoSubmit = async (data: PersonalInfoInput) => {
-    try {
-      await updatePersonalInfoAction({ data });
+  const { data: profile, isLoading } = useQuery({
+    queryKey: ['profile'],
+    queryFn: () => getProfileAction(),
+  });
+
+  const { mutate: updateProfile, isPending: isUpdating } = useMutation({
+    mutationFn: (data: PersonalInfoInput) => updatePersonalInfoAction({ data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['profile'] });
       alert('Profile updated successfully!');
-      router.invalidate();
-    } catch (error) {
+    },
+    onError: (error) => {
       console.error('Failed to update profile:', error);
       alert('Error updating profile');
-    }
+    },
+  });
+
+  if (isLoading || !profile) {
+    return (
+      <div className="admin-profiles">
+        <header className="admin-profiles__header">
+          <div>
+            <span className="admin-profiles__header-label">Account Customization</span>
+            <h1 className="admin-profiles__header-title">Personal Info</h1>
+          </div>
+        </header>
+        <div className="admin-profiles__loading">
+          <span className="material-symbols-outlined spin">sync</span>
+          <p>Loading profile data...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const handlePersonalInfoSubmit = (data: PersonalInfoInput) => {
+    updateProfile(data);
   };
 
   return (
@@ -63,6 +87,7 @@ function ProfilesComponent() {
                 },
               }}
               onSubmit={handlePersonalInfoSubmit}
+              isSaving={isUpdating}
             />
           </div>
         </div>
