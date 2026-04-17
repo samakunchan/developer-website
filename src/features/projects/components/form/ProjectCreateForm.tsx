@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from '@tanstack/react-router';
+
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Trans } from '@lingui/react/macro';
 import { projectSchema, ProjectInput, ProjectType } from '../../utils/schemas';
 import { Button } from '../../../../components/Button';
@@ -24,12 +25,30 @@ interface ProjectCreateFormProps {
 }
 
 export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess, onCancel, onProjectCreated }) => {
-  const router = useRouter();
+  const queryClient = useQueryClient();
   const [step, setStep] = useState(1);
   const [projectId, setProjectId] = useState<number | undefined>();
-  const [isUploading, setIsUploading] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const uploadMutation = useMutation({
+    mutationFn: (data: FormData) => uploadProjectImage({ data }),
+  });
+
+  const createMutation = useMutation({
+    mutationFn: (data: ProjectInput) => createProject({ data }),
+    onSuccess: (newProject) => {
+      queryClient.invalidateQueries({ queryKey: ['projects'] });
+      setProjectId(newProject.id);
+      onProjectCreated?.(newProject as unknown as ProjectType);
+    },
+  });
+
+  const updateMutation = useMutation({
+    mutationFn: (args: { id: number; project: ProjectInput }) => updateProject({ data: args }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['projects'] });
+    },
+  });
 
   const {
     register,
@@ -54,6 +73,8 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
   const status = useWatch({ control, name: 'status' });
   const mediumUrl = useWatch({ control, name: 'image.medium.url' });
 
+  const isPending = uploadMutation.isPending || createMutation.isPending || updateMutation.isPending;
+
   useEffect(() => {
     if (!projectId && title) {
       setValue('slug', slugify(title), { shouldValidate: true });
@@ -66,11 +87,10 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
     const file = event.target.files?.[0];
     if (!file) return;
 
-    setIsUploading(true);
     try {
       const formData = new FormData();
       formData.append('file', file);
-      const result = await uploadProjectImage({ data: formData });
+      const result = await uploadMutation.mutateAsync(formData);
 
       if (result.success && result.urls) {
         setValue('image.medium.url', result.urls.medium.url, { shouldValidate: true });
@@ -85,8 +105,6 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
     } catch (error) {
       console.error('Upload failed:', error);
       alert('Upload failed. Please try again.');
-    } finally {
-      setIsUploading(false);
     }
   };
 
@@ -101,32 +119,25 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
     const isValid = await trigger(fieldsToValidate);
     if (!isValid) return;
 
-    setIsSubmitting(true);
     try {
       const data = cleanProjectData(getValues());
 
       if (step === 1) {
         if (!projectId) {
-          const newProject = await createProject({ data: { ...data, status: 'draft' } });
-          setProjectId(newProject.id);
-          onProjectCreated?.(newProject);
+          await createMutation.mutateAsync({ ...data, status: 'draft' });
         } else {
-          await updateProject({ data: { id: projectId, project: data } });
+          await updateMutation.mutateAsync({ id: projectId, project: data });
         }
-        await router.invalidate();
         setStep(2);
       } else if (step === 2) {
         if (projectId) {
-          await updateProject({ data: { id: projectId, project: data } });
-          await router.invalidate();
+          await updateMutation.mutateAsync({ id: projectId, project: data });
         }
         setStep(3);
       }
     } catch (error) {
       console.error('Error in stepper transition:', error);
       alert('Failed to save step progress.');
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -134,21 +145,17 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
     const isValid = await trigger();
     if (!isValid) return;
 
-    setIsSubmitting(true);
     try {
       const data = cleanProjectData(getValues());
       if (projectId) {
-        await updateProject({ data: { id: projectId, project: data } });
+        await updateMutation.mutateAsync({ id: projectId, project: data });
       } else {
-        await createProject({ data });
+        await createMutation.mutateAsync(data);
       }
-      await router.invalidate();
       onSuccess();
     } catch (error) {
       console.error('Error saving project:', error);
       alert('Error saving project');
-    } finally {
-      setIsSubmitting(false);
     }
   };
 
@@ -184,7 +191,7 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
             </section>
             <ImagePreviewColumn
               mediumUrl={mediumUrl || null}
-              isUploading={isUploading}
+              isUploading={uploadMutation.isPending}
               onUploadClick={handleUploadClick}
               onFileChange={handleFileChange}
               fileInputRef={fileInputRef}
@@ -196,11 +203,11 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
       <div className="project-editor__actions-bar">
         <div style={{ display: 'flex', gap: '1rem' }}>
           {step > 1 ? (
-            <Button type="button" variant="outline" onClick={() => setStep(step - 1)} disabled={isSubmitting}>
+            <Button type="button" variant="outline" onClick={() => setStep(step - 1)} disabled={isPending}>
               <Trans>Back</Trans>
             </Button>
           ) : (
-            <Button type="button" variant="outline" onClick={onCancel} disabled={isSubmitting}>
+            <Button type="button" variant="outline" onClick={onCancel} disabled={isPending}>
               <Trans>Cancel</Trans>
             </Button>
           )}
@@ -209,12 +216,12 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           {projectId && <StatusBadge status={status || 'draft'} />}
           {step < 3 ? (
-            <Button type="button" onClick={goToNextStep} disabled={isSubmitting}>
-              {isSubmitting ? <Trans>Saving...</Trans> : <Trans>Save & Next</Trans>}
+            <Button type="button" onClick={goToNextStep} disabled={isPending}>
+              {isPending ? <Trans>Saving...</Trans> : <Trans>Save & Next</Trans>}
             </Button>
           ) : (
-            <Button type="button" onClick={handleFinalSubmit} disabled={isSubmitting}>
-              {isSubmitting ? <Trans>Completing...</Trans> : <Trans>Complete & Save</Trans>}
+            <Button type="button" onClick={handleFinalSubmit} disabled={isPending}>
+              {isPending ? <Trans>Completing...</Trans> : <Trans>Complete & Save</Trans>}
             </Button>
           )}
         </div>

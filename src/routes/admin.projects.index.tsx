@@ -1,38 +1,58 @@
-import { createFileRoute, useRouter, Link } from '@tanstack/react-router';
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { getProjects, toggleProjectFeatured, deleteProject, ProjectType, ProjectAdminCard } from '../features/projects';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
 
 export const Route = createFileRoute('/admin/projects/')({
-  loader: async () => {
-    return await getProjects();
-  },
   component: ProjectsListComponent,
 });
 
 function ProjectsListComponent() {
-  const projects: ProjectType[] = Route.useLoaderData();
-  const router = useRouter();
+  const queryClient = useQueryClient();
 
-  const handleToggleFeatured = async (id: number) => {
-    try {
-      await toggleProjectFeatured({ data: id });
-      router.invalidate();
-    } catch (error) {
+  const { data: projects = [], isLoading } = useQuery<ProjectType[]>({
+    queryKey: ['projects'],
+    queryFn: () => getProjects(),
+  });
+
+  const toggleMutation = useMutation({
+    mutationFn: toggleProjectFeatured,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['projects'] });
+    },
+    onError: (error) => {
       console.error('Failed to toggle featured status:', error);
+    },
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: deleteProject,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['projects'] });
+    },
+    onError: (error) => {
+      console.error('Failed to delete project:', error);
+    },
+  });
+
+  const handleToggleFeatured = (id: number) => {
+    toggleMutation.mutate({ data: id });
+  };
+
+  const handleDelete = (id: number) => {
+    if (confirm(t`Are you sure you want to delete this project?`)) {
+      deleteMutation.mutate({ data: id });
     }
   };
 
-  const handleDelete = async (id: number) => {
-    if (confirm(t`Are you sure you want to delete this project?`)) {
-      try {
-        await deleteProject({ data: id });
-        router.invalidate();
-      } catch (error) {
-        console.error('Failed to delete project:', error);
-      }
-    }
-  };
+  if (isLoading) {
+    return (
+      <div>
+        <Trans>Loading projects...</Trans>
+      </div>
+    );
+  }
 
   return (
     <div className="admin-projects">
