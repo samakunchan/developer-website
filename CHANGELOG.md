@@ -1,5 +1,28 @@
 # CHANGELOG developer-website
 
+## 🚀 0.21.0 - 17/04/2026
+
+### Added
+
+- **Project Editor Refactor**:
+  - Split the monolithic `ProjectEditor.tsx` into specialized components: `ProjectCreateForm` (guided 3-step stepper) and `ProjectEditForm` (dashboard-style editor).
+  - Introduced `ProjectFormSections.tsx` to centralize shared form UI and logic.
+  - Added `AdminSidebarImage` to the Project Edit view for enhanced visual management of project assets.
+- **Routing**:
+  - Refined administrative routes (`admin.projects.new` and `admin.projects.$projectId.edit`) to consume specialized form components.
+
+### Changed
+
+- **Data Flow & UX**:
+  - Integrated `router.invalidate()` across project form mutations to ensure immediate UI synchronization after create/update operations.
+  - Improved form validation feedback using `useForm` with integrated Zod schema.
+
+### Fixed
+
+- **Type Safety**: Eliminated "Unexpected any" linting errors in `projects-actions.server.ts` by defining explicit types for project updates.
+- **Data Integrity**: Resolved a Zod validation bug by correctly initializing `techIcons` as an empty array, preventing submission failures.
+- **Image Handling**: Fixed an edge case in the project update flow where new images were not properly persistent after being moved from the temporary folder.
+
 ## 🚀 0.20.0 - 13/04/2026
 
 ### Added
