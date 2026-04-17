@@ -1,21 +1,33 @@
-import { createFileRoute, useRouter } from '@tanstack/react-router';
-import { useServerFn } from '@tanstack/react-start';
+import { createFileRoute } from '@tanstack/react-router';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { RichTextEditor, getCGU, saveCGU } from '../features/rich-text';
 
 export const Route = createFileRoute('/admin/settings/cgu')({
-  loader: async () => await getCGU(),
   component: CGUComponent,
 });
 
 function CGUComponent() {
-  const data = Route.useLoaderData();
-  const save = useServerFn(saveCGU);
-  const router = useRouter();
+  const queryClient = useQueryClient();
 
-  const handleSave = async (title: string, content: string) => {
-    await save({ data: { title, content } });
-    router.invalidate();
+  const { data, isLoading } = useQuery({
+    queryKey: ['rich-text', 'cgu'],
+    queryFn: () => getCGU(),
+  });
+
+  const saveMutation = useMutation({
+    mutationFn: (data: { title: string; content: string }) => saveCGU({ data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['rich-text', 'cgu'] });
+    },
+  });
+
+  const handleSave = (title: string, content: string) => {
+    saveMutation.mutate({ title, content });
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="admin-page--with-sidebar">
@@ -25,7 +37,12 @@ function CGUComponent() {
           Manage your website's Terms and Conditions (Conditions Générales d'Utilisation).
         </p>
 
-        <RichTextEditor title={data?.title || 'CGU'} initialContent={data?.content as string} onSave={handleSave} />
+        <RichTextEditor
+          title={data?.title || 'CGU'}
+          initialContent={data?.content as string}
+          onSave={handleSave}
+          isSaving={saveMutation.isPending}
+        />
       </div>
     </div>
   );
