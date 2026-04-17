@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import { useRouter } from '@tanstack/react-router';
+import React, { useRef } from 'react';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { uploadAvatarAction } from '../../utils/profiles-actions.functions';
 
 type VisualIdentityProps = {
@@ -10,9 +10,33 @@ type VisualIdentityProps = {
 };
 
 export const VisualIdentity: React.FC<VisualIdentityProps> = ({ avatar, onAvatarChange }) => {
-  const router = useRouter();
+  const queryClient = useQueryClient();
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [isUploading, setIsUploading] = useState(false);
+
+  const { mutate: uploadAvatar, isPending: isUploading } = useMutation({
+    mutationFn: (file: File) => {
+      const formData = new FormData();
+      formData.append('file', file);
+      return uploadAvatarAction({ data: formData });
+    },
+    onSuccess: (result) => {
+      if (result.success) {
+        if (onAvatarChange) {
+          onAvatarChange(result.urls.medium);
+        }
+        queryClient.invalidateQueries({ queryKey: ['profile'] });
+      }
+    },
+    onError: (error) => {
+      console.error('Upload failed:', error);
+      alert('Upload failed. Please ensure the file is a JPG or PNG and under 2MB.');
+    },
+    onSettled: () => {
+      if (fileInputRef.current) {
+        fileInputRef.current.value = '';
+      }
+    },
+  });
 
   const handleButtonClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -23,27 +47,7 @@ export const VisualIdentity: React.FC<VisualIdentityProps> = ({ avatar, onAvatar
     const file: File | undefined = event.target.files?.[0];
     if (!file) return;
 
-    setIsUploading(true);
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      const result = await uploadAvatarAction({ data: formData });
-
-      if (result.success) {
-        if (onAvatarChange) {
-          onAvatarChange(result.urls.medium);
-        }
-        await router.invalidate();
-      }
-    } catch (error) {
-      console.error('Upload failed:', error);
-      alert('Upload failed. Please ensure the file is a JPG or PNG and under 2MB.');
-    } finally {
-      setIsUploading(false);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = '';
-      }
-    }
+    uploadAvatar(file);
   };
 
   return (
