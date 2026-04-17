@@ -76,6 +76,29 @@
   color: var(--color-slate-400);
 }
 
+.visual-identity__avatar-wrapper.uploading::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--border-radius-full);
+  z-index: 1;
+}
+
+.visual-identity__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid rgba(37, 244, 244, 0.1);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 2;
+}
+
 .admin-profiles__identity-avatar-btn:hover {
   transform: scale(1.1);
 }

@@ -41,24 +41,13 @@ export const AdminToolbar: React.FC<AdminToolbarProps> = ({ tinyImage }) => {
 
         <div className="admin-toolbar__user">
           <span className="admin-toolbar__user-name">Alex Dev</span>
-          <img
-            src={tinyImage}
-            alt={t`User profile`}
-            className="admin-toolbar__avatar"
-            width={40}
-            height={40}
-            fetchPriority="high"
-          />
-          {/* <ImageStatic
-            src={tinyImage}
-            alt={t`User profile`}
-            className="admin-toolbar__avatar"
-            width={40}
-            height={40}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            priority
-            fetchPriority="high"
-          /> */}
+          {tinyImage ? (
+            <img src={tinyImage} alt={t`User profile`} className="admin-toolbar__avatar" width={40} height={40} />
+          ) : (
+            <div className="admin-toolbar__avatar-placeholder">
+              <span className="material-symbols-outlined">person</span>
+            </div>
+          )}
         </div>
       </div>
     </header>

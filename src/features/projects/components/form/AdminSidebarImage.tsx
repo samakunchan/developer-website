@@ -39,7 +39,10 @@ export const AdminSidebarImage: React.FC<AdminSidebarImageProps> = ({
 
           {isUploading && (
             <div className="project-editor__upload-loading">
-              <span className="material-symbols-outlined project-editor__upload-loading-spinner">sync</span>
+              <div className="project-editor__upload-loading-spinner" />
+              <span className="project-editor__upload-loading-text">
+                <Trans>Uploading...</Trans>
+              </span>
             </div>
           )}
 

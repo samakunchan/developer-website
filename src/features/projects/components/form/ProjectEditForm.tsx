@@ -62,7 +62,10 @@ export const ProjectEditForm: React.FC<ProjectEditFormProps> = ({ initialData, o
   const updateMutation = useMutation({
     mutationFn: updateProject,
     onSuccess: async () => {
-      await queryClient.invalidateQueries({ queryKey: ['projects'] });
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['projects'] }),
+        queryClient.invalidateQueries({ queryKey: ['projects', initialData.id] }),
+      ]);
       onSuccess();
     },
     onError: (error) => {
