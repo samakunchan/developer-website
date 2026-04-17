@@ -1,4 +1,4 @@
-import 'dotenv/config';
+import 'dotenv/config'; // Schema updated 2026-04-14T07:10:00Z
 import { PrismaPg } from '@prisma/adapter-pg';
 import { PrismaClient } from '@prisma/client';
 
