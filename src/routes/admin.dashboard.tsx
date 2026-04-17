@@ -1,8 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { getServerTime, TimeServerOutput } from '../features/times';
+import { getServerTime } from '../features/times';
 import { getBrowserTimeZone, getGuessTimeZone } from '../core/utils/timezone';
 import { checkDatabaseStatus, DbStatus } from '../features/database';
 import { AdminDashboard } from '../components/AdminDashboard';
+import { TimeServerOutput } from '../features/times/utils/schemas';
 
 export const Route = createFileRoute('/admin/dashboard')({
   loader: async ({
@@ -12,6 +13,8 @@ export const Route = createFileRoute('/admin/dashboard')({
     const timeZone: string = detectedTz !== 'UTC' ? detectedTz : getGuessTimeZone(context.locale);
 
     const dbStatus: DbStatus = await checkDatabaseStatus();
+
+    console.log(dbStatus);
     const time: TimeServerOutput = await getServerTime({
       data: { timeZone },
     });

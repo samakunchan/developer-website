@@ -53,14 +53,6 @@ export const VisualIdentity: React.FC<VisualIdentityProps> = ({ avatar, onAvatar
       </h3>
       <div className="visual-identity__content">
         <div className="visual-identity__avatar-wrapper">
-          <button
-            type="button"
-            className="material-symbols-outlined visual-identity__avatar-edit-btn"
-            onClick={handleButtonClick}
-            disabled={isUploading}
-          >
-            {isUploading ? 'sync' : 'edit'}
-          </button>
           <img
             src={
               avatar ||

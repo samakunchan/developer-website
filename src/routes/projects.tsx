@@ -7,12 +7,14 @@ import { Projects } from '../components/Projects';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 import '../styles/main.css';
-import { projects } from '../core/data/projectsData';
+import { getProjects, ProjectType } from '../features/projects';
 
 export const Route = createFileRoute('/projects')({
   loader: async ({ context }) => {
+    const projects: ProjectType[] = await getProjects();
     return {
       isConnected: context.session?.user.role === 'admin',
+      projects,
     };
   },
   component: ProjectsPage,
@@ -20,7 +22,7 @@ export const Route = createFileRoute('/projects')({
 
 function ProjectsPage() {
   const navigate: UseNavigateResult<string> = useNavigate();
-  const { isConnected } = Route.useLoaderData();
+  const { isConnected, projects } = Route.useLoaderData();
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { createFileRoute, Outlet, redirect } from '@tanstack/react-router';
 import { AdminSidebarPrimary } from '../components/AdminSidebarPrimary';
 import { AdminToolbar } from '../components/AdminToolbar';
-import { getProfileAction } from '../features/profiles';
+import { getProfileAction, ProfileType } from '../features/profiles';
 
 export const Route = createFileRoute('/admin')({
   beforeLoad: async ({ context }) => {
@@ -21,8 +21,7 @@ export const Route = createFileRoute('/admin')({
 });
 
 function AdminLayout() {
-  const profile = Route.useLoaderData();
-  console.log(profile.image);
+  const profile: ProfileType = Route.useLoaderData();
 
   return (
     <div className="admin-layout">

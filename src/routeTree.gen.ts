@@ -22,15 +22,18 @@ import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminProfilesRouteImport } from './routes/admin.profiles'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminAnalyticsRouteImport } from './routes/admin.analytics'
+import { Route as AdminProjectsIndexRouteImport } from './routes/admin.projects.index'
 import { Route as AdminSettingsThemesRouteImport } from './routes/admin.settings.themes'
 import { Route as AdminSettingsPrivacyRouteImport } from './routes/admin.settings.privacy'
 import { Route as AdminSettingsLegalMentionsRouteImport } from './routes/admin.settings.legal-mentions'
 import { Route as AdminSettingsCookiePolicyRouteImport } from './routes/admin.settings.cookie-policy'
 import { Route as AdminSettingsCguRouteImport } from './routes/admin.settings.cgu'
+import { Route as AdminProjectsNewRouteImport } from './routes/admin.projects.new'
 import { Route as AdminProfilesTechStacksRouteImport } from './routes/admin.profiles.tech-stacks'
 import { Route as AdminProfilesSocialLinksRouteImport } from './routes/admin.profiles.social-links'
 import { Route as AdminProfilesPersonalInfoRouteImport } from './routes/admin.profiles.personal-info'
 import { Route as AdminProfilesOverviewRouteImport } from './routes/admin.profiles.overview'
+import { Route as AdminProjectsProjectIdEditRouteImport } from './routes/admin.projects.$projectId.edit'
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
@@ -97,6 +100,11 @@ const AdminAnalyticsRoute = AdminAnalyticsRouteImport.update({
   path: '/analytics',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminProjectsIndexRoute = AdminProjectsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminProjectsRoute,
+} as any)
 const AdminSettingsThemesRoute = AdminSettingsThemesRouteImport.update({
   id: '/themes',
   path: '/themes',
@@ -124,6 +132,11 @@ const AdminSettingsCguRoute = AdminSettingsCguRouteImport.update({
   path: '/cgu',
   getParentRoute: () => AdminSettingsRoute,
 } as any)
+const AdminProjectsNewRoute = AdminProjectsNewRouteImport.update({
+  id: '/new',
+  path: '/new',
+  getParentRoute: () => AdminProjectsRoute,
+} as any)
 const AdminProfilesTechStacksRoute = AdminProfilesTechStacksRouteImport.update({
   id: '/tech-stacks',
   path: '/tech-stacks',
@@ -146,6 +159,12 @@ const AdminProfilesOverviewRoute = AdminProfilesOverviewRouteImport.update({
   path: '/overview',
   getParentRoute: () => AdminProfilesRoute,
 } as any)
+const AdminProjectsProjectIdEditRoute =
+  AdminProjectsProjectIdEditRouteImport.update({
+    id: '/$projectId/edit',
+    path: '/$projectId/edit',
+    getParentRoute: () => AdminProjectsRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -157,7 +176,7 @@ export interface FileRoutesByFullPath {
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/profiles': typeof AdminProfilesRouteWithChildren
-  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
@@ -165,11 +184,14 @@ export interface FileRoutesByFullPath {
   '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute
   '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute
   '/admin/profiles/tech-stacks': typeof AdminProfilesTechStacksRoute
+  '/admin/projects/new': typeof AdminProjectsNewRoute
   '/admin/settings/cgu': typeof AdminSettingsCguRoute
   '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
   '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
   '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
+  '/admin/projects/': typeof AdminProjectsIndexRoute
+  '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -181,7 +203,6 @@ export interface FileRoutesByTo {
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/profiles': typeof AdminProfilesRouteWithChildren
-  '/admin/projects': typeof AdminProjectsRoute
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
@@ -189,11 +210,14 @@ export interface FileRoutesByTo {
   '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute
   '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute
   '/admin/profiles/tech-stacks': typeof AdminProfilesTechStacksRoute
+  '/admin/projects/new': typeof AdminProjectsNewRoute
   '/admin/settings/cgu': typeof AdminSettingsCguRoute
   '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
   '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
   '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
+  '/admin/projects': typeof AdminProjectsIndexRoute
+  '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -206,7 +230,7 @@ export interface FileRoutesById {
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
   '/admin/profiles': typeof AdminProfilesRouteWithChildren
-  '/admin/projects': typeof AdminProjectsRoute
+  '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects_/$slug': typeof ProjectsSlugRoute
@@ -214,11 +238,14 @@ export interface FileRoutesById {
   '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute
   '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute
   '/admin/profiles/tech-stacks': typeof AdminProfilesTechStacksRoute
+  '/admin/projects/new': typeof AdminProjectsNewRoute
   '/admin/settings/cgu': typeof AdminSettingsCguRoute
   '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
   '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
   '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
+  '/admin/projects/': typeof AdminProjectsIndexRoute
+  '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -240,11 +267,14 @@ export interface FileRouteTypes {
     | '/admin/profiles/personal-info'
     | '/admin/profiles/social-links'
     | '/admin/profiles/tech-stacks'
+    | '/admin/projects/new'
     | '/admin/settings/cgu'
     | '/admin/settings/cookie-policy'
     | '/admin/settings/legal-mentions'
     | '/admin/settings/privacy'
     | '/admin/settings/themes'
+    | '/admin/projects/'
+    | '/admin/projects/$projectId/edit'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -256,7 +286,6 @@ export interface FileRouteTypes {
     | '/admin/analytics'
     | '/admin/dashboard'
     | '/admin/profiles'
-    | '/admin/projects'
     | '/admin/settings'
     | '/api/optimize-image'
     | '/projects/$slug'
@@ -264,11 +293,14 @@ export interface FileRouteTypes {
     | '/admin/profiles/personal-info'
     | '/admin/profiles/social-links'
     | '/admin/profiles/tech-stacks'
+    | '/admin/projects/new'
     | '/admin/settings/cgu'
     | '/admin/settings/cookie-policy'
     | '/admin/settings/legal-mentions'
     | '/admin/settings/privacy'
     | '/admin/settings/themes'
+    | '/admin/projects'
+    | '/admin/projects/$projectId/edit'
   id:
     | '__root__'
     | '/'
@@ -288,11 +320,14 @@ export interface FileRouteTypes {
     | '/admin/profiles/personal-info'
     | '/admin/profiles/social-links'
     | '/admin/profiles/tech-stacks'
+    | '/admin/projects/new'
     | '/admin/settings/cgu'
     | '/admin/settings/cookie-policy'
     | '/admin/settings/legal-mentions'
     | '/admin/settings/privacy'
     | '/admin/settings/themes'
+    | '/admin/projects/'
+    | '/admin/projects/$projectId/edit'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -399,6 +434,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminAnalyticsRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/projects/': {
+      id: '/admin/projects/'
+      path: '/'
+      fullPath: '/admin/projects/'
+      preLoaderRoute: typeof AdminProjectsIndexRouteImport
+      parentRoute: typeof AdminProjectsRoute
+    }
     '/admin/settings/themes': {
       id: '/admin/settings/themes'
       path: '/themes'
@@ -434,6 +476,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSettingsCguRouteImport
       parentRoute: typeof AdminSettingsRoute
     }
+    '/admin/projects/new': {
+      id: '/admin/projects/new'
+      path: '/new'
+      fullPath: '/admin/projects/new'
+      preLoaderRoute: typeof AdminProjectsNewRouteImport
+      parentRoute: typeof AdminProjectsRoute
+    }
     '/admin/profiles/tech-stacks': {
       id: '/admin/profiles/tech-stacks'
       path: '/tech-stacks'
@@ -462,6 +511,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminProfilesOverviewRouteImport
       parentRoute: typeof AdminProfilesRoute
     }
+    '/admin/projects/$projectId/edit': {
+      id: '/admin/projects/$projectId/edit'
+      path: '/$projectId/edit'
+      fullPath: '/admin/projects/$projectId/edit'
+      preLoaderRoute: typeof AdminProjectsProjectIdEditRouteImport
+      parentRoute: typeof AdminProjectsRoute
+    }
   }
 }
 
@@ -481,6 +537,22 @@ const AdminProfilesRouteChildren: AdminProfilesRouteChildren = {
 
 const AdminProfilesRouteWithChildren = AdminProfilesRoute._addFileChildren(
   AdminProfilesRouteChildren,
+)
+
+interface AdminProjectsRouteChildren {
+  AdminProjectsNewRoute: typeof AdminProjectsNewRoute
+  AdminProjectsIndexRoute: typeof AdminProjectsIndexRoute
+  AdminProjectsProjectIdEditRoute: typeof AdminProjectsProjectIdEditRoute
+}
+
+const AdminProjectsRouteChildren: AdminProjectsRouteChildren = {
+  AdminProjectsNewRoute: AdminProjectsNewRoute,
+  AdminProjectsIndexRoute: AdminProjectsIndexRoute,
+  AdminProjectsProjectIdEditRoute: AdminProjectsProjectIdEditRoute,
+}
+
+const AdminProjectsRouteWithChildren = AdminProjectsRoute._addFileChildren(
+  AdminProjectsRouteChildren,
 )
 
 interface AdminSettingsRouteChildren {
@@ -507,7 +579,7 @@ interface AdminRouteChildren {
   AdminAnalyticsRoute: typeof AdminAnalyticsRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
   AdminProfilesRoute: typeof AdminProfilesRouteWithChildren
-  AdminProjectsRoute: typeof AdminProjectsRoute
+  AdminProjectsRoute: typeof AdminProjectsRouteWithChildren
   AdminSettingsRoute: typeof AdminSettingsRouteWithChildren
 }
 
@@ -515,7 +587,7 @@ const AdminRouteChildren: AdminRouteChildren = {
   AdminAnalyticsRoute: AdminAnalyticsRoute,
   AdminDashboardRoute: AdminDashboardRoute,
   AdminProfilesRoute: AdminProfilesRouteWithChildren,
-  AdminProjectsRoute: AdminProjectsRoute,
+  AdminProjectsRoute: AdminProjectsRouteWithChildren,
   AdminSettingsRoute: AdminSettingsRouteWithChildren,
 }
 
