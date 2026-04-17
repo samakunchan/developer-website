@@ -19,7 +19,7 @@ export const Route = createFileRoute('/admin')({
 });
 
 function AdminLayout() {
-  const { data: profile, isLoading } = useQuery({
+  const { data: profile } = useQuery({
     queryKey: ['profile'],
     queryFn: () => getProfileAction(),
   });
@@ -32,7 +32,7 @@ function AdminLayout() {
     <div className="admin-layout">
       <AdminSidebarPrimary />
       <div className="admin-layout__main">
-        <AdminToolbar tinyImage={isLoading ? '' : tinyImage} />
+        <AdminToolbar tinyImage={tinyImage} />
         <main className="admin-layout__content">
           <Outlet />
         </main>
