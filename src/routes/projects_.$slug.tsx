@@ -3,22 +3,22 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { Trans } from '@lingui/react/macro';
 import '../styles/main.css';
-import { Project } from '../core/types/project';
-import { projects } from '../core/data/projectsData';
+
+import { getProjectBySlug, ProjectType } from '../features/projects';
 
 export const Route = createFileRoute('/projects_/$slug')({
-  loader: async ({ context }) => {
+  loader: async ({ context, params }) => {
+    const project = await getProjectBySlug({ data: params.slug });
     return {
       isConnected: context.session?.user.role === 'admin',
+      project,
     };
   },
   component: ProjectDetailsPage,
 });
 
 function ProjectDetailsPage() {
-  const { slug }: { slug: string } = Route.useParams();
-  const { isConnected } = Route.useLoaderData();
-  const project: Project | undefined = projects.find((project: Project) => project.slug === slug);
+  const { isConnected, project }: { isConnected: boolean; project: ProjectType } = Route.useLoaderData();
 
   if (!project) {
     return (
@@ -50,7 +50,24 @@ function ProjectDetailsPage() {
         {/* Left Side: Visual Anchor (Sticky) */}
         <section className="project-detail__visual">
           <div className="project-detail__gradient"></div>
-          <img src={project.imageSrc} alt={project.imageAlt} className="project-detail__image" />
+          {project.image?.raw?.url ? (
+            <img src={project.image.raw.url} alt={project.image.raw.alt} className="project-detail__image" />
+          ) : (
+            <div
+              className="project-detail__image project-detail__image--placeholder"
+              style={{
+                background: 'var(--color-slate-800)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                height: '100%',
+              }}
+            >
+              <span className="material-symbols-outlined" style={{ color: 'var(--color-slate-600)', fontSize: '4rem' }}>
+                image
+              </span>
+            </div>
+          )}
 
           {/* Status Label */}
           <div className="project-detail__status-badge">

@@ -27,6 +27,7 @@
 @import './components/_about.css';
 @import './components/_projects.css';
 @import './components/_project_detail.css';
+@import './components/_project_admin_card.css';
 
 @import './components/_personal_info_form.css';
 @import './components/_visual_identity.css';

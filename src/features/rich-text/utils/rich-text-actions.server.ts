@@ -1,4 +1,4 @@
-import { db } from '../../database';
+import { db } from '../../database/server/db.server';
 
 export async function getLegalMentionsInternal() {
   try {

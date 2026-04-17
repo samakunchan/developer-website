@@ -1,6 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
-import { db } from '../../database';
+import { db } from '../../database/server/db.server';
 import { getSessionInternal } from '../../auth/utils/auth-actions.server';
 import {
   personalInfoSchema,
@@ -33,8 +33,6 @@ export async function getProfileInternal() {
       image: true,
     },
   });
-
-  console.log(user);
 
   if (!user) {
     throw new Error('User not found');
