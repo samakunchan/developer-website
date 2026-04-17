@@ -24,12 +24,12 @@
   border: 2px dashed var(--color-slate-200);
 }
 
-
 .admin-profiles__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: flex-end;
   margin-bottom: 2.5rem;
+  gap: 2.5rem;
 }
 
 .admin-profiles__header-label {
@@ -49,7 +49,6 @@
   color: var(--color-text);
   margin: 0;
 }
-
 
 .admin-profiles__grid {
   display: grid;
@@ -73,7 +72,6 @@
     grid-column: span 8;
   }
 }
-
 
 .admin-profiles__form-grid {
   display: grid;
