@@ -1,5 +1,35 @@
 # CHANGELOG developer-website
 
+## 🚀 0.22.0 - 18/04/2026
+
+### Added
+
+- **UI/UX Refinements**:
+  - Integrated a loading spinner during project image uploads to provide visual feedback on asynchronous operations.
+  - Implemented a "Project List Empty" widget with skeletal card placeholders for improved empty state aesthetics in the admin panel.
+  - Added dynamic user data (name and avatar) to the `AdminToolbar` with real-time refresh capabilities.
+- **TanStack Query Integration**:
+  - Installed and configured `@tanstack/react-query` to manage server state and caching.
+  - Implemented `QueryClientProvider` at the root level and integrated it with TanStack Router context for seamless data fetching.
+- **Documentation**:
+  - Created `react-query.md` reference guide to centralize TanStack Query best practices and image synchronization patterns.
+
+### Changed
+
+- **CSS Architecture**:
+  - Finalized the migration of all remaining hardcoded inline styles to a modular, BEM-compliant CSS structure across all administrative routes.
+  - Standardized component styling using CSS variables (`--color-background`, `--color-card`) for consistent theme support.
+- **State Management**:
+  - Optimized the mutation flow for profile and project images by implementing explicit cache invalidation, ensuring immediate UI updates without manual reloads.
+- **Feature Refactoring**:
+  - Completed the migration of administration modules (`profiles`, `settings`, `analytics`) into a strictly-typed, feature-based architecture within `src/features`.
+  - Standardized component entry points and internal folder structures to improve maintainability and architectural clarity.
+
+### Fixed
+
+- **Data Synchronization**: Resolved a bug where profile and project image changes were not reflected in the UI until a manual page refresh.
+- **Code Quality**: Fixed multiple linting and formatting issues introduced during the CSS refactoring process.
+
 ## 🚀 0.21.0 - 17/04/2026
 
 ### Added
