@@ -29,11 +29,7 @@ export const SocialLinksCard: React.FC<SocialLinksCardProps> = ({ links }) => {
             <span className="material-symbols-outlined social-item__arrow">open_in_new</span>
           </a>
         ))}
-        {links.length === 0 && (
-          <p className="text-xs text-slate-400 italic" style={{ padding: '1rem' }}>
-            No social links connected.
-          </p>
-        )}
+        {links.length === 0 && <p className="admin-profiles__empty-state-text">No social links connected.</p>}
       </div>
     </div>
   );

@@ -74,7 +74,7 @@ export const VisualIdentity: React.FC<VisualIdentityProps> = ({ avatar, onAvatar
             ref={fileInputRef}
             onChange={handleFileChange}
             accept="image/jpeg,image/png"
-            style={{ display: 'none' }}
+            className="u-hidden"
           />
           <button
             type="button"

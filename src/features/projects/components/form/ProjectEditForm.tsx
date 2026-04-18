@@ -100,26 +100,23 @@ export const ProjectEditForm: React.FC<ProjectEditFormProps> = ({ initialData, o
   const isUploading = uploadMutation.isPending;
 
   return (
-    <section
-      className="card card--auto card--light"
-      style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '2rem' }}
-    >
+    <section className="card card--auto card--light project-editor__container--main">
       <div className="project-editor__edit-layout">
-        <div className="project-editor__form-column" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <div className="project-editor__form-column">
           <section>
-            <h3 style={{ marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+            <h3 className="project-editor__section-title">
               <Trans>Project Identity</Trans>
             </h3>
             <IdentitySection register={register} errors={errors} setValue={setValue} />
           </section>
           <section>
-            <h3 style={{ marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+            <h3 className="project-editor__section-title">
               <Trans>Technical Details</Trans>
             </h3>
             <DetailsSection register={register} errors={errors} setValue={setValue} control={control} />
           </section>
           <section>
-            <h3 style={{ marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+            <h3 className="project-editor__section-title">
               <Trans>Status & Visibility</Trans>
             </h3>
             <VisualsSection register={register} errors={errors} setValue={setValue} />
@@ -140,7 +137,7 @@ export const ProjectEditForm: React.FC<ProjectEditFormProps> = ({ initialData, o
           <Trans>Cancel</Trans>
         </Button>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <div className="project-editor__actions-right">
           <StatusBadge status={status || 'draft'} />
           <Button type="button" onClick={handleSave} disabled={isSubmitting}>
             {isSubmitting ? <Trans>Saving...</Trans> : <Trans>Save Changes</Trans>}

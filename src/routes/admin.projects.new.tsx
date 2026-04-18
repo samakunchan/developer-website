@@ -26,13 +26,11 @@ function NewProjectComponent() {
           <h1 className="admin-profiles__header-title">{t`Add New Project`}</h1>
         </div>
         <button className="btn btn--outline" onClick={handleCancel}>
-          <span className="material-symbols-outlined" style={{ marginRight: '0.5rem' }}>
-            arrow_back
-          </span>
+          <span className="material-symbols-outlined admin-profiles__icon-left">arrow_back</span>
           <Trans>Back to list</Trans>
         </button>
       </header>
-      <div style={{ marginTop: '2rem' }}>
+      <div className="admin-profiles__section-spacing">
         <ProjectCreateForm onSuccess={handleSubmit} onCancel={handleCancel} />
       </div>
     </div>

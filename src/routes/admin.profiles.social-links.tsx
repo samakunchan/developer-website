@@ -80,7 +80,7 @@ function SocialLinksComponent() {
   const socialLinks = (profile.socialLinks as SocialLinkItem[]) || [];
 
   return (
-    <div style={{ paddingBottom: '4rem' }}>
+    <div className="admin-profiles__padding-bottom-large">
       <header className="admin-profiles__header">
         <div>
           <span className="admin-profiles__header-label">Account Customization</span>
@@ -88,7 +88,7 @@ function SocialLinksComponent() {
         </div>
       </header>
 
-      <div style={{ marginTop: '2rem' }}>
+      <div className="admin-profiles__section-spacing">
         <SocialLinksManager
           links={socialLinks}
           onAdd={handleAddSocialLink}

@@ -33,7 +33,7 @@ function CGUComponent() {
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
         <h1>CGU</h1>
-        <p style={{ marginBottom: '2rem', color: 'var(--color-slate-400)' }}>
+        <p className="admin-profiles__header-desc">
           Manage your website's Terms and Conditions (Conditions Générales d'Utilisation).
         </p>
 

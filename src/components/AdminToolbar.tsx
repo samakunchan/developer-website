@@ -7,9 +7,10 @@ import { useNavigate, type UseNavigateResult } from '@tanstack/react-router';
 
 interface AdminToolbarProps {
   tinyImage: string;
+  fullName: string;
 }
 
-export const AdminToolbar: React.FC<AdminToolbarProps> = ({ tinyImage }) => {
+export const AdminToolbar: React.FC<AdminToolbarProps> = ({ tinyImage, fullName }) => {
   const navigate: UseNavigateResult<string> = useNavigate();
 
   return (
@@ -40,7 +41,7 @@ export const AdminToolbar: React.FC<AdminToolbarProps> = ({ tinyImage }) => {
         <div className="admin-toolbar__divider"></div>
 
         <div className="admin-toolbar__user">
-          <span className="admin-toolbar__user-name">Alex Dev</span>
+          <span className="admin-toolbar__user-name">{fullName}</span>
           {tinyImage ? (
             <img src={tinyImage} alt={t`User profile`} className="admin-toolbar__avatar" width={40} height={40} />
           ) : (

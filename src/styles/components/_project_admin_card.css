@@ -98,3 +98,14 @@
   padding: 0.5rem 0.75rem;
   font-size: 0.75rem;
 }
+
+.project-admin-card__image--placeholder {
+  background: var(--color-slate-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-admin-card__image--placeholder .material-symbols-outlined {
+  color: var(--color-slate-300);
+}

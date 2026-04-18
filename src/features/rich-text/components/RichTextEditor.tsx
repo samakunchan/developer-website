@@ -73,7 +73,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialContent, 
 
   return (
     <div className="rich-text-editor">
-      <div className="rich-text-editor__header" style={{ marginBottom: '1rem' }}>
+      <div className="rich-text-editor__header">
         <input
           id="document-title"
           type="text"

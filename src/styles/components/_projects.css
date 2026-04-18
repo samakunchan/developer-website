@@ -18,6 +18,13 @@
   scrollbar-width: none; /* Firefox */
 }
 
+.projects__filters_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
 .projects__filters::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
@@ -175,4 +182,116 @@
 
 .project-card__link:hover span:last-child {
   transform: translateX(4px);
+}
+
+/* Empty State */
+.projects__empty {
+  grid-column: 1 / -1;
+  position: relative;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.projects__empty-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  opacity: 0.06;
+  pointer-events: none;
+  user-select: none;
+}
+
+.project-card__image--placeholder {
+  background: var(--color-slate-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.project-card__placeholder-icon {
+  color: var(--color-slate-300);
+}
+
+.project-card--placeholder {
+  border-style: dashed;
+  border-width: 2px;
+  border-color: var(--color-slate-300);
+  background: transparent;
+  box-shadow: none;
+}
+
+.project-card:hover.project-card--placeholder {
+  transform: none;
+  border-color: var(--color-slate-300);
+  box-shadow: none;
+}
+
+.project-card__image-wrapper--placeholder {
+  background: var(--color-slate-200);
+}
+
+.project-card__placeholder-title {
+  height: 24px;
+  background: var(--color-slate-200);
+  width: 60%;
+  margin-bottom: 1rem;
+}
+
+.project-card__placeholder-line {
+  height: 16px;
+  background: var(--color-slate-200);
+  width: 90%;
+  margin-bottom: 0.6rem;
+}
+
+.project-card__placeholder-line--short {
+  width: 80%;
+  margin-bottom: 0;
+}
+
+.projects__empty-message {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 3rem;
+  background: var(--color-empty-card-bg);
+  backdrop-filter: blur(8px);
+  border-radius: var(--border-radius-2xl);
+  box-shadow: var(--color-shadow-lg);
+  max-width: 400px;
+}
+
+[data-theme='dark'] .projects__empty-message {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.projects__empty-icon {
+  font-size: 4rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+  display: block;
+  opacity: 0.6;
+}
+
+.projects__empty-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-services-title);
+  margin: 0 0 0.75rem 0;
+}
+
+.projects__empty-text {
+  color: var(--color-project-description);
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.5;
 }

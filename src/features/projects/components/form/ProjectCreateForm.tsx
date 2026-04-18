@@ -160,10 +160,7 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
   };
 
   return (
-    <section
-      className="card card--auto card--light"
-      style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '2rem' }}
-    >
+    <section className="card card--auto card--light project-editor__container--main">
       <div className="project-stepper">
         {[1, 2, 3].map((s) => (
           <div key={s} className="project-stepper__step-container">
@@ -201,7 +198,7 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
       </div>
 
       <div className="project-editor__actions-bar">
-        <div style={{ display: 'flex', gap: '1rem' }}>
+        <div className="project-editor__actions-group">
           {step > 1 ? (
             <Button type="button" variant="outline" onClick={() => setStep(step - 1)} disabled={isPending}>
               <Trans>Back</Trans>
@@ -213,7 +210,7 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
           )}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <div className="project-editor__actions-right">
           {projectId && <StatusBadge status={status || 'draft'} />}
           {step < 3 ? (
             <Button type="button" onClick={goToNextStep} disabled={isPending}>

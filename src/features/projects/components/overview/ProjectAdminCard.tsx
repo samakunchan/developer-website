@@ -17,18 +17,8 @@ export const ProjectAdminCard: React.FC<ProjectAdminCardProps> = ({ project, onT
         {project.image?.medium?.url ? (
           <img src={project.image.medium.url} alt={project.image.medium.alt} className="project-admin-card__image" />
         ) : (
-          <div
-            className="project-admin-card__image project-admin-card__image--placeholder"
-            style={{
-              background: 'var(--color-slate-100)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <span className="material-symbols-outlined" style={{ color: 'var(--color-slate-300)' }}>
-              image
-            </span>
+          <div className="project-admin-card__image project-admin-card__image--placeholder">
+            <span className="material-symbols-outlined">image</span>
           </div>
         )}
       </div>

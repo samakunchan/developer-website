@@ -33,7 +33,7 @@ function LegalMentionsComponent() {
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
         <h1>Legal Mentions</h1>
-        <p style={{ marginBottom: '2rem', color: 'var(--color-slate-400)' }}>
+        <p className="admin-profiles__header-desc">
           Manage your website's legal information and data protection notice.
         </p>
 

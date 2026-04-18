@@ -55,7 +55,7 @@ function ProfilesComponent() {
 
   return (
     <>
-      <div style={{ paddingBottom: '4rem' }}>
+      <div className="admin-profiles__padding-bottom-large">
         <header className="admin-profiles__header">
           <div>
             <span className="admin-profiles__header-label">Account Customization</span>

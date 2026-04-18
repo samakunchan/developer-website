@@ -33,9 +33,7 @@ function CookiePolicyComponent() {
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
         <h1>Cookie Policy</h1>
-        <p style={{ marginBottom: '2rem', color: 'var(--color-slate-400)' }}>
-          Manage your website's cookie usage and tracking policies.
-        </p>
+        <p className="admin-profiles__header-desc">Manage your website's cookie usage and tracking policies.</p>
 
         <RichTextEditor
           title={data?.title || 'Cookie Policy'}

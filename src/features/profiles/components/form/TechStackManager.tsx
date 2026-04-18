@@ -103,13 +103,11 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({
                 <span key={tech.id} className="admin-profiles__stack-item">
                   {tech.name}
                   <span
-                    className="material-symbols-outlined admin-profiles__stack-remove"
+                    className={`material-symbols-outlined admin-profiles__stack-remove ${
+                      removingId === tech.id ? 'admin-profiles__stack-remove--removing' : ''
+                    }`}
                     onClick={() => !removingId && onRemove(tech.id)}
                     title="Remove"
-                    style={{
-                      opacity: removingId === tech.id ? 0.5 : 1,
-                      cursor: removingId === tech.id ? 'not-allowed' : 'pointer',
-                    }}
                   >
                     {removingId === tech.id ? 'sync' : 'close'}
                   </span>

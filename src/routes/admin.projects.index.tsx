@@ -62,9 +62,7 @@ function ProjectsListComponent() {
           <h1 className="admin-profiles__header-title">Projects</h1>
         </div>
         <Link to="/admin/projects/new" className="btn btn--primary">
-          <span className="material-symbols-outlined" style={{ marginRight: '0.5rem' }}>
-            add
-          </span>
+          <span className="material-symbols-outlined admin-profiles__icon-left">add</span>
           <Trans>Add Project</Trans>
         </Link>
       </header>
@@ -72,9 +70,7 @@ function ProjectsListComponent() {
       <div className="admin-profiles__content">
         {projects.length === 0 ? (
           <div className="admin-profiles__empty-state">
-            <span className="material-symbols-outlined" style={{ fontSize: '3rem', color: 'var(--color-slate-300)' }}>
-              folder_open
-            </span>
+            <span className="material-symbols-outlined admin-profiles__empty-state-icon">folder_open</span>
             <p>
               <Trans>No projects found. Add your first project to showcase your work.</Trans>
             </p>

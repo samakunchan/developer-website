@@ -15,9 +15,7 @@ export const PortfolioSummaryCard: React.FC = () => {
       <div className="card__footer">
         <Link to="/admin/projects" className="btn btn--secondary btn--white">
           Manage Portfolio
-          <span className="material-symbols-outlined card__icon-sm" style={{ marginLeft: '0.5rem' }}>
-            arrow_forward
-          </span>
+          <span className="material-symbols-outlined card__icon-sm admin-profiles__icon-right">arrow_forward</span>
         </Link>
       </div>
     </div>

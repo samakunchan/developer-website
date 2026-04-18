@@ -1,0 +1,45 @@
+.admin-dashboard__status-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  display: inline-block;
+}
+
+.admin-dashboard__status-indicator--online {
+  background-color: #48bb78;
+}
+
+.admin-dashboard__status-indicator--offline {
+  background-color: #f56565;
+}
+
+.admin-dashboard__status-text {
+  font-weight: 700;
+}
+
+.admin-dashboard__status-text--online {
+  color: #2f855a;
+}
+
+.admin-dashboard__status-text--offline {
+  color: #c53030;
+}
+
+.admin-dashboard__error {
+  color: #c53030;
+  margin-top: 0.5rem;
+}
+
+.admin-dashboard__details {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.5rem;
+  border-radius: 4px;
+  overflow: auto;
+}
+
+[data-theme='dark'] .admin-dashboard__details {
+  background-color: rgba(255, 255, 255, 0.05);
+}

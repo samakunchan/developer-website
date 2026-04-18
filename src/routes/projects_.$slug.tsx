@@ -53,19 +53,8 @@ function ProjectDetailsPage() {
           {project.image?.raw?.url ? (
             <img src={project.image.raw.url} alt={project.image.raw.alt} className="project-detail__image" />
           ) : (
-            <div
-              className="project-detail__image project-detail__image--placeholder"
-              style={{
-                background: 'var(--color-slate-800)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '100%',
-              }}
-            >
-              <span className="material-symbols-outlined" style={{ color: 'var(--color-slate-600)', fontSize: '4rem' }}>
-                image
-              </span>
+            <div className="project-detail__image project-detail__image--placeholder">
+              <span className="material-symbols-outlined project-detail__placeholder-icon">image</span>
             </div>
           )}
 

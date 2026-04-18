@@ -77,7 +77,7 @@ function TechStacksComponent() {
   };
 
   return (
-    <div style={{ paddingBottom: '4rem' }}>
+    <div className="admin-profiles__padding-bottom-large">
       <header className="admin-profiles__header">
         <div>
           <span className="admin-profiles__header-label">Account Customization</span>
@@ -85,7 +85,7 @@ function TechStacksComponent() {
         </div>
       </header>
 
-      <div style={{ marginTop: '2rem' }}>
+      <div className="admin-profiles__section-spacing">
         <TechStackManager
           stacks={(profile.techStacks as TechStackItem[]) || []}
           onAdd={handleAddTechStack}

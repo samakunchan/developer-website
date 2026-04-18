@@ -60,6 +60,19 @@
   transform: scale(1.05);
 }
 
+.project-detail__image--placeholder {
+  background-color: var(--color-slate-800);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.project-detail__placeholder-icon {
+  color: var(--color-slate-600);
+  font-size: 4rem !important;
+}
+
 .project-detail__status-badge {
   position: absolute;
   bottom: 2rem;

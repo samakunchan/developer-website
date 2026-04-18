@@ -33,7 +33,7 @@ function PrivacyComponent() {
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
         <h1>Privacy Policy</h1>
-        <p style={{ marginBottom: '2rem', color: 'var(--color-slate-400)' }}>
+        <p className="admin-profiles__header-desc">
           Manage your website's privacy policy and data collection disclosures.
         </p>
 

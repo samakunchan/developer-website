@@ -10,6 +10,10 @@ input#document-title {
   outline: none;
 }
 
+.rich-text-editor__header {
+  margin-bottom: 1rem;
+}
+
 .lexical-editor-container {
   display: flex;
   flex-direction: column;
