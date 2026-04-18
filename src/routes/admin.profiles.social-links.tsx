@@ -1,4 +1,6 @@
-import { createFileRoute, useRouter } from '@tanstack/react-router';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { createFileRoute } from '@tanstack/react-router';
+import { useState } from 'react';
 import {
   getProfileAction,
   addSocialLinkAction,
@@ -9,41 +11,76 @@ import {
 } from '../features/profiles';
 
 export const Route = createFileRoute('/admin/profiles/social-links')({
-  loader: async () => {
-    return await getProfileAction();
-  },
   component: SocialLinksComponent,
 });
 
 function SocialLinksComponent() {
-  const profile = Route.useLoaderData();
-  const router = useRouter();
+  const queryClient = useQueryClient();
+  const [removingId, setRemovingId] = useState<number | null>(null);
 
-  const handleAddSocialLink = async (data: SocialLinkInput) => {
-    try {
-      await addSocialLinkAction({ data });
-      router.invalidate();
-    } catch (error) {
+  const { data: profile, isLoading } = useQuery({
+    queryKey: ['profile'],
+    queryFn: () => getProfileAction(),
+  });
+
+  const { mutate: addSocialLink, isPending: isAdding } = useMutation({
+    mutationFn: (data: SocialLinkInput) => addSocialLinkAction({ data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['profile'] });
+    },
+    onError: (error) => {
       console.error('Failed to add social link:', error);
       alert('Error adding social link');
-    }
-  };
+    },
+  });
 
-  const handleRemoveSocialLink = async (id: number) => {
-    try {
-      await removeSocialLinkAction({ data: { id } });
-      router.invalidate();
-    } catch (error) {
+  const { mutate: removeSocialLink } = useMutation({
+    mutationFn: (id: number) => removeSocialLinkAction({ data: { id } }),
+    onMutate: (id) => {
+      setRemovingId(id);
+    },
+    onSettled: () => {
+      setRemovingId(null);
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['profile'] });
+    },
+    onError: (error) => {
       console.error('Failed to remove social link:', error);
       alert('Error removing social link');
-    }
+    },
+  });
+
+  if (isLoading || !profile) {
+    return (
+      <div className="admin-profiles">
+        <header className="admin-profiles__header">
+          <div>
+            <span className="admin-profiles__header-label">Account Customization</span>
+            <h1 className="admin-profiles__header-title">Professional Links</h1>
+          </div>
+        </header>
+        <div className="admin-profiles__loading">
+          <span className="material-symbols-outlined spin">sync</span>
+          <p>Loading profile data...</p>
+        </div>
+      </div>
+    );
+  }
+
+  const handleAddSocialLink = (data: SocialLinkInput) => {
+    addSocialLink(data);
+  };
+
+  const handleRemoveSocialLink = (id: number) => {
+    removeSocialLink(id);
   };
 
   // Safe cast since we trust the database output matches the component prop type
   const socialLinks = (profile.socialLinks as SocialLinkItem[]) || [];
 
   return (
-    <div style={{ paddingBottom: '4rem' }}>
+    <div className="admin-profiles__padding-bottom-large">
       <header className="admin-profiles__header">
         <div>
           <span className="admin-profiles__header-label">Account Customization</span>
@@ -51,8 +88,14 @@ function SocialLinksComponent() {
         </div>
       </header>
 
-      <div style={{ marginTop: '2rem' }}>
-        <SocialLinksManager links={socialLinks} onAdd={handleAddSocialLink} onRemove={handleRemoveSocialLink} />
+      <div className="admin-profiles__section-spacing">
+        <SocialLinksManager
+          links={socialLinks}
+          onAdd={handleAddSocialLink}
+          onRemove={handleRemoveSocialLink}
+          isAdding={isAdding}
+          removingId={removingId}
+        />
       </div>
     </div>
   );

@@ -33,44 +33,35 @@ export function ContactForm() {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '1rem',
-        maxWidth: '400px',
-      }}
-    >
-      <div>
-        <label htmlFor="name" style={{ display: 'block', marginBottom: '0.25rem' }}>
+    <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
+      <div className="contact-form__group">
+        <label htmlFor="name" className="contact-form__label">
           Name
         </label>
         <Input id="name" type="text" {...register('name')} aria-invalid={!!errors.name} />
-        {errors.name && (
-          <p style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.25rem' }}>{errors.name.message}</p>
-        )}
+        {errors.name && <p className="contact-form__error">{errors.name.message}</p>}
       </div>
 
-      <div>
-        <label htmlFor="email" style={{ display: 'block', marginBottom: '0.25rem' }}>
+      <div className="contact-form__group">
+        <label htmlFor="email" className="contact-form__label">
           Email
         </label>
         <Input id="email" type="email" {...register('email')} aria-invalid={!!errors.email} />
-        {errors.email && (
-          <p style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.25rem' }}>{errors.email.message}</p>
-        )}
+        {errors.email && <p className="contact-form__error">{errors.email.message}</p>}
       </div>
 
-      <div>
-        <label htmlFor="message" style={{ display: 'block', marginBottom: '0.25rem' }}>
+      <div className="contact-form__group">
+        <label htmlFor="message" className="contact-form__label">
           Message
         </label>
-        {/* We reuse the generic input css for textarea as it's typically similar, or use a proper textarea style */}
-        <textarea id="message" rows={4} {...register('message')} className="input" aria-invalid={!!errors.message} />
-        {errors.message && (
-          <p style={{ color: 'red', fontSize: '0.875rem', marginTop: '0.25rem' }}>{errors.message.message}</p>
-        )}
+        <textarea
+          id="message"
+          rows={4}
+          {...register('message')}
+          className="input contact-form__textarea"
+          aria-invalid={!!errors.message}
+        />
+        {errors.message && <p className="contact-form__error">{errors.message.message}</p>}
       </div>
 
       <Button type="submit" variant="primary" disabled={isSubmitting}>

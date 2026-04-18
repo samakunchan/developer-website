@@ -1,20 +1,21 @@
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { useQuery } from '@tanstack/react-query';
 import { ProjectEditForm, getProjectById } from '../features/projects';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
 
 export const Route = createFileRoute('/admin/projects/$projectId/edit')({
-  loader: async ({ params }) => {
-    const project = await getProjectById({ data: parseInt(params.projectId) });
-    if (!project) throw new Error('Project not found');
-    return project;
-  },
   component: EditProjectComponent,
 });
 
 function EditProjectComponent() {
-  const project = Route.useLoaderData();
+  const { projectId } = Route.useParams();
   const navigate = useNavigate();
+
+  const { data: project, isLoading } = useQuery({
+    queryKey: ['projects', projectId],
+    queryFn: () => getProjectById({ data: parseInt(projectId) }),
+  });
 
   const handleSubmit = async () => {
     navigate({ to: '/admin/projects' });
@@ -24,6 +25,22 @@ function EditProjectComponent() {
     navigate({ to: '/admin/projects' });
   };
 
+  if (isLoading) {
+    return (
+      <div>
+        <Trans>Loading project...</Trans>
+      </div>
+    );
+  }
+
+  if (!project) {
+    return (
+      <div>
+        <Trans>Project not found</Trans>
+      </div>
+    );
+  }
+
   return (
     <div className="admin-projects">
       <header className="admin-profiles__header">
@@ -32,13 +49,11 @@ function EditProjectComponent() {
           <h1 className="admin-profiles__header-title">{t`Edit Project`}</h1>
         </div>
         <button className="btn btn--outline" onClick={handleCancel}>
-          <span className="material-symbols-outlined" style={{ marginRight: '0.5rem' }}>
-            arrow_back
-          </span>
+          <span className="material-symbols-outlined admin-profiles__icon-left">arrow_back</span>
           <Trans>Back to list</Trans>
         </button>
       </header>
-      <div style={{ marginTop: '2rem' }}>
+      <div className="admin-profiles__section-spacing">
         <ProjectEditForm initialData={project} onSuccess={handleSubmit} onCancel={handleCancel} />
       </div>
     </div>

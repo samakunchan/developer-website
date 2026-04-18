@@ -39,7 +39,10 @@ export const AdminSidebarImage: React.FC<AdminSidebarImageProps> = ({
 
           {isUploading && (
             <div className="project-editor__upload-loading">
-              <span className="material-symbols-outlined project-editor__upload-loading-spinner">sync</span>
+              <div className="project-editor__upload-loading-spinner" />
+              <span className="project-editor__upload-loading-text">
+                <Trans>Uploading...</Trans>
+              </span>
             </div>
           )}
 
@@ -53,16 +56,20 @@ export const AdminSidebarImage: React.FC<AdminSidebarImageProps> = ({
           )}
         </div>
 
-        <input type="file" ref={fileInputRef} onChange={onFileChange} accept="image/*" style={{ display: 'none' }} />
+        <input
+          type="file"
+          ref={fileInputRef}
+          onChange={onFileChange}
+          accept="image/*"
+          className="project-editor__file-input"
+        />
 
-        <div className="project-editor__tips" style={{ marginTop: '1.5rem', padding: '1rem', fontSize: '0.8rem' }}>
-          <h4 style={{ margin: '0 0 0.5rem 0', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <span className="material-symbols-outlined" style={{ fontSize: '1rem' }}>
-              info
-            </span>
+        <div className="project-editor__tips project-editor__tips-card">
+          <h4 className="project-editor__tips-header">
+            <span className="material-symbols-outlined project-editor__tips-icon">info</span>
             <Trans>Quick Tips</Trans>
           </h4>
-          <ul style={{ margin: 0, paddingLeft: '1.2rem', color: 'var(--color-slate-600)' }}>
+          <ul className="project-editor__tips-list">
             <li>
               <Trans>Recommended ratio: 3:2</Trans>
             </li>

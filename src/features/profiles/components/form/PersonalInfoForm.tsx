@@ -7,9 +7,10 @@ import { Button } from '../../../../components/Button';
 type PersonalInfoFormProps = {
   initialData?: Partial<PersonalInfoInput> & { email?: string };
   onSubmit: (data: PersonalInfoInput) => void;
+  isSaving?: boolean;
 };
 
-export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData, onSubmit }) => {
+export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData, onSubmit, isSaving = false }) => {
   const {
     register,
     handleSubmit,
@@ -92,8 +93,8 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData,
         </div>
 
         <div className="admin-profiles__form-actions">
-          <Button type="submit" className="btn btn--primary">
-            Save Personal Info
+          <Button type="submit" className="btn btn--primary" disabled={isSaving}>
+            {isSaving ? 'Saving...' : 'Save Personal Info'}
           </Button>
         </div>
       </form>

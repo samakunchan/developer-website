@@ -21,19 +21,8 @@ export function ProjectCard({ slug, image, title, categoryLabel, description, te
         {image?.medium?.url ? (
           <img src={image.medium.url} alt={image.medium.alt} className="project-card__image" />
         ) : (
-          <div
-            className="project-card__image project-card__image--placeholder"
-            style={{
-              background: 'var(--color-slate-100)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              height: '100%',
-            }}
-          >
-            <span className="material-symbols-outlined" style={{ color: 'var(--color-slate-300)' }}>
-              image
-            </span>
+          <div className="project-card__image project-card__image--placeholder">
+            <span className="material-symbols-outlined project-card__placeholder-icon">image</span>
           </div>
         )}
       </div>

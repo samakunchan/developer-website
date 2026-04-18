@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 import { Header } from '../components/Header';
 import { About } from '../components/About';
@@ -9,19 +10,38 @@ export const Route = createFileRoute('/about')({
   loader: async ({ context }) => {
     return {
       isConnected: context.session?.user.role === 'admin',
-      profile: await getProfileAction(),
     };
   },
   component: AboutPage,
 });
 
 function AboutPage() {
-  const { isConnected, profile } = Route.useLoaderData();
+  const { isConnected } = Route.useLoaderData();
+
+  const { data: profile, isLoading } = useQuery({
+    queryKey: ['profile'],
+    queryFn: () => getProfileAction(),
+  });
+
+  if (isLoading || !profile) {
+    return (
+      <>
+        <Header isConnected={isConnected} />
+        <main role="main">
+          <div className="loading-state">
+            <span className="material-symbols-outlined spin">sync</span>
+            <p>Loading about page...</p>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <>
       <Header isConnected={isConnected} />
       <main role="main">
-        {/* <About profile={profile} /> */}
         <About
           profileImage={
             profile.image

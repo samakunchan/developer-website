@@ -35,38 +35,21 @@ export function AdminDashboard({
 
           <section>
             <h2>Database Status</h2>
-            <div>
+            <div className="admin-dashboard__status-container">
               <div
-                style={{
-                  width: '12px',
-                  height: '12px',
-                  borderRadius: '50%',
-                  backgroundColor: dbStatus.status === 'online' ? '#48bb78' : '#f56565',
-                }}
+                className={`admin-dashboard__status-indicator admin-dashboard__status-indicator--${dbStatus.status === 'online' ? 'online' : 'offline'}`}
               />
               <strong
-                style={{
-                  color: dbStatus.status === 'online' ? '#2f855a' : '#c53030',
-                }}
+                className={`admin-dashboard__status-text admin-dashboard__status-text--${dbStatus.status === 'online' ? 'online' : 'offline'}`}
               >
                 {dbStatus.status.toUpperCase()}
               </strong>
             </div>
 
-            {dbStatus.error && <p style={{ color: '#c53030', marginTop: '0.5rem' }}>Error: {dbStatus.error}</p>}
+            {dbStatus.error && <p className="admin-dashboard__error">Error: {dbStatus.error}</p>}
 
             {dbStatus.details && (
-              <pre
-                style={{
-                  marginTop: '1rem',
-                  fontSize: '0.875rem',
-                  backgroundColor: 'rgba(0,0,0,0.05)',
-                  padding: '0.5rem',
-                  borderRadius: '4px',
-                }}
-              >
-                {JSON.stringify(dbStatus.details, null, 2)}
-              </pre>
+              <pre className="admin-dashboard__details">{JSON.stringify(dbStatus.details, null, 2)}</pre>
             )}
           </section>
         </Container>
