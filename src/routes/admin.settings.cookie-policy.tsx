@@ -1,34 +1,45 @@
-import { createFileRoute, useRouter } from '@tanstack/react-router';
-import { useServerFn } from '@tanstack/react-start';
+import { createFileRoute } from '@tanstack/react-router';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { RichTextEditor, getCookiePolicy, saveCookiePolicy } from '../features/rich-text';
 
 export const Route = createFileRoute('/admin/settings/cookie-policy')({
-  loader: async () => await getCookiePolicy(),
   component: CookiePolicyComponent,
 });
 
 function CookiePolicyComponent() {
-  const data = Route.useLoaderData();
-  const save = useServerFn(saveCookiePolicy);
-  const router = useRouter();
+  const queryClient = useQueryClient();
 
-  const handleSave = async (title: string, content: string) => {
-    await save({ data: { title, content } });
-    router.invalidate();
+  const { data, isLoading } = useQuery({
+    queryKey: ['rich-text', 'cookie-policy'],
+    queryFn: () => getCookiePolicy(),
+  });
+
+  const saveMutation = useMutation({
+    mutationFn: (data: { title: string; content: string }) => saveCookiePolicy({ data }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['rich-text', 'cookie-policy'] });
+    },
+  });
+
+  const handleSave = (title: string, content: string) => {
+    saveMutation.mutate({ title, content });
   };
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
         <h1>Cookie Policy</h1>
-        <p style={{ marginBottom: '2rem', color: 'var(--color-slate-400)' }}>
-          Manage your website's cookie usage and tracking policies.
-        </p>
+        <p className="admin-profiles__header-desc">Manage your website's cookie usage and tracking policies.</p>
 
         <RichTextEditor
           title={data?.title || 'Cookie Policy'}
           initialContent={data?.content as string}
           onSave={handleSave}
+          isSaving={saveMutation.isPending}
         />
       </div>
     </div>

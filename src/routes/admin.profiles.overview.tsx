@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 import { getProfileAction } from '../features/profiles';
 import {
@@ -11,14 +12,31 @@ import {
 import { SocialLinkItem } from '../features/profiles/components/form/SocialLinksManager';
 
 export const Route = createFileRoute('/admin/profiles/overview')({
-  loader: async () => {
-    return await getProfileAction();
-  },
   component: ProfilesComponent,
 });
 
 function ProfilesComponent() {
-  const profile = Route.useLoaderData();
+  const { data: profile, isLoading } = useQuery({
+    queryKey: ['profile'],
+    queryFn: () => getProfileAction(),
+  });
+
+  if (isLoading || !profile) {
+    return (
+      <div className="admin-profiles">
+        <header className="admin-profiles__header">
+          <div>
+            <span className="admin-profiles__header-label">Profile Overview</span>
+            <h1 className="admin-profiles__header-title">Loading...</h1>
+          </div>
+        </header>
+        <div className="admin-profiles__loading">
+          <span className="material-symbols-outlined spin">sync</span>
+          <p>Loading profile data...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="admin-profiles">

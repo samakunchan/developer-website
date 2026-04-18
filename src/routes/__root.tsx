@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { Suspense } from 'react';
-import { Outlet, createRootRoute, HeadContent, Scripts } from '@tanstack/react-router';
+import { QueryClient } from '@tanstack/react-query';
+import { Outlet, createRootRouteWithContext, HeadContent, Scripts } from '@tanstack/react-router';
+import { QueryClientProvider } from '@tanstack/react-query';
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools';
 import { i18n } from '@lingui/core';
 import { t } from '@lingui/core/macro';
@@ -34,7 +36,9 @@ async function getInitialLocale(): Promise<string> {
   return await fetchServerLocale();
 }
 
-export const Route = createRootRoute({
+export const Route = createRootRouteWithContext<{
+  queryClient: QueryClient;
+}>()({
   notFoundComponent: () => <ErrorComponent type={ErrorType.NotFound} />,
   beforeLoad: async (): Promise<RootLoaderData> => {
     const locale: string = await getInitialLocale();
@@ -52,8 +56,12 @@ export const Route = createRootRoute({
     }
   },
   loader: async ({ context }) => {
-    console.log('loader context', context);
-    return context;
+    return {
+      locale: context.locale,
+      isI18nReady: context.isI18nReady,
+      session: context.session,
+      theme: context.theme,
+    };
   },
   component: RootComponent,
   head: (params) => {
@@ -93,15 +101,19 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const { queryClient } = Route.useRouteContext();
+
   return (
-    <I18nProvider i18n={i18n}>
-      <RootDocument>
-        <Outlet />
-        <Suspense fallback={null}>
-          <TanStackRouterDevtools />
-        </Suspense>
-      </RootDocument>
-    </I18nProvider>
+    <QueryClientProvider client={queryClient}>
+      <I18nProvider i18n={i18n}>
+        <RootDocument>
+          <Outlet />
+          <Suspense fallback={null}>
+            <TanStackRouterDevtools />
+          </Suspense>
+        </RootDocument>
+      </I18nProvider>
+    </QueryClientProvider>
   );
 }
 

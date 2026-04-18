@@ -20,8 +20,9 @@ import { Button } from '../../../components/Button';
 
 interface RichTextEditorProps {
   initialContent?: string | null;
-  onSave: (title: string, content: string) => Promise<void>;
+  onSave: (title: string, content: string) => void;
   title: string;
+  isSaving?: boolean;
 }
 
 const theme = {
@@ -41,10 +42,9 @@ function onError(error: Error) {
   console.error(error);
 }
 
-export const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialContent, onSave, title }) => {
+export const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialContent, onSave, title, isSaving = false }) => {
   const [editorState, setEditorState] = useState<EditorState | null>(null);
   const [currentTitle, setCurrentTitle] = useState(title);
-  const [isSaving, setIsSaving] = useState(false);
 
   const initialConfig = {
     namespace: 'RichTextEditor',
@@ -66,19 +66,14 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({ initialContent, 
     editorState: initialContent ? initialContent : undefined,
   };
 
-  const handleSave = async () => {
+  const handleSave = () => {
     if (!editorState) return;
-    setIsSaving(true);
-    try {
-      await onSave(currentTitle, JSON.stringify(editorState.toJSON()));
-    } finally {
-      setIsSaving(false);
-    }
+    onSave(currentTitle, JSON.stringify(editorState.toJSON()));
   };
 
   return (
     <div className="rich-text-editor">
-      <div className="rich-text-editor__header" style={{ marginBottom: '1rem' }}>
+      <div className="rich-text-editor__header">
         <input
           id="document-title"
           type="text"

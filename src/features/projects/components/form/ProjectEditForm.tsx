@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useRouter } from '@tanstack/react-router';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { Trans } from '@lingui/react/macro';
 import { projectSchema, ProjectInput } from '../../utils/schemas';
 import { Button } from '../../../../components/Button';
@@ -17,9 +17,7 @@ interface ProjectEditFormProps {
 }
 
 export const ProjectEditForm: React.FC<ProjectEditFormProps> = ({ initialData, onSuccess, onCancel }) => {
-  const router = useRouter();
-  const [isUploading, setIsUploading] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const queryClient = useQueryClient();
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const {
@@ -41,21 +39,9 @@ export const ProjectEditForm: React.FC<ProjectEditFormProps> = ({ initialData, o
     },
   });
 
-  const status = useWatch({ control, name: 'status' });
-  const mediumUrl = useWatch({ control, name: 'image.medium.url' });
-
-  const handleUploadClick = () => fileInputRef.current?.click();
-
-  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (!file) return;
-
-    setIsUploading(true);
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
-      const result = await uploadProjectImage({ data: formData });
-
+  const uploadMutation = useMutation({
+    mutationFn: uploadProjectImage,
+    onSuccess: (result) => {
       if (result.success && result.urls) {
         setValue('image.medium.url', result.urls.medium.url, { shouldValidate: true });
         setValue('image.raw.url', result.urls.raw.url, { shouldValidate: true });
@@ -66,53 +52,71 @@ export const ProjectEditForm: React.FC<ProjectEditFormProps> = ({ initialData, o
           setValue('image.raw.alt', currentTitle, { shouldValidate: true });
         }
       }
-    } catch (error) {
+    },
+    onError: (error) => {
       console.error('Upload failed:', error);
       alert('Upload failed. Please try again.');
-    } finally {
-      setIsUploading(false);
-    }
+    },
+  });
+
+  const updateMutation = useMutation({
+    mutationFn: updateProject,
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: ['projects'] }),
+        queryClient.invalidateQueries({ queryKey: ['projects', initialData.id] }),
+      ]);
+      onSuccess();
+    },
+    onError: (error) => {
+      console.error('Error saving project:', error);
+      alert('Error saving project');
+    },
+  });
+
+  const status = useWatch({ control, name: 'status' });
+  const mediumUrl = useWatch({ control, name: 'image.medium.url' });
+
+  const handleUploadClick = () => fileInputRef.current?.click();
+
+  const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    const formData = new FormData();
+    formData.append('file', file);
+    uploadMutation.mutate({ data: formData });
   };
 
   const handleSave = async () => {
     const isValid = await trigger();
     if (!isValid) return;
 
-    setIsSubmitting(true);
-    try {
-      const data = cleanProjectData(getValues());
-      await updateProject({ data: { id: initialData.id, project: data } });
-      await router.invalidate();
-      onSuccess();
-    } catch (error) {
-      console.error('Error saving project:', error);
-      alert('Error saving project');
-    } finally {
-      setIsSubmitting(false);
-    }
+    const data = cleanProjectData(getValues());
+    updateMutation.mutate({ data: { id: initialData.id, project: data } });
   };
 
+  const isSubmitting = updateMutation.isPending;
+  const isUploading = uploadMutation.isPending;
+
   return (
-    <section
-      className="card card--auto card--light"
-      style={{ width: '100%', maxWidth: '1280px', margin: '0 auto', padding: '2rem' }}
-    >
+    <section className="card card--auto card--light project-editor__container--main">
       <div className="project-editor__edit-layout">
-        <div className="project-editor__form-column" style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <div className="project-editor__form-column">
           <section>
-            <h3 style={{ marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+            <h3 className="project-editor__section-title">
               <Trans>Project Identity</Trans>
             </h3>
             <IdentitySection register={register} errors={errors} setValue={setValue} />
           </section>
           <section>
-            <h3 style={{ marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+            <h3 className="project-editor__section-title">
               <Trans>Technical Details</Trans>
             </h3>
             <DetailsSection register={register} errors={errors} setValue={setValue} control={control} />
           </section>
           <section>
-            <h3 style={{ marginBottom: '1.5rem', color: 'var(--color-primary)' }}>
+            <h3 className="project-editor__section-title">
               <Trans>Status & Visibility</Trans>
             </h3>
             <VisualsSection register={register} errors={errors} setValue={setValue} />
@@ -133,7 +137,7 @@ export const ProjectEditForm: React.FC<ProjectEditFormProps> = ({ initialData, o
           <Trans>Cancel</Trans>
         </Button>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+        <div className="project-editor__actions-right">
           <StatusBadge status={status || 'draft'} />
           <Button type="button" onClick={handleSave} disabled={isSubmitting}>
             {isSubmitting ? <Trans>Saving...</Trans> : <Trans>Save Changes</Trans>}

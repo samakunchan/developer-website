@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { Container } from './Container';
-import { Project, ProjectFilter } from '../core/types/project';
+import { ProjectFilter } from '../core/types/project';
 import { ProjectCard } from './ProjectCard';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
+import { ProjectType } from '../features/projects';
+import { ProjectListEmpty } from './ProjectListEmpty';
 
 interface ProjectsProps {
   id?: string;
   title?: React.ReactNode;
   subtitle?: React.ReactNode;
-  projects: Project[];
+  projects: ProjectType[];
 }
 
 export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
@@ -22,11 +24,11 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
     { id: 'open_source', label: t`Open Source` },
   ];
 
-  const featuredProjects = projects.filter((p) => p.isFeatured);
-  const otherProjects = projects.filter((p) => !p.isFeatured);
+  const featuredProjects = projects.filter((p) => p.isFeatured).filter((p) => p.status === 'published');
+  const otherProjects = projects.filter((p) => !p.isFeatured).filter((p) => p.status === 'published');
 
-  const filteredOtherProjects: Project[] =
-    activeFilter === 'all' ? otherProjects : otherProjects.filter((p: Project) => p.category === activeFilter);
+  const filteredOtherProjects: ProjectType[] =
+    activeFilter === 'all' ? otherProjects : otherProjects.filter((p: ProjectType) => p.category === activeFilter);
 
   return (
     <section className="projects" id={id}>
@@ -46,7 +48,7 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
               <Trans>Featured Projects</Trans>
             </h3>
             <div className="projects__grid">
-              {featuredProjects.map((project: Project) => (
+              {featuredProjects.map((project: ProjectType) => (
                 <ProjectCard
                   key={project.id}
                   slug={project.slug}
@@ -62,12 +64,9 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
         )}
 
         {/* Other Projects Section */}
-        <div className="projects__section" style={{ marginTop: '4rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-            <h3 className="projects__section-title" style={{ margin: 0 }}>
-              <Trans>More Work</Trans>
-            </h3>
-            <div className="projects__filters" style={{ margin: 0 }}>
+        <div className="projects__section">
+          <div className="projects__filters_container">
+            <div className="projects__filters">
               {projectsFilters.map((filter: ProjectFilter) => (
                 <button
                   key={filter.id}
@@ -81,17 +80,21 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
           </div>
 
           <div className="projects__grid">
-            {filteredOtherProjects.map((project: Project) => (
-              <ProjectCard
-                key={project.id}
-                slug={project.slug}
-                image={project.image}
-                title={project.title}
-                categoryLabel={project.categoryLabel}
-                description={project.description}
-                techIcons={project.techIcons}
-              />
-            ))}
+            {filteredOtherProjects.length > 0 ? (
+              filteredOtherProjects.map((project: ProjectType) => (
+                <ProjectCard
+                  key={project.id}
+                  slug={project.slug}
+                  image={project.image}
+                  title={project.title}
+                  categoryLabel={project.categoryLabel}
+                  description={project.description}
+                  techIcons={project.techIcons}
+                />
+              ))
+            ) : (
+              <ProjectListEmpty />
+            )}
           </div>
         </div>
       </Container>

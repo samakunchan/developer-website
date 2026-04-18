@@ -1,38 +1,58 @@
-import { createFileRoute, useRouter, Link } from '@tanstack/react-router';
+import { createFileRoute, Link } from '@tanstack/react-router';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { getProjects, toggleProjectFeatured, deleteProject, ProjectType, ProjectAdminCard } from '../features/projects';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
 
 export const Route = createFileRoute('/admin/projects/')({
-  loader: async () => {
-    return await getProjects();
-  },
   component: ProjectsListComponent,
 });
 
 function ProjectsListComponent() {
-  const projects: ProjectType[] = Route.useLoaderData();
-  const router = useRouter();
+  const queryClient = useQueryClient();
 
-  const handleToggleFeatured = async (id: number) => {
-    try {
-      await toggleProjectFeatured({ data: id });
-      router.invalidate();
-    } catch (error) {
+  const { data: projects = [], isLoading } = useQuery<ProjectType[]>({
+    queryKey: ['projects'],
+    queryFn: () => getProjects(),
+  });
+
+  const toggleMutation = useMutation({
+    mutationFn: toggleProjectFeatured,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['projects'] });
+    },
+    onError: (error) => {
       console.error('Failed to toggle featured status:', error);
+    },
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: deleteProject,
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['projects'] });
+    },
+    onError: (error) => {
+      console.error('Failed to delete project:', error);
+    },
+  });
+
+  const handleToggleFeatured = (id: number) => {
+    toggleMutation.mutate({ data: id });
+  };
+
+  const handleDelete = (id: number) => {
+    if (confirm(t`Are you sure you want to delete this project?`)) {
+      deleteMutation.mutate({ data: id });
     }
   };
 
-  const handleDelete = async (id: number) => {
-    if (confirm(t`Are you sure you want to delete this project?`)) {
-      try {
-        await deleteProject({ data: id });
-        router.invalidate();
-      } catch (error) {
-        console.error('Failed to delete project:', error);
-      }
-    }
-  };
+  if (isLoading) {
+    return (
+      <div>
+        <Trans>Loading projects...</Trans>
+      </div>
+    );
+  }
 
   return (
     <div className="admin-projects">
@@ -42,9 +62,7 @@ function ProjectsListComponent() {
           <h1 className="admin-profiles__header-title">Projects</h1>
         </div>
         <Link to="/admin/projects/new" className="btn btn--primary">
-          <span className="material-symbols-outlined" style={{ marginRight: '0.5rem' }}>
-            add
-          </span>
+          <span className="material-symbols-outlined admin-profiles__icon-left">add</span>
           <Trans>Add Project</Trans>
         </Link>
       </header>
@@ -52,9 +70,7 @@ function ProjectsListComponent() {
       <div className="admin-profiles__content">
         {projects.length === 0 ? (
           <div className="admin-profiles__empty-state">
-            <span className="material-symbols-outlined" style={{ fontSize: '3rem', color: 'var(--color-slate-300)' }}>
-              folder_open
-            </span>
+            <span className="material-symbols-outlined admin-profiles__empty-state-icon">folder_open</span>
             <p>
               <Trans>No projects found. Add your first project to showcase your work.</Trans>
             </p>

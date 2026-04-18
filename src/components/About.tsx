@@ -4,7 +4,6 @@ import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
 import { skillsData, socialLinks } from '../core/data/aboutData';
 import { Skill, SocialLink } from '../core/types/about';
-import AboutIllustration from '../../assets/isometric-concept-design-for-dev.webp';
 
 interface AboutProps {
   profileImage: string;
@@ -82,7 +81,6 @@ export const About: React.FC<AboutProps> = ({ profileImage, profileName, profile
               className="about__illustration-image"
               role="img"
               aria-label={t`Illustration of a developer working at a desk with UI elements`}
-              style={{ backgroundImage: `url(${AboutIllustration})` }}
             />
           </div>
         </div>

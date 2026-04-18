@@ -72,3 +72,7 @@ select {
 .fill-current {
   fill: currentColor;
 }
+
+.u-hidden {
+  display: none !important;
+}

@@ -76,26 +76,31 @@
 .project-editor__upload-loading {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.9);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.project-editor__upload-loading-text {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-slate-900);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .project-editor__upload-loading-spinner {
-  animation: spin 1s linear infinite;
-  color: var(--color-primary);
-  font-size: 2rem !important;
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(37, 244, 244, 0.1);
+  border-top: 3px solid var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 /* Stepper Styles */
@@ -237,7 +242,7 @@
 }
 
 .project-editor__sidebar-card {
-  background: white;
+  background: var(--color-background);
   border-radius: 12px;
   padding: 1.5rem;
   border: 1px solid var(--color-slate-100);
@@ -255,7 +260,7 @@
 }
 
 .project-editor__form-column section {
-  background: white;
+  background: var(--color-card);
   border-radius: 12px;
   padding: 2rem;
   border: 1px solid var(--color-slate-100);
@@ -275,6 +280,117 @@
   border: 1px solid var(--color-slate-100);
   border-left: 4px solid var(--color-primary);
   background: var(--color-slate-50);
+}
+
+.project-editor__container--main {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.project-editor__section-title {
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.project-editor__tips-card {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  font-size: 0.8rem;
+}
+
+.project-editor__tips-header {
+  margin: 0 0 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-editor__tips-icon {
+  font-size: 1rem !important;
+}
+
+.project-editor__tips-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--color-slate-600);
+}
+
+.project-editor__actions-group {
+  display: flex;
+  gap: 1rem;
+}
+
+.project-editor__actions-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.project-editor__file-input {
+  display: none;
+}
+
+.project-editor__field-array-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.project-editor__field-array-btn {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+.project-editor__field-array-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-editor__field-array-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.project-editor__field-array-cell {
+  flex: 1;
+}
+
+.project-editor__delete-btn {
+  color: #f44336;
+}
+
+.project-editor__feature-card {
+  padding: 1rem;
+  background: var(--color-slate-50);
+}
+
+.project-editor__feature-card-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.project-editor__checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.project-editor__checkbox-label {
+  margin-bottom: 0 !important;
+}
+
+.project-editor__status-icon {
+  font-size: 1rem !important;
+}
+
+.project-editor__feature-grid {
+  grid-template-columns: 1fr 2fr;
 }
 
 .admin-profiles__form-grid-full {

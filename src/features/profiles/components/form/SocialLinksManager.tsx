@@ -16,6 +16,8 @@ type SocialLinksManagerProps = {
   links: SocialLinkItem[];
   onAdd: (data: SocialLinkInput) => void;
   onRemove: (id: number) => void;
+  isAdding?: boolean;
+  removingId?: number | null;
 };
 
 const PLATFORMS: { value: SocialLinkType; label: string; icon: string }[] = [
@@ -26,7 +28,13 @@ const PLATFORMS: { value: SocialLinkType; label: string; icon: string }[] = [
   { value: 'email', label: 'Professional Email', icon: 'alternate_email' },
 ];
 
-export const SocialLinksManager: React.FC<SocialLinksManagerProps> = ({ links, onAdd, onRemove }) => {
+export const SocialLinksManager: React.FC<SocialLinksManagerProps> = ({
+  links,
+  onAdd,
+  onRemove,
+  isAdding = false,
+  removingId = null,
+}) => {
   const [formData, setFormData] = useState<SocialLinkInput>({
     name: '',
     url: '',
@@ -107,9 +115,9 @@ export const SocialLinksManager: React.FC<SocialLinksManagerProps> = ({ links, o
           </div>
 
           <div className="admin-profiles__form-grid-full admin-profiles__form-actions">
-            <button type="submit" className="btn btn--primary">
-              <span className="material-symbols-outlined">add</span>
-              Save Social Link
+            <button type="submit" className="btn btn--primary" disabled={isAdding}>
+              <span className="material-symbols-outlined">{isAdding ? 'sync' : 'add'}</span>
+              {isAdding ? 'Adding Link...' : 'Save Social Link'}
             </button>
           </div>
         </form>
@@ -132,9 +140,13 @@ export const SocialLinksManager: React.FC<SocialLinksManagerProps> = ({ links, o
             <div>
               <button
                 className="material-symbols-outlined social-manager__delete-btn"
-                onClick={() => onRemove(link.id)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  onRemove(link.id);
+                }}
+                disabled={removingId === link.id}
               >
-                delete
+                {removingId === link.id ? 'sync' : 'delete'}
               </button>
             </div>
           </a>

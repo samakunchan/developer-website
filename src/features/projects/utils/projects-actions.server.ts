@@ -123,9 +123,10 @@ async function processProjectImageFiles({
   const projectsDir = path.join(process.cwd(), 'public', 'shared', 'projects');
   await fs.mkdir(projectsDir, { recursive: true });
 
+  const timestamp = Date.now();
   const extension = 'webp';
-  const mediumPath = path.join(projectsDir, `project-${slug}-medium.${extension}`);
-  const rawPath = path.join(projectsDir, `project-${slug}-raw.${extension}`);
+  const mediumPath = path.join(projectsDir, `project-${slug}-${timestamp}-medium.${extension}`);
+  const rawPath = path.join(projectsDir, `project-${slug}-${timestamp}-raw.${extension}`);
 
   const buffer = await fs.readFile(tempPath);
 
@@ -146,11 +147,11 @@ async function processProjectImageFiles({
 
   return {
     medium: {
-      url: `/shared/projects/project-${slug}-medium.${extension}`,
+      url: `/shared/projects/project-${slug}-${timestamp}-medium.${extension}`,
       alt: newImage.medium.alt,
     },
     raw: {
-      url: `/shared/projects/project-${slug}-raw.${extension}`,
+      url: `/shared/projects/project-${slug}-${timestamp}-raw.${extension}`,
       alt: newImage.raw.alt,
     },
   };
