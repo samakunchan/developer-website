@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import type { Prisma } from '@prisma/client';
 
 export const personalInfoSchema = z.object({
   fullName: z.string().min(1, 'Full name is required'),
@@ -58,3 +59,12 @@ export type ProfileType = {
   techStacks: { id: number; name: string; category: CategoryStackType }[];
   socialLinks: SocialLinkType[];
 };
+
+export type UserOutput = Prisma.UserGetPayload<{
+  include: {
+    personalInfo: true;
+    techStacks: true;
+    socialLinks: true;
+    image: true;
+  };
+}>;
