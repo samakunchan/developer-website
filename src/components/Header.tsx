@@ -37,6 +37,8 @@ export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = fals
                 <Trans>About</Trans>
               </Link>
             </li>
+
+            {/* Route disabled until the backend is ready
             <li>
               <Link
                 to="/services"
@@ -46,7 +48,7 @@ export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = fals
               >
                 <Trans>Service&pricing</Trans>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
 
