@@ -18,4 +18,4 @@ export async function getServerTimeInternal(locale: string, timeZone: string): P
     timeZone: timeZone,
   };
 }
-export { TimeServerOutput };
+// export { TimeServerOutput };
