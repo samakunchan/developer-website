@@ -1,0 +1,8 @@
+services:
+  website:
+    build:
+      target: runner
+    volumes: [] # Remove dev volumes
+    command: [] # Use default CMD from Dockerfile
+    environment:
+      NODE_ENV: production

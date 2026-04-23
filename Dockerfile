@@ -6,13 +6,10 @@ WORKDIR /app
 RUN apk add --no-cache libc6-compat
 
 # Copy package management files
-COPY package.json yarn.lock* package-lock.json* ./
+COPY package.json yarn.lock* ./
 
-# Install dependencies (use frozen lockfile if possible)
-RUN if [ -f yarn.lock ]; then yarn install --frozen-lockfile; \
-    elif [ -f package-lock.json ]; then npm ci; \
-    else npm install; \
-    fi
+# Install dependencies
+RUN yarn install --frozen-lockfile
 
 # Stage 2: Build the application
 FROM node:22-alpine AS builder
@@ -21,13 +18,13 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Generate Prisma client
-RUN if npx prisma -v > /dev/null 2>&1; then npx prisma generate; fi
+RUN if [ -f prisma/schema.prisma ]; then npx prisma generate; fi
 
 # Compile translations before building (Lingui)
-RUN if [ -f package.json ] && grep -q "lingui compile" package.json; then npm run compile; fi
+RUN if [ -f package.json ] && grep -q "lingui compile" package.json; then yarn compile; fi
 
 # Build the project (Nitro build)
-RUN npm run build
+RUN yarn build
 
 # Stage 3: Production runner
 FROM node:22-alpine AS runner
