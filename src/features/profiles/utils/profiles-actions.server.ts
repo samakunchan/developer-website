@@ -9,6 +9,7 @@ import {
   techStackSchema,
   socialLinkSchema,
   SocialLinkInput,
+  UserOutput,
 } from './schemas';
 import sharp from 'sharp';
 
@@ -18,7 +19,7 @@ const VALID_FILE_TYPES = ['image/jpeg', 'image/png'];
 /**
  * Fetches the complete profile data for the currently authenticated user.
  */
-export async function getProfileInternal() {
+export async function getProfileInternal(): Promise<UserOutput> {
   const session = await getSessionInternal();
   if (!session) {
     throw new Error('Unauthorized');

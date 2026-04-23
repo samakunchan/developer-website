@@ -1,6 +1,6 @@
 import { createServerFn } from '@tanstack/react-start';
 import { zodValidator } from '@tanstack/zod-adapter';
-import { personalInfoSchema, techStackSchema, socialLinkSchema } from './schemas';
+import { personalInfoSchema, techStackSchema, socialLinkSchema, UserOutput } from './schemas';
 import {
   getProfileInternal,
   updatePersonalInfoInternal,
@@ -15,7 +15,7 @@ import { z } from 'zod';
 /**
  * Server function to fetch the current user's profile.
  */
-export const getProfileAction = createServerFn({ method: 'GET' }).handler(async () => {
+export const getProfileAction = createServerFn({ method: 'GET' }).handler(async (): Promise<UserOutput> => {
   return await getProfileInternal();
 });
 
