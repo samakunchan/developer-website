@@ -1,6 +1,6 @@
 services:
   postgresdb:
-    image: postgres:16-alpine
+    image: pgvector/pgvector:pg16
     container_name: developer-website-db
     restart: always
     env_file:

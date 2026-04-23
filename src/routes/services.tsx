@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate, UseNavigateResult } from '@tanstack/react-router';
+import { createFileRoute, notFound, useNavigate, UseNavigateResult } from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
@@ -14,6 +14,10 @@ import { ServiceData } from '../core/types/service';
 import { PricingTierData } from '../core/types/pricing';
 
 export const Route = createFileRoute('/services')({
+  // Route disabled until the backend is ready
+  beforeLoad() {
+    throw notFound();
+  },
   loader: async ({ context }) => {
     return {
       isConnected: context.session?.user.role === 'admin',

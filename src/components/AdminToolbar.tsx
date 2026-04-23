@@ -5,6 +5,8 @@ import { useNavigate, type UseNavigateResult } from '@tanstack/react-router';
 // import { ImageNetwork } from './ImageNetwork';
 // import { ImageStatic } from './ImageStatic';
 
+import { AdminSearchbar } from './AdminSearchbar';
+
 interface AdminToolbarProps {
   tinyImage: string;
   fullName: string;
@@ -15,14 +17,7 @@ export const AdminToolbar: React.FC<AdminToolbarProps> = ({ tinyImage, fullName 
 
   return (
     <header className="admin-toolbar">
-      <div className="admin-toolbar__search">
-        <span className="material-symbols-outlined admin-toolbar__search-icon">search</span>
-        <input
-          type="text"
-          className="admin-toolbar__search-input"
-          placeholder={t`Search tasks, code, or projects...`}
-        />
-      </div>
+      <AdminSearchbar />
 
       <div className="admin-toolbar__actions">
         <Button name={t`Home`} onClick={() => navigate({ to: '/' })}>

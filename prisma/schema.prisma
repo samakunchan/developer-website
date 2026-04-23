@@ -1,9 +1,11 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
 }
 
 datasource db {
-  provider = "postgresql"
+  provider   = "postgresql"
+  extensions = [vector]
 }
 
 model User {
@@ -216,4 +218,20 @@ enum ProjectStatus {
   published
   unpublished
   archived
+}
+
+model GlobalSearchIndex {
+  id        Int      @id @default(autoincrement())
+  itemId    Int
+  itemType  String
+  content   String
+  category  String?
+  embedding Unsupported("vector(384)")?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([itemId, itemType])
+  @@index([embedding], map: "global_search_embedding_idx")
+  @@map("global_search_indices")
 }

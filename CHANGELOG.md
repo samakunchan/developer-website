@@ -1,5 +1,31 @@
 # CHANGELOG developer-website
 
+## 🚀 0.23.0 - 23/04/2026
+
+### Added
+
+- **Global Search System**:
+  - Implemented an advanced hybrid search system combining semantic vector similarity (pgvector) with keyword matching (ILIKE).
+  - Integrated local vector inference using `Xenova/all-MiniLM-L6-v2` for privacy-first, server-side embedding generation.
+  - Added support for deep indexing of tech stacks for both projects (JSONB arrays) and users (relational tables).
+  - Implemented category-aware search and filtering (e.g., "Project - Web", "User - admin").
+  - Added real-time database triggers for automatic search index synchronization across `projects`, `users`, and `tech_stacks` tables.
+
+### Changed
+
+- **Admin UI**:
+  - Enhanced the `AdminSearchbar` with a premium dark-themed results panel, including sticky headers and category labeling.
+  - Implemented interactive search results with direct navigation to project editors.
+  - Optimized search input with debouncing and click-outside dismissal logic.
+- **Backend Infrastructure**:
+  - Upgraded search utilities to support background embedding regeneration via content change detection.
+  - Refactored server actions to ensure strict environment isolation and RPC security.
+
+### Fixed
+
+- **Search Accuracy**: Resolved issues with partial keyword matches by implementing a hybrid scoring system.
+- **Real-time Sync**: Fixed a synchronization lag where tech stack updates were not immediately reflected in the global search index.
+
 ## 🚀 0.22.0 - 18/04/2026
 
 ### Added

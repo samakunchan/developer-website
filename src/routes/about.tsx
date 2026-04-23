@@ -4,7 +4,7 @@ import { Header } from '../components/Header';
 import { About } from '../components/About';
 import { Footer } from '../components/Footer';
 import '../styles/main.css';
-import { getProfileAction } from '../features/profiles';
+import { getProfileAction, UserOutput } from '../features/profiles';
 
 export const Route = createFileRoute('/about')({
   loader: async ({ context }) => {
@@ -18,7 +18,7 @@ export const Route = createFileRoute('/about')({
 function AboutPage() {
   const { isConnected } = Route.useLoaderData();
 
-  const { data: profile, isLoading } = useQuery({
+  const { data: profile, isLoading }: { data: UserOutput | undefined; isLoading: boolean } = useQuery({
     queryKey: ['profile'],
     queryFn: () => getProfileAction(),
   });
