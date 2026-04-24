@@ -1,8 +1,17 @@
 services:
+  postgresdb:
+    env_file:
+      - docker-prod.env
+    volumes:
+      - postgres_website_data_prod:/var/lib/postgresql/data
+
   website:
     build:
       target: runner
-    volumes: [] # Remove dev volumes
-    command: [] # Use default CMD from Dockerfile
+    env_file:
+      - docker-prod.env
     environment:
       NODE_ENV: production
+
+volumes:
+  postgres_website_data_prod:

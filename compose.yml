@@ -9,6 +9,11 @@ services:
       - '${POSTGRES_PORT_EXTERNAL:-5432}:5432'
     volumes:
       - postgres_dev_website_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   website:
     build: .
@@ -20,8 +25,5 @@ services:
       - '${APP_PORT:-3000}:3000'
     depends_on:
       - postgresdb
-    environment:
-      # hot reload enabled
-      - CHOKIDAR_USEPOLLING=true
 volumes:
   postgres_dev_website_data:
