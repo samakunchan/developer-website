@@ -1,5 +1,26 @@
 # CHANGELOG developer-website
 
+## 🚀 0.24.0 - 26/04/2026
+
+### Added
+
+- **Standalone `pictures` Feature**:
+  - Created an isolated image management architecture for centralized uploading, scaling, and purging.
+  - Introduced multi-tier image payload dimension handling (e.g. `tiny`, `medium`, and `raw` optimizations).
+
+### Changed
+
+- **Modular Delegations**:
+  - Overhauled the `projects` feature to route data through standard `uploadPicture` abstractions.
+  - Refactored the `profiles` backend, migrating offline asset transformations over to dedicated tools.
+- **Proxy & Docker Infrastructure**:
+  - Updated configurations across proxy vectors (`vite.config.ts`, `nginx.conf`) enabling dynamic directory parameters (`/cdn/projects/*`, `/cdn/me/*`).
+  - Optimized continuous Docker runtime parameters for standardized cache isolation.
+
+### Fixed
+
+- Eliminated obsolete legacy module definitions (`sharp`, `path`, `fs`) to maintain strict bundle constraints.
+
 ## 🚀 0.23.0 - 23/04/2026
 
 ### Added

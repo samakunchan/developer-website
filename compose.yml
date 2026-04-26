@@ -5,13 +5,15 @@ services:
     restart: always
     env_file:
       - docker.env
-    environment:
-      # hot reload enabled
-      - CHOKIDAR_USEPOLLING=true
     ports:
-      - '${POSTGRES_PORT:-5432}:5432'
+      - '${POSTGRES_PORT_EXTERNAL:-5432}:5432'
     volumes:
       - postgres_dev_website_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
   website:
     build: .
@@ -19,10 +21,9 @@ services:
     restart: always
     env_file:
       - docker.env
-    ports:
-      - '${APP_PORT:-3000}:3000'
     depends_on:
-      - postgresdb
+      postgresdb:
+        condition: service_healthy
 
 volumes:
   postgres_dev_website_data:

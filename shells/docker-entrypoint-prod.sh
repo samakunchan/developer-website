@@ -1,0 +1,28 @@
+#!/bin/sh
+set -e
+
+echo "🚀 Starting Production Entrypoint..."
+
+# Ensure we are in the app directory
+cd /app
+
+# Construct DATABASE_URL from available environment variables
+# Note: Docker's env_file doesn't support interpolation, so we do it here.
+export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT_INTERNAL}/${POSTGRES_DB}?schema=public"
+
+# Run Prisma schema push
+echo "🔄 Synchronizing database schema..."
+npx prisma db push --accept-data-loss --url "$DATABASE_URL"
+
+# Run Database seeding
+echo "🌱 Seeding database..."
+# We use tsx from node_modules if available, or npx prisma db seed if configured in package.json
+if [ -f "prisma/seed.ts" ]; then
+    npx tsx prisma/seed.ts
+fi
+
+echo "✅ Database initialization complete."
+
+# Start the application
+echo "📡 Starting Nitro server..."
+exec node .output/server/index.mjs
