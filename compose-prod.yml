@@ -1,0 +1,36 @@
+services:
+  postgresdb:
+    image: pgvector/pgvector:pg16
+    container_name: website-db-prod
+    env_file:
+      - docker-prod.env
+    ports:
+      - "5436:5432"
+    volumes:
+      - postgres_website_data_prod:/var/lib/postgresql/data
+
+  website:
+    container_name: website-prod
+    build:
+      target: runner
+    env_file:
+      - docker-prod.env
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./public/shared:/app/public/shared
+
+  nginx:
+    image: nginx:alpine
+    container_name: developer-website-nginx
+    restart: always
+    ports:
+      - '3007:80'
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./public:/usr/share/nginx/html:ro
+    depends_on:
+      - website
+
+volumes:
+  postgres_website_data_prod:

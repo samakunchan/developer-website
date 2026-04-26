@@ -1,0 +1,17 @@
+services:
+  postgresdb:
+    volumes:
+      - postgres_dev_website_data_dev:/var/lib/postgresql/data
+
+  website:
+    build:
+      target: builder
+    ports:
+      - '${APP_PORT:-3000}:3000'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: yarn dev --host 0.0.0.0
+
+volumes:
+  postgres_dev_website_data_dev:

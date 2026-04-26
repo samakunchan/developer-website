@@ -3,6 +3,8 @@ import bcrypt from 'bcryptjs';
 import { z } from 'zod';
 import { Role, ProjectCategory } from '@prisma/client';
 import { db } from '../src/features/database/server/db.server';
+import fs from 'fs';
+import path from 'path';
 
 // Zod schema for data verification as requested
 const UserSchema = z.object({
@@ -31,6 +33,8 @@ async function main() {
     role: process.env.ADMIN_ROLE,
   };
 
+  const APP_URL = process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3000}`;
+
   // Verify data using Zod
   const validatedUser = UserSchema.parse(userData);
 
@@ -52,9 +56,9 @@ async function main() {
       role: validatedUser.role as Role, // Correctly cast to the Role enum from Prisma Client
       image: {
         create: {
-          tiny: '/public/shared/seed/avatar-1-1776090901828-tiny.webp',
-          medium: '/public/shared/seed/avatar-1-1776090901828-medium.webp',
-          raw: '/public/shared/seed/avatar-1-1776090901828-raw.webp',
+          tiny: `${APP_URL}/shared/seed/avatar-1-1776090901828-tiny.webp`,
+          medium: `${APP_URL}/shared/seed/avatar-1-1776090901828-medium.webp`,
+          raw: `${APP_URL}/shared/seed/avatar-1-1776090901828-raw.webp`,
         },
       },
     },
@@ -262,14 +266,53 @@ async function main() {
     },
   ];
 
+  const projectsDir = path.join(process.cwd(), 'public', 'shared', 'projects');
+  if (!fs.existsSync(projectsDir)) {
+    fs.mkdirSync(projectsDir, { recursive: true });
+  }
+
   for (const project of initialProjects) {
-    const { image, ...rest } = project;
+    const { image, slug, ...rest } = project;
+
+    const mediumFilename = `project-${slug}-1776090901828-medium.webp`;
+    const mediumPath = path.join(projectsDir, mediumFilename);
+    if (!fs.existsSync(mediumPath)) {
+      try {
+        const res = await fetch(image.medium.url);
+        const buffer = await res.arrayBuffer();
+        await fs.promises.writeFile(mediumPath, Buffer.from(buffer));
+        console.log(`Downloaded medium image for ${slug}`);
+      } catch (error) {
+        console.error(`Failed to download medium image for ${slug}`, error);
+      }
+    }
+
+    const rawFilename = `project-${slug}-1776090901828-raw.webp`;
+    const rawPath = path.join(projectsDir, rawFilename);
+    if (!fs.existsSync(rawPath)) {
+      try {
+        const res = await fetch(image.raw.url);
+        const buffer = await res.arrayBuffer();
+        await fs.promises.writeFile(rawPath, Buffer.from(buffer));
+        console.log(`Downloaded raw image for ${slug}`);
+      } catch (error) {
+        console.error(`Failed to download raw image for ${slug}`, error);
+      }
+    }
+
+    const mediumUrl = `${APP_URL}/cdn/${mediumFilename}`;
+    const rawUrl = `${APP_URL}/cdn/${rawFilename}`;
+
     await db.project.create({
       data: {
         ...rest,
+        slug,
         userId: user.id,
         image: {
-          create: image,
+          create: {
+            medium: { url: mediumUrl, alt: image.medium.alt },
+            raw: { url: rawUrl, alt: image.raw.alt },
+          },
         },
       },
     });
