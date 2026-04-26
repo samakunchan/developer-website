@@ -7,7 +7,6 @@ import {
   updateProjectInternal,
   deleteProjectInternal,
   toggleProjectFeaturedInternal,
-  uploadProjectImageInternal,
   getProjectByIdInternal,
 } from './projects-actions.server';
 
@@ -52,8 +51,6 @@ export const toggleProjectFeatured = createServerFn({ method: 'POST' })
     return await toggleProjectFeaturedInternal(id);
   });
 
-export const uploadProjectImage = createServerFn({ method: 'POST' })
-  .inputValidator((data: FormData) => data)
-  .handler(async ({ data }) => {
-    return await uploadProjectImageInternal(data);
-  });
+import { uploadPicture } from '../../pictures/utils/pictures-actions.functions';
+
+export const uploadProjectImage = uploadPicture;
