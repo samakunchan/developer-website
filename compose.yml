@@ -21,9 +21,9 @@ services:
     restart: always
     env_file:
       - docker.env
-    ports:
-      - '${APP_PORT:-3000}:3000'
     depends_on:
-      - postgresdb
+      postgresdb:
+        condition: service_healthy
+
 volumes:
   postgres_dev_website_data:

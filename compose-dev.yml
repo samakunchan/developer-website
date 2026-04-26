@@ -6,6 +6,8 @@ services:
   website:
     build:
       target: builder
+    ports:
+      - '${APP_PORT:-3000}:3000'
     volumes:
       - .:/app
       - /app/node_modules

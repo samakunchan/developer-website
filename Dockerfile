@@ -30,14 +30,25 @@ RUN yarn build
 FROM node:22-alpine AS runner
 WORKDIR /app
 
+# Add libc6-compat for Prisma
+RUN apk add --no-cache libc6-compat
+
 ENV NODE_ENV=production
 ENV PORT=3000
 
-# Copy the Nitro build output (.output/ directory)
+# Copy necessary files for database initialization and runtime
+COPY package.json yarn.lock* ./
+COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/src ./src
+COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/.output ./.output
+COPY shells/docker-entrypoint-prod.sh ./entrypoint.sh
+
+# Make entrypoint executable
+RUN chmod +x ./entrypoint.sh
 
 # Expose the application port
 EXPOSE 3000
 
-# Start the Nitro server
-CMD ["node", ".output/server/index.mjs"]
+# Use the entrypoint script
+ENTRYPOINT ["./entrypoint.sh"]
