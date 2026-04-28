@@ -1,74 +1,76 @@
 .admin-toolbar__search {
-    position: relative;
+  position: relative;
 }
 
-.admin-toolbar__search-results{
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--color-header-bg);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    border-radius: 0.375rem;
-    margin-top: 0.5rem;
-    z-index: 50;
-    max-height: 400px;
-    overflow-y: auto;
-    border: 1px solid var(--color-glass-border);
+.admin-toolbar__search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--color-header-bg);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 0.375rem;
+  margin-top: 0.5rem;
+  z-index: 50;
+  max-height: 400px;
+  overflow-y: auto;
+  border: 1px solid var(--color-glass-border);
 }
 
 .admin-toolbar__search-results ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 .admin-toolbar__search-results ul li {
-    border-bottom: 1px solid var(--border-color);
-    cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+  cursor: pointer;
 }
 
 .admin-toolbar__search-results ul li div {
-    padding: 0.75rem;
-    display: flex;
-    flex-direction: column;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .admin-toolbar__search-results ul li:hover {
-    background: var(--color-secondary-btn-hover);
-    color: var(--color-secondary-btn-text-hover);
+  background: var(--color-secondary-btn-hover);
+  color: var(--color-secondary-btn-text-hover);
 }
 
 .admin-toolbar__search-results ul li div span:first-child {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    font-weight: bold;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .admin-toolbar__search-results ul li div span:first-child span:first-child {
-    color: var(--color-primary);
+  color: var(--color-primary);
 }
 .admin-toolbar__search-results ul li div span:first-child span:nth-child(2) {
-    color: var(--color-terminal-function)
+  color: var(--color-terminal-function);
 }
 .admin-toolbar__search-results ul li div span:last-child {
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .admin-toolbar__search-results--empty {
-    padding: '0.75rem';
-    text-align: 'center';
-    color: var(--text-color-secondary);
+  padding: '0.75rem';
+  text-align: 'center';
+  color: var(--text-color-secondary);
 }
 
 .admin-toolbar__search-results--loading {
-    padding: '0.75rem';
-    text-align: 'center';
+  padding: '0.75rem';
+  text-align: 'center';
 }
 
-.admin-toolbar__search-results__item-type{
-    color: var(--color-primary);
+.admin-toolbar__search-results__item-type {
+  color: var(--color-primary);
 }

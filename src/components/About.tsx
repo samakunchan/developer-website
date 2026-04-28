@@ -2,16 +2,16 @@ import React from 'react';
 import { Container } from './Container';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
-import { skillsData, socialLinks } from '../core/data/aboutData';
-import { Skill, SocialLink } from '../core/types/about';
+import { AboutProps, SocialLink, Skill, skillsData, socialLinks } from '../features/profiles';
 
-interface AboutProps {
-  profileImage: string;
-  profileName: string;
-  profileJob: string;
-}
-
-export const About: React.FC<AboutProps> = ({ profileImage, profileName, profileJob }) => {
+export const About: React.FC<AboutProps> = ({
+  profileImage,
+  profileName,
+  profileJob,
+  profileDescription,
+  profileLinks,
+  profileSkills,
+}) => {
   return (
     <section className="about">
       <Container>
@@ -40,11 +40,13 @@ export const About: React.FC<AboutProps> = ({ profileImage, profileName, profile
               </div>
 
               <p className="about__description">
-                <Trans>
-                  I'm a developer based in France with over 8 years of experience building scalable web applications. I
-                  specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on
-                  clean code, performance, and accessibility.
-                </Trans>
+                {profileDescription || (
+                  <Trans>
+                    I'm a developer based in France with over 8 years of experience building scalable web applications.
+                    I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is
+                    on clean code, performance, and accessibility.
+                  </Trans>
+                )}
               </p>
             </div>
 
@@ -53,12 +55,19 @@ export const About: React.FC<AboutProps> = ({ profileImage, profileName, profile
                 <Trans>Technical Proficiency</Trans>
               </h3>
               <div className="about__skills-grid">
-                {skillsData.map((skill: Skill) => (
-                  <div key={skill.name} className="about__skill-card">
-                    <span className="material-symbols-outlined about__skill-icon">{skill.icon}</span>
-                    <span className="about__skill-name">{skill.name}</span>
-                  </div>
-                ))}
+                {profileSkills && profileSkills.length > 0
+                  ? profileSkills.map((skill: Skill) => (
+                      <div key={skill.name} className="about__skill-card">
+                        <span className="material-symbols-outlined about__skill-icon">{skill.icon}</span>
+                        <span className="about__skill-name">{skill.name}</span>
+                      </div>
+                    ))
+                  : skillsData.map((skill: Skill) => (
+                      <div key={skill.name} className="about__skill-card">
+                        <span className="material-symbols-outlined about__skill-icon">{skill.icon}</span>
+                        <span className="about__skill-name">{skill.name}</span>
+                      </div>
+                    ))}
               </div>
             </div>
 
@@ -67,11 +76,17 @@ export const About: React.FC<AboutProps> = ({ profileImage, profileName, profile
                 <Trans>Connect with me</Trans>
               </h3>
               <div className="about__socials">
-                {socialLinks.map((link: SocialLink) => (
-                  <a key={link.name} href={link.href} className="about__social-link" aria-label={link.ariaLabel}>
-                    {link.icon}
-                  </a>
-                ))}
+                {profileLinks && profileLinks.length > 0
+                  ? profileLinks.map((link: SocialLink) => (
+                      <a key={link.name} href={link.href} className="about__social-link" aria-label={link.ariaLabel}>
+                        {link.icon}
+                      </a>
+                    ))
+                  : socialLinks.map((link: SocialLink) => (
+                      <a key={link.name} href={link.href} className="about__social-link" aria-label={link.ariaLabel}>
+                        {link.icon}
+                      </a>
+                    ))}
               </div>
             </div>
           </div>
