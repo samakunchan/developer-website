@@ -33,14 +33,14 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData,
         <div className="admin-profiles__form-grid">
           <div className="admin-profiles__form-group">
             <label htmlFor="fullName" className="admin-profiles__form-label">
-              Full Name
+              Nom complet
             </label>
             <input id="fullName" {...register('fullName')} type="text" className="admin-profiles__form-input" />
             {errors.fullName && <span className="text-error text-xs">{errors.fullName.message}</span>}
           </div>
           <div className="admin-profiles__form-group">
             <label htmlFor="professionalTitle" className="admin-profiles__form-label">
-              Professional Title
+              Titre professionnel
             </label>
             <input
               id="professionalTitle"
@@ -57,7 +57,7 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData,
           </div>
           <div className="admin-profiles__form-group">
             <label htmlFor="email" className="admin-profiles__form-label">
-              Email Address
+              Adresse email
             </label>
             <p id="email" className="email">
               {initialData?.email || '—'}
@@ -65,7 +65,7 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData,
           </div>
           <div className="admin-profiles__form-group">
             <label htmlFor="experience" className="admin-profiles__form-label">
-              Experience (Years)
+              Expérience (Années)
             </label>
             <input
               id="experience"
@@ -76,7 +76,7 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData,
           </div>
           <div className="admin-profiles__form-group">
             <label htmlFor="focus" className="admin-profiles__form-label">
-              Current Focus
+              Domaine d'expertise actuel
             </label>
             <select id="focus" className="admin-profiles__form-select" {...register('focus')}>
               <option value="Edge Computing">Edge Computing</option>
@@ -86,7 +86,7 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData,
           </div>
           <div className="admin-profiles__form-group">
             <label htmlFor="languages" className="admin-profiles__form-label">
-              Languages
+              Langues
             </label>
             <input id="languages" {...register('languages')} type="text" className="admin-profiles__form-input" />
           </div>
@@ -94,7 +94,7 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData,
 
         <div className="admin-profiles__form-actions">
           <Button type="submit" className="btn btn--primary" disabled={isSaving}>
-            {isSaving ? 'Saving...' : 'Save Personal Info'}
+            {isSaving ? 'Enregistrement en cours...' : 'Enregistrer les informations'}
           </Button>
         </div>
       </form>

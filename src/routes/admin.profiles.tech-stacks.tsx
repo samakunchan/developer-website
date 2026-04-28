@@ -56,13 +56,13 @@ function TechStacksComponent() {
       <div className="admin-profiles">
         <header className="admin-profiles__header">
           <div>
-            <span className="admin-profiles__header-label">Account Customization</span>
-            <h1 className="admin-profiles__header-title">Technical Stacks</h1>
+            <span className="admin-profiles__header-label">Personnalisation du compte</span>
+            <h1 className="admin-profiles__header-title">Outils et technologies</h1>
           </div>
         </header>
         <div className="admin-profiles__loading">
           <span className="material-symbols-outlined spin">sync</span>
-          <p>Loading profile data...</p>
+          <p>Chargement des données du profil...</p>
         </div>
       </div>
     );
@@ -80,8 +80,8 @@ function TechStacksComponent() {
     <div className="admin-profiles__padding-bottom-large">
       <header className="admin-profiles__header">
         <div>
-          <span className="admin-profiles__header-label">Account Customization</span>
-          <h1 className="admin-profiles__header-title">Technical Stacks</h1>
+          <span className="admin-profiles__header-label">Personnalisation du compte</span>
+          <h1 className="admin-profiles__header-title">Outils et technologies</h1>
         </div>
       </header>
 

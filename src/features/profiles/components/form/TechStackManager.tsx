@@ -51,12 +51,12 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({
       {/* Add New Tech Form */}
       <section className="card card--light">
         <div className="card__header tech-stack-manager__header">
-          <h3 className="card__title">Add New Technology</h3>
+          <h3 className="card__title">Ajouter une nouvelle technologie</h3>
         </div>
 
         <form onSubmit={handleAdd} className="admin-profiles__form-grid admin-profiles__card-item-spacing">
           <div className="admin-profiles__form-group">
-            <label className="admin-profiles__form-label">Tech Name</label>
+            <label className="admin-profiles__form-label">Nom de la technologie</label>
             <input
               type="text"
               value={newName}
@@ -67,7 +67,7 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({
             />
           </div>
           <div className="admin-profiles__form-group">
-            <label className="admin-profiles__form-label">Category</label>
+            <label className="admin-profiles__form-label">Catégorie</label>
             <select
               value={newCategory}
               onChange={(e) => setNewCategory(e.target.value as CategoryStackType)}
@@ -82,7 +82,7 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({
           </div>
           <div className="admin-profiles__form-grid-full admin-profiles__form-actions">
             <button type="submit" className="btn btn--primary" disabled={!newName.trim() || isAdding}>
-              {isAdding ? 'Adding...' : 'Confirm Addition'}
+              {isAdding ? 'Ajout...' : 'Ajouter'}
             </button>
           </div>
         </form>
@@ -99,7 +99,7 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({
               <span className="card__subtitle card__subtitle--primary">{cat.label}</span>
             </div>
             <div className="admin-profiles__stack-list tech-stack-manager__list">
-              {getStacksByCategory(cat.value).map((tech) => (
+              {getStacksByCategory(cat.value).map((tech: TechStackItem) => (
                 <span key={tech.id} className="admin-profiles__stack-item">
                   {tech.name}
                   <span
@@ -107,14 +107,14 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({
                       removingId === tech.id ? 'admin-profiles__stack-remove--removing' : ''
                     }`}
                     onClick={() => !removingId && onRemove(tech.id)}
-                    title="Remove"
+                    title="Supprimer"
                   >
                     {removingId === tech.id ? 'sync' : 'close'}
                   </span>
                 </span>
               ))}
               {getStacksByCategory(cat.value).length === 0 && (
-                <span className="text-xs text-slate-400 italic">No items yet</span>
+                <span className="text-xs text-slate-400 italic">Aucun item</span>
               )}
             </div>
           </div>

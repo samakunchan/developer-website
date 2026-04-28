@@ -26,13 +26,13 @@ function ProfilesComponent() {
       <div className="admin-profiles">
         <header className="admin-profiles__header">
           <div>
-            <span className="admin-profiles__header-label">Profile Overview</span>
-            <h1 className="admin-profiles__header-title">Loading...</h1>
+            <span className="admin-profiles__header-label">Aperçu du profil</span>
+            <h1 className="admin-profiles__header-title">Chargement...</h1>
           </div>
         </header>
         <div className="admin-profiles__loading">
           <span className="material-symbols-outlined spin">sync</span>
-          <p>Loading profile data...</p>
+          <p>Chargement des données du profil...</p>
         </div>
       </div>
     );
@@ -42,7 +42,7 @@ function ProfilesComponent() {
     <div className="admin-profiles">
       <header className="admin-profiles__header">
         <div>
-          <span className="admin-profiles__header-label">Profile Overview</span>
+          <span className="admin-profiles__header-label">Aperçu du profil</span>
           <h1 className="admin-profiles__header-title">{profile.name}</h1>
         </div>
       </header>

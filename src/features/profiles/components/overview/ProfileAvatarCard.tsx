@@ -12,7 +12,7 @@ export const ProfileAvatarCard: React.FC<ProfileAvatarCardProps> = ({
   name,
   title,
   image,
-  location = 'Remote / Worldwide',
+  location = 'À distance / Dans le monde entier',
   isAvailable = true,
 }) => {
   return (
@@ -36,7 +36,7 @@ export const ProfileAvatarCard: React.FC<ProfileAvatarCardProps> = ({
         {isAvailable && (
           <div className="avatar-card__meta-item avatar-card__status">
             <span className="material-symbols-outlined card__icon-sm">verified</span>
-            Available for Hire
+            Disponible pour l'embauche
           </div>
         )}
       </div>
