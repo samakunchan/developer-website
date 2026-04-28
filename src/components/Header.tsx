@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from './Button';
-import { Link } from '@tanstack/react-router';
+import { Link, UseNavigateResult, useNavigate } from '@tanstack/react-router';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
 
 export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = false }) => {
+  const navigate: UseNavigateResult<string> = useNavigate();
   return (
     <header className="header" role="banner">
       <div className="header__inner">
@@ -54,16 +55,15 @@ export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = fals
 
         <div className="header__actions">
           {isConnected && (
-            <Link
-              to="/admin/dashboard"
-              className="header__nav-link"
-              activeProps={{ className: 'header__nav-link--active' }}
-              viewTransition
+            <Button
+              className="btn btn--secondary  hero__btn"
+              name={t`Admin Dashboard`}
+              onClick={() => navigate({ to: '/admin/dashboard' })}
             >
-              <Trans>Admin Dashboard</Trans>
-            </Link>
+              <span className="material-symbols-outlined">admin_panel_settings</span>
+            </Button>
           )}
-          {!isConnected && (
+          {/* {!isConnected && (
             <Link
               to="/login"
               className="header__nav-link"
@@ -72,7 +72,7 @@ export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = fals
             >
               <Trans>Login</Trans>
             </Link>
-          )}
+          )} */}
 
           <Button variant="primary" aria-label={t`Contact me`}>
             <Trans>Contact</Trans>
