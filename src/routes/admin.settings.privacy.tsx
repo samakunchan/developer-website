@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { RichTextEditor, getPrivacyPolicy, savePrivacyPolicy } from '../features/rich-text';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
 
 export const Route = createFileRoute('/admin/settings/privacy')({
   component: PrivacyComponent,
@@ -32,13 +34,15 @@ function PrivacyComponent() {
   return (
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
-        <h1>Privacy Policy</h1>
+        <h1>
+          <Trans>Privacy Policy</Trans>
+        </h1>
         <p className="admin-profiles__header-desc">
-          Manage your website's privacy policy and data collection disclosures.
+          Gérer la politique de confidentialité de votre site et la collecte des données.
         </p>
 
         <RichTextEditor
-          title={data?.title || 'Privacy Policy'}
+          title={data?.title || t`Privacy Policy`}
           initialContent={data?.content as string}
           onSave={handleSave}
           isSaving={saveMutation.isPending}

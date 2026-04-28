@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { RichTextEditor, getLegalMentions, saveLegalMentions } from '../features/rich-text';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
 
 export const Route = createFileRoute('/admin/settings/legal-mentions')({
   component: LegalMentionsComponent,
@@ -32,13 +34,15 @@ function LegalMentionsComponent() {
   return (
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
-        <h1>Legal Mentions</h1>
+        <h1>
+          <Trans>Mentions légales</Trans>
+        </h1>
         <p className="admin-profiles__header-desc">
-          Manage your website's legal information and data protection notice.
+          Gérer les informations légales de votre site Web et l'avis de protection des données.
         </p>
 
         <RichTextEditor
-          title={data?.title || 'Legal Mentions'}
+          title={data?.title || t`Legal Mentions`}
           initialContent={data?.content as string}
           onSave={handleSave}
           isSaving={saveMutation.isPending}

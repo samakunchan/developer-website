@@ -4,6 +4,7 @@ import { Trans } from '@lingui/react/macro';
 import { useServerFn } from '@tanstack/react-start';
 import { signOutAction } from '../features/auth/utils/auth-actions.functions';
 import { Button } from './Button';
+import packageJson from '../../package.json';
 
 export const AdminSidebarPrimary: React.FC = () => {
   const signOut = useServerFn(signOutAction);
@@ -29,9 +30,11 @@ export const AdminSidebarPrimary: React.FC = () => {
       <div className="admin-sidebar__header">
         <Link to="/admin/dashboard" className="admin-sidebar__logo-container">
           <span className="material-symbols-outlined admin-sidebar__logo-icon">terminal</span>
-          <h1 className="admin-sidebar__logo-text">DevSuite</h1>
+          <h1 className="admin-sidebar__logo-text">PapangueSoft</h1>
         </Link>
-        <p className="admin-sidebar__version">V 1.0.4</p>
+        <p className="admin-sidebar__version">
+          V {packageJson.version} {import.meta.env.MODE === 'production' ? '' : '- Dev'}
+        </p>
       </div>
 
       <nav className="admin-sidebar__nav">
@@ -95,7 +98,7 @@ export const AdminSidebarPrimary: React.FC = () => {
       <div className="admin-sidebar__footer">
         <div>
           <Button className="admin-sidebar__cta" onClick={handleLogout}>
-            Logout
+            <Trans>Logout</Trans>
           </Button>
         </div>
       </div>

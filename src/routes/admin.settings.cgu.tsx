@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { RichTextEditor, getCGU, saveCGU } from '../features/rich-text';
+import { Trans } from '@lingui/react/macro';
 
 export const Route = createFileRoute('/admin/settings/cgu')({
   component: CGUComponent,
@@ -32,10 +33,10 @@ function CGUComponent() {
   return (
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
-        <h1>CGU</h1>
-        <p className="admin-profiles__header-desc">
-          Manage your website's Terms and Conditions (Conditions Générales d'Utilisation).
-        </p>
+        <h1>
+          <Trans>CGU</Trans>
+        </h1>
+        <p className="admin-profiles__header-desc">Gérer les conditions générales d'utilisation (CGU).</p>
 
         <RichTextEditor
           title={data?.title || 'CGU'}

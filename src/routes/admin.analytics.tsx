@@ -9,10 +9,10 @@ function AnalyticsComponent() {
   return (
     <Container>
       <section className="admin-page">
-        <h1>Admin Analytics</h1>
-        <p>Detailed performance metrics and user engagement data.</p>
+        <h1>Statistiques</h1>
+        <p>Données de performance détaillées et données d'engagement utilisateur.</p>
         <div className="admin-page__placeholder">
-          <p>Analytics visualization coming soon...</p>
+          <p>Les visualisations statistiques seront bientôt disponibles...</p>
         </div>
       </section>
     </Container>

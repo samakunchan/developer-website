@@ -1,6 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { RichTextEditor, getCookiePolicy, saveCookiePolicy } from '../features/rich-text';
+import { Trans } from '@lingui/react/macro';
+import { t } from '@lingui/core/macro';
 
 export const Route = createFileRoute('/admin/settings/cookie-policy')({
   component: CookiePolicyComponent,
@@ -32,11 +34,15 @@ function CookiePolicyComponent() {
   return (
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
-        <h1>Cookie Policy</h1>
-        <p className="admin-profiles__header-desc">Manage your website's cookie usage and tracking policies.</p>
+        <h1>
+          <Trans>Cookie Policy</Trans>
+        </h1>
+        <p className="admin-profiles__header-desc">
+          Gérer l'utilisation des cookies et les politiques de suivi de votre site Web.
+        </p>
 
         <RichTextEditor
-          title={data?.title || 'Cookie Policy'}
+          title={data?.title || t`Cookie Policy`}
           initialContent={data?.content as string}
           onSave={handleSave}
           isSaving={saveMutation.isPending}
