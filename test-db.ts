@@ -1,4 +1,4 @@
-import { db } from './src/features/database';
+import { db } from './src/features/database/server/db.server';
 
 async function test() {
   console.log('Connecting to DB...');

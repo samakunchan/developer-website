@@ -1,6 +1,26 @@
 # CHANGELOG developer-website
 
+## 🚀 0.25.0 - 28/04/2026
+
+### Added
+
+- **Session Revocation Architecture**:
+  - Implemented the Stateful Hybrid Session Revocation strategy to prevent unauthorized reuse of compromised tokens.
+  - Added a nullable `currentSessionId` field to the Prisma `User` model.
+  - Extended `PayloadSessionType` in `schemas.ts` to enforce continuous UUID tracking.
+
+### Changed
+
+- **Authentication Logic**:
+  - Configured `signInInternal` to securely map distinct lifecycle identifiers.
+  - Hardened token verification parameters.
+  - Refactored data transfer objects leveraging `UserInputDto` protocols.
+
 ## 🚀 0.24.0 - 26/04/2026
+
+### Fixed
+
+- No fixes.
 
 ### Added
 

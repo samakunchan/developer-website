@@ -15,3 +15,13 @@ export type SessionType = {
 };
 
 export type SignInInput = z.infer<typeof signInSchema>;
+
+export type PayloadSessionType = {
+  sub: string;
+  email: string;
+  role: string;
+  name: string | null;
+  sessionId: string;
+} | null;
+
+export type UserInputDto = { id: number; email: string; role: string; name: string | null };
