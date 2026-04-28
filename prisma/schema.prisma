@@ -21,6 +21,7 @@ model User {
   updatedAt           DateTime  @updatedAt
   failedLoginAttempts Int       @default(0)
   lockoutUntil        DateTime?
+  currentSessionId    String?
 
   // Relations
   image        ProfileImage?
