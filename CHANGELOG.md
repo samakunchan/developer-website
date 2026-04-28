@@ -16,11 +16,11 @@
   - Hardened token verification parameters.
   - Refactored data transfer objects leveraging `UserInputDto` protocols.
 
-## 🚀 0.24.0 - 26/04/2026
-
 ### Fixed
 
 - No fixes.
+
+## 🚀 0.24.0 - 26/04/2026
 
 ### Added
 
