@@ -5,7 +5,7 @@ services:
     env_file:
       - docker-prod.env
     ports:
-      - "5436:5432"
+      - '5436:5432'
     volumes:
       - postgres_website_data_prod:/var/lib/postgresql/data
 

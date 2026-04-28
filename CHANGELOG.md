@@ -1,5 +1,27 @@
 # CHANGELOG developer-website
 
+## 🚀 0.27.0 - 29/04/2026
+
+### Added
+
+- No new features.
+
+### Changed
+
+- **Page About**:
+  - Display user profile data.
+  - Display user tech stacks.
+  - Display user social links.
+- **Data & Source Management**:
+  - Migrated project and about data to a new source management utility.
+  - Updated configurations across environment compose files.
+- **Locale Optimization**:
+  - Enhanced readability of locale message files by standardizing whitespace and indentation formatting.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.26.0 - 28/04/2026
 
 ### Added
