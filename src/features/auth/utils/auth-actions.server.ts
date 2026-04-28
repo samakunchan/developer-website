@@ -1,8 +1,9 @@
 import { setCookie, getCookie, deleteCookie } from '@tanstack/react-start/server';
 import bcrypt from 'bcryptjs';
 import * as jose from 'jose';
+import crypto from 'node:crypto';
 import { db } from '../../database/server/db.server';
-import { SessionType, SignInInput } from './schemas';
+import { PayloadSessionType, SessionType, SignInInput, UserInputDto } from './schemas';
 
 const SESSION_COOKIE_NAME = 'auth_session';
 const MAX_FAILED_ATTEMPTS = 5;
@@ -24,7 +25,7 @@ const JWT_SECRET = new TextEncoder().encode(
 async function verifySession(token: string) {
   try {
     const { payload } = await jose.jwtVerify(token, JWT_SECRET);
-    return payload as { sub: string; email: string; role: string; name: string | null };
+    return payload as PayloadSessionType;
   } catch {
     return null;
   }
@@ -33,12 +34,13 @@ async function verifySession(token: string) {
 /**
  * Creates a signed JWT token.
  */
-async function createSession(user: { id: number; email: string; role: string; name: string | null }) {
+async function createSession(user: UserInputDto, sessionId: string) {
   return await new jose.SignJWT({
     sub: String(user.id),
     email: user.email,
     role: user.role,
     name: user.name,
+    sessionId,
   })
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
@@ -56,22 +58,22 @@ export async function getSessionInternal(): Promise<SessionType | null> {
     return null;
   }
 
-  const payload = await verifySession(token);
-  if (!payload) {
+  const payload: PayloadSessionType = await verifySession(token);
+  if (!payload || !payload.sessionId) {
     return null;
   }
 
-  const userId = parseInt(payload.sub, 10);
+  const userId: number = parseInt(payload.sub, 10);
   if (isNaN(userId)) {
     return null;
   }
 
   const user = await db.user.findUnique({
     where: { id: userId },
-    select: { id: true, email: true, name: true, role: true },
+    select: { id: true, email: true, name: true, role: true, currentSessionId: true },
   });
 
-  if (!user) {
+  if (!user || user.currentSessionId !== payload.sessionId) {
     return null;
   }
 
@@ -117,23 +119,26 @@ export async function signInInternal(data: SignInInput): Promise<{ success: bool
     throw new Error('Invalid email or password');
   }
 
-  // Success: Clear attempts
-  if (user.failedLoginAttempts > 0 || user.lockoutUntil) {
-    await db.user.update({
-      where: { id: user.id },
-      data: {
-        failedLoginAttempts: 0,
-        lockoutUntil: null,
-      },
-    });
-  }
+  const sessionId = crypto.randomUUID();
 
-  const token: string = await createSession({
-    id: user.id,
-    email: user.email,
-    role: user.role,
-    name: user.name,
+  await db.user.update({
+    where: { id: user.id },
+    data: {
+      failedLoginAttempts: 0,
+      lockoutUntil: null,
+      currentSessionId: sessionId,
+    },
   });
+
+  const token: string = await createSession(
+    {
+      id: user.id,
+      email: user.email,
+      role: user.role,
+      name: user.name,
+    },
+    sessionId,
+  );
 
   setCookie(SESSION_COOKIE_NAME, token, {
     httpOnly: true,
@@ -150,6 +155,13 @@ export async function signInInternal(data: SignInInput): Promise<{ success: bool
  * Handles the sign-out logic on the server.
  */
 export async function signOutInternal(): Promise<{ success: boolean }> {
+  const session = await getSessionInternal();
+  if (session?.user) {
+    await db.user.update({
+      where: { id: session.user.id },
+      data: { currentSessionId: null },
+    });
+  }
   deleteCookie(SESSION_COOKIE_NAME);
   return { success: true };
 }
