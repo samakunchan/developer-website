@@ -1,5 +1,26 @@
 # CHANGELOG developer-website
 
+## 🚀 0.26.0 - 28/04/2026
+
+### Added
+
+- **Dynamic Versioning**:
+  - Integrated dynamic version retrieval from `package.json` into the admin sidebar.
+  - Added environment mode detection (Dev/Production) to the version display.
+
+### Changed
+
+- **Internationalization & Localization**:
+  - Completed missing translations across all supported locales (`fr-FR`, `es-ES`, `zh-CN`, `ar-SA`).
+  - Refactored `AdminSidebarPrimary`, `admin.settings`, and `admin.profiles` routes to utilize Lingui macros (`<Trans>`, `t`) for comprehensive coverage.
+- **Admin Navigation UX**:
+  - Migrated the "Admin Dashboard" navigation from a standard link to a styled action button in the main `Header`.
+  - Streamlined public visibility by hiding legacy login paths from primary header actions.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.25.0 - 28/04/2026
 
 ### Added
