@@ -37,8 +37,8 @@ function ProfilesComponent() {
       <div className="admin-profiles">
         <header className="admin-profiles__header">
           <div>
-            <span className="admin-profiles__header-label">Account Customization</span>
-            <h1 className="admin-profiles__header-title">Personal Info</h1>
+            <span className="admin-profiles__header-label">Personnalisation du compte</span>
+            <h1 className="admin-profiles__header-title">Informations personnelles</h1>
           </div>
         </header>
         <div className="admin-profiles__loading">
@@ -58,8 +58,8 @@ function ProfilesComponent() {
       <div className="admin-profiles__padding-bottom-large">
         <header className="admin-profiles__header">
           <div>
-            <span className="admin-profiles__header-label">Account Customization</span>
-            <h1 className="admin-profiles__header-title">Personal Info</h1>
+            <span className="admin-profiles__header-label">Personnalisation du compte</span>
+            <h1 className="admin-profiles__header-title">Informations personnelles</h1>
           </div>
         </header>
 

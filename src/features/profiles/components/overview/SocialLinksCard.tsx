@@ -16,7 +16,7 @@ const PLATFORM_ICONS: Record<string, string> = {
 export const SocialLinksCard: React.FC<SocialLinksCardProps> = ({ links }) => {
   return (
     <div className="card card--glass">
-      <h4 className="card__title">Presence & Connectivity</h4>
+      <h4 className="card__title">Présence & Connectivité</h4>
       <div className="social-list">
         {links.map((link: SocialLinkItem) => (
           <a key={link.id} href={link.url} className="social-item" target="_blank" rel="noopener noreferrer">
@@ -29,7 +29,7 @@ export const SocialLinksCard: React.FC<SocialLinksCardProps> = ({ links }) => {
             <span className="material-symbols-outlined social-item__arrow">open_in_new</span>
           </a>
         ))}
-        {links.length === 0 && <p className="admin-profiles__empty-state-text">No social links connected.</p>}
+        {links.length === 0 && <p className="admin-profiles__empty-state-text">Aucun lien social connecté.</p>}
       </div>
     </div>
   );

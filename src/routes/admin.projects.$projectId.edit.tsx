@@ -45,7 +45,7 @@ function EditProjectComponent() {
     <div className="admin-projects">
       <header className="admin-profiles__header">
         <div>
-          <span className="admin-profiles__header-label">Portfolio Management</span>
+          <span className="admin-profiles__header-label">Gestion des projets</span>
           <h1 className="admin-profiles__header-title">{t`Edit Project`}</h1>
         </div>
         <button className="btn btn--outline" onClick={handleCancel}>

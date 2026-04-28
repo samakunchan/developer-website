@@ -68,12 +68,12 @@ export const SocialLinksManager: React.FC<SocialLinksManagerProps> = ({
       {/* Add New Link Card */}
       <section className="card card--light">
         <div className="card__header">
-          <h3 className="card__title">Add Professional Link</h3>
+          <h3 className="card__title">Ajouter un lien professionnel</h3>
         </div>
 
         <form onSubmit={handleSubmit} className="admin-profiles__form-grid admin-profiles__card-item-spacing">
           <div className="admin-profiles__form-group">
-            <label className="admin-profiles__form-label">Link Label</label>
+            <label className="admin-profiles__form-label">Nom du lien</label>
             <input
               type="text"
               name="name"
@@ -86,7 +86,7 @@ export const SocialLinksManager: React.FC<SocialLinksManagerProps> = ({
           </div>
 
           <div className="admin-profiles__form-group">
-            <label className="admin-profiles__form-label">Platform Type</label>
+            <label className="admin-profiles__form-label">Type de plateforme</label>
             <select
               name="type"
               value={formData.type}
@@ -154,7 +154,7 @@ export const SocialLinksManager: React.FC<SocialLinksManagerProps> = ({
         {links.length === 0 && (
           <div className="admin-profiles__form-grid-full admin-profiles__empty-state">
             <span className="material-symbols-outlined social-manager__empty-icon">contact_support</span>
-            <p className="social-manager__empty-text">No social links added yet.</p>
+            <p className="social-manager__empty-text">Aucun lien social ajouté.</p>
           </div>
         )}
       </div>

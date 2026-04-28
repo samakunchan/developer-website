@@ -11,12 +11,12 @@ export const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = ({ email,
   return (
     <div className="card card--glass">
       <h4 className="card__title">
-        Personal Details
+        Détails personnels
         <span className="material-symbols-outlined text-primary text-xl">info</span>
       </h4>
       <div className="card__list">
         <div>
-          <span className="card__subtitle card__subtitle--dense">Email Address</span>
+          <span className="card__subtitle card__subtitle--dense">Adresse email</span>
           <p className="card__list-item card__list-item--bold">{email}</p>
         </div>
         <div>
@@ -26,11 +26,11 @@ export const PersonalDetailsCard: React.FC<PersonalDetailsCardProps> = ({ email,
           </p>
         </div>
         <div>
-          <span className="card__subtitle card__subtitle--dense">Current Focus</span>
+          <span className="card__subtitle card__subtitle--dense">Focus actuel</span>
           <p className="card__list-item card__list-item--bold">{focus || '—'}</p>
         </div>
         <div>
-          <span className="card__subtitle card__subtitle--dense">Languages</span>
+          <span className="card__subtitle card__subtitle--dense">Langues</span>
           <p className="card__list-item card__list-item--bold">{languages || '—'}</p>
         </div>
       </div>

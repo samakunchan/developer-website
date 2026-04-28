@@ -1,6 +1,7 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
 import { setThemeAction, ThemeType } from '../features/theme';
+import { Trans } from '@lingui/react/macro';
 
 export const Route = createFileRoute('/admin/settings/themes')({
   component: ThemesComponent,
@@ -35,8 +36,12 @@ function ThemesComponent() {
   return (
     <div className="admin-page--with-sidebar">
       <div className="admin-page__content">
-        <h1>Theme Settings</h1>
-        <p>Choose your preferred interface theme. Your selection will be persisted across sessions.</p>
+        <h1>
+          <Trans>Themes</Trans>
+        </h1>
+        <p className="admin-profiles__header-desc">
+          Choisissez le thème d'interface que vous préférez. Votre sélection sera conservée.
+        </p>
 
         <div className="theme-selector">
           {themes.map((t) => (

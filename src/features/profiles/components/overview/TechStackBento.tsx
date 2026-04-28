@@ -44,7 +44,7 @@ export const TechStackBento: React.FC<TechStackBentoProps> = ({ stacks }) => {
               </span>
             ))}
             {getStacksByCategory(cat.value).length === 0 && (
-              <span className="text-xs text-slate-400 italic">No skills added</span>
+              <span className="text-xs text-slate-400 italic">Aucune compétence ajoutée</span>
             )}
           </div>
         </div>

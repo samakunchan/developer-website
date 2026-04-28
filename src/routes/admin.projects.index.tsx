@@ -58,7 +58,7 @@ function ProjectsListComponent() {
     <div className="admin-projects">
       <header className="admin-profiles__header">
         <div>
-          <span className="admin-profiles__header-label">Portfolio Management</span>
+          <span className="admin-profiles__header-label">Gestion des projets</span>
           <h1 className="admin-profiles__header-title">Projects</h1>
         </div>
         <Link to="/admin/projects/new" className="btn btn--primary">
@@ -76,7 +76,7 @@ function ProjectsListComponent() {
             </p>
           </div>
         ) : (
-          projects.map((project) => (
+          projects.map((project: ProjectType) => (
             <ProjectAdminCard
               key={project.id}
               project={project}

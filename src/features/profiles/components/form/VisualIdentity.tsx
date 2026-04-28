@@ -53,10 +53,10 @@ export const VisualIdentity: React.FC<VisualIdentityProps> = ({ avatar, onAvatar
   return (
     <section className="card card--auto card--light">
       <h3 className="admin-profiles__card-title card__title">
-        <span className="material-symbols-outlined">image</span> Visual Identity
+        <span className="material-symbols-outlined">image</span> Identité Visuelle
       </h3>
       <div className="visual-identity__content">
-        <div className={`visual-identity__avatar-wrapper ${isUploading ? 'uploading' : ''}`}>
+        <div className={`visual-identity__avatar-wrapper ${isUploading ? 'chargement...' : ''}`}>
           <img
             src={
               avatar ||
@@ -68,7 +68,7 @@ export const VisualIdentity: React.FC<VisualIdentityProps> = ({ avatar, onAvatar
           {isUploading && <div className="visual-identity__spinner" />}
         </div>
         <div>
-          <p className="visual-identity__hint">JPG or PNG. Max size 2MB. Recommended 400x400px.</p>
+          <p className="visual-identity__hint">JPG ou PNG. Taille max 2MB. Recommandé 400x400px.</p>
           <input
             type="file"
             ref={fileInputRef}
