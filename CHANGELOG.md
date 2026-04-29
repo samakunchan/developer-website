@@ -1,5 +1,24 @@
 # CHANGELOG developer-website
 
+## 🚀 0.28.0 - 29/04/2026
+
+### Added
+
+- **Legal Documents & Visitor Routes**:
+  - Created public routes for `visitor.cgu`, `visitor.privacy-policy`, `visitor.cookie-policy`, and `visitor.legal-mentions`.
+  - Integrated data fetching from the database to dynamically display these policies.
+- **Admin Management**:
+  - Added administrative interfaces for updating legal documents.
+
+### Changed
+
+- **Footer Navigation**:
+  - Updated the global `Footer` component to include accessible links to all visitor legal routes.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.27.0 - 29/04/2026
 
 ### Added
