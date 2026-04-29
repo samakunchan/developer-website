@@ -4,3 +4,15 @@
   margin-inline: auto;
   padding-inline: var(--spacing-lg);
 }
+
+@media (max-width: 834px) {
+  .container {
+    padding-inline: var(--spacing-md);
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    padding-inline: var(--spacing-sm);
+  }
+}

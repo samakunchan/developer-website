@@ -15,6 +15,10 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as VisitorPrivacyPolicyRouteImport } from './routes/visitor.privacy-policy'
+import { Route as VisitorLegalMentionsRouteImport } from './routes/visitor.legal-mentions'
+import { Route as VisitorCookiePolicyRouteImport } from './routes/visitor.cookie-policy'
+import { Route as VisitorCguRouteImport } from './routes/visitor.cgu'
 import { Route as ProjectsSlugRouteImport } from './routes/projects_.$slug'
 import { Route as ApiOptimizeImageRouteImport } from './routes/api.optimize-image'
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
@@ -24,7 +28,7 @@ import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminAnalyticsRouteImport } from './routes/admin.analytics'
 import { Route as AdminProjectsIndexRouteImport } from './routes/admin.projects.index'
 import { Route as AdminSettingsThemesRouteImport } from './routes/admin.settings.themes'
-import { Route as AdminSettingsPrivacyRouteImport } from './routes/admin.settings.privacy'
+import { Route as AdminSettingsPrivacyPolicyRouteImport } from './routes/admin.settings.privacy-policy'
 import { Route as AdminSettingsLegalMentionsRouteImport } from './routes/admin.settings.legal-mentions'
 import { Route as AdminSettingsCookiePolicyRouteImport } from './routes/admin.settings.cookie-policy'
 import { Route as AdminSettingsCguRouteImport } from './routes/admin.settings.cgu'
@@ -63,6 +67,26 @@ const AboutRoute = AboutRouteImport.update({
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisitorPrivacyPolicyRoute = VisitorPrivacyPolicyRouteImport.update({
+  id: '/visitor/privacy-policy',
+  path: '/visitor/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisitorLegalMentionsRoute = VisitorLegalMentionsRouteImport.update({
+  id: '/visitor/legal-mentions',
+  path: '/visitor/legal-mentions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisitorCookiePolicyRoute = VisitorCookiePolicyRouteImport.update({
+  id: '/visitor/cookie-policy',
+  path: '/visitor/cookie-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VisitorCguRoute = VisitorCguRouteImport.update({
+  id: '/visitor/cgu',
+  path: '/visitor/cgu',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
@@ -110,11 +134,12 @@ const AdminSettingsThemesRoute = AdminSettingsThemesRouteImport.update({
   path: '/themes',
   getParentRoute: () => AdminSettingsRoute,
 } as any)
-const AdminSettingsPrivacyRoute = AdminSettingsPrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
-  getParentRoute: () => AdminSettingsRoute,
-} as any)
+const AdminSettingsPrivacyPolicyRoute =
+  AdminSettingsPrivacyPolicyRouteImport.update({
+    id: '/privacy-policy',
+    path: '/privacy-policy',
+    getParentRoute: () => AdminSettingsRoute,
+  } as any)
 const AdminSettingsLegalMentionsRoute =
   AdminSettingsLegalMentionsRouteImport.update({
     id: '/legal-mentions',
@@ -180,6 +205,10 @@ export interface FileRoutesByFullPath {
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/visitor/cgu': typeof VisitorCguRoute
+  '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute
+  '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute
+  '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute
   '/admin/profiles/overview': typeof AdminProfilesOverviewRoute
   '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute
   '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute
@@ -188,7 +217,7 @@ export interface FileRoutesByFullPath {
   '/admin/settings/cgu': typeof AdminSettingsCguRoute
   '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
   '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
-  '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
+  '/admin/settings/privacy-policy': typeof AdminSettingsPrivacyPolicyRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
   '/admin/projects/': typeof AdminProjectsIndexRoute
   '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute
@@ -206,6 +235,10 @@ export interface FileRoutesByTo {
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects/$slug': typeof ProjectsSlugRoute
+  '/visitor/cgu': typeof VisitorCguRoute
+  '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute
+  '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute
+  '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute
   '/admin/profiles/overview': typeof AdminProfilesOverviewRoute
   '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute
   '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute
@@ -214,7 +247,7 @@ export interface FileRoutesByTo {
   '/admin/settings/cgu': typeof AdminSettingsCguRoute
   '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
   '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
-  '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
+  '/admin/settings/privacy-policy': typeof AdminSettingsPrivacyPolicyRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
   '/admin/projects': typeof AdminProjectsIndexRoute
   '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute
@@ -234,6 +267,10 @@ export interface FileRoutesById {
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
   '/projects_/$slug': typeof ProjectsSlugRoute
+  '/visitor/cgu': typeof VisitorCguRoute
+  '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute
+  '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute
+  '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute
   '/admin/profiles/overview': typeof AdminProfilesOverviewRoute
   '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute
   '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute
@@ -242,7 +279,7 @@ export interface FileRoutesById {
   '/admin/settings/cgu': typeof AdminSettingsCguRoute
   '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute
   '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute
-  '/admin/settings/privacy': typeof AdminSettingsPrivacyRoute
+  '/admin/settings/privacy-policy': typeof AdminSettingsPrivacyPolicyRoute
   '/admin/settings/themes': typeof AdminSettingsThemesRoute
   '/admin/projects/': typeof AdminProjectsIndexRoute
   '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute
@@ -263,6 +300,10 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/api/optimize-image'
     | '/projects/$slug'
+    | '/visitor/cgu'
+    | '/visitor/cookie-policy'
+    | '/visitor/legal-mentions'
+    | '/visitor/privacy-policy'
     | '/admin/profiles/overview'
     | '/admin/profiles/personal-info'
     | '/admin/profiles/social-links'
@@ -271,7 +312,7 @@ export interface FileRouteTypes {
     | '/admin/settings/cgu'
     | '/admin/settings/cookie-policy'
     | '/admin/settings/legal-mentions'
-    | '/admin/settings/privacy'
+    | '/admin/settings/privacy-policy'
     | '/admin/settings/themes'
     | '/admin/projects/'
     | '/admin/projects/$projectId/edit'
@@ -289,6 +330,10 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/api/optimize-image'
     | '/projects/$slug'
+    | '/visitor/cgu'
+    | '/visitor/cookie-policy'
+    | '/visitor/legal-mentions'
+    | '/visitor/privacy-policy'
     | '/admin/profiles/overview'
     | '/admin/profiles/personal-info'
     | '/admin/profiles/social-links'
@@ -297,7 +342,7 @@ export interface FileRouteTypes {
     | '/admin/settings/cgu'
     | '/admin/settings/cookie-policy'
     | '/admin/settings/legal-mentions'
-    | '/admin/settings/privacy'
+    | '/admin/settings/privacy-policy'
     | '/admin/settings/themes'
     | '/admin/projects'
     | '/admin/projects/$projectId/edit'
@@ -316,6 +361,10 @@ export interface FileRouteTypes {
     | '/admin/settings'
     | '/api/optimize-image'
     | '/projects_/$slug'
+    | '/visitor/cgu'
+    | '/visitor/cookie-policy'
+    | '/visitor/legal-mentions'
+    | '/visitor/privacy-policy'
     | '/admin/profiles/overview'
     | '/admin/profiles/personal-info'
     | '/admin/profiles/social-links'
@@ -324,7 +373,7 @@ export interface FileRouteTypes {
     | '/admin/settings/cgu'
     | '/admin/settings/cookie-policy'
     | '/admin/settings/legal-mentions'
-    | '/admin/settings/privacy'
+    | '/admin/settings/privacy-policy'
     | '/admin/settings/themes'
     | '/admin/projects/'
     | '/admin/projects/$projectId/edit'
@@ -339,6 +388,10 @@ export interface RootRouteChildren {
   ServicesRoute: typeof ServicesRoute
   ApiOptimizeImageRoute: typeof ApiOptimizeImageRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
+  VisitorCguRoute: typeof VisitorCguRoute
+  VisitorCookiePolicyRoute: typeof VisitorCookiePolicyRoute
+  VisitorLegalMentionsRoute: typeof VisitorLegalMentionsRoute
+  VisitorPrivacyPolicyRoute: typeof VisitorPrivacyPolicyRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -383,6 +436,34 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visitor/privacy-policy': {
+      id: '/visitor/privacy-policy'
+      path: '/visitor/privacy-policy'
+      fullPath: '/visitor/privacy-policy'
+      preLoaderRoute: typeof VisitorPrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visitor/legal-mentions': {
+      id: '/visitor/legal-mentions'
+      path: '/visitor/legal-mentions'
+      fullPath: '/visitor/legal-mentions'
+      preLoaderRoute: typeof VisitorLegalMentionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visitor/cookie-policy': {
+      id: '/visitor/cookie-policy'
+      path: '/visitor/cookie-policy'
+      fullPath: '/visitor/cookie-policy'
+      preLoaderRoute: typeof VisitorCookiePolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/visitor/cgu': {
+      id: '/visitor/cgu'
+      path: '/visitor/cgu'
+      fullPath: '/visitor/cgu'
+      preLoaderRoute: typeof VisitorCguRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/projects_/$slug': {
@@ -448,11 +529,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminSettingsThemesRouteImport
       parentRoute: typeof AdminSettingsRoute
     }
-    '/admin/settings/privacy': {
-      id: '/admin/settings/privacy'
-      path: '/privacy'
-      fullPath: '/admin/settings/privacy'
-      preLoaderRoute: typeof AdminSettingsPrivacyRouteImport
+    '/admin/settings/privacy-policy': {
+      id: '/admin/settings/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/admin/settings/privacy-policy'
+      preLoaderRoute: typeof AdminSettingsPrivacyPolicyRouteImport
       parentRoute: typeof AdminSettingsRoute
     }
     '/admin/settings/legal-mentions': {
@@ -559,7 +640,7 @@ interface AdminSettingsRouteChildren {
   AdminSettingsCguRoute: typeof AdminSettingsCguRoute
   AdminSettingsCookiePolicyRoute: typeof AdminSettingsCookiePolicyRoute
   AdminSettingsLegalMentionsRoute: typeof AdminSettingsLegalMentionsRoute
-  AdminSettingsPrivacyRoute: typeof AdminSettingsPrivacyRoute
+  AdminSettingsPrivacyPolicyRoute: typeof AdminSettingsPrivacyPolicyRoute
   AdminSettingsThemesRoute: typeof AdminSettingsThemesRoute
 }
 
@@ -567,7 +648,7 @@ const AdminSettingsRouteChildren: AdminSettingsRouteChildren = {
   AdminSettingsCguRoute: AdminSettingsCguRoute,
   AdminSettingsCookiePolicyRoute: AdminSettingsCookiePolicyRoute,
   AdminSettingsLegalMentionsRoute: AdminSettingsLegalMentionsRoute,
-  AdminSettingsPrivacyRoute: AdminSettingsPrivacyRoute,
+  AdminSettingsPrivacyPolicyRoute: AdminSettingsPrivacyPolicyRoute,
   AdminSettingsThemesRoute: AdminSettingsThemesRoute,
 }
 
@@ -602,6 +683,10 @@ const rootRouteChildren: RootRouteChildren = {
   ServicesRoute: ServicesRoute,
   ApiOptimizeImageRoute: ApiOptimizeImageRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
+  VisitorCguRoute: VisitorCguRoute,
+  VisitorCookiePolicyRoute: VisitorCookiePolicyRoute,
+  VisitorLegalMentionsRoute: VisitorLegalMentionsRoute,
+  VisitorPrivacyPolicyRoute: VisitorPrivacyPolicyRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
