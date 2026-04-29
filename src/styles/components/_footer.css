@@ -44,6 +44,25 @@
   text-align: center;
 }
 
+.footer__links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__link {
+  color: var(--color-footer-copyright);
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.footer__link:hover {
+  color: var(--color-primary);
+}
+
+
 .footer__socials {
   display: flex;
   gap: 1.5rem;
