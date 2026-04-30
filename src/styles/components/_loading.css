@@ -1,0 +1,9 @@
+.loading-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-state p {
+    margin: 0;
+}

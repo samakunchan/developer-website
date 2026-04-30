@@ -5,6 +5,7 @@ import { Footer } from '../components/Footer';
 import { RichTextReadOnly, getCookiePolicy } from '../features/rich-text';
 import { Container } from '../components/Container';
 import '../styles/main.css';
+import { LoadingComponent } from '../components/LoadingComponent';
 
 export const Route = createFileRoute('/visitor/cookie-policy')({
   loader: async ({ context }) => {
@@ -28,10 +29,7 @@ function VisitorCookiePolicyPage() {
       <>
         <Header isConnected={isConnected} />
         <main role="main">
-          <div className="loading-state">
-            <span className="material-symbols-outlined spin">sync</span>
-            <p>Loading...</p>
-          </div>
+          <LoadingComponent />
         </main>
         <Footer />
       </>
