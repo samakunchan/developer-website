@@ -4,7 +4,7 @@ import { RichTextEditor, getPrivacyPolicy, savePrivacyPolicy } from '../features
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
 
-export const Route = createFileRoute('/admin/settings/privacy')({
+export const Route = createFileRoute('/admin/settings/privacy-policy')({
   component: PrivacyComponent,
 });
 
@@ -28,7 +28,12 @@ function PrivacyComponent() {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-state">
+        <span className="material-symbols-outlined spin">sync</span>
+        <p>Loading...</p>
+      </div>
+    );
   }
 
   return (

@@ -12,6 +12,7 @@ import { pricingTiers } from '../core/data/pricingData';
 import '../styles/main.css';
 import { ServiceData } from '../core/types/service';
 import { PricingTierData } from '../core/types/pricing';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/services')({
   // Route disabled until the backend is ready
@@ -44,7 +45,7 @@ function ServicesPricingPage() {
           description={t`Choose the perfect service package tailored to your business needs. From simple portfolios to complex SaaS platforms.`}
           primaryButton={{
             text: t`View Pricing`,
-            onClick: () => navigate({ to: '/services', hash: 'pricing' }),
+            onClick: () => navigate({ to: RouteNameType.Services.toString(), hash: 'pricing' }),
           }}
           secondaryButton={{ text: t`Contact me` }}
         />

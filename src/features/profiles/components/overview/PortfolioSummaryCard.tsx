@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from '@tanstack/react-router';
+import { RouteNameType } from '../../../../core/types/routes-name';
 
 export const PortfolioSummaryCard: React.FC = () => {
   return (
@@ -13,7 +14,7 @@ export const PortfolioSummaryCard: React.FC = () => {
         </p>
       </div>
       <div className="card__footer">
-        <Link to="/admin/projects" className="btn btn--secondary btn--white">
+        <Link to={RouteNameType.AdminProjects.toString()} className="btn btn--secondary btn--white">
           Gérer mes projets
           <span className="material-symbols-outlined card__icon-sm admin-profiles__icon-right">arrow_forward</span>
         </Link>

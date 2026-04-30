@@ -8,6 +8,7 @@ import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 import '../styles/main.css';
 import { getProjects, ProjectType } from '../features/projects';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/projects')({
   loader: async ({ context }) => {
@@ -40,7 +41,7 @@ function ProjectsPage() {
           }}
           secondaryButton={{
             text: t`View CV`,
-            onClick: () => navigate({ to: '/about' }),
+            onClick: () => navigate({ to: RouteNameType.AboutMe.toString() }),
           }}
         />
         <Projects

@@ -56,9 +56,9 @@ async function main() {
       role: validatedUser.role as Role, // Correctly cast to the Role enum from Prisma Client
       image: {
         create: {
-          tiny: `${APP_URL}/shared/seed/avatar-1-1776090901828-tiny.webp`,
-          medium: `${APP_URL}/shared/seed/avatar-1-1776090901828-medium.webp`,
-          raw: `${APP_URL}/shared/seed/avatar-1-1776090901828-raw.webp`,
+          tiny: `${APP_URL}/shared/seed/me-1-1777162885183-tiny.webp`,
+          medium: `${APP_URL}/shared/seed/me-1-1777162885183-medium.webp`,
+          raw: `${APP_URL}/shared/seed/me-1-1777162885183-raw.webp`,
         },
       },
     },

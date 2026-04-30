@@ -1,5 +1,55 @@
 # CHANGELOG developer-website
 
+## 🚀 0.29.0 - 01/05/2026
+
+### Added
+
+- **Themes**:
+  - Added new `ocean` theme.
+  - Added new `light` theme.
+  - Added new `desert` theme.
+- **Routing**:
+  - Implemented new routes and added redirection to projects.
+- **UI/UX**:
+  - Added new loading components and states.
+- **Component**
+  - Added a simple loading component for the front page.
+
+### Changed
+
+- **About Page**:
+  - Updated the About page section.
+- **Footer**:
+  - Updated the Footer component to include links to the new themes.
+- **Routes naming**:
+  - Added route names variables to avoid repetition and make it easier to maintain.
+  
+### Fixed
+
+- **Styles**:
+  - Fixed card hover effect in `nature` mode.
+- **About page**:
+  - Fix login requirement to see the about front page.
+
+## 🚀 0.28.0 - 29/04/2026
+
+### Added
+
+- **Legal Documents & Visitor Routes**:
+  - Created public routes for `visitor.cgu`, `visitor.privacy-policy`, `visitor.cookie-policy`, and `visitor.legal-mentions`.
+  - Integrated data fetching from the database to dynamically display these policies.
+- **Admin Management**:
+  - Added administrative interfaces for updating legal documents.
+
+### Changed
+
+- **Footer Navigation**:
+  - Updated the global `Footer` component to include accessible links to all visitor legal routes.
+
+### Fixed
+
+- No fixes.
+
 ## 🚀 0.27.0 - 29/04/2026
 
 ### Added

@@ -1,0 +1,156 @@
+.ocean {
+  --color-primary: #8ed5ff;
+  --color-secondary: #171f33;
+  --color-background: #0b1326;
+  --color-text: #dae2fd;
+  --color-glass-bg: rgba(142, 213, 255, 0.05);
+  --color-glass-border: rgba(142, 213, 255, 0.1);
+  --color-primary-hover: #7bd0ff;
+  --color-primary-shadow: rgba(142, 213, 255, 0.2);
+  --color-primary-shadow-hover: rgba(142, 213, 255, 0.3);
+
+  /* Header */
+  --color-header-bg: var(--color-secondary);
+  --color-header-border: var(--color-primary);
+
+  /* Hero */
+  --color-hero-badge-bg: var(--color-glass-border);
+  --color-hero-badge-border: var(--color-primary-shadow);
+  --color-hero-glow-start: rgba(142, 213, 255, 0.5);
+  --color-hero-glow-end: rgba(137, 206, 255, 0.5);
+  --color-hero-description: var(--color-text);
+  --color-hero-image-border: var(--color-primary);
+  --color-hero-image-background: var(--color-secondary);
+
+  /* Buttons */
+  --color-primary-btn: linear-gradient(135deg, #8ed5ff 0%, #89ceff 100%);
+  --color-primary-btn-text: #00354a;
+  --color-secondary-btn: transparent;
+  --color-secondary-btn-text: var(--color-primary);
+  --color-secondary-btn-border: var(--color-primary);
+  --color-secondary-btn-hover: var(--color-background);
+
+  /* Components - Services */
+  --color-services-section-bg: var(--color-primary-shadow);
+  --color-services-title: var(--color-primary);
+  --color-services-subtitle: var(--color-primary);
+  --color-services-card-bg: var(--color-secondary);
+  --color-services-card-border: var(--color-secondary);
+  --color-services-card-hover-border: var(--color-primary-hover);
+  --color-services-icon: var(--color-secondary);
+  --color-services-icon-bg: var(--color-primary);
+  --color-services-description: var(--color-text);
+  --color-services-badge-bg: var(--color-glass-border);
+  --color-services-badge-border: var(--color-primary-shadow);
+  --color-services-feature-text: var(--color-text);
+
+  /* CTA */
+  --color-cta-bg: linear-gradient(135deg, rgba(142, 213, 255, 0.15) 0%, rgba(142, 213, 255, 0.05) 100%);
+  --color-cta-border: var(--color-primary-shadow);
+  --color-cta-glow: var(--color-glass-border);
+  --color-cta-description: var(--color-text);
+
+  /* Input/Form */
+  --color-input-bg: var(--color-secondary);
+  --color-input-border: var(--color-primary);
+  --color-input-focus-shadow: 0 0 0 4px var(--color-glass-border);
+
+  /* Projects */
+  --section-contrast-color: var(--color-secondary);
+  --color-projects-filter-button-active: var(--color-secondary);
+  --color-projects-filter-bg: rgba(142, 213, 255, 0.05);
+  --color-projects-filter-border: var(--color-glass-border);
+  --color-projects-filter-text: var(--color-primary);
+  --color-projects-filter-text-hover: var(--color-primary-hover);
+  --color-project-card-bg: var(--color-secondary);
+  --color-project-card-border: var(--color-glass-border);
+  --color-project-card-border-hover: rgba(142, 213, 255, 0.5);
+  --color-project-badge-bg: var(--color-glass-border);
+  --color-project-description: var(--color-text);
+  --color-project-meta-text: var(--color-text);
+  --color-project-tag-bg: rgba(142, 213, 255, 0.05);
+  --color-project-tag-border: var(--color-glass-border);
+  --color-project-tag-text: var(--color-primary);
+  --color-projects-card-detail-hover: var(--color-primary-hover);
+
+  /* Pricing */
+  --color-pricing-section-bg: var(--color-background);
+  --color-pricing-card-bg: var(--color-secondary);
+  --color-pricing-card-border: var(--color-glass-border);
+  --color-pricing-card-description: var(--color-text);
+  --color-pricing-popular-bg: linear-gradient(135deg, #8ed5ff 0%, #89ceff 100%);
+  --color-pricing-check-bg: var(--color-glass-border);
+  --color-pricing-popular-shadow: 0 20px 50px -12px var(--color-primary-shadow);
+  --color-pricing-feature-text: var(--color-text);
+  --color-pricing-price-muted: var(--color-text);
+
+  /* Card */
+  --color-card-bg: var(--color-background);
+  --color-card-border: var(--color-glass-border);
+  --color-card-description: var(--color-text);
+  --color-card-popular-bg: var(--color-glass-border);
+  --color-card-check-bg: var(--color-glass-border);
+  --color-card-popular-shadow: 0 20px 50px -12px var(--color-primary-shadow);
+  --color-card-feature-text: var(--color-text);
+  --color-card-price-muted: var(--color-text);
+
+  /* Process */
+  --color-process-node-bg: var(--color-primary-shadow);
+  --color-process-line: var(--color-glass-border);
+  --color-process-step-text: var(--color-text);
+  --color-terminal-bg: rgba(11, 19, 38, 0.5);
+  --color-terminal-border: var(--color-primary-shadow);
+  --color-terminal-header-border: var(--color-glass-border);
+  --color-terminal-body-border: none;
+  --color-terminal-tab-inactive-bg: var(--color-glass-border);
+  --color-terminal-text: #8ed5ff;
+  --color-terminal-keyword: #89ceff;
+  --color-terminal-function: #38bdf8;
+  --color-terminal-property: #00a2e6;
+  --color-terminal-string: #ffc176;
+
+  /* Terminal Lights */
+  --color-terminal-light-red: #ffb4ab;
+  --color-terminal-light-yellow: #ffb960;
+  --color-terminal-light-green: #89ceff;
+  --color-terminal-wrapper-bg: var(--color-services-section-bg);
+  --color-terminal-number: #87929a;
+
+  /* About */
+  --color-about-badge-bg: var(--color-secondary);
+  --color-about-job-text: var(--color-text);
+  --color-about-image-shadow: 0 4px 12px var(--color-primary-shadow);
+  --color-about-social-bg: var(--color-glass-border);
+  --color-about-social-hover-text: #ffffff;
+  --color-about-text-muted: var(--color-text);
+  --color-about-skill-bg: rgba(142, 213, 255, 0.05);
+  --color-about-badge-border-bg: var(--color-glass-border);
+
+  /* Footer */
+  --color-footer-bg: var(--color-secondary);
+  --color-footer-border: var(--color-glass-border);
+  --color-footer-social-link: var(--color-primary);
+  --color-footer-copyright: var(--color-text);
+
+  /* Project Detail */
+  --color-pd-header-bg: var(--color-background);
+  --color-pd-border: var(--color-glass-border);
+  --color-pd-card-bg: rgba(23, 31, 51, 0.9);
+  --color-pd-badge-bg: var(--color-glass-border);
+  --color-pd-badge-border: rgba(142, 213, 255, 0.3);
+  --color-pd-gradient-start: var(--color-glass-border);
+  --color-pd-btn-hover: var(--color-primary-hover);
+  --color-pd-text-muted: var(--color-text);
+  --color-pd-section-title: var(--color-primary);
+  --color-pd-divider: var(--color-glass-border);
+  --color-pd-tag-bg: rgba(142, 213, 255, 0.05);
+  --color-pd-tag-text: var(--color-primary);
+  --color-pd-tech-name: var(--color-text);
+  --color-pd-right-bg: var(--color-secondary);
+  --color-pd-left-bg: var(--color-secondary);
+  --color-project-card-detail-bg: var(--color-primary);
+  --color-pd-icon-card-bg: var(--color-secondary);
+  --color-pd-title-card-bg: var(--color-secondary);
+  --color-pd-desc-card-bg: var(--color-secondary);
+  --color-empty-card-bg: var(--color-cta-glow);
+}

@@ -2,6 +2,7 @@ import { createFileRoute, useNavigate } from '@tanstack/react-router';
 import { ProjectCreateForm } from '../features/projects';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/admin/projects/new')({
   component: NewProjectComponent,
@@ -11,11 +12,11 @@ function NewProjectComponent() {
   const navigate = useNavigate();
 
   const handleSubmit = async () => {
-    navigate({ to: '/admin/projects' });
+    navigate({ to: RouteNameType.AdminProjects.toString() });
   };
 
   const handleCancel = () => {
-    navigate({ to: '/admin/projects' });
+    navigate({ to: RouteNameType.AdminProjects.toString() });
   };
 
   return (

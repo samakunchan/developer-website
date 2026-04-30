@@ -13,6 +13,7 @@
 @import './components/_button.css';
 @import './components/card.css';
 @import './components/_input.css';
+@import './components/_loading.css';
 @import './components/_header.css';
 @import './components/admin-sidebar.css';
 @import './components/admin-sidebar-secondary.css';
@@ -43,4 +44,8 @@
 
 @import './components/_error.css';
 @import './themes/dark.css';
+@import './themes/light.css';
 @import './themes/nature.css';
+@import './themes/ocean.css';
+@import './themes/desert.css';
+

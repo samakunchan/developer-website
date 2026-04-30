@@ -3,14 +3,15 @@ import { createFileRoute, Outlet, redirect } from '@tanstack/react-router';
 import { AdminSidebarPrimary } from '../components/AdminSidebarPrimary';
 import { AdminToolbar } from '../components/AdminToolbar';
 import { getProfileAction } from '../features/profiles';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/admin')({
   beforeLoad: async ({ context }) => {
     if (!context.session || context.session.user.role !== 'admin') {
       throw redirect({
-        to: '/login',
+        to: RouteNameType.Login.toString(),
         search: {
-          redirectTo: '/admin/dashboard',
+          redirectTo: RouteNameType.AdminDashboard.toString(),
         },
       });
     }

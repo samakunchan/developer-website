@@ -3,6 +3,7 @@ import { ProjectType } from '../../utils/schemas';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Link } from '@tanstack/react-router';
+import { RouteNameType } from '../../../../core/types/routes-name';
 
 interface ProjectAdminCardProps {
   project: ProjectType;
@@ -48,7 +49,7 @@ export const ProjectAdminCard: React.FC<ProjectAdminCardProps> = ({ project, onT
           <span className="material-symbols-outlined">{project.isFeatured ? 'star_filled' : 'star'}</span>
         </button>
         <Link
-          to="/admin/projects/$projectId/edit"
+          to={RouteNameType.AdminProjectsEdit.toString()}
           params={{ projectId: project.id.toString() }}
           className="btn btn--secondary project-admin-card__btn-compact"
         >

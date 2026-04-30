@@ -2,13 +2,20 @@
   padding: var(--spacing-lg) 0;
   height: 100dvh;
   align-content: center;
+  padding: 6rem 0;
+}
+.hero-visitor {
+  padding: 6rem 0;
+  height: 88dvh;
+  /* padding: var(--spacing-lg) 0; */
 }
 
-@media (min-width: 1024px) {
-  .hero {
+/* @media (min-width: 1024px) {
+  .hero,
+  .hero-visitor {
     padding: 6rem 0;
   }
-}
+} */
 
 .hero__container {
   display: grid;

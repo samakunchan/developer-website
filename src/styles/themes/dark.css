@@ -38,6 +38,7 @@
   --color-projects-filter-text-hover: var(--color-white);
   --color-project-card-bg: rgba(15, 23, 42, 0.6);
   --color-empty-card-bg: var(--color-cta-glow);
+  --color-projects-card-detail-hover: var(--color-glass-bg);
 
   /* Pricing */
   /* --color-pricing-card-bg: var(--color-background-dark);
