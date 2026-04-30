@@ -20,7 +20,7 @@ export const setThemeAction = createServerFn({ method: 'POST' })
       theme === 'light' ||
       theme === 'nature' ||
       theme === 'ocean' ||
-      theme === 'light'
+      theme === 'desert'
     ) {
       return theme;
     }

@@ -44,6 +44,12 @@ function ThemesComponent() {
       primary: '#0b1326',
       secondary: '#8ed5ff',
     },
+    {
+      id: 'desert' as ThemeType,
+      name: 'Desert (Warm)',
+      primary: '#974225',
+      secondary: '#fcf9f4',
+    },
   ];
 
   return (
