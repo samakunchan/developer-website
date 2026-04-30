@@ -14,6 +14,23 @@ import { uploadPictureInternal, processPictureFiles } from '../../pictures/utils
 const MAX_FILE_SIZE = 2;
 const VALID_FILE_TYPES = ['image/jpeg', 'image/png'];
 
+export async function getProfilePresentationInternal(): Promise<UserOutput> {
+  const user = await db.user.findUnique({
+    where: { email: process.env.ADMIN_EMAIL },
+    include: {
+      personalInfo: true,
+      techStacks: true,
+      socialLinks: true,
+      image: true,
+    },
+  });
+
+  if (!user) {
+    throw new Error('User not found');
+  }
+  return user;
+}
+
 /**
  * Fetches the complete profile data for the currently authenticated user.
  */

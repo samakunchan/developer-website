@@ -273,7 +273,7 @@
 }
 
 .project-detail__feature-card:hover {
-  background: var(--color-glass-bg);
+  background: var(--color-projects-card-detail-hover);
   border-left-color: var(--color-primary);
 }
 

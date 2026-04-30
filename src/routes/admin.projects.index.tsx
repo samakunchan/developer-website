@@ -3,6 +3,7 @@ import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { getProjects, toggleProjectFeatured, deleteProject, ProjectType, ProjectAdminCard } from '../features/projects';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/admin/projects/')({
   component: ProjectsListComponent,
@@ -61,7 +62,7 @@ function ProjectsListComponent() {
           <span className="admin-profiles__header-label">Gestion des projets</span>
           <h1 className="admin-profiles__header-title">Projects</h1>
         </div>
-        <Link to="/admin/projects/new" className="btn btn--primary">
+        <Link to={RouteNameType.AdminProjectsNew.toString()} className="btn btn--primary">
           <span className="material-symbols-outlined admin-profiles__icon-left">add</span>
           <Trans>Add Project</Trans>
         </Link>

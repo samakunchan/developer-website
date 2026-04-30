@@ -1,6 +1,7 @@
 import { createFileRoute, Outlet } from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { AdminSidebarSecondary } from '../components/AdminSidebarSecondary';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/admin/profiles')({
   component: ProfilesComponent,
@@ -8,10 +9,10 @@ export const Route = createFileRoute('/admin/profiles')({
 
 function ProfilesComponent() {
   const profileLinks = [
-    { label: t`Profile Overview`, to: '/admin/profiles/overview' },
-    { label: t`Personals Informations`, to: '/admin/profiles/personal-info' },
-    { label: t`Technical Stacks`, to: '/admin/profiles/tech-stacks' },
-    { label: t`Social Links`, to: '/admin/profiles/social-links' },
+    { label: t`Profile Overview`, to: RouteNameType.AdminProfileOverview.toString() },
+    { label: t`Personals Informations`, to: RouteNameType.AdminProfilePersonalInfo.toString() },
+    { label: t`Technical Stacks`, to: RouteNameType.AdminProfileTechStacks.toString() },
+    { label: t`Social Links`, to: RouteNameType.AdminProfileSocialLinks.toString() },
   ];
 
   return (

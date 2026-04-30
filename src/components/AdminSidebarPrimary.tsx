@@ -5,6 +5,7 @@ import { useServerFn } from '@tanstack/react-start';
 import { signOutAction } from '../features/auth/utils/auth-actions.functions';
 import { Button } from './Button';
 import packageJson from '../../package.json';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const AdminSidebarPrimary: React.FC = () => {
   const signOut = useServerFn(signOutAction);
@@ -28,7 +29,7 @@ export const AdminSidebarPrimary: React.FC = () => {
   return (
     <aside className="admin-sidebar">
       <div className="admin-sidebar__header">
-        <Link to="/admin/dashboard" className="admin-sidebar__logo-container">
+        <Link to={RouteNameType.AdminDashboard.toString()} className="admin-sidebar__logo-container">
           <span className="material-symbols-outlined admin-sidebar__logo-icon">terminal</span>
           <h1 className="admin-sidebar__logo-text">PapangueSoft</h1>
         </Link>
@@ -39,7 +40,7 @@ export const AdminSidebarPrimary: React.FC = () => {
 
       <nav className="admin-sidebar__nav">
         <Link
-          to="/admin/dashboard"
+          to={RouteNameType.AdminDashboard.toString()}
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
           activeOptions={{ exact: true }}
@@ -51,7 +52,7 @@ export const AdminSidebarPrimary: React.FC = () => {
         </Link>
 
         <Link
-          to="/admin/profiles/overview"
+          to={RouteNameType.AdminProfileOverview.toString()}
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
         >
@@ -62,7 +63,7 @@ export const AdminSidebarPrimary: React.FC = () => {
         </Link>
 
         <Link
-          to="/admin/projects"
+          to={RouteNameType.AdminProjects.toString()}
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
         >
@@ -73,7 +74,7 @@ export const AdminSidebarPrimary: React.FC = () => {
         </Link>
 
         <Link
-          to="/admin/analytics"
+          to={RouteNameType.AdminAnalytics.toString()}
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
         >
@@ -84,7 +85,7 @@ export const AdminSidebarPrimary: React.FC = () => {
         </Link>
 
         <Link
-          to="/admin/settings/themes"
+          to={RouteNameType.AdminThemes.toString()}
           className="admin-sidebar__nav-link"
           activeProps={{ className: 'admin-sidebar__nav-link--active' }}
         >

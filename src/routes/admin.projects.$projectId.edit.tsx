@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { ProjectEditForm, getProjectById } from '../features/projects';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/admin/projects/$projectId/edit')({
   component: EditProjectComponent,
@@ -18,11 +19,11 @@ function EditProjectComponent() {
   });
 
   const handleSubmit = async () => {
-    navigate({ to: '/admin/projects' });
+    navigate({ to: RouteNameType.AdminProjects.toString() });
   };
 
   const handleCancel = () => {
-    navigate({ to: '/admin/projects' });
+    navigate({ to: RouteNameType.AdminProjects.toString() });
   };
 
   if (isLoading) {

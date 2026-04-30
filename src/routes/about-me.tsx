@@ -1,45 +1,37 @@
 import React from 'react';
-import { useQuery } from '@tanstack/react-query';
 import { createFileRoute } from '@tanstack/react-router';
 import { Header } from '../components/Header';
 import { About } from '../components/About';
 import { Footer } from '../components/Footer';
 import '../styles/main.css';
-import { getProfileAction, UserOutput } from '../features/profiles';
+import { getProfilePresentationAction, UserOutput } from '../features/profiles';
+import { LoadingComponent } from '../components/LoadingComponent';
 
-export const Route = createFileRoute('/about')({
+export const Route = createFileRoute('/about-me')({
   loader: async ({ context }) => {
+    const profile: UserOutput = await getProfilePresentationAction();
     return {
       isConnected: context.session?.user.role === 'admin',
+      profile,
     };
   },
   component: AboutPage,
 });
 
 function AboutPage() {
-  const { isConnected } = Route.useLoaderData();
+  const { isConnected, profile }: { isConnected: boolean; profile: UserOutput } = Route.useLoaderData();
 
-  const { data: profile, isLoading }: { data: UserOutput | undefined; isLoading: boolean } = useQuery({
-    queryKey: ['profile'],
-    queryFn: () => getProfileAction(),
-  });
-
-  if (isLoading || !profile) {
+  if (!profile) {
     return (
       <>
         <Header isConnected={isConnected} />
         <main role="main">
-          <div className="loading-state">
-            <span className="material-symbols-outlined spin">sync</span>
-            <p>Loading about page...</p>
-          </div>
+          <LoadingComponent />
         </main>
         <Footer />
       </>
     );
   }
-
-  console.log(profile);
 
   const categoryIcons: Record<string, string> = {
     frontend: 'palette',
