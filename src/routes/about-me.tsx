@@ -7,7 +7,7 @@ import '../styles/main.css';
 import { getProfilePresentationAction, UserOutput } from '../features/profiles';
 import { LoadingComponent } from '../components/LoadingComponent';
 
-export const Route = createFileRoute('/about')({
+export const Route = createFileRoute('/about-me')({
   loader: async ({ context }) => {
     const profile: UserOutput = await getProfilePresentationAction();
     return {

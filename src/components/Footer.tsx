@@ -2,9 +2,10 @@ import { Container } from './Container';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Link } from '@tanstack/react-router';
+import { RouteNameType } from '../core/types/routes-name';
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear: number = new Date().getFullYear();
 
   return (
     <footer className="footer" aria-labelledby="footer-brand" role="contentinfo">
@@ -22,16 +23,16 @@ export function Footer() {
           </div>
 
           <div className="footer__links">
-            <Link to="/visitor/cgu" className="footer__link">
+            <Link to={RouteNameType.VisitorCgu.toString()} className="footer__link">
               <Trans>CGU</Trans>
             </Link>
-            <Link to="/visitor/privacy-policy" className="footer__link">
+            <Link to={RouteNameType.VisitorPrivacyPolicy.toString()} className="footer__link">
               <Trans>Privacy Policy</Trans>
             </Link>
-            <Link to="/visitor/cookie-policy" className="footer__link">
+            <Link to={RouteNameType.VisitorCookiePolicy.toString()} className="footer__link">
               <Trans>Cookie Policy</Trans>
             </Link>
-            <Link to="/visitor/legal-mentions" className="footer__link">
+            <Link to={RouteNameType.VisitorLegalMentions.toString()} className="footer__link">
               <Trans>Legal Mentions</Trans>
             </Link>
           </div>

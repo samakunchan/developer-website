@@ -8,6 +8,7 @@ import { Process } from '../components/Process';
 import { CTA } from '../components/CTA';
 import { Footer } from '../components/Footer';
 import '../styles/main.css';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/')({
   loader: async ({ context }) => {
@@ -37,7 +38,7 @@ function Index() {
           primaryButton={{
             text: t`View Portfolio`,
             onClick: () => {
-              navigate({ to: '/projects' });
+              navigate({ to: RouteNameType.Projects.toString() });
             },
           }}
           secondaryButton={{ text: t`Get a Quote` }}

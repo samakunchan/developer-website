@@ -4,6 +4,7 @@ import { useServerFn } from '@tanstack/react-start';
 import { searchGlobal } from '../features/search/utils/search-actions.functions';
 import { useQuery } from '@tanstack/react-query';
 import { useNavigate } from '@tanstack/react-router';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const AdminSearchbar: React.FC = () => {
   const [query, setQuery] = useState('');
@@ -15,7 +16,7 @@ export const AdminSearchbar: React.FC = () => {
 
   // Debounce the search input
   useEffect(() => {
-    const handler = setTimeout(() => setDebouncedQuery(query), 500);
+    const handler: ReturnType<typeof setTimeout> = setTimeout(() => setDebouncedQuery(query), 500);
     return () => clearTimeout(handler);
   }, [query]);
 
@@ -74,7 +75,7 @@ export const AdminSearchbar: React.FC = () => {
                   onClick={() => {
                     if (result.itemType === 'Project') {
                       navigate({
-                        to: '/admin/projects/$projectId/edit',
+                        to: RouteNameType.AdminProjectsEdit.toString(),
                         params: { projectId: result.itemId.toString() },
                       });
                     }

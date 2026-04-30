@@ -1,6 +1,7 @@
 import { createFileRoute, Outlet } from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { AdminSidebarSecondary } from '../components/AdminSidebarSecondary';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/admin/settings')({
   component: SettingsComponent,
@@ -8,11 +9,11 @@ export const Route = createFileRoute('/admin/settings')({
 
 function SettingsComponent() {
   const settingsLinks = [
-    { label: t`Themes`, to: '/admin/settings/themes' },
-    { label: t`Legal Mentions`, to: '/admin/settings/legal-mentions' },
-    { label: t`CGU`, to: '/admin/settings/cgu' },
-    { label: t`Privacy Policy`, to: '/admin/settings/privacy' },
-    { label: t`Cookie Policy`, to: '/admin/settings/cookie-policy' },
+    { label: t`Themes`, to: RouteNameType.AdminThemes.toString() },
+    { label: t`Legal Mentions`, to: RouteNameType.AdminLegalMentions.toString() },
+    { label: t`CGU`, to: RouteNameType.AdminCGU.toString() },
+    { label: t`Privacy Policy`, to: RouteNameType.AdminPrivacy.toString() },
+    { label: t`Cookie Policy`, to: RouteNameType.AdminCookiePolicy.toString() },
   ];
 
   return (

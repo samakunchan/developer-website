@@ -3,6 +3,7 @@ import { useServerFn } from '@tanstack/react-start';
 import { isSafeRedirect } from '../core/utils/url';
 import { Login, signInAction } from '../features/auth';
 import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/login')({
   validateSearch: z.object({
@@ -27,7 +28,7 @@ function LoginPage() {
 
       if (result?.success) {
         // After successful signin, redirect to the dashboard or the requested page
-        const target = isSafeRedirect(redirectTo) ? redirectTo : '/admin/dashboard';
+        const target = isSafeRedirect(redirectTo) ? redirectTo : RouteNameType.AdminDashboard;
         navigate({ to: target });
       }
     } catch (error) {
