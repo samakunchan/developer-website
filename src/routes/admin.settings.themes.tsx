@@ -1,6 +1,6 @@
 import { createFileRoute, useRouter } from '@tanstack/react-router';
 import { useServerFn } from '@tanstack/react-start';
-import { setThemeAction, ThemeType } from '../features/theme';
+import { ITheme, setThemeAction, ThemeType } from '../features/theme';
 import { Trans } from '@lingui/react/macro';
 
 export const Route = createFileRoute('/admin/settings/themes')({
@@ -8,17 +8,17 @@ export const Route = createFileRoute('/admin/settings/themes')({
 });
 
 function ThemesComponent() {
-  const { theme } = Route.useRouteContext();
+  const { theme: currentTheme } = Route.useRouteContext();
   const setTheme = useServerFn(setThemeAction);
   const router = useRouter();
 
   const handleThemeChange = async (newTheme: ThemeType) => {
-    if (newTheme === theme) return;
+    if (newTheme === currentTheme) return;
     await setTheme({ data: newTheme });
     router.invalidate();
   };
 
-  const themes = [
+  const themes: ITheme[] = [
     {
       id: 'nature' as ThemeType,
       name: 'Nature (Classic)',
@@ -30,6 +30,12 @@ function ThemesComponent() {
       name: 'Dark (Modern)',
       primary: '#25f4f4',
       secondary: '#102222',
+    },
+    {
+      id: 'light' as ThemeType,
+      name: 'Light (Blue)',
+      primary: '#3c83f6',
+      secondary: '#ffffff',
     },
   ];
 
@@ -44,31 +50,34 @@ function ThemesComponent() {
         </p>
 
         <div className="theme-selector">
-          {themes.map((t) => (
+          {themes.map((availableTheme: ITheme) => (
             <div
-              key={t.id}
-              className={`theme-card ${theme === t.id ? 'theme-card--active' : ''}`}
-              onClick={() => handleThemeChange(t.id)}
+              key={availableTheme.id}
+              className={`theme-card ${currentTheme === availableTheme.id ? 'theme-card--active' : ''}`}
+              onClick={() => handleThemeChange(availableTheme.id)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') handleThemeChange(t.id);
+                if (e.key === 'Enter' || e.key === ' ') handleThemeChange(availableTheme.id);
               }}
             >
               <div className="theme-card__preview">
-                <div className="theme-card__color" style={{ backgroundColor: t.primary }}>
+                <div className="theme-card__color" style={{ backgroundColor: availableTheme.primary }}>
                   Primary
                 </div>
                 <div
                   className="theme-card__color"
-                  style={{ backgroundColor: t.secondary, color: t.id === 'nature' ? '#000' : '#fff' }}
+                  style={{
+                    backgroundColor: availableTheme.secondary,
+                    color: availableTheme.id === 'nature' || availableTheme.id === 'light' ? '#000' : '#fff',
+                  }}
                 >
                   Secondary
                 </div>
               </div>
               <div className="theme-card__info">
-                <span className="theme-card__name">{t.name}</span>
-                {theme === t.id && (
+                <span className="theme-card__name">{availableTheme.name}</span>
+                {currentTheme === availableTheme.id && (
                   <span className="theme-card__status">
                     <span className="material-symbols-outlined">check_circle</span>
                     Active

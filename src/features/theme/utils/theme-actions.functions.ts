@@ -14,7 +14,7 @@ export const getTheme = createServerFn({ method: 'GET' }).handler(async () => {
  */
 export const setThemeAction = createServerFn({ method: 'POST' })
   .inputValidator((theme: unknown): ThemeType => {
-    if (theme === 'dark' || theme === 'nature') return theme;
+    if (theme === 'dark' || theme === 'nature' || theme === 'light') return theme;
     return 'nature';
   })
   .handler(async ({ data }) => {
