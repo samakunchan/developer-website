@@ -21,6 +21,10 @@
   background-color: var(--color-background-dark);
 }
 
+.ocean .theme-card {
+  background-color: var(--color-glass-bg);
+}
+
 .theme-card:hover {
   transform: translateY(-4px);
   border-color: var(--color-primary);

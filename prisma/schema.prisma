@@ -190,6 +190,7 @@ enum Theme {
   dark
   nature
   light
+  ocean
 }
 
 enum CategoryStack {

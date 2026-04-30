@@ -1,4 +1,4 @@
-export type ThemeType = 'nature' | 'dark' | 'light';
+export type ThemeType = 'nature' | 'dark' | 'light' | 'ocean' | 'desert';
 
 export interface ITheme {
   id: ThemeType;

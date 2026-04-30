@@ -13,6 +13,7 @@ function ThemesComponent() {
   const router = useRouter();
 
   const handleThemeChange = async (newTheme: ThemeType) => {
+    console.log(newTheme);
     if (newTheme === currentTheme) return;
     await setTheme({ data: newTheme });
     router.invalidate();
@@ -36,6 +37,12 @@ function ThemesComponent() {
       name: 'Light (Blue)',
       primary: '#3c83f6',
       secondary: '#ffffff',
+    },
+    {
+      id: 'ocean' as ThemeType,
+      name: 'Ocean (Dark)',
+      primary: '#0b1326',
+      secondary: '#8ed5ff',
     },
   ];
 
