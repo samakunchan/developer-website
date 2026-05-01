@@ -23,5 +23,8 @@ export $(grep -v '^#' $ENV_FILE | xargs)
 # Construct DATABASE_URL for host access
 export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@localhost:${POSTGRES_PORT_EXTERNAL}/${POSTGRES_DB}?schema=public"
 
+# Configure database triggers
+yarn tsx prisma/seed-trigger.ts
+
 # Run Seed command
 yarn tsx prisma/seed.ts

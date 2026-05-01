@@ -1,6 +1,7 @@
 .admin-profiles__content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   margin-top: 2rem;
-  display: flex;
   gap: 1rem;
 }
 

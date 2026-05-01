@@ -1,6 +1,16 @@
 .admin-toolbar__search {
   position: relative;
 }
+.admin-toolbar__search-isloading{
+  padding: 0.75rem;
+  text-align: center;
+}
+
+.admin-toolbar__search-noresults{
+  padding: 0.75rem;
+  text-align: center;
+  color: var(--text-color-secondary);
+}
 
 .admin-toolbar__search-results {
   position: absolute;

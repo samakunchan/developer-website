@@ -5,6 +5,7 @@ import { Role, ProjectCategory } from '@prisma/client';
 import { db } from '../src/features/database/server/db.server';
 import fs from 'fs';
 import path from 'path';
+import { syncPendingEmbeddingsInternal } from '../src/features/search/utils/search-actions.server';
 
 // Zod schema for data verification as requested
 const UserSchema = z.object({
@@ -320,6 +321,12 @@ async function main() {
 
   console.log(`✅ Seed completed: First user created with email ${user.email} and ID ${user.id}`);
   console.log(`✅ ${initialProjects.length} projects seeded.`);
+
+  console.log('✅ Indexing completed (via triggers).');
+
+  console.log('🤖 Syncing embeddings (this may take a moment)...');
+  await syncPendingEmbeddingsInternal();
+  console.log('✅ Embeddings synced.');
 }
 
 main()
