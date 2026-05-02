@@ -153,4 +153,7 @@
   --color-pd-title-card-bg: var(--color-background);
   --color-pd-desc-card-bg: var(--color-background);
   --color-empty-card-bg: var(--color-cta-glow);
+
+  /* Form */
+  --color-input-text: var(--color-white);  
 }
