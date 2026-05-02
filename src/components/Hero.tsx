@@ -45,8 +45,8 @@ export function Hero({
     <section
       ref={ref}
       className={`hero${imagePosition === 'left' ? ' hero--image-left' : ''} ${
-        !hasImage ? 'hero--no-image' : ''
-      } hero-animation-section ${inView ? 'is-visible' : ''}`}
+        !hasImage ? 'hero--no-image ' : ''
+      }hero-animation-section ${inView ? 'is-visible' : ''}`}
       aria-labelledby="hero-title"
     >
       <Container className="hero__container">

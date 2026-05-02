@@ -268,31 +268,34 @@
   padding: 1.5rem;
   background: var(--color-project-card-detail-bg);
   border-radius: var(--border-radius-xl);
-  border-left: 2px solid transparent;
+  /* border-left: 2px solid transparent; */
+  border-left: 2px solid var(--color-primary);
   transition: all 0.3s ease;
+  color: var(--color-white);
 }
 
 .project-detail__feature-card:hover {
   background: var(--color-projects-card-detail-hover);
   border-left-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .project-detail__feature-icon {
-  color: var(--color-pd-icon-card-bg);
+  /* color: var(--color-pd-icon-card-bg); */
   margin-bottom: 1rem;
   display: block;
   font-size: 1.5rem;
 }
 
 .project-detail__feature-title {
-  color: var(--color-pd-title-card-bg);
+  /* color: var(--color-pd-title-card-bg); */
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .project-detail__feature-desc {
   font-size: 0.875rem;
-  color: var(--color-pd-desc-card-bg);
+  /* color: var(--color-pd-desc-card-bg); */
   line-height: 1.6;
 }
 
