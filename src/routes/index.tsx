@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from '@tanstack/react-router';
+import { createFileRoute, useNavigate, UseNavigateResult } from '@tanstack/react-router';
 import { t } from '@lingui/core/macro';
 import { Trans } from '@lingui/react/macro';
 import { Header } from '../components/Header';
@@ -21,7 +21,7 @@ export const Route = createFileRoute('/')({
 
 function Index() {
   const { isConnected } = Route.useLoaderData();
-  const navigate = useNavigate();
+  const navigate: UseNavigateResult<string> = useNavigate();
 
   return (
     <>
@@ -41,7 +41,12 @@ function Index() {
               navigate({ to: RouteNameType.Projects.toString() });
             },
           }}
-          secondaryButton={{ text: t`Get a Quote` }}
+          secondaryButton={{
+            text: t`Get a Quote`,
+            onClick() {
+              navigate({ to: RouteNameType.ContactMe.toString() });
+            },
+          }}
           imageSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuA-DXrgtoZM3ej2WaApf3VNsO_ULaBI3bwr0BqHDSkABxpSX7q4jcYwWopO7xSJEtjykdr8w7hQ5XdpQ3ZCaMHca2trLcaerfikZT52KLJIeYU3mvrkl2zDW820gQpJbdsFVX4ffyFH5AoGsdnpBz4a2rxAcKpndZEuQOF6-c3cb5QDyN8UqQ1ISD7UBUnMy3XX1BOfa6xv_rAIepdbY6WHnawAIpL-VSGIXp84lw-xJXIt2pvVgsc33_BZ3GWNCIIXkbVww1EFlTI"
           imageAlt={t`Modern workspace with laptop showing code`}
         />
@@ -93,8 +98,13 @@ function Index() {
         <CTA
           title={<Trans>Ready to bring your idea to life?</Trans>}
           description={t`Let's discuss your project and see how we can build something amazing together.`}
-          primaryButton={{ text: t`Schedule a Call` }}
-          secondaryButton={{ text: t`Email Me` }}
+          // primaryButton={{ text: t`Schedule a Call` }}
+          secondaryButton={{
+            text: t`Email Me`,
+            onClick() {
+              navigate({ to: RouteNameType.ContactMe.toString() });
+            },
+          }}
         />
       </main>
       <Footer />

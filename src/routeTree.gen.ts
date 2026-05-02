@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as ContactMeRouteImport } from './routes/contact-me'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutMeRouteImport } from './routes/about-me'
 import { Route as IndexRouteImport } from './routes/index'
@@ -52,6 +53,11 @@ const ProjectsRoute = ProjectsRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactMeRoute = ContactMeRouteImport.update({
+  id: '/contact-me',
+  path: '/contact-me',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdminRoute = AdminRouteImport.update({
@@ -195,6 +201,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about-me': typeof AboutMeRoute
   '/admin': typeof AdminRouteWithChildren
+  '/contact-me': typeof ContactMeRoute
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
@@ -226,6 +233,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about-me': typeof AboutMeRoute
   '/admin': typeof AdminRouteWithChildren
+  '/contact-me': typeof ContactMeRoute
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
@@ -257,6 +265,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about-me': typeof AboutMeRoute
   '/admin': typeof AdminRouteWithChildren
+  '/contact-me': typeof ContactMeRoute
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
   '/services': typeof ServicesRoute
@@ -290,6 +299,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-me'
     | '/admin'
+    | '/contact-me'
     | '/login'
     | '/projects'
     | '/services'
@@ -321,6 +331,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-me'
     | '/admin'
+    | '/contact-me'
     | '/login'
     | '/projects'
     | '/services'
@@ -351,6 +362,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about-me'
     | '/admin'
+    | '/contact-me'
     | '/login'
     | '/projects'
     | '/services'
@@ -383,6 +395,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutMeRoute: typeof AboutMeRoute
   AdminRoute: typeof AdminRouteWithChildren
+  ContactMeRoute: typeof ContactMeRoute
   LoginRoute: typeof LoginRoute
   ProjectsRoute: typeof ProjectsRoute
   ServicesRoute: typeof ServicesRoute
@@ -415,6 +428,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-me': {
+      id: '/contact-me'
+      path: '/contact-me'
+      fullPath: '/contact-me'
+      preLoaderRoute: typeof ContactMeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/admin': {
@@ -678,6 +698,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutMeRoute: AboutMeRoute,
   AdminRoute: AdminRouteWithChildren,
+  ContactMeRoute: ContactMeRoute,
   LoginRoute: LoginRoute,
   ProjectsRoute: ProjectsRoute,
   ServicesRoute: ServicesRoute,

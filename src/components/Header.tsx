@@ -80,9 +80,11 @@ export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = fals
             </Link>
           )} */}
 
-          <Button variant="primary" aria-label={t`Contact me`}>
-            <Trans>Contact</Trans>
-          </Button>
+          <Link to={RouteNameType.ContactMe.toString()} viewTransition>
+            <Button variant="primary" aria-label={t`Contact me`}>
+              <Trans>Contact</Trans>
+            </Button>
+          </Link>
         </div>
       </div>
     </header>

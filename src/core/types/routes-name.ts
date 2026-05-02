@@ -3,6 +3,7 @@ export enum RouteNameType {
   Home = '/',
   Projects = '/projects',
   AboutMe = '/about-me',
+  ContactMe = '/contact-me',
   Services = '/services',
   Login = '/login',
   NotFound = '/not-found',
