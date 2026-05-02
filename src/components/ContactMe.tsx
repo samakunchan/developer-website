@@ -170,7 +170,7 @@ export const ContactMe: React.FC = () => {
                   Montpellier, France
                 </div>
                 <p className="contact-me__info-text" style={{ fontSize: '0.75rem' }}>
-                  <Trans>Serving clients globally from our HQ.</Trans>
+                  <Trans>Serving clients globally.</Trans>
                 </p>
               </div>
             </div>

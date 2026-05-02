@@ -909,3 +909,95 @@ msgstr "تطوير الويب"
 #: src/routes/index.tsx:64
 msgid "Workflow"
 msgstr "سير العمل"
+
+#: src/components/ContactMe.tsx:12
+msgid "Web Dev"
+msgstr "تطوير الويب"
+
+#: src/components/ContactMe.tsx:13
+msgid "Mobile Dev"
+msgstr "تطوير الهاتف المحمول"
+
+#: src/components/ContactMe.tsx:14
+msgid "MVP Launch"
+msgstr "إطلاق MVP"
+
+#: src/components/ContactMe.tsx:15
+msgid "AI Integration"
+msgstr "تكامل الذكاء الاصطناعي"
+
+#: src/components/ContactMe.tsx:16
+msgid "API Backend"
+msgstr "واجهة برمجة تطبيقات خلفية"
+
+#: src/components/ContactMe.tsx:17
+msgid "Something Else"
+msgstr "شيء آخر"
+
+#: src/components/ContactMe.tsx:27
+msgid "Let's Build Together"
+msgstr "لنبني معًا"
+
+#: src/components/ContactMe.tsx:30
+msgid "Ready to turn your vision into <0>digital reality?</0>"
+msgstr "هل أنت مستعد لتحويل رؤيتك إلى <0>واقع رقمي؟</0>"
+
+#: src/components/ContactMe.tsx:35
+msgid "Whether you have a fully-fledged brief or just a spark of an idea, we're here to engineer the solution. Select your path below."
+msgstr "سواء كان لديك ملخص كامل أو مجرد شرارة فكرة، فنحن هنا لتصميم الحل. اختر طريقك أدناه."
+
+#: src/components/ContactMe.tsx:47
+msgid "What can we help you with?"
+msgstr "كيف يمكننا مساعدتك؟"
+
+#: src/components/ContactMe.tsx:72
+msgid "Full Name"
+msgstr "الاسم الكامل"
+
+#: src/components/ContactMe.tsx:74
+msgid "John Doe"
+msgstr "فلان الفلاني"
+
+#: src/components/ContactMe.tsx:78
+msgid "Email Address"
+msgstr "عنوان البريد الإلكتروني"
+
+#: src/components/ContactMe.tsx:91
+msgid "Project Budget Range"
+msgstr "نطاق ميزانية المشروع"
+
+#: src/components/ContactMe.tsx:111
+msgid "Project Brief"
+msgstr "موجز المشروع"
+
+#: src/components/ContactMe.tsx:115
+msgid "Tell us about your project goals, timeline, and any specific technical requirements..."
+msgstr "أخبرنا عن أهداف مشروعك، والجدول الزمني، وأي متطلبات تقنية محددة..."
+
+#: src/components/ContactMe.tsx:121
+msgid "Send Inquiry"
+msgstr "إرسال استفسار"
+
+#: src/components/ContactMe.tsx:136
+msgid "Rapid Turnaround"
+msgstr "إنجاز سريع"
+
+#: src/components/ContactMe.tsx:139
+msgid "Response within 12 business hours."
+msgstr "الرد خلال 12 ساعة عمل."
+
+#: src/components/ContactMe.tsx:150
+msgid "Secure Process"
+msgstr "عملية آمنة"
+
+#: src/components/ContactMe.tsx:153
+msgid "Full NDAs available for every project."
+msgstr "تتوفر اتفاقيات عدم الإفصاح (NDAs) كاملة لكل مشروع."
+
+#: src/components/ContactMe.tsx:163
+msgid "Cinematic neon city background"
+msgstr "خلفية مدينة نيون سينمائية"
+
+#: src/components/ContactMe.tsx:173
+msgid "Serving clients globally."
+msgstr "نخدم العملاء عالميًا."

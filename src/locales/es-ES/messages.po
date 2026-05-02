@@ -908,3 +908,95 @@ msgstr "Desarrollo Web"
 #: src/routes/index.tsx:64
 msgid "Workflow"
 msgstr "Flujo de trabajo"
+
+#: src/components/ContactMe.tsx:12
+msgid "Web Dev"
+msgstr "Desarrollo Web"
+
+#: src/components/ContactMe.tsx:13
+msgid "Mobile Dev"
+msgstr "Desarrollo Mobile"
+
+#: src/components/ContactMe.tsx:14
+msgid "MVP Launch"
+msgstr "Lanzamiento MVP"
+
+#: src/components/ContactMe.tsx:15
+msgid "AI Integration"
+msgstr "Integración de IA"
+
+#: src/components/ContactMe.tsx:16
+msgid "API Backend"
+msgstr "Backend de API"
+
+#: src/components/ContactMe.tsx:17
+msgid "Something Else"
+msgstr "Algo más"
+
+#: src/components/ContactMe.tsx:27
+msgid "Let's Build Together"
+msgstr "Construyamos juntos"
+
+#: src/components/ContactMe.tsx:30
+msgid "Ready to turn your vision into <0>digital reality?</0>"
+msgstr "¿Listo para convertir tu visión en <0>realidad digital?</0>"
+
+#: src/components/ContactMe.tsx:35
+msgid "Whether you have a fully-fledged brief or just a spark of an idea, we're here to engineer the solution. Select your path below."
+msgstr "Ya sea que tengas un informe completo o solo una chispa de idea, estamos aquí para diseñar la solución. Selecciona tu camino a continuación."
+
+#: src/components/ContactMe.tsx:47
+msgid "What can we help you with?"
+msgstr "¿En qué podemos ayudarte?"
+
+#: src/components/ContactMe.tsx:72
+msgid "Full Name"
+msgstr "Nombre completo"
+
+#: src/components/ContactMe.tsx:74
+msgid "John Doe"
+msgstr "Juan Pérez"
+
+#: src/components/ContactMe.tsx:78
+msgid "Email Address"
+msgstr "Correo electrónico"
+
+#: src/components/ContactMe.tsx:91
+msgid "Project Budget Range"
+msgstr "Rango de presupuesto del proyecto"
+
+#: src/components/ContactMe.tsx:111
+msgid "Project Brief"
+msgstr "Resumen del proyecto"
+
+#: src/components/ContactMe.tsx:115
+msgid "Tell us about your project goals, timeline, and any specific technical requirements..."
+msgstr "Cuéntanos sobre los objetivos de tu proyecto, el cronograma y cualquier requisito técnico específico..."
+
+#: src/components/ContactMe.tsx:121
+msgid "Send Inquiry"
+msgstr "Enviar consulta"
+
+#: src/components/ContactMe.tsx:136
+msgid "Rapid Turnaround"
+msgstr "Respuesta rápida"
+
+#: src/components/ContactMe.tsx:139
+msgid "Response within 12 business hours."
+msgstr "Respuesta en 12 horas hábiles."
+
+#: src/components/ContactMe.tsx:150
+msgid "Secure Process"
+msgstr "Proceso seguro"
+
+#: src/components/ContactMe.tsx:153
+msgid "Full NDAs available for every project."
+msgstr "Acuerdos de confidencialidad (NDA) disponibles para cada proyecto."
+
+#: src/components/ContactMe.tsx:163
+msgid "Cinematic neon city background"
+msgstr "Fondo de ciudad de neón cinematográfico"
+
+#: src/components/ContactMe.tsx:173
+msgid "Serving clients globally."
+msgstr "Atendiendo a clientes globalmente."

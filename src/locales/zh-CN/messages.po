@@ -908,3 +908,95 @@ msgstr "Web 开发"
 #: src/routes/index.tsx:64
 msgid "Workflow"
 msgstr "工作流"
+
+#: src/components/ContactMe.tsx:12
+msgid "Web Dev"
+msgstr "网页开发"
+
+#: src/components/ContactMe.tsx:13
+msgid "Mobile Dev"
+msgstr "移动开发"
+
+#: src/components/ContactMe.tsx:14
+msgid "MVP Launch"
+msgstr "MVP 发布"
+
+#: src/components/ContactMe.tsx:15
+msgid "AI Integration"
+msgstr "AI 集成"
+
+#: src/components/ContactMe.tsx:16
+msgid "API Backend"
+msgstr "API 后端"
+
+#: src/components/ContactMe.tsx:17
+msgid "Something Else"
+msgstr "其他"
+
+#: src/components/ContactMe.tsx:27
+msgid "Let's Build Together"
+msgstr "让我们一起构建"
+
+#: src/components/ContactMe.tsx:30
+msgid "Ready to turn your vision into <0>digital reality?</0>"
+msgstr "准备好将您的愿景转变为 <0>数字现实了吗？</0>"
+
+#: src/components/ContactMe.tsx:35
+msgid "Whether you have a fully-fledged brief or just a spark of an idea, we're here to engineer the solution. Select your path below."
+msgstr "无论您有一个完整的简报还是只是一个灵感的火花，我们都在这里为您设计解决方案。请在下方选择您的路径。"
+
+#: src/components/ContactMe.tsx:47
+msgid "What can we help you with?"
+msgstr "我们能帮您什么？"
+
+#: src/components/ContactMe.tsx:72
+msgid "Full Name"
+msgstr "全名"
+
+#: src/components/ContactMe.tsx:74
+msgid "John Doe"
+msgstr "张三"
+
+#: src/components/ContactMe.tsx:78
+msgid "Email Address"
+msgstr "电子邮件地址"
+
+#: src/components/ContactMe.tsx:91
+msgid "Project Budget Range"
+msgstr "项目预算范围"
+
+#: src/components/ContactMe.tsx:111
+msgid "Project Brief"
+msgstr "项目简报"
+
+#: src/components/ContactMe.tsx:115
+msgid "Tell us about your project goals, timeline, and any specific technical requirements..."
+msgstr "告诉我们您的项目目标、时间表以及任何特定的技术要求..."
+
+#: src/components/ContactMe.tsx:121
+msgid "Send Inquiry"
+msgstr "发送咨询"
+
+#: src/components/ContactMe.tsx:136
+msgid "Rapid Turnaround"
+msgstr "快速周转"
+
+#: src/components/ContactMe.tsx:139
+msgid "Response within 12 business hours."
+msgstr "12个工作小时内回复。"
+
+#: src/components/ContactMe.tsx:150
+msgid "Secure Process"
+msgstr "安全流程"
+
+#: src/components/ContactMe.tsx:153
+msgid "Full NDAs available for every project."
+msgstr "每个项目均可提供完整的保密协议 (NDA)。"
+
+#: src/components/ContactMe.tsx:163
+msgid "Cinematic neon city background"
+msgstr "电影般的霓虹城市背景"
+
+#: src/components/ContactMe.tsx:173
+msgid "Serving clients globally."
+msgstr "为全球客户提供服务。"
