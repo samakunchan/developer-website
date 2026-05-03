@@ -38,4 +38,7 @@ export enum RouteNameType {
   AdminProfilePersonalInfo = '/admin/profiles/personal-info',
   AdminProfileTechStacks = '/admin/profiles/tech-stacks',
   AdminProfileSocialLinks = '/admin/profiles/social-links',
+
+  // Admin Messages
+  AdminMessages = '/admin/messages',
 }

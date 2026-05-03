@@ -27,4 +27,5 @@ export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@
 yarn tsx prisma/seed-trigger.ts
 
 # Run Seed command
+yarn tsx prisma/seed-test-messages.ts
 yarn tsx prisma/seed.ts

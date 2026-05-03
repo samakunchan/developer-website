@@ -241,3 +241,17 @@ model GlobalSearchIndex {
   @@index([embedding], map: "global_search_embedding_idx")
   @@map("global_search_indices")
 }
+
+model Message {
+  id             Int      @id @default(autoincrement())
+  fullName       String
+  email          String
+  serviceType    Json     // Store the selected service object
+  priceRangeType Json     // Store the selected price range object
+  projectBrief   String
+  isRead         Boolean  @default(false)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@map("messages")
+}

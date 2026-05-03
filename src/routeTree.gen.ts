@@ -25,6 +25,7 @@ import { Route as ApiOptimizeImageRouteImport } from './routes/api.optimize-imag
 import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
 import { Route as AdminProjectsRouteImport } from './routes/admin.projects'
 import { Route as AdminProfilesRouteImport } from './routes/admin.profiles'
+import { Route as AdminMessagesRouteImport } from './routes/admin.messages'
 import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard'
 import { Route as AdminAnalyticsRouteImport } from './routes/admin.analytics'
 import { Route as AdminProjectsIndexRouteImport } from './routes/admin.projects.index'
@@ -120,6 +121,11 @@ const AdminProfilesRoute = AdminProfilesRouteImport.update({
   path: '/profiles',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminMessagesRoute = AdminMessagesRouteImport.update({
+  id: '/messages',
+  path: '/messages',
+  getParentRoute: () => AdminRoute,
+} as any)
 const AdminDashboardRoute = AdminDashboardRouteImport.update({
   id: '/dashboard',
   path: '/dashboard',
@@ -207,6 +213,7 @@ export interface FileRoutesByFullPath {
   '/services': typeof ServicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/messages': typeof AdminMessagesRoute
   '/admin/profiles': typeof AdminProfilesRouteWithChildren
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRouteWithChildren
@@ -239,6 +246,7 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/messages': typeof AdminMessagesRoute
   '/admin/profiles': typeof AdminProfilesRouteWithChildren
   '/admin/settings': typeof AdminSettingsRouteWithChildren
   '/api/optimize-image': typeof ApiOptimizeImageRoute
@@ -271,6 +279,7 @@ export interface FileRoutesById {
   '/services': typeof ServicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
+  '/admin/messages': typeof AdminMessagesRoute
   '/admin/profiles': typeof AdminProfilesRouteWithChildren
   '/admin/projects': typeof AdminProjectsRouteWithChildren
   '/admin/settings': typeof AdminSettingsRouteWithChildren
@@ -305,6 +314,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/admin/analytics'
     | '/admin/dashboard'
+    | '/admin/messages'
     | '/admin/profiles'
     | '/admin/projects'
     | '/admin/settings'
@@ -337,6 +347,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/admin/analytics'
     | '/admin/dashboard'
+    | '/admin/messages'
     | '/admin/profiles'
     | '/admin/settings'
     | '/api/optimize-image'
@@ -368,6 +379,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/admin/analytics'
     | '/admin/dashboard'
+    | '/admin/messages'
     | '/admin/profiles'
     | '/admin/projects'
     | '/admin/settings'
@@ -519,6 +531,13 @@ declare module '@tanstack/react-router' {
       path: '/profiles'
       fullPath: '/admin/profiles'
       preLoaderRoute: typeof AdminProfilesRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/messages': {
+      id: '/admin/messages'
+      path: '/messages'
+      fullPath: '/admin/messages'
+      preLoaderRoute: typeof AdminMessagesRouteImport
       parentRoute: typeof AdminRoute
     }
     '/admin/dashboard': {
@@ -679,6 +698,7 @@ const AdminSettingsRouteWithChildren = AdminSettingsRoute._addFileChildren(
 interface AdminRouteChildren {
   AdminAnalyticsRoute: typeof AdminAnalyticsRoute
   AdminDashboardRoute: typeof AdminDashboardRoute
+  AdminMessagesRoute: typeof AdminMessagesRoute
   AdminProfilesRoute: typeof AdminProfilesRouteWithChildren
   AdminProjectsRoute: typeof AdminProjectsRouteWithChildren
   AdminSettingsRoute: typeof AdminSettingsRouteWithChildren
@@ -687,6 +707,7 @@ interface AdminRouteChildren {
 const AdminRouteChildren: AdminRouteChildren = {
   AdminAnalyticsRoute: AdminAnalyticsRoute,
   AdminDashboardRoute: AdminDashboardRoute,
+  AdminMessagesRoute: AdminMessagesRoute,
   AdminProfilesRoute: AdminProfilesRouteWithChildren,
   AdminProjectsRoute: AdminProjectsRouteWithChildren,
   AdminSettingsRoute: AdminSettingsRouteWithChildren,
