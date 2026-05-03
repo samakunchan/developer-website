@@ -2,6 +2,9 @@ import { createFileRoute } from '@tanstack/react-router';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { ContactMe } from '../components/ContactMe';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
+const RECAPTCHA_SITE_KEY = import.meta.env.VITE_RECAPTCHA_SITE_KEY || '';
 
 export const Route = createFileRoute('/contact-me')({
   loader: async ({ context }) => {
@@ -9,11 +12,15 @@ export const Route = createFileRoute('/contact-me')({
       isConnected: context.session?.user.role === 'admin',
     };
   },
-  component: ContactMePage,
+  component: () => (
+    <GoogleReCaptchaProvider reCaptchaKey={RECAPTCHA_SITE_KEY}>
+      <ContactMePage />
+    </GoogleReCaptchaProvider>
+  ),
 });
 
 function ContactMePage() {
-  const { isConnected } = Route.useLoaderData();
+  const { isConnected }: { isConnected: boolean } = Route.useLoaderData();
 
   return (
     <>
