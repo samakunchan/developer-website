@@ -1,5 +1,41 @@
 # CHANGELOG developer-website
 
+## 🚀 0.30.0 - 03/05/2026
+
+### Added
+
+- **Admin Message Workspace**:
+  - Redesigned the admin messages dashboard into a professional, three-pane workspace inspired by "DevMail".
+  - Implemented real-time search filtering for messages by name, email, or project brief.
+  - Added message navigation arrows and position counters (e.g., "Message 1 of 42").
+  - Integrated unread message status tracking in the database and sidebar UI.
+- **Localization**:
+  - Implemented full localization for the `ContactMe.tsx` component.
+  - Added multi-language support for success states ("Message Sent!") and placeholders.
+  - Completed translation catalogs for `fr-FR`, `es-ES`, `zh-CN`, and `ar-SA`.
+- **Infrastructure**:
+  - Added `react-google-recaptcha-v3` for future contact form security.
+  - Created a robust `prisma-seed.sh` shell script for environment-aware database seeding and trigger management.
+  - Added `seed-test-messages.ts` for high-volume message testing (100+ messages).
+
+### Changed
+
+- **Theme System**:
+  - Refactored themes into a "Nature" family: `Nature (Forest)`, `Nature (Ocean)`, `Nature (Desert)`.
+  - Standardized theme naming across the admin settings and footer.
+- **Admin UX**:
+  - Refactored administrative components to use a centralized `Button` component for styling consistency.
+  - Optimized real-time counter synchronization using TanStack Query invalidation.
+  - Enhanced `DetailPane` and `ListPane` with improved glassmorphism and layout logic.
+
+### Fixed
+
+- **Styles**:
+  - Fixed search input alignment and formatting in `_admin_search.css`.
+  - Corrected padding and border inconsistencies in the admin sidebar.
+- **Data Flow**:
+  - Resolved synchronization lag where the unread message counter didn't update immediately after marking as read.
+
 ## 🚀 0.29.0 - 01/05/2026
 
 ### Added
@@ -23,7 +59,7 @@
   - Updated the Footer component to include links to the new themes.
 - **Routes naming**:
   - Added route names variables to avoid repetition and make it easier to maintain.
-  
+
 ### Fixed
 
 - **Styles**:
