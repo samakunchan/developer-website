@@ -6,6 +6,14 @@ import { signOutAction } from '../features/auth/utils/auth-actions.functions';
 import { Button } from './Button';
 import packageJson from '../../package.json';
 import { RouteNameType } from '../core/types/routes-name';
+import { UnReadBadge } from '../features/messages/components/UnReadBadge';
+
+type AdminPageType = {
+  to: string;
+  icon: string;
+  label: React.ReactNode;
+  exact?: boolean;
+};
 
 export const AdminSidebarPrimary: React.FC = () => {
   const signOut = useServerFn(signOutAction);
@@ -26,6 +34,40 @@ export const AdminSidebarPrimary: React.FC = () => {
       alert('Logout failed. Please try again.');
     }
   };
+
+  const adminPages: AdminPageType[] = [
+    {
+      to: RouteNameType.AdminDashboard.toString(),
+      icon: 'dashboard',
+      label: <Trans>Dashboard</Trans>,
+      exact: true,
+    },
+    {
+      to: RouteNameType.AdminMessages.toString(),
+      icon: 'message',
+      label: <Trans>Messages</Trans>,
+    },
+    {
+      to: RouteNameType.AdminProfileOverview.toString(),
+      icon: 'account_circle',
+      label: <Trans>Profiles</Trans>,
+    },
+    {
+      to: RouteNameType.AdminProjects.toString(),
+      icon: 'folder_special',
+      label: <Trans>Projects</Trans>,
+    },
+    {
+      to: RouteNameType.AdminAnalytics.toString(),
+      icon: 'monitoring',
+      label: <Trans>Analytics</Trans>,
+    },
+    {
+      to: RouteNameType.AdminThemes.toString(),
+      icon: 'settings',
+      label: <Trans>Settings</Trans>,
+    },
+  ];
   return (
     <aside className="admin-sidebar">
       <div className="admin-sidebar__header">
@@ -39,61 +81,19 @@ export const AdminSidebarPrimary: React.FC = () => {
       </div>
 
       <nav className="admin-sidebar__nav">
-        <Link
-          to={RouteNameType.AdminDashboard.toString()}
-          className="admin-sidebar__nav-link"
-          activeProps={{ className: 'admin-sidebar__nav-link--active' }}
-          activeOptions={{ exact: true }}
-        >
-          <span className="material-symbols-outlined">dashboard</span>
-          <span>
-            <Trans>Dashboard</Trans>
-          </span>
-        </Link>
-
-        <Link
-          to={RouteNameType.AdminProfileOverview.toString()}
-          className="admin-sidebar__nav-link"
-          activeProps={{ className: 'admin-sidebar__nav-link--active' }}
-        >
-          <span className="material-symbols-outlined">account_circle</span>
-          <span>
-            <Trans>Profiles</Trans>
-          </span>
-        </Link>
-
-        <Link
-          to={RouteNameType.AdminProjects.toString()}
-          className="admin-sidebar__nav-link"
-          activeProps={{ className: 'admin-sidebar__nav-link--active' }}
-        >
-          <span className="material-symbols-outlined">folder_special</span>
-          <span>
-            <Trans>Projects</Trans>
-          </span>
-        </Link>
-
-        <Link
-          to={RouteNameType.AdminAnalytics.toString()}
-          className="admin-sidebar__nav-link"
-          activeProps={{ className: 'admin-sidebar__nav-link--active' }}
-        >
-          <span className="material-symbols-outlined">monitoring</span>
-          <span>
-            <Trans>Analytics</Trans>
-          </span>
-        </Link>
-
-        <Link
-          to={RouteNameType.AdminThemes.toString()}
-          className="admin-sidebar__nav-link"
-          activeProps={{ className: 'admin-sidebar__nav-link--active' }}
-        >
-          <span className="material-symbols-outlined">settings</span>
-          <span>
-            <Trans>Settings</Trans>
-          </span>
-        </Link>
+        {adminPages.map((page) => (
+          <Link
+            key={page.to}
+            to={page.to}
+            className="admin-sidebar__nav-link"
+            activeProps={{ className: 'admin-sidebar__nav-link--active' }}
+            activeOptions={page.exact ? { exact: true } : undefined}
+          >
+            <span className="material-symbols-outlined">{page.icon}</span>
+            <span>{page.label}</span>
+            {page.to === RouteNameType.AdminMessages.toString() && <UnReadBadge />}
+          </Link>
+        ))}
       </nav>
 
       <div className="admin-sidebar__footer">

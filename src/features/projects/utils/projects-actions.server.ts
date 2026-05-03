@@ -3,6 +3,7 @@ import { db } from '../../database/server/db.server';
 import { getSessionInternal } from '../../auth/utils/auth-actions.server';
 import { projectSchema, ProjectInput, ProjectType } from './schemas';
 import { processPictureFiles, cleanupPictureFiles, ImagePayload } from '../../pictures/utils/pictures-actions.server';
+import { removeFromSearchIndexInternal } from '../../search/utils/search-actions.server';
 
 /**
  * Fetches all projects from the database.
@@ -78,6 +79,8 @@ export async function createProjectInternal(data: ProjectInput) {
     include: { image: true },
   });
 
+  // Project search index is updated automatically via Postgres triggers
+
   return project as unknown as ProjectType;
 }
 
@@ -145,6 +148,8 @@ export async function updateProjectInternal(id: number, data: ProjectInput) {
     include: { image: true },
   });
 
+  // Project search index is updated automatically via Postgres triggers
+
   return project as unknown as ProjectType;
 }
 
@@ -166,9 +171,13 @@ export async function deleteProjectInternal(id: number) {
     await cleanupPictureFiles(project.image as unknown as ImagePayload);
   }
 
-  return await db.project.delete({
+  const res = await db.project.delete({
     where: { id },
   });
+
+  await removeFromSearchIndexInternal(id, 'project');
+
+  return res;
 }
 
 /**

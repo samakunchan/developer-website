@@ -5,7 +5,8 @@
   --color-text: #0f172a;
   --color-glass-bg: rgba(60, 131, 246, 0.05);
   --color-glass-border: rgba(60, 131, 246, 0.1);
-  --color-primary-hover: #2563eb;
+  --color-primary-hover: #2564eb1b;
+  /* --color-primary-shadow: rgba(60, 131, 246, 0.2); */
   --color-primary-shadow: rgba(60, 131, 246, 0.2);
   --color-primary-shadow-hover: rgba(60, 131, 246, 0.3);
 
@@ -71,7 +72,7 @@
   --color-project-tag-bg: rgba(60, 131, 246, 0.05);
   --color-project-tag-border: rgba(60, 131, 246, 0.1);
   --color-project-tag-text: var(--color-primary);
-  --color-projects-card-detail-hover: var(--color-terminal-light-green);
+  --color-projects-card-detail-hover: var(--color-primary-hover);
 
   /* Pricing */
   --color-pricing-section-bg: var(--color-background);
@@ -154,4 +155,7 @@
   --color-pd-title-card-bg: var(--color-secondary);
   --color-pd-desc-card-bg: var(--color-secondary);
   --color-empty-card-bg: var(--color-cta-glow);
+
+  /* Form */
+  --color-input-text: var(--color-text);
 }

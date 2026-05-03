@@ -91,6 +91,7 @@
   border-left: 4px solid var(--color-primary);
   padding-left: 1rem;
   color: var(--color-text);
+  margin-bottom: var(--spacing-md);
 }
 
 .about__skills-grid {

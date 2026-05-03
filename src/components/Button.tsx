@@ -8,7 +8,11 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, variant = 'primary', fullWidth, className = '', ...props }, ref) => {
     return (
-      <button ref={ref} className={`btn btn--${variant} ${fullWidth ? 'btn--full' : ''} ${className}`} {...props}>
+      <button
+        ref={ref}
+        className={`btn btn--${variant}${fullWidth ? ' btn--full' : ''}${className ? ' ' + className : ''}`}
+        {...props}
+      >
         {children}
       </button>
     );

@@ -124,3 +124,17 @@
   background-color: rgba(37, 244, 244, 0.1);
   color: var(--color-primary);
 }
+
+.admin-sidebar__badge {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 0.125rem 0.5rem;
+  border-radius: 1rem;
+  margin-left: auto;
+  min-width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

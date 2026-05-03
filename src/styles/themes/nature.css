@@ -154,4 +154,7 @@
   --color-pd-title-card-bg: var(--color-secondary);
   --color-pd-desc-card-bg: var(--color-secondary);
   --color-empty-card-bg: var(--color-cta-glow);
+
+  /* Form */
+  --color-input-text: var(--color-text);
 }

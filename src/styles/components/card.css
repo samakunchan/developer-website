@@ -24,7 +24,7 @@
 }
 
 .card--popular {
-  transform: scale(1.05);
+  transform: var(--transform-scale-card);
   z-index: 10;
   box-shadow: var(--color-card-popular-shadow);
 }

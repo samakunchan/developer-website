@@ -21,12 +21,6 @@ function ThemesComponent() {
 
   const themes: ITheme[] = [
     {
-      id: 'nature' as ThemeType,
-      name: 'Nature (Classic)',
-      primary: '#006d36',
-      secondary: '#f8f8f8',
-    },
-    {
       id: 'dark' as ThemeType,
       name: 'Dark (Modern)',
       primary: '#25f4f4',
@@ -39,14 +33,20 @@ function ThemesComponent() {
       secondary: '#ffffff',
     },
     {
+      id: 'nature' as ThemeType,
+      name: 'Nature (Forest)',
+      primary: '#006d36',
+      secondary: '#f8f8f8',
+    },
+    {
       id: 'ocean' as ThemeType,
-      name: 'Ocean (Dark)',
+      name: 'Nature (Ocean)',
       primary: '#0b1326',
       secondary: '#8ed5ff',
     },
     {
       id: 'desert' as ThemeType,
-      name: 'Desert (Warm)',
+      name: 'Nature (Desert)',
       primary: '#974225',
       secondary: '#fcf9f4',
     },

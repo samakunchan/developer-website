@@ -59,12 +59,10 @@ export const AdminSearchbar: React.FC = () => {
 
       {isOpen && debouncedQuery.length >= 2 && (
         <div className="admin-toolbar__search-results">
-          {isLoading && <div style={{ padding: '0.75rem', textAlign: 'center' }}>{t`Searching...`}</div>}
+          {isLoading && <div className="admin-toolbar__search-isloading">{t`Searching...`}</div>}
 
           {!isLoading && results?.length === 0 && (
-            <div style={{ padding: '0.75rem', textAlign: 'center', color: 'var(--text-color-secondary)' }}>
-              {t`No results found`}
-            </div>
+            <div className="admin-toolbar__search-noresults">{t`No results found`}</div>
           )}
 
           {!isLoading && results && results.length > 0 && (
@@ -73,7 +71,7 @@ export const AdminSearchbar: React.FC = () => {
                 <li
                   key={`${result.itemType}-${result.itemId}`}
                   onClick={() => {
-                    if (result.itemType === 'Project') {
+                    if (result.itemType.toLowerCase() === 'project') {
                       navigate({
                         to: RouteNameType.AdminProjectsEdit.toString(),
                         params: { projectId: result.itemId.toString() },

@@ -59,17 +59,45 @@ export async function searchGlobalInternal(query: string) {
     SELECT id, "itemId", "itemType", category, content, 
            1 - (embedding <=> ${vectorString}::vector) as similarity
     FROM global_search_indices
-    WHERE embedding IS NOT NULL
-      AND (
+    WHERE 
         1 - (embedding <=> ${vectorString}::vector) > 0.3
         OR content ILIKE ${'%' + query + '%'}
         OR category ILIKE ${'%' + query + '%'}
-      )
     ORDER BY 
       (content ILIKE ${'%' + query + '%'} OR category ILIKE ${'%' + query + '%'}) DESC,
-      embedding <=> ${vectorString}::vector
+      embedding <=> ${vectorString}::vector ASC NULLS LAST
     LIMIT 10;
   `;
 
   return results;
+}
+
+/**
+ * Generic function to update or create a search index record.
+ * Sets embedding to null so it can be synced later.
+ */
+export async function upsertSearchIndexInternal(itemId: number, itemType: string, content: string, category?: string) {
+  // Use raw SQL because 'embedding' is an Unsupported type (vector) in Prisma
+  // and we need to set it to NULL on update to trigger a re-sync.
+  return await db.$executeRaw`
+    INSERT INTO global_search_indices ("itemId", "itemType", content, category, "createdAt", "updatedAt")
+    VALUES (${itemId}, ${itemType}, ${content}, ${category}, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)
+    ON CONFLICT ("itemId", "itemType") DO UPDATE SET
+      content = EXCLUDED.content,
+      category = EXCLUDED.category,
+      embedding = NULL,
+      "updatedAt" = CURRENT_TIMESTAMP
+  `;
+}
+
+/**
+ * Removes a search index record.
+ */
+export async function removeFromSearchIndexInternal(itemId: number, itemType: string) {
+  return await db.globalSearchIndex.deleteMany({
+    where: {
+      itemId,
+      itemType,
+    },
+  });
 }
