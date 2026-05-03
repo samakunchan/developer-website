@@ -35,6 +35,7 @@
 @import './components/_admin_search.css';
 @import './components/_contact_form.css';
 @import './components/_contact_me.css';
+@import './components/admin-messages-workspace.css';
 
 @import './components/_personal_info_form.css';
 @import './components/_visual_identity.css';
@@ -49,4 +50,3 @@
 @import './themes/nature.css';
 @import './themes/ocean.css';
 @import './themes/desert.css';
-
