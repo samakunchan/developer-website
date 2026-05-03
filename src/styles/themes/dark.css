@@ -60,4 +60,7 @@
   --color-footer-border: var(--color-slate-800);
   --color-footer-social-link: var(--color-slate-400);
   --color-footer-copyright: var(--color-slate-400);
+
+  /* Form */
+  --color-input-text: var(--color-white);
 }

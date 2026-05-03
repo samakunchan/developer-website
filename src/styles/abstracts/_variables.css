@@ -100,6 +100,7 @@
   --color-card-popular-shadow: 0 20px 50px -12px rgba(37, 244, 244, 0.2);
   --color-feature-text: var(--color-slate-400);
   --color-price-muted: var(--color-slate-500);
+  --transform-scale-card: scale(1.05);
 
   /* Process */
   --color-process-node-bg: rgba(37, 244, 244, 0.2);

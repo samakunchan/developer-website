@@ -3,6 +3,7 @@ export enum RouteNameType {
   Home = '/',
   Projects = '/projects',
   AboutMe = '/about-me',
+  ContactMe = '/contact-me',
   Services = '/services',
   Login = '/login',
   NotFound = '/not-found',
@@ -37,4 +38,7 @@ export enum RouteNameType {
   AdminProfilePersonalInfo = '/admin/profiles/personal-info',
   AdminProfileTechStacks = '/admin/profiles/tech-stacks',
   AdminProfileSocialLinks = '/admin/profiles/social-links',
+
+  // Admin Messages
+  AdminMessages = '/admin/messages',
 }

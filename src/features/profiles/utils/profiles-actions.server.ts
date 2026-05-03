@@ -103,6 +103,9 @@ export async function updatePersonalInfoInternal(data: PersonalInfoInput) {
       update: personalInfoData,
     });
 
+    // Update search index
+    // User search index is updated automatically via Postgres triggers
+
     return { success: true };
   });
 }
@@ -118,12 +121,16 @@ export async function addTechStackInternal(data: TechStackInput) {
 
   const validatedData = techStackSchema.parse(data);
 
-  return await db.techStack.create({
+  const res = await db.techStack.create({
     data: {
       ...validatedData,
       userId: session.user.id,
     },
   });
+
+  // User search index is updated automatically via Postgres triggers
+
+  return res;
 }
 
 /**
@@ -141,9 +148,13 @@ export async function removeTechStackInternal(id: number) {
     throw new Error('Not found or unauthorized');
   }
 
-  return await db.techStack.delete({
+  const res = await db.techStack.delete({
     where: { id },
   });
+
+  // User search index is updated automatically via Postgres triggers
+
+  return res;
 }
 
 /**
@@ -157,12 +168,16 @@ export async function addSocialLinkInternal(data: SocialLinkInput) {
 
   const validatedData = socialLinkSchema.parse(data);
 
-  return await db.socialLink.create({
+  const res = await db.socialLink.create({
     data: {
       ...validatedData,
       userId: session.user.id,
     },
   });
+
+  // User search index is updated automatically via Postgres triggers
+
+  return res;
 }
 
 /**
@@ -180,9 +195,13 @@ export async function removeSocialLinkInternal(id: number) {
     throw new Error('Not found or unauthorized');
   }
 
-  return await db.socialLink.delete({
+  const res = await db.socialLink.delete({
     where: { id },
   });
+
+  // User search index is updated automatically via Postgres triggers
+
+  return res;
 }
 
 /**

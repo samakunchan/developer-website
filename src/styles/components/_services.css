@@ -60,13 +60,14 @@
   border-radius: var(--border-radius-xl);
   transition: all 0.5s ease;
   height: 100%;
+  box-shadow: var(--color-shadow-deep);
 }
 
-.service-card:hover {
+/* .service-card:hover {
   border-color: var(--color-services-card-hover-border);
   transform: translateY(-4px);
   box-shadow: var(--color-shadow-deep);
-}
+} */
 
 .service-card__icon-wrapper {
   width: 3.5rem;
@@ -82,10 +83,10 @@
   border: 1px solid var(--color-services-card-border);
 }
 
-.service-card:hover .service-card__icon-wrapper {
+/* .service-card:hover .service-card__icon-wrapper {
   background: var(--color-primary);
   color: var(--color-background-dark);
-}
+} */
 
 .service-card__title {
   font-size: 1.25rem;
