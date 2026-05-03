@@ -2,22 +2,98 @@ import React, { useState } from 'react';
 import { Container } from './Container';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
+import { submitMessageAction } from '../features/messages';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
-type ServiceType = 'web' | 'mobile' | 'mvp' | 'ai' | 'api' | 'other';
+type ServiceEnum = 'web' | 'mobile' | 'mvp' | 'ai' | 'api' | 'other';
+
+type ServiceType = {
+  id: ServiceEnum;
+  icon: string;
+  label: string;
+};
+
+type PriceRangeType = {
+  id: string;
+  currency: string;
+  label: string;
+};
 
 export const ContactMe: React.FC = () => {
-  const [selectedService, setSelectedService] = useState<ServiceType>('web');
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [selectedService, setSelectedService] = useState<ServiceEnum>('web');
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    projectBrief: '',
+  });
+  const [selectedPriceId, setSelectedPriceId] = useState('<1k');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const services = [
-    { id: 'web' as ServiceType, icon: 'web', label: t`Web Dev` },
-    { id: 'mobile' as ServiceType, icon: 'mobile', label: t`Mobile Dev` },
-    { id: 'mvp' as ServiceType, icon: 'rocket_launch', label: t`MVP Launch` },
-    { id: 'ai' as ServiceType, icon: 'auto_awesome', label: t`AI Integration` },
-    { id: 'api' as ServiceType, icon: 'terminal', label: t`API Backend` },
-    { id: 'other' as ServiceType, icon: 'more_horiz', label: t`Something Else` },
+  const services: ServiceType[] = [
+    { id: 'web' as ServiceEnum, icon: 'web', label: t`Web Dev` },
+    { id: 'mobile' as ServiceEnum, icon: 'mobile', label: t`Mobile Dev` },
+    { id: 'mvp' as ServiceEnum, icon: 'rocket_launch', label: t`MVP Launch` },
+    { id: 'ai' as ServiceEnum, icon: 'auto_awesome', label: t`AI Integration` },
+    { id: 'api' as ServiceEnum, icon: 'terminal', label: t`API Backend` },
+    { id: 'other' as ServiceEnum, icon: 'more_horiz', label: t`Something Else` },
   ];
 
-  const _prices = ['$5k - $10k', '$10k - $30k', '$30k+'];
+  const _prices: PriceRangeType[] = [
+    { id: '<1k', currency: '€', label: `<1k` },
+    { id: '1k-5k', currency: '€', label: `1k - 5k` },
+    { id: '5k-10k', currency: '€', label: `5k - 10k` },
+    { id: '10k-30k', currency: '€', label: `10k - 30k` },
+    { id: '30k+', currency: '€', label: `30k+` },
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+
+    const serviceObj = services.find((s) => s.id === selectedService);
+    const priceObj = _prices.find((p) => p.id === selectedPriceId);
+
+    if (!serviceObj || !priceObj) {
+      setStatus('error');
+      return;
+    }
+
+    try {
+      if (!executeRecaptcha) {
+        console.error('Execute recaptcha not yet available');
+        setStatus('error');
+        return;
+      }
+
+      const token = await executeRecaptcha('submit_contact');
+
+      const result = await submitMessageAction({
+        data: {
+          ...formData,
+          serviceType: serviceObj,
+          priceRangeType: priceObj,
+          recaptchaToken: token,
+        },
+      });
+
+      if (result.success) {
+        setStatus('success');
+        setFormData({ fullName: '', email: '', projectBrief: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('Submission error:', error);
+      setStatus('error');
+    }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    const fieldName = id.replace('contact_', '');
+    setFormData((prev) => ({ ...prev, [fieldName]: value }));
+  };
 
   return (
     <section className="contact-me">
@@ -65,62 +141,99 @@ export const ContactMe: React.FC = () => {
               </div>
 
               {/* Dynamic Form Fields */}
-              <form className="contact-me__form" onSubmit={(e) => e.preventDefault()}>
-                <div className="contact-me__form-grid">
-                  <div className="contact-me__field">
-                    <label className="contact-me__label" htmlFor="contact_name">
-                      <Trans>Full Name</Trans>
-                    </label>
-                    <input id="contact_name" className="contact-me__input" placeholder={t`John Doe`} type="text" />
+              {status === 'success' ? (
+                <div className="contact-me__success">
+                  {/* <span className="material-symbols-outlined contact-me__success-icon">check_circle</span> */}
+                  <h3>
+                    <Trans>Message Sent!</Trans>
+                  </h3>
+                  <p>
+                    <Trans>Thank you for reaching out. We'll get back to you within 12 hours.</Trans>
+                  </p>
+                </div>
+              ) : (
+                <form className="contact-me__form" onSubmit={handleSubmit}>
+                  <div className="contact-me__form-grid">
+                    <div className="contact-me__field">
+                      <label className="contact-me__label" htmlFor="contact_fullName">
+                        <Trans>Full Name</Trans>
+                      </label>
+                      <input
+                        id="contact_fullName"
+                        className="contact-me__input"
+                        placeholder={t`John Doe`}
+                        type="text"
+                        required
+                        value={formData.fullName}
+                        onChange={handleInputChange}
+                      />
+                    </div>
+                    <div className="contact-me__field">
+                      <label className="contact-me__label" htmlFor="contact_email">
+                        <Trans>Email Address</Trans>
+                      </label>
+                      <input
+                        id="contact_email"
+                        className="contact-me__input"
+                        placeholder={`john@example.com`}
+                        type="email"
+                        required
+                        value={formData.email}
+                        onChange={handleInputChange}
+                      />
+                    </div>
                   </div>
-                  <div className="contact-me__field">
-                    <label className="contact-me__label" htmlFor="contact_email">
-                      <Trans>Email Address</Trans>
+
+                  <div className="contact-me__field" style={{ marginBottom: 'var(--spacing-md)' }}>
+                    <h5 className="contact-me__label">
+                      <Trans>Project Budget Range</Trans>
+                    </h5>
+                    <div className="contact-me__budget-options">
+                      {_prices.map((range: PriceRangeType) => (
+                        <label key={range.id} className="contact-me__budget-label" htmlFor={range.id}>
+                          <input
+                            id={range.id}
+                            className="contact-me__budget-input"
+                            name="budget"
+                            type="radio"
+                            checked={selectedPriceId === range.id}
+                            onChange={() => setSelectedPriceId(range.id)}
+                          />
+                          <div className="contact-me__budget-box">
+                            <span>{range.label}</span>
+                            <span>{range.currency}</span>
+                          </div>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="contact-me__field" style={{ marginBottom: 'var(--spacing-md)' }}>
+                    <label className="contact-me__label" htmlFor="contact_projectBrief">
+                      <Trans>Project Brief</Trans>
                     </label>
-                    <input
-                      id="contact_email"
-                      className="contact-me__input"
-                      placeholder={`john@example.com`}
-                      type="email"
+                    <textarea
+                      id="contact_projectBrief"
+                      className="contact-me__textarea"
+                      placeholder={t`Tell us about your project goals, timeline, and any specific technical requirements...`}
+                      rows={4}
+                      required
+                      value={formData.projectBrief}
+                      onChange={handleInputChange}
                     />
                   </div>
-                </div>
 
-                <div className="contact-me__field" style={{ marginBottom: 'var(--spacing-md)' }}>
-                  <h5 className="contact-me__label">
-                    <Trans>Project Budget Range</Trans>
-                  </h5>
-                  <div className="contact-me__budget-options">
-                    {_prices.map((range: string, index: number) => (
-                      <label key={range} className="contact-me__budget-label" htmlFor={'contact_price_range-' + index}>
-                        <input
-                          id={'contact_price_range-' + index}
-                          className="contact-me__budget-input"
-                          name="budget"
-                          type="radio"
-                          defaultChecked={index === 1}
-                        />
-                        <div className="contact-me__budget-box">{range}</div>
-                      </label>
-                    ))}
-                  </div>
-                </div>
+                  {status === 'error' && (
+                    <p className="contact-me__error">
+                      <Trans>Something went wrong. Please try again.</Trans>
+                    </p>
+                  )}
 
-                <div className="contact-me__field" style={{ marginBottom: 'var(--spacing-md)' }}>
-                  <label className="contact-me__label">
-                    <Trans>Project Brief</Trans>
-                  </label>
-                  <textarea
-                    className="contact-me__textarea"
-                    placeholder={t`Tell us about your project goals, timeline, and any specific technical requirements...`}
-                    rows={4}
-                  />
-                </div>
-
-                <button className="contact-me__submit" type="submit">
-                  <Trans>Send Inquiry</Trans>
-                </button>
-              </form>
+                  <button className="contact-me__submit" type="submit" disabled={status === 'loading'}>
+                    {status === 'loading' ? <Trans>Sending...</Trans> : <Trans>Send Inquiry</Trans>}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
 
@@ -169,7 +282,7 @@ export const ContactMe: React.FC = () => {
                   <span className="material-symbols-outlined">location_on</span>
                   Montpellier, France
                 </div>
-                <p className="contact-me__info-text" style={{ fontSize: '0.75rem' }}>
+                <p className="contact-me__info-text">
                   <Trans>Serving clients globally.</Trans>
                 </p>
               </div>
