@@ -1,6 +1,10 @@
 import { Container, Box, Paper, Typography, TextField, Button } from '@mui/material';
+import { useServerFn } from '@tanstack/react-start';
+import { Link } from '@tanstack/react-router';
+import { requestPasswordResetActionForProd } from '../utils/auth-actions.functions';
 
 export function Login({ handleSubmit }: { handleSubmit: (event: React.SubmitEvent<HTMLFormElement>) => void }) {
+  const requestReset = useServerFn(requestPasswordResetActionForProd);
   return (
     <Container maxWidth="sm">
       <Box
@@ -46,6 +50,23 @@ export function Login({ handleSubmit }: { handleSubmit: (event: React.SubmitEven
               id="password"
               autoComplete="current-password"
             />
+
+            <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+              {process.env.NODE_ENV === 'development' && (
+                <Link to="/forgot-password" style={{ textDecoration: 'none' }}>
+                  <Typography variant="body2" color="primary">
+                    Forgot password?
+                  </Typography>
+                </Link>
+              )}
+              {process.env.NODE_ENV === 'production' && (
+                <Button variant="text" color="primary" onClick={() => requestReset()}>
+                  <Typography variant="body2" color="primary">
+                    Forgot password?
+                  </Typography>
+                </Button>
+              )}
+            </Box>
 
             <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2, py: 1.5 }}>
               Sign In

@@ -25,3 +25,22 @@ export type PayloadSessionType = {
 } | null;
 
 export type UserInputDto = { id: number; email: string; role: string; name: string | null };
+
+export const forgotPasswordSchema = z.object({
+  email: z.email('Invalid email address'),
+});
+
+export type ForgotPasswordInput = z.infer<typeof forgotPasswordSchema>;
+
+export const resetPasswordSchema = z
+  .object({
+    token: z.string().min(1, 'Token is required'),
+    password: z.string().min(8, 'Password must be at least 8 characters long'),
+    confirmPassword: z.string().min(8, 'Confirm password must be at least 8 characters long'),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ['confirmPassword'],
+  });
+
+export type ResetPasswordInput = z.infer<typeof resetPasswordSchema>;

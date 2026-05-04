@@ -10,8 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ResetPasswordRouteImport } from './routes/reset-password'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as ForgotPasswordRouteImport } from './routes/forgot-password'
 import { Route as ContactMeRouteImport } from './routes/contact-me'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutMeRouteImport } from './routes/about-me'
@@ -46,6 +48,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResetPasswordRoute = ResetPasswordRouteImport.update({
+  id: '/reset-password',
+  path: '/reset-password',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
@@ -54,6 +61,11 @@ const ProjectsRoute = ProjectsRouteImport.update({
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
+  id: '/forgot-password',
+  path: '/forgot-password',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactMeRoute = ContactMeRouteImport.update({
@@ -208,8 +220,10 @@ export interface FileRoutesByFullPath {
   '/about-me': typeof AboutMeRoute
   '/admin': typeof AdminRouteWithChildren
   '/contact-me': typeof ContactMeRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -241,8 +255,10 @@ export interface FileRoutesByTo {
   '/about-me': typeof AboutMeRoute
   '/admin': typeof AdminRouteWithChildren
   '/contact-me': typeof ContactMeRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -274,8 +290,10 @@ export interface FileRoutesById {
   '/about-me': typeof AboutMeRoute
   '/admin': typeof AdminRouteWithChildren
   '/contact-me': typeof ContactMeRoute
+  '/forgot-password': typeof ForgotPasswordRoute
   '/login': typeof LoginRoute
   '/projects': typeof ProjectsRoute
+  '/reset-password': typeof ResetPasswordRoute
   '/services': typeof ServicesRoute
   '/admin/analytics': typeof AdminAnalyticsRoute
   '/admin/dashboard': typeof AdminDashboardRoute
@@ -309,8 +327,10 @@ export interface FileRouteTypes {
     | '/about-me'
     | '/admin'
     | '/contact-me'
+    | '/forgot-password'
     | '/login'
     | '/projects'
+    | '/reset-password'
     | '/services'
     | '/admin/analytics'
     | '/admin/dashboard'
@@ -342,8 +362,10 @@ export interface FileRouteTypes {
     | '/about-me'
     | '/admin'
     | '/contact-me'
+    | '/forgot-password'
     | '/login'
     | '/projects'
+    | '/reset-password'
     | '/services'
     | '/admin/analytics'
     | '/admin/dashboard'
@@ -374,8 +396,10 @@ export interface FileRouteTypes {
     | '/about-me'
     | '/admin'
     | '/contact-me'
+    | '/forgot-password'
     | '/login'
     | '/projects'
+    | '/reset-password'
     | '/services'
     | '/admin/analytics'
     | '/admin/dashboard'
@@ -408,8 +432,10 @@ export interface RootRouteChildren {
   AboutMeRoute: typeof AboutMeRoute
   AdminRoute: typeof AdminRouteWithChildren
   ContactMeRoute: typeof ContactMeRoute
+  ForgotPasswordRoute: typeof ForgotPasswordRoute
   LoginRoute: typeof LoginRoute
   ProjectsRoute: typeof ProjectsRoute
+  ResetPasswordRoute: typeof ResetPasswordRoute
   ServicesRoute: typeof ServicesRoute
   ApiOptimizeImageRoute: typeof ApiOptimizeImageRoute
   ProjectsSlugRoute: typeof ProjectsSlugRoute
@@ -428,6 +454,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/reset-password': {
+      id: '/reset-password'
+      path: '/reset-password'
+      fullPath: '/reset-password'
+      preLoaderRoute: typeof ResetPasswordRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/projects': {
       id: '/projects'
       path: '/projects'
@@ -440,6 +473,13 @@ declare module '@tanstack/react-router' {
       path: '/login'
       fullPath: '/login'
       preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/forgot-password': {
+      id: '/forgot-password'
+      path: '/forgot-password'
+      fullPath: '/forgot-password'
+      preLoaderRoute: typeof ForgotPasswordRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact-me': {
@@ -720,8 +760,10 @@ const rootRouteChildren: RootRouteChildren = {
   AboutMeRoute: AboutMeRoute,
   AdminRoute: AdminRouteWithChildren,
   ContactMeRoute: ContactMeRoute,
+  ForgotPasswordRoute: ForgotPasswordRoute,
   LoginRoute: LoginRoute,
   ProjectsRoute: ProjectsRoute,
+  ResetPasswordRoute: ResetPasswordRoute,
   ServicesRoute: ServicesRoute,
   ApiOptimizeImageRoute: ApiOptimizeImageRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
