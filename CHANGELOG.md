@@ -1,5 +1,34 @@
 # CHANGELOG developer-website
 
+## 🚀 0.31.0 - 05/05/2026
+
+### Added
+
+- **Password Reset System**:
+  - Implemented a complete "Forgot Password" and "Reset Password" flow for enhanced account security.
+  - Integrated **Nodemailer** for professional email delivery via SMTP.
+  - Added a "Smart Transporter" with automatic **Ethereal Email** support for zero-configuration development testing.
+  - Created dedicated routes: `/forgot-password` (Dev only) and `/reset-password`.
+  - Built premium MUI-based UI components for reset requests and secure password updates.
+- **Security**:
+  - Implemented secure 32-byte random token generation with a 1-hour expiration window.
+  - Protection against user enumeration by providing generic success feedback.
+  - Token validation logic ensures tokens are one-time use and expire correctly.
+
+### Changed
+
+- **Login UX**:
+  - Integrated "Forgot password?" actions directly into the login form.
+  - Optimized production workflow: In production, the "Forgot password?" link triggers an automatic reset email to the admin, streamlining the process for single-user portfolios.
+- **Email Branding**:
+  - Standardized the "From" address and branding for all automated system emails.
+
+### Fixed
+
+- **Styles**:
+  - Fixed minor padding and formatting inconsistencies in the message workspace.
+  - Cleaned up unused `useState` imports and refined TypeScript event types (`React.SubmitEvent`).
+
 ## 🚀 0.30.0 - 03/05/2026
 
 ### Added
