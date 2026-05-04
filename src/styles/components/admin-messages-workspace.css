@@ -420,5 +420,5 @@
 .message-item {
   margin: 0.75rem 0;
   box-shadow: 0 2px 12px -5px var(--color-primary-shadow);
-  padding: .5rem;
+  padding: 0.5rem;
 }
