@@ -1,7 +1,5 @@
 .env
 .env.bak
-docker.env
-docker-prod.env
 node_modules
 .turbo
 .next
