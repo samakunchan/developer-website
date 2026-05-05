@@ -65,10 +65,22 @@ export async function loadSecrets() {
         finalValue = finalValue.slice(1, -1);
       }
 
+      // 🐋 Docker Compatibility: Translate localhost to service names if running in Docker
+      const isDocker = process.env.BAO_ADDR?.includes('host.docker.internal') || process.env.DOCKER === 'true';
+      if (isDocker && typeof finalValue === 'string') {
+        // Translate DATABASE_URL: localhost:5435 -> postgresdb:5432
+        if (key === 'DATABASE_URL') {
+          finalValue = finalValue.replace('localhost:5435', 'postgresdb:5432');
+        }
+        // General translation for localhost to host.docker.internal if needed
+        // finalValue = finalValue.replace('localhost', 'host.docker.internal');
+      }
+
       process.env[key] = finalValue;
     });
 
     console.log(`✅ OpenBao: Successfully loaded ${Object.keys(secrets).length} secrets.`);
+
     secretsLoaded = true;
   } catch (error) {
     console.error('❌ OpenBao Error:', error);
