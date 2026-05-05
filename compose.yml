@@ -3,27 +3,17 @@ services:
     image: pgvector/pgvector:pg16
     container_name: developer-website-db
     restart: always
-    env_file:
-      - docker.env
-    ports:
-      - '${POSTGRES_PORT_EXTERNAL:-5432}:5432'
-    volumes:
-      - postgres_dev_website_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_USER_ENCODED=${POSTGRES_USER_ENCODED}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - POSTGRES_PORT_INTERNAL=${POSTGRES_PORT_INTERNAL}
+
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB']
       interval: 10s
       timeout: 5s
       retries: 5
 
-  website:
-    build: .
-    container_name: developer-website-app
-    restart: always
-    env_file:
-      - docker.env
-    depends_on:
-      postgresdb:
-        condition: service_healthy
-
-volumes:
-  postgres_dev_website_data:
