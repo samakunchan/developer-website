@@ -9,10 +9,10 @@ import { ThemeType } from './theme.types';
 export async function getThemeInternal(): Promise<ThemeType> {
   try {
     const settings = await db.settings.findFirst();
-    return (settings?.theme as ThemeType) || 'nature';
+    return (settings?.theme as ThemeType) || 'light';
   } catch (error) {
     console.error('Failed to fetch theme from DB:', error);
-    return 'nature';
+    return 'light';
   }
 }
 

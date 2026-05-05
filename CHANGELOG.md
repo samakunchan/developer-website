@@ -1,5 +1,42 @@
 # CHANGELOG developer-website
 
+## 🚀 0.32.0 - 06/05/2026
+
+### Added
+
+- **OpenBao Integration**:
+  - Migrated all sensitive credentials (Postgres, Admin, Auth, API Keys) from static `.env` files to a secure **OpenBao (Vault)** instance.
+  - Implemented a custom runtime secret loader (`bao.server.ts`) with AppRole authentication.
+  - Added support for dynamic secret injection across both development and production environments.
+- **Infrastructure Overhaul**:
+  - **Modular Docker Orchestration**: Split configuration into `compose.yml` (base), `compose-dev.yml` (dev), and `compose-prod.yml` (prod).
+  - **New Bootstrap System**: Created `shells/start-app.sh` and `shells/stop-app.sh` for unified, environment-aware service management.
+  - **Shared Helpers**: Created `shells/env-bao.sh` to centralize OpenBao fetching logic for all administrative shell scripts.
+- **Themes**:
+  - Added support for new 'guardian' and 'aegis' themes.
+  - Updated theme selection logic to default to 'light' mode.
+
+### Changed
+
+- **Development Workflow**:
+  - Refactored dev mode to a "hybrid" model: Docker manages only the database (on port 5435), while the application runs natively on the host Mac via `yarn dev`.
+  - Removed redundant environment variables from base `compose.yml` and dev overrides.
+- **Database Tooling**:
+  - Updated `prisma-seed.sh`, `prisma-reset-database.sh`, and `prisma-gen-push-force.sh` to be fully OpenBao-native.
+- **Security**:
+  - Cleaned up local `.env`, `docker.env`, and `docker-prod.env` files, leaving only empty templates.
+  - Updated `.gitignore` to protect against accidental commits of legacy environment files.
+
+### Fixed
+
+- **Docker Production Build**:
+  - Resolved `sharp` module architecture conflicts by implementing a Linux-native build step in the `Dockerfile`.
+  - Fixed database connection issues in production by ensuring all necessary environment variables are correctly inherited from OpenBao.
+  - Resolved "empty host in database URL" errors in production containers.
+- **Cleanup**:
+  - Removed redundant volumes and services from the base `compose.yml`.
+  - Standardized healthcheck logic across environments.
+
 ## 🚀 0.31.0 - 05/05/2026
 
 ### Added

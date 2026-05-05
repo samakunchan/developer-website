@@ -10,6 +10,10 @@ printf "${BLUE}Deleting prisma migrations...${NC}\n"
 rm -rf prisma/migrations
 printf "\n\n"
 
+# Load environment from OpenBao
+source ./shells/env-bao.sh $1
+
+
 printf "${BLUE}Resetting database...${NC}\n"
 yarn prisma migrate reset --force --schema=prisma/schema.prisma && 
 printf "\n\n"

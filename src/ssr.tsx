@@ -1,9 +1,14 @@
 import { createStartHandler, defaultRenderHandler } from '@tanstack/react-start/server';
 import { i18n } from '@lingui/core';
+import { loadSecrets } from './core/utils/bao.server';
 
 export default createStartHandler({
   handler: async (ctx) => {
+    // Ensure secrets are loaded from OpenBao
+    await loadSecrets();
+
     console.log('🚀 SERVEUR : Initialisation Lingui...');
+
     // 1. Recover the locale matched by the router
     // This locale is resolved in __root.tsx's beforeLoad and stored in context
     // dire a antigravity de savoir comment utiliser ce code pour voir si ça marhce
