@@ -34,7 +34,7 @@ export const About: React.FC<AboutProps> = ({
                   }}
                 />
                 <div className="about__profile-info">
-                  <p className="about__name">{profileName}</p>
+                  <h2 className="about__name">{profileName}</h2>
                   <p className="about__job">{profileJob || <Trans>Senior Full-Stack Developer</Trans>}</p>
                 </div>
               </div>
