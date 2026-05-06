@@ -20,40 +20,40 @@ msgid "/start"
 msgstr "/起"
 
 #: src/components/Footer.tsx:22
-msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
-msgstr "© {currentYear} DevPort 自由职业工作室。保留所有权利。"
+#~ msgid "© {currentYear} DevPort Freelance Studio. All rights reserved."
+#~ msgstr "© {currentYear} DevPort 自由职业工作室。保留所有权利。"
 
 #: src/components/ContactMe.tsx:43
-msgid "<1k"
-msgstr ""
+#~ msgid "<1k"
+#~ msgstr ""
 
 #: src/components/ContactMe.tsx:43
 #: src/components/ContactMe.tsx:44
 #: src/components/ContactMe.tsx:45
 #: src/components/ContactMe.tsx:46
 #: src/components/ContactMe.tsx:47
-msgid "€"
-msgstr ""
+#~ msgid "€"
+#~ msgstr ""
 
 #: src/components/ContactMe.tsx:46
-msgid "10k - 30k"
-msgstr ""
+#~ msgid "10k - 30k"
+#~ msgstr ""
 
 #: src/components/ContactMe.tsx:44
-msgid "1k - 5k"
-msgstr ""
+#~ msgid "1k - 5k"
+#~ msgstr ""
 
 #: src/core/data/pricingData.tsx:12
 msgid "3 Pages"
 msgstr "3 页"
 
 #: src/components/ContactMe.tsx:47
-msgid "30k+"
-msgstr ""
+#~ msgid "30k+"
+#~ msgstr ""
 
 #: src/components/ContactMe.tsx:45
-msgid "5k - 10k"
-msgstr ""
+#~ msgid "5k - 10k"
+#~ msgstr ""
 
 #: src/routes/projects.tsx:26
 #~ msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
@@ -94,6 +94,10 @@ msgstr ""
 #: src/components/Projects.tsx:21
 msgid "All Projects"
 msgstr "所有项目"
+
+#: src/components/Footer.tsx:22
+msgid "All rights reserved."
+msgstr "版权所有。"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:201
 msgid "Alt Text (SEO)"
@@ -997,7 +1001,7 @@ msgstr "感谢您的联系。我们将在 12 小时内回复您。"
 msgid "The project you are looking for does not exist."
 msgstr "您寻找的项目不存在。"
 
-#: src/routes/admin.settings.themes.tsx:59
+#: src/routes/admin.settings.themes.tsx:96
 #: src/routes/admin.settings.tsx:12
 msgid "Themes"
 msgstr "主题"

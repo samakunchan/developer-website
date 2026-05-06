@@ -14,8 +14,7 @@
 
 @media (min-width: 768px) {
   .footer__wrapper {
-    flex-direction: row;
-    gap: 0;
+    gap: 0.5rem;
   }
 }
 

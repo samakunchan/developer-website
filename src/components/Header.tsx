@@ -17,7 +17,7 @@ export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = fals
           viewTransition
         >
           <span className="material-symbols-outlined header__logo-icon">terminal</span>
-          <span className="header__logo-text">Freelance Dev</span>
+          <span className="header__logo-text">{import.meta.env.VITE_APP_NAME}</span>
         </Link>
 
         <nav aria-label={t`Main navigation`} className="header__nav" role="navigation">
