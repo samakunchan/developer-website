@@ -188,7 +188,7 @@ enum Role {
 
 enum Theme {
   dark
-  nature
+  forest
   light
   ocean
   desert
