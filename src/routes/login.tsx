@@ -9,6 +9,9 @@ export const Route = createFileRoute('/login')({
   validateSearch: z.object({
     redirectTo: z.string().optional(),
   }),
+  head: () => ({
+    meta: [{ name: 'robots', content: 'noindex, nofollow' }],
+  }),
   component: LoginPage,
 });
 

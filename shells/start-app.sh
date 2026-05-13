@@ -2,7 +2,7 @@
 
 # ==============================================================================
 # OpenBao Bootstrap Script
-# Usage: ./start-app.sh [dev|prod]
+# Usage: ./start-app.sh [dev|stage|prod]
 # ==============================================================================
 
 ENV=${1:-dev}
@@ -11,10 +11,12 @@ COMPOSE_FILES="-f compose.yml"
 
 if [ "$ENV" == "dev" ]; then
   COMPOSE_FILES="$COMPOSE_FILES -f compose-dev.yml"
+elif [ "$ENV" == "stage" ]; then
+  COMPOSE_FILES="$COMPOSE_FILES -f compose-stage.yml"
 elif [ "$ENV" == "prod" ]; then
   COMPOSE_FILES="$COMPOSE_FILES -f compose-prod.yml"
 else
-  echo "❌ Unknown environment: $ENV. Use 'dev' or 'prod'."
+  echo "❌ Unknown environment: $ENV. Use 'dev', 'stage' or 'prod'."
   exit 1
 fi
 
@@ -27,7 +29,7 @@ if [ "$ENV" == "dev" ]; then
   # In dev, only start the database
   docker compose -p $PROJECT_NAME $COMPOSE_FILES up -d --build postgresdb
 else
-  # In prod, start everything
+  # In stage/prod, start everything
   docker compose -p $PROJECT_NAME $COMPOSE_FILES up -d --build
 fi
 

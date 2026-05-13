@@ -43,6 +43,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .about__illustration-image{
+    display: none;
+  }
+}
+
 .about__profile {
   display: flex;
   align-items: center;

@@ -1,5 +1,35 @@
 # CHANGELOG developer-website
 
+## 🚀 0.33.0 - 13/05/2026
+
+### Added
+
+- **Infrastructure Overhaul (NPM Migration)**:
+  - Migrated to an **Nginx Proxy Manager (NPM)** based architecture, enabling seamless hosting of multiple web projects on a single VPS.
+  - Refactored production and staging Docker configurations (`compose-prod.yml`, `compose-stage.yml`) with optimized internal networking.
+  - Added dedicated `nginx-prod.conf` for high-performance production routing.
+  - Introduced automated deployment scripts (`docker-build-stage.sh`) and enhanced unified service management (`start-app.sh`, `stop-app.sh`).
+- **SEO & Indexation**:
+  - Added `robots.txt` to control search engine crawler behavior and optimize site indexation.
+
+### Changed
+
+- **UI & Accessibility**:
+  - Resolved the `APP_NAME` hydration mismatch bug by correctly exposing and utilizing `VITE_APP_NAME`.
+  - Significantly overhauled the **Header** component for better responsiveness, accessibility, and interactive design.
+  - Refactored the theme system: Renamed 'Nature' to **'Forest'** for clarity and added 'guardian' and 'aegis' variants.
+  - Enhanced the **Admin Theme Settings** with logical categorization (Light, Dark, Nature) and real-time active status indicators.
+- **Infrastructure**:
+  - Updated `env-bao.sh` to centralize OpenBao authentication logic for administrative scripts.
+
+### Fixed
+
+- **Responsive Design**:
+  - Fixed multiple layout issues on the front page to ensure a premium experience across all device sizes.
+  - Resolved navigation inconsistencies in the header across different locales.
+- **Localization**:
+  - Refreshed all translation catalogs (`en-US`, `fr-FR`, `es-ES`, `zh-CN`, `ar-SA`) to include the latest UI enhancements.
+
 ## 🚀 0.32.0 - 06/05/2026
 
 ### Added

@@ -11,6 +11,9 @@ export const Route = createFileRoute('/forgot-password')({
       throw notFound();
     }
   },
+  head: () => ({
+    meta: [{ name: 'robots', content: 'noindex, nofollow' }],
+  }),
   component: ForgotPasswordPage,
 });
 

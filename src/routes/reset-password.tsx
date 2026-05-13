@@ -9,6 +9,9 @@ export const Route = createFileRoute('/reset-password')({
   validateSearch: z.object({
     token: z.string().optional(),
   }),
+  head: () => ({
+    meta: [{ name: 'robots', content: 'noindex, nofollow' }],
+  }),
   component: ResetPasswordPage,
 });
 

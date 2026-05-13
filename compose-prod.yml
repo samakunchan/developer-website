@@ -1,14 +1,23 @@
+# ==============================================================================
+# Production Docker Compose Configuration
+# ------------------------------------------------------------------------------
+# This configuration is optimized for a multi-project VPS environment using
+# Nginx Proxy Manager (NPM) as a global reverse proxy.
+# ==============================================================================
+
 services:
+  # Database Service (PostgreSQL with pgvector)
   postgresdb:
-    image: pgvector/pgvector:pg16
-    container_name: website-db-prod
-    ports:
-      - '5436:5432'
+    container_name: developer-website-db-prod
+    restart: always
+    # NOTE: Public ports are removed to prevent host-level conflicts.
+    # The database is only accessible internally within the Docker network.
     volumes:
       - postgres_website_data_prod:/var/lib/postgresql/data
 
+  # Node.js Application (Remix/Vite/Tanstack)
   website:
-    container_name: website-prod
+    container_name: developer-website-app-prod
     build:
       context: .
       target: runner
@@ -32,21 +41,30 @@ services:
       postgresdb:
         condition: service_healthy
 
-
-    volumes:
-      - ./public/shared:/app/public/shared
-
+  # Internal Nginx (Serves Static Assets + Proxies to Node.js)
   nginx:
     image: nginx:alpine
-    container_name: developer-website-nginx
+    container_name: developer-website-nginx-prod
     restart: always
-    ports:
-      - '3006:80'
+    # SSL & PORT 80/443:
+    # We do NOT map public ports here because Nginx Proxy Manager (NPM) handles
+    # SSL termination and public routing. NPM connects to this service via the
+    # 'nginx-proxy-network' external network.
+    networks:
+      - default
+      - nginx-proxy-network
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/nginx-prod.conf:/etc/nginx/conf.d/default.conf:ro
       - ./public:/usr/share/nginx/html:ro
     depends_on:
       - website
 
+# Persistent Storage
 volumes:
   postgres_website_data_prod:
+
+# Networking
+networks:
+  # Shared network for Nginx Proxy Manager connectivity
+  nginx-proxy-network:
+    external: true

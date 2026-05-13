@@ -16,11 +16,12 @@ export const setThemeAction = createServerFn({ method: 'POST' })
   .inputValidator((theme: unknown): ThemeType => {
     if (
       theme === 'dark' ||
-      theme === 'nature' ||
       theme === 'light' ||
-      theme === 'nature' ||
+      theme === 'forest' ||
       theme === 'ocean' ||
-      theme === 'desert'
+      theme === 'desert' ||
+      theme === 'guardian' ||
+      theme === 'aegis'
     ) {
       return theme;
     }

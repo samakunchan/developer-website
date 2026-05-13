@@ -2,7 +2,7 @@
 
 # ==============================================================================
 # Prisma Seed Script (OpenBao Version)
-# Usage: ./shells/prisma-seed.sh [dev|prod]
+# Usage: ./shells/prisma-seed.sh [dev|stage|prod]
 # ==============================================================================
 
 # Load environment from OpenBao
