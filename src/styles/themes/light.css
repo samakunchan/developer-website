@@ -1,5 +1,6 @@
 .light {
-  --color-primary: #3c83f6;
+  /* --color-primary: #3c83f6; */
+  --color-primary: #0660f2;
   --color-secondary: #ffffff;
   --color-background: #f5f7f8;
   --color-text: #0f172a;
@@ -24,7 +25,7 @@
   --color-hero-image-background: var(--color-secondary);
 
   /* Buttons */
-  --color-primary-btn: linear-gradient(135deg, #3c83f6 0%, #60a5fa 100%);
+  --color-primary-btn: linear-gradient(135deg, var(--color-primary) 0%, #60a5fa 100%);
   --color-primary-btn-text: var(--color-white);
   --color-secondary-btn: var(--color-white);
   --color-secondary-btn-text: var(--color-primary);
@@ -79,7 +80,7 @@
   --color-pricing-card-bg: var(--color-white);
   --color-pricing-card-border: rgba(60, 131, 246, 0.1);
   --color-pricing-card-description: var(--color-text);
-  --color-pricing-popular-bg: linear-gradient(135deg, #3c83f6 0%, #60a5fa 100%);
+  --color-pricing-popular-bg: linear-gradient(135deg, var(--color-primary) 0%, #60a5fa 100%);
   --color-pricing-check-bg: rgba(60, 131, 246, 0.1);
   --color-pricing-popular-shadow: 0 20px 50px -12px rgba(60, 131, 246, 0.2);
   --color-pricing-feature-text: var(--color-text);
@@ -89,7 +90,7 @@
   --color-card-bg: var(--color-background);
   --color-card-border: rgba(60, 131, 246, 0.1);
   --color-card-description: var(--color-text);
-  --color-card-popular-bg: linear-gradient(135deg, #3c83f6 0%, #60a5fa 100%);
+  --color-card-popular-bg: linear-gradient(135deg, var(--color-primary) 0%, #60a5fa 100%);
   --color-card-check-bg: rgba(60, 131, 246, 0.1);
   --color-card-popular-shadow: 0 20px 50px -12px rgba(60, 131, 246, 0.2);
   --color-card-feature-text: var(--color-text);

@@ -2,7 +2,28 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
+}
+
+.theme-category {
+  margin-top: 3rem;
+}
+
+.theme-category__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.theme-category__title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, var(--color-glass-border), transparent);
 }
 
 .theme-card {

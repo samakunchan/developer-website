@@ -3,7 +3,7 @@
 # ==============================================================================
 # OpenBao Environment Helper
 # This script fetches secrets and sets up DATABASE_URL for local and Docker use.
-# Usage: source ./shells/env-bao.sh [dev|prod]
+# Usage: source ./shells/env-bao.sh [dev|stage|prod]
 # ==============================================================================
 
 ENV=${1:-dev}
@@ -40,7 +40,7 @@ eval $(echo $SECRETS_JSON | jq -r '.data.data | to_entries | .[] | "export \(.ke
 if [ "$DOCKER" = "true" ]; then
     export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@postgresdb:5432/${POSTGRES_DB}?schema=public"
 else
-    PORT=$([ "$ENV" = "prod" ] && echo "5436" || echo "5435")
+    PORT=$([ "$ENV" = "prod" ] || [ "$ENV" = "stage" ] && echo "5436" || echo "5435")
     export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@localhost:${PORT}/${POSTGRES_DB}?schema=public"
 fi
 

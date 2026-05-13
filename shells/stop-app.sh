@@ -2,7 +2,7 @@
 
 # ==============================================================================
 # OpenBao Stop Script
-# Usage: ./shells/stop-app.sh [dev|prod]
+# Usage: ./shells/stop-app.sh [dev|stage|prod]
 # ==============================================================================
 
 ENV=${1:-dev}
@@ -11,6 +11,8 @@ COMPOSE_FILES="-f compose.yml"
 
 if [ "$ENV" == "dev" ]; then
   COMPOSE_FILES="$COMPOSE_FILES -f compose-dev.yml"
+elif [ "$ENV" == "stage" ]; then
+  COMPOSE_FILES="$COMPOSE_FILES -f compose-stage.yml"
 elif [ "$ENV" == "prod" ]; then
   COMPOSE_FILES="$COMPOSE_FILES -f compose-prod.yml"
 fi

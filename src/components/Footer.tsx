@@ -15,11 +15,11 @@ export function Footer() {
             <span className="material-symbols-outlined footer__logo-icon" aria-hidden="true">
               terminal
             </span>
-            <h2 className="footer__logo-text">DevPort</h2>
+            <h2 className="footer__logo-text">{import.meta.env.VITE_APP_NAME}</h2>
           </div>
 
           <div className="footer__copyright">
-            <Trans>© {currentYear} DevPort Freelance Studio. All rights reserved.</Trans>
+            © {currentYear} {import.meta.env.VITE_APP_NAME}. <Trans>All rights reserved.</Trans>
           </div>
 
           <div className="footer__links">
