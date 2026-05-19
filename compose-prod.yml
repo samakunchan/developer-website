@@ -21,11 +21,15 @@ services:
     build:
       context: .
       target: runner
+      args:
+        - VITE_APP_NAME=${VITE_APP_NAME}
+        - VITE_RECAPTCHA_SITE_KEY=${VITE_RECAPTCHA_SITE_KEY}
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
       - NODE_ENV=production
+      - SECURE_COOKIES=false
       - BAO_ADDR=http://openbao:8200
       - DOCKER=true
       - BAO_ROLE_ID=${BAO_ROLE_ID}
@@ -37,6 +41,10 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_HOST=${POSTGRES_HOST}
       - POSTGRES_PORT_INTERNAL=${POSTGRES_PORT_INTERNAL}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - ADMIN_USER_NAME=${ADMIN_USER_NAME}
+      - ADMIN_ROLE=${ADMIN_ROLE}
     depends_on:
       postgresdb:
         condition: service_healthy
@@ -50,9 +58,9 @@ services:
     container_name: developer-website-nginx-prod
     restart: always
     # SSL & PORT 80/443:
-    # We do NOT map public ports here because Nginx Proxy Manager (NPM) handles
-    # SSL termination and public routing. NPM connects to this service via the
-    # 'nginx-proxy-network' external network.
+    # Temporarily exposing port 3000 since there is no Nginx Proxy Manager setup yet
+    ports:
+      - "3000:80" # Supprimer quand on aura NPM
     networks:
       - default
       - nginx-proxy-network

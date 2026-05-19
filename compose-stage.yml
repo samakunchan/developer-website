@@ -12,11 +12,15 @@ services:
     build:
       context: .
       target: runner
+      args:
+        - VITE_APP_NAME=${VITE_APP_NAME}
+        - VITE_RECAPTCHA_SITE_KEY=${VITE_RECAPTCHA_SITE_KEY}
     restart: always
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:
       - NODE_ENV=production
+      - SECURE_COOKIES=false
       - BAO_ADDR=http://host.docker.internal:8200
       - DOCKER=true
       - BAO_ROLE_ID=${BAO_ROLE_ID}
@@ -28,6 +32,10 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_HOST=${POSTGRES_HOST}
       - POSTGRES_PORT_INTERNAL=${POSTGRES_PORT_INTERNAL}
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD}
+      - ADMIN_USER_NAME=${ADMIN_USER_NAME}
+      - ADMIN_ROLE=${ADMIN_ROLE}
     depends_on:
       postgresdb:
         condition: service_healthy
