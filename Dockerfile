@@ -17,6 +17,12 @@ WORKDIR /app
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
+# Define build arguments so they are available during Vite compilation (build-time variables)
+ARG VITE_APP_NAME
+ARG VITE_RECAPTCHA_SITE_KEY
+ENV VITE_APP_NAME=$VITE_APP_NAME
+ENV VITE_RECAPTCHA_SITE_KEY=$VITE_RECAPTCHA_SITE_KEY
+
 # Generate Prisma client
 RUN if [ -f prisma/schema.prisma ]; then npx prisma generate; fi
 

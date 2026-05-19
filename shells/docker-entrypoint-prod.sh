@@ -17,9 +17,9 @@ yarn prisma db push --accept-data-loss --url "$DATABASE_URL"
 # Run Database seeding
 echo "🌱 Seeding database..."
 # We use tsx from node_modules if available, or npx prisma db seed if configured in package.json
-if [ -f "prisma/seed.ts" ]; then
+if [ -f "prisma/seed-prod.ts" ]; then
     yarn tsx prisma/seed-trigger.ts
-    yarn tsx prisma/seed.ts
+    yarn tsx prisma/seed-prod.ts
 fi
 
 echo "✅ Database initialization complete."
