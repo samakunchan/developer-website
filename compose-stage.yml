@@ -36,6 +36,7 @@ services:
       - ADMIN_PASSWORD=${ADMIN_PASSWORD}
       - ADMIN_USER_NAME=${ADMIN_USER_NAME}
       - ADMIN_ROLE=${ADMIN_ROLE}
+      - APP_URL_STAGING=${APP_URL_STAGING}
     depends_on:
       postgresdb:
         condition: service_healthy
