@@ -22,7 +22,14 @@ async function main() {
     role: process.env.ADMIN_ROLE || 'admin',
   };
 
-  const APP_URL = process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3000}`;
+  let APP_URL: string;
+  if (process.env.NODE_ENV == 'production') {
+    APP_URL = process.env.APP_URL_PROD || `http://localhost:${process.env.APP_PORT || 3000}`;
+  } else if (process.env.NODE_ENV == 'staging') {
+    APP_URL = process.env.APP_URL_STAGING || `http://localhost:${process.env.APP_PORT || 3000}`;
+  } else {
+    APP_URL = process.env.APP_URL_DEV || `http://localhost:${process.env.APP_PORT || 3000}`;
+  }
 
   if (!userData.email || !userData.password) {
     console.log('⚠️ ADMIN_EMAIL or ADMIN_PASSWORD not set. Skipping production user creation.');
