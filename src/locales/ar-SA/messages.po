@@ -59,7 +59,7 @@ msgstr "٣ صفحات"
 #~ msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
 #~ msgstr ""
 
-#: src/components/Header.tsx:44
+#: src/components/Header.tsx:38
 msgid "About"
 msgstr "حول"
 
@@ -79,7 +79,7 @@ msgstr "إضافة مشروع جديد"
 msgid "Add Project"
 msgstr "إضافة مشروع"
 
-#: src/components/Header.tsx:66
+#: src/components/Header.tsx:49
 msgid "Admin Dashboard"
 msgstr "لوحة الإدارة"
 
@@ -223,6 +223,10 @@ msgstr "خلفية مدينة نيون سينمائية"
 msgid "Click to upload image"
 msgstr "انقر لتحميل الصورة"
 
+#: src/components/Header.tsx:94
+msgid "Close menu"
+msgstr "إغلاق القائمة"
+
 #: src/core/data/servicesData.tsx:24
 #: src/routes/index.tsx:71
 msgid "Cloud Infrastructure"
@@ -244,11 +248,11 @@ msgstr "جاري الإكمال..."
 msgid "Connect with me"
 msgstr "تواصل معي"
 
-#: src/components/Header.tsx:85
+#: src/components/Header.tsx:61
 msgid "Contact"
 msgstr "اتصل بنا"
 
-#: src/components/Header.tsx:84
+#: src/components/Header.tsx:60
 #: src/routes/services.tsx:50
 #: src/routes/services.tsx:68
 msgid "Contact me"
@@ -417,7 +421,7 @@ msgstr "<0>خطط خدمات مرنة</0> لنجاحك"
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "مطور Full-Stack مستقل متخصص في تطبيقات الويب والهواتف عالية الأداء باستخدام React و Angular و Flutter."
 
-#: src/components/Header.tsx:16
+#: src/components/Header.tsx:73
 msgid "Freelance home page"
 msgstr "الصفحة الرئيسية للمستقل"
 
@@ -571,7 +575,7 @@ msgstr ""
 msgid "Logout"
 msgstr "تسجيل الخروج"
 
-#: src/components/Header.tsx:23
+#: src/components/Header.tsx:82
 msgid "Main navigation"
 msgstr "التنقل الرئيسي"
 
@@ -612,6 +616,10 @@ msgstr "تطوير تطبيقات الجوال"
 #: src/components/ContactMe.tsx:35
 msgid "Mobile Dev"
 msgstr "تطوير الهاتف المحمول"
+
+#: src/components/Header.tsx:102
+msgid "Mobile navigation"
+msgstr "التنقل عبر الهاتف المحمول"
 
 #: src/core/data/pricingData.tsx:13
 msgid "Mobile Responsive"
@@ -685,6 +693,10 @@ msgstr "الإشعارات"
 #: src/routes/index.tsx:64
 msgid "Offline Capability"
 msgstr "العمل دون اتصال"
+
+#: src/components/Header.tsx:94
+msgid "Open menu"
+msgstr "فتح القائمة"
 
 #: src/components/Projects.tsx:24
 msgid "Open Source"
@@ -770,7 +782,7 @@ msgid "Project Visual"
 msgstr "مرئيات المشروع"
 
 #: src/components/AdminSidebarPrimary.tsx:58
-#: src/components/Header.tsx:34
+#: src/components/Header.tsx:27
 msgid "Projects"
 msgstr "مشاريع"
 
