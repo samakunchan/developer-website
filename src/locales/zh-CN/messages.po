@@ -59,7 +59,7 @@ msgstr "3 页"
 #~ msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
 #~ msgstr ""
 
-#: src/components/Header.tsx:44
+#: src/components/Header.tsx:38
 msgid "About"
 msgstr "关于"
 
@@ -79,7 +79,7 @@ msgstr "添加新项目"
 msgid "Add Project"
 msgstr "添加项目"
 
-#: src/components/Header.tsx:66
+#: src/components/Header.tsx:49
 msgid "Admin Dashboard"
 msgstr "管理后台"
 
@@ -223,6 +223,10 @@ msgstr "电影般的霓虹城市背景"
 msgid "Click to upload image"
 msgstr "点击上传图片"
 
+#: src/components/Header.tsx:94
+msgid "Close menu"
+msgstr "关闭菜单"
+
 #: src/core/data/servicesData.tsx:24
 #: src/routes/index.tsx:71
 msgid "Cloud Infrastructure"
@@ -244,11 +248,11 @@ msgstr "正在完成..."
 msgid "Connect with me"
 msgstr "与我联系"
 
-#: src/components/Header.tsx:85
+#: src/components/Header.tsx:61
 msgid "Contact"
 msgstr "联系"
 
-#: src/components/Header.tsx:84
+#: src/components/Header.tsx:60
 #: src/routes/services.tsx:50
 #: src/routes/services.tsx:68
 msgid "Contact me"
@@ -416,7 +420,7 @@ msgstr "助您成功的<0>灵活计划</0>"
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "自由职业全栈开发人员，专注于使用 React、Angular 和 Flutter 开发高性能的 Web 和移动应用程序。"
 
-#: src/components/Header.tsx:16
+#: src/components/Header.tsx:73
 msgid "Freelance home page"
 msgstr "自由职业者主页"
 
@@ -570,7 +574,7 @@ msgstr ""
 msgid "Logout"
 msgstr "登出"
 
-#: src/components/Header.tsx:23
+#: src/components/Header.tsx:82
 msgid "Main navigation"
 msgstr "主导航"
 
@@ -611,6 +615,10 @@ msgstr "移动应用开发"
 #: src/components/ContactMe.tsx:35
 msgid "Mobile Dev"
 msgstr "移动开发"
+
+#: src/components/Header.tsx:102
+msgid "Mobile navigation"
+msgstr "移动导航"
 
 #: src/core/data/pricingData.tsx:13
 msgid "Mobile Responsive"
@@ -684,6 +692,10 @@ msgstr "通知"
 #: src/routes/index.tsx:64
 msgid "Offline Capability"
 msgstr "离线功能"
+
+#: src/components/Header.tsx:94
+msgid "Open menu"
+msgstr "打开菜单"
 
 #: src/components/Projects.tsx:24
 msgid "Open Source"
@@ -769,7 +781,7 @@ msgid "Project Visual"
 msgstr "项目视觉"
 
 #: src/components/AdminSidebarPrimary.tsx:58
-#: src/components/Header.tsx:34
+#: src/components/Header.tsx:27
 msgid "Projects"
 msgstr "项目"
 

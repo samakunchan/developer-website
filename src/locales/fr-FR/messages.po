@@ -59,7 +59,7 @@ msgstr "3 Pages"
 #~ msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
 #~ msgstr ""
 
-#: src/components/Header.tsx:44
+#: src/components/Header.tsx:38
 msgid "About"
 msgstr "À propos"
 
@@ -79,7 +79,7 @@ msgstr "Ajouter un nouveau projet"
 msgid "Add Project"
 msgstr "Ajouter un projet"
 
-#: src/components/Header.tsx:66
+#: src/components/Header.tsx:49
 msgid "Admin Dashboard"
 msgstr "Tableau de bord Admin"
 
@@ -223,6 +223,10 @@ msgstr "Arrière-plan de ville néon cinématique"
 msgid "Click to upload image"
 msgstr "Cliquez pour télécharger une image"
 
+#: src/components/Header.tsx:94
+msgid "Close menu"
+msgstr "Fermer le menu"
+
 #: src/core/data/servicesData.tsx:24
 #: src/routes/index.tsx:71
 msgid "Cloud Infrastructure"
@@ -244,11 +248,11 @@ msgstr "Finalisation..."
 msgid "Connect with me"
 msgstr "Me contacter"
 
-#: src/components/Header.tsx:85
+#: src/components/Header.tsx:61
 msgid "Contact"
 msgstr "Contact"
 
-#: src/components/Header.tsx:84
+#: src/components/Header.tsx:60
 #: src/routes/services.tsx:50
 #: src/routes/services.tsx:68
 msgid "Contact me"
@@ -416,7 +420,7 @@ msgstr "Des <0>Plans Flexible</0> pour Votre Réussite"
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "Développeur Full-Stack freelance spécialisé dans les applications web et mobiles performantes avec React, Angular et Flutter."
 
-#: src/components/Header.tsx:16
+#: src/components/Header.tsx:73
 msgid "Freelance home page"
 msgstr "Accueil Freelance"
 
@@ -570,7 +574,7 @@ msgstr ""
 msgid "Logout"
 msgstr "Déconnexion"
 
-#: src/components/Header.tsx:23
+#: src/components/Header.tsx:82
 msgid "Main navigation"
 msgstr "Navigation principale"
 
@@ -611,6 +615,10 @@ msgstr "Développement d'App Mobiles"
 #: src/components/ContactMe.tsx:35
 msgid "Mobile Dev"
 msgstr "Développement Mobile"
+
+#: src/components/Header.tsx:102
+msgid "Mobile navigation"
+msgstr "Navigation mobile"
 
 #: src/core/data/pricingData.tsx:13
 msgid "Mobile Responsive"
@@ -684,6 +692,10 @@ msgstr "Notifications"
 #: src/routes/index.tsx:64
 msgid "Offline Capability"
 msgstr "Capacité Hors Ligne"
+
+#: src/components/Header.tsx:94
+msgid "Open menu"
+msgstr "Ouvrir le menu"
 
 #: src/components/Projects.tsx:24
 msgid "Open Source"
@@ -769,7 +781,7 @@ msgid "Project Visual"
 msgstr "Visuel du projet"
 
 #: src/components/AdminSidebarPrimary.tsx:58
-#: src/components/Header.tsx:34
+#: src/components/Header.tsx:27
 msgid "Projects"
 msgstr "Projets"
 
