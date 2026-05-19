@@ -22,6 +22,10 @@ fi
 
 # Load environment from OpenBao
 source ./shells/env-bao.sh $ENV
+if [ $? -ne 0 ]; then
+  echo "❌ Aborting: Failed to load environment variables from OpenBao."
+  exit 1
+fi
 
 # Launch Docker Compose
 echo "🚀 [Docker] Starting services for $PROJECT_NAME..."
