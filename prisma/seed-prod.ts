@@ -24,9 +24,9 @@ async function main() {
 
   let APP_URL: string;
   if (process.env.NODE_ENV == 'production') {
-    APP_URL = process.env.APP_URL_PROD || `http://localhost:${process.env.APP_PORT || 3000}`;
+    APP_URL = process.env.APP_URL_PROD || `http://localhost:${process.env.APP_PORT || 3007}`;
   } else if (process.env.NODE_ENV == 'staging') {
-    APP_URL = process.env.APP_URL_STAGING || `http://localhost:${process.env.APP_PORT || 3000}`;
+    APP_URL = process.env.APP_URL_STAGING || `http://localhost:${process.env.APP_PORT || 3006}`;
   } else {
     APP_URL = process.env.APP_URL_DEV || `http://localhost:${process.env.APP_PORT || 3000}`;
   }
