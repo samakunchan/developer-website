@@ -17,6 +17,16 @@ const SESSION_COOKIE_NAME = 'auth_session';
 const MAX_FAILED_ATTEMPTS = 5;
 const LOCKOUT_DURATION_MINUTES = 15;
 
+const APP_URL = (() => {
+  if (process.env.NODE_ENV === 'production') {
+    return process.env.APP_URL_PROD || process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3007}`;
+  }
+  if (process.env.NODE_ENV === 'staging') {
+    return process.env.APP_URL_STAGING || process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3006}`;
+  }
+  return process.env.APP_URL_DEV || process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3000}`;
+})();
+
 if (!process.env.SESSION_SECRET) {
   if (process.env.NODE_ENV === 'production') {
     throw new Error('SESSION_SECRET environment variable is mandatory in production');
@@ -198,7 +208,7 @@ export async function requestPasswordResetInternal(data: ForgotPasswordInput): P
     },
   });
 
-  const resetUrl = `${process.env.APP_URL || 'http://localhost:3000'}/reset-password?token=${token}`;
+  const resetUrl = `${APP_URL}/reset-password?token=${token}`;
 
   await sendEmail({
     to: user.email,
