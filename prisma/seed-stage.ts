@@ -13,7 +13,7 @@ const UserSchema = z.object({
 });
 
 async function main() {
-  console.log('🌱 Starting production database seed (User only)...');
+  console.log('🌱 Starting staging database seed (User with automatic updates)...');
 
   const userData = {
     email: process.env.ADMIN_EMAIL,
@@ -22,10 +22,10 @@ async function main() {
     role: process.env.ADMIN_ROLE || 'admin',
   };
 
-  const APP_URL = process.env.APP_URL_PROD || `http://localhost:${process.env.APP_PORT || 3007}`;
+  const APP_URL = process.env.APP_URL_STAGING || `http://localhost:${process.env.APP_PORT || 3006}`;
 
   if (!userData.email || !userData.password) {
-    console.log('⚠️ ADMIN_EMAIL or ADMIN_PASSWORD not set. Skipping production user creation.');
+    console.log('⚠️ ADMIN_EMAIL or ADMIN_PASSWORD not set. Skipping staging user creation.');
     return;
   }
 
@@ -38,7 +38,28 @@ async function main() {
   });
 
   if (existingUser) {
-    console.log(`✅ Admin user with email ${validatedUser.email} already exists. Skipping creation.`);
+    console.log(
+      `✅ Admin user with email ${validatedUser.email} already exists. Updating staging image URLs to: ${APP_URL}`,
+    );
+    await db.user.update({
+      where: { email: validatedUser.email },
+      data: {
+        image: {
+          upsert: {
+            create: {
+              tiny: `${APP_URL}/shared/seed/me-1-1777162885183-tiny.webp`,
+              medium: `${APP_URL}/shared/seed/me-1-1777162885183-medium.webp`,
+              raw: `${APP_URL}/shared/seed/me-1-1777162885183-raw.webp`,
+            },
+            update: {
+              tiny: `${APP_URL}/shared/seed/me-1-1777162885183-tiny.webp`,
+              medium: `${APP_URL}/shared/seed/me-1-1777162885183-medium.webp`,
+              raw: `${APP_URL}/shared/seed/me-1-1777162885183-raw.webp`,
+            },
+          },
+        },
+      },
+    });
     return;
   }
 
@@ -60,12 +81,12 @@ async function main() {
     },
   });
 
-  console.log(`✅ Production admin user successfully created: ${user.email}`);
+  console.log(`✅ Staging admin user successfully created: ${user.email}`);
 }
 
 main()
   .catch((e) => {
-    console.error('❌ Production seed failed:', e);
+    console.error('❌ Staging seed failed:', e);
     process.exit(1);
   })
   .finally(async () => {

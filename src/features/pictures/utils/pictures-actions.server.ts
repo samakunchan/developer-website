@@ -4,7 +4,15 @@ import sharp from 'sharp';
 
 export const MAX_FILE_SIZE = 5; // 5MB
 export const VALID_FILE_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
-export const APP_URL = process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3000}`;
+export const APP_URL = (() => {
+  if (process.env.APP_URL_STAGING) {
+    return process.env.APP_URL_STAGING;
+  }
+  if (process.env.APP_URL_PROD) {
+    return process.env.APP_URL_PROD;
+  }
+  return process.env.APP_URL_DEV || process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3000}`;
+})();
 
 export interface ImagePayload {
   tiny?: { url: string; alt: string };
