@@ -150,7 +150,7 @@ export async function signInInternal(data: SignInInput): Promise<{ success: bool
 
   setCookie(SESSION_COOKIE_NAME, token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: process.env.NODE_ENV === 'production' && process.env.SECURE_COOKIES !== 'false',
     sameSite: 'lax',
     path: '/',
     maxAge: 60 * 60 * 24, // 24 hours

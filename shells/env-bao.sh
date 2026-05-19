@@ -9,16 +9,26 @@
 ENV=${1:-dev}
 
 # 1. Configuration (Bootstrap)
-BAO_ADDR="http://localhost:8200"
-BAO_ROLE_ID="6a7de52f-0357-a783-7f5b-c99d14abf8aa"
-BAO_SECRET_ID="c020439c-c2ce-03ca-868d-7543f0b39b92"
+BAO_ROLE_ID=""
+BAO_SECRET_ID=""
 BAO_PATH="secret/data/developer-website"
 
-# Adjust BAO_ADDR if running inside Docker
-if [ "$DOCKER" = "true" ]; then
-    BAO_ADDR="http://host.docker.internal:8200"
+if [ -z "$BAO_ROLE_ID" ] || [ -z "$BAO_SECRET_ID" ]; then
+    echo "❌ Erreur : Les variables BAO_ROLE_ID et BAO_SECRET_ID doivent être renseignées."
+    return 1 2>/dev/null || exit 1
 fi
 
+# Adjust BAO_ADDR based on environment and execution context
+if [ "$DOCKER" = "true" ]; then
+    # Inside Docker on the VPS (same network)
+    BAO_ADDR="http://openbao:8200"
+elif [ "$ENV" = "prod" ] || [ "$ENV" = "stage" ]; then
+    # Running locally but targeting production/staging (VPS IP)
+    BAO_ADDR="http://51.83.70.229:8200"
+else
+    # Running locally for local development
+    BAO_ADDR="http://localhost:8200"
+fi
 # 2. Login and Fetch Secrets
 LOGIN_RES=$(curl -s -X POST -H "Content-Type: application/json" \
   -d "{\"role_id\":\"$BAO_ROLE_ID\", \"secret_id\":\"$BAO_SECRET_ID\"}" \
