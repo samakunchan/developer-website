@@ -13,8 +13,18 @@ BAO_ROLE_ID=""
 BAO_SECRET_ID=""
 BAO_PATH="secret/data/developer-website"
 
+# If BAO_ROLE_ID or BAO_SECRET_ID are not set, try to load them from .env
+if [ -f ".env" ]; then
+    if [ -z "$BAO_ROLE_ID" ]; then
+        BAO_ROLE_ID=$(grep -E "^BAO_ROLE_ID=" .env | cut -d'=' -f2- | tr -d '"' | tr -d "'" | xargs)
+    fi
+    if [ -z "$BAO_SECRET_ID" ]; then
+        BAO_SECRET_ID=$(grep -E "^BAO_SECRET_ID=" .env | cut -d'=' -f2- | tr -d '"' | tr -d "'" | xargs)
+    fi
+fi
+
 if [ -z "$BAO_ROLE_ID" ] || [ -z "$BAO_SECRET_ID" ]; then
-    echo "❌ Erreur : Les variables BAO_ROLE_ID et BAO_SECRET_ID doivent être renseignées."
+    echo "❌ Erreur : Les variables BAO_ROLE_ID et BAO_SECRET_ID doivent être renseignées (dans le script ou dans le fichier .env)."
     return 1 2>/dev/null || exit 1
 fi
 
@@ -22,6 +32,9 @@ fi
 if [ "$DOCKER" = "true" ]; then
     # Inside Docker on the VPS (same network)
     BAO_ADDR="http://openbao:8200"
+elif curl -s --connect-timeout 2 http://localhost:8200/v1/sys/health >/dev/null 2>&1; then
+    # If OpenBao is running and accessible on localhost (e.g. running on the VPS itself, or local dev machine)
+    BAO_ADDR="http://localhost:8200"
 elif [ "$ENV" = "prod" ] || [ "$ENV" = "stage" ]; then
     # Running locally but targeting production/staging (VPS IP)
     BAO_ADDR="http://51.83.70.229:8200"
