@@ -1,5 +1,29 @@
 # CHANGELOG developer-website
 
+## 🚀 0.34.0 - 19/05/2026
+
+### Added
+
+- **Staging Database Seeding (`seed-stage.ts`)**:
+  - Created a dedicated `seed-stage.ts` file to handle database seed data in the staging environment, leaving the production seed intact.
+
+### Changed
+
+- **Header Internationalization**:
+  - Added translations for missing navigation accessibility controls (`Close menu`, `Open menu`, `Mobile navigation`) in Spanish (`es-ES`), Chinese (`zh-CN`), and Arabic (`ar-SA`).
+  - Compiled and generated updated locales catalogs using `yarn compile`.
+
+### Fixed
+
+- **Staging/Production Environment Actions**:
+  - Corrected image CDN URL resolver logic in `pictures-actions.server.ts` and password reset callback URLs in `auth-actions.server.ts` to properly inspect staging vs. production environment URLs at runtime.
+- **VPS OpenBao Startup Variables**:
+  - Resolved environment mapping issues inside `./shells/start-app.sh` so OpenBao credentials resolve correctly in staging.
+- **Isometric Background Image 404 & Cleanup**:
+  - Resolved relative CSS path bundling issues by consolidating and moving `isometric-concept-design-for-dev.webp` to `public/assets/`.
+  - Updated standard style background rules inside `_about.css` to use absolute `/assets/...` paths, eliminating dev-mode and staging compilation path bugs.
+  - Removed duplicate root `/assets` directory.
+
 ## 🚀 0.33.0 - 13/05/2026
 
 ### Added
