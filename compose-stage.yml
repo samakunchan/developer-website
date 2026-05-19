@@ -1,14 +1,14 @@
 services:
   postgresdb:
     image: pgvector/pgvector:pg16
-    container_name: website-db-prod
+    container_name: developer-website-db-stage
     ports:
       - '5436:5432'
     volumes:
       - postgres_website_data_prod:/var/lib/postgresql/data
 
   website:
-    container_name: website-prod
+    container_name: developer-website-app-stage
     build:
       context: .
       target: runner
