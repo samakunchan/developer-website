@@ -18,11 +18,11 @@ const MAX_FAILED_ATTEMPTS = 5;
 const LOCKOUT_DURATION_MINUTES = 15;
 
 const APP_URL = (() => {
-  if (process.env.NODE_ENV === 'production') {
-    return process.env.APP_URL_PROD || process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3007}`;
+  if (process.env.APP_URL_STAGING) {
+    return process.env.APP_URL_STAGING;
   }
-  if (process.env.NODE_ENV === 'staging') {
-    return process.env.APP_URL_STAGING || process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3006}`;
+  if (process.env.APP_URL_PROD) {
+    return process.env.APP_URL_PROD;
   }
   return process.env.APP_URL_DEV || process.env.APP_URL || `http://localhost:${process.env.APP_PORT || 3000}`;
 })();
