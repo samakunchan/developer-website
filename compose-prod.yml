@@ -29,7 +29,6 @@ services:
       - "host.docker.internal:host-gateway"
     environment:
       - NODE_ENV=production
-      - SECURE_COOKIES=false
       - BAO_ADDR=http://openbao:8200
       - DOCKER=true
       - BAO_ROLE_ID=${BAO_ROLE_ID}
@@ -57,10 +56,7 @@ services:
     image: nginx:alpine
     container_name: developer-website-nginx-prod
     restart: always
-    # SSL & PORT 80/443:
-    # Temporarily exposing port 3000 since there is no Nginx Proxy Manager setup yet
-    ports:
-      - "3000:80" # Supprimer quand on aura NPM
+
     networks:
       - default
       - nginx-proxy-network
