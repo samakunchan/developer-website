@@ -44,7 +44,7 @@
 }
 
 @media (max-width: 768px) {
-  .about__illustration-image{
+  .about__illustration-image {
     display: none;
   }
 }
