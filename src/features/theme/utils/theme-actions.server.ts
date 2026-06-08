@@ -4,7 +4,7 @@ import { ThemeType } from './theme.types';
 
 /**
  * Reads the theme from the database on the server.
- * Returns 'nature' by default if no configuration is found.
+ * Returns 'light' by default if no configuration is found.
  */
 export async function getThemeInternal(): Promise<ThemeType> {
   try {

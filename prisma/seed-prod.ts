@@ -59,8 +59,15 @@ async function main() {
       },
     },
   });
-
   console.log(`✅ Production admin user successfully created: ${user.email}`);
+
+  const settings = await db.settings.create({
+    data: {
+      id: 1,
+      theme: 'light',
+    },
+  });
+  console.log(`✅ Default settings seeded with theme: ${settings.theme}`);
 }
 
 main()
