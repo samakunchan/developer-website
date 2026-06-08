@@ -4,7 +4,7 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "dev": "vite dev",
+    "dev": ". ./shells/env-bao.sh dev && vite dev",
     "build": "vite build",
     "format": "prettier --write .",
     "genroutes": "npx @tanstack/router-cli generate",
