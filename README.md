@@ -6,33 +6,35 @@ A modern, highly performant, type-safe full-stack developer website built on **T
 
 ## 🚀 Key Features
 
-* **Full-Stack TanStack Start**: Highly optimized SSR/SPA hybrid architecture powered by React 19, Vite, and Nitro.
-* **100% Type-Safe Routing**: Seamless navigations and type safety across all pages using **TanStack Router**.
-* **Modern UI & Rich Editing**: Premium component design via **Material UI (MUI)** and Emotion, paired with a custom **Lexical Editor** rich-text environment.
-* **Internationalization**: Fully localized application with translation support for 5 different languages powered by **Lingui**.
-* **Secure Database Access**: PostgreSQL backend connected with type-safe queries through **Prisma ORM**.
-* **Enterprise Secret Management**: Dynamic fetching of sensitive environment variables using **OpenBao AppRole** authentication.
-* **Offline AI/ML**: In-browser client-side model running capabilities via `@xenova/transformers`.
+- **Full-Stack TanStack Start**: Highly optimized SSR/SPA hybrid architecture powered by React 19, Vite, and Nitro.
+- **100% Type-Safe Routing**: Seamless navigations and type safety across all pages using **TanStack Router**.
+- **Modern UI & Rich Editing**: Premium component design via **Material UI (MUI)** and Emotion, paired with a custom **Lexical Editor** rich-text environment.
+- **Internationalization**: Fully localized application with translation support for 5 different languages powered by **Lingui**.
+- **Secure Database Access**: PostgreSQL backend connected with type-safe queries through **Prisma ORM**.
+- **Enterprise Secret Management**: Dynamic fetching of sensitive environment variables using **OpenBao AppRole** authentication.
+- **Offline AI/ML**: In-browser client-side model running capabilities via `@xenova/transformers`.
 
 ---
 
 ## 🛠️ Main Technologies & Requirements
 
 ### Tech Stack
-* **Frontend/Backend**: React 19, TypeScript, TanStack Start (Router + Query)
-* **Styling**: Material UI (MUI), Emotion
-* **Rich Text**: Lexical Editor
-* **Localization**: Lingui v5
-* **Database & ORM**: PostgreSQL, Prisma
-* **Security & Auth**: Jose (JWT), BcryptJS, reCAPTCHA v3
-* **Secret Management**: OpenBao AppRole
-* **Task Runner / Build Tools**: Vite, Yarn
+
+- **Frontend/Backend**: React 19, TypeScript, TanStack Start (Router + Query)
+- **Styling**: Material UI (MUI), Emotion
+- **Rich Text**: Lexical Editor
+- **Localization**: Lingui v5
+- **Database & ORM**: PostgreSQL, Prisma
+- **Security & Auth**: Jose (JWT), BcryptJS, reCAPTCHA v3
+- **Secret Management**: OpenBao AppRole
+- **Task Runner / Build Tools**: Vite, Yarn
 
 ### System Requirements
-* **Node.js**: v18.x or higher
-* **Package Manager**: Yarn (Mandatory, `npm`/`npx` is not supported)
-* **Database**: PostgreSQL instance (or Docker)
-* **Secrets**: OpenBao server instance
+
+- **Node.js**: v18.x or higher
+- **Package Manager**: Yarn (Mandatory, `npm`/`npx` is not supported)
+- **Database**: PostgreSQL instance (or Docker)
+- **Secrets**: OpenBao server instance
 
 ---
 
@@ -75,7 +77,7 @@ VITE_RECAPTCHA_SITE_KEY=   # The public key of reCAPTCHA
 ```
 
 > [!NOTE]
-> *At startup, the server uses `BAO_ROLE_ID` and `BAO_SECRET_ID` to authenticate against `BAO_ADDR`, obtaining a token to securely fetch application configurations from `BAO_PATH`.*
+> _At startup, the server uses `BAO_ROLE_ID` and `BAO_SECRET_ID` to authenticate against `BAO_ADDR`, obtaining a token to securely fetch application configurations from `BAO_PATH`._
 
 ---
 
@@ -83,13 +85,13 @@ VITE_RECAPTCHA_SITE_KEY=   # The public key of reCAPTCHA
 
 The project uses `@lingui` for localization. It currently supports compilation and translations for:
 
-| Locale Code | Language | Layout Direction |
-| :--- | :--- | :--- |
-| **`en-US`** | English | Left-to-Right (LTR) |
-| **`fr-FR`** | French | Left-to-Right (LTR) |
-| **`es-ES`** | Spanish | Left-to-Right (LTR) |
+| Locale Code | Language             | Layout Direction    |
+| :---------- | :------------------- | :------------------ |
+| **`en-US`** | English              | Left-to-Right (LTR) |
+| **`fr-FR`** | French               | Left-to-Right (LTR) |
+| **`es-ES`** | Spanish              | Left-to-Right (LTR) |
 | **`zh-CN`** | Chinese (Simplified) | Left-to-Right (LTR) |
-| **`ar-SA`** | Arabic | Right-to-Left (RTL) |
+| **`ar-SA`** | Arabic               | Right-to-Left (RTL) |
 
 ---
 
@@ -98,41 +100,53 @@ The project uses `@lingui` for localization. It currently supports compilation a
 Ensure your local PostgreSQL and OpenBao servers are running, then follow these steps:
 
 ### 1. Install Dependencies
+
 ```bash
 yarn install
 ```
 
 ### 2. Configure Environment Variables
+
 Copy the template configuration file:
+
 ```bash
 cp .env.bak .env
 ```
+
 Open `.env` and fill in your custom credentials (such as your **OpenBao** and local configuration variables).
 
 ### 3. Generate Type-Safe Routing
+
 Compile routes using the TanStack Router CLI:
+
 ```bash
 yarn genroutes
 ```
 
 ### 4. Compile Translations
+
 Extract and compile localization catalogs:
+
 ```bash
 yarn extract
 yarn compile
 ```
 
 ### 5. Database Setup & Prisma Client
+
 Apply database migrations and generate the client:
+
 ```bash
 yarn prisma db push
 yarn prisma generate
 ```
 
 ### 6. Run the Development Server
+
 ```bash
 yarn dev
 ```
+
 Open [http://localhost:3000](http://localhost:3000) to view the website.
 
 ---
@@ -141,11 +155,11 @@ Open [http://localhost:3000](http://localhost:3000) to view the website.
 
 Run any of the following tasks using `yarn <script>`:
 
-* **`yarn dev`**: Starts the Vite dev server with Hot Module Replacement (HMR).
-* **`yarn build`**: Compiles and builds the production bundle.
-* **`yarn start`**: Launches the built production server.
-* **`yarn genroutes`**: Triggers the TanStack Router code generator.
-* **`yarn extract`**: Scans the source code for new text to translate.
-* **`yarn compile`**: Compiles translation catalog messages into optimized JS packages.
-* **`yarn format`**: Formats all files inside the workspace using Prettier.
-* **`yarn lint`**: Lints the codebase using ESLint to enforce best practices.
+- **`yarn dev`**: Starts the Vite dev server with Hot Module Replacement (HMR).
+- **`yarn build`**: Compiles and builds the production bundle.
+- **`yarn start`**: Launches the built production server.
+- **`yarn genroutes`**: Triggers the TanStack Router code generator.
+- **`yarn extract`**: Scans the source code for new text to translate.
+- **`yarn compile`**: Compiles translation catalog messages into optimized JS packages.
+- **`yarn format`**: Formats all files inside the workspace using Prettier.
+- **`yarn lint`**: Lints the codebase using ESLint to enforce best practices.

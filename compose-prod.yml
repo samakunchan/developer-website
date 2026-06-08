@@ -26,7 +26,7 @@ services:
         - VITE_RECAPTCHA_SITE_KEY=${VITE_RECAPTCHA_SITE_KEY}
     restart: always
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - 'host.docker.internal:host-gateway'
     environment:
       - NODE_ENV=production
       - BAO_ADDR=http://openbao:8200
