@@ -17,7 +17,7 @@ services:
         - VITE_RECAPTCHA_SITE_KEY=${VITE_RECAPTCHA_SITE_KEY}
     restart: always
     extra_hosts:
-      - "host.docker.internal:host-gateway"
+      - 'host.docker.internal:host-gateway'
     environment:
       - NODE_ENV=staging
       - SECURE_COOKIES=false
@@ -40,7 +40,6 @@ services:
     depends_on:
       postgresdb:
         condition: service_healthy
-
 
     volumes:
       - ./public/shared:/app/public/shared

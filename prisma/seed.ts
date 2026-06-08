@@ -42,6 +42,7 @@ async function main() {
   // Reset the database and restart identity sequences
   try {
     await db.$executeRawUnsafe(`TRUNCATE TABLE "users" RESTART IDENTITY CASCADE`);
+    await db.$executeRawUnsafe(`TRUNCATE TABLE "settings" RESTART IDENTITY CASCADE`);
     console.log('✅ Database truncated and identities reset.');
   } catch (error) {
     console.warn('⚠️ Could not truncate table. It might not exist yet.', error);
@@ -67,6 +68,14 @@ async function main() {
       image: true,
     },
   });
+
+  const settings = await db.settings.create({
+    data: {
+      id: 1,
+      theme: 'light',
+    },
+  });
+  console.log(`✅ Default settings seeded with theme: ${settings.theme}`);
 
   const initialProjects = [
     {

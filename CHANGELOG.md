@@ -1,5 +1,23 @@
 # CHANGELOG developer-website
 
+## 🚀 0.35.0 - 08/06/2026
+
+### Added
+
+- **Documentation**:
+  - Added a comprehensive `README.md` file outlining application architecture, main technologies (React 19, TanStack Start/Query, Lingui, Prisma), system requirements, OpenBao secret management, localization setups, installation guides, and useful script references.
+- **Project Typing**:
+  - Created a new model-level filter type `ProjectFilter` in `src/core/types/project.ts`.
+
+### Changed
+
+- **Theme Refactoring & Seeding**:
+  - Updated default theme fallback behavior to resolve to `light` mode (previously `nature`) if no custom DB configuration is found.
+  - Removed the deprecated `nature` option from `ThemeType` definitions.
+  - Added automatic theme database seeding (`light` theme setting) across production, staging, and development seed routines.
+- **Development Script**:
+  - Configured the local `yarn dev` script inside `package.json` to pre-load development environment variables securely using the OpenBao setup script (`. ./shells/env-bao.sh dev`).
+
 ## 🚀 0.34.0 - 19/05/2026
 
 ### Added
