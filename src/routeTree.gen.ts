@@ -158,24 +158,21 @@ const AdminSettingsThemesRoute = AdminSettingsThemesRouteImport.update({
   path: '/themes',
   getParentRoute: () => AdminSettingsRoute,
 } as any);
-const AdminSettingsPrivacyPolicyRoute =
-  AdminSettingsPrivacyPolicyRouteImport.update({
-    id: '/privacy-policy',
-    path: '/privacy-policy',
-    getParentRoute: () => AdminSettingsRoute,
-  } as any);
-const AdminSettingsLegalMentionsRoute =
-  AdminSettingsLegalMentionsRouteImport.update({
-    id: '/legal-mentions',
-    path: '/legal-mentions',
-    getParentRoute: () => AdminSettingsRoute,
-  } as any);
-const AdminSettingsCookiePolicyRoute =
-  AdminSettingsCookiePolicyRouteImport.update({
-    id: '/cookie-policy',
-    path: '/cookie-policy',
-    getParentRoute: () => AdminSettingsRoute,
-  } as any);
+const AdminSettingsPrivacyPolicyRoute = AdminSettingsPrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
+  getParentRoute: () => AdminSettingsRoute,
+} as any);
+const AdminSettingsLegalMentionsRoute = AdminSettingsLegalMentionsRouteImport.update({
+  id: '/legal-mentions',
+  path: '/legal-mentions',
+  getParentRoute: () => AdminSettingsRoute,
+} as any);
+const AdminSettingsCookiePolicyRoute = AdminSettingsCookiePolicyRouteImport.update({
+  id: '/cookie-policy',
+  path: '/cookie-policy',
+  getParentRoute: () => AdminSettingsRoute,
+} as any);
 const AdminSettingsCguRoute = AdminSettingsCguRouteImport.update({
   id: '/cgu',
   path: '/cgu',
@@ -191,29 +188,26 @@ const AdminProfilesTechStacksRoute = AdminProfilesTechStacksRouteImport.update({
   path: '/tech-stacks',
   getParentRoute: () => AdminProfilesRoute,
 } as any);
-const AdminProfilesSocialLinksRoute =
-  AdminProfilesSocialLinksRouteImport.update({
-    id: '/social-links',
-    path: '/social-links',
-    getParentRoute: () => AdminProfilesRoute,
-  } as any);
-const AdminProfilesPersonalInfoRoute =
-  AdminProfilesPersonalInfoRouteImport.update({
-    id: '/personal-info',
-    path: '/personal-info',
-    getParentRoute: () => AdminProfilesRoute,
-  } as any);
+const AdminProfilesSocialLinksRoute = AdminProfilesSocialLinksRouteImport.update({
+  id: '/social-links',
+  path: '/social-links',
+  getParentRoute: () => AdminProfilesRoute,
+} as any);
+const AdminProfilesPersonalInfoRoute = AdminProfilesPersonalInfoRouteImport.update({
+  id: '/personal-info',
+  path: '/personal-info',
+  getParentRoute: () => AdminProfilesRoute,
+} as any);
 const AdminProfilesOverviewRoute = AdminProfilesOverviewRouteImport.update({
   id: '/overview',
   path: '/overview',
   getParentRoute: () => AdminProfilesRoute,
 } as any);
-const AdminProjectsProjectIdEditRoute =
-  AdminProjectsProjectIdEditRouteImport.update({
-    id: '/$projectId/edit',
-    path: '/$projectId/edit',
-    getParentRoute: () => AdminProjectsRoute,
-  } as any);
+const AdminProjectsProjectIdEditRoute = AdminProjectsProjectIdEditRouteImport.update({
+  id: '/$projectId/edit',
+  path: '/$projectId/edit',
+  getParentRoute: () => AdminProjectsRoute,
+} as any);
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute;
@@ -695,9 +689,7 @@ const AdminProfilesRouteChildren: AdminProfilesRouteChildren = {
   AdminProfilesTechStacksRoute: AdminProfilesTechStacksRoute,
 };
 
-const AdminProfilesRouteWithChildren = AdminProfilesRoute._addFileChildren(
-  AdminProfilesRouteChildren,
-);
+const AdminProfilesRouteWithChildren = AdminProfilesRoute._addFileChildren(AdminProfilesRouteChildren);
 
 interface AdminProjectsRouteChildren {
   AdminProjectsNewRoute: typeof AdminProjectsNewRoute;
@@ -711,9 +703,7 @@ const AdminProjectsRouteChildren: AdminProjectsRouteChildren = {
   AdminProjectsProjectIdEditRoute: AdminProjectsProjectIdEditRoute,
 };
 
-const AdminProjectsRouteWithChildren = AdminProjectsRoute._addFileChildren(
-  AdminProjectsRouteChildren,
-);
+const AdminProjectsRouteWithChildren = AdminProjectsRoute._addFileChildren(AdminProjectsRouteChildren);
 
 interface AdminSettingsRouteChildren {
   AdminSettingsCguRoute: typeof AdminSettingsCguRoute;
@@ -731,9 +721,7 @@ const AdminSettingsRouteChildren: AdminSettingsRouteChildren = {
   AdminSettingsThemesRoute: AdminSettingsThemesRoute,
 };
 
-const AdminSettingsRouteWithChildren = AdminSettingsRoute._addFileChildren(
-  AdminSettingsRouteChildren,
-);
+const AdminSettingsRouteWithChildren = AdminSettingsRoute._addFileChildren(AdminSettingsRouteChildren);
 
 interface AdminRouteChildren {
   AdminAnalyticsRoute: typeof AdminAnalyticsRoute;
@@ -772,6 +760,4 @@ const rootRouteChildren: RootRouteChildren = {
   VisitorLegalMentionsRoute: VisitorLegalMentionsRoute,
   VisitorPrivacyPolicyRoute: VisitorPrivacyPolicyRoute,
 };
-export const routeTree = rootRouteImport
-  ._addFileChildren(rootRouteChildren)
-  ._addFileTypes<FileRouteTypes>();
+export const routeTree = rootRouteImport._addFileChildren(rootRouteChildren)._addFileTypes<FileRouteTypes>();
