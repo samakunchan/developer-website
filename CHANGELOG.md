@@ -1,5 +1,21 @@
 # CHANGELOG developer-website
 
+## 🚀 0.36.0 - 09/06/2026
+
+### Added
+
+- **Database Schema Sync**:
+  - Synchronized `schema.prisma` with `developer-website-api` by adding `currentApiSessionId String?` to the `User` model to support database-backed token revocation in API authentication.
+  - Regenerated local Prisma client bindings.
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- N/A
+
 ## 🚀 0.35.0 - 08/06/2026
 
 ### Added
