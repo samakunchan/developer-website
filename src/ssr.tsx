@@ -1,3 +1,5 @@
+import { initPrism } from './core/utils/prism-init';
+initPrism();
 import { createStartHandler, defaultRenderHandler } from '@tanstack/react-start/server';
 import { i18n } from '@lingui/core';
 import { loadSecrets } from './core/utils/bao.server';
@@ -11,7 +13,7 @@ export default createStartHandler({
 
     // 1. Recover the locale matched by the router
     // This locale is resolved in __root.tsx's beforeLoad and stored in context
-    // dire a antigravity de savoir comment utiliser ce code pour voir si ça marhce
+    // dire a antigravity de savoir comment utiliser ce code pour voir si ça marche
     const locale = (ctx.router.state.matches[0]?.context as { locale?: string })?.locale || 'en-US';
     console.log('SERVER LOCAL', locale);
 

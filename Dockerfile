@@ -48,6 +48,7 @@ COPY --from=builder /app/prisma ./prisma
 COPY --from=builder /app/src ./src
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/.output ./.output
+COPY register-prism.js ./
 COPY shells/docker-entrypoint-prod.sh ./entrypoint.sh
 
 # Make entrypoint executable
