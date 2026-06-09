@@ -110,7 +110,7 @@ yarn install
 Copy the template configuration file:
 
 ```bash
-cp .env.bak .env
+cp .env.example .env
 ```
 
 Open `.env` and fill in your custom credentials (such as your **OpenBao** and local configuration variables).
@@ -134,11 +134,11 @@ yarn compile
 
 ### 5. Database Setup & Prisma Client
 
-Apply database migrations and generate the client:
+Apply database migrations and generate the client (using docker):
 
 ```bash
-yarn prisma db push
-yarn prisma generate
+sh shells/docker-build-dev.sh
+sh shells/prisma-reset-database.sh
 ```
 
 ### 6. Run the Development Server
