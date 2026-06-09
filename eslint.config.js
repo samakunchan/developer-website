@@ -5,6 +5,17 @@ import pluginRouter from '@tanstack/eslint-plugin-router';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export default [
+  {
+    ignores: [
+      '.output/**',
+      'dist/**',
+      '.tanstack/**',
+      'public/**',
+      '.history/**',
+      'scratch/**',
+      'src/routeTree.gen.ts',
+    ],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...pluginQuery.configs['flat/recommended'],
