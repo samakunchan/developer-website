@@ -32,12 +32,12 @@ fi
 if [ "$DOCKER" = "true" ]; then
     # Inside Docker on the VPS (same network)
     BAO_ADDR="http://openbao:8200"
+elif [ "$ENV" = "prod" ] || [ "$ENV" = "stage" ]; then
+    # Running locally but targeting production/staging (VPS IP)
+    BAO_ADDR="http://localhost:8200"
 elif curl -s --connect-timeout 2 http://localhost:8200/v1/sys/health >/dev/null 2>&1; then
     # If OpenBao is running and accessible on localhost (e.g. running on the VPS itself, or local dev machine)
     BAO_ADDR="http://localhost:8200"
-elif [ "$ENV" = "prod" ] || [ "$ENV" = "stage" ]; then
-    # Running locally but targeting production/staging (VPS IP)
-    BAO_ADDR="http://51.83.70.229:8200"
 else
     # Running locally for local development
     BAO_ADDR="http://localhost:8200"
@@ -64,7 +64,9 @@ if [ "$DOCKER" = "true" ]; then
     export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@postgresdb:5432/${POSTGRES_DB}?schema=public"
 else
     PORT=$([ "$ENV" = "prod" ] || [ "$ENV" = "stage" ] && echo "5436" || echo "5435")
+    echo "ça port $PORT"
     export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@localhost:${PORT}/${POSTGRES_DB}?schema=public"
+    echo "ça url : $DATABASE_URL"
 fi
 
 # Also export OpenBao details for the app to use
