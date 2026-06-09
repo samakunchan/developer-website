@@ -1,3 +1,5 @@
+import { initPrism } from './core/utils/prism-init';
+initPrism();
 import { hydrateRoot } from 'react-dom/client';
 import { StartClient } from '@tanstack/react-start/client';
 import { i18n } from '@lingui/core';

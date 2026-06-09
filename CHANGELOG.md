@@ -1,5 +1,24 @@
 # CHANGELOG developer-website
 
+## 🚀 0.37.0 - 09/06/2026
+
+### Added
+
+- **Prism Preloader for SSR**:
+  - Introduced `register-prism.js` to initialize and bind `Prism` globally at Node.js startup.
+  - Implemented the `--import ./register-prism.js` flag inside `docker-entrypoint-prod.sh` to prevent `ReferenceError: Prism is not defined` during server-side rendering (SSR) of code highlighting modules.
+  - Added `lexical-code-wrapper.ts` to enforce correct bundle evaluation order on both server and client.
+  - Copied `register-prism.js` in the `runner` stage of the `Dockerfile`.
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- **SSR Suspense Error (Minified React Error #419)**:
+  - Resolved page rendering crashes on `/visitor/cgu` by fixing the underlying Prism runtime ReferenceError on the server.
+
 ## 🚀 0.36.0 - 09/06/2026
 
 ### Added
