@@ -64,9 +64,7 @@ if [ "$DOCKER" = "true" ]; then
     export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@postgresdb:5432/${POSTGRES_DB}?schema=public"
 else
     PORT=$([ "$ENV" = "prod" ] || [ "$ENV" = "stage" ] && echo "5436" || echo "5435")
-    echo "ça port $PORT"
     export DATABASE_URL="postgresql://${POSTGRES_USER_ENCODED}:${POSTGRES_PASSWORD}@localhost:${PORT}/${POSTGRES_DB}?schema=public"
-    echo "ça url : $DATABASE_URL"
 fi
 
 # Also export OpenBao details for the app to use

@@ -1,4 +1,5 @@
 # CHANGELOG developer-website
+<!-- markdownlint-configure-file { "MD024": { "siblings_only": true } } -->
 
 ## 🚀 0.37.0 - 09/06/2026
 
