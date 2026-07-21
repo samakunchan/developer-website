@@ -6,15 +6,6 @@
 # ==============================================================================
 
 services:
-  # Database Service (PostgreSQL with pgvector)
-  postgresdb:
-    container_name: developer-website-db-prod
-    restart: always
-    # NOTE: Public ports are removed to prevent host-level conflicts.
-    # The database is only accessible internally within the Docker network.
-    volumes:
-      - postgres_website_data_prod:/var/lib/postgresql/data
-
   # Node.js Application (Remix/Vite/Tanstack)
   website:
     container_name: developer-website-app-prod
@@ -45,12 +36,11 @@ services:
       - ADMIN_USER_NAME=${ADMIN_USER_NAME}
       - ADMIN_ROLE=${ADMIN_ROLE}
       - APP_URL_PROD=${APP_URL_PROD}
-    depends_on:
-      postgresdb:
-        condition: service_healthy
     networks:
       - default
       - nginx-proxy-network
+    external_links:
+      - developer-website-db-prod:postgresdb
 
   # Internal Nginx (Serves Static Assets + Proxies to Node.js)
   nginx:
@@ -66,10 +56,6 @@ services:
       - ./public:/usr/share/nginx/html:ro
     depends_on:
       - website
-
-# Persistent Storage
-volumes:
-  postgres_website_data_prod:
 
 # Networking
 networks:
