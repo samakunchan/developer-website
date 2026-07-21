@@ -51,7 +51,7 @@ export const VisualIdentity: React.FC<VisualIdentityProps> = ({ avatar, onAvatar
   };
 
   return (
-    <section className="card card--auto card--light">
+    <section className="card card--auto card--admin">
       <h3 className="admin-profiles__card-title card__title">
         <span className="material-symbols-outlined">image</span> Identité Visuelle
       </h3>

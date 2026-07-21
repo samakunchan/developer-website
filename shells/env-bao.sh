@@ -6,7 +6,7 @@
 # Usage: source ./shells/env-bao.sh [dev|stage|prod]
 # ==============================================================================
 
-ENV=${1:-dev}
+ENV=${1:-stage}
 
 # 1. Configuration (Bootstrap)
 BAO_ROLE_ID=""

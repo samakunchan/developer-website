@@ -25,7 +25,7 @@ export enum RouteNameType {
   AdminThemes = '/admin/settings/themes',
   AdminLegalMentions = '/admin/settings/legal-mentions',
   AdminCGU = '/admin/settings/cgu',
-  AdminPrivacy = '/admin/settings/privacy',
+  AdminPrivacyPolicy = '/admin/settings/privacy-policy',
   AdminCookiePolicy = '/admin/settings/cookie-policy',
 
   // Admin Projects

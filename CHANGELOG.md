@@ -1,6 +1,32 @@
 # CHANGELOG developer-website
 <!-- markdownlint-configure-file { "MD024": { "siblings_only": true } } -->
 
+## 🚀 0.38.0 - 21/07/2026
+
+### Added
+
+- **Rich Text Editor Styles**:
+  - Added support for list styling (`ul` with disc, `ol` with decimal) and list item margins in `RichTextEditor.css`.
+  - Added CSS classes and integration for inline text formatting styles (`bold`, `italic`, `underline`, `strikethrough`, `underlineStrikethrough`, `code`) in `RichTextEditor.tsx` and `RichTextReadOnly.tsx`.
+- **Linter Adjustments**:
+  - Configured markdownlint exceptions (`MD024: siblings_only`) inside `CHANGELOG.md`.
+
+### Changed
+
+- **Database Separation**:
+  - Extracted database management, schema definitions, and seeding routines into the new dedicated `developer-website-db` repository.
+  - Removed database initialization, seeding commands, and schema sync actions (`yarn prisma db push`) from `docker-entrypoint-prod.sh`.
+  - Cleaned up VPS compose configurations (`compose-stage.yml`, `compose-prod.yml`) by removing obsolete `postgresdb` service containers and volumes.
+  - Adjusted shell scripts (`start-app.sh`, `stop-app.sh`) and environment setup helper (`env-bao.sh`) to eliminate local development database container management, shifting focus to staging/production.
+- **Card Design Refactoring**:
+  - Replaced `.card--light` styled containers with a dedicated `.card--admin` styling across all profile forms, bento layouts, and project edit panels.
+  - Updated card component stylesheet (`card.css`) to define shadow depth on admin cards and updated glassmorphism CTA background settings.
+
+### Fixed
+
+- **Route Configuration**:
+  - Corrected administrative routing definitions to point to the `/admin/settings/privacy-policy` endpoint instead of the old `/admin/settings/privacy` route name in `routes-name.ts` and `admin.settings.tsx`.
+
 ## 🚀 0.37.0 - 09/06/2026
 
 ### Added
