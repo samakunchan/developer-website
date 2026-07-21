@@ -12,7 +12,7 @@ function SettingsComponent() {
     { label: t`Themes`, to: RouteNameType.AdminThemes.toString() },
     { label: t`Legal Mentions`, to: RouteNameType.AdminLegalMentions.toString() },
     { label: t`CGU`, to: RouteNameType.AdminCGU.toString() },
-    { label: t`Privacy Policy`, to: RouteNameType.AdminPrivacy.toString() },
+    { label: t`Privacy Policy`, to: RouteNameType.AdminPrivacyPolicy.toString() },
     { label: t`Cookie Policy`, to: RouteNameType.AdminCookiePolicy.toString() },
   ];
 
