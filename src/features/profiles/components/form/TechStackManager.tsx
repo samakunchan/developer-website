@@ -49,7 +49,7 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({
   return (
     <div className="admin-profiles__v-stack">
       {/* Add New Tech Form */}
-      <section className="card card--light">
+      <section className="card card--admin">
         <div className="card__header tech-stack-manager__header">
           <h3 className="card__title">Ajouter une nouvelle technologie</h3>
         </div>
@@ -91,7 +91,7 @@ export const TechStackManager: React.FC<TechStackManagerProps> = ({
       {/* Categories Grid */}
       <div className="bento-grid">
         {CATEGORIES.map((cat) => (
-          <div key={cat.value} className="card card--light">
+          <div key={cat.value} className="card card--admin">
             <div className="card__header">
               <span className="material-symbols-outlined card__subtitle card__icon-lg tech-stack-manager__category-header">
                 {cat.icon}

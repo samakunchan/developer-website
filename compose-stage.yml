@@ -1,12 +1,4 @@
 services:
-  postgresdb:
-    image: pgvector/pgvector:pg16
-    container_name: developer-website-db-stage
-    ports:
-      - '5436:5432'
-    volumes:
-      - postgres_website_data_prod:/var/lib/postgresql/data
-
   website:
     container_name: developer-website-app-stage
     build:
@@ -37,9 +29,8 @@ services:
       - ADMIN_USER_NAME=${ADMIN_USER_NAME}
       - ADMIN_ROLE=${ADMIN_ROLE}
       - APP_URL_STAGING=${APP_URL_STAGING:-http://localhost:3006}
-    depends_on:
-      postgresdb:
-        condition: service_healthy
+    external_links:
+      - developer-website-db-stage:postgresdb
 
     volumes:
       - ./public/shared:/app/public/shared
@@ -55,6 +46,3 @@ services:
       - ./public:/usr/share/nginx/html:ro
     depends_on:
       - website
-
-volumes:
-  postgres_website_data_prod:

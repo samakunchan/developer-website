@@ -32,7 +32,7 @@ export const TechStackBento: React.FC<TechStackBentoProps> = ({ stacks }) => {
   return (
     <div className="bento-grid">
       {DISPLAY_CATEGORIES.map((cat: CategoryStack) => (
-        <div key={cat.value} className="card card--light">
+        <div key={cat.value} className="card card--admin">
           <span className="material-symbols-outlined card__subtitle card__icon-lg tech-stack-manager__category-header">
             {cat.icon}
           </span>

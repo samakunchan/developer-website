@@ -28,7 +28,7 @@ export const PersonalInfoForm: React.FC<PersonalInfoFormProps> = ({ initialData,
   });
 
   return (
-    <section className="card card--auto card--light">
+    <section className="card card--auto card--admin">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="admin-profiles__form-grid">
           <div className="admin-profiles__form-group">
