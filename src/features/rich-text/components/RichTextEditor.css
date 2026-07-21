@@ -117,10 +117,49 @@ input#document-title {
   margin-bottom: 1rem;
 }
 
-.lexical-editor-input ul,
-.lexical-editor-input ol {
-  margin-left: 1.5rem;
+.lexical-editor-input ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
   margin-bottom: 1rem;
+}
+
+.lexical-editor-input ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.lexical-editor-input li {
+  margin-bottom: 0.25rem;
+}
+
+/* Lexical Theme Text Styles */
+.lexical-text-bold {
+  font-weight: bold;
+}
+
+.lexical-text-italic {
+  font-style: italic;
+}
+
+.lexical-text-underline {
+  text-decoration: underline;
+}
+
+.lexical-text-strikethrough {
+  text-decoration: line-through;
+}
+
+.lexical-text-underline-strikethrough {
+  text-decoration: underline line-through;
+}
+
+.lexical-text-code {
+  background-color: var(--color-slate-800);
+  padding: 0.2rem 0.4rem;
+  font-family: monospace;
+  font-size: 0.85em;
+  border-radius: var(--border-radius-sm);
 }
 
 .lexical-editor-save-container {

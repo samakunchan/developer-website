@@ -37,6 +37,14 @@ const theme = {
     ul: 'lexical-ul',
     ol: 'lexical-ol',
   },
+  text: {
+    bold: 'lexical-text-bold',
+    italic: 'lexical-text-italic',
+    underline: 'lexical-text-underline',
+    strikethrough: 'lexical-text-strikethrough',
+    underlineStrikethrough: 'lexical-text-underline-strikethrough',
+    code: 'lexical-text-code',
+  },
 };
 
 function onError(error: Error) {
