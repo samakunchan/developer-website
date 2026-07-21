@@ -2,16 +2,14 @@
 
 # ==============================================================================
 # OpenBao Stop Script
-# Usage: ./shells/stop-app.sh [dev|stage|prod]
+# Usage: ./shells/stop-app.sh [stage|prod]
 # ==============================================================================
 
-ENV=${1:-dev}
+ENV=${1:-stage}
 PROJECT_NAME="developer-website-$ENV"
 COMPOSE_FILES="-f compose.yml"
 
-if [ "$ENV" == "dev" ]; then
-  COMPOSE_FILES="$COMPOSE_FILES -f compose-dev.yml"
-elif [ "$ENV" == "stage" ]; then
+if [ "$ENV" == "stage" ]; then
   COMPOSE_FILES="$COMPOSE_FILES -f compose-stage.yml"
 elif [ "$ENV" == "prod" ]; then
   COMPOSE_FILES="$COMPOSE_FILES -f compose-prod.yml"
@@ -22,14 +20,6 @@ fi
 source ./shells/env-bao.sh $ENV || echo "⚠️ Could not reach OpenBao, stopping with empty vars..."
 
 echo "🛑 [Docker] Stopping services for $PROJECT_NAME..."
-if [ "$ENV" == "dev" ]; then
-  # In dev, only stop/remove the database and its volumes
-  docker compose -p $PROJECT_NAME $COMPOSE_FILES stop postgresdb
-  docker compose -p $PROJECT_NAME $COMPOSE_FILES rm -f -v postgresdb
-else
-  # In prod, stop everything
-  docker compose -p $PROJECT_NAME $COMPOSE_FILES down -v
-fi
-
+docker compose -p $PROJECT_NAME $COMPOSE_FILES down -v
 
 echo "✅ Done."
