@@ -66,7 +66,7 @@ export const SocialLinksManager: React.FC<SocialLinksManagerProps> = ({
   return (
     <div className="admin-profiles__v-stack">
       {/* Add New Link Card */}
-      <section className="card card--light">
+      <section className="card card--admin">
         <div className="card__header">
           <h3 className="card__title">Ajouter un lien professionnel</h3>
         </div>

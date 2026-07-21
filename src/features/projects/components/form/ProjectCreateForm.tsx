@@ -160,7 +160,7 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
   };
 
   return (
-    <section className="card card--auto card--light project-editor__container--main">
+    <section className="card card--auto card--admin project-editor__container--main">
       <div className="project-stepper">
         {[1, 2, 3].map((s) => (
           <div key={s} className="project-stepper__step-container">
@@ -183,7 +183,7 @@ export const ProjectCreateForm: React.FC<ProjectCreateFormProps> = ({ onSuccess,
         {step === 2 && <DetailsSection register={register} errors={errors} setValue={setValue} control={control} />}
         {step === 3 && (
           <div className="project-editor__container">
-            <section className="card card--auto card--light">
+            <section className="card card--auto card--admin">
               <VisualsSection register={register} errors={errors} setValue={setValue} />
             </section>
             <ImagePreviewColumn

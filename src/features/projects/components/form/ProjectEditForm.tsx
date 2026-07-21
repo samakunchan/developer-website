@@ -100,7 +100,7 @@ export const ProjectEditForm: React.FC<ProjectEditFormProps> = ({ initialData, o
   const isUploading = uploadMutation.isPending;
 
   return (
-    <section className="card card--auto card--light project-editor__container--main">
+    <section className="card card--auto card--admin project-editor__container--main">
       <div className="project-editor__edit-layout">
         <div className="project-editor__form-column">
           <section>
