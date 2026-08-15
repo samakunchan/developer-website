@@ -47,7 +47,8 @@ services:
     image: nginx:alpine
     container_name: developer-website-nginx-prod
     restart: always
-
+    ports:
+      - '3007:80'
     networks:
       - default
       - nginx-proxy-network
