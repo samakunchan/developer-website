@@ -152,7 +152,7 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 0.75rem;
+  padding: 0.25rem;
   background-color: var(--color-about-badge-bg);
   border-radius: var(--border-radius-xl);
   border: 1px solid var(--color-about-badge-border-bg);
