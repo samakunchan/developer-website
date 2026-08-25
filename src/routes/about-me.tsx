@@ -1,5 +1,6 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
+import { t } from '@lingui/core/macro';
 import { Header } from '../components/Header';
 import { About } from '../components/About';
 import { Footer } from '../components/Footer';
@@ -15,6 +16,18 @@ export const Route = createFileRoute('/about-me')({
       profile,
     };
   },
+  head: () => ({
+    meta: [
+      {
+        name: 'description',
+        content: t`About me page meta description`,
+      },
+      {
+        property: 'og:description',
+        content: t`About me page meta description`,
+      },
+    ],
+  }),
   component: AboutPage,
 });
 

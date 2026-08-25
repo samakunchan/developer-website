@@ -67,6 +67,11 @@ msgstr "关于"
 msgid "About Me"
 msgstr "关于我"
 
+#: src/routes/about-me.tsx:23
+#: src/routes/about-me.tsx:27
+msgid "About me page meta description"
+msgstr "了解更多关于我的职业生涯、技术专长以及我作为全栈软件工程师的背景。"
+
 #: src/routes/projects.tsx:69
 #~ msgid "Abstract data visualization with neon lines"
 #~ msgstr ""
@@ -162,7 +167,7 @@ msgstr "返回项目"
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "使用现代技术栈构建可扩展、SEO 友好的 Web 应用程序。"
 
-#: src/routes/projects.tsx:34
+#: src/routes/projects.tsx:46
 msgid "Building the <0>future</0> through clean code."
 msgstr "通过干净的代码构建<0>未来</0>。"
 
@@ -318,7 +323,7 @@ msgstr "深入了解您的业务目标、目标受众和技术要求。"
 #: src/routes/__root.tsx:88
 #: src/routes/__root.tsx:94
 msgid "Default description of the website"
-msgstr "网站的默认描述"
+msgstr "欢迎来到 Samakunchan Technology。我致力于构建高性能、定制化的网页和移动应用程序，以满足您的业务需求。"
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:61
 msgid "Delete Project"
@@ -346,8 +351,8 @@ msgstr "详情"
 
 #: src/routes/__root.tsx:85
 #: src/routes/__root.tsx:91
-msgid "Developer Website"
-msgstr "开发者网站"
+#~ msgid "Developer Website"
+#~ msgstr "开发者网站"
 
 #: src/routes/services.tsx:31
 #~ msgid "Developer working on a pricing table"
@@ -373,7 +378,7 @@ msgstr "电子邮件"
 msgid "Email Address"
 msgstr "电子邮件地址"
 
-#: src/routes/projects.tsx:57
+#: src/routes/projects.tsx:69
 msgid "Email me"
 msgstr "给我发邮件"
 
@@ -452,7 +457,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "有项目想法吗？"
 
@@ -480,11 +485,11 @@ msgstr "我是一名定居法国的开发者，拥有 8 年以上构建可扩展
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr ""
 
-#: src/routes/projects.tsx:38
+#: src/routes/projects.tsx:50
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "我是一名自由职业开发者，专注于使用现代技术构建高性能的 Web 和移动应用程序。"
 
-#: src/routes/projects.tsx:55
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "我目前可以接受自由职业工作，并欢迎新的机会。让我们一起构建一些精彩的东西。"
 
@@ -542,7 +547,7 @@ msgstr "让我们讨论您的项目，看看如何一起构建出令人惊叹的
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "让我们讨论您的需求，为您的业务寻找最佳解决方案。"
 
-#: src/routes/projects.tsx:40
+#: src/routes/projects.tsx:52
 msgid "Let's talk"
 msgstr "让我们聊聊"
 
@@ -652,7 +657,7 @@ msgstr "多平台 (Web/移动端)"
 msgid "MVP Launch"
 msgstr "MVP 发布"
 
-#: src/routes/projects.tsx:50
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "我最近的作品"
 
@@ -717,7 +722,7 @@ msgstr "性能优化"
 msgid "Personals Informations"
 msgstr "个人信息"
 
-#: src/routes/projects.tsx:49
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "作品集"
 
@@ -768,6 +773,10 @@ msgstr "项目预算范围"
 msgid "Project Identity"
 msgstr "项目身份"
 
+#: src/routes/projects.tsx:25
+#~ msgid "Project meta description"
+#~ msgstr "探索我最近的项目、网页应用和移动解决方案。这是一个为现代企业量身定制的高性能软件展示。"
+
 #: src/routes/admin.projects.$projectId.edit.tsx:40
 msgid "Project not found"
 msgstr "未找到项目"
@@ -784,6 +793,11 @@ msgstr "项目视觉"
 #: src/components/Header.tsx:27
 msgid "Projects"
 msgstr "项目"
+
+#: src/routes/projects.tsx:25
+#: src/routes/projects.tsx:29
+msgid "Projects page meta description"
+msgstr "探索我最近的项目、网页应用和移动解决方案。这是一个为现代企业量身定制的高性能软件展示。"
 
 #: src/components/Header.tsx:41
 #: src/components/Header.tsx:43
@@ -847,6 +861,11 @@ msgstr "响应式设计"
 #~ msgid "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
 #~ msgstr ""
 
+#: src/routes/__root.tsx:85
+#: src/routes/__root.tsx:91
+msgid "Samakunchan Technology"
+msgstr "Samakunchan Technology"
+
 #: src/features/projects/components/form/ProjectCreateForm.tsx:217
 msgid "Save & Next"
 msgstr "保存并下一步"
@@ -864,7 +883,7 @@ msgstr "正在保存..."
 msgid "Scalable enterprise-grade software solutions."
 msgstr "可扩展的企业级软件解决方案。"
 
-#: src/routes/projects.tsx:56
+#: src/routes/projects.tsx:68
 msgid "Schedule a call"
 msgstr "预约通话"
 
@@ -1050,7 +1069,7 @@ msgstr "用户身份验证"
 msgid "User profile"
 msgstr "用户资料"
 
-#: src/routes/projects.tsx:43
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "查看简历"
 

@@ -67,6 +67,11 @@ msgstr "À propos"
 msgid "About Me"
 msgstr "À propos de moi"
 
+#: src/routes/about-me.tsx:23
+#: src/routes/about-me.tsx:27
+msgid "About me page meta description"
+msgstr "En savoir plus sur mon parcours professionnel, mes compétences techniques et mon expérience en tant qu'ingénieur logiciel full-stack."
+
 #: src/routes/projects.tsx:69
 #~ msgid "Abstract data visualization with neon lines"
 #~ msgstr ""
@@ -162,7 +167,7 @@ msgstr "Retour aux projets"
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Construction d'applications web évolutives et optimisées pour le SEO avec des piles technologiques modernes."
 
-#: src/routes/projects.tsx:34
+#: src/routes/projects.tsx:46
 msgid "Building the <0>future</0> through clean code."
 msgstr "Construire le <0>futur</0> grâce à un code propre."
 
@@ -318,7 +323,7 @@ msgstr "Analyse approfondie de vos objectifs commerciaux, de votre public cible 
 #: src/routes/__root.tsx:88
 #: src/routes/__root.tsx:94
 msgid "Default description of the website"
-msgstr "Description par défaut du site web"
+msgstr "Bienvenue chez Samakunchan Technology. Je conçois des applications web et mobiles sur mesure et performantes, adaptées à vos besoins."
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:61
 msgid "Delete Project"
@@ -346,8 +351,8 @@ msgstr "Détails"
 
 #: src/routes/__root.tsx:85
 #: src/routes/__root.tsx:91
-msgid "Developer Website"
-msgstr "Site Web de Développeur"
+#~ msgid "Developer Website"
+#~ msgstr "Site Web de Développeur"
 
 #: src/routes/services.tsx:31
 #~ msgid "Developer working on a pricing table"
@@ -373,7 +378,7 @@ msgstr "E-mail"
 msgid "Email Address"
 msgstr "Adresse e-mail"
 
-#: src/routes/projects.tsx:57
+#: src/routes/projects.tsx:69
 msgid "Email me"
 msgstr "M'envoyer un e-mail"
 
@@ -452,7 +457,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "Vous avez un projet en tête ?"
 
@@ -480,11 +485,11 @@ msgstr "Je suis un développeur basé en France avec plus de 8 ans d'expérience
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr ""
 
-#: src/routes/projects.tsx:38
+#: src/routes/projects.tsx:50
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "Je suis un développeur freelance spécialisé dans la création d'applications web et mobiles de haute performance avec des technologies modernes."
 
-#: src/routes/projects.tsx:55
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "Je suis actuellement disponible pour du travail en freelance et ouvert à de nouvelles opportunités. Construisons quelque chose d'incroyable ensemble."
 
@@ -542,7 +547,7 @@ msgstr "Discutons de votre projet et voyons comment nous pouvons construire quel
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "Discutons de vos besoins et trouvons la meilleure solution pour votre entreprise."
 
-#: src/routes/projects.tsx:40
+#: src/routes/projects.tsx:52
 msgid "Let's talk"
 msgstr "Discutons"
 
@@ -652,7 +657,7 @@ msgstr "Multiplateforme (Web/Mobile)"
 msgid "MVP Launch"
 msgstr "Lancement MVP"
 
-#: src/routes/projects.tsx:50
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "Mes travaux récents"
 
@@ -717,7 +722,7 @@ msgstr "Optimisation des Performances"
 msgid "Personals Informations"
 msgstr "Informations personnelles"
 
-#: src/routes/projects.tsx:49
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "Portfolio"
 
@@ -768,6 +773,10 @@ msgstr "Gamme de budget du projet"
 msgid "Project Identity"
 msgstr "Identité du projet"
 
+#: src/routes/projects.tsx:25
+#~ msgid "Project meta description"
+#~ msgstr "Découvrez mes projets récents, applications web et solutions mobiles. Une vitrine de logiciels sur mesure conçus pour les entreprises modernes."
+
 #: src/routes/admin.projects.$projectId.edit.tsx:40
 msgid "Project not found"
 msgstr "Projet non trouvé"
@@ -784,6 +793,11 @@ msgstr "Visuel du projet"
 #: src/components/Header.tsx:27
 msgid "Projects"
 msgstr "Projets"
+
+#: src/routes/projects.tsx:25
+#: src/routes/projects.tsx:29
+msgid "Projects page meta description"
+msgstr "Découvrez mes projets récents, applications web et solutions mobiles. Une vitrine de logiciels sur mesure conçus pour les entreprises modernes."
 
 #: src/components/Header.tsx:41
 #: src/components/Header.tsx:43
@@ -847,6 +861,11 @@ msgstr "Design Responsive"
 #~ msgid "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
 #~ msgstr ""
 
+#: src/routes/__root.tsx:85
+#: src/routes/__root.tsx:91
+msgid "Samakunchan Technology"
+msgstr "Samakunchan Technology"
+
 #: src/features/projects/components/form/ProjectCreateForm.tsx:217
 msgid "Save & Next"
 msgstr "Sauvegarder et suivant"
@@ -864,7 +883,7 @@ msgstr "Enregistrement..."
 msgid "Scalable enterprise-grade software solutions."
 msgstr "Solutions logicielles évolutives de qualité entreprise."
 
-#: src/routes/projects.tsx:56
+#: src/routes/projects.tsx:68
 msgid "Schedule a call"
 msgstr "Planifier un appel"
 
@@ -1050,7 +1069,7 @@ msgstr "Authentification Utilisateur"
 msgid "User profile"
 msgstr "Profil utilisateur"
 
-#: src/routes/projects.tsx:43
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "Voir mon CV"
 

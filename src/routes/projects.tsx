@@ -18,6 +18,18 @@ export const Route = createFileRoute('/projects')({
       projects,
     };
   },
+  head: () => ({
+    meta: [
+      {
+        name: 'description',
+        content: t`Projects page meta description`,
+      },
+      {
+        property: 'og:description',
+        content: t`Projects page meta description`,
+      },
+    ],
+  }),
   component: ProjectsPage,
 });
 
