@@ -1,5 +1,33 @@
 # CHANGELOG developer-website
+
 <!-- markdownlint-configure-file { "MD024": { "siblings_only": true } } -->
+
+## 🚀 0.39.0 - 27/08/2026
+
+### Added
+
+- **Featured Projects Carousel Layout**:
+  - Implemented dynamic dots navigation indicator for sliding between featured projects.
+  - Implemented smooth entrance slide animation (`slideInContent`) for carousel slide contents.
+  - Added CSS rule properties for active/inactive slider dots and header elements.
+  - Integrated theme-specific variables (`--color-project-featured-card-bg`) supporting custom background colors for light, dark, desert, forest, and ocean themes.
+  - Created `ProjectsFeatured`.
+
+### Changed
+
+- **Component Refactoring**:
+  - Optimized viewport dimensions and spacing of featured projects container slide content elements in `_projects.css`.
+- **Translations Updates**:
+  - Extracted and translated custom featured subtitle sentences across French, Spanish, Chinese, and Arabic locales.
+
+### Fixed
+
+- **Unused variables**:
+  - Removed unused properties `description` and `isEven` from the slide card component.
+
+### Deleted
+
+- N/A
 
 ## 🚀 0.38.0 - 21/07/2026
 
