@@ -8,17 +8,10 @@ import '../styles/main.css';
 import { LoadingComponent } from '../components/LoadingComponent';
 
 export const Route = createFileRoute('/visitor/cgu')({
-  loader: async ({ context }) => {
-    return {
-      isConnected: context.session?.user.role === 'admin',
-    };
-  },
   component: VisitorCGUPage,
 });
 
 function VisitorCGUPage() {
-  const { isConnected } = Route.useLoaderData();
-
   const { data, isLoading } = useQuery({
     queryKey: ['rich-text', 'cgu'],
     queryFn: () => getCGU(),
@@ -27,7 +20,7 @@ function VisitorCGUPage() {
   if (isLoading) {
     return (
       <>
-        <Header isConnected={isConnected} />
+        <Header />
         <main role="main">
           <LoadingComponent />
         </main>
@@ -38,7 +31,7 @@ function VisitorCGUPage() {
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main">
         <section className="hero-visitor">
           <Container>

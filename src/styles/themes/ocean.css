@@ -43,6 +43,7 @@
   --color-services-badge-bg: var(--color-glass-border);
   --color-services-badge-border: var(--color-primary-shadow);
   --color-services-feature-text: var(--color-text);
+  --color-project-featured-card-bg: var(--section-contrast-color);
 
   /* CTA */
   --color-cta-bg: linear-gradient(135deg, rgba(142, 213, 255, 0.15) 0%, rgba(142, 213, 255, 0.05) 100%);

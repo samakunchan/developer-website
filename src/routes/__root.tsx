@@ -82,13 +82,13 @@ export const Route = createRootRouteWithContext<{
           name: 'viewport',
           content: 'width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5',
         },
-        { title: t`Developer Website` },
+        { title: t`Samakunchan Technology` },
         {
           name: 'description',
           content: t`Default description of the website`,
         },
         { name: 'robots', content: 'index, follow' },
-        { property: 'og:title', content: t`Developer Website` },
+        { property: 'og:title', content: t`Samakunchan Technology` },
         {
           property: 'og:description',
           content: t`Default description of the website`,

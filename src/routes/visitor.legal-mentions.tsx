@@ -7,17 +7,10 @@ import { Container } from '../components/Container';
 import '../styles/main.css';
 
 export const Route = createFileRoute('/visitor/legal-mentions')({
-  loader: async ({ context }) => {
-    return {
-      isConnected: context.session?.user.role === 'admin',
-    };
-  },
   component: VisitorLegalMentionsPage,
 });
 
 function VisitorLegalMentionsPage() {
-  const { isConnected } = Route.useLoaderData();
-
   const { data, isLoading } = useQuery({
     queryKey: ['rich-text', 'legal-mentions'],
     queryFn: () => getLegalMentions(),
@@ -26,7 +19,7 @@ function VisitorLegalMentionsPage() {
   if (isLoading) {
     return (
       <>
-        <Header isConnected={isConnected} />
+        <Header />
         <main role="main">
           <div className="loading-state">
             <span className="material-symbols-outlined spin">sync</span>
@@ -40,7 +33,7 @@ function VisitorLegalMentionsPage() {
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main">
         <section className="hero-visitor">
           <Container>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { createFileRoute } from '@tanstack/react-router';
+import { t } from '@lingui/core/macro';
 import { Header } from '../components/Header';
 import { About } from '../components/About';
 import { Footer } from '../components/Footer';
@@ -8,23 +9,34 @@ import { getProfilePresentationAction, UserOutput } from '../features/profiles';
 import { LoadingComponent } from '../components/LoadingComponent';
 
 export const Route = createFileRoute('/about-me')({
-  loader: async ({ context }) => {
+  loader: async () => {
     const profile: UserOutput = await getProfilePresentationAction();
     return {
-      isConnected: context.session?.user.role === 'admin',
       profile,
     };
   },
+  head: () => ({
+    meta: [
+      {
+        name: 'description',
+        content: t`About me page meta description`,
+      },
+      {
+        property: 'og:description',
+        content: t`About me page meta description`,
+      },
+    ],
+  }),
   component: AboutPage,
 });
 
 function AboutPage() {
-  const { isConnected, profile }: { isConnected: boolean; profile: UserOutput } = Route.useLoaderData();
+  const { profile }: { profile: UserOutput } = Route.useLoaderData();
 
   if (!profile) {
     return (
       <>
-        <Header isConnected={isConnected} />
+        <Header />
         <main role="main">
           <LoadingComponent />
         </main>
@@ -64,7 +76,7 @@ function AboutPage() {
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main">
         <About
           profileImage={

@@ -7,10 +7,9 @@ import '../styles/main.css';
 import { getProjectBySlug, ProjectType } from '../features/projects';
 
 export const Route = createFileRoute('/projects_/$slug')({
-  loader: async ({ context, params }) => {
+  loader: async ({ params }) => {
     const project = await getProjectBySlug({ data: params.slug });
     return {
-      isConnected: context.session?.user.role === 'admin',
       project,
     };
   },
@@ -18,12 +17,12 @@ export const Route = createFileRoute('/projects_/$slug')({
 });
 
 function ProjectDetailsPage() {
-  const { isConnected, project }: { isConnected: boolean; project: ProjectType } = Route.useLoaderData();
+  const { project }: { project: ProjectType } = Route.useLoaderData();
 
   if (!project) {
     return (
       <div className="project-detail">
-        <Header isConnected={isConnected} />
+        <Header />
         <main className="project-detail__main flex items-center justify-center p-8" role="main">
           <div className="text-center">
             <h1 className="text-4xl font-bold mb-4 text-white">
@@ -44,7 +43,7 @@ function ProjectDetailsPage() {
 
   return (
     <div className="project-detail">
-      <Header isConnected={isConnected} />
+      <Header />
 
       <main className="project-detail__main">
         {/* Left Side: Visual Anchor (Sticky) */}

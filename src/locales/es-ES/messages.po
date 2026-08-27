@@ -59,6 +59,10 @@ msgstr "3 Páginas"
 #~ msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
 #~ msgstr ""
 
+#: src/components/ProjectFeatured.tsx:44
+msgid "A selection of custom-tailored solutions combining performance and design."
+msgstr "Una selección de soluciones a medida que combinan rendimiento y diseño."
+
 #: src/components/Header.tsx:38
 msgid "About"
 msgstr "Sobre mí"
@@ -66,6 +70,11 @@ msgstr "Sobre mí"
 #: src/components/About.tsx:22
 msgid "About Me"
 msgstr "Sobre mí"
+
+#: src/routes/about-me.tsx:23
+#: src/routes/about-me.tsx:27
+msgid "About me page meta description"
+msgstr "Conozca más sobre mi trayectoria profesional, experiencia técnica y mi experiencia como ingeniero de software full-stack."
 
 #: src/routes/projects.tsx:69
 #~ msgid "Abstract data visualization with neon lines"
@@ -91,7 +100,7 @@ msgstr "Integración de IA"
 msgid "All"
 msgstr ""
 
-#: src/components/Projects.tsx:21
+#: src/components/Projects.tsx:22
 msgid "All Projects"
 msgstr "Todos los proyectos"
 
@@ -162,7 +171,7 @@ msgstr "Volver a proyectos"
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Construcción de aplicaciones web escalables y optimizadas para SEO con pilas tecnológicas modernas."
 
-#: src/routes/projects.tsx:34
+#: src/routes/projects.tsx:46
 msgid "Building the <0>future</0> through clean code."
 msgstr "Construyendo el <0>futuro</0> a través de un código limpio."
 
@@ -318,7 +327,7 @@ msgstr "Inmersión profunda en tus objetivos de negocio, público objetivo y req
 #: src/routes/__root.tsx:88
 #: src/routes/__root.tsx:94
 msgid "Default description of the website"
-msgstr "Descripción predeterminada del sitio web"
+msgstr "Bienvenido a Samakunchan Technology. Desarrollo aplicaciones web y móviles personalizadas de alto rendimiento adaptadas a sus necesidades comerciales."
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:61
 msgid "Delete Project"
@@ -346,8 +355,8 @@ msgstr "Detalles"
 
 #: src/routes/__root.tsx:85
 #: src/routes/__root.tsx:91
-msgid "Developer Website"
-msgstr "Sitio Web del Desarrollador"
+#~ msgid "Developer Website"
+#~ msgstr "Sitio Web del Desarrollador"
 
 #: src/routes/services.tsx:31
 #~ msgid "Developer working on a pricing table"
@@ -373,7 +382,7 @@ msgstr "Correo electrónico"
 msgid "Email Address"
 msgstr "Correo electrónico"
 
-#: src/routes/projects.tsx:57
+#: src/routes/projects.tsx:69
 msgid "Email me"
 msgstr "Envíame un correo"
 
@@ -400,7 +409,7 @@ msgstr "Destacar este proyecto"
 msgid "Featured"
 msgstr "Destacado"
 
-#: src/components/Projects.tsx:48
+#: src/components/ProjectFeatured.tsx:41
 msgid "Featured Projects"
 msgstr "Proyectos destacados"
 
@@ -452,7 +461,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "¿Tienes un proyecto en mente?"
 
@@ -480,11 +489,11 @@ msgstr "Soy un desarrollador con sede en Francia con más de 8 años de experien
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr ""
 
-#: src/routes/projects.tsx:38
+#: src/routes/projects.tsx:50
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "Soy un desarrollador freelance especializado en la creación de aplicaciones web y móviles de alto rendimiento con tecnologías modernas."
 
-#: src/routes/projects.tsx:55
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "Actualmente estoy disponible para trabajo freelance y abierto a nuevas oportunidades. Construyamos algo increíble juntos."
 
@@ -542,7 +551,7 @@ msgstr "Hablemos de tu proyecto y veamos cómo podemos construir algo increíble
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "Hablemos de tus requisitos y encontremos la mejor solución para tu negocio."
 
-#: src/routes/projects.tsx:40
+#: src/routes/projects.tsx:52
 msgid "Let's talk"
 msgstr "Hablemos"
 
@@ -624,7 +633,7 @@ msgstr "Navegación móvil"
 msgid "Mobile Responsive"
 msgstr "Responsivo para Móviles"
 
-#: src/components/Projects.tsx:23
+#: src/components/Projects.tsx:24
 msgid "Mobile UI"
 msgstr "Interfaz de usuario móvil"
 
@@ -652,7 +661,7 @@ msgstr "Multiplataforma (Web/Móvil)"
 msgid "MVP Launch"
 msgstr "Lanzamiento MVP"
 
-#: src/routes/projects.tsx:50
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "Mi trabajo reciente"
 
@@ -697,7 +706,7 @@ msgstr "Capacidad fuera de línea"
 msgid "Open menu"
 msgstr "Abrir menú"
 
-#: src/components/Projects.tsx:24
+#: src/components/Projects.tsx:25
 msgid "Open Source"
 msgstr "Código abierto"
 
@@ -717,7 +726,7 @@ msgstr "Optimización de Rendimiento"
 msgid "Personals Informations"
 msgstr "Información personal"
 
-#: src/routes/projects.tsx:49
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "Portafolio"
 
@@ -768,6 +777,10 @@ msgstr "Rango de presupuesto del proyecto"
 msgid "Project Identity"
 msgstr "Identidad del proyecto"
 
+#: src/routes/projects.tsx:25
+#~ msgid "Project meta description"
+#~ msgstr "Explore mis proyectos recientes, aplicaciones web y soluciones móviles. Una muestra de software a medida diseñado para empresas modernas."
+
 #: src/routes/admin.projects.$projectId.edit.tsx:40
 msgid "Project not found"
 msgstr "Proyecto no encontrado"
@@ -784,6 +797,11 @@ msgstr "Visual del proyecto"
 #: src/components/Header.tsx:27
 msgid "Projects"
 msgstr "Proyectos"
+
+#: src/routes/projects.tsx:25
+#: src/routes/projects.tsx:29
+msgid "Projects page meta description"
+msgstr "Explore mis proyectos recientes, aplicaciones web y soluciones móviles. Una muestra de software a medida diseñado para empresas modernas."
 
 #: src/components/Header.tsx:41
 #: src/components/Header.tsx:43
@@ -847,6 +865,11 @@ msgstr "Diseño Responsivo"
 #~ msgid "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
 #~ msgstr ""
 
+#: src/routes/__root.tsx:85
+#: src/routes/__root.tsx:91
+msgid "Samakunchan Technology"
+msgstr "Samakunchan Technology"
+
 #: src/features/projects/components/form/ProjectCreateForm.tsx:217
 msgid "Save & Next"
 msgstr "Guardar y siguiente"
@@ -864,7 +887,7 @@ msgstr "Guardando..."
 msgid "Scalable enterprise-grade software solutions."
 msgstr "Soluciones de software de grado empresarial escalables."
 
-#: src/routes/projects.tsx:56
+#: src/routes/projects.tsx:68
 msgid "Schedule a call"
 msgstr "Programar una llamada"
 
@@ -1050,11 +1073,11 @@ msgstr "Autenticación de Usuarios"
 msgid "User profile"
 msgstr "Perfil de usuario"
 
-#: src/routes/projects.tsx:43
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "Ver CV"
 
-#: src/components/ProjectCard.tsx:46
+#: src/components/ProjectCard.tsx:47
 msgid "View Details"
 msgstr "Ver detalles"
 
@@ -1070,6 +1093,10 @@ msgstr "Ver Precios"
 msgid "Visuals"
 msgstr "Visuales"
 
+#: src/components/ProjectFeatured.tsx:75
+msgid "Voir les détails"
+msgstr ""
+
 #: src/routes/projects.tsx:24
 #: src/routes/projects.tsx:56
 #: src/routes/projects.tsx:72
@@ -1080,7 +1107,7 @@ msgstr "Visuales"
 msgid "Web Application"
 msgstr "Aplicación Web"
 
-#: src/components/Projects.tsx:22
+#: src/components/Projects.tsx:23
 msgid "Web Apps"
 msgstr "Aplicaciones web"
 
