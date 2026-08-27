@@ -11,10 +11,9 @@ import { getProjects, ProjectType } from '../features/projects';
 import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/projects')({
-  loader: async ({ context }) => {
+  loader: async () => {
     const projects: ProjectType[] = await getProjects();
     return {
-      isConnected: context.session?.user.role === 'admin',
       projects,
     };
   },
@@ -35,11 +34,11 @@ export const Route = createFileRoute('/projects')({
 
 function ProjectsPage() {
   const navigate: UseNavigateResult<string> = useNavigate();
-  const { isConnected, projects } = Route.useLoaderData();
+  const { projects } = Route.useLoaderData();
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main" className="projects-page">
         <Hero
           title={

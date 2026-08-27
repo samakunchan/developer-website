@@ -28,9 +28,9 @@ export const ErrorComponent: React.FC<ErrorProps> = ({ type }) => {
               : "Sorry, you don't have permission to access this page. Please log in to continue."}
           </p>
           <div className="error-actions">
-            <Link to={isNotFound ? '/' : '/login'}>
+            <Link to="/">
               <Button variant="primary" className="error-button">
-                {isNotFound ? 'Return to Home' : 'Go to Login'}
+                Return to Home
               </Button>
             </Link>
           </div>

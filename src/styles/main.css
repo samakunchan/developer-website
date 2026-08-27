@@ -7,19 +7,12 @@
 
 @import './layout/_container.css';
 @import './layout/_grid.css';
-@import './layout/admin-layout.css';
-@import './pages/admin-profiles.css';
 
 @import './components/_button.css';
 @import './components/card.css';
 @import './components/_input.css';
 @import './components/_loading.css';
 @import './components/_header.css';
-@import './components/admin-sidebar.css';
-@import './components/admin-sidebar-secondary.css';
-@import './components/admin-themes.css';
-@import './components/admin-toolbar.css';
-@import './components/admin-toolbar.css';
 @import './components/_hero.css';
 @import './components/_services.css';
 @import './components/_process.css';
@@ -29,20 +22,8 @@
 @import './components/_about.css';
 @import './components/_projects.css';
 @import './components/_project_detail.css';
-@import './components/_project_admin_card.css';
-@import './components/project-editor.css';
-@import './components/_admin_dashboard.css';
-@import './components/_admin_search.css';
 @import './components/_contact_form.css';
 @import './components/_contact_me.css';
-@import './components/admin-messages-workspace.css';
-
-@import './components/_personal_info_form.css';
-@import './components/_visual_identity.css';
-@import './components/_social_links.css';
-@import './components/_tech_stack.css';
-@import './components/_quick_settings_card.css';
-@import './components/_profile_avatar_card.css';
 
 @import './components/_error.css';
 @import './themes/dark.css';

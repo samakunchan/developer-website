@@ -19,21 +19,15 @@ export const Route = createFileRoute('/services')({
   beforeLoad() {
     throw notFound();
   },
-  loader: async ({ context }) => {
-    return {
-      isConnected: context.session?.user.role === 'admin',
-    };
-  },
   component: ServicesPricingPage,
 });
 
 function ServicesPricingPage() {
   const navigate: UseNavigateResult<string> = useNavigate();
-  const { isConnected } = Route.useLoaderData();
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main">
         <Hero
           badgeText={t`Solutions & Pricing`}

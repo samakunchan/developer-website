@@ -10,12 +10,8 @@
 
 import { Route as rootRouteImport } from './routes/__root';
 import { Route as ServicesRouteImport } from './routes/services';
-import { Route as ResetPasswordRouteImport } from './routes/reset-password';
 import { Route as ProjectsRouteImport } from './routes/projects';
-import { Route as LoginRouteImport } from './routes/login';
-import { Route as ForgotPasswordRouteImport } from './routes/forgot-password';
 import { Route as ContactMeRouteImport } from './routes/contact-me';
-import { Route as AdminRouteImport } from './routes/admin';
 import { Route as AboutMeRouteImport } from './routes/about-me';
 import { Route as IndexRouteImport } from './routes/index';
 import { Route as VisitorPrivacyPolicyRouteImport } from './routes/visitor.privacy-policy';
@@ -24,33 +20,10 @@ import { Route as VisitorCookiePolicyRouteImport } from './routes/visitor.cookie
 import { Route as VisitorCguRouteImport } from './routes/visitor.cgu';
 import { Route as ProjectsSlugRouteImport } from './routes/projects_.$slug';
 import { Route as ApiOptimizeImageRouteImport } from './routes/api.optimize-image';
-import { Route as AdminSettingsRouteImport } from './routes/admin.settings';
-import { Route as AdminProjectsRouteImport } from './routes/admin.projects';
-import { Route as AdminProfilesRouteImport } from './routes/admin.profiles';
-import { Route as AdminMessagesRouteImport } from './routes/admin.messages';
-import { Route as AdminDashboardRouteImport } from './routes/admin.dashboard';
-import { Route as AdminAnalyticsRouteImport } from './routes/admin.analytics';
-import { Route as AdminProjectsIndexRouteImport } from './routes/admin.projects.index';
-import { Route as AdminSettingsThemesRouteImport } from './routes/admin.settings.themes';
-import { Route as AdminSettingsPrivacyPolicyRouteImport } from './routes/admin.settings.privacy-policy';
-import { Route as AdminSettingsLegalMentionsRouteImport } from './routes/admin.settings.legal-mentions';
-import { Route as AdminSettingsCookiePolicyRouteImport } from './routes/admin.settings.cookie-policy';
-import { Route as AdminSettingsCguRouteImport } from './routes/admin.settings.cgu';
-import { Route as AdminProjectsNewRouteImport } from './routes/admin.projects.new';
-import { Route as AdminProfilesTechStacksRouteImport } from './routes/admin.profiles.tech-stacks';
-import { Route as AdminProfilesSocialLinksRouteImport } from './routes/admin.profiles.social-links';
-import { Route as AdminProfilesPersonalInfoRouteImport } from './routes/admin.profiles.personal-info';
-import { Route as AdminProfilesOverviewRouteImport } from './routes/admin.profiles.overview';
-import { Route as AdminProjectsProjectIdEditRouteImport } from './routes/admin.projects.$projectId.edit';
 
 const ServicesRoute = ServicesRouteImport.update({
   id: '/services',
   path: '/services',
-  getParentRoute: () => rootRouteImport,
-} as any);
-const ResetPasswordRoute = ResetPasswordRouteImport.update({
-  id: '/reset-password',
-  path: '/reset-password',
   getParentRoute: () => rootRouteImport,
 } as any);
 const ProjectsRoute = ProjectsRouteImport.update({
@@ -58,24 +31,9 @@ const ProjectsRoute = ProjectsRouteImport.update({
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any);
-const LoginRoute = LoginRouteImport.update({
-  id: '/login',
-  path: '/login',
-  getParentRoute: () => rootRouteImport,
-} as any);
-const ForgotPasswordRoute = ForgotPasswordRouteImport.update({
-  id: '/forgot-password',
-  path: '/forgot-password',
-  getParentRoute: () => rootRouteImport,
-} as any);
 const ContactMeRoute = ContactMeRouteImport.update({
   id: '/contact-me',
   path: '/contact-me',
-  getParentRoute: () => rootRouteImport,
-} as any);
-const AdminRoute = AdminRouteImport.update({
-  id: '/admin',
-  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any);
 const AboutMeRoute = AboutMeRouteImport.update({
@@ -118,324 +76,94 @@ const ApiOptimizeImageRoute = ApiOptimizeImageRouteImport.update({
   path: '/api/optimize-image',
   getParentRoute: () => rootRouteImport,
 } as any);
-const AdminSettingsRoute = AdminSettingsRouteImport.update({
-  id: '/settings',
-  path: '/settings',
-  getParentRoute: () => AdminRoute,
-} as any);
-const AdminProjectsRoute = AdminProjectsRouteImport.update({
-  id: '/projects',
-  path: '/projects',
-  getParentRoute: () => AdminRoute,
-} as any);
-const AdminProfilesRoute = AdminProfilesRouteImport.update({
-  id: '/profiles',
-  path: '/profiles',
-  getParentRoute: () => AdminRoute,
-} as any);
-const AdminMessagesRoute = AdminMessagesRouteImport.update({
-  id: '/messages',
-  path: '/messages',
-  getParentRoute: () => AdminRoute,
-} as any);
-const AdminDashboardRoute = AdminDashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => AdminRoute,
-} as any);
-const AdminAnalyticsRoute = AdminAnalyticsRouteImport.update({
-  id: '/analytics',
-  path: '/analytics',
-  getParentRoute: () => AdminRoute,
-} as any);
-const AdminProjectsIndexRoute = AdminProjectsIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => AdminProjectsRoute,
-} as any);
-const AdminSettingsThemesRoute = AdminSettingsThemesRouteImport.update({
-  id: '/themes',
-  path: '/themes',
-  getParentRoute: () => AdminSettingsRoute,
-} as any);
-const AdminSettingsPrivacyPolicyRoute =
-  AdminSettingsPrivacyPolicyRouteImport.update({
-    id: '/privacy-policy',
-    path: '/privacy-policy',
-    getParentRoute: () => AdminSettingsRoute,
-  } as any);
-const AdminSettingsLegalMentionsRoute =
-  AdminSettingsLegalMentionsRouteImport.update({
-    id: '/legal-mentions',
-    path: '/legal-mentions',
-    getParentRoute: () => AdminSettingsRoute,
-  } as any);
-const AdminSettingsCookiePolicyRoute =
-  AdminSettingsCookiePolicyRouteImport.update({
-    id: '/cookie-policy',
-    path: '/cookie-policy',
-    getParentRoute: () => AdminSettingsRoute,
-  } as any);
-const AdminSettingsCguRoute = AdminSettingsCguRouteImport.update({
-  id: '/cgu',
-  path: '/cgu',
-  getParentRoute: () => AdminSettingsRoute,
-} as any);
-const AdminProjectsNewRoute = AdminProjectsNewRouteImport.update({
-  id: '/new',
-  path: '/new',
-  getParentRoute: () => AdminProjectsRoute,
-} as any);
-const AdminProfilesTechStacksRoute = AdminProfilesTechStacksRouteImport.update({
-  id: '/tech-stacks',
-  path: '/tech-stacks',
-  getParentRoute: () => AdminProfilesRoute,
-} as any);
-const AdminProfilesSocialLinksRoute =
-  AdminProfilesSocialLinksRouteImport.update({
-    id: '/social-links',
-    path: '/social-links',
-    getParentRoute: () => AdminProfilesRoute,
-  } as any);
-const AdminProfilesPersonalInfoRoute =
-  AdminProfilesPersonalInfoRouteImport.update({
-    id: '/personal-info',
-    path: '/personal-info',
-    getParentRoute: () => AdminProfilesRoute,
-  } as any);
-const AdminProfilesOverviewRoute = AdminProfilesOverviewRouteImport.update({
-  id: '/overview',
-  path: '/overview',
-  getParentRoute: () => AdminProfilesRoute,
-} as any);
-const AdminProjectsProjectIdEditRoute =
-  AdminProjectsProjectIdEditRouteImport.update({
-    id: '/$projectId/edit',
-    path: '/$projectId/edit',
-    getParentRoute: () => AdminProjectsRoute,
-  } as any);
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute;
   '/about-me': typeof AboutMeRoute;
-  '/admin': typeof AdminRouteWithChildren;
   '/contact-me': typeof ContactMeRoute;
-  '/forgot-password': typeof ForgotPasswordRoute;
-  '/login': typeof LoginRoute;
   '/projects': typeof ProjectsRoute;
-  '/reset-password': typeof ResetPasswordRoute;
   '/services': typeof ServicesRoute;
-  '/admin/analytics': typeof AdminAnalyticsRoute;
-  '/admin/dashboard': typeof AdminDashboardRoute;
-  '/admin/messages': typeof AdminMessagesRoute;
-  '/admin/profiles': typeof AdminProfilesRouteWithChildren;
-  '/admin/projects': typeof AdminProjectsRouteWithChildren;
-  '/admin/settings': typeof AdminSettingsRouteWithChildren;
   '/api/optimize-image': typeof ApiOptimizeImageRoute;
   '/projects/$slug': typeof ProjectsSlugRoute;
   '/visitor/cgu': typeof VisitorCguRoute;
   '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute;
   '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute;
   '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute;
-  '/admin/profiles/overview': typeof AdminProfilesOverviewRoute;
-  '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute;
-  '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute;
-  '/admin/profiles/tech-stacks': typeof AdminProfilesTechStacksRoute;
-  '/admin/projects/new': typeof AdminProjectsNewRoute;
-  '/admin/settings/cgu': typeof AdminSettingsCguRoute;
-  '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute;
-  '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute;
-  '/admin/settings/privacy-policy': typeof AdminSettingsPrivacyPolicyRoute;
-  '/admin/settings/themes': typeof AdminSettingsThemesRoute;
-  '/admin/projects/': typeof AdminProjectsIndexRoute;
-  '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute;
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute;
   '/about-me': typeof AboutMeRoute;
-  '/admin': typeof AdminRouteWithChildren;
   '/contact-me': typeof ContactMeRoute;
-  '/forgot-password': typeof ForgotPasswordRoute;
-  '/login': typeof LoginRoute;
   '/projects': typeof ProjectsRoute;
-  '/reset-password': typeof ResetPasswordRoute;
   '/services': typeof ServicesRoute;
-  '/admin/analytics': typeof AdminAnalyticsRoute;
-  '/admin/dashboard': typeof AdminDashboardRoute;
-  '/admin/messages': typeof AdminMessagesRoute;
-  '/admin/profiles': typeof AdminProfilesRouteWithChildren;
-  '/admin/settings': typeof AdminSettingsRouteWithChildren;
   '/api/optimize-image': typeof ApiOptimizeImageRoute;
   '/projects/$slug': typeof ProjectsSlugRoute;
   '/visitor/cgu': typeof VisitorCguRoute;
   '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute;
   '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute;
   '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute;
-  '/admin/profiles/overview': typeof AdminProfilesOverviewRoute;
-  '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute;
-  '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute;
-  '/admin/profiles/tech-stacks': typeof AdminProfilesTechStacksRoute;
-  '/admin/projects/new': typeof AdminProjectsNewRoute;
-  '/admin/settings/cgu': typeof AdminSettingsCguRoute;
-  '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute;
-  '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute;
-  '/admin/settings/privacy-policy': typeof AdminSettingsPrivacyPolicyRoute;
-  '/admin/settings/themes': typeof AdminSettingsThemesRoute;
-  '/admin/projects': typeof AdminProjectsIndexRoute;
-  '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute;
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport;
   '/': typeof IndexRoute;
   '/about-me': typeof AboutMeRoute;
-  '/admin': typeof AdminRouteWithChildren;
   '/contact-me': typeof ContactMeRoute;
-  '/forgot-password': typeof ForgotPasswordRoute;
-  '/login': typeof LoginRoute;
   '/projects': typeof ProjectsRoute;
-  '/reset-password': typeof ResetPasswordRoute;
   '/services': typeof ServicesRoute;
-  '/admin/analytics': typeof AdminAnalyticsRoute;
-  '/admin/dashboard': typeof AdminDashboardRoute;
-  '/admin/messages': typeof AdminMessagesRoute;
-  '/admin/profiles': typeof AdminProfilesRouteWithChildren;
-  '/admin/projects': typeof AdminProjectsRouteWithChildren;
-  '/admin/settings': typeof AdminSettingsRouteWithChildren;
   '/api/optimize-image': typeof ApiOptimizeImageRoute;
   '/projects_/$slug': typeof ProjectsSlugRoute;
   '/visitor/cgu': typeof VisitorCguRoute;
   '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute;
   '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute;
   '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute;
-  '/admin/profiles/overview': typeof AdminProfilesOverviewRoute;
-  '/admin/profiles/personal-info': typeof AdminProfilesPersonalInfoRoute;
-  '/admin/profiles/social-links': typeof AdminProfilesSocialLinksRoute;
-  '/admin/profiles/tech-stacks': typeof AdminProfilesTechStacksRoute;
-  '/admin/projects/new': typeof AdminProjectsNewRoute;
-  '/admin/settings/cgu': typeof AdminSettingsCguRoute;
-  '/admin/settings/cookie-policy': typeof AdminSettingsCookiePolicyRoute;
-  '/admin/settings/legal-mentions': typeof AdminSettingsLegalMentionsRoute;
-  '/admin/settings/privacy-policy': typeof AdminSettingsPrivacyPolicyRoute;
-  '/admin/settings/themes': typeof AdminSettingsThemesRoute;
-  '/admin/projects/': typeof AdminProjectsIndexRoute;
-  '/admin/projects/$projectId/edit': typeof AdminProjectsProjectIdEditRoute;
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath;
   fullPaths:
     | '/'
     | '/about-me'
-    | '/admin'
     | '/contact-me'
-    | '/forgot-password'
-    | '/login'
     | '/projects'
-    | '/reset-password'
     | '/services'
-    | '/admin/analytics'
-    | '/admin/dashboard'
-    | '/admin/messages'
-    | '/admin/profiles'
-    | '/admin/projects'
-    | '/admin/settings'
     | '/api/optimize-image'
     | '/projects/$slug'
     | '/visitor/cgu'
     | '/visitor/cookie-policy'
     | '/visitor/legal-mentions'
-    | '/visitor/privacy-policy'
-    | '/admin/profiles/overview'
-    | '/admin/profiles/personal-info'
-    | '/admin/profiles/social-links'
-    | '/admin/profiles/tech-stacks'
-    | '/admin/projects/new'
-    | '/admin/settings/cgu'
-    | '/admin/settings/cookie-policy'
-    | '/admin/settings/legal-mentions'
-    | '/admin/settings/privacy-policy'
-    | '/admin/settings/themes'
-    | '/admin/projects/'
-    | '/admin/projects/$projectId/edit';
+    | '/visitor/privacy-policy';
   fileRoutesByTo: FileRoutesByTo;
   to:
     | '/'
     | '/about-me'
-    | '/admin'
     | '/contact-me'
-    | '/forgot-password'
-    | '/login'
     | '/projects'
-    | '/reset-password'
     | '/services'
-    | '/admin/analytics'
-    | '/admin/dashboard'
-    | '/admin/messages'
-    | '/admin/profiles'
-    | '/admin/settings'
     | '/api/optimize-image'
     | '/projects/$slug'
     | '/visitor/cgu'
     | '/visitor/cookie-policy'
     | '/visitor/legal-mentions'
-    | '/visitor/privacy-policy'
-    | '/admin/profiles/overview'
-    | '/admin/profiles/personal-info'
-    | '/admin/profiles/social-links'
-    | '/admin/profiles/tech-stacks'
-    | '/admin/projects/new'
-    | '/admin/settings/cgu'
-    | '/admin/settings/cookie-policy'
-    | '/admin/settings/legal-mentions'
-    | '/admin/settings/privacy-policy'
-    | '/admin/settings/themes'
-    | '/admin/projects'
-    | '/admin/projects/$projectId/edit';
+    | '/visitor/privacy-policy';
   id:
     | '__root__'
     | '/'
     | '/about-me'
-    | '/admin'
     | '/contact-me'
-    | '/forgot-password'
-    | '/login'
     | '/projects'
-    | '/reset-password'
     | '/services'
-    | '/admin/analytics'
-    | '/admin/dashboard'
-    | '/admin/messages'
-    | '/admin/profiles'
-    | '/admin/projects'
-    | '/admin/settings'
     | '/api/optimize-image'
     | '/projects_/$slug'
     | '/visitor/cgu'
     | '/visitor/cookie-policy'
     | '/visitor/legal-mentions'
-    | '/visitor/privacy-policy'
-    | '/admin/profiles/overview'
-    | '/admin/profiles/personal-info'
-    | '/admin/profiles/social-links'
-    | '/admin/profiles/tech-stacks'
-    | '/admin/projects/new'
-    | '/admin/settings/cgu'
-    | '/admin/settings/cookie-policy'
-    | '/admin/settings/legal-mentions'
-    | '/admin/settings/privacy-policy'
-    | '/admin/settings/themes'
-    | '/admin/projects/'
-    | '/admin/projects/$projectId/edit';
+    | '/visitor/privacy-policy';
   fileRoutesById: FileRoutesById;
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute;
   AboutMeRoute: typeof AboutMeRoute;
-  AdminRoute: typeof AdminRouteWithChildren;
   ContactMeRoute: typeof ContactMeRoute;
-  ForgotPasswordRoute: typeof ForgotPasswordRoute;
-  LoginRoute: typeof LoginRoute;
   ProjectsRoute: typeof ProjectsRoute;
-  ResetPasswordRoute: typeof ResetPasswordRoute;
   ServicesRoute: typeof ServicesRoute;
   ApiOptimizeImageRoute: typeof ApiOptimizeImageRoute;
   ProjectsSlugRoute: typeof ProjectsSlugRoute;
@@ -454,13 +182,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport;
       parentRoute: typeof rootRouteImport;
     };
-    '/reset-password': {
-      id: '/reset-password';
-      path: '/reset-password';
-      fullPath: '/reset-password';
-      preLoaderRoute: typeof ResetPasswordRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
     '/projects': {
       id: '/projects';
       path: '/projects';
@@ -468,32 +189,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport;
       parentRoute: typeof rootRouteImport;
     };
-    '/login': {
-      id: '/login';
-      path: '/login';
-      fullPath: '/login';
-      preLoaderRoute: typeof LoginRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
-    '/forgot-password': {
-      id: '/forgot-password';
-      path: '/forgot-password';
-      fullPath: '/forgot-password';
-      preLoaderRoute: typeof ForgotPasswordRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
     '/contact-me': {
       id: '/contact-me';
       path: '/contact-me';
       fullPath: '/contact-me';
       preLoaderRoute: typeof ContactMeRouteImport;
-      parentRoute: typeof rootRouteImport;
-    };
-    '/admin': {
-      id: '/admin';
-      path: '/admin';
-      fullPath: '/admin';
-      preLoaderRoute: typeof AdminRouteImport;
       parentRoute: typeof rootRouteImport;
     };
     '/about-me': {
@@ -552,218 +252,14 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiOptimizeImageRouteImport;
       parentRoute: typeof rootRouteImport;
     };
-    '/admin/settings': {
-      id: '/admin/settings';
-      path: '/settings';
-      fullPath: '/admin/settings';
-      preLoaderRoute: typeof AdminSettingsRouteImport;
-      parentRoute: typeof AdminRoute;
-    };
-    '/admin/projects': {
-      id: '/admin/projects';
-      path: '/projects';
-      fullPath: '/admin/projects';
-      preLoaderRoute: typeof AdminProjectsRouteImport;
-      parentRoute: typeof AdminRoute;
-    };
-    '/admin/profiles': {
-      id: '/admin/profiles';
-      path: '/profiles';
-      fullPath: '/admin/profiles';
-      preLoaderRoute: typeof AdminProfilesRouteImport;
-      parentRoute: typeof AdminRoute;
-    };
-    '/admin/messages': {
-      id: '/admin/messages';
-      path: '/messages';
-      fullPath: '/admin/messages';
-      preLoaderRoute: typeof AdminMessagesRouteImport;
-      parentRoute: typeof AdminRoute;
-    };
-    '/admin/dashboard': {
-      id: '/admin/dashboard';
-      path: '/dashboard';
-      fullPath: '/admin/dashboard';
-      preLoaderRoute: typeof AdminDashboardRouteImport;
-      parentRoute: typeof AdminRoute;
-    };
-    '/admin/analytics': {
-      id: '/admin/analytics';
-      path: '/analytics';
-      fullPath: '/admin/analytics';
-      preLoaderRoute: typeof AdminAnalyticsRouteImport;
-      parentRoute: typeof AdminRoute;
-    };
-    '/admin/projects/': {
-      id: '/admin/projects/';
-      path: '/';
-      fullPath: '/admin/projects/';
-      preLoaderRoute: typeof AdminProjectsIndexRouteImport;
-      parentRoute: typeof AdminProjectsRoute;
-    };
-    '/admin/settings/themes': {
-      id: '/admin/settings/themes';
-      path: '/themes';
-      fullPath: '/admin/settings/themes';
-      preLoaderRoute: typeof AdminSettingsThemesRouteImport;
-      parentRoute: typeof AdminSettingsRoute;
-    };
-    '/admin/settings/privacy-policy': {
-      id: '/admin/settings/privacy-policy';
-      path: '/privacy-policy';
-      fullPath: '/admin/settings/privacy-policy';
-      preLoaderRoute: typeof AdminSettingsPrivacyPolicyRouteImport;
-      parentRoute: typeof AdminSettingsRoute;
-    };
-    '/admin/settings/legal-mentions': {
-      id: '/admin/settings/legal-mentions';
-      path: '/legal-mentions';
-      fullPath: '/admin/settings/legal-mentions';
-      preLoaderRoute: typeof AdminSettingsLegalMentionsRouteImport;
-      parentRoute: typeof AdminSettingsRoute;
-    };
-    '/admin/settings/cookie-policy': {
-      id: '/admin/settings/cookie-policy';
-      path: '/cookie-policy';
-      fullPath: '/admin/settings/cookie-policy';
-      preLoaderRoute: typeof AdminSettingsCookiePolicyRouteImport;
-      parentRoute: typeof AdminSettingsRoute;
-    };
-    '/admin/settings/cgu': {
-      id: '/admin/settings/cgu';
-      path: '/cgu';
-      fullPath: '/admin/settings/cgu';
-      preLoaderRoute: typeof AdminSettingsCguRouteImport;
-      parentRoute: typeof AdminSettingsRoute;
-    };
-    '/admin/projects/new': {
-      id: '/admin/projects/new';
-      path: '/new';
-      fullPath: '/admin/projects/new';
-      preLoaderRoute: typeof AdminProjectsNewRouteImport;
-      parentRoute: typeof AdminProjectsRoute;
-    };
-    '/admin/profiles/tech-stacks': {
-      id: '/admin/profiles/tech-stacks';
-      path: '/tech-stacks';
-      fullPath: '/admin/profiles/tech-stacks';
-      preLoaderRoute: typeof AdminProfilesTechStacksRouteImport;
-      parentRoute: typeof AdminProfilesRoute;
-    };
-    '/admin/profiles/social-links': {
-      id: '/admin/profiles/social-links';
-      path: '/social-links';
-      fullPath: '/admin/profiles/social-links';
-      preLoaderRoute: typeof AdminProfilesSocialLinksRouteImport;
-      parentRoute: typeof AdminProfilesRoute;
-    };
-    '/admin/profiles/personal-info': {
-      id: '/admin/profiles/personal-info';
-      path: '/personal-info';
-      fullPath: '/admin/profiles/personal-info';
-      preLoaderRoute: typeof AdminProfilesPersonalInfoRouteImport;
-      parentRoute: typeof AdminProfilesRoute;
-    };
-    '/admin/profiles/overview': {
-      id: '/admin/profiles/overview';
-      path: '/overview';
-      fullPath: '/admin/profiles/overview';
-      preLoaderRoute: typeof AdminProfilesOverviewRouteImport;
-      parentRoute: typeof AdminProfilesRoute;
-    };
-    '/admin/projects/$projectId/edit': {
-      id: '/admin/projects/$projectId/edit';
-      path: '/$projectId/edit';
-      fullPath: '/admin/projects/$projectId/edit';
-      preLoaderRoute: typeof AdminProjectsProjectIdEditRouteImport;
-      parentRoute: typeof AdminProjectsRoute;
-    };
   }
 }
-
-interface AdminProfilesRouteChildren {
-  AdminProfilesOverviewRoute: typeof AdminProfilesOverviewRoute;
-  AdminProfilesPersonalInfoRoute: typeof AdminProfilesPersonalInfoRoute;
-  AdminProfilesSocialLinksRoute: typeof AdminProfilesSocialLinksRoute;
-  AdminProfilesTechStacksRoute: typeof AdminProfilesTechStacksRoute;
-}
-
-const AdminProfilesRouteChildren: AdminProfilesRouteChildren = {
-  AdminProfilesOverviewRoute: AdminProfilesOverviewRoute,
-  AdminProfilesPersonalInfoRoute: AdminProfilesPersonalInfoRoute,
-  AdminProfilesSocialLinksRoute: AdminProfilesSocialLinksRoute,
-  AdminProfilesTechStacksRoute: AdminProfilesTechStacksRoute,
-};
-
-const AdminProfilesRouteWithChildren = AdminProfilesRoute._addFileChildren(
-  AdminProfilesRouteChildren,
-);
-
-interface AdminProjectsRouteChildren {
-  AdminProjectsNewRoute: typeof AdminProjectsNewRoute;
-  AdminProjectsIndexRoute: typeof AdminProjectsIndexRoute;
-  AdminProjectsProjectIdEditRoute: typeof AdminProjectsProjectIdEditRoute;
-}
-
-const AdminProjectsRouteChildren: AdminProjectsRouteChildren = {
-  AdminProjectsNewRoute: AdminProjectsNewRoute,
-  AdminProjectsIndexRoute: AdminProjectsIndexRoute,
-  AdminProjectsProjectIdEditRoute: AdminProjectsProjectIdEditRoute,
-};
-
-const AdminProjectsRouteWithChildren = AdminProjectsRoute._addFileChildren(
-  AdminProjectsRouteChildren,
-);
-
-interface AdminSettingsRouteChildren {
-  AdminSettingsCguRoute: typeof AdminSettingsCguRoute;
-  AdminSettingsCookiePolicyRoute: typeof AdminSettingsCookiePolicyRoute;
-  AdminSettingsLegalMentionsRoute: typeof AdminSettingsLegalMentionsRoute;
-  AdminSettingsPrivacyPolicyRoute: typeof AdminSettingsPrivacyPolicyRoute;
-  AdminSettingsThemesRoute: typeof AdminSettingsThemesRoute;
-}
-
-const AdminSettingsRouteChildren: AdminSettingsRouteChildren = {
-  AdminSettingsCguRoute: AdminSettingsCguRoute,
-  AdminSettingsCookiePolicyRoute: AdminSettingsCookiePolicyRoute,
-  AdminSettingsLegalMentionsRoute: AdminSettingsLegalMentionsRoute,
-  AdminSettingsPrivacyPolicyRoute: AdminSettingsPrivacyPolicyRoute,
-  AdminSettingsThemesRoute: AdminSettingsThemesRoute,
-};
-
-const AdminSettingsRouteWithChildren = AdminSettingsRoute._addFileChildren(
-  AdminSettingsRouteChildren,
-);
-
-interface AdminRouteChildren {
-  AdminAnalyticsRoute: typeof AdminAnalyticsRoute;
-  AdminDashboardRoute: typeof AdminDashboardRoute;
-  AdminMessagesRoute: typeof AdminMessagesRoute;
-  AdminProfilesRoute: typeof AdminProfilesRouteWithChildren;
-  AdminProjectsRoute: typeof AdminProjectsRouteWithChildren;
-  AdminSettingsRoute: typeof AdminSettingsRouteWithChildren;
-}
-
-const AdminRouteChildren: AdminRouteChildren = {
-  AdminAnalyticsRoute: AdminAnalyticsRoute,
-  AdminDashboardRoute: AdminDashboardRoute,
-  AdminMessagesRoute: AdminMessagesRoute,
-  AdminProfilesRoute: AdminProfilesRouteWithChildren,
-  AdminProjectsRoute: AdminProjectsRouteWithChildren,
-  AdminSettingsRoute: AdminSettingsRouteWithChildren,
-};
-
-const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren);
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutMeRoute: AboutMeRoute,
-  AdminRoute: AdminRouteWithChildren,
   ContactMeRoute: ContactMeRoute,
-  ForgotPasswordRoute: ForgotPasswordRoute,
-  LoginRoute: LoginRoute,
   ProjectsRoute: ProjectsRoute,
-  ResetPasswordRoute: ResetPasswordRoute,
   ServicesRoute: ServicesRoute,
   ApiOptimizeImageRoute: ApiOptimizeImageRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,

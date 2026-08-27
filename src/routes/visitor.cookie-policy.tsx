@@ -8,17 +8,10 @@ import '../styles/main.css';
 import { LoadingComponent } from '../components/LoadingComponent';
 
 export const Route = createFileRoute('/visitor/cookie-policy')({
-  loader: async ({ context }) => {
-    return {
-      isConnected: context.session?.user.role === 'admin',
-    };
-  },
   component: VisitorCookiePolicyPage,
 });
 
 function VisitorCookiePolicyPage() {
-  const { isConnected } = Route.useLoaderData();
-
   const { data, isLoading } = useQuery({
     queryKey: ['rich-text', 'cookie-policy'],
     queryFn: () => getCookiePolicy(),
@@ -27,7 +20,7 @@ function VisitorCookiePolicyPage() {
   if (isLoading) {
     return (
       <>
-        <Header isConnected={isConnected} />
+        <Header />
         <main role="main">
           <LoadingComponent />
         </main>
@@ -38,7 +31,7 @@ function VisitorCookiePolicyPage() {
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main">
         <section className="hero-visitor">
           <Container>

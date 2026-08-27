@@ -9,10 +9,9 @@ import { getProfilePresentationAction, UserOutput } from '../features/profiles';
 import { LoadingComponent } from '../components/LoadingComponent';
 
 export const Route = createFileRoute('/about-me')({
-  loader: async ({ context }) => {
+  loader: async () => {
     const profile: UserOutput = await getProfilePresentationAction();
     return {
-      isConnected: context.session?.user.role === 'admin',
       profile,
     };
   },
@@ -32,12 +31,12 @@ export const Route = createFileRoute('/about-me')({
 });
 
 function AboutPage() {
-  const { isConnected, profile }: { isConnected: boolean; profile: UserOutput } = Route.useLoaderData();
+  const { profile }: { profile: UserOutput } = Route.useLoaderData();
 
   if (!profile) {
     return (
       <>
-        <Header isConnected={isConnected} />
+        <Header />
         <main role="main">
           <LoadingComponent />
         </main>
@@ -77,7 +76,7 @@ function AboutPage() {
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main">
         <About
           profileImage={

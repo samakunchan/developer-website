@@ -8,17 +8,10 @@ import '../styles/main.css';
 import { LoadingComponent } from '../components/LoadingComponent';
 
 export const Route = createFileRoute('/visitor/privacy-policy')({
-  loader: async ({ context }) => {
-    return {
-      isConnected: context.session?.user.role === 'admin',
-    };
-  },
   component: VisitorPrivacyPage,
 });
 
 function VisitorPrivacyPage() {
-  const { isConnected } = Route.useLoaderData();
-
   const { data, isLoading } = useQuery({
     queryKey: ['rich-text', 'privacy-policy'],
     queryFn: () => getPrivacyPolicy(),
@@ -27,7 +20,7 @@ function VisitorPrivacyPage() {
   if (isLoading) {
     return (
       <>
-        <Header isConnected={isConnected} />
+        <Header />
         <main role="main">
           <LoadingComponent />
         </main>
@@ -38,7 +31,7 @@ function VisitorPrivacyPage() {
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main">
         <section className="hero-visitor">
           <Container>
