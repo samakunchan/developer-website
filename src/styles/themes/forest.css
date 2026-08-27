@@ -72,6 +72,7 @@
   --color-project-tag-border: rgba(0, 109, 54, 0.1);
   --color-project-tag-text: var(--color-primary);
   --color-projects-card-detail-hover: var(--color-terminal-light-green);
+  --color-project-featured-card-bg: var(--section-contrast-color);
 
   /* Pricing */
   --color-pricing-section-bg: var(--color-background);

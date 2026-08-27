@@ -11,21 +11,15 @@ import '../styles/main.css';
 import { RouteNameType } from '../core/types/routes-name';
 
 export const Route = createFileRoute('/')({
-  loader: async ({ context }) => {
-    return {
-      isConnected: context.session?.user.role === 'admin',
-    };
-  },
   component: Index,
 });
 
 function Index() {
-  const { isConnected } = Route.useLoaderData();
   const navigate: UseNavigateResult<string> = useNavigate();
 
   return (
     <>
-      <Header isConnected={isConnected} />
+      <Header />
       <main role="main">
         <Hero
           badgeText={t`Available for new projects`}

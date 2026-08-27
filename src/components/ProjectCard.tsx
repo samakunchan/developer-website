@@ -15,6 +15,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ slug, image, title, categoryLabel, description, techIcons }: ProjectCardProps) {
+  console.log(techIcons);
   return (
     <div className="project-card">
       <div className="project-card__image-wrapper">
@@ -35,13 +36,13 @@ export function ProjectCard({ slug, image, title, categoryLabel, description, te
         </div>
         <p className="project-card__description">{description}</p>
         <div className="project-card__footer">
-          <div className="project-card__tech">
+          {/* <div className="project-card__tech">
             {techIcons?.map((icon, index) => (
-              <span key={index} className="material-symbols-outlined project-card__tech-icon">
+              <span key={index} className="project-detail__tech-item project-detail__tech-item">
                 {icon}
               </span>
             ))}
-          </div>
+          </div> */}
           <Link to="/projects/$slug" params={{ slug }} className="project-card__link">
             <Trans>View Details</Trans>
             <span className="material-symbols-outlined">arrow_forward</span>

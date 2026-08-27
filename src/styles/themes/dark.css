@@ -22,7 +22,7 @@
   --color-services-section-bg: var(--section-contrast-color);
   --color-services-title: var(--color-white);
   --color-services-subtitle: var(--color-white);
-  --color-services-card-bg: rgba(37, 244, 244, 0.05);
+  --color-services-card-bg: var(--color-cta-bg);
   --color-services-card-border: rgba(37, 244, 244, 0.1);
   --color-services-card-hover-border: rgba(37, 244, 244, 0.4);
   --color-services-icon-bg: var(--color-primary);
@@ -37,7 +37,7 @@
   --color-projects-filter-text: var(--color-slate-300);
   --color-projects-filter-text-hover: var(--color-white);
   --color-project-card-bg: rgba(15, 23, 42, 0.6);
-  --color-empty-card-bg: var(--color-cta-glow);
+  --color-empty-card-bg: var(--color-cta-bg);
   --color-projects-card-detail-hover: var(--color-glass-bg);
 
   /* Pricing */

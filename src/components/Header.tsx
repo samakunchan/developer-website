@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from './Button';
-import { Link, UseNavigateResult, useNavigate } from '@tanstack/react-router';
+import { Link } from '@tanstack/react-router';
 import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
 import { RouteNameType } from '../core/types/routes-name';
 
-export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = false }) => {
-  const navigate: UseNavigateResult<string> = useNavigate();
+export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -43,19 +42,6 @@ export const Header: React.FC<{ isConnected?: boolean }> = ({ isConnected = fals
 
   const actions = (
     <>
-      {isConnected && (
-        <Button
-          className="btn btn--secondary hero__btn"
-          name={t`Admin Dashboard`}
-          onClick={() => {
-            navigate({ to: RouteNameType.AdminDashboard.toString() });
-            closeMenu();
-          }}
-        >
-          <span className="material-symbols-outlined">admin_panel_settings</span>
-        </Button>
-      )}
-
       <Link to={RouteNameType.ContactMe.toString()} viewTransition onClick={closeMenu}>
         <Button variant="primary" aria-label={t`Contact me`}>
           <Trans>Contact</Trans>

@@ -59,6 +59,10 @@ msgstr "٣ صفحات"
 #~ msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
 #~ msgstr ""
 
+#: src/components/ProjectFeatured.tsx:44
+msgid "A selection of custom-tailored solutions combining performance and design."
+msgstr "مجموعة من الحلول المخصصة التي تجمع بين الأداء والتصميم."
+
 #: src/components/Header.tsx:38
 msgid "About"
 msgstr "حول"
@@ -66,6 +70,11 @@ msgstr "حول"
 #: src/components/About.tsx:22
 msgid "About Me"
 msgstr "عني"
+
+#: src/routes/about-me.tsx:23
+#: src/routes/about-me.tsx:27
+msgid "About me page meta description"
+msgstr "تعرف على المزيد حول مسيرتي المهنية وخبرتي التقنية وخلفيتي كمهندس برمجيات متكامل (full-stack)."
 
 #: src/routes/projects.tsx:69
 #~ msgid "Abstract data visualization with neon lines"
@@ -91,7 +100,7 @@ msgstr "تكامل الذكاء الاصطناعي"
 msgid "All"
 msgstr ""
 
-#: src/components/Projects.tsx:21
+#: src/components/Projects.tsx:22
 msgid "All Projects"
 msgstr "جميع المشاريع"
 
@@ -162,7 +171,7 @@ msgstr "العودة إلى المشاريع"
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "بناء تطبيقات ويب قابلة للتطوير وصديقة لمحركات البحث باستخدام تقنيات حديثة."
 
-#: src/routes/projects.tsx:34
+#: src/routes/projects.tsx:46
 msgid "Building the <0>future</0> through clean code."
 msgstr "بناء <0>المستقبل</0> من خلال كود نظيف."
 
@@ -318,7 +327,7 @@ msgstr "الغوص العميق في أهداف عملك، والجمهور ال
 #: src/routes/__root.tsx:88
 #: src/routes/__root.tsx:94
 msgid "Default description of the website"
-msgstr "الوصف الافتراضي للموقع"
+msgstr "مرحبًا بكم في Samakunchan Technology. أقوم ببناء تطبيقات ويب وهواتف محمولة مخصصة وعالية الأداء ومصممة خصيصًا لتلبية احتياجات عملك."
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:61
 msgid "Delete Project"
@@ -346,8 +355,8 @@ msgstr "التفاصيل"
 
 #: src/routes/__root.tsx:85
 #: src/routes/__root.tsx:91
-msgid "Developer Website"
-msgstr "موقع المطور"
+#~ msgid "Developer Website"
+#~ msgstr "موقع المطور"
 
 #: src/routes/services.tsx:31
 #: src/routes/services.tsx:31
@@ -374,7 +383,7 @@ msgstr "البريد الإلكتروني"
 msgid "Email Address"
 msgstr "عنوان البريد الإلكتروني"
 
-#: src/routes/projects.tsx:57
+#: src/routes/projects.tsx:69
 msgid "Email me"
 msgstr "راسلني عبر البريد الإلكتروني"
 
@@ -401,7 +410,7 @@ msgstr "تمييز هذا المشروع"
 msgid "Featured"
 msgstr "مميز"
 
-#: src/components/Projects.tsx:48
+#: src/components/ProjectFeatured.tsx:41
 msgid "Featured Projects"
 msgstr "المشاريع المميزة"
 
@@ -453,7 +462,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "هل لديك مشروع في الاعتبار؟"
 
@@ -481,11 +490,11 @@ msgstr "أنا مطور مقيم في فرنسا ولدي أكثر من 8 سنو
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr ""
 
-#: src/routes/projects.tsx:38
+#: src/routes/projects.tsx:50
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "أنا مطور مستقل متخصص في بناء تطبيقات الويب والهاتف المحمول عالية الأداء باستخدام التقنيات الحديثة."
 
-#: src/routes/projects.tsx:55
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "أنا متاح حاليًا للعمل الحر ومنفتح على فرص جديدة. لنبني شيئًا مذهلاً معًا."
 
@@ -543,7 +552,7 @@ msgstr "لنناقش مشروعك ونرى كيف يمكننا بناء شيء �
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "لنناقش متطلباتك ونجد أفضل حل لعملك."
 
-#: src/routes/projects.tsx:40
+#: src/routes/projects.tsx:52
 msgid "Let's talk"
 msgstr "فلنتحدث"
 
@@ -625,7 +634,7 @@ msgstr "التنقل عبر الهاتف المحمول"
 msgid "Mobile Responsive"
 msgstr "متوافق مع الجوال"
 
-#: src/components/Projects.tsx:23
+#: src/components/Projects.tsx:24
 msgid "Mobile UI"
 msgstr "واجهة المستخدم للجوال"
 
@@ -653,7 +662,7 @@ msgstr "متعدد المنصات (ويب/جوال)"
 msgid "MVP Launch"
 msgstr "إطلاق MVP"
 
-#: src/routes/projects.tsx:50
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "أعمالي الأخيرة"
 
@@ -698,7 +707,7 @@ msgstr "العمل دون اتصال"
 msgid "Open menu"
 msgstr "فتح القائمة"
 
-#: src/components/Projects.tsx:24
+#: src/components/Projects.tsx:25
 msgid "Open Source"
 msgstr "مفتوح المصدر"
 
@@ -718,7 +727,7 @@ msgstr "تحسين الأداء"
 msgid "Personals Informations"
 msgstr "المعلومات الشخصية"
 
-#: src/routes/projects.tsx:49
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "معرض الأعمال"
 
@@ -769,6 +778,10 @@ msgstr "نطاق ميزانية المشروع"
 msgid "Project Identity"
 msgstr "هوية المشروع"
 
+#: src/routes/projects.tsx:25
+#~ msgid "Project meta description"
+#~ msgstr "استكشف مشاريعي الأخيرة، وتطبيقات الويب، وحلول الهاتف المحمول. معرض للبرمجيات المخصصة المصممة للشركات الحديثة."
+
 #: src/routes/admin.projects.$projectId.edit.tsx:40
 msgid "Project not found"
 msgstr "المشروع غير موجود"
@@ -785,6 +798,11 @@ msgstr "مرئيات المشروع"
 #: src/components/Header.tsx:27
 msgid "Projects"
 msgstr "مشاريع"
+
+#: src/routes/projects.tsx:25
+#: src/routes/projects.tsx:29
+msgid "Projects page meta description"
+msgstr "استكشف مشاريعي الأخيرة، وتطبيقات الويب، وحلول الهاتف المحمول. معرض للبرمجيات المخصصة المصممة للشركات الحديثة."
 
 #: src/components/Header.tsx:41
 #: src/components/Header.tsx:43
@@ -848,6 +866,11 @@ msgstr "تصميم متجاوب"
 #~ msgid "Robust backend service for cryptocurrency market analysis providing real-time data to thousands of users."
 #~ msgstr ""
 
+#: src/routes/__root.tsx:85
+#: src/routes/__root.tsx:91
+msgid "Samakunchan Technology"
+msgstr "Samakunchan Technology"
+
 #: src/features/projects/components/form/ProjectCreateForm.tsx:217
 msgid "Save & Next"
 msgstr "حفظ والتالي"
@@ -865,7 +888,7 @@ msgstr "جاري الحفظ..."
 msgid "Scalable enterprise-grade software solutions."
 msgstr "حلول برمجية قابلة للتطوير للمؤسسات."
 
-#: src/routes/projects.tsx:56
+#: src/routes/projects.tsx:68
 msgid "Schedule a call"
 msgstr "جدولة مكالمة"
 
@@ -1051,11 +1074,11 @@ msgstr "مصادقة المستخدم"
 msgid "User profile"
 msgstr "ملف تعريف المستخدم"
 
-#: src/routes/projects.tsx:43
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "عرض السيرة الذاتية"
 
-#: src/components/ProjectCard.tsx:46
+#: src/components/ProjectCard.tsx:47
 msgid "View Details"
 msgstr "عرض التفاصيل"
 
@@ -1071,6 +1094,10 @@ msgstr "عرض الأسعار"
 msgid "Visuals"
 msgstr "المرئيات"
 
+#: src/components/ProjectFeatured.tsx:75
+msgid "Voir les détails"
+msgstr ""
+
 #: src/routes/projects.tsx:24
 #: src/routes/projects.tsx:56
 #: src/routes/projects.tsx:72
@@ -1081,7 +1108,7 @@ msgstr "المرئيات"
 msgid "Web Application"
 msgstr "تطبيق ويب"
 
-#: src/components/Projects.tsx:22
+#: src/components/Projects.tsx:23
 msgid "Web Apps"
 msgstr "تطبيقات الويب"
 

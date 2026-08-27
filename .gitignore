@@ -20,3 +20,4 @@ prisma/migration_lock.toml
 public/shared/*
 scratch/
 .history
+todo.md
