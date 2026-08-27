@@ -59,6 +59,10 @@ msgstr "٣ صفحات"
 #~ msgid "A complex data visualization dashboard built with Next.js, D3.js, and Supabase for real-time fleet tracking."
 #~ msgstr ""
 
+#: src/components/ProjectFeatured.tsx:44
+msgid "A selection of custom-tailored solutions combining performance and design."
+msgstr "مجموعة من الحلول المخصصة التي تجمع بين الأداء والتصميم."
+
 #: src/components/Header.tsx:38
 msgid "About"
 msgstr "حول"
@@ -96,7 +100,7 @@ msgstr "تكامل الذكاء الاصطناعي"
 msgid "All"
 msgstr ""
 
-#: src/components/Projects.tsx:21
+#: src/components/Projects.tsx:22
 msgid "All Projects"
 msgstr "جميع المشاريع"
 
@@ -406,7 +410,7 @@ msgstr "تمييز هذا المشروع"
 msgid "Featured"
 msgstr "مميز"
 
-#: src/components/Projects.tsx:48
+#: src/components/ProjectFeatured.tsx:41
 msgid "Featured Projects"
 msgstr "المشاريع المميزة"
 
@@ -630,7 +634,7 @@ msgstr "التنقل عبر الهاتف المحمول"
 msgid "Mobile Responsive"
 msgstr "متوافق مع الجوال"
 
-#: src/components/Projects.tsx:23
+#: src/components/Projects.tsx:24
 msgid "Mobile UI"
 msgstr "واجهة المستخدم للجوال"
 
@@ -703,7 +707,7 @@ msgstr "العمل دون اتصال"
 msgid "Open menu"
 msgstr "فتح القائمة"
 
-#: src/components/Projects.tsx:24
+#: src/components/Projects.tsx:25
 msgid "Open Source"
 msgstr "مفتوح المصدر"
 
@@ -1074,7 +1078,7 @@ msgstr "ملف تعريف المستخدم"
 msgid "View CV"
 msgstr "عرض السيرة الذاتية"
 
-#: src/components/ProjectCard.tsx:46
+#: src/components/ProjectCard.tsx:47
 msgid "View Details"
 msgstr "عرض التفاصيل"
 
@@ -1090,6 +1094,10 @@ msgstr "عرض الأسعار"
 msgid "Visuals"
 msgstr "المرئيات"
 
+#: src/components/ProjectFeatured.tsx:75
+msgid "Voir les détails"
+msgstr ""
+
 #: src/routes/projects.tsx:24
 #: src/routes/projects.tsx:56
 #: src/routes/projects.tsx:72
@@ -1100,7 +1108,7 @@ msgstr "المرئيات"
 msgid "Web Application"
 msgstr "تطبيق ويب"
 
-#: src/components/Projects.tsx:22
+#: src/components/Projects.tsx:23
 msgid "Web Apps"
 msgstr "تطبيقات الويب"
 
