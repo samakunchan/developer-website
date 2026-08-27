@@ -5,11 +5,11 @@ import { Trans } from '@lingui/react/macro';
 import { t } from '@lingui/core/macro';
 import { RouteNameType } from '../core/types/routes-name';
 
-export const Header: React.FC = () => {
+export const Header: React.FC<unknown> = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
+  const toggleMenu: () => void = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu: () => void = () => setIsMenuOpen(false);
 
   const navLinks = (
     <ul className="header__nav-list">

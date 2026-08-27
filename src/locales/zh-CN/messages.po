@@ -63,7 +63,7 @@ msgstr "3 页"
 msgid "A selection of custom-tailored solutions combining performance and design."
 msgstr "精选的定制解决方案，结合了性能与设计。"
 
-#: src/components/Header.tsx:38
+#: src/components/Header.tsx:37
 msgid "About"
 msgstr "关于"
 
@@ -71,8 +71,8 @@ msgstr "关于"
 msgid "About Me"
 msgstr "关于我"
 
-#: src/routes/about-me.tsx:23
-#: src/routes/about-me.tsx:27
+#: src/routes/about-me.tsx:22
+#: src/routes/about-me.tsx:26
 msgid "About me page meta description"
 msgstr "了解更多关于我的职业生涯、技术专长以及我作为全栈软件工程师的背景。"
 
@@ -81,24 +81,28 @@ msgstr "了解更多关于我的职业生涯、技术专长以及我作为全栈
 #~ msgstr ""
 
 #: src/routes/admin.projects.new.tsx:27
-msgid "Add New Project"
-msgstr "添加新项目"
+#~ msgid "Add New Project"
+#~ msgstr "添加新项目"
 
 #: src/routes/admin.projects.index.tsx:67
-msgid "Add Project"
-msgstr "添加项目"
+#~ msgid "Add Project"
+#~ msgstr "添加项目"
 
 #: src/components/Header.tsx:49
-msgid "Admin Dashboard"
-msgstr "管理后台"
+#~ msgid "Admin Dashboard"
+#~ msgstr "管理后台"
 
 #: src/components/ContactMe.tsx:37
-msgid "AI Integration"
-msgstr "AI 集成"
+msgid "AI"
+msgstr "AI"
+
+#: src/components/ContactMe.tsx:37
+#~ msgid "AI Integration"
+#~ msgstr "AI 集成"
 
 #: src/features/messages/components/ListPane.tsx:53
-msgid "All"
-msgstr ""
+#~ msgid "All"
+#~ msgstr ""
 
 #: src/components/Projects.tsx:22
 msgid "All Projects"
@@ -109,12 +113,12 @@ msgid "All rights reserved."
 msgstr "版权所有。"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:201
-msgid "Alt Text (SEO)"
-msgstr "替代文本 (SEO)"
+#~ msgid "Alt Text (SEO)"
+#~ msgstr "替代文本 (SEO)"
 
 #: src/components/AdminSidebarPrimary.tsx:63
-msgid "Analytics"
-msgstr "分析"
+#~ msgid "Analytics"
+#~ msgstr "分析"
 
 #: src/components/About.tsx:16
 #~ msgid "Angular"
@@ -133,7 +137,7 @@ msgid "API Development"
 msgstr "API 开发"
 
 #: src/core/data/servicesData.tsx:17
-#: src/routes/index.tsx:64
+#: src/routes/index.tsx:58
 msgid "App Store Deployment"
 msgstr "App Store 部署"
 
@@ -142,70 +146,68 @@ msgstr "App Store 部署"
 #~ msgstr "Apple Store"
 
 #: src/components/AdminToolbar.tsx:31
-msgid "Apps"
-msgstr "应用"
+#~ msgid "Apps"
+#~ msgstr "应用"
 
 #: src/routes/admin.projects.index.tsx:45
-msgid "Are you sure you want to delete this project?"
-msgstr "您确定要删除这个项目吗？"
+#~ msgid "Are you sure you want to delete this project?"
+#~ msgstr "您确定要删除这个项目吗？"
 
-#: src/routes/index.tsx:31
+#: src/routes/index.tsx:25
 msgid "Available for new projects"
 msgstr "可承接新项目"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:204
-msgid "Back"
-msgstr "返回"
+#~ msgid "Back"
+#~ msgstr "返回"
 
 #: src/routes/admin.projects.$projectId.edit.tsx:54
 #: src/routes/admin.projects.new.tsx:31
-msgid "Back to list"
-msgstr "返回列表"
+#~ msgid "Back to list"
+#~ msgstr "返回列表"
 
-#: src/routes/projects_.$slug.tsx:36
+#: src/routes/projects_.$slug.tsx:35
 msgid "Back to Projects"
 msgstr "返回项目"
 
 #: src/core/data/servicesData.tsx:8
-#: src/routes/index.tsx:57
+#: src/routes/index.tsx:51
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "使用现代技术栈构建可扩展、SEO 友好的 Web 应用程序。"
 
-#: src/routes/projects.tsx:46
+#: src/routes/projects.tsx:45
 msgid "Building the <0>future</0> through clean code."
 msgstr "通过干净的代码构建<0>未来</0>。"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:208
 #: src/features/projects/components/form/ProjectEditForm.tsx:137
-msgid "Cancel"
-msgstr "取消"
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:78
-msgid "Case Study Number"
-msgstr "案例研究编号"
+#~ msgid "Case Study Number"
+#~ msgstr "案例研究编号"
 
-#: src/routes/projects_.$slug.tsx:75
+#: src/routes/projects_.$slug.tsx:74
 msgid "Case Study:"
 msgstr "案例研究："
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:43
-msgid "Category"
-msgstr "类别"
+#~ msgid "Category"
+#~ msgstr "类别"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:53
-msgid "Category Label (Display)"
-msgstr "类别标签 (显示)"
+#~ msgid "Category Label (Display)"
+#~ msgstr "类别标签 (显示)"
 
 #: src/components/Footer.tsx:27
-#: src/routes/admin.settings.cgu.tsx:37
-#: src/routes/admin.settings.tsx:14
 msgid "CGU"
 msgstr "通用使用条款"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:53
 #: src/features/projects/components/form/ProjectFormSections.tsx:252
-msgid "Change Image"
-msgstr "更换图片"
+#~ msgid "Change Image"
+#~ msgstr "更换图片"
 
 #: src/core/data/pricingData.tsx:10
 msgid "Choose Basic"
@@ -219,25 +221,25 @@ msgstr "选择企业版"
 msgid "Choose Pro"
 msgstr "选择专业版"
 
-#: src/routes/services.tsx:45
+#: src/routes/services.tsx:39
 msgid "Choose the perfect service package tailored to your business needs. From simple portfolios to complex SaaS platforms."
 msgstr "选择适合您业务需求的完美服务方案。从简单的作品集到复杂的 SaaS 平台。"
 
-#: src/components/ContactMe.tsx:276
+#: src/components/ContactMe.tsx:275
 msgid "Cinematic neon city background"
 msgstr "电影般的霓虹城市背景"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:35
 #: src/features/projects/components/form/ProjectFormSections.tsx:239
-msgid "Click to upload image"
-msgstr "点击上传图片"
+#~ msgid "Click to upload image"
+#~ msgstr "点击上传图片"
 
-#: src/components/Header.tsx:94
+#: src/components/Header.tsx:80
 msgid "Close menu"
 msgstr "关闭菜单"
 
 #: src/core/data/servicesData.tsx:24
-#: src/routes/index.tsx:71
+#: src/routes/index.tsx:65
 msgid "Cloud Infrastructure"
 msgstr "云基础设施"
 
@@ -246,24 +248,24 @@ msgid "CMS Integration"
 msgstr "CMS 集成"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:221
-msgid "Complete & Save"
-msgstr "完成并保存"
+#~ msgid "Complete & Save"
+#~ msgstr "完成并保存"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:221
-msgid "Completing..."
-msgstr "正在完成..."
+#~ msgid "Completing..."
+#~ msgstr "正在完成..."
 
 #: src/components/About.tsx:76
 msgid "Connect with me"
 msgstr "与我联系"
 
-#: src/components/Header.tsx:61
+#: src/components/Header.tsx:47
 msgid "Contact"
 msgstr "联系"
 
-#: src/components/Header.tsx:60
-#: src/routes/services.tsx:50
-#: src/routes/services.tsx:68
+#: src/components/Header.tsx:46
+#: src/routes/services.tsx:44
+#: src/routes/services.tsx:62
 msgid "Contact me"
 msgstr "联系我"
 
@@ -273,13 +275,10 @@ msgstr "联系我"
 #~ msgstr ""
 
 #: src/components/Footer.tsx:33
-#: src/routes/admin.settings.cookie-policy.tsx:38
-#: src/routes/admin.settings.cookie-policy.tsx:45
-#: src/routes/admin.settings.tsx:16
 msgid "Cookie Policy"
 msgstr "Cookie 政策"
 
-#: src/routes/index.tsx:53
+#: src/routes/index.tsx:47
 msgid "Core Services"
 msgstr "核心服务"
 
@@ -288,7 +287,7 @@ msgid "Crafting digital experiences with precision."
 msgstr "精准打造数字体验。"
 
 #: src/core/data/servicesData.tsx:15
-#: src/routes/index.tsx:63
+#: src/routes/index.tsx:57
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "适用于 iOS 和 Android 的跨平台和原生移动解决方案。"
 
@@ -308,19 +307,19 @@ msgstr "定制后端"
 msgid "Custom SaaS"
 msgstr "定制 SaaS"
 
-#: src/routes/index.tsx:33
+#: src/routes/index.tsx:27
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "面向现代企业的定制软件<0>解决方案</0>"
 
 #: src/components/AdminSidebarPrimary.tsx:42
-msgid "Dashboard"
-msgstr "仪表板"
+#~ msgid "Dashboard"
+#~ msgstr "仪表板"
 
 #: src/core/data/pricingData.tsx:28
 msgid "Dashboard UI"
 msgstr "仪表板 UI"
 
-#: src/routes/index.tsx:83
+#: src/routes/index.tsx:77
 msgid "Deep dive into your business goals, target audience, and technical requirements."
 msgstr "深入了解您的业务目标、目标受众和技术要求。"
 
@@ -330,28 +329,28 @@ msgid "Default description of the website"
 msgstr "欢迎来到 Samakunchan Technology。我致力于构建高性能、定制化的网页和移动应用程序，以满足您的业务需求。"
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:61
-msgid "Delete Project"
-msgstr "删除项目"
+#~ msgid "Delete Project"
+#~ msgstr "删除项目"
 
 #: src/features/messages/components/DetailPane.tsx:42
-msgid "Deployment Inquiry"
-msgstr ""
+#~ msgid "Deployment Inquiry"
+#~ msgstr ""
 
-#: src/routes/index.tsx:94
+#: src/routes/index.tsx:88
 msgid "Deployment to production servers and ongoing performance monitoring."
 msgstr "部署到生产服务器并进行持续的性能监控。"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:31
-msgid "Description"
-msgstr "描述"
+#~ msgid "Description"
+#~ msgstr "描述"
 
-#: src/routes/index.tsx:88
+#: src/routes/index.tsx:82
 msgid "Design & Development"
 msgstr "设计与开发"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:174
-msgid "Details"
-msgstr "详情"
+#~ msgid "Details"
+#~ msgstr "详情"
 
 #: src/routes/__root.tsx:85
 #: src/routes/__root.tsx:91
@@ -362,7 +361,7 @@ msgstr "详情"
 #~ msgid "Developer working on a pricing table"
 #~ msgstr "正在开发定价表的开发人员"
 
-#: src/routes/index.tsx:81
+#: src/routes/index.tsx:75
 msgid "Discovery & Strategy"
 msgstr "探索与策略"
 
@@ -371,43 +370,43 @@ msgstr "探索与策略"
 #~ msgstr ""
 
 #: src/routes/admin.projects.$projectId.edit.tsx:50
-msgid "Edit Project"
-msgstr "编辑项目"
+#~ msgid "Edit Project"
+#~ msgstr "编辑项目"
 
 #: src/components/Footer.tsx:41
 msgid "Email"
 msgstr "电子邮件"
 
-#: src/components/ContactMe.tsx:173
+#: src/components/ContactMe.tsx:172
 msgid "Email Address"
 msgstr "电子邮件地址"
 
-#: src/routes/projects.tsx:69
+#: src/routes/projects.tsx:68
 msgid "Email me"
 msgstr "给我发邮件"
 
-#: src/routes/index.tsx:103
+#: src/routes/index.tsx:97
 msgid "Email Me"
 msgstr "给我发邮件"
 
 #: src/core/data/servicesData.tsx:22
-#: src/routes/index.tsx:69
+#: src/routes/index.tsx:63
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "通过 24/7 监控确保您的软件保持快速、安全和最新状态。"
 
-#: src/routes/index.tsx:53
-#: src/routes/index.tsx:53
-#: src/routes/services.tsx:52
+#: src/routes/index.tsx:47
+#: src/routes/index.tsx:47
+#: src/routes/services.tsx:46
 msgid "Expertise"
 msgstr "专长"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:196
-msgid "Feature this project"
-msgstr "推荐此项目"
+#~ msgid "Feature this project"
+#~ msgstr "推荐此项目"
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:33
-msgid "Featured"
-msgstr "推荐"
+#~ msgid "Featured"
+#~ msgstr "推荐"
 
 #: src/components/ProjectFeatured.tsx:41
 msgid "Featured Projects"
@@ -417,7 +416,7 @@ msgstr "精选项目"
 #~ msgid "FitFlow Mobile"
 #~ msgstr ""
 
-#: src/routes/services.tsx:41
+#: src/routes/services.tsx:35
 msgid "Flexible <0>Service</0> Plans for Your Success"
 msgstr "助您成功的<0>灵活计划</0>"
 
@@ -425,19 +424,19 @@ msgstr "助您成功的<0>灵活计划</0>"
 #~ msgid "Flutter"
 #~ msgstr "Flutter"
 
-#: src/routes/index.tsx:37
+#: src/routes/index.tsx:31
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "自由职业全栈开发人员，专注于使用 React、Angular 和 Flutter 开发高性能的 Web 和移动应用程序。"
 
-#: src/components/Header.tsx:73
+#: src/components/Header.tsx:59
 msgid "Freelance home page"
 msgstr "自由职业者主页"
 
-#: src/components/ContactMe.tsx:159
+#: src/components/ContactMe.tsx:158
 msgid "Full Name"
 msgstr "全名"
 
-#: src/components/ContactMe.tsx:266
+#: src/components/ContactMe.tsx:265
 msgid "Full NDAs available for every project."
 msgstr "每个项目均可提供完整的保密协议 (NDA)。"
 
@@ -445,11 +444,11 @@ msgstr "每个项目均可提供完整的保密协议 (NDA)。"
 msgid "Full-featured apps with authentication and CMS."
 msgstr "包含身份验证和 CMS 的全功能应用。"
 
-#: src/routes/projects_.$slug.tsx:111
+#: src/routes/projects_.$slug.tsx:110
 msgid "Functional Requirements"
 msgstr "功能需求"
 
-#: src/routes/index.tsx:45
+#: src/routes/index.tsx:39
 msgid "Get a Quote"
 msgstr "获取报价"
 
@@ -461,7 +460,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:66
+#: src/routes/projects.tsx:65
 msgid "Have a project in mind?"
 msgstr "有项目想法吗？"
 
@@ -474,10 +473,10 @@ msgstr "高负载优化"
 #~ msgstr ""
 
 #: src/components/AdminToolbar.tsx:23
-msgid "Home"
-msgstr "首页"
+#~ msgid "Home"
+#~ msgstr "首页"
 
-#: src/routes/index.tsx:77
+#: src/routes/index.tsx:71
 msgid "How I Work"
 msgstr "我的工作流程"
 
@@ -489,11 +488,11 @@ msgstr "我是一名定居法国的开发者，拥有 8 年以上构建可扩展
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr ""
 
-#: src/routes/projects.tsx:50
+#: src/routes/projects.tsx:49
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "我是一名自由职业开发者，专注于使用现代技术构建高性能的 Web 和移动应用程序。"
 
-#: src/routes/projects.tsx:67
+#: src/routes/projects.tsx:66
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "我目前可以接受自由职业工作，并欢迎新的机会。让我们一起构建一些精彩的东西。"
 
@@ -502,18 +501,18 @@ msgid "I'm currently working on new exciting projects. Check back soon!"
 msgstr "我目前正在开发新的激动人心的项目。请稍后再来！"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:173
-msgid "Identity"
-msgstr "身份"
+#~ msgid "Identity"
+#~ msgstr "身份"
 
 #: src/components/About.tsx:98
 msgid "Illustration of a developer working at a desk with UI elements"
 msgstr "一名开发者在摆放有 UI 元素的办公桌前工作的插图"
 
-#: src/routes/services.tsx:58
+#: src/routes/services.tsx:52
 msgid "Investment"
 msgstr "投资"
 
-#: src/routes/index.tsx:89
+#: src/routes/index.tsx:83
 msgid "Iterative coding sessions with weekly updates and live staging environments."
 msgstr "带有每周更新和实时暂存环境的迭代编码会话。"
 
@@ -521,21 +520,19 @@ msgstr "带有每周更新和实时暂存环境的迭代编码会话。"
 #~ msgid "JavaScript"
 #~ msgstr "JavaScript"
 
-#: src/components/ContactMe.tsx:164
+#: src/components/ContactMe.tsx:163
 msgid "John Doe"
 msgstr "张三"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:130
-msgid "Key Features"
-msgstr "核心功能"
+#~ msgid "Key Features"
+#~ msgstr "核心功能"
 
-#: src/routes/index.tsx:93
+#: src/routes/index.tsx:87
 msgid "Launch & Scaling"
 msgstr "发布与扩展"
 
 #: src/components/Footer.tsx:36
-#: src/routes/admin.settings.legal-mentions.tsx:45
-#: src/routes/admin.settings.tsx:13
 msgid "Legal Mentions"
 msgstr "法律声明"
 
@@ -543,15 +540,15 @@ msgstr "法律声明"
 msgid "Let's Build Together"
 msgstr "让我们一起构建"
 
-#: src/routes/index.tsx:100
+#: src/routes/index.tsx:94
 msgid "Let's discuss your project and see how we can build something amazing together."
 msgstr "让我们讨论您的项目，看看如何一起构建出令人惊叹的作品。"
 
-#: src/routes/services.tsx:66
+#: src/routes/services.tsx:60
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "让我们讨论您的需求，为您的业务寻找最佳解决方案。"
 
-#: src/routes/projects.tsx:52
+#: src/routes/projects.tsx:51
 msgid "Let's talk"
 msgstr "让我们聊聊"
 
@@ -560,72 +557,72 @@ msgstr "让我们聊聊"
 #~ msgstr "LinkedIn"
 
 #: src/features/messages/components/DetailPane.tsx:105
-msgid "Loading details..."
-msgstr ""
+#~ msgid "Loading details..."
+#~ msgstr ""
 
 #: src/routes/admin.projects.$projectId.edit.tsx:32
-msgid "Loading project..."
-msgstr "正在加载项目..."
+#~ msgid "Loading project..."
+#~ msgstr "正在加载项目..."
 
 #: src/routes/admin.projects.index.tsx:53
-msgid "Loading projects..."
-msgstr "正在加载项目列表..."
+#~ msgid "Loading projects..."
+#~ msgstr "正在加载项目列表..."
 
 #: src/features/messages/components/ListPane.tsx:80
-msgid "Loading..."
-msgstr ""
+#~ msgid "Loading..."
+#~ msgstr ""
 
 #: src/components/Header.tsx:73
 #~ msgid "Login"
 #~ msgstr "登录"
 
 #: src/components/AdminSidebarPrimary.tsx:102
-msgid "Logout"
-msgstr "登出"
+#~ msgid "Logout"
+#~ msgstr "登出"
 
-#: src/components/Header.tsx:82
+#: src/components/Header.tsx:68
 msgid "Main navigation"
 msgstr "主导航"
 
 #: src/core/data/servicesData.tsx:21
-#: src/routes/index.tsx:68
+#: src/routes/index.tsx:62
 msgid "Maintenance & Support"
 msgstr "维护与支持"
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:47
-msgid "Mark as Featured"
-msgstr "设为精选"
+#~ msgid "Mark as Featured"
+#~ msgstr "设为精选"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:77
-msgid "Max file size: 5MB"
-msgstr "最大文件大小：5MB"
+#~ msgid "Max file size: 5MB"
+#~ msgstr "最大文件大小：5MB"
 
 #: src/routes/admin.settings.legal-mentions.tsx:38
-msgid "Mentions légales"
-msgstr ""
+#~ msgid "Mentions légales"
+#~ msgstr ""
 
-#: src/components/ContactMe.tsx:148
+#: src/components/ContactMe.tsx:147
 msgid "Message Sent!"
 msgstr "消息已发送！"
 
 #: src/components/AdminSidebarPrimary.tsx:48
-msgid "Messages"
-msgstr ""
-
-#: src/routes/projects.tsx:40
-#~ msgid "Mobile"
+#~ msgid "Messages"
 #~ msgstr ""
 
+#: src/components/ContactMe.tsx:35
+msgid "Mobile"
+msgstr "移动端"
+
 #: src/core/data/servicesData.tsx:14
-#: src/routes/index.tsx:62
+#: src/routes/index.tsx:56
 msgid "Mobile App Development"
 msgstr "移动应用开发"
 
 #: src/components/ContactMe.tsx:35
-msgid "Mobile Dev"
-msgstr "移动开发"
+#~ msgid "Mobile Dev"
+#~ msgstr "移动开发"
 
-#: src/components/Header.tsx:102
+#: src/components/Header.tsx:88
 msgid "Mobile navigation"
 msgstr "移动导航"
 
@@ -641,7 +638,7 @@ msgstr "移动端界面"
 #~ msgid "Modern minimalist dashboard interface design"
 #~ msgstr ""
 
-#: src/routes/index.tsx:51
+#: src/routes/index.tsx:45
 msgid "Modern workspace with laptop showing code"
 msgstr "显示代码的笔记本电脑的现代工作空间"
 
@@ -658,51 +655,55 @@ msgid "Multi-platform (Web/Mobile)"
 msgstr "多平台 (Web/移动端)"
 
 #: src/components/ContactMe.tsx:36
-msgid "MVP Launch"
-msgstr "MVP 发布"
+msgid "MVP"
+msgstr "MVP"
 
-#: src/routes/projects.tsx:62
+#: src/components/ContactMe.tsx:36
+#~ msgid "MVP Launch"
+#~ msgstr "MVP 发布"
+
+#: src/routes/projects.tsx:61
 msgid "My Recent Work"
 msgstr "我最近的作品"
 
-#: src/routes/services.tsx:52
+#: src/routes/services.tsx:46
 msgid "My Specialized Services"
 msgstr "我的专业服务"
 
 #: src/features/messages/components/ListPane.tsx:86
-msgid "No messages found"
-msgstr ""
+#~ msgid "No messages found"
+#~ msgstr ""
 
 #: src/components/ProjectListEmpty.tsx:25
 msgid "No other projects yet."
 msgstr "暂无其他项目。"
 
 #: src/routes/admin.projects.index.tsx:76
-msgid "No projects found. Add your first project to showcase your work."
-msgstr "未找到项目。添加您的第一个项目来展示您的工作。"
+#~ msgid "No projects found. Add your first project to showcase your work."
+#~ msgstr "未找到项目。添加您的第一个项目来展示您的工作。"
 
 #: src/components/AdminSearchbar.tsx:65
-msgid "No results found"
-msgstr "未找到结果"
+#~ msgid "No results found"
+#~ msgstr "未找到结果"
 
 #: src/components/About.tsx:17
 #~ msgid "Node.js"
 #~ msgstr "Node.js"
 
 #: src/components/AdminToolbar.tsx:28
-msgid "Notifications"
-msgstr "通知"
+#~ msgid "Notifications"
+#~ msgstr "通知"
 
 #: src/routes/projects.tsx:22
 #~ msgid "Nova Analytics Platform"
 #~ msgstr ""
 
 #: src/core/data/servicesData.tsx:17
-#: src/routes/index.tsx:64
+#: src/routes/index.tsx:58
 msgid "Offline Capability"
 msgstr "离线功能"
 
-#: src/components/Header.tsx:94
+#: src/components/Header.tsx:80
 msgid "Open menu"
 msgstr "打开菜单"
 
@@ -714,7 +715,7 @@ msgstr "开源"
 msgid "Perfect for personal brands and portfolios."
 msgstr "非常适合个人品牌和作品集。"
 
-#: src/routes/index.tsx:71
+#: src/routes/index.tsx:65
 msgid "Performance Audits"
 msgstr "性能审核"
 
@@ -723,10 +724,10 @@ msgid "Performance Optimization"
 msgstr "性能优化"
 
 #: src/routes/admin.profiles.tsx:13
-msgid "Personals Informations"
-msgstr "个人信息"
+#~ msgid "Personals Informations"
+#~ msgstr "个人信息"
 
-#: src/routes/projects.tsx:61
+#: src/routes/projects.tsx:60
 msgid "Portfolio"
 msgstr "作品集"
 
@@ -734,7 +735,7 @@ msgstr "作品集"
 #~ msgid "PostgreSQL"
 #~ msgstr "PostgreSQL"
 
-#: src/routes/services.tsx:58
+#: src/routes/services.tsx:52
 msgid "Pricing Packages"
 msgstr "定价方案"
 
@@ -743,63 +744,59 @@ msgid "Priority Support"
 msgstr "优先支持"
 
 #: src/components/Footer.tsx:30
-#: src/routes/admin.settings.privacy-policy.tsx:43
-#: src/routes/admin.settings.privacy-policy.tsx:50
-#: src/routes/admin.settings.tsx:15
 msgid "Privacy Policy"
 msgstr "隐私政策"
 
-#: src/routes/index.tsx:75
+#: src/routes/index.tsx:69
 msgid "Process"
 msgstr "流程"
 
 #: src/routes/admin.profiles.tsx:12
-msgid "Profile Overview"
-msgstr "个人资料概览"
+#~ msgid "Profile Overview"
+#~ msgstr "个人资料概览"
 
 #: src/components/AdminSidebarPrimary.tsx:53
-msgid "Profiles"
-msgstr "个人资料"
+#~ msgid "Profiles"
+#~ msgstr "个人资料"
 
 #: src/routes/admin.profiles.tsx:21
-msgid "Profiles Options"
-msgstr "个人资料选项"
+#~ msgid "Profiles Options"
+#~ msgstr "个人资料选项"
 
-#: src/components/ContactMe.tsx:213
+#: src/components/ContactMe.tsx:212
 msgid "Project Brief"
 msgstr "项目简报"
 
-#: src/components/ContactMe.tsx:189
+#: src/components/ContactMe.tsx:188
 msgid "Project Budget Range"
 msgstr "项目预算范围"
 
 #: src/features/projects/components/form/ProjectEditForm.tsx:108
-msgid "Project Identity"
-msgstr "项目身份"
+#~ msgid "Project Identity"
+#~ msgstr "项目身份"
 
 #: src/routes/projects.tsx:25
 #~ msgid "Project meta description"
 #~ msgstr "探索我最近的项目、网页应用和移动解决方案。这是一个为现代企业量身定制的高性能软件展示。"
 
 #: src/routes/admin.projects.$projectId.edit.tsx:40
-msgid "Project not found"
-msgstr "未找到项目"
+#~ msgid "Project not found"
+#~ msgstr "未找到项目"
 
-#: src/routes/projects_.$slug.tsx:30
+#: src/routes/projects_.$slug.tsx:29
 msgid "Project Not Found"
 msgstr "未找到项目"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:25
-msgid "Project Visual"
-msgstr "项目视觉"
+#~ msgid "Project Visual"
+#~ msgstr "项目视觉"
 
-#: src/components/AdminSidebarPrimary.tsx:58
-#: src/components/Header.tsx:27
+#: src/components/Header.tsx:26
 msgid "Projects"
 msgstr "项目"
 
-#: src/routes/projects.tsx:25
-#: src/routes/projects.tsx:29
+#: src/routes/projects.tsx:24
+#: src/routes/projects.tsx:28
 msgid "Projects page meta description"
 msgstr "探索我最近的项目、网页应用和移动解决方案。这是一个为现代企业量身定制的高性能软件展示。"
 
@@ -809,15 +806,15 @@ msgstr "探索我最近的项目、网页应用和移动解决方案。这是一
 #~ msgstr "项目"
 
 #: src/core/data/servicesData.tsx:17
-#: src/routes/index.tsx:64
+#: src/routes/index.tsx:58
 msgid "Push Notifications"
 msgstr "推送通知"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:70
-msgid "Quick Tips"
-msgstr "快速提示"
+#~ msgid "Quick Tips"
+#~ msgstr "快速提示"
 
-#: src/components/ContactMe.tsx:249
+#: src/components/ContactMe.tsx:248
 msgid "Rapid Turnaround"
 msgstr "快速周转"
 
@@ -826,14 +823,14 @@ msgstr "快速周转"
 #~ msgstr "React / Next.js"
 
 #: src/features/messages/components/ListPane.tsx:73
-msgid "Read"
-msgstr ""
+#~ msgid "Read"
+#~ msgstr ""
 
-#: src/routes/index.tsx:99
+#: src/routes/index.tsx:93
 msgid "Ready to bring your idea to life?"
 msgstr "准备好让您的想法成真了吗？"
 
-#: src/routes/services.tsx:65
+#: src/routes/services.tsx:59
 msgid "Ready to start your project?"
 msgstr "准备好开始您的项目了吗？"
 
@@ -842,14 +839,14 @@ msgid "Ready to turn your vision into <0>digital reality?</0>"
 msgstr "准备好将您的愿景转变为 <0>数字现实了吗？</0>"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:74
-msgid "Recommended ratio: 3:2"
-msgstr "推荐比例：3:2"
+#~ msgid "Recommended ratio: 3:2"
+#~ msgstr "推荐比例：3:2"
 
 #: src/core/data/servicesData.tsx:24
 msgid "Regular Backups"
 msgstr "定期备份"
 
-#: src/components/ContactMe.tsx:252
+#: src/components/ContactMe.tsx:251
 msgid "Response within 12 business hours."
 msgstr "12个工作小时内回复。"
 
@@ -871,56 +868,56 @@ msgid "Samakunchan Technology"
 msgstr "Samakunchan Technology"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:217
-msgid "Save & Next"
-msgstr "保存并下一步"
+#~ msgid "Save & Next"
+#~ msgstr "保存并下一步"
 
 #: src/features/projects/components/form/ProjectEditForm.tsx:143
-msgid "Save Changes"
-msgstr "保存更改"
+#~ msgid "Save Changes"
+#~ msgstr "保存更改"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:217
 #: src/features/projects/components/form/ProjectEditForm.tsx:143
-msgid "Saving..."
-msgstr "正在保存..."
+#~ msgid "Saving..."
+#~ msgstr "正在保存..."
 
 #: src/core/data/pricingData.tsx:34
 msgid "Scalable enterprise-grade software solutions."
 msgstr "可扩展的企业级软件解决方案。"
 
-#: src/routes/projects.tsx:68
+#: src/routes/projects.tsx:67
 msgid "Schedule a call"
 msgstr "预约通话"
 
-#: src/routes/services.tsx:67
+#: src/routes/services.tsx:61
 msgid "Schedule a Call"
 msgstr "预约通话"
 
 #: src/components/AdminSearchbar.tsx:51
-msgid "Search tasks, code, or projects..."
-msgstr "搜索任务、代码或项目..."
+#~ msgid "Search tasks, code, or projects..."
+#~ msgstr "搜索任务、代码或项目..."
 
 #: src/components/AdminSearchbar.tsx:62
-msgid "Searching..."
-msgstr "正在搜索..."
+#~ msgid "Searching..."
+#~ msgstr "正在搜索..."
 
-#: src/components/ContactMe.tsx:263
+#: src/components/ContactMe.tsx:262
 msgid "Secure Process"
 msgstr "安全流程"
 
 #: src/core/data/servicesData.tsx:24
-#: src/routes/index.tsx:71
+#: src/routes/index.tsx:65
 msgid "Security Patching"
 msgstr "安全补丁"
 
 #: src/features/messages/components/DetailPane.tsx:111
-msgid "Select a message to view details"
-msgstr ""
+#~ msgid "Select a message to view details"
+#~ msgstr ""
 
-#: src/components/ContactMe.tsx:233
+#: src/components/ContactMe.tsx:232
 msgid "Send Inquiry"
 msgstr "发送咨询"
 
-#: src/components/ContactMe.tsx:233
+#: src/components/ContactMe.tsx:232
 msgid "Sending..."
 msgstr ""
 
@@ -940,35 +937,35 @@ msgstr "SEO 优化"
 #~ msgid "Service&pricing"
 #~ msgstr "服务与定价"
 
-#: src/components/ContactMe.tsx:286
+#: src/components/ContactMe.tsx:285
 msgid "Serving clients globally."
 msgstr "为全球客户提供服务。"
 
 #: src/components/AdminSidebarPrimary.tsx:68
-msgid "Settings"
-msgstr "设置"
+#~ msgid "Settings"
+#~ msgstr "设置"
 
 #: src/routes/admin.settings.tsx:21
-msgid "Site Settings"
-msgstr "网站设置"
+#~ msgid "Site Settings"
+#~ msgstr "网站设置"
 
 #: src/routes/projects.tsx:37
 #~ msgid "Sleek mobile app interface on a smartphone"
 #~ msgstr ""
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:24
-msgid "Slug"
-msgstr "别名"
+#~ msgid "Slug"
+#~ msgstr "别名"
 
 #: src/routes/admin.profiles.tsx:15
-msgid "Social Links"
-msgstr "社交链接"
+#~ msgid "Social Links"
+#~ msgstr "社交链接"
 
 #: src/components/Footer.tsx:40
 msgid "Social media links"
 msgstr "社交媒体链接"
 
-#: src/routes/services.tsx:39
+#: src/routes/services.tsx:33
 msgid "Solutions & Pricing"
 msgstr "解决方案与定价"
 
@@ -976,7 +973,7 @@ msgstr "解决方案与定价"
 msgid "Something Else"
 msgstr "其他"
 
-#: src/components/ContactMe.tsx:228
+#: src/components/ContactMe.tsx:227
 msgid "Something went wrong. Please try again."
 msgstr ""
 
@@ -985,81 +982,81 @@ msgid "Static Site"
 msgstr "静态网站"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:184
-msgid "Status"
-msgstr "状态"
+#~ msgid "Status"
+#~ msgstr "状态"
 
 #: src/features/projects/components/form/ProjectEditForm.tsx:120
-msgid "Status & Visibility"
-msgstr "状态与可见性"
+#~ msgid "Status & Visibility"
+#~ msgstr "状态与可见性"
 
 #: src/core/data/pricingData.tsx:29
 msgid "Stripe Integration"
 msgstr "Stripe 集成"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:80
-msgid "Supported: JPG, PNG, WebP"
-msgstr "支持的格式：JPG, PNG, WebP"
+#~ msgid "Supported: JPG, PNG, WebP"
+#~ msgstr "支持的格式：JPG, PNG, WebP"
 
-#: src/routes/projects_.$slug.tsx:65
+#: src/routes/projects_.$slug.tsx:64
 msgid "System Status: Live"
 msgstr "系统状态：正常运行"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:86
-msgid "Tech Stack"
-msgstr "技术栈"
+#~ msgid "Tech Stack"
+#~ msgstr "技术栈"
 
-#: src/routes/projects_.$slug.tsx:94
+#: src/routes/projects_.$slug.tsx:93
 msgid "Technical Architecture"
 msgstr "技术架构"
 
 #: src/features/projects/components/form/ProjectEditForm.tsx:114
-msgid "Technical Details"
-msgstr "技术细节"
+#~ msgid "Technical Details"
+#~ msgstr "技术细节"
 
 #: src/components/About.tsx:55
 msgid "Technical Proficiency"
 msgstr "技术能力"
 
 #: src/routes/admin.profiles.tsx:14
-msgid "Technical Stacks"
-msgstr "技术栈"
+#~ msgid "Technical Stacks"
+#~ msgstr "技术栈"
 
-#: src/components/ContactMe.tsx:218
+#: src/components/ContactMe.tsx:217
 msgid "Tell us about your project goals, timeline, and any specific technical requirements..."
 msgstr "告诉我们您的项目目标、时间表以及任何特定的技术要求..."
 
-#: src/components/ContactMe.tsx:151
+#: src/components/ContactMe.tsx:150
 msgid "Thank you for reaching out. We'll get back to you within 12 hours."
 msgstr "感谢您的联系。我们将在 12 小时内回复您。"
 
-#: src/routes/projects_.$slug.tsx:33
+#: src/routes/projects_.$slug.tsx:32
 msgid "The project you are looking for does not exist."
 msgstr "您寻找的项目不存在。"
 
 #: src/routes/admin.settings.themes.tsx:96
 #: src/routes/admin.settings.tsx:12
-msgid "Themes"
-msgstr "主题"
+#~ msgid "Themes"
+#~ msgstr "主题"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:17
-msgid "Title"
-msgstr "标题"
+#~ msgid "Title"
+#~ msgstr "标题"
 
 #: src/components/Footer.tsx:53
 msgid "Twitter / X"
 msgstr "Twitter / X"
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:47
-msgid "Unmark as Featured"
-msgstr "取消精选"
+#~ msgid "Unmark as Featured"
+#~ msgstr "取消精选"
 
 #: src/features/messages/components/ListPane.tsx:63
-msgid "Unread"
-msgstr ""
+#~ msgid "Unread"
+#~ msgstr ""
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:44
-msgid "Uploading..."
-msgstr "正在上传..."
+#~ msgid "Uploading..."
+#~ msgstr "正在上传..."
 
 #: src/core/data/aboutData.tsx:42
 #~ msgid "Upwork"
@@ -1070,10 +1067,10 @@ msgid "User Authentication"
 msgstr "用户身份验证"
 
 #: src/components/AdminToolbar.tsx:41
-msgid "User profile"
-msgstr "用户资料"
+#~ msgid "User profile"
+#~ msgstr "用户资料"
 
-#: src/routes/projects.tsx:55
+#: src/routes/projects.tsx:54
 msgid "View CV"
 msgstr "查看简历"
 
@@ -1081,27 +1078,25 @@ msgstr "查看简历"
 msgid "View Details"
 msgstr "查看详情"
 
-#: src/routes/index.tsx:39
+#: src/routes/index.tsx:33
 msgid "View Portfolio"
 msgstr "查看作品集"
 
-#: src/routes/services.tsx:47
+#: src/routes/services.tsx:41
 msgid "View Pricing"
 msgstr "查看定价"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:175
-msgid "Visuals"
-msgstr "视觉效果"
+#~ msgid "Visuals"
+#~ msgstr "视觉效果"
 
 #: src/components/ProjectFeatured.tsx:75
 msgid "Voir les détails"
 msgstr ""
 
-#: src/routes/projects.tsx:24
-#: src/routes/projects.tsx:56
-#: src/routes/projects.tsx:72
-#~ msgid "Web"
-#~ msgstr ""
+#: src/components/ContactMe.tsx:34
+msgid "Web"
+msgstr "Web"
 
 #: src/core/data/pricingData.tsx:19
 msgid "Web Application"
@@ -1112,11 +1107,11 @@ msgid "Web Apps"
 msgstr "Web 应用"
 
 #: src/components/ContactMe.tsx:34
-msgid "Web Dev"
-msgstr "网页开发"
+#~ msgid "Web Dev"
+#~ msgstr "网页开发"
 
 #: src/core/data/servicesData.tsx:7
-#: src/routes/index.tsx:56
+#: src/routes/index.tsx:50
 msgid "Web Development"
 msgstr "Web 开发"
 
@@ -1128,6 +1123,6 @@ msgstr "我们能帮您什么？"
 msgid "Whether you have a fully-fledged brief or just a spark of an idea, we're here to engineer the solution. Select your path below."
 msgstr "无论您有一个完整的简报还是只是一个灵感的火花，我们都在这里为您设计解决方案。请在下方选择您的路径。"
 
-#: src/routes/index.tsx:76
+#: src/routes/index.tsx:70
 msgid "Workflow"
 msgstr "工作流"

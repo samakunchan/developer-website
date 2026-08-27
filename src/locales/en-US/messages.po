@@ -63,7 +63,7 @@ msgstr "3 Pages"
 msgid "A selection of custom-tailored solutions combining performance and design."
 msgstr "A selection of custom-tailored solutions combining performance and design."
 
-#: src/components/Header.tsx:38
+#: src/components/Header.tsx:37
 msgid "About"
 msgstr "About"
 
@@ -71,8 +71,8 @@ msgstr "About"
 msgid "About Me"
 msgstr "About Me"
 
-#: src/routes/about-me.tsx:23
-#: src/routes/about-me.tsx:27
+#: src/routes/about-me.tsx:22
+#: src/routes/about-me.tsx:26
 msgid "About me page meta description"
 msgstr "Learn more about my professional journey, technical expertise, and my background as a full-stack software engineer."
 
@@ -81,24 +81,28 @@ msgstr "Learn more about my professional journey, technical expertise, and my ba
 #~ msgstr "Abstract data visualization with neon lines"
 
 #: src/routes/admin.projects.new.tsx:27
-msgid "Add New Project"
-msgstr "Add New Project"
+#~ msgid "Add New Project"
+#~ msgstr "Add New Project"
 
 #: src/routes/admin.projects.index.tsx:67
-msgid "Add Project"
-msgstr "Add Project"
+#~ msgid "Add Project"
+#~ msgstr "Add Project"
 
 #: src/components/Header.tsx:49
-msgid "Admin Dashboard"
-msgstr "Admin Dashboard"
+#~ msgid "Admin Dashboard"
+#~ msgstr "Admin Dashboard"
 
 #: src/components/ContactMe.tsx:37
-msgid "AI Integration"
-msgstr "AI Integration"
+msgid "AI"
+msgstr "AI"
+
+#: src/components/ContactMe.tsx:37
+#~ msgid "AI Integration"
+#~ msgstr "AI Integration"
 
 #: src/features/messages/components/ListPane.tsx:53
-msgid "All"
-msgstr "All"
+#~ msgid "All"
+#~ msgstr "All"
 
 #: src/components/Projects.tsx:22
 msgid "All Projects"
@@ -109,12 +113,12 @@ msgid "All rights reserved."
 msgstr "All rights reserved."
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:201
-msgid "Alt Text (SEO)"
-msgstr "Alt Text (SEO)"
+#~ msgid "Alt Text (SEO)"
+#~ msgstr "Alt Text (SEO)"
 
 #: src/components/AdminSidebarPrimary.tsx:63
-msgid "Analytics"
-msgstr "Analytics"
+#~ msgid "Analytics"
+#~ msgstr "Analytics"
 
 #: src/components/About.tsx:16
 #~ msgid "Angular"
@@ -133,7 +137,7 @@ msgid "API Development"
 msgstr "API Development"
 
 #: src/core/data/servicesData.tsx:17
-#: src/routes/index.tsx:64
+#: src/routes/index.tsx:58
 msgid "App Store Deployment"
 msgstr "App Store Deployment"
 
@@ -142,70 +146,68 @@ msgstr "App Store Deployment"
 #~ msgstr "Apple store"
 
 #: src/components/AdminToolbar.tsx:31
-msgid "Apps"
-msgstr "Apps"
+#~ msgid "Apps"
+#~ msgstr "Apps"
 
 #: src/routes/admin.projects.index.tsx:45
-msgid "Are you sure you want to delete this project?"
-msgstr "Are you sure you want to delete this project?"
+#~ msgid "Are you sure you want to delete this project?"
+#~ msgstr "Are you sure you want to delete this project?"
 
-#: src/routes/index.tsx:31
+#: src/routes/index.tsx:25
 msgid "Available for new projects"
 msgstr "Available for new projects"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:204
-msgid "Back"
-msgstr "Back"
+#~ msgid "Back"
+#~ msgstr "Back"
 
 #: src/routes/admin.projects.$projectId.edit.tsx:54
 #: src/routes/admin.projects.new.tsx:31
-msgid "Back to list"
-msgstr "Back to list"
+#~ msgid "Back to list"
+#~ msgstr "Back to list"
 
-#: src/routes/projects_.$slug.tsx:36
+#: src/routes/projects_.$slug.tsx:35
 msgid "Back to Projects"
 msgstr "Back to Projects"
 
 #: src/core/data/servicesData.tsx:8
-#: src/routes/index.tsx:57
+#: src/routes/index.tsx:51
 msgid "Building scalable, SEO-friendly web applications with modern tech stacks."
 msgstr "Building scalable, SEO-friendly web applications with modern tech stacks."
 
-#: src/routes/projects.tsx:46
+#: src/routes/projects.tsx:45
 msgid "Building the <0>future</0> through clean code."
 msgstr "Building the <0>future</0> through clean code."
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:208
 #: src/features/projects/components/form/ProjectEditForm.tsx:137
-msgid "Cancel"
-msgstr "Cancel"
+#~ msgid "Cancel"
+#~ msgstr "Cancel"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:78
-msgid "Case Study Number"
-msgstr "Case Study Number"
+#~ msgid "Case Study Number"
+#~ msgstr "Case Study Number"
 
-#: src/routes/projects_.$slug.tsx:75
+#: src/routes/projects_.$slug.tsx:74
 msgid "Case Study:"
 msgstr "Case Study:"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:43
-msgid "Category"
-msgstr "Category"
+#~ msgid "Category"
+#~ msgstr "Category"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:53
-msgid "Category Label (Display)"
-msgstr "Category Label (Display)"
+#~ msgid "Category Label (Display)"
+#~ msgstr "Category Label (Display)"
 
 #: src/components/Footer.tsx:27
-#: src/routes/admin.settings.cgu.tsx:37
-#: src/routes/admin.settings.tsx:14
 msgid "CGU"
 msgstr "CGU"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:53
 #: src/features/projects/components/form/ProjectFormSections.tsx:252
-msgid "Change Image"
-msgstr "Change Image"
+#~ msgid "Change Image"
+#~ msgstr "Change Image"
 
 #: src/core/data/pricingData.tsx:10
 msgid "Choose Basic"
@@ -219,25 +221,25 @@ msgstr "Choose Enterprise"
 msgid "Choose Pro"
 msgstr "Choose Pro"
 
-#: src/routes/services.tsx:45
+#: src/routes/services.tsx:39
 msgid "Choose the perfect service package tailored to your business needs. From simple portfolios to complex SaaS platforms."
 msgstr "Choose the perfect service package tailored to your business needs. From simple portfolios to complex SaaS platforms."
 
-#: src/components/ContactMe.tsx:276
+#: src/components/ContactMe.tsx:275
 msgid "Cinematic neon city background"
 msgstr "Cinematic neon city background"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:35
 #: src/features/projects/components/form/ProjectFormSections.tsx:239
-msgid "Click to upload image"
-msgstr "Click to upload image"
+#~ msgid "Click to upload image"
+#~ msgstr "Click to upload image"
 
-#: src/components/Header.tsx:94
+#: src/components/Header.tsx:80
 msgid "Close menu"
 msgstr "Close menu"
 
 #: src/core/data/servicesData.tsx:24
-#: src/routes/index.tsx:71
+#: src/routes/index.tsx:65
 msgid "Cloud Infrastructure"
 msgstr "Cloud Infrastructure"
 
@@ -246,24 +248,24 @@ msgid "CMS Integration"
 msgstr "CMS Integration"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:221
-msgid "Complete & Save"
-msgstr "Complete & Save"
+#~ msgid "Complete & Save"
+#~ msgstr "Complete & Save"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:221
-msgid "Completing..."
-msgstr "Completing..."
+#~ msgid "Completing..."
+#~ msgstr "Completing..."
 
 #: src/components/About.tsx:76
 msgid "Connect with me"
 msgstr "Connect with me"
 
-#: src/components/Header.tsx:61
+#: src/components/Header.tsx:47
 msgid "Contact"
 msgstr "Contact"
 
-#: src/components/Header.tsx:60
-#: src/routes/services.tsx:50
-#: src/routes/services.tsx:68
+#: src/components/Header.tsx:46
+#: src/routes/services.tsx:44
+#: src/routes/services.tsx:62
 msgid "Contact me"
 msgstr "Contact me"
 
@@ -273,13 +275,10 @@ msgstr "Contact me"
 #~ msgstr "Contact Me"
 
 #: src/components/Footer.tsx:33
-#: src/routes/admin.settings.cookie-policy.tsx:38
-#: src/routes/admin.settings.cookie-policy.tsx:45
-#: src/routes/admin.settings.tsx:16
 msgid "Cookie Policy"
 msgstr "Cookie Policy"
 
-#: src/routes/index.tsx:53
+#: src/routes/index.tsx:47
 msgid "Core Services"
 msgstr "Core Services"
 
@@ -288,7 +287,7 @@ msgid "Crafting digital experiences with precision."
 msgstr "Crafting digital experiences with precision."
 
 #: src/core/data/servicesData.tsx:15
-#: src/routes/index.tsx:63
+#: src/routes/index.tsx:57
 msgid "Cross-platform and native mobile solutions for iOS and Android."
 msgstr "Cross-platform and native mobile solutions for iOS and Android."
 
@@ -308,19 +307,19 @@ msgstr "Custom Backend"
 msgid "Custom SaaS"
 msgstr "Custom SaaS"
 
-#: src/routes/index.tsx:33
+#: src/routes/index.tsx:27
 msgid "Custom Software <0>Solutions</0> for Modern Businesses"
 msgstr "Custom Software <0>Solutions</0> for Modern Businesses"
 
 #: src/components/AdminSidebarPrimary.tsx:42
-msgid "Dashboard"
-msgstr "Dashboard"
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
 
 #: src/core/data/pricingData.tsx:28
 msgid "Dashboard UI"
 msgstr "Dashboard UI"
 
-#: src/routes/index.tsx:83
+#: src/routes/index.tsx:77
 msgid "Deep dive into your business goals, target audience, and technical requirements."
 msgstr "Deep dive into your business goals, target audience, and technical requirements."
 
@@ -330,28 +329,28 @@ msgid "Default description of the website"
 msgstr "Welcome to Samakunchan Technology. I build high-performance, custom web and mobile applications tailored to your business needs."
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:61
-msgid "Delete Project"
-msgstr "Delete Project"
+#~ msgid "Delete Project"
+#~ msgstr "Delete Project"
 
 #: src/features/messages/components/DetailPane.tsx:42
-msgid "Deployment Inquiry"
-msgstr "Deployment Inquiry"
+#~ msgid "Deployment Inquiry"
+#~ msgstr "Deployment Inquiry"
 
-#: src/routes/index.tsx:94
+#: src/routes/index.tsx:88
 msgid "Deployment to production servers and ongoing performance monitoring."
 msgstr "Deployment to production servers and ongoing performance monitoring."
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:31
-msgid "Description"
-msgstr "Description"
+#~ msgid "Description"
+#~ msgstr "Description"
 
-#: src/routes/index.tsx:88
+#: src/routes/index.tsx:82
 msgid "Design & Development"
 msgstr "Design & Development"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:174
-msgid "Details"
-msgstr "Details"
+#~ msgid "Details"
+#~ msgstr "Details"
 
 #: src/routes/__root.tsx:85
 #: src/routes/__root.tsx:91
@@ -362,7 +361,7 @@ msgstr "Details"
 #~ msgid "Developer working on a pricing table"
 #~ msgstr "Developer working on a pricing table"
 
-#: src/routes/index.tsx:81
+#: src/routes/index.tsx:75
 msgid "Discovery & Strategy"
 msgstr "Discovery & Strategy"
 
@@ -371,43 +370,43 @@ msgstr "Discovery & Strategy"
 #~ msgstr "E-commerce website with product grid view"
 
 #: src/routes/admin.projects.$projectId.edit.tsx:50
-msgid "Edit Project"
-msgstr "Edit Project"
+#~ msgid "Edit Project"
+#~ msgstr "Edit Project"
 
 #: src/components/Footer.tsx:41
 msgid "Email"
 msgstr "Email"
 
-#: src/components/ContactMe.tsx:173
+#: src/components/ContactMe.tsx:172
 msgid "Email Address"
 msgstr "Email Address"
 
-#: src/routes/projects.tsx:69
+#: src/routes/projects.tsx:68
 msgid "Email me"
 msgstr "Email me"
 
-#: src/routes/index.tsx:103
+#: src/routes/index.tsx:97
 msgid "Email Me"
 msgstr "Email Me"
 
 #: src/core/data/servicesData.tsx:22
-#: src/routes/index.tsx:69
+#: src/routes/index.tsx:63
 msgid "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 msgstr "Ensuring your software stays fast, secure, and up-to-date with 24/7 monitoring."
 
-#: src/routes/index.tsx:53
-#: src/routes/index.tsx:53
-#: src/routes/services.tsx:52
+#: src/routes/index.tsx:47
+#: src/routes/index.tsx:47
+#: src/routes/services.tsx:46
 msgid "Expertise"
 msgstr "Expertise"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:196
-msgid "Feature this project"
-msgstr "Feature this project"
+#~ msgid "Feature this project"
+#~ msgstr "Feature this project"
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:33
-msgid "Featured"
-msgstr "Featured"
+#~ msgid "Featured"
+#~ msgstr "Featured"
 
 #: src/components/ProjectFeatured.tsx:41
 msgid "Featured Projects"
@@ -417,7 +416,7 @@ msgstr "Featured Projects"
 #~ msgid "FitFlow Mobile"
 #~ msgstr "FitFlow Mobile"
 
-#: src/routes/services.tsx:41
+#: src/routes/services.tsx:35
 msgid "Flexible <0>Service</0> Plans for Your Success"
 msgstr "Flexible <0>Service</0> Plans for Your Success"
 
@@ -425,19 +424,19 @@ msgstr "Flexible <0>Service</0> Plans for Your Success"
 #~ msgid "Flutter"
 #~ msgstr "Flutter"
 
-#: src/routes/index.tsx:37
+#: src/routes/index.tsx:31
 msgid "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 msgstr "Freelance Full-Stack Developer specializing in high-performance web and mobile applications using React, Angular, and Flutter."
 
-#: src/components/Header.tsx:73
+#: src/components/Header.tsx:59
 msgid "Freelance home page"
 msgstr "Freelance home page"
 
-#: src/components/ContactMe.tsx:159
+#: src/components/ContactMe.tsx:158
 msgid "Full Name"
 msgstr "Full Name"
 
-#: src/components/ContactMe.tsx:266
+#: src/components/ContactMe.tsx:265
 msgid "Full NDAs available for every project."
 msgstr "Full NDAs available for every project."
 
@@ -445,11 +444,11 @@ msgstr "Full NDAs available for every project."
 msgid "Full-featured apps with authentication and CMS."
 msgstr "Full-featured apps with authentication and CMS."
 
-#: src/routes/projects_.$slug.tsx:111
+#: src/routes/projects_.$slug.tsx:110
 msgid "Functional Requirements"
 msgstr "Functional Requirements"
 
-#: src/routes/index.tsx:45
+#: src/routes/index.tsx:39
 msgid "Get a Quote"
 msgstr "Get a Quote"
 
@@ -461,7 +460,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google store"
 
-#: src/routes/projects.tsx:66
+#: src/routes/projects.tsx:65
 msgid "Have a project in mind?"
 msgstr "Have a project in mind?"
 
@@ -474,10 +473,10 @@ msgstr "High-Load Optimization"
 #~ msgstr "High-performance headless commerce solution with Stripe integration and custom inventory management."
 
 #: src/components/AdminToolbar.tsx:23
-msgid "Home"
-msgstr "Home"
+#~ msgid "Home"
+#~ msgstr "Home"
 
-#: src/routes/index.tsx:77
+#: src/routes/index.tsx:71
 msgid "How I Work"
 msgstr "How I Work"
 
@@ -489,11 +488,11 @@ msgstr "I'm a developer based in France with over 8 years of experience building
 #~ msgid "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 #~ msgstr "I'm a developer based in San Francisco with over 8 years of experience building scalable web applications. I specialize in turning complex problems into simple, beautiful, and intuitive designs. My focus is on clean code, performance, and accessibility."
 
-#: src/routes/projects.tsx:50
+#: src/routes/projects.tsx:49
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 
-#: src/routes/projects.tsx:67
+#: src/routes/projects.tsx:66
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 
@@ -502,18 +501,18 @@ msgid "I'm currently working on new exciting projects. Check back soon!"
 msgstr "I'm currently working on new exciting projects. Check back soon!"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:173
-msgid "Identity"
-msgstr "Identity"
+#~ msgid "Identity"
+#~ msgstr "Identity"
 
 #: src/components/About.tsx:98
 msgid "Illustration of a developer working at a desk with UI elements"
 msgstr "Illustration of a developer working at a desk with UI elements"
 
-#: src/routes/services.tsx:58
+#: src/routes/services.tsx:52
 msgid "Investment"
 msgstr "Investment"
 
-#: src/routes/index.tsx:89
+#: src/routes/index.tsx:83
 msgid "Iterative coding sessions with weekly updates and live staging environments."
 msgstr "Iterative coding sessions with weekly updates and live staging environments."
 
@@ -521,21 +520,19 @@ msgstr "Iterative coding sessions with weekly updates and live staging environme
 #~ msgid "JavaScript"
 #~ msgstr "JavaScript"
 
-#: src/components/ContactMe.tsx:164
+#: src/components/ContactMe.tsx:163
 msgid "John Doe"
 msgstr "John Doe"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:130
-msgid "Key Features"
-msgstr "Key Features"
+#~ msgid "Key Features"
+#~ msgstr "Key Features"
 
-#: src/routes/index.tsx:93
+#: src/routes/index.tsx:87
 msgid "Launch & Scaling"
 msgstr "Launch & Scaling"
 
 #: src/components/Footer.tsx:36
-#: src/routes/admin.settings.legal-mentions.tsx:45
-#: src/routes/admin.settings.tsx:13
 msgid "Legal Mentions"
 msgstr "Legal Mentions"
 
@@ -543,15 +540,15 @@ msgstr "Legal Mentions"
 msgid "Let's Build Together"
 msgstr "Let's Build Together"
 
-#: src/routes/index.tsx:100
+#: src/routes/index.tsx:94
 msgid "Let's discuss your project and see how we can build something amazing together."
 msgstr "Let's discuss your project and see how we can build something amazing together."
 
-#: src/routes/services.tsx:66
+#: src/routes/services.tsx:60
 msgid "Let's discuss your requirements and find the best solution for your business."
 msgstr "Let's discuss your requirements and find the best solution for your business."
 
-#: src/routes/projects.tsx:52
+#: src/routes/projects.tsx:51
 msgid "Let's talk"
 msgstr "Let's talk"
 
@@ -560,72 +557,72 @@ msgstr "Let's talk"
 #~ msgstr "LinkedIn"
 
 #: src/features/messages/components/DetailPane.tsx:105
-msgid "Loading details..."
-msgstr "Loading details..."
+#~ msgid "Loading details..."
+#~ msgstr "Loading details..."
 
 #: src/routes/admin.projects.$projectId.edit.tsx:32
-msgid "Loading project..."
-msgstr "Loading project..."
+#~ msgid "Loading project..."
+#~ msgstr "Loading project..."
 
 #: src/routes/admin.projects.index.tsx:53
-msgid "Loading projects..."
-msgstr "Loading projects..."
+#~ msgid "Loading projects..."
+#~ msgstr "Loading projects..."
 
 #: src/features/messages/components/ListPane.tsx:80
-msgid "Loading..."
-msgstr "Loading..."
+#~ msgid "Loading..."
+#~ msgstr "Loading..."
 
 #: src/components/Header.tsx:73
 #~ msgid "Login"
 #~ msgstr "Login"
 
 #: src/components/AdminSidebarPrimary.tsx:102
-msgid "Logout"
-msgstr "Logout"
+#~ msgid "Logout"
+#~ msgstr "Logout"
 
-#: src/components/Header.tsx:82
+#: src/components/Header.tsx:68
 msgid "Main navigation"
 msgstr "Main navigation"
 
 #: src/core/data/servicesData.tsx:21
-#: src/routes/index.tsx:68
+#: src/routes/index.tsx:62
 msgid "Maintenance & Support"
 msgstr "Maintenance & Support"
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:47
-msgid "Mark as Featured"
-msgstr "Mark as Featured"
+#~ msgid "Mark as Featured"
+#~ msgstr "Mark as Featured"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:77
-msgid "Max file size: 5MB"
-msgstr "Max file size: 5MB"
+#~ msgid "Max file size: 5MB"
+#~ msgstr "Max file size: 5MB"
 
 #: src/routes/admin.settings.legal-mentions.tsx:38
-msgid "Mentions légales"
-msgstr "Mentions légales"
+#~ msgid "Mentions légales"
+#~ msgstr "Mentions légales"
 
-#: src/components/ContactMe.tsx:148
+#: src/components/ContactMe.tsx:147
 msgid "Message Sent!"
 msgstr "Message Sent!"
 
 #: src/components/AdminSidebarPrimary.tsx:48
-msgid "Messages"
-msgstr "Messages"
+#~ msgid "Messages"
+#~ msgstr "Messages"
 
-#: src/routes/projects.tsx:40
-#~ msgid "Mobile"
-#~ msgstr "Mobile"
+#: src/components/ContactMe.tsx:35
+msgid "Mobile"
+msgstr "Mobile"
 
 #: src/core/data/servicesData.tsx:14
-#: src/routes/index.tsx:62
+#: src/routes/index.tsx:56
 msgid "Mobile App Development"
 msgstr "Mobile App Development"
 
 #: src/components/ContactMe.tsx:35
-msgid "Mobile Dev"
-msgstr "Mobile Dev"
+#~ msgid "Mobile Dev"
+#~ msgstr "Mobile Dev"
 
-#: src/components/Header.tsx:102
+#: src/components/Header.tsx:88
 msgid "Mobile navigation"
 msgstr "Mobile navigation"
 
@@ -641,7 +638,7 @@ msgstr "Mobile UI"
 #~ msgid "Modern minimalist dashboard interface design"
 #~ msgstr "Modern minimalist dashboard interface design"
 
-#: src/routes/index.tsx:51
+#: src/routes/index.tsx:45
 msgid "Modern workspace with laptop showing code"
 msgstr "Modern workspace with laptop showing code"
 
@@ -658,51 +655,55 @@ msgid "Multi-platform (Web/Mobile)"
 msgstr "Multi-platform (Web/Mobile)"
 
 #: src/components/ContactMe.tsx:36
-msgid "MVP Launch"
-msgstr "MVP Launch"
+msgid "MVP"
+msgstr "MVP"
 
-#: src/routes/projects.tsx:62
+#: src/components/ContactMe.tsx:36
+#~ msgid "MVP Launch"
+#~ msgstr "MVP Launch"
+
+#: src/routes/projects.tsx:61
 msgid "My Recent Work"
 msgstr "My Recent Work"
 
-#: src/routes/services.tsx:52
+#: src/routes/services.tsx:46
 msgid "My Specialized Services"
 msgstr "My Specialized Services"
 
 #: src/features/messages/components/ListPane.tsx:86
-msgid "No messages found"
-msgstr "No messages found"
+#~ msgid "No messages found"
+#~ msgstr "No messages found"
 
 #: src/components/ProjectListEmpty.tsx:25
 msgid "No other projects yet."
 msgstr "No other projects yet."
 
 #: src/routes/admin.projects.index.tsx:76
-msgid "No projects found. Add your first project to showcase your work."
-msgstr "No projects found. Add your first project to showcase your work."
+#~ msgid "No projects found. Add your first project to showcase your work."
+#~ msgstr "No projects found. Add your first project to showcase your work."
 
 #: src/components/AdminSearchbar.tsx:65
-msgid "No results found"
-msgstr "No results found"
+#~ msgid "No results found"
+#~ msgstr "No results found"
 
 #: src/components/About.tsx:17
 #~ msgid "Node.js"
 #~ msgstr "Node.js"
 
 #: src/components/AdminToolbar.tsx:28
-msgid "Notifications"
-msgstr "Notifications"
+#~ msgid "Notifications"
+#~ msgstr "Notifications"
 
 #: src/routes/projects.tsx:22
 #~ msgid "Nova Analytics Platform"
 #~ msgstr "Nova Analytics Platform"
 
 #: src/core/data/servicesData.tsx:17
-#: src/routes/index.tsx:64
+#: src/routes/index.tsx:58
 msgid "Offline Capability"
 msgstr "Offline Capability"
 
-#: src/components/Header.tsx:94
+#: src/components/Header.tsx:80
 msgid "Open menu"
 msgstr "Open menu"
 
@@ -714,7 +715,7 @@ msgstr "Open Source"
 msgid "Perfect for personal brands and portfolios."
 msgstr "Perfect for personal brands and portfolios."
 
-#: src/routes/index.tsx:71
+#: src/routes/index.tsx:65
 msgid "Performance Audits"
 msgstr "Performance Audits"
 
@@ -723,10 +724,10 @@ msgid "Performance Optimization"
 msgstr "Performance Optimization"
 
 #: src/routes/admin.profiles.tsx:13
-msgid "Personals Informations"
-msgstr "Personals Informations"
+#~ msgid "Personals Informations"
+#~ msgstr "Personals Informations"
 
-#: src/routes/projects.tsx:61
+#: src/routes/projects.tsx:60
 msgid "Portfolio"
 msgstr "Portfolio"
 
@@ -734,7 +735,7 @@ msgstr "Portfolio"
 #~ msgid "PostgreSQL"
 #~ msgstr "PostgreSQL"
 
-#: src/routes/services.tsx:58
+#: src/routes/services.tsx:52
 msgid "Pricing Packages"
 msgstr "Pricing Packages"
 
@@ -743,63 +744,59 @@ msgid "Priority Support"
 msgstr "Priority Support"
 
 #: src/components/Footer.tsx:30
-#: src/routes/admin.settings.privacy-policy.tsx:43
-#: src/routes/admin.settings.privacy-policy.tsx:50
-#: src/routes/admin.settings.tsx:15
 msgid "Privacy Policy"
 msgstr "Privacy Policy"
 
-#: src/routes/index.tsx:75
+#: src/routes/index.tsx:69
 msgid "Process"
 msgstr "Process"
 
 #: src/routes/admin.profiles.tsx:12
-msgid "Profile Overview"
-msgstr "Profile Overview"
+#~ msgid "Profile Overview"
+#~ msgstr "Profile Overview"
 
 #: src/components/AdminSidebarPrimary.tsx:53
-msgid "Profiles"
-msgstr "Profiles"
+#~ msgid "Profiles"
+#~ msgstr "Profiles"
 
 #: src/routes/admin.profiles.tsx:21
-msgid "Profiles Options"
-msgstr "Profiles Options"
+#~ msgid "Profiles Options"
+#~ msgstr "Profiles Options"
 
-#: src/components/ContactMe.tsx:213
+#: src/components/ContactMe.tsx:212
 msgid "Project Brief"
 msgstr "Project Brief"
 
-#: src/components/ContactMe.tsx:189
+#: src/components/ContactMe.tsx:188
 msgid "Project Budget Range"
 msgstr "Project Budget Range"
 
 #: src/features/projects/components/form/ProjectEditForm.tsx:108
-msgid "Project Identity"
-msgstr "Project Identity"
+#~ msgid "Project Identity"
+#~ msgstr "Project Identity"
 
 #: src/routes/projects.tsx:25
 #~ msgid "Project meta description"
 #~ msgstr "Explore my recent projects, web applications, and mobile solutions. A showcase of custom-built software designed for modern businesses."
 
 #: src/routes/admin.projects.$projectId.edit.tsx:40
-msgid "Project not found"
-msgstr "Project not found"
+#~ msgid "Project not found"
+#~ msgstr "Project not found"
 
-#: src/routes/projects_.$slug.tsx:30
+#: src/routes/projects_.$slug.tsx:29
 msgid "Project Not Found"
 msgstr "Project Not Found"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:25
-msgid "Project Visual"
-msgstr "Project Visual"
+#~ msgid "Project Visual"
+#~ msgstr "Project Visual"
 
-#: src/components/AdminSidebarPrimary.tsx:58
-#: src/components/Header.tsx:27
+#: src/components/Header.tsx:26
 msgid "Projects"
 msgstr "Projects"
 
-#: src/routes/projects.tsx:25
-#: src/routes/projects.tsx:29
+#: src/routes/projects.tsx:24
+#: src/routes/projects.tsx:28
 msgid "Projects page meta description"
 msgstr "Explore my recent projects, web applications, and mobile solutions. A showcase of custom-built software designed for modern businesses."
 
@@ -809,15 +806,15 @@ msgstr "Explore my recent projects, web applications, and mobile solutions. A sh
 #~ msgstr "Projets"
 
 #: src/core/data/servicesData.tsx:17
-#: src/routes/index.tsx:64
+#: src/routes/index.tsx:58
 msgid "Push Notifications"
 msgstr "Push Notifications"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:70
-msgid "Quick Tips"
-msgstr "Quick Tips"
+#~ msgid "Quick Tips"
+#~ msgstr "Quick Tips"
 
-#: src/components/ContactMe.tsx:249
+#: src/components/ContactMe.tsx:248
 msgid "Rapid Turnaround"
 msgstr "Rapid Turnaround"
 
@@ -826,14 +823,14 @@ msgstr "Rapid Turnaround"
 #~ msgstr "React / Next.js"
 
 #: src/features/messages/components/ListPane.tsx:73
-msgid "Read"
-msgstr "Read"
+#~ msgid "Read"
+#~ msgstr "Read"
 
-#: src/routes/index.tsx:99
+#: src/routes/index.tsx:93
 msgid "Ready to bring your idea to life?"
 msgstr "Ready to bring your idea to life?"
 
-#: src/routes/services.tsx:65
+#: src/routes/services.tsx:59
 msgid "Ready to start your project?"
 msgstr "Ready to start your project?"
 
@@ -842,14 +839,14 @@ msgid "Ready to turn your vision into <0>digital reality?</0>"
 msgstr "Ready to turn your vision into <0>digital reality?</0>"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:74
-msgid "Recommended ratio: 3:2"
-msgstr "Recommended ratio: 3:2"
+#~ msgid "Recommended ratio: 3:2"
+#~ msgstr "Recommended ratio: 3:2"
 
 #: src/core/data/servicesData.tsx:24
 msgid "Regular Backups"
 msgstr "Regular Backups"
 
-#: src/components/ContactMe.tsx:252
+#: src/components/ContactMe.tsx:251
 msgid "Response within 12 business hours."
 msgstr "Response within 12 business hours."
 
@@ -871,56 +868,56 @@ msgid "Samakunchan Technology"
 msgstr "Samakunchan Technology"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:217
-msgid "Save & Next"
-msgstr "Save & Next"
+#~ msgid "Save & Next"
+#~ msgstr "Save & Next"
 
 #: src/features/projects/components/form/ProjectEditForm.tsx:143
-msgid "Save Changes"
-msgstr "Save Changes"
+#~ msgid "Save Changes"
+#~ msgstr "Save Changes"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:217
 #: src/features/projects/components/form/ProjectEditForm.tsx:143
-msgid "Saving..."
-msgstr "Saving..."
+#~ msgid "Saving..."
+#~ msgstr "Saving..."
 
 #: src/core/data/pricingData.tsx:34
 msgid "Scalable enterprise-grade software solutions."
 msgstr "Scalable enterprise-grade software solutions."
 
-#: src/routes/projects.tsx:68
+#: src/routes/projects.tsx:67
 msgid "Schedule a call"
 msgstr "Schedule a call"
 
-#: src/routes/services.tsx:67
+#: src/routes/services.tsx:61
 msgid "Schedule a Call"
 msgstr "Schedule a Call"
 
 #: src/components/AdminSearchbar.tsx:51
-msgid "Search tasks, code, or projects..."
-msgstr "Search tasks, code, or projects..."
+#~ msgid "Search tasks, code, or projects..."
+#~ msgstr "Search tasks, code, or projects..."
 
 #: src/components/AdminSearchbar.tsx:62
-msgid "Searching..."
-msgstr "Searching..."
+#~ msgid "Searching..."
+#~ msgstr "Searching..."
 
-#: src/components/ContactMe.tsx:263
+#: src/components/ContactMe.tsx:262
 msgid "Secure Process"
 msgstr "Secure Process"
 
 #: src/core/data/servicesData.tsx:24
-#: src/routes/index.tsx:71
+#: src/routes/index.tsx:65
 msgid "Security Patching"
 msgstr "Security Patching"
 
 #: src/features/messages/components/DetailPane.tsx:111
-msgid "Select a message to view details"
-msgstr "Select a message to view details"
+#~ msgid "Select a message to view details"
+#~ msgstr "Select a message to view details"
 
-#: src/components/ContactMe.tsx:233
+#: src/components/ContactMe.tsx:232
 msgid "Send Inquiry"
 msgstr "Send Inquiry"
 
-#: src/components/ContactMe.tsx:233
+#: src/components/ContactMe.tsx:232
 msgid "Sending..."
 msgstr "Sending..."
 
@@ -940,35 +937,35 @@ msgstr "SEO Optimization"
 #~ msgid "Service&pricing"
 #~ msgstr "Service&pricing"
 
-#: src/components/ContactMe.tsx:286
+#: src/components/ContactMe.tsx:285
 msgid "Serving clients globally."
 msgstr "Serving clients globally."
 
 #: src/components/AdminSidebarPrimary.tsx:68
-msgid "Settings"
-msgstr "Settings"
+#~ msgid "Settings"
+#~ msgstr "Settings"
 
 #: src/routes/admin.settings.tsx:21
-msgid "Site Settings"
-msgstr "Site Settings"
+#~ msgid "Site Settings"
+#~ msgstr "Site Settings"
 
 #: src/routes/projects.tsx:37
 #~ msgid "Sleek mobile app interface on a smartphone"
 #~ msgstr "Sleek mobile app interface on a smartphone"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:24
-msgid "Slug"
-msgstr "Slug"
+#~ msgid "Slug"
+#~ msgstr "Slug"
 
 #: src/routes/admin.profiles.tsx:15
-msgid "Social Links"
-msgstr "Social Links"
+#~ msgid "Social Links"
+#~ msgstr "Social Links"
 
 #: src/components/Footer.tsx:40
 msgid "Social media links"
 msgstr "Social media links"
 
-#: src/routes/services.tsx:39
+#: src/routes/services.tsx:33
 msgid "Solutions & Pricing"
 msgstr "Solutions & Pricing"
 
@@ -976,7 +973,7 @@ msgstr "Solutions & Pricing"
 msgid "Something Else"
 msgstr "Something Else"
 
-#: src/components/ContactMe.tsx:228
+#: src/components/ContactMe.tsx:227
 msgid "Something went wrong. Please try again."
 msgstr "Something went wrong. Please try again."
 
@@ -985,81 +982,81 @@ msgid "Static Site"
 msgstr "Static Site"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:184
-msgid "Status"
-msgstr "Status"
+#~ msgid "Status"
+#~ msgstr "Status"
 
 #: src/features/projects/components/form/ProjectEditForm.tsx:120
-msgid "Status & Visibility"
-msgstr "Status & Visibility"
+#~ msgid "Status & Visibility"
+#~ msgstr "Status & Visibility"
 
 #: src/core/data/pricingData.tsx:29
 msgid "Stripe Integration"
 msgstr "Stripe Integration"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:80
-msgid "Supported: JPG, PNG, WebP"
-msgstr "Supported: JPG, PNG, WebP"
+#~ msgid "Supported: JPG, PNG, WebP"
+#~ msgstr "Supported: JPG, PNG, WebP"
 
-#: src/routes/projects_.$slug.tsx:65
+#: src/routes/projects_.$slug.tsx:64
 msgid "System Status: Live"
 msgstr "System Status: Live"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:86
-msgid "Tech Stack"
-msgstr "Tech Stack"
+#~ msgid "Tech Stack"
+#~ msgstr "Tech Stack"
 
-#: src/routes/projects_.$slug.tsx:94
+#: src/routes/projects_.$slug.tsx:93
 msgid "Technical Architecture"
 msgstr "Technical Architecture"
 
 #: src/features/projects/components/form/ProjectEditForm.tsx:114
-msgid "Technical Details"
-msgstr "Technical Details"
+#~ msgid "Technical Details"
+#~ msgstr "Technical Details"
 
 #: src/components/About.tsx:55
 msgid "Technical Proficiency"
 msgstr "Technical Proficiency"
 
 #: src/routes/admin.profiles.tsx:14
-msgid "Technical Stacks"
-msgstr "Technical Stacks"
+#~ msgid "Technical Stacks"
+#~ msgstr "Technical Stacks"
 
-#: src/components/ContactMe.tsx:218
+#: src/components/ContactMe.tsx:217
 msgid "Tell us about your project goals, timeline, and any specific technical requirements..."
 msgstr "Tell us about your project goals, timeline, and any specific technical requirements..."
 
-#: src/components/ContactMe.tsx:151
+#: src/components/ContactMe.tsx:150
 msgid "Thank you for reaching out. We'll get back to you within 12 hours."
 msgstr "Thank you for reaching out. We'll get back to you within 12 hours."
 
-#: src/routes/projects_.$slug.tsx:33
+#: src/routes/projects_.$slug.tsx:32
 msgid "The project you are looking for does not exist."
 msgstr "The project you are looking for does not exist."
 
 #: src/routes/admin.settings.themes.tsx:96
 #: src/routes/admin.settings.tsx:12
-msgid "Themes"
-msgstr "Themes"
+#~ msgid "Themes"
+#~ msgstr "Themes"
 
 #: src/features/projects/components/form/ProjectFormSections.tsx:17
-msgid "Title"
-msgstr "Title"
+#~ msgid "Title"
+#~ msgstr "Title"
 
 #: src/components/Footer.tsx:53
 msgid "Twitter / X"
 msgstr "Twitter / X"
 
 #: src/features/projects/components/overview/ProjectAdminCard.tsx:47
-msgid "Unmark as Featured"
-msgstr "Unmark as Featured"
+#~ msgid "Unmark as Featured"
+#~ msgstr "Unmark as Featured"
 
 #: src/features/messages/components/ListPane.tsx:63
-msgid "Unread"
-msgstr "Unread"
+#~ msgid "Unread"
+#~ msgstr "Unread"
 
 #: src/features/projects/components/form/AdminSidebarImage.tsx:44
-msgid "Uploading..."
-msgstr "Uploading..."
+#~ msgid "Uploading..."
+#~ msgstr "Uploading..."
 
 #: src/core/data/aboutData.tsx:42
 #~ msgid "Upwork"
@@ -1070,10 +1067,10 @@ msgid "User Authentication"
 msgstr "User Authentication"
 
 #: src/components/AdminToolbar.tsx:41
-msgid "User profile"
-msgstr "User profile"
+#~ msgid "User profile"
+#~ msgstr "User profile"
 
-#: src/routes/projects.tsx:55
+#: src/routes/projects.tsx:54
 msgid "View CV"
 msgstr "View CV"
 
@@ -1081,27 +1078,25 @@ msgstr "View CV"
 msgid "View Details"
 msgstr "View Details"
 
-#: src/routes/index.tsx:39
+#: src/routes/index.tsx:33
 msgid "View Portfolio"
 msgstr "View Portfolio"
 
-#: src/routes/services.tsx:47
+#: src/routes/services.tsx:41
 msgid "View Pricing"
 msgstr "View Pricing"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:175
-msgid "Visuals"
-msgstr "Visuals"
+#~ msgid "Visuals"
+#~ msgstr "Visuals"
 
 #: src/components/ProjectFeatured.tsx:75
 msgid "Voir les détails"
 msgstr "Voir les détails"
 
-#: src/routes/projects.tsx:24
-#: src/routes/projects.tsx:56
-#: src/routes/projects.tsx:72
-#~ msgid "Web"
-#~ msgstr "Web"
+#: src/components/ContactMe.tsx:34
+msgid "Web"
+msgstr "Web"
 
 #: src/core/data/pricingData.tsx:19
 msgid "Web Application"
@@ -1112,11 +1107,11 @@ msgid "Web Apps"
 msgstr "Web Apps"
 
 #: src/components/ContactMe.tsx:34
-msgid "Web Dev"
-msgstr "Web Dev"
+#~ msgid "Web Dev"
+#~ msgstr "Web Dev"
 
 #: src/core/data/servicesData.tsx:7
-#: src/routes/index.tsx:56
+#: src/routes/index.tsx:50
 msgid "Web Development"
 msgstr "Web Development"
 
@@ -1128,6 +1123,6 @@ msgstr "What can we help you with?"
 msgid "Whether you have a fully-fledged brief or just a spark of an idea, we're here to engineer the solution. Select your path below."
 msgstr "Whether you have a fully-fledged brief or just a spark of an idea, we're here to engineer the solution. Select your path below."
 
-#: src/routes/index.tsx:76
+#: src/routes/index.tsx:70
 msgid "Workflow"
 msgstr "Workflow"

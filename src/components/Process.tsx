@@ -15,7 +15,7 @@ interface ProcessProps {
   id?: string;
 }
 
-export function Process({ subtitle, title, steps, id }: ProcessProps) {
+export const Process: React.FC<ProcessProps> = ({ subtitle, title, steps, id }: ProcessProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -103,4 +103,4 @@ export function Process({ subtitle, title, steps, id }: ProcessProps) {
       </Container>
     </section>
   );
-}
+};

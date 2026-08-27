@@ -11,6 +11,6 @@ type ImageNetworkProps = DistributiveOmit<UnpicImageProps, 'transformer' | 'src'
   alt: string;
 };
 
-export function ImageNetwork({ src, alt, ...props }: ImageNetworkProps) {
+export const ImageNetwork: React.FC<ImageNetworkProps> = ({ src, alt, ...props }: ImageNetworkProps) => {
   return <Image src={src} alt={alt} transformer={myCustomApiTransformer} {...props} />;
-}
+};

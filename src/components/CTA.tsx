@@ -17,7 +17,7 @@ interface CTAProps {
   };
 }
 
-export function CTA({ title, description, primaryButton, secondaryButton }: CTAProps) {
+export const CTA: React.FC<CTAProps> = ({ title, description, primaryButton, secondaryButton }: CTAProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -57,4 +57,4 @@ export function CTA({ title, description, primaryButton, secondaryButton }: CTAP
       </Container>
     </section>
   );
-}
+};

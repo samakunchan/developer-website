@@ -10,7 +10,13 @@ interface ServiceCardProps {
   features?: string[];
 }
 
-export function ServiceCard({ icon, title, description, badges, features }: ServiceCardProps) {
+export const ServiceCard: React.FC<ServiceCardProps> = ({
+  icon,
+  title,
+  description,
+  badges,
+  features,
+}: ServiceCardProps) => {
   return (
     <div className="service-card" aria-labelledby={'service-card-title-' + icon}>
       <div className="service-card__icon-wrapper">
@@ -47,7 +53,7 @@ export function ServiceCard({ icon, title, description, badges, features }: Serv
       </div>
     </div>
   );
-}
+};
 
 interface ServicesProps {
   subtitle?: React.ReactNode;
@@ -56,11 +62,12 @@ interface ServicesProps {
   id?: string;
 }
 
-export function Services({ subtitle, title, children, id }: ServicesProps) {
+export const Services: React.FC<ServicesProps> = ({ subtitle, title, children, id }: ServicesProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.2,
   });
+
   return (
     <section className="services" id={id} aria-labelledby="services-title">
       <Container className="services__container">
@@ -80,4 +87,4 @@ export function Services({ subtitle, title, children, id }: ServicesProps) {
       </Container>
     </section>
   );
-}
+};

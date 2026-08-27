@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans } from '@lingui/react/macro';
 
-export function ProjectListEmpty() {
+export const ProjectListEmpty: React.FC<unknown> = () => {
   return (
     <div className="projects__empty">
       {/* Visual Background Placeholder */}
@@ -30,4 +30,4 @@ export function ProjectListEmpty() {
       </div>
     </div>
   );
-}
+};

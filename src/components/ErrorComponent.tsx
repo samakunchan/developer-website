@@ -12,7 +12,7 @@ interface ErrorProps {
 }
 
 export const ErrorComponent: React.FC<ErrorProps> = ({ type }) => {
-  const isNotFound = type === ErrorType.NotFound;
+  const isNotFound: boolean = type === ErrorType.NotFound;
 
   return (
     <div className="error-page">

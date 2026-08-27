@@ -14,7 +14,7 @@ const contactFormSchema = z.object({
 
 type ContactFormInputs = z.infer<typeof contactFormSchema>;
 
-export function ContactForm() {
+export const ContactForm = () => {
   const {
     register,
     handleSubmit,
@@ -69,4 +69,4 @@ export function ContactForm() {
       </Button>
     </form>
   );
-}
+};

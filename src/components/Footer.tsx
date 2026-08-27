@@ -4,7 +4,7 @@ import { Trans } from '@lingui/react/macro';
 import { Link } from '@tanstack/react-router';
 import { RouteNameType } from '../core/types/routes-name';
 
-export function Footer() {
+export const Footer: React.FC<unknown> = () => {
   const currentYear: number = new Date().getFullYear();
 
   return (
@@ -58,4 +58,4 @@ export function Footer() {
       </Container>
     </footer>
   );
-}
+};
