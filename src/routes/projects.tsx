@@ -40,7 +40,7 @@ function ProjectsPage() {
   return (
     <>
       <Header isConnected={isConnected} />
-      <main role="main">
+      <main role="main" className="projects-page">
         <Hero
           title={
             <Trans>
