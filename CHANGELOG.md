@@ -2,6 +2,34 @@
 
 <!-- markdownlint-configure-file { "MD024": { "siblings_only": true } } -->
 
+## 🚀 0.40.0 - 27/08/2026 [ADMIN DELETED]
+
+### Added
+
+- N/A.
+
+### Changed
+
+- **Navigation and Layout**:
+  - Modified `Header.tsx` to remove `isConnected` conditional checks and the `Admin Dashboard` button.
+  - Updated all public visitor routes (`index.tsx`, `about-me.tsx`, `contact-me.tsx`, `projects.tsx`, `projects_.$slug.tsx`, `services.tsx`, and `visitor.*` policies) to clean up `isConnected` context evaluations and header props.
+  - Simplified `ErrorComponent.tsx` redirects by linking the unauthorized error button action directly to the home page (`/`) instead of `/login`.
+
+### Fixed
+
+- N/A.
+
+### Deleted
+
+- **Admin and Auth Interface routes and views**:
+  - Removed all `admin*` routes (`admin.tsx`, `admin.dashboard.tsx`, `admin.projects.*`, `admin.profiles.*`, `admin.settings.*`, `admin.messages.tsx`, `admin.analytics.tsx`).
+  - Removed authentication route definitions (`login.tsx`, `forgot-password.tsx`, `reset-password.tsx`).
+  - Deleted global admin layout components (`AdminDashboard.tsx`, `AdminSearchbar.tsx`, `AdminSidebarPrimary.tsx`, `AdminSidebarSecondary.tsx`, `AdminToolbar.tsx`).
+  - Deleted all feature-specific admin components and managers for projects, profiles, messages, and auth pages.
+  - Deleted 17 admin stylesheet files and removed their `@import` statements from `main.css`.
+
+---
+
 ## 🚀 0.39.0 - 27/08/2026
 
 ### Added
@@ -27,7 +55,9 @@
 
 ### Deleted
 
-- N/A
+- N/A.
+
+---
 
 ## 🚀 0.38.0 - 21/07/2026
 
@@ -55,6 +85,8 @@
 - **Route Configuration**:
   - Corrected administrative routing definitions to point to the `/admin/settings/privacy-policy` endpoint instead of the old `/admin/settings/privacy` route name in `routes-name.ts` and `admin.settings.tsx`.
 
+---
+
 ## 🚀 0.37.0 - 09/06/2026
 
 ### Added
@@ -67,12 +99,14 @@
 
 ### Changed
 
-- N/A
+- N/A.
 
 ### Fixed
 
 - **SSR Suspense Error (Minified React Error #419)**:
   - Resolved page rendering crashes on `/visitor/cgu` by fixing the underlying Prism runtime ReferenceError on the server.
+
+---
 
 ## 🚀 0.36.0 - 09/06/2026
 
@@ -84,11 +118,13 @@
 
 ### Changed
 
-- N/A
+- N/A.
 
 ### Fixed
 
-- N/A
+- N/A.
+
+---
 
 ## 🚀 0.35.0 - 08/06/2026
 
@@ -107,6 +143,8 @@
   - Added automatic theme database seeding (`light` theme setting) across production, staging, and development seed routines.
 - **Development Script**:
   - Configured the local `yarn dev` script inside `package.json` to pre-load development environment variables securely using the OpenBao setup script (`. ./shells/env-bao.sh dev`).
+
+---
 
 ## 🚀 0.34.0 - 19/05/2026
 
@@ -131,6 +169,8 @@
   - Resolved relative CSS path bundling issues by consolidating and moving `isometric-concept-design-for-dev.webp` to `public/assets/`.
   - Updated standard style background rules inside `_about.css` to use absolute `/assets/...` paths, eliminating dev-mode and staging compilation path bugs.
   - Removed duplicate root `/assets` directory.
+
+---
 
 ## 🚀 0.33.0 - 13/05/2026
 
@@ -161,6 +201,8 @@
   - Resolved navigation inconsistencies in the header across different locales.
 - **Localization**:
   - Refreshed all translation catalogs (`en-US`, `fr-FR`, `es-ES`, `zh-CN`, `ar-SA`) to include the latest UI enhancements.
+
+---
 
 ## 🚀 0.32.0 - 06/05/2026
 
@@ -199,6 +241,8 @@
   - Removed redundant volumes and services from the base `compose.yml`.
   - Standardized healthcheck logic across environments.
 
+---
+
 ## 🚀 0.31.0 - 05/05/2026
 
 ### Added
@@ -227,6 +271,8 @@
 - **Styles**:
   - Fixed minor padding and formatting inconsistencies in the message workspace.
   - Cleaned up unused `useState` imports and refined TypeScript event types (`React.SubmitEvent`).
+
+---
 
 ## 🚀 0.30.0 - 03/05/2026
 
@@ -264,6 +310,8 @@
 - **Data Flow**:
   - Resolved synchronization lag where the unread message counter didn't update immediately after marking as read.
 
+---
+
 ## 🚀 0.29.0 - 01/05/2026
 
 ### Added
@@ -295,6 +343,8 @@
 - **About page**:
   - Fix login requirement to see the about front page.
 
+---
+
 ## 🚀 0.28.0 - 29/04/2026
 
 ### Added
@@ -312,7 +362,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.27.0 - 29/04/2026
 
@@ -334,7 +386,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.26.0 - 28/04/2026
 
@@ -355,7 +409,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.25.0 - 28/04/2026
 
@@ -375,7 +431,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.24.0 - 26/04/2026
 
@@ -397,6 +455,8 @@
 ### Fixed
 
 - Eliminated obsolete legacy module definitions (`sharp`, `path`, `fs`) to maintain strict bundle constraints.
+
+---
 
 ## 🚀 0.23.0 - 23/04/2026
 
@@ -423,6 +483,8 @@
 
 - **Search Accuracy**: Resolved issues with partial keyword matches by implementing a hybrid scoring system.
 - **Real-time Sync**: Fixed a synchronization lag where tech stack updates were not immediately reflected in the global search index.
+
+---
 
 ## 🚀 0.22.0 - 18/04/2026
 
@@ -454,6 +516,8 @@
 - **Data Synchronization**: Resolved a bug where profile and project image changes were not reflected in the UI until a manual page refresh.
 - **Code Quality**: Fixed multiple linting and formatting issues introduced during the CSS refactoring process.
 
+---
+
 ## 🚀 0.21.0 - 17/04/2026
 
 ### Added
@@ -477,6 +541,8 @@
 - **Data Integrity**: Resolved a Zod validation bug by correctly initializing `techIcons` as an empty array, preventing submission failures.
 - **Image Handling**: Fixed an edge case in the project update flow where new images were not properly persistent after being moved from the temporary folder.
 
+---
+
 ## 🚀 0.20.0 - 13/04/2026
 
 ### Added
@@ -498,6 +564,8 @@
 - **Developer Experience**: Resolved a package name collision with a code-pruning tool by explicitly using `@tanstack/router-cli` for route generation.
 - **Bug Fixes**: Corrected server-side import paths and resolved TanStack router hydration issues across multiple administrative routes.
 
+---
+
 ## 🚀 0.19.0 - 12/04/2026
 
 ### Added
@@ -515,6 +583,8 @@
 ### Fixed
 
 - **UI Consistency**: Standardized the visual presentation of "Empty State" dashboards and form action buttons across all administrative modules.
+
+---
 
 ## 🚀 0.18.0 - 09/04/2026
 
@@ -538,6 +608,8 @@
 - **Assets**: Corrected relative image and font paths in `_fonts.css` to properly resolve assets from the `public` directory.
 - **Type Safety**: Replaced generic `any` types with the official Lexical `EditorState` class in the `RichTextEditor` component.
 
+---
+
 ## 🚀 0.17.0 - 09/04/2026
 
 ### Added
@@ -553,6 +625,8 @@
 - **Import Protection**: Resolved `[import-protection]` warnings triggered in client-side bundles (notably in `__root.tsx`, `admin.settings.themes.tsx`, and `admin.dashboard.tsx`) by eliminating direct imports from restricted `*.server.ts` files.
 - **Bug Fix**: Corrected a misaligned database client relative import path in `auth-actions.server.ts`.
 - **Cleanup**: Removed redundant debug `console.log` statements from administrative layout files.
+
+---
 
 ## 🚀 0.16.0 - 07/04/2026
 
@@ -574,6 +648,8 @@
 
 - **Type Safety**: Resolved Prisma type inconsistencies following the schema migration.
 
+---
+
 ## 🚀 0.15.0 - 04/04/2026
 
 ### Added
@@ -589,7 +665,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.14.0 - 01/04/2026
 
@@ -605,7 +683,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.13.0 - 31/03/2026
 
@@ -630,6 +710,8 @@
 
 - **Linting**: Addressed numerous formatting and unused import warnings across the codebase during refactoring.
 
+---
+
 ## 🚀 0.12.0 - 31/03/2026
 
 ### Added
@@ -651,7 +733,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.11.0 - 30/03/2026
 
@@ -674,6 +758,8 @@
 - **Styles**: Fixed social icon color inheritance in the `About` component (GitHub, LinkedIn, and Upwork icons now correctly use `fill-current` and hover states).
 - **Types**: Resolved minor TypeScript type inconsistencies in component props.
 
+---
+
 ## 🚀 0.10.0 - 26/03/2026
 
 ### Added
@@ -693,7 +779,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.9.0 - 25/03/2026
 
@@ -713,7 +801,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.8.0 - 24/03/2026
 
@@ -738,6 +828,8 @@
 
 - **I18n**: Resolved a localized string rendering issue on the Services page that caused some translations to be ignored.
 
+---
+
 ## 🚀 0.7.0 - 24/03/2026
 
 ### Added
@@ -752,7 +844,9 @@
 
 ### Fixed
 
-- No fixes.
+- N/A.
+
+---
 
 ## 🚀 0.6.0 - 24/03/2026
 
@@ -778,6 +872,8 @@
 
 - **I18n**: Resolved missing translations for workflow and service descriptions across all supported locales.
 
+---
+
 ## 🚀 0.5.0 - 20/03/2026
 
 ### Added
@@ -799,7 +895,9 @@
 
 ### Fixed
 
-- No fixes
+- N/A.
+
+---
 
 ## 🚀 0.3.0 - 20/03/2026
 
@@ -820,6 +918,8 @@
 - **Linting**: Enforced semicolon usage in TypeScript files via `@typescript-eslint/semi`.
 - **Locale**: Fixed detection and synchronization of i18n between client and server.
 
+---
+
 ## 🚀 0.2.0 - 12/03/2026
 
 ### Added
@@ -831,6 +931,8 @@
 
 - **CORS**: Fixed cross-origin resource sharing issues for project assets.
 
+---
+
 ## 🚀 0.1.0 - 05/03/2026
 
 ### Added
@@ -838,3 +940,11 @@
 - Initial project initialization with TanStack Start.
 - Metadata configuration (author: Samakunchan).
 - Basic project structure and routing setup.
+
+### Changed
+
+- N/A.
+
+### Fixed
+
+- N/A.
