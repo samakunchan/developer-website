@@ -2,7 +2,7 @@ import React from 'react';
 import { Container } from './Container';
 import { Trans } from '@lingui/react/macro';
 
-interface ProjectHighlitedProps {
+interface ProjectFeaturedProps {
   slug: string;
   image?: {
     medium: { url: string; alt: string };
@@ -19,7 +19,7 @@ interface ProjectHighlitedProps {
   onDotClick?: (index: number) => void;
 }
 
-export function ProjectFeatured({
+export const ProjectFeatured: React.FC<ProjectFeaturedProps> = ({
   slug,
   image,
   title,
@@ -29,8 +29,8 @@ export function ProjectFeatured({
   onPrev,
   onNext,
   onDotClick,
-}: ProjectHighlitedProps) {
-  const slideNumber = String(index + 1).padStart(2, '0');
+}: ProjectFeaturedProps) => {
+  const slideNumber: string = String(index + 1).padStart(2, '0');
 
   return (
     <section className="projects projects--featured" id="portfolio">
@@ -92,4 +92,4 @@ export function ProjectFeatured({
       </Container>
     </section>
   );
-}
+};

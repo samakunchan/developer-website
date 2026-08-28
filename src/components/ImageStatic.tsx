@@ -15,14 +15,14 @@ interface ImageStaticProps extends Omit<React.ImgHTMLAttributes<HTMLImageElement
   sizes?: string;
 }
 
-export function ImageStatic({
+export const ImageStatic: React.FC<ImageStaticProps> = ({
   src: imageAsset,
   alt,
   sizes = '100vw',
   className = '',
   loading = 'lazy',
   ...restProps
-}: ImageStaticProps) {
+}: ImageStaticProps) => {
   if (!imageAsset || !imageAsset.sources || !imageAsset.img) return null;
 
   return (
@@ -42,4 +42,4 @@ export function ImageStatic({
       />
     </picture>
   );
-}
+};

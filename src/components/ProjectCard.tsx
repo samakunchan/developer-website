@@ -14,8 +14,14 @@ interface ProjectCardProps {
   techIcons?: string[];
 }
 
-export function ProjectCard({ slug, image, title, categoryLabel, description, techIcons }: ProjectCardProps) {
-  console.log(techIcons);
+export const ProjectCard: React.FC<ProjectCardProps> = ({
+  slug,
+  image,
+  title,
+  categoryLabel,
+  description,
+  // techIcons,
+}: ProjectCardProps) => {
   return (
     <div className="project-card">
       <div className="project-card__image-wrapper">
@@ -51,4 +57,4 @@ export function ProjectCard({ slug, image, title, categoryLabel, description, te
       </div>
     </div>
   );
-}
+};

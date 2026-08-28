@@ -24,7 +24,7 @@ interface HeroProps {
   ariaLabel?: string;
 }
 
-export function Hero({
+export const Hero: React.FC<HeroProps> = ({
   badgeText,
   title,
   description,
@@ -33,8 +33,8 @@ export function Hero({
   imageSrc,
   imageAlt,
   imagePosition = 'right',
-}: HeroProps) {
-  const hasImage = !!imageSrc;
+}: HeroProps) => {
+  const hasImage: boolean = !!imageSrc;
 
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -85,11 +85,11 @@ export function Hero({
           <div className="hero__image-wrapper">
             <div className="hero__image-glow"></div>
             <div className="hero__image-container">
-              <ImageNetwork src={imageSrc} alt={imageAlt || ''} className="hero__image" layout="fullWidth" />
+              <ImageNetwork src={imageSrc || ''} alt={imageAlt || ''} className="hero__image" layout="fullWidth" />
             </div>
           </div>
         )}
       </Container>
     </section>
   );
-}
+};

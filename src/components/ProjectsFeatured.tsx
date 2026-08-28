@@ -10,10 +10,18 @@ interface ProjectsFeaturedProps {
   onDotClick?: (index: number) => void;
 }
 
-export function ProjectsFeatured({ projects, index, onPrev, onNext, onDotClick }: ProjectsFeaturedProps) {
+export const ProjectsFeatured: React.FC<ProjectsFeaturedProps> = ({
+  projects,
+  index,
+  onPrev,
+  onNext,
+  onDotClick,
+}: ProjectsFeaturedProps) => {
   if (projects.length === 0) return null;
-  const allFeaturedProjects = projects.filter((p) => p.isFeatured).filter((p) => p.status === 'published');
-  const featuredProjects: ProjectType[] = allFeaturedProjects.filter((_, i) => i === index);
+  const allFeaturedProjects: ProjectType[] = projects
+    .filter((p: ProjectType) => p.isFeatured)
+    .filter((p: ProjectType) => p.status === 'published');
+  const featuredProjects: ProjectType[] = allFeaturedProjects.filter((_, i: number) => i === index);
 
   return (
     featuredProjects.length > 0 && (
@@ -37,4 +45,4 @@ export function ProjectsFeatured({ projects, index, onPrev, onNext, onDotClick }
       </>
     )
   );
-}
+};

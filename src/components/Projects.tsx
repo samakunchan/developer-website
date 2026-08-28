@@ -15,7 +15,7 @@ interface ProjectsProps {
   projects: ProjectType[];
 }
 
-export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
+export const Projects: React.FC<ProjectsProps> = ({ id, title, subtitle, projects }: ProjectsProps) => {
   const [activeFilter, setActiveFilter] = useState<string>('all');
 
   const projectsFilters: ProjectFilter[] = [
@@ -25,16 +25,20 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
     { id: 'open_source', label: t`Open Source` },
   ];
 
-  const otherProjects = projects.filter((p) => !p.isFeatured).filter((p) => p.status === 'published');
+  const otherProjects: ProjectType[] = projects
+    .filter((p: ProjectType) => !p.isFeatured)
+    .filter((p: ProjectType) => p.status === 'published');
 
   const [featuredIndex, setFeaturedIndex] = useState<number>(0);
-  const featuredProjects = projects.filter((p) => p.isFeatured).filter((p) => p.status === 'published');
+  const featuredProjects: ProjectType[] = projects
+    .filter((p: ProjectType) => p.isFeatured)
+    .filter((p: ProjectType) => p.status === 'published');
 
   const handlePrev = () => {
-    setFeaturedIndex((prev) => (prev === 0 ? featuredProjects.length - 1 : prev - 1));
+    setFeaturedIndex((prev: number) => (prev === 0 ? featuredProjects.length - 1 : prev - 1));
   };
   const handleNext = () => {
-    setFeaturedIndex((prev) => (prev === featuredProjects.length - 1 ? 0 : prev + 1));
+    setFeaturedIndex((prev: number) => (prev === featuredProjects.length - 1 ? 0 : prev + 1));
   };
 
   const filteredOtherProjects: ProjectType[] =
@@ -98,4 +102,4 @@ export function Projects({ id, title, subtitle, projects }: ProjectsProps) {
       </section>
     </>
   );
-}
+};

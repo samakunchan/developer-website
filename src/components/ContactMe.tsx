@@ -31,10 +31,10 @@ export const ContactMe: React.FC = () => {
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   const services: ServiceType[] = [
-    { id: 'web' as ServiceEnum, icon: 'web', label: t`Web Dev` },
-    { id: 'mobile' as ServiceEnum, icon: 'mobile', label: t`Mobile Dev` },
-    { id: 'mvp' as ServiceEnum, icon: 'rocket_launch', label: t`MVP Launch` },
-    { id: 'ai' as ServiceEnum, icon: 'auto_awesome', label: t`AI Integration` },
+    { id: 'web' as ServiceEnum, icon: 'web', label: t`Web` },
+    { id: 'mobile' as ServiceEnum, icon: 'mobile', label: t`Mobile` },
+    { id: 'mvp' as ServiceEnum, icon: 'rocket_launch', label: t`MVP` },
+    { id: 'ai' as ServiceEnum, icon: 'auto_awesome', label: t`AI` },
     { id: 'api' as ServiceEnum, icon: 'terminal', label: t`API Backend` },
     { id: 'other' as ServiceEnum, icon: 'more_horiz', label: t`Something Else` },
   ];
@@ -47,12 +47,12 @@ export const ContactMe: React.FC = () => {
     { id: '30k+', currency: '€', label: `30k+` },
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent) => {
     e.preventDefault();
     setStatus('loading');
 
-    const serviceObj = services.find((s) => s.id === selectedService);
-    const priceObj = _prices.find((p) => p.id === selectedPriceId);
+    const serviceObj = services.find((s: ServiceType) => s.id === selectedService);
+    const priceObj = _prices.find((p: PriceRangeType) => p.id === selectedPriceId);
 
     if (!serviceObj || !priceObj) {
       setStatus('error');
@@ -66,7 +66,7 @@ export const ContactMe: React.FC = () => {
         return;
       }
 
-      const token = await executeRecaptcha('submit_contact');
+      const token: string = await executeRecaptcha('submit_contact');
 
       const result = await submitMessageAction({
         data: {
@@ -91,7 +91,7 @@ export const ContactMe: React.FC = () => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
-    const fieldName = id.replace('contact_', '');
+    const fieldName: string = id.replace('contact_', '');
     setFormData((prev) => ({ ...prev, [fieldName]: value }));
   };
 
@@ -125,7 +125,7 @@ export const ContactMe: React.FC = () => {
 
               {/* Service Selector Grid */}
               <div className="contact-me__services">
-                {services.map((service) => (
+                {services.map((service: ServiceType) => (
                   <button
                     key={service.id}
                     type="button"
@@ -143,7 +143,6 @@ export const ContactMe: React.FC = () => {
               {/* Dynamic Form Fields */}
               {status === 'success' ? (
                 <div className="contact-me__success">
-                  {/* <span className="material-symbols-outlined contact-me__success-icon">check_circle</span> */}
                   <h3>
                     <Trans>Message Sent!</Trans>
                   </h3>

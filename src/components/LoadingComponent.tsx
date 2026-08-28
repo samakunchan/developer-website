@@ -1,4 +1,4 @@
-export const LoadingComponent = () => {
+export const LoadingComponent: React.FC<unknown> = () => {
   return (
     <section className="hero">
       <div className="loading-state">
