@@ -87,10 +87,10 @@ function ProjectDetailsPage() {
             <span className="project-detail__category">{project.categoryLabel?.toString().toUpperCase()}</span>
           </div>
 
-          {project.projectUrl != null && (
+          {project.projectUrl != null && project.projectUrl.isActive && (
             <h3 className="project-detail__section-title">
               <Link to={project.projectUrl.url} target="_blank" rel="noopener noreferrer">
-                <Trans>View Result</Trans>
+                {project.projectUrl.mode == 'demo' ? <Trans>View Demo</Trans> : <Trans>View Result</Trans>}
               </Link>
             </h3>
           )}
