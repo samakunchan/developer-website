@@ -15,8 +15,8 @@ import { Route as ContactMeRouteImport } from './routes/contact-me';
 import { Route as AboutMeRouteImport } from './routes/about-me';
 import { Route as IndexRouteImport } from './routes/index';
 import { Route as VisitorPrivacyPolicyRouteImport } from './routes/visitor.privacy-policy';
-import { Route as VisitorLegalMentionsRouteImport } from './routes/visitor.legal-mentions';
-import { Route as VisitorCookiePolicyRouteImport } from './routes/visitor.cookie-policy';
+import { Route as VisitorLegalsMentionsRouteImport } from './routes/visitor.legals-mentions';
+import { Route as VisitorCookiesPolicyRouteImport } from './routes/visitor.cookies-policy';
 import { Route as VisitorCguRouteImport } from './routes/visitor.cgu';
 import { Route as ProjectsSlugRouteImport } from './routes/projects_.$slug';
 import { Route as ApiOptimizeImageRouteImport } from './routes/api.optimize-image';
@@ -51,14 +51,14 @@ const VisitorPrivacyPolicyRoute = VisitorPrivacyPolicyRouteImport.update({
   path: '/visitor/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any);
-const VisitorLegalMentionsRoute = VisitorLegalMentionsRouteImport.update({
-  id: '/visitor/legal-mentions',
-  path: '/visitor/legal-mentions',
+const VisitorLegalsMentionsRoute = VisitorLegalsMentionsRouteImport.update({
+  id: '/visitor/legals-mentions',
+  path: '/visitor/legals-mentions',
   getParentRoute: () => rootRouteImport,
 } as any);
-const VisitorCookiePolicyRoute = VisitorCookiePolicyRouteImport.update({
-  id: '/visitor/cookie-policy',
-  path: '/visitor/cookie-policy',
+const VisitorCookiesPolicyRoute = VisitorCookiesPolicyRouteImport.update({
+  id: '/visitor/cookies-policy',
+  path: '/visitor/cookies-policy',
   getParentRoute: () => rootRouteImport,
 } as any);
 const VisitorCguRoute = VisitorCguRouteImport.update({
@@ -86,8 +86,8 @@ export interface FileRoutesByFullPath {
   '/api/optimize-image': typeof ApiOptimizeImageRoute;
   '/projects/$slug': typeof ProjectsSlugRoute;
   '/visitor/cgu': typeof VisitorCguRoute;
-  '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute;
-  '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute;
+  '/visitor/cookies-policy': typeof VisitorCookiesPolicyRoute;
+  '/visitor/legals-mentions': typeof VisitorLegalsMentionsRoute;
   '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute;
 }
 export interface FileRoutesByTo {
@@ -99,8 +99,8 @@ export interface FileRoutesByTo {
   '/api/optimize-image': typeof ApiOptimizeImageRoute;
   '/projects/$slug': typeof ProjectsSlugRoute;
   '/visitor/cgu': typeof VisitorCguRoute;
-  '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute;
-  '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute;
+  '/visitor/cookies-policy': typeof VisitorCookiesPolicyRoute;
+  '/visitor/legals-mentions': typeof VisitorLegalsMentionsRoute;
   '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute;
 }
 export interface FileRoutesById {
@@ -113,8 +113,8 @@ export interface FileRoutesById {
   '/api/optimize-image': typeof ApiOptimizeImageRoute;
   '/projects_/$slug': typeof ProjectsSlugRoute;
   '/visitor/cgu': typeof VisitorCguRoute;
-  '/visitor/cookie-policy': typeof VisitorCookiePolicyRoute;
-  '/visitor/legal-mentions': typeof VisitorLegalMentionsRoute;
+  '/visitor/cookies-policy': typeof VisitorCookiesPolicyRoute;
+  '/visitor/legals-mentions': typeof VisitorLegalsMentionsRoute;
   '/visitor/privacy-policy': typeof VisitorPrivacyPolicyRoute;
 }
 export interface FileRouteTypes {
@@ -128,8 +128,8 @@ export interface FileRouteTypes {
     | '/api/optimize-image'
     | '/projects/$slug'
     | '/visitor/cgu'
-    | '/visitor/cookie-policy'
-    | '/visitor/legal-mentions'
+    | '/visitor/cookies-policy'
+    | '/visitor/legals-mentions'
     | '/visitor/privacy-policy';
   fileRoutesByTo: FileRoutesByTo;
   to:
@@ -141,8 +141,8 @@ export interface FileRouteTypes {
     | '/api/optimize-image'
     | '/projects/$slug'
     | '/visitor/cgu'
-    | '/visitor/cookie-policy'
-    | '/visitor/legal-mentions'
+    | '/visitor/cookies-policy'
+    | '/visitor/legals-mentions'
     | '/visitor/privacy-policy';
   id:
     | '__root__'
@@ -154,8 +154,8 @@ export interface FileRouteTypes {
     | '/api/optimize-image'
     | '/projects_/$slug'
     | '/visitor/cgu'
-    | '/visitor/cookie-policy'
-    | '/visitor/legal-mentions'
+    | '/visitor/cookies-policy'
+    | '/visitor/legals-mentions'
     | '/visitor/privacy-policy';
   fileRoutesById: FileRoutesById;
 }
@@ -168,8 +168,8 @@ export interface RootRouteChildren {
   ApiOptimizeImageRoute: typeof ApiOptimizeImageRoute;
   ProjectsSlugRoute: typeof ProjectsSlugRoute;
   VisitorCguRoute: typeof VisitorCguRoute;
-  VisitorCookiePolicyRoute: typeof VisitorCookiePolicyRoute;
-  VisitorLegalMentionsRoute: typeof VisitorLegalMentionsRoute;
+  VisitorCookiesPolicyRoute: typeof VisitorCookiesPolicyRoute;
+  VisitorLegalsMentionsRoute: typeof VisitorLegalsMentionsRoute;
   VisitorPrivacyPolicyRoute: typeof VisitorPrivacyPolicyRoute;
 }
 
@@ -217,18 +217,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VisitorPrivacyPolicyRouteImport;
       parentRoute: typeof rootRouteImport;
     };
-    '/visitor/legal-mentions': {
-      id: '/visitor/legal-mentions';
-      path: '/visitor/legal-mentions';
-      fullPath: '/visitor/legal-mentions';
-      preLoaderRoute: typeof VisitorLegalMentionsRouteImport;
+    '/visitor/legals-mentions': {
+      id: '/visitor/legals-mentions';
+      path: '/visitor/legals-mentions';
+      fullPath: '/visitor/legals-mentions';
+      preLoaderRoute: typeof VisitorLegalsMentionsRouteImport;
       parentRoute: typeof rootRouteImport;
     };
-    '/visitor/cookie-policy': {
-      id: '/visitor/cookie-policy';
-      path: '/visitor/cookie-policy';
-      fullPath: '/visitor/cookie-policy';
-      preLoaderRoute: typeof VisitorCookiePolicyRouteImport;
+    '/visitor/cookies-policy': {
+      id: '/visitor/cookies-policy';
+      path: '/visitor/cookies-policy';
+      fullPath: '/visitor/cookies-policy';
+      preLoaderRoute: typeof VisitorCookiesPolicyRouteImport;
       parentRoute: typeof rootRouteImport;
     };
     '/visitor/cgu': {
@@ -264,8 +264,8 @@ const rootRouteChildren: RootRouteChildren = {
   ApiOptimizeImageRoute: ApiOptimizeImageRoute,
   ProjectsSlugRoute: ProjectsSlugRoute,
   VisitorCguRoute: VisitorCguRoute,
-  VisitorCookiePolicyRoute: VisitorCookiePolicyRoute,
-  VisitorLegalMentionsRoute: VisitorLegalMentionsRoute,
+  VisitorCookiesPolicyRoute: VisitorCookiesPolicyRoute,
+  VisitorLegalsMentionsRoute: VisitorLegalsMentionsRoute,
   VisitorPrivacyPolicyRoute: VisitorPrivacyPolicyRoute,
 };
 export const routeTree = rootRouteImport

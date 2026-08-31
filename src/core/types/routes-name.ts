@@ -10,6 +10,6 @@ export enum RouteNameType {
   // Visitor
   VisitorCgu = '/visitor/cgu',
   VisitorPrivacyPolicy = '/visitor/privacy-policy',
-  VisitorCookiePolicy = '/visitor/cookie-policy',
-  VisitorLegalMentions = '/visitor/legal-mentions',
+  VisitorCookiePolicy = '/visitor/cookies-policy',
+  VisitorLegalMentions = '/visitor/legals-mentions',
 }
