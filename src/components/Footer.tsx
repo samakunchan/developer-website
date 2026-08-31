@@ -38,7 +38,7 @@ export const Footer: React.FC<unknown> = () => {
           </div>
 
           <div className="footer__socials" aria-label={t`Social media links`}>
-            <a href="mailto:contact@devport.com" className="footer__social-link" aria-label={t`Email`}>
+            <a href={`mailto:${process.env.ADMIN_EMAIL}`} className="footer__social-link" aria-label={t`Email`}>
               <span className="material-symbols-outlined">alternate_email</span>
             </a>
             <a
