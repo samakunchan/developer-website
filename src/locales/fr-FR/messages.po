@@ -382,10 +382,11 @@ msgid "Email Address"
 msgstr "Adresse e-mail"
 
 #: src/routes/projects.tsx:68
-msgid "Email me"
-msgstr "M'envoyer un e-mail"
+#~ msgid "Email me"
+#~ msgstr "M'envoyer un e-mail"
 
 #: src/routes/index.tsx:97
+#: src/routes/projects.tsx:71
 msgid "Email Me"
 msgstr "M'envoyer un e-mail"
 
@@ -460,7 +461,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:65
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "Vous avez un projet en tête ?"
 
@@ -492,7 +493,7 @@ msgstr "Je suis un développeur basé en France avec plus de 8 ans d'expérience
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "Je suis un développeur freelance spécialisé dans la création d'applications web et mobiles de haute performance avec des technologies modernes."
 
-#: src/routes/projects.tsx:66
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "Je suis actuellement disponible pour du travail en freelance et ouvert à de nouvelles opportunités. Construisons quelque chose d'incroyable ensemble."
 
@@ -662,7 +663,7 @@ msgstr "MVP"
 #~ msgid "MVP Launch"
 #~ msgstr "Lancement MVP"
 
-#: src/routes/projects.tsx:61
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "Mes travaux récents"
 
@@ -727,7 +728,7 @@ msgstr "Optimisation des Performances"
 #~ msgid "Personals Informations"
 #~ msgstr "Informations personnelles"
 
-#: src/routes/projects.tsx:60
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "Portfolio"
 
@@ -885,8 +886,8 @@ msgid "Scalable enterprise-grade software solutions."
 msgstr "Solutions logicielles évolutives de qualité entreprise."
 
 #: src/routes/projects.tsx:67
-msgid "Schedule a call"
-msgstr "Planifier un appel"
+#~ msgid "Schedule a call"
+#~ msgstr "Planifier un appel"
 
 #: src/routes/services.tsx:61
 msgid "Schedule a Call"
@@ -1070,9 +1071,13 @@ msgstr "Authentification Utilisateur"
 #~ msgid "User profile"
 #~ msgstr "Profil utilisateur"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "Voir mon CV"
+
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Demo"
+msgstr "Voir la démo"
 
 #: src/components/ProjectCard.tsx:53
 msgid "View Details"

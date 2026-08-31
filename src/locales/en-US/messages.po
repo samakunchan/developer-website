@@ -382,10 +382,11 @@ msgid "Email Address"
 msgstr "Email Address"
 
 #: src/routes/projects.tsx:68
-msgid "Email me"
-msgstr "Email me"
+#~ msgid "Email me"
+#~ msgstr "Email me"
 
 #: src/routes/index.tsx:97
+#: src/routes/projects.tsx:71
 msgid "Email Me"
 msgstr "Email Me"
 
@@ -460,7 +461,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google store"
 
-#: src/routes/projects.tsx:65
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "Have a project in mind?"
 
@@ -492,7 +493,7 @@ msgstr "I'm a developer based in France with over 8 years of experience building
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 
-#: src/routes/projects.tsx:66
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 
@@ -662,7 +663,7 @@ msgstr "MVP"
 #~ msgid "MVP Launch"
 #~ msgstr "MVP Launch"
 
-#: src/routes/projects.tsx:61
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "My Recent Work"
 
@@ -727,7 +728,7 @@ msgstr "Performance Optimization"
 #~ msgid "Personals Informations"
 #~ msgstr "Personals Informations"
 
-#: src/routes/projects.tsx:60
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "Portfolio"
 
@@ -885,8 +886,8 @@ msgid "Scalable enterprise-grade software solutions."
 msgstr "Scalable enterprise-grade software solutions."
 
 #: src/routes/projects.tsx:67
-msgid "Schedule a call"
-msgstr "Schedule a call"
+#~ msgid "Schedule a call"
+#~ msgstr "Schedule a call"
 
 #: src/routes/services.tsx:61
 msgid "Schedule a Call"
@@ -1070,9 +1071,13 @@ msgstr "User Authentication"
 #~ msgid "User profile"
 #~ msgstr "User profile"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "View CV"
+
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Demo"
+msgstr "View Demo"
 
 #: src/components/ProjectCard.tsx:53
 msgid "View Details"

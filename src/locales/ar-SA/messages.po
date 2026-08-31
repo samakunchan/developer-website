@@ -383,10 +383,11 @@ msgid "Email Address"
 msgstr "عنوان البريد الإلكتروني"
 
 #: src/routes/projects.tsx:68
-msgid "Email me"
-msgstr "راسلني عبر البريد الإلكتروني"
+#~ msgid "Email me"
+#~ msgstr "راسلني عبر البريد الإلكتروني"
 
 #: src/routes/index.tsx:97
+#: src/routes/projects.tsx:71
 msgid "Email Me"
 msgstr "أرسل لي بريدًا إلكترونيًا"
 
@@ -461,7 +462,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:65
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "هل لديك مشروع في الاعتبار؟"
 
@@ -493,7 +494,7 @@ msgstr "أنا مطور مقيم في فرنسا ولدي أكثر من 8 سنو
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "أنا مطور مستقل متخصص في بناء تطبيقات الويب والهاتف المحمول عالية الأداء باستخدام التقنيات الحديثة."
 
-#: src/routes/projects.tsx:66
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "أنا متاح حاليًا للعمل الحر ومنفتح على فرص جديدة. لنبني شيئًا مذهلاً معًا."
 
@@ -663,7 +664,7 @@ msgstr "MVP"
 #~ msgid "MVP Launch"
 #~ msgstr "إطلاق MVP"
 
-#: src/routes/projects.tsx:61
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "أعمالي الأخيرة"
 
@@ -728,7 +729,7 @@ msgstr "تحسين الأداء"
 #~ msgid "Personals Informations"
 #~ msgstr "المعلومات الشخصية"
 
-#: src/routes/projects.tsx:60
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "معرض الأعمال"
 
@@ -886,8 +887,8 @@ msgid "Scalable enterprise-grade software solutions."
 msgstr "حلول برمجية قابلة للتطوير للمؤسسات."
 
 #: src/routes/projects.tsx:67
-msgid "Schedule a call"
-msgstr "جدولة مكالمة"
+#~ msgid "Schedule a call"
+#~ msgstr "جدولة مكالمة"
 
 #: src/routes/services.tsx:61
 msgid "Schedule a Call"
@@ -1071,9 +1072,13 @@ msgstr "مصادقة المستخدم"
 #~ msgid "User profile"
 #~ msgstr "ملف تعريف المستخدم"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "عرض السيرة الذاتية"
+
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Demo"
+msgstr "عرض النسخة التجريبية"
 
 #: src/components/ProjectCard.tsx:53
 msgid "View Details"
