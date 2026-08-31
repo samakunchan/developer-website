@@ -48,7 +48,7 @@ services:
     container_name: developer-website-nginx-prod
     restart: always
     ports:
-      - '3007:80'
+      - '127.0.0.1:3007:80'
     networks:
       - default
       - nginx-proxy-network
