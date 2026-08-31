@@ -166,7 +166,7 @@ msgstr "Disponible pour de nouveaux projets"
 #~ msgid "Back to list"
 #~ msgstr "Retour à la liste"
 
-#: src/routes/projects_.$slug.tsx:35
+#: src/routes/projects_.$slug.tsx:39
 msgid "Back to Projects"
 msgstr "Retour aux projets"
 
@@ -188,7 +188,7 @@ msgstr "Construire le <0>futur</0> grâce à un code propre."
 #~ msgid "Case Study Number"
 #~ msgstr "Numéro de l'étude de cas"
 
-#: src/routes/projects_.$slug.tsx:74
+#: src/routes/projects_.$slug.tsx:80
 msgid "Case Study:"
 msgstr "Étude de cas :"
 
@@ -444,7 +444,7 @@ msgstr "Accords de confidentialité (NDA) disponibles pour chaque projet."
 msgid "Full-featured apps with authentication and CMS."
 msgstr "Applications complètes avec authentification et CMS."
 
-#: src/routes/projects_.$slug.tsx:110
+#: src/routes/projects_.$slug.tsx:124
 msgid "Functional Requirements"
 msgstr "Exigences fonctionnelles"
 
@@ -783,7 +783,7 @@ msgstr "Gamme de budget du projet"
 #~ msgid "Project not found"
 #~ msgstr "Projet non trouvé"
 
-#: src/routes/projects_.$slug.tsx:29
+#: src/routes/projects_.$slug.tsx:33
 msgid "Project Not Found"
 msgstr "Projet non trouvé"
 
@@ -997,7 +997,7 @@ msgstr "Intégration Stripe"
 #~ msgid "Supported: JPG, PNG, WebP"
 #~ msgstr "Formats supportés : JPG, PNG, WebP"
 
-#: src/routes/projects_.$slug.tsx:64
+#: src/routes/projects_.$slug.tsx:69
 msgid "System Status: Live"
 msgstr "Statut du système : En ligne"
 
@@ -1005,7 +1005,7 @@ msgstr "Statut du système : En ligne"
 #~ msgid "Tech Stack"
 #~ msgstr "Technologies"
 
-#: src/routes/projects_.$slug.tsx:93
+#: src/routes/projects_.$slug.tsx:107
 msgid "Technical Architecture"
 msgstr "Architecture technique"
 
@@ -1029,7 +1029,7 @@ msgstr "Parlez-nous des objectifs de votre projet, de votre calendrier et de tou
 msgid "Thank you for reaching out. We'll get back to you within 12 hours."
 msgstr "Merci de nous avoir contactés. Nous vous recontacterons dans les 12 heures."
 
-#: src/routes/projects_.$slug.tsx:32
+#: src/routes/projects_.$slug.tsx:36
 msgid "The project you are looking for does not exist."
 msgstr "Le projet que vous recherchez n'existe pas."
 
@@ -1074,7 +1074,7 @@ msgstr "Authentification Utilisateur"
 msgid "View CV"
 msgstr "Voir mon CV"
 
-#: src/components/ProjectCard.tsx:47
+#: src/components/ProjectCard.tsx:53
 msgid "View Details"
 msgstr "Voir les détails"
 
@@ -1085,6 +1085,10 @@ msgstr "Voir le Portfolio"
 #: src/routes/services.tsx:41
 msgid "View Pricing"
 msgstr "Voir les Tarifs"
+
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Result"
+msgstr "Voir le résultat"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:175
 #~ msgid "Visuals"

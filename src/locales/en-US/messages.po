@@ -166,7 +166,7 @@ msgstr "Available for new projects"
 #~ msgid "Back to list"
 #~ msgstr "Back to list"
 
-#: src/routes/projects_.$slug.tsx:35
+#: src/routes/projects_.$slug.tsx:39
 msgid "Back to Projects"
 msgstr "Back to Projects"
 
@@ -188,7 +188,7 @@ msgstr "Building the <0>future</0> through clean code."
 #~ msgid "Case Study Number"
 #~ msgstr "Case Study Number"
 
-#: src/routes/projects_.$slug.tsx:74
+#: src/routes/projects_.$slug.tsx:80
 msgid "Case Study:"
 msgstr "Case Study:"
 
@@ -444,7 +444,7 @@ msgstr "Full NDAs available for every project."
 msgid "Full-featured apps with authentication and CMS."
 msgstr "Full-featured apps with authentication and CMS."
 
-#: src/routes/projects_.$slug.tsx:110
+#: src/routes/projects_.$slug.tsx:124
 msgid "Functional Requirements"
 msgstr "Functional Requirements"
 
@@ -783,7 +783,7 @@ msgstr "Project Budget Range"
 #~ msgid "Project not found"
 #~ msgstr "Project not found"
 
-#: src/routes/projects_.$slug.tsx:29
+#: src/routes/projects_.$slug.tsx:33
 msgid "Project Not Found"
 msgstr "Project Not Found"
 
@@ -997,7 +997,7 @@ msgstr "Stripe Integration"
 #~ msgid "Supported: JPG, PNG, WebP"
 #~ msgstr "Supported: JPG, PNG, WebP"
 
-#: src/routes/projects_.$slug.tsx:64
+#: src/routes/projects_.$slug.tsx:69
 msgid "System Status: Live"
 msgstr "System Status: Live"
 
@@ -1005,7 +1005,7 @@ msgstr "System Status: Live"
 #~ msgid "Tech Stack"
 #~ msgstr "Tech Stack"
 
-#: src/routes/projects_.$slug.tsx:93
+#: src/routes/projects_.$slug.tsx:107
 msgid "Technical Architecture"
 msgstr "Technical Architecture"
 
@@ -1029,7 +1029,7 @@ msgstr "Tell us about your project goals, timeline, and any specific technical r
 msgid "Thank you for reaching out. We'll get back to you within 12 hours."
 msgstr "Thank you for reaching out. We'll get back to you within 12 hours."
 
-#: src/routes/projects_.$slug.tsx:32
+#: src/routes/projects_.$slug.tsx:36
 msgid "The project you are looking for does not exist."
 msgstr "The project you are looking for does not exist."
 
@@ -1074,7 +1074,7 @@ msgstr "User Authentication"
 msgid "View CV"
 msgstr "View CV"
 
-#: src/components/ProjectCard.tsx:47
+#: src/components/ProjectCard.tsx:53
 msgid "View Details"
 msgstr "View Details"
 
@@ -1085,6 +1085,10 @@ msgstr "View Portfolio"
 #: src/routes/services.tsx:41
 msgid "View Pricing"
 msgstr "View Pricing"
+
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Result"
+msgstr "View Result"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:175
 #~ msgid "Visuals"
