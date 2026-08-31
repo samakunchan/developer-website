@@ -16,7 +16,7 @@ import { $createHeadingNode, HeadingTagType } from '@lexical/rich-text';
 import { INSERT_ORDERED_LIST_COMMAND, INSERT_UNORDERED_LIST_COMMAND } from '@lexical/list';
 import { mergeRegister } from '@lexical/utils';
 
-export const LexicalToolbar: React.FC = () => {
+export const LexicalToolbar: React.FC<unknown> = () => {
   const [editor] = useLexicalComposerContext();
   const [canUndo, setCanUndo] = useState(false);
   const [canRedo, setCanRedo] = useState(false);

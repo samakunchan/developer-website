@@ -4,10 +4,14 @@ import { Footer } from '../components/Footer';
 import { Trans } from '@lingui/react/macro';
 import '../styles/main.css';
 
-import { getProjectBySlug, ProjectType } from '../features/projects';
+import { FeaturesType, getProjectBySlug, ProjectType, TechStackType } from '../features/projects';
+
+type ProjectSlugType = {
+  params: { slug: string };
+};
 
 export const Route = createFileRoute('/projects_/$slug')({
-  loader: async ({ params }) => {
+  loader: async ({ params }: ProjectSlugType) => {
     const project = await getProjectBySlug({ data: params.slug });
     return {
       project,
@@ -58,12 +62,14 @@ function ProjectDetailsPage() {
           )}
 
           {/* Status Label */}
-          <div className="project-detail__status-badge">
-            <span className="project-detail__status-dot"></span>
-            <span className="project-detail__status-text">
-              <Trans>System Status: Live</Trans>
-            </span>
-          </div>
+          {project.projectUrl != null && (
+            <div className="project-detail__status-badge">
+              <span className="project-detail__status-dot"></span>
+              <span className="project-detail__status-text">
+                <Trans>System Status: Live</Trans>
+              </span>
+            </div>
+          )}
         </section>
 
         {/* Right Side: Content (Scrollable) */}
@@ -81,6 +87,14 @@ function ProjectDetailsPage() {
             <span className="project-detail__category">{project.categoryLabel?.toString().toUpperCase()}</span>
           </div>
 
+          {project.projectUrl != null && project.projectUrl.isActive && (
+            <h3 className="project-detail__section-title">
+              <Link to={project.projectUrl.url} target="_blank" rel="noopener noreferrer">
+                {project.projectUrl.mode == 'demo' ? <Trans>View Demo</Trans> : <Trans>View Result</Trans>}
+              </Link>
+            </h3>
+          )}
+
           {/* Description */}
           <div className="project-detail__description text-content">
             <p>{project.description}</p>
@@ -93,7 +107,7 @@ function ProjectDetailsPage() {
                 <Trans>Technical Architecture</Trans>
               </h3>
               <div className="project-detail__tech-grid">
-                {project.techStack.map((tech, index) => (
+                {project.techStack.map((tech: TechStackType, index: number) => (
                   <div key={index} className="project-detail__tech-item">
                     <span className="material-symbols-outlined project-detail__tech-icon">{tech.icon}</span>
                     <span className="project-detail__tech-name">{tech.name}</span>
@@ -110,7 +124,7 @@ function ProjectDetailsPage() {
                 <Trans>Functional Requirements</Trans>
               </h3>
               <div className="project-detail__features-grid">
-                {project.features.map((feature, index) => (
+                {project.features.map((feature: FeaturesType, index: number) => (
                   <div key={index} className="project-detail__feature-card">
                     <span className="material-symbols-outlined project-detail__feature-icon">{feature.icon}</span>
                     <h4 className="project-detail__feature-title">{feature.title}</h4>

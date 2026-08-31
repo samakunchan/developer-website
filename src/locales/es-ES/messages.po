@@ -166,7 +166,7 @@ msgstr "Disponible para nuevos proyectos"
 #~ msgid "Back to list"
 #~ msgstr "Volver a la lista"
 
-#: src/routes/projects_.$slug.tsx:35
+#: src/routes/projects_.$slug.tsx:39
 msgid "Back to Projects"
 msgstr "Volver a proyectos"
 
@@ -188,7 +188,7 @@ msgstr "Construyendo el <0>futuro</0> a través de un código limpio."
 #~ msgid "Case Study Number"
 #~ msgstr "Número de caso de estudio"
 
-#: src/routes/projects_.$slug.tsx:74
+#: src/routes/projects_.$slug.tsx:80
 msgid "Case Study:"
 msgstr "Caso de estudio:"
 
@@ -382,10 +382,11 @@ msgid "Email Address"
 msgstr "Correo electrónico"
 
 #: src/routes/projects.tsx:68
-msgid "Email me"
-msgstr "Envíame un correo"
+#~ msgid "Email me"
+#~ msgstr "Envíame un correo"
 
 #: src/routes/index.tsx:97
+#: src/routes/projects.tsx:71
 msgid "Email Me"
 msgstr "Envíame un email"
 
@@ -444,7 +445,7 @@ msgstr "Acuerdos de confidencialidad (NDA) disponibles para cada proyecto."
 msgid "Full-featured apps with authentication and CMS."
 msgstr "Aplicaciones completas con autenticación y CMS."
 
-#: src/routes/projects_.$slug.tsx:110
+#: src/routes/projects_.$slug.tsx:124
 msgid "Functional Requirements"
 msgstr "Requisitos funcionales"
 
@@ -460,7 +461,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:65
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "¿Tienes un proyecto en mente?"
 
@@ -492,7 +493,7 @@ msgstr "Soy un desarrollador con sede en Francia con más de 8 años de experien
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "Soy un desarrollador freelance especializado en la creación de aplicaciones web y móviles de alto rendimiento con tecnologías modernas."
 
-#: src/routes/projects.tsx:66
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "Actualmente estoy disponible para trabajo freelance y abierto a nuevas oportunidades. Construyamos algo increíble juntos."
 
@@ -662,7 +663,7 @@ msgstr "MVP"
 #~ msgid "MVP Launch"
 #~ msgstr "Lanzamiento MVP"
 
-#: src/routes/projects.tsx:61
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "Mi trabajo reciente"
 
@@ -727,7 +728,7 @@ msgstr "Optimización de Rendimiento"
 #~ msgid "Personals Informations"
 #~ msgstr "Información personal"
 
-#: src/routes/projects.tsx:60
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "Portafolio"
 
@@ -783,7 +784,7 @@ msgstr "Rango de presupuesto del proyecto"
 #~ msgid "Project not found"
 #~ msgstr "Proyecto no encontrado"
 
-#: src/routes/projects_.$slug.tsx:29
+#: src/routes/projects_.$slug.tsx:33
 msgid "Project Not Found"
 msgstr "Proyecto no encontrado"
 
@@ -885,8 +886,8 @@ msgid "Scalable enterprise-grade software solutions."
 msgstr "Soluciones de software de grado empresarial escalables."
 
 #: src/routes/projects.tsx:67
-msgid "Schedule a call"
-msgstr "Programar una llamada"
+#~ msgid "Schedule a call"
+#~ msgstr "Programar una llamada"
 
 #: src/routes/services.tsx:61
 msgid "Schedule a Call"
@@ -997,7 +998,7 @@ msgstr "Integración con Stripe"
 #~ msgid "Supported: JPG, PNG, WebP"
 #~ msgstr "Soportado: JPG, PNG, WebP"
 
-#: src/routes/projects_.$slug.tsx:64
+#: src/routes/projects_.$slug.tsx:69
 msgid "System Status: Live"
 msgstr "Estado del sistema: En vivo"
 
@@ -1005,7 +1006,7 @@ msgstr "Estado del sistema: En vivo"
 #~ msgid "Tech Stack"
 #~ msgstr "Pila tecnológica"
 
-#: src/routes/projects_.$slug.tsx:93
+#: src/routes/projects_.$slug.tsx:107
 msgid "Technical Architecture"
 msgstr "Arquitectura técnica"
 
@@ -1029,7 +1030,7 @@ msgstr "Cuéntanos sobre los objetivos de tu proyecto, el cronograma y cualquier
 msgid "Thank you for reaching out. We'll get back to you within 12 hours."
 msgstr "Gracias por contactarnos. Nos pondremos en contacto contigo en un plazo de 12 horas."
 
-#: src/routes/projects_.$slug.tsx:32
+#: src/routes/projects_.$slug.tsx:36
 msgid "The project you are looking for does not exist."
 msgstr "El proyecto que estás buscando no existe."
 
@@ -1070,11 +1071,15 @@ msgstr "Autenticación de Usuarios"
 #~ msgid "User profile"
 #~ msgstr "Perfil de usuario"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "Ver CV"
 
-#: src/components/ProjectCard.tsx:47
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Demo"
+msgstr "Ver demo"
+
+#: src/components/ProjectCard.tsx:53
 msgid "View Details"
 msgstr "Ver detalles"
 
@@ -1085,6 +1090,10 @@ msgstr "Ver Portafolio"
 #: src/routes/services.tsx:41
 msgid "View Pricing"
 msgstr "Ver Precios"
+
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Result"
+msgstr "Ver resultado"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:175
 #~ msgid "Visuals"

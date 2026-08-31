@@ -49,6 +49,7 @@ function ProjectsPage() {
           description={t`I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies.`}
           primaryButton={{
             text: t`Let's talk`,
+            onClick: () => navigate({ to: RouteNameType.ContactMe.toString() }),
           }}
           secondaryButton={{
             text: t`View CV`,
@@ -64,8 +65,14 @@ function ProjectsPage() {
         <CTA
           title={<Trans>Have a project in mind?</Trans>}
           description={t`I'm currently available for freelance work and open to new opportunities. Let's build something amazing together.`}
-          primaryButton={{ text: t`Schedule a call` }}
-          secondaryButton={{ text: t`Email me` }}
+          // primaryButton={{ text: t`Schedule a call` }}
+          // secondaryButton={{ text: t`Email me` }}
+          primaryButton={{
+            text: t`Email Me`,
+            onClick() {
+              navigate({ to: RouteNameType.ContactMe.toString() });
+            },
+          }}
         />
       </main>
       <Footer />

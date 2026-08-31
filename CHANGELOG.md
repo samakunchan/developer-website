@@ -2,6 +2,44 @@
 
 <!-- markdownlint-configure-file { "MD024": { "siblings_only": true } } -->
 
+## 🚀 0.41.0 - 31/08/2026
+
+### Added
+
+- **Project URL & Live Result Link**:
+  - Added `ProjectUrl` model to `prisma/schema.prisma` with 1-to-1 relation to `Project` (with cascade deletion).
+  - Extended `ProjectType` in `src/features/projects/utils/schemas.ts` to include optional `projectUrl` and structured types `TechStackType` and `FeaturesType`.
+  - Updated server actions (`getProjectsInternal`, `getProjectByIdInternal`, `getProjectBySlugInternal`) to include `projectUrl`.
+  - Added live preview link (`View Result` / `Voir le résultat`) pointing to `project.projectUrl.url` on single project page `src/routes/projects_.$slug.tsx`.
+  - Conditional display of "System Status: Live" badge only when `projectUrl` is defined.
+  - Added translations for "View Result" across French, Spanish, Chinese, Arabic, and English locales.
+- **Projects Page CTA Navigation**:
+  - Integrated navigation handler to `/contact-me` on primary hero button ("Let's talk") and CTA button ("Email Me") in `src/routes/projects.tsx`.
+
+### Changed
+
+- **TypeScript Typing & Component Standardization**:
+  - Converted multiple components across `src/components/` and `LexicalToolbar.tsx` to standardized arrow functions with `React.FC` typings and explicit prop interfaces.
+  - Added strict parameter typing `ProjectSlugType` to project route loader in `src/routes/projects_.$slug.tsx`.
+- **Projects Display**:
+  - Updated `Projects.tsx` to list all published projects in the projects grid regardless of featured status.
+- **Dynamic Configuration & Security**:
+  - Configured footer contact link in `Footer.tsx` to dynamically use `process.env.ADMIN_EMAIL`.
+  - Hardened Docker Compose production port mapping (`compose-prod.yml`) by binding nginx to `127.0.0.1:3007:80`.
+  - Cleaned up `.env.example` template by removing unused service variables and focusing on OpenBao.
+
+### Fixed
+
+- **Visitor Route Typos**:
+  - Fixed typo in visitor route paths and filenames: renamed `visitor.cookie-policy.tsx` to `visitor.cookies-policy.tsx` and `visitor.legal-mentions.tsx` to `visitor.legals-mentions.tsx`.
+  - Updated `RouteNameType` enum and regenerated `routeTree.gen.ts`.
+
+### Deleted
+
+- N/A.
+
+---
+
 ## 🚀 0.40.0 - 27/08/2026 [ADMIN DELETED]
 
 ### Added
