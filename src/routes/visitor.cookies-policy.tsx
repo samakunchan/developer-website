@@ -2,18 +2,19 @@ import { createFileRoute } from '@tanstack/react-router';
 import { useQuery } from '@tanstack/react-query';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
-import { RichTextReadOnly, getLegalMentions } from '../features/rich-text';
+import { RichTextReadOnly, getCookiePolicy } from '../features/rich-text';
 import { Container } from '../components/Container';
 import '../styles/main.css';
+import { LoadingComponent } from '../components/LoadingComponent';
 
-export const Route = createFileRoute('/visitor/legal-mentions')({
-  component: VisitorLegalMentionsPage,
+export const Route = createFileRoute('/visitor/cookies-policy')({
+  component: VisitorCookiePolicyPage,
 });
 
-function VisitorLegalMentionsPage() {
+function VisitorCookiePolicyPage() {
   const { data, isLoading } = useQuery({
-    queryKey: ['rich-text', 'legal-mentions'],
-    queryFn: () => getLegalMentions(),
+    queryKey: ['rich-text', 'cookie-policy'],
+    queryFn: () => getCookiePolicy(),
   });
 
   if (isLoading) {
@@ -21,10 +22,7 @@ function VisitorLegalMentionsPage() {
       <>
         <Header />
         <main role="main">
-          <div className="loading-state">
-            <span className="material-symbols-outlined spin">sync</span>
-            <p>Loading...</p>
-          </div>
+          <LoadingComponent />
         </main>
         <Footer />
       </>
@@ -37,7 +35,7 @@ function VisitorLegalMentionsPage() {
       <main role="main">
         <section className="hero-visitor">
           <Container>
-            <RichTextReadOnly title={data?.title || 'Legal Mentions'} content={data?.content as string} />
+            <RichTextReadOnly title={data?.title || 'Cookie Policy'} content={data?.content as string} />
           </Container>
         </section>
       </main>
