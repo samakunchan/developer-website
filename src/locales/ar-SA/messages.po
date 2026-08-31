@@ -166,7 +166,7 @@ msgstr "متاح للمشاريع الجديدة"
 #~ msgid "Back to list"
 #~ msgstr "العودة إلى القائمة"
 
-#: src/routes/projects_.$slug.tsx:35
+#: src/routes/projects_.$slug.tsx:39
 msgid "Back to Projects"
 msgstr "العودة إلى المشاريع"
 
@@ -188,7 +188,7 @@ msgstr "بناء <0>المستقبل</0> من خلال كود نظيف."
 #~ msgid "Case Study Number"
 #~ msgstr "رقم دراسة الحالة"
 
-#: src/routes/projects_.$slug.tsx:74
+#: src/routes/projects_.$slug.tsx:80
 msgid "Case Study:"
 msgstr "دراسة الحالة:"
 
@@ -383,10 +383,11 @@ msgid "Email Address"
 msgstr "عنوان البريد الإلكتروني"
 
 #: src/routes/projects.tsx:68
-msgid "Email me"
-msgstr "راسلني عبر البريد الإلكتروني"
+#~ msgid "Email me"
+#~ msgstr "راسلني عبر البريد الإلكتروني"
 
 #: src/routes/index.tsx:97
+#: src/routes/projects.tsx:71
 msgid "Email Me"
 msgstr "أرسل لي بريدًا إلكترونيًا"
 
@@ -445,7 +446,7 @@ msgstr "تتوفر اتفاقيات عدم الإفصاح (NDAs) كاملة لك
 msgid "Full-featured apps with authentication and CMS."
 msgstr "تطبيقات كاملة الميزات مع المصادقة ونظام إدارة المحتوى."
 
-#: src/routes/projects_.$slug.tsx:110
+#: src/routes/projects_.$slug.tsx:124
 msgid "Functional Requirements"
 msgstr "المتطلبات الوظيفية"
 
@@ -461,7 +462,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:65
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "هل لديك مشروع في الاعتبار؟"
 
@@ -493,7 +494,7 @@ msgstr "أنا مطور مقيم في فرنسا ولدي أكثر من 8 سنو
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "أنا مطور مستقل متخصص في بناء تطبيقات الويب والهاتف المحمول عالية الأداء باستخدام التقنيات الحديثة."
 
-#: src/routes/projects.tsx:66
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "أنا متاح حاليًا للعمل الحر ومنفتح على فرص جديدة. لنبني شيئًا مذهلاً معًا."
 
@@ -663,7 +664,7 @@ msgstr "MVP"
 #~ msgid "MVP Launch"
 #~ msgstr "إطلاق MVP"
 
-#: src/routes/projects.tsx:61
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "أعمالي الأخيرة"
 
@@ -728,7 +729,7 @@ msgstr "تحسين الأداء"
 #~ msgid "Personals Informations"
 #~ msgstr "المعلومات الشخصية"
 
-#: src/routes/projects.tsx:60
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "معرض الأعمال"
 
@@ -784,7 +785,7 @@ msgstr "نطاق ميزانية المشروع"
 #~ msgid "Project not found"
 #~ msgstr "المشروع غير موجود"
 
-#: src/routes/projects_.$slug.tsx:29
+#: src/routes/projects_.$slug.tsx:33
 msgid "Project Not Found"
 msgstr "المشروع غير موجود"
 
@@ -886,8 +887,8 @@ msgid "Scalable enterprise-grade software solutions."
 msgstr "حلول برمجية قابلة للتطوير للمؤسسات."
 
 #: src/routes/projects.tsx:67
-msgid "Schedule a call"
-msgstr "جدولة مكالمة"
+#~ msgid "Schedule a call"
+#~ msgstr "جدولة مكالمة"
 
 #: src/routes/services.tsx:61
 msgid "Schedule a Call"
@@ -998,7 +999,7 @@ msgstr "تكامل Stripe"
 #~ msgid "Supported: JPG, PNG, WebP"
 #~ msgstr "المدعومة: JPG, PNG, WebP"
 
-#: src/routes/projects_.$slug.tsx:64
+#: src/routes/projects_.$slug.tsx:69
 msgid "System Status: Live"
 msgstr "حالة النظام: مباشر"
 
@@ -1006,7 +1007,7 @@ msgstr "حالة النظام: مباشر"
 #~ msgid "Tech Stack"
 #~ msgstr "التقنيات المستخدمة"
 
-#: src/routes/projects_.$slug.tsx:93
+#: src/routes/projects_.$slug.tsx:107
 msgid "Technical Architecture"
 msgstr "البنية التقنية"
 
@@ -1030,7 +1031,7 @@ msgstr "أخبرنا عن أهداف مشروعك، والجدول الزمني�
 msgid "Thank you for reaching out. We'll get back to you within 12 hours."
 msgstr "شكراً لتواصلكم معنا. سنقوم بالرد عليكم خلال 12 ساعة."
 
-#: src/routes/projects_.$slug.tsx:32
+#: src/routes/projects_.$slug.tsx:36
 msgid "The project you are looking for does not exist."
 msgstr "المشروع الذي تبحث عنه غير موجود."
 
@@ -1071,11 +1072,15 @@ msgstr "مصادقة المستخدم"
 #~ msgid "User profile"
 #~ msgstr "ملف تعريف المستخدم"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "عرض السيرة الذاتية"
 
-#: src/components/ProjectCard.tsx:47
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Demo"
+msgstr "عرض النسخة التجريبية"
+
+#: src/components/ProjectCard.tsx:53
 msgid "View Details"
 msgstr "عرض التفاصيل"
 
@@ -1086,6 +1091,10 @@ msgstr "عرض الأعمال"
 #: src/routes/services.tsx:41
 msgid "View Pricing"
 msgstr "عرض الأسعار"
+
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Result"
+msgstr "عرض النتيجة"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:175
 #~ msgid "Visuals"

@@ -46,6 +46,34 @@ export type ProjectStatusType = z.infer<typeof ProjectStatusEnum>;
 
 export type CategoryProjectType = 'web' | 'mobile' | 'open_source';
 export type StatusProjectType = 'draft' | 'published' | 'unpublished' | 'archived';
+export type UrlModeType = 'finalResult' | 'demo';
+
+export type TechStackType = {
+  name: string;
+  icon: string;
+};
+
+export type ImageParentType = {
+  medium: ImageType;
+  raw: ImageType;
+};
+
+export type ImageType = {
+  url: string;
+  alt: string;
+};
+
+export type ProjectUrlType = {
+  url: string;
+  isActive: boolean;
+  mode: UrlModeType;
+};
+
+export type FeaturesType = {
+  icon: string;
+  title: string;
+  description: string;
+};
 
 export interface ProjectType {
   id: number;
@@ -54,14 +82,12 @@ export interface ProjectType {
   category: CategoryProjectType;
   categoryLabel: string;
   description: string;
-  image?: {
-    medium: { url: string; alt: string };
-    raw: { url: string; alt: string };
-  };
+  image?: ImageParentType;
+  projectUrl?: ProjectUrlType;
   caseStudyNumber?: string | null;
   techIcons: string[];
-  techStack: Array<{ name: string; icon: string }>;
-  features: Array<{ icon: string; title: string; description: string }>;
+  techStack: TechStackType[];
+  features: FeaturesType[];
   isFeatured: boolean;
   status: StatusProjectType;
   userId: number;

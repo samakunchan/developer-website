@@ -10,7 +10,7 @@ import { removeFromSearchIndexInternal } from '../../search/utils/search-actions
  */
 export async function getProjectsInternal(): Promise<ProjectType[]> {
   const projects = await db.project.findMany({
-    include: { image: true },
+    include: { image: true, projectUrl: true },
     orderBy: { createdAt: 'desc' },
   });
   return projects as unknown as ProjectType[];
@@ -22,7 +22,7 @@ export async function getProjectsInternal(): Promise<ProjectType[]> {
 export async function getProjectByIdInternal(id: number): Promise<ProjectType | null> {
   const project = await db.project.findUnique({
     where: { id },
-    include: { image: true },
+    include: { image: true, projectUrl: true },
   });
   return project as unknown as ProjectType | null;
 }
@@ -33,7 +33,7 @@ export async function getProjectByIdInternal(id: number): Promise<ProjectType | 
 export async function getProjectBySlugInternal(slug: string): Promise<ProjectType | null> {
   const project = await db.project.findUnique({
     where: { slug },
-    include: { image: true },
+    include: { image: true, projectUrl: true },
   });
   return project as unknown as ProjectType | null;
 }

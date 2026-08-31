@@ -166,7 +166,7 @@ msgstr "可承接新项目"
 #~ msgid "Back to list"
 #~ msgstr "返回列表"
 
-#: src/routes/projects_.$slug.tsx:35
+#: src/routes/projects_.$slug.tsx:39
 msgid "Back to Projects"
 msgstr "返回项目"
 
@@ -188,7 +188,7 @@ msgstr "通过干净的代码构建<0>未来</0>。"
 #~ msgid "Case Study Number"
 #~ msgstr "案例研究编号"
 
-#: src/routes/projects_.$slug.tsx:74
+#: src/routes/projects_.$slug.tsx:80
 msgid "Case Study:"
 msgstr "案例研究："
 
@@ -382,10 +382,11 @@ msgid "Email Address"
 msgstr "电子邮件地址"
 
 #: src/routes/projects.tsx:68
-msgid "Email me"
-msgstr "给我发邮件"
+#~ msgid "Email me"
+#~ msgstr "给我发邮件"
 
 #: src/routes/index.tsx:97
+#: src/routes/projects.tsx:71
 msgid "Email Me"
 msgstr "给我发邮件"
 
@@ -444,7 +445,7 @@ msgstr "每个项目均可提供完整的保密协议 (NDA)。"
 msgid "Full-featured apps with authentication and CMS."
 msgstr "包含身份验证和 CMS 的全功能应用。"
 
-#: src/routes/projects_.$slug.tsx:110
+#: src/routes/projects_.$slug.tsx:124
 msgid "Functional Requirements"
 msgstr "功能需求"
 
@@ -460,7 +461,7 @@ msgstr "GitHub"
 #~ msgid "Google store"
 #~ msgstr "Google Store"
 
-#: src/routes/projects.tsx:65
+#: src/routes/projects.tsx:66
 msgid "Have a project in mind?"
 msgstr "有项目想法吗？"
 
@@ -492,7 +493,7 @@ msgstr "我是一名定居法国的开发者，拥有 8 年以上构建可扩展
 msgid "I'm a freelance developer specializing in building high-performance web and mobile applications with modern technologies."
 msgstr "我是一名自由职业开发者，专注于使用现代技术构建高性能的 Web 和移动应用程序。"
 
-#: src/routes/projects.tsx:66
+#: src/routes/projects.tsx:67
 msgid "I'm currently available for freelance work and open to new opportunities. Let's build something amazing together."
 msgstr "我目前可以接受自由职业工作，并欢迎新的机会。让我们一起构建一些精彩的东西。"
 
@@ -662,7 +663,7 @@ msgstr "MVP"
 #~ msgid "MVP Launch"
 #~ msgstr "MVP 发布"
 
-#: src/routes/projects.tsx:61
+#: src/routes/projects.tsx:62
 msgid "My Recent Work"
 msgstr "我最近的作品"
 
@@ -727,7 +728,7 @@ msgstr "性能优化"
 #~ msgid "Personals Informations"
 #~ msgstr "个人信息"
 
-#: src/routes/projects.tsx:60
+#: src/routes/projects.tsx:61
 msgid "Portfolio"
 msgstr "作品集"
 
@@ -783,7 +784,7 @@ msgstr "项目预算范围"
 #~ msgid "Project not found"
 #~ msgstr "未找到项目"
 
-#: src/routes/projects_.$slug.tsx:29
+#: src/routes/projects_.$slug.tsx:33
 msgid "Project Not Found"
 msgstr "未找到项目"
 
@@ -885,8 +886,8 @@ msgid "Scalable enterprise-grade software solutions."
 msgstr "可扩展的企业级软件解决方案。"
 
 #: src/routes/projects.tsx:67
-msgid "Schedule a call"
-msgstr "预约通话"
+#~ msgid "Schedule a call"
+#~ msgstr "预约通话"
 
 #: src/routes/services.tsx:61
 msgid "Schedule a Call"
@@ -997,7 +998,7 @@ msgstr "Stripe 集成"
 #~ msgid "Supported: JPG, PNG, WebP"
 #~ msgstr "支持的格式：JPG, PNG, WebP"
 
-#: src/routes/projects_.$slug.tsx:64
+#: src/routes/projects_.$slug.tsx:69
 msgid "System Status: Live"
 msgstr "系统状态：正常运行"
 
@@ -1005,7 +1006,7 @@ msgstr "系统状态：正常运行"
 #~ msgid "Tech Stack"
 #~ msgstr "技术栈"
 
-#: src/routes/projects_.$slug.tsx:93
+#: src/routes/projects_.$slug.tsx:107
 msgid "Technical Architecture"
 msgstr "技术架构"
 
@@ -1029,7 +1030,7 @@ msgstr "告诉我们您的项目目标、时间表以及任何特定的技术要
 msgid "Thank you for reaching out. We'll get back to you within 12 hours."
 msgstr "感谢您的联系。我们将在 12 小时内回复您。"
 
-#: src/routes/projects_.$slug.tsx:32
+#: src/routes/projects_.$slug.tsx:36
 msgid "The project you are looking for does not exist."
 msgstr "您寻找的项目不存在。"
 
@@ -1070,11 +1071,15 @@ msgstr "用户身份验证"
 #~ msgid "User profile"
 #~ msgstr "用户资料"
 
-#: src/routes/projects.tsx:54
+#: src/routes/projects.tsx:55
 msgid "View CV"
 msgstr "查看简历"
 
-#: src/components/ProjectCard.tsx:47
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Demo"
+msgstr "查看演示"
+
+#: src/components/ProjectCard.tsx:53
 msgid "View Details"
 msgstr "查看详情"
 
@@ -1085,6 +1090,10 @@ msgstr "查看作品集"
 #: src/routes/services.tsx:41
 msgid "View Pricing"
 msgstr "查看定价"
+
+#: src/routes/projects_.$slug.tsx:93
+msgid "View Result"
+msgstr "查看结果"
 
 #: src/features/projects/components/form/ProjectCreateForm.tsx:175
 #~ msgid "Visuals"

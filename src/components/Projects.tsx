@@ -26,7 +26,7 @@ export const Projects: React.FC<ProjectsProps> = ({ id, title, subtitle, project
   ];
 
   const otherProjects: ProjectType[] = projects
-    .filter((p: ProjectType) => !p.isFeatured)
+    // .filter((p: ProjectType) => !p.isFeatured)
     .filter((p: ProjectType) => p.status === 'published');
 
   const [featuredIndex, setFeaturedIndex] = useState<number>(0);
