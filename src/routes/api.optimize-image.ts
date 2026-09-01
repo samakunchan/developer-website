@@ -5,30 +5,30 @@ export const Route = createFileRoute('/api/optimize-image')({
   server: {
     handlers: {
       GET: async ({ request }) => {
-        const url = new URL(request.url);
-        const imageUrl = url.searchParams.get('url');
-        const width = url.searchParams.get('w');
-        const format = url.searchParams.get('f') || 'webp';
+        const url: URL = new URL(request.url);
+        const imageUrl: string | null = url.searchParams.get('url');
+        const width: string | null = url.searchParams.get('w');
+        const format: string | null = url.searchParams.get('f') || 'webp';
 
         if (!imageUrl) {
           return new Response('Missing target URL', { status: 400 });
         }
 
         try {
-          const response = await fetch(imageUrl);
+          const response: Response = await fetch(imageUrl);
           if (!response.ok) {
             return new Response('Failed to fetch image', {
               status: response.status,
             });
           }
 
-          const arrayBuffer = await response.arrayBuffer();
-          const buffer = Buffer.from(arrayBuffer);
+          const arrayBuffer: ArrayBuffer = await response.arrayBuffer();
+          const buffer: Buffer<ArrayBuffer> = Buffer.from(arrayBuffer);
 
-          let sharpInstance = sharp(buffer);
+          let sharpInstance: sharp.Sharp = sharp(buffer);
 
           if (width) {
-            const parsedWidth = parseInt(width, 10);
+            const parsedWidth: number = parseInt(width, 10);
             if (!isNaN(parsedWidth)) {
               sharpInstance = sharpInstance.resize({
                 width: parsedWidth,
@@ -47,7 +47,7 @@ export const Route = createFileRoute('/api/optimize-image')({
             sharpInstance = sharpInstance.jpeg({ quality: 80 });
           }
 
-          const optimizedBuffer = await sharpInstance.toBuffer();
+          const optimizedBuffer: Buffer<ArrayBufferLike> = await sharpInstance.toBuffer();
 
           return new Response(new Uint8Array(optimizedBuffer), {
             status: 200,

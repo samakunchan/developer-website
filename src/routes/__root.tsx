@@ -11,14 +11,12 @@ import '../styles/main.css';
 
 import { ErrorComponent, ErrorType } from '../components/ErrorComponent';
 
-import { SessionType, getSession } from '../features/auth';
 import { getTheme, ThemeType } from '../features/theme';
 import { supportedLocales, fetchServerLocale } from '../features/l10n';
 
 interface RootLoaderData {
   locale: string;
   isI18nReady: boolean;
-  session: SessionType | null;
   theme: ThemeType;
 }
 
@@ -43,23 +41,21 @@ export const Route = createRootRouteWithContext<{
   beforeLoad: async (): Promise<RootLoaderData> => {
     const locale: string = await getInitialLocale();
     const theme: ThemeType = await getTheme();
-    const session: SessionType | null = await getSession();
 
     try {
       const { messages } = await import(`../locales/${locale}/messages.po`);
       i18n.load(locale, messages);
       i18n.activate(locale);
-      return { locale, isI18nReady: true, session, theme };
+      return { locale, isI18nReady: true, theme };
     } catch (e) {
       console.error('Failed to load locale in beforeLoad', e);
-      return { locale, isI18nReady: false, session, theme };
+      return { locale, isI18nReady: false, theme };
     }
   },
   loader: async ({ context }) => {
     return {
       locale: context.locale,
       isI18nReady: context.isI18nReady,
-      session: context.session,
       theme: context.theme,
     };
   },
