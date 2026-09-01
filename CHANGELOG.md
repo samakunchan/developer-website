@@ -2,6 +2,37 @@
 
 <!-- markdownlint-configure-file { "MD024": { "siblings_only": true } } -->
 
+## 🚀 0.42.0 - 01/09/2026
+
+### Added
+
+- N/A.
+
+### Changed
+
+- **Router CLI Script**:
+  - Updated `"genroutes"` script in `package.json` to execute `tsr generate` directly instead of invoking via `npx`.
+
+### Fixed
+
+- N/A.
+
+### Deleted
+
+- **Unused NPM Packages**:
+  - Uninstalled 13 unused production dependencies: `@emotion/react`, `@emotion/styled`, `@mui/material`, `@hono/node-server`, `@lexical/clipboard`, `@lexical/history`, `@lexical/markdown`, `@tanstack/react-start-router-manifest`, `@xenova/transformers`, `bcryptjs`, `jose`, `nodemailer`, and `pg`.
+  - Uninstalled 8 unused development dependencies: `@vitejs/plugin-react`, `vite-tsconfig-paths`, `@lingui/macro`, `@lingui/babel-plugin-lingui-macro`, `babel-plugin-macros`, `@types/bcryptjs`, `@types/nodemailer`, and `@types/pg`.
+- **Unused Code & Legacy Features**:
+  - **Auth & Permissions**: Removed obsolete auth feature module (`src/features/auth`), server actions (`auth-actions.server.ts`), and schemas.
+  - **Search & Embeddings**: Removed legacy vector search embeddings and actions (`src/features/search`).
+  - **Pictures Management**: Removed unused picture processing and upload utilities (`src/features/pictures`).
+  - **Times & Middlewares**: Removed unused times feature module, server actions, and middlewares (`src/features/times`).
+  - **Rich Text Editor**: Removed unused rich text editor component (`RichTextEditor.tsx`) and CSS, retaining only read-only viewer (`RichTextReadOnly.tsx`).
+  - **Core Utilities & Data**: Removed dead utility files (`email.server.ts`, `pricingData.tsx`, `pricing.ts`, `string.ts`, `timezone.ts`, `url.ts`).
+  - **Pruned Action Handlers & Schemas**: Cleaned up dead database, profile, project, and theme mutation actions, schemas, and helper functions across `src/features/`.
+
+---
+
 ## 🚀 0.41.0 - 31/08/2026
 
 ### Added
