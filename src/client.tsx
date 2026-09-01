@@ -9,7 +9,6 @@ async function initI18n() {
   // On récupère le locale (ex: cookie, ou lang de l'html envoyé par le serveur)
   const locale = document.documentElement.lang || 'en-US';
   const { messages } = await import(`./locales/${locale}/messages.po`);
-  console.log('CLIENT locals ', locale);
   i18n.load(locale, messages);
   i18n.activate(locale);
 }

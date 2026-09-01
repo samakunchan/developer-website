@@ -62,7 +62,7 @@ function ProjectDetailsPage() {
           )}
 
           {/* Status Label */}
-          {project.projectUrl != null && (
+          {project.projectUrl != null && project.projectUrl.isActive && (
             <div className="project-detail__status-badge">
               <span className="project-detail__status-dot"></span>
               <span className="project-detail__status-text">
@@ -89,6 +89,7 @@ function ProjectDetailsPage() {
 
           {project.projectUrl != null && project.projectUrl.isActive && (
             <h3 className="project-detail__section-title">
+              {/* Ici */}
               <Link to={project.projectUrl.url} target="_blank" rel="noopener noreferrer">
                 {project.projectUrl.mode == 'demo' ? <Trans>View Demo</Trans> : <Trans>View Result</Trans>}
               </Link>

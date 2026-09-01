@@ -24,25 +24,3 @@ export const contactFormSchema = z.object({
 });
 
 export type ContactFormInput = z.infer<typeof contactFormSchema>;
-
-export type ServiceType = z.infer<typeof serviceTypeSchema>;
-export type PriceRangeType = z.infer<typeof priceRangeTypeSchema>;
-
-export type MessageOutput = {
-  id: number;
-  fullName: string;
-  email: string;
-  serviceType: ServiceType;
-  priceRangeType: PriceRangeType;
-  projectBrief: string;
-  isRead: boolean;
-  createdAt: string;
-  updatedAt: string;
-};
-
-export type PaginatedMessages = {
-  messages: MessageOutput[];
-  total: number;
-  totalPages: number;
-  currentPage: number;
-};
