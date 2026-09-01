@@ -15,20 +15,3 @@ export async function getThemeInternal(): Promise<ThemeType> {
     return 'light';
   }
 }
-
-/**
- * Sets the theme in the database (Singleton record with ID 1).
- */
-export async function setThemeInternal(theme: ThemeType): Promise<{ success: boolean }> {
-  try {
-    await db.settings.upsert({
-      where: { id: 1 },
-      update: { theme },
-      create: { id: 1, theme },
-    });
-    return { success: true };
-  } catch (error) {
-    console.error('Failed to update theme in DB:', error);
-    return { success: false };
-  }
-}
